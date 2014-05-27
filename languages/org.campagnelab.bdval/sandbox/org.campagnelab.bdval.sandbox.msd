@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<solution name="org.campagnelab.bdval.sandbox" uuid="93c79ecc-0b8c-4e6d-8503-7665491f0ed4" compileInMPS="true">
+  <models>
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="models" />
+    </modelRoot>
+  </models>
+  <sourcePath />
+  <usedLanguages>
+    <usedLanguage>ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)</usedLanguage>
+    <usedLanguage>35dbc0f6-2677-4e81-9b75-548a3c2b6d9b(org.campagnelab.bdval)</usedLanguage>
+  </usedLanguages>
+</solution>
+
