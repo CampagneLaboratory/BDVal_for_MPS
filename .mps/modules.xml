@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MPSProject">
+    <projectModules>
+      <modulePath path="$PROJECT_DIR$/languages/org.campagnelab.bdval/org.campagnelab.bdval.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/org.campagnelab.bdval/sandbox/org.campagnelab.bdval.sandbox.msd" folder="" />
+    </projectModules>
+  </component>
+</project>
+
