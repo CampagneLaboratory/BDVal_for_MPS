@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<history>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="-1" />
+    </dependencies>
+    <rename id="w348.7654795061622245429" type="CONCEPT" from="Gene" to="Genes" />
+  </StructureModification>
+</history>
+
