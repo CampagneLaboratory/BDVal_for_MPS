@@ -35,7 +35,7 @@ public class CIDs_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_s0w797_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "CIDs : ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "CIDs :");
     editorCell.setCellId("Constant_s0w797_a0");
     editorCell.setDefaultText("");
     return editorCell;
@@ -43,11 +43,11 @@ public class CIDs_Editor extends DefaultNodeEditor {
 
   private EditorCell createProperty_s0w797_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("cids");
-    provider.setNoTargetText("<no cids>");
+    provider.setRole("cidsFileName");
+    provider.setNoTargetText("<no cidsFileName>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_cids");
+    editorCell.setCellId("property_cidsFileName");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -63,7 +63,7 @@ public class CIDs_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_s0w797_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Number of Samples : ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Number of Sample Ids :");
     editorCell.setCellId("Constant_s0w797_c0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
@@ -74,15 +74,16 @@ public class CIDs_Editor extends DefaultNodeEditor {
 
   private EditorCell createProperty_s0w797_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("samples");
+    provider.setRole("numberOfSamples");
     provider.setNoTargetText("");
     provider.setReadOnly(true);
     provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_samples");
+    editorCell.setCellId("property_numberOfSamples");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -96,7 +97,7 @@ public class CIDs_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_s0w797_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Number of Samples Not in Input : ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Number of Sample Ids Not in Input :");
     editorCell.setCellId("Constant_s0w797_e0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
@@ -107,13 +108,16 @@ public class CIDs_Editor extends DefaultNodeEditor {
 
   private EditorCell createProperty_s0w797_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("mismatches");
+    provider.setRole("numberOfMismatches");
     provider.setNoTargetText("");
     provider.setReadOnly(true);
     provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_mismatches");
+    editorCell.setCellId("property_numberOfMismatches");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

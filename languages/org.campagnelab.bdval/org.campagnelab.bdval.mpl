@@ -5,7 +5,9 @@
       <sourceRoot location="languageModels" />
     </modelRoot>
     <modelRoot contentPath="/Users/vmb34/Documents/BDValConf/languages/lib" type="java_classes">
+      <sourceRoot location="fastutil-6.5.13.jar" />
       <sourceRoot location="edu.mssm.crover.tables.jar" />
+      <sourceRoot location="bdval.jar" />
     </modelRoot>
   </models>
   <accessoryModels />
@@ -30,6 +32,8 @@
   </generators>
   <stubModelEntries>
     <stubModelEntry path="/Users/vmb34/Documents/BDValConf/languages/lib/edu.mssm.crover.tables.jar" />
+    <stubModelEntry path="/Users/vmb34/Documents/BDValConf/languages/lib/fastutil-6.5.13.jar" />
+    <stubModelEntry path="/Users/vmb34/Documents/BDValConf/languages/lib/bdval.jar" />
   </stubModelEntries>
   <sourcePath />
   <dependencies>
@@ -37,8 +41,11 @@
     <dependency reexport="false">f33a6c9c-f660-4bdb-aecd-2d144c61f7d2(jetbrains.mps.ide.java.platform)</dependency>
   </dependencies>
   <usedLanguages>
+    <usedLanguage>73736c50-f124-433b-b789-2828a15a0adc(jetbrains.mps.baseLanguage.collections.trove)</usedLanguage>
+    <usedLanguage>f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)</usedLanguage>
     <usedLanguage>af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)</usedLanguage>
     <usedLanguage>18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)</usedLanguage>
+    <usedLanguage>d7a92d38-f7db-40d0-8431-763b0c3c9f20(jetbrains.mps.lang.intentions)</usedLanguage>
     <usedLanguage>35dbc0f6-2677-4e81-9b75-548a3c2b6d9b(org.campagnelab.bdval)</usedLanguage>
   </usedLanguages>
   <usedDevKits>

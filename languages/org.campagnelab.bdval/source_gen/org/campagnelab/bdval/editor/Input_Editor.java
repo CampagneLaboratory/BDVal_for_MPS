@@ -51,11 +51,11 @@ public class Input_Editor extends DefaultNodeEditor {
 
   private EditorCell createProperty_z9sdep_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("input");
-    provider.setNoTargetText("<no input>");
+    provider.setRole("inputFileName");
+    provider.setNoTargetText("<no inputFileName>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_input");
+    editorCell.setCellId("property_inputFileName");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -71,7 +71,7 @@ public class Input_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_z9sdep_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Number of Samples : ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Number of Sample Ids :");
     editorCell.setCellId("Constant_z9sdep_c0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
@@ -82,13 +82,13 @@ public class Input_Editor extends DefaultNodeEditor {
 
   private EditorCell createProperty_z9sdep_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("samples");
+    provider.setRole("numberOfSamples");
     provider.setNoTargetText("");
     provider.setReadOnly(true);
     provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_samples");
+    editorCell.setCellId("property_numberOfSamples");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -115,20 +115,18 @@ public class Input_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createRefNodeList_z9sdep_f0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new Input_Editor.DisplayListHandler_z9sdep_f0(node, "Display", editorContext);
+    AbstractCellListHandler handler = new Input_Editor.displayListHandler_z9sdep_f0(node, "display", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
-    editorCell.setCellId("refNodeList_Display");
+    editorCell.setCellId("refNodeList_display");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private static class DisplayListHandler_z9sdep_f0 extends RefNodeListHandler {
-    public DisplayListHandler_z9sdep_f0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class displayListHandler_z9sdep_f0 extends RefNodeListHandler {
+    public displayListHandler_z9sdep_f0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

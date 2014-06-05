@@ -20,11 +20,11 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 1:
         return Collections.<ConceptEditor>singletonList(new DataSet_Editor());
       case 2:
-        return Collections.<ConceptEditor>singletonList(new Input_Editor());
+        return Collections.<ConceptEditor>singletonList(new DisplayRow_Editor());
       case 3:
-        return Collections.<ConceptEditor>singletonList(new InputDisplayRow_Editor());
+        return Collections.<ConceptEditor>singletonList(new DisplayValue_Editor());
       case 4:
-        return Collections.<ConceptEditor>singletonList(new InputDisplayVal_Editor());
+        return Collections.<ConceptEditor>singletonList(new Input_Editor());
       case 5:
         return Collections.<ConceptEditor>singletonList(new Platform_Editor());
       case 6:
@@ -40,5 +40,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
 
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"org.campagnelab.bdval.structure.CIDs", "org.campagnelab.bdval.structure.DataSet", "org.campagnelab.bdval.structure.Input", "org.campagnelab.bdval.structure.InputDisplayRow", "org.campagnelab.bdval.structure.InputDisplayVal", "org.campagnelab.bdval.structure.Platform", "org.campagnelab.bdval.structure.Task"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"org.campagnelab.bdval.structure.CIDs", "org.campagnelab.bdval.structure.DataSet", "org.campagnelab.bdval.structure.DisplayRow", "org.campagnelab.bdval.structure.DisplayValue", "org.campagnelab.bdval.structure.Input", "org.campagnelab.bdval.structure.Platform", "org.campagnelab.bdval.structure.Task"};
 }

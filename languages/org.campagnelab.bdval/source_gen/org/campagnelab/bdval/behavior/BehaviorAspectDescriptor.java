@@ -12,7 +12,7 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
 
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
-      case 2:
+      case 5:
         return new Input_BehaviorDescriptor();
       case 1:
         return new DataSet_BehaviorDescriptor();
@@ -20,18 +20,20 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new Platform_BehaviorDescriptor();
       case 0:
         return new CIDs_BehaviorDescriptor();
-      case 7:
+      case 8:
         return new Task_BehaviorDescriptor();
-      case 5:
-        return new InputIds_BehaviorDescriptor();
+      case 7:
+        return new SampleId_BehaviorDescriptor();
+      case 2:
+        return new DisplayRow_BehaviorDescriptor();
       case 3:
-        return new InputDisplayRow_BehaviorDescriptor();
+        return new DisplayValue_BehaviorDescriptor();
       case 4:
-        return new InputDisplayVal_BehaviorDescriptor();
+        return new Endpoint_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"org.campagnelab.bdval.structure.CIDs", "org.campagnelab.bdval.structure.DataSet", "org.campagnelab.bdval.structure.Input", "org.campagnelab.bdval.structure.InputDisplayRow", "org.campagnelab.bdval.structure.InputDisplayVal", "org.campagnelab.bdval.structure.InputIds", "org.campagnelab.bdval.structure.Platform", "org.campagnelab.bdval.structure.Task"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"org.campagnelab.bdval.structure.CIDs", "org.campagnelab.bdval.structure.DataSet", "org.campagnelab.bdval.structure.DisplayRow", "org.campagnelab.bdval.structure.DisplayValue", "org.campagnelab.bdval.structure.Endpoint", "org.campagnelab.bdval.structure.Input", "org.campagnelab.bdval.structure.Platform", "org.campagnelab.bdval.structure.SampleId", "org.campagnelab.bdval.structure.Task"};
 }

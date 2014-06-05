@@ -6,5 +6,149 @@
     </dependencies>
     <rename id="w348.7654795061622245429" type="CONCEPT" from="Gene" to="Genes" />
   </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="0" />
+    </dependencies>
+    <rename id="w348.7052920786130939214" type="CHILD" from="Id" to="id" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="1" />
+    </dependencies>
+    <rename id="w348.7052920786130144496" type="PROPERTY" from="input" to="inputFileName" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="2" />
+    </dependencies>
+    <rename id="w348.7052920786131087226" type="PROPERTY" from="samples" to="numSamples" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="3" />
+    </dependencies>
+    <rename id="w348.7052920786130939214" type="CHILD" from="id" to="sampleId" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="4" />
+    </dependencies>
+    <rename id="w348.7052920786130772514" type="CONCEPT" from="InputId" to="SampleId" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="5" />
+    </dependencies>
+    <rename id="w348.7052920786130810093" type="CONCEPT" from="InputDisplayRow" to="DisplayRow" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="6" />
+    </dependencies>
+    <rename id="w348.4345048909861421891" type="CONCEPT" from="InputDisplayVal" to="DisplayVal" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="7" />
+    </dependencies>
+    <rename id="w348.4345048909861421891" type="CONCEPT" from="DisplayVal" to="DisplayValue" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="8" />
+    </dependencies>
+    <rename id="w348.4345048909863217124" type="CONCEPT" from="CIDsEndpt" to="Endpt" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="9" />
+    </dependencies>
+    <rename id="w348.7052920786130144610" type="PROPERTY" from="cids" to="cidsFilName" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="10" />
+    </dependencies>
+    <rename id="w348.4345048909862458382" type="PROPERTY" from="samples" to="numberSamples" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="11" />
+    </dependencies>
+    <rename id="w348.4345048909862458323" type="PROPERTY" from="mismatches" to="numberMismatches" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="12" />
+    </dependencies>
+    <rename id="w348.4345048909863185794" type="CHILD" from="cidsId" to="sampleId" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="13" />
+    </dependencies>
+    <rename id="w348.4345048909863220331" type="CHILD" from="cidsEndpt" to="endpoint" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="14" />
+    </dependencies>
+    <rename id="w348.4345048909861421889" type="CHILD" from="cols" to="values" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="15" />
+    </dependencies>
+    <rename id="w348.4345048909863217124" type="CONCEPT" from="Endpt" to="Endpoint" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="16" />
+    </dependencies>
+    <rename id="w348.7052920786130144612" type="PROPERTY" from="platform" to="platformFileName" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="17" />
+    </dependencies>
+    <rename id="w348.7052920786130144614" type="PROPERTY" from="task" to="taskFileName" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="18" />
+    </dependencies>
+    <rename id="w348.7052920786131087226" type="PROPERTY" from="numSamples" to="numberOfSamples" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="19" />
+    </dependencies>
+    <rename id="w348.4345048909861421889" type="CHILD" from="values" to="value" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="20" />
+    </dependencies>
+    <rename id="w348.4345048909862458382" type="PROPERTY" from="numberSamples" to="numberOfSamples" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="21" />
+    </dependencies>
+    <rename id="w348.4345048909862458323" type="PROPERTY" from="numberMismatches" to="numberOfMismatches" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="22" />
+    </dependencies>
+    <rename id="w348.7052920786130144610" type="PROPERTY" from="cidsFilName" to="cidsFileName" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="23" />
+    </dependencies>
+    <rename id="w348.4345048909867014191" type="CHILD" from="end" to="endpoint" />
+  </StructureModification>
 </history>
 

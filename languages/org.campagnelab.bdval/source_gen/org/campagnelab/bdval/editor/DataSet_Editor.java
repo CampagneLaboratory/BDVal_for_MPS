@@ -40,7 +40,7 @@ public class DataSet_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5gxpkq_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Data Set: ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Data Set : ");
     editorCell.setCellId("Constant_5gxpkq_a0");
     editorCell.setDefaultText("");
     return editorCell;
@@ -87,8 +87,9 @@ public class DataSet_Editor extends DefaultNodeEditor {
       editorCell.setRole("input");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -113,16 +114,16 @@ public class DataSet_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefNode_5gxpkq_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("platform");
-    provider.setNoTargetText("<no platform>");
+    provider.setRole("cids");
+    provider.setNoTargetText("<no cids>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
-      editorCell.setRole("platform");
+      editorCell.setRole("cids");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -147,16 +148,17 @@ public class DataSet_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefNode_5gxpkq_h0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("cids");
-    provider.setNoTargetText("<no cids>");
+    provider.setRole("task");
+    provider.setNoTargetText("<no task>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
-      editorCell.setRole("cids");
+      editorCell.setRole("task");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -181,12 +183,12 @@ public class DataSet_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefNode_5gxpkq_j0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("task");
-    provider.setNoTargetText("<no task>");
+    provider.setRole("platform");
+    provider.setNoTargetText("<no platform>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
-      editorCell.setRole("task");
+      editorCell.setRole("platform");
     }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);

@@ -28,7 +28,7 @@ public class Platform_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_tw4zmk_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Platform : ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Platform :");
     editorCell.setCellId("Constant_tw4zmk_a0");
     editorCell.setDefaultText("");
     return editorCell;
@@ -36,11 +36,11 @@ public class Platform_Editor extends DefaultNodeEditor {
 
   private EditorCell createProperty_tw4zmk_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("platform");
-    provider.setNoTargetText("<no platform>");
+    provider.setRole("platformFileName");
+    provider.setNoTargetText("<no platformFileName>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_platform");
+    editorCell.setCellId("property_platformFileName");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
