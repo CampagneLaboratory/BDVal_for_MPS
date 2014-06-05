@@ -5,9 +5,9 @@ package org.campagnelab.bdval.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.io.FileReader;
 import java.io.File;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.io.BufferedReader;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -23,6 +23,8 @@ public class CIDs_Behavior {
   public static void call_load_4345048909863010217(SNode thisNode) {
     ListSequence.fromList(SLinkOperations.getTargets(thisNode, "endpoint", true)).removeSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "endpoint", true)));
     ListSequence.fromList(SLinkOperations.getTargets(thisNode, "sampleId", true)).removeSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "sampleId", true)));
+    SPropertyOperations.set(thisNode, "numberOfSamples", null);
+    SPropertyOperations.set(thisNode, "numberOfIdMismatches", null);
     try {
       FileReader reader = new FileReader(new File(SPropertyOperations.getString(thisNode, "cidsFileName")));
       BufferedReader datasetReader = new BufferedReader(reader);
@@ -30,10 +32,21 @@ public class CIDs_Behavior {
       String[] lineArray = line.split("\t");
       int cols = lineArray.length;
       if (cols != 2) {
-        throw new IllegalArgumentException("CIDs file must have 2 columns");
+        throw new IllegalArgumentException();
       }
-      int rows = 0;
-      while ((line = datasetReader.readLine()) != null) {
+      CIDs_Behavior.call_getCidsIdsAndEndpts_3367122381605517505(thisNode, datasetReader);
+      CIDs_Behavior.call_compareSampleIds_4345048909863405924(thisNode);
+    } catch (Exception e) {
+      throw new IllegalArgumentException("CIDs load failed");
+    }
+  }
+
+  public static void call_getCidsIdsAndEndpts_3367122381605517505(SNode thisNode, BufferedReader cidsTable) {
+    try {
+      int samples = 0;
+      String line;
+      String[] lineArray;
+      while ((line = cidsTable.readLine()) != null) {
         lineArray = line.split("\t");
         SNode idNode = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.SampleId", null);
         SNode endptNode = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.Endpoint", null);
@@ -41,16 +54,16 @@ public class CIDs_Behavior {
         SPropertyOperations.set(idNode, "name", lineArray[1]);
         ListSequence.fromList(SLinkOperations.getTargets(thisNode, "endpoint", true)).addElement(endptNode);
         ListSequence.fromList(SLinkOperations.getTargets(thisNode, "sampleId", true)).addElement(idNode);
-        rows++;
+        samples++;
       }
-      SPropertyOperations.set(thisNode, "numberOfSamples", "" + (rows));
-      CIDs_Behavior.call_compardSampleIds_4345048909863405924(thisNode);
+      SPropertyOperations.set(thisNode, "numberOfSamples", "" + (samples));
+
     } catch (Exception e) {
-      throw new IllegalArgumentException("CIDs must be tab delimited file");
+      throw new IllegalArgumentException();
     }
   }
 
-  public static void call_compardSampleIds_4345048909863405924(SNode thisNode) {
+  public static void call_compareSampleIds_4345048909863405924(SNode thisNode) {
     Iterable<SNode> cidsIds = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "sampleId", true)).toListSequence();
     final Iterable<SNode> inputIds = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.DataSet"), "input", true), "sampleId", true);
     final Wrappers._int counter = new Wrappers._int(0);
@@ -65,6 +78,6 @@ public class CIDs_Behavior {
         }
       }
     });
-    SPropertyOperations.set(thisNode, "numberOfMismatches", "" + (counter.value));
+    SPropertyOperations.set(thisNode, "numberOfIdMismatches", "" + (counter.value));
   }
 }

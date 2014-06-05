@@ -8,6 +8,11 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.editor.runtime.style.Padding;
+import jetbrains.mps.editor.runtime.style.Measure;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
@@ -19,13 +24,16 @@ public class DisplayValue_Editor extends DefaultNodeEditor {
   private EditorCell createProperty_bdu38u_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("value");
-    provider.setNoTargetText("");
-    provider.setReadOnly(true);
-    provider.setAllowsEmptyTarget(true);
+    provider.setNoTargetText("<no value>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_value");
     editorCell.setBig(true);
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    style.set(StyleAttributes.PADDING_RIGHT, new Padding(2, Measure.SPACES));
+    style.set(StyleAttributes.EDITABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

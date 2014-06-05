@@ -8,13 +8,17 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
+import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class CIDs_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -27,9 +31,13 @@ public class CIDs_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_s0w797_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_s0w797_b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_s0w797_c0(editorContext, node));
+    if (renderingCondition_s0w797_a2a(node, editorContext)) {
+      editorCell.addEditorCell(this.createConstant_s0w797_c0(editorContext, node));
+    }
     editorCell.addEditorCell(this.createProperty_s0w797_d0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_s0w797_e0(editorContext, node));
+    if (renderingCondition_s0w797_a4a(node, editorContext)) {
+      editorCell.addEditorCell(this.createConstant_s0w797_e0(editorContext, node));
+    }
     editorCell.addEditorCell(this.createProperty_s0w797_f0(editorContext, node));
     return editorCell;
   }
@@ -37,6 +45,9 @@ public class CIDs_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_s0w797_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "CIDs :");
     editorCell.setCellId("Constant_s0w797_a0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.READ_ONLY, true);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -44,7 +55,7 @@ public class CIDs_Editor extends DefaultNodeEditor {
   private EditorCell createProperty_s0w797_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("cidsFileName");
-    provider.setNoTargetText("<no cidsFileName>");
+    provider.setNoTargetText("CIDs File Location");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_cidsFileName");
@@ -67,9 +78,15 @@ public class CIDs_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_s0w797_c0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    style.set(StyleAttributes.READ_ONLY, true);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
+  }
+
+  private static boolean renderingCondition_s0w797_a2a(SNode node, EditorContext editorContext) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "endpoint", true)).isNotEmpty();
   }
 
   private EditorCell createProperty_s0w797_d0(EditorContext editorContext, SNode node) {
@@ -84,6 +101,7 @@ public class CIDs_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    style.set(StyleAttributes.READ_ONLY, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -101,22 +119,29 @@ public class CIDs_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_s0w797_e0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    style.set(StyleAttributes.READ_ONLY, true);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
+  private static boolean renderingCondition_s0w797_a4a(SNode node, EditorContext editorContext) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "endpoint", true)).isNotEmpty();
+  }
+
   private EditorCell createProperty_s0w797_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("numberOfMismatches");
+    provider.setRole("numberOfIdMismatches");
     provider.setNoTargetText("");
     provider.setReadOnly(true);
     provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_numberOfMismatches");
+    editorCell.setCellId("property_numberOfIdMismatches");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.READ_ONLY, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

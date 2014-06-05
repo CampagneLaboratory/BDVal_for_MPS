@@ -5,9 +5,9 @@ package org.campagnelab.bdval.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.bdval.DAVMode;
 import edu.mssm.crover.tables.Table;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class Input_Behavior {
@@ -17,6 +17,7 @@ public class Input_Behavior {
   public static void call_load_7052920786130144602(SNode thisNode) {
     ListSequence.fromList(SLinkOperations.getTargets(thisNode, "display", true)).removeSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "display", true)));
     ListSequence.fromList(SLinkOperations.getTargets(thisNode, "sampleId", true)).removeSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "sampleId", true)));
+    SPropertyOperations.set(thisNode, "numberOfSamples", null);
     try {
       final DAVMode davMode = new DAVMode();
       Table inputTable = davMode.getReadInputFile(SPropertyOperations.getString(thisNode, "inputFileName"));
@@ -25,7 +26,7 @@ public class Input_Behavior {
       Input_Behavior.call_getInputIds_7052920786130389579(thisNode, inputTable, cols);
       Input_Behavior.call_getInputDisplay_3367122381600071702(thisNode, inputTable, cols);
     } catch (Exception e) {
-      throw new IllegalArgumentException("failed");
+      throw new IllegalArgumentException("Input load failed");
     }
   }
 
@@ -41,18 +42,15 @@ public class Input_Behavior {
   }
 
   public static void call_getInputDisplay_3367122381600071702(SNode thisNode, Table inputTable, int cols) {
-    int colMax;
-    if (cols < 10) {
-      colMax = cols;
-    } else {
-      colMax = 10;
-    }
-    int rowMax;
+    int stringLength = 13;
     int rows = inputTable.getRowNumber();
-    if (rows < 10) {
+    int colMax = 8;
+    int rowMax = 10;
+    if (cols < colMax) {
+      colMax = cols;
+    }
+    if (rows < rowMax) {
       rowMax = rows;
-    } else {
-      rowMax = 10;
     }
     // Gets the first row 
     int colCounter = 0;
@@ -60,10 +58,10 @@ public class Input_Behavior {
     while (colCounter < colMax) {
       try {
         SNode valNode = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.DisplayValue", null);
-        SPropertyOperations.set(valNode, "value", inputTable.getIdentifier(colCounter));
+        SPropertyOperations.set(valNode, "value", Input_Behavior.call_reformatString_3367122381603806186(thisNode, inputTable.getIdentifier(colCounter), stringLength));
         ListSequence.fromList(SLinkOperations.getTargets(rowNode, "value", true)).addElement(valNode);
       } catch (Exception e) {
-        throw new IllegalArgumentException("Could not access first row of input table in getInputDisplay");
+        throw new IllegalArgumentException();
       }
       colCounter++;
     }
@@ -78,16 +76,27 @@ public class Input_Behavior {
       while (colCounter < colMax) {
         try {
           SNode valNode = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.DisplayValue", null);
-          SPropertyOperations.set(valNode, "value", inputTable.elementToString(colCounter, rowIterator));
+          SPropertyOperations.set(valNode, "value", Input_Behavior.call_reformatString_3367122381603806186(thisNode, inputTable.elementToString(colCounter, rowIterator), stringLength));
           ListSequence.fromList(SLinkOperations.getTargets(rowNode, "value", true)).addElement(valNode);
         } catch (Exception e) {
-          throw new IllegalArgumentException("Could not access middle row of input table in getInputDisplay");
+          throw new IllegalArgumentException();
         }
         colCounter++;
       }
       ListSequence.fromList(SLinkOperations.getTargets(thisNode, "display", true)).addElement(rowNode);
       rowIterator.next();
       rowCounter++;
+    }
+  }
+
+  public static String call_reformatString_3367122381603806186(SNode thisNode, String originalString, int setLength) {
+    int stringLength = originalString.length();
+    int difference = stringLength - setLength;
+    String newString;
+    if (difference < 0) {
+      return Input_Behavior.call_reformatString_3367122381603806186(thisNode, originalString.concat(" "), setLength);
+    } else {
+      return originalString.substring(0, setLength - 1);
     }
   }
 }

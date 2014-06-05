@@ -150,5 +150,29 @@
     </dependencies>
     <rename id="w348.4345048909867014191" type="CHILD" from="end" to="endpoint" />
   </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="24" />
+    </dependencies>
+    <rename id="w348.4345048909862458323" type="PROPERTY" from="numberOfMismatches" to="numberOfIdMismatches" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="25" />
+    </dependencies>
+    <rename id="w348.4345048909867255331" type="PROPERTY" from="numberOfMismatches" to="numberOfEndptMismatches" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="26" />
+    </dependencies>
+    <rename id="w348.3367122381609360515" type="CHILD" from="inputFileName" to="fileName" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="27" />
+    </dependencies>
+    <rename id="w348.3367122381614475318" type="PROPERTY" from="EndptCounts" to="EndptCountMatches" />
+  </StructureModification>
 </history>
 

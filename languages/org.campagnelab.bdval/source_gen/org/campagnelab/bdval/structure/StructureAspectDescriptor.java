@@ -14,7 +14,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.CIDs").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("cidsFileName", "numberOfSamples", "numberOfMismatches").children(new String[]{"sampleId", "endpoint"}, new boolean[]{true, true}).alias("cids", "File containing phenotype and ID").create();
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.CIDs").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("cidsFileName", "numberOfSamples", "numberOfIdMismatches").children(new String[]{"sampleId", "endpoint"}, new boolean[]{true, true}).alias("cids", "File containing phenotype and ID").create();
       case 1:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.DataSet").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"input", "platform", "cids", "task"}, new boolean[]{false, false, false, false}).create();
       case 2:
@@ -30,7 +30,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 7:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.SampleId").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").alias("sampleId", "A sample Id ").create();
       case 8:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Task").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("taskFileName", "numberOfMismatches").children(new String[]{"endpoint"}, new boolean[]{true}).alias("task", "File containing name, conditions, and number of samples per condition").create();
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Task").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("taskFileName", "numberOfEndptMismatches").children(new String[]{"endpoint"}, new boolean[]{true}).alias("task", "File containing name, conditions, and number of samples per condition").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

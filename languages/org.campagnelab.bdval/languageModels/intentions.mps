@@ -3,7 +3,7 @@
   <persistence version="8" />
   <language namespace="d7a92d38-f7db-40d0-8431-763b0c3c9f20(jetbrains.mps.lang.intentions)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
-  <import index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="24" />
+  <import index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="28" />
   <import index="c3kk" modelUID="r:825ae26d-5123-4d82-aa5e-7977a26d188c(org.campagnelab.bdval.behavior)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="5" implicit="yes" />
@@ -40,8 +40,8 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4345048909865103771" nodeInfo="nn">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4345048909865100323" nodeInfo="nn">
               <node role="operand" roleId="tpee.1197027771414" type="tp3j.ConceptFunctionParameter_node" typeId="tp3j.1192796902958" id="4345048909865100064" nodeInfo="nn" />
-              <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="4345048909865101901" nodeInfo="nn">
-                <link role="property" roleId="tp25.1138056395725" targetNodeId="w348.7052920786130144496" resolveInfo="inputFileName" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="3367122381611075623" nodeInfo="nn">
+                <link role="property" roleId="tp25.1138056395725" targetNodeId="w348.3367122381610860816" resolveInfo="inputFileName" />
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.IsNotEmptyOperation" typeId="tpee.1225271408483" id="4345048909865108645" nodeInfo="nn" />
@@ -102,8 +102,8 @@
             <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4345048909866562468" nodeInfo="nn">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4345048909866559020" nodeInfo="nn">
                 <node role="operand" roleId="tpee.1197027771414" type="tp3j.ConceptFunctionParameter_node" typeId="tp3j.1192796902958" id="4345048909866558761" nodeInfo="nn" />
-                <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="4345048909866560598" nodeInfo="nn">
-                  <link role="property" roleId="tp25.1138056395725" targetNodeId="w348.7052920786130144610" resolveInfo="cidsFileName" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="3367122381611086138" nodeInfo="nn">
+                  <link role="property" roleId="tp25.1138056395725" targetNodeId="w348.3367122381610860821" resolveInfo="cidsFileName" />
                 </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.IsNotEmptyOperation" typeId="tpee.1225271408483" id="4345048909866566461" nodeInfo="nn" />
@@ -186,8 +186,8 @@
             <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4345048909867793967" nodeInfo="nn">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4345048909867790525" nodeInfo="nn">
                 <node role="operand" roleId="tpee.1197027771414" type="tp3j.ConceptFunctionParameter_node" typeId="tp3j.1192796902958" id="4345048909867790266" nodeInfo="nn" />
-                <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="4345048909867792103" nodeInfo="nn">
-                  <link role="property" roleId="tp25.1138056395725" targetNodeId="w348.7052920786130144614" resolveInfo="taskFileName" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="3367122381611094439" nodeInfo="nn">
+                  <link role="property" roleId="tp25.1138056395725" targetNodeId="w348.3367122381610860827" resolveInfo="taskFileName" />
                 </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.IsNotEmptyOperation" typeId="tpee.1225271408483" id="4345048909867796338" nodeInfo="nn" />
@@ -218,8 +218,8 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3367122381601689094" nodeInfo="nn">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3367122381601689095" nodeInfo="nn">
               <node role="operand" roleId="tpee.1197027771414" type="tp3j.ConceptFunctionParameter_node" typeId="tp3j.1192796902958" id="3367122381601689096" nodeInfo="nn" />
-              <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="3367122381601692013" nodeInfo="nn">
-                <link role="property" roleId="tp25.1138056395725" targetNodeId="w348.7052920786130144612" resolveInfo="platformFileName" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="3367122381611098266" nodeInfo="nn">
+                <link role="property" roleId="tp25.1138056395725" targetNodeId="w348.3367122381610860831" resolveInfo="platformFileName" />
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.IsNotEmptyOperation" typeId="tpee.1225271408483" id="3367122381601689098" nodeInfo="nn" />
