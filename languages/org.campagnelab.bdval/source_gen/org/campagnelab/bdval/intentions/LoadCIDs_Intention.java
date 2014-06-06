@@ -84,6 +84,7 @@ public class LoadCIDs_Intention implements IntentionFactory {
 
     public void execute(final SNode node, final EditorContext editorContext) {
       CIDs_Behavior.call_load_4345048909863010217(node);
+      CIDs_Behavior.call_displayCids_3367122381623847914(node);
 
     }
 

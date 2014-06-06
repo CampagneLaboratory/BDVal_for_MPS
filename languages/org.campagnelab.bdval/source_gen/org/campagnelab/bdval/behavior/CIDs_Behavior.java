@@ -36,6 +36,7 @@ public class CIDs_Behavior {
       }
       CIDs_Behavior.call_getCidsIdsAndEndpts_3367122381605517505(thisNode, datasetReader);
       CIDs_Behavior.call_compareSampleIds_4345048909863405924(thisNode);
+      CIDs_Behavior.call_displayCids_3367122381623847914(thisNode);
     } catch (Exception e) {
       throw new IllegalArgumentException("CIDs load failed");
     }
@@ -79,5 +80,22 @@ public class CIDs_Behavior {
       }
     });
     SPropertyOperations.set(thisNode, "numberOfIdMismatches", "" + (counter.value));
+  }
+
+  public static void call_displayCids_3367122381623847914(final SNode thisNode) {
+    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "displayRow", true)).removeSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "displayRow", true)));
+    final int setLength = Input_Behavior.call_getDisplayLength_3367122381624659193(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.DataSet"), "input", true));
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.DataSet"), "input", true), "sampleId", true)).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode sampleId) {
+        SNode rowNode = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.DisplayRow", null);
+        SNode idNode = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.DisplayValue", null);
+        SNode endptNode = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.Endpoint", null);
+        SPropertyOperations.set(idNode, "value", Input_Behavior.call_reformatString_3367122381603806186(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.DataSet"), "input", true), SPropertyOperations.getString(sampleId, "name"), setLength));
+        SPropertyOperations.set(endptNode, "name", SPropertyOperations.getString(SLinkOperations.getTarget(sampleId, "endpoint", true), "name"));
+        ListSequence.fromList(SLinkOperations.getTargets(rowNode, "displayValue", true)).addElement(idNode);
+        SLinkOperations.setTarget(rowNode, "endpoint", endptNode, true);
+        ListSequence.fromList(SLinkOperations.getTargets(thisNode, "displayRow", true)).addElement(rowNode);
+      }
+    });
   }
 }

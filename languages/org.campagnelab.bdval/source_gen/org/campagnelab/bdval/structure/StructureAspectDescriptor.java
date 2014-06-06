@@ -14,27 +14,29 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.CIDs").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("cidsFileName", "numberOfSamples", "numberOfIdMismatches").children(new String[]{"sampleId", "endpoint"}, new boolean[]{true, true}).alias("cids", "File containing phenotypes and Ids in columns").create();
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.CIDs").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("cidsFileName", "numberOfSamples", "numberOfIdMismatches").children(new String[]{"sampleId", "endpoint", "displayRow"}, new boolean[]{true, true, true}).alias("cids", "File containing phenotypes and Ids in columns").create();
       case 1:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.DataSet").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"input", "cids", "task", "platform"}, new boolean[]{false, false, false, false}).create();
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.DataSet").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"platform", "input", "endpoint", "cids"}, new boolean[]{false, false, true, false}).create();
       case 2:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.DisplayRow").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"value"}, new boolean[]{true}).alias("inputdisplay", "Stores the values of a row of the input to be displayed").create();
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.DisplayRow").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"displayValue", "endpoint"}, new boolean[]{true, false}).alias("inputdisplay", "Stores the values of a row of the input to be displayed").create();
       case 3:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.DisplayValue").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("value").create();
       case 4:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Endpoint").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").alias("endpoint", "An endpoint ").create();
       case 5:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Input").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("inputFileName", "numberOfSamples").children(new String[]{"sampleId", "displayRow"}, new boolean[]{true, true}).alias("input", "File containing input (table of ID's and genes)").create();
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Input").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("inputFileName", "numberOfSamples", "test").children(new String[]{"sampleId", "displayRow", "endpoint"}, new boolean[]{true, true, true}).alias("input", "File containing input (table of ID's and genes)").create();
       case 6:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Platform").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("platformFileName").alias("platform", "File containing platform").create();
       case 7:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.SampleId").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").alias("sampleId", "A sample Id ").create();
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Project").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"dataset"}, new boolean[]{true}).alias("project", "An entire project which can contain multiple datasets").create();
       case 8:
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.SampleId").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"endpoint"}, new boolean[]{false}).alias("sampleId", "A sample Id ").create();
+      case 9:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Task").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("taskFileName", "numberOfEndptMismatches", "endpointCountMatch").children(new String[]{"endpoint"}, new boolean[]{true}).alias("task", "File containing name, conditions, and number of samples per condition").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
 
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"org.campagnelab.bdval.structure.CIDs", "org.campagnelab.bdval.structure.DataSet", "org.campagnelab.bdval.structure.DisplayRow", "org.campagnelab.bdval.structure.DisplayValue", "org.campagnelab.bdval.structure.Endpoint", "org.campagnelab.bdval.structure.Input", "org.campagnelab.bdval.structure.Platform", "org.campagnelab.bdval.structure.SampleId", "org.campagnelab.bdval.structure.Task"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"org.campagnelab.bdval.structure.CIDs", "org.campagnelab.bdval.structure.DataSet", "org.campagnelab.bdval.structure.DisplayRow", "org.campagnelab.bdval.structure.DisplayValue", "org.campagnelab.bdval.structure.Endpoint", "org.campagnelab.bdval.structure.Input", "org.campagnelab.bdval.structure.Platform", "org.campagnelab.bdval.structure.Project", "org.campagnelab.bdval.structure.SampleId", "org.campagnelab.bdval.structure.Task"};
 }

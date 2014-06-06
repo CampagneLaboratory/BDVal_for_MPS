@@ -186,5 +186,11 @@
     </dependencies>
     <rename id="w348.3367122381615463983" type="PROPERTY" from="test" to="endpointCountMatch" />
   </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="30" />
+    </dependencies>
+    <rename id="w348.4345048909861421889" type="CHILD" from="value" to="displayValue" />
+  </StructureModification>
 </history>
 

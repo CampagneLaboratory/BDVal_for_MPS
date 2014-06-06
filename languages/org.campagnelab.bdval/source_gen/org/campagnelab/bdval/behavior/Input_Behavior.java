@@ -9,9 +9,17 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.bdval.DAVMode;
 import edu.mssm.crover.tables.Table;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import java.util.HashMap;
+import java.util.List;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.Iterator;
 
 public class Input_Behavior {
   public static void init(SNode thisNode) {
+    int displayLength;
   }
 
   public static void call_load_7052920786130144602(SNode thisNode) {
@@ -25,6 +33,8 @@ public class Input_Behavior {
       SPropertyOperations.set(thisNode, "numberOfSamples", "" + (cols - 1));
       Input_Behavior.call_getInputIds_7052920786130389579(thisNode, inputTable, cols);
       Input_Behavior.call_getInputDisplay_3367122381600071702(thisNode, inputTable, cols);
+      Input_Behavior.call_getEndpoints_3367122381622662959(thisNode);
+      SPropertyOperations.set(thisNode, "test", "" + (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "endpoint", true)).count()));
     } catch (Exception e) {
       throw new IllegalArgumentException("Input load failed");
     }
@@ -42,7 +52,6 @@ public class Input_Behavior {
   }
 
   public static void call_getInputDisplay_3367122381600071702(SNode thisNode, Table inputTable, int cols) {
-    int stringLength = 13;
     int rows = inputTable.getRowNumber();
     int colMax = 8;
     int rowMax = 10;
@@ -58,8 +67,8 @@ public class Input_Behavior {
     while (colCounter < colMax) {
       try {
         SNode valNode = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.DisplayValue", null);
-        SPropertyOperations.set(valNode, "value", Input_Behavior.call_reformatString_3367122381603806186(thisNode, inputTable.getIdentifier(colCounter), stringLength));
-        ListSequence.fromList(SLinkOperations.getTargets(rowNode, "value", true)).addElement(valNode);
+        SPropertyOperations.set(valNode, "value", Input_Behavior.call_reformatString_3367122381603806186(thisNode, inputTable.getIdentifier(colCounter), Input_Behavior.call_getDisplayLength_3367122381624659193(thisNode)));
+        ListSequence.fromList(SLinkOperations.getTargets(rowNode, "displayValue", true)).addElement(valNode);
       } catch (Exception e) {
         throw new IllegalArgumentException();
       }
@@ -76,8 +85,8 @@ public class Input_Behavior {
       while (colCounter < colMax) {
         try {
           SNode valNode = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.DisplayValue", null);
-          SPropertyOperations.set(valNode, "value", Input_Behavior.call_reformatString_3367122381603806186(thisNode, inputTable.elementToString(colCounter, rowIterator), stringLength));
-          ListSequence.fromList(SLinkOperations.getTargets(rowNode, "value", true)).addElement(valNode);
+          SPropertyOperations.set(valNode, "value", Input_Behavior.call_reformatString_3367122381603806186(thisNode, inputTable.elementToString(colCounter, rowIterator), Input_Behavior.call_getDisplayLength_3367122381624659193(thisNode)));
+          ListSequence.fromList(SLinkOperations.getTargets(rowNode, "displayValue", true)).addElement(valNode);
         } catch (Exception e) {
           throw new IllegalArgumentException();
         }
@@ -92,11 +101,61 @@ public class Input_Behavior {
   public static String call_reformatString_3367122381603806186(SNode thisNode, String originalString, int setLength) {
     int stringLength = originalString.length();
     int difference = stringLength - setLength;
-    String newString;
     if (difference < 0) {
       return Input_Behavior.call_reformatString_3367122381603806186(thisNode, originalString.concat(" "), setLength);
     } else {
       return originalString.substring(0, setLength - 1);
+    }
+  }
+
+  public static int call_getDisplayLength_3367122381624659193(SNode thisNode) {
+    final Wrappers._int stringLength = new Wrappers._int(13);
+    final Wrappers._int idLength = new Wrappers._int();
+    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "sampleId", true)).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode sampleId) {
+        idLength.value = SPropertyOperations.getString(sampleId, "name").length();
+        if (idLength.value > stringLength.value) {
+          stringLength.value = idLength.value;
+        }
+      }
+    });
+    return stringLength.value;
+  }
+
+  public static void call_getEndpoints_3367122381622662959(SNode thisNode) {
+    HashMap map = new HashMap(SLinkOperations.getTargets(thisNode, "sampleId", true).size());
+    final List possibleEndpts = new ArrayList();
+    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "sampleId", true)).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode sampleId) {
+        String[] firstSplit = SPropertyOperations.getString(sampleId, "name").split("-");
+        int length = firstSplit.length;
+        for (int counter = 0; counter < length; counter++) {
+          Sequence.fromIterable(Sequence.fromArray(firstSplit[counter].split("_"))).visitAll(new IVisitor<String>() {
+            public void visit(String element) {
+              possibleEndpts.add(element);
+            }
+          });
+        }
+      }
+    });
+    int listLength = possibleEndpts.size();
+    for (int counter = 0; counter < listLength; counter++) {
+      String str = possibleEndpts.get(counter).toString();
+      if (map.containsKey(str)) {
+        int value = Integer.parseInt(map.remove(str).toString());
+        map.put(str, value++);
+      } else {
+        map.put(str, 1);
+      }
+    }
+    Iterator<Object> substrings = map.keySet().iterator();
+    while (substrings.hasNext()) {
+      Object substring = substrings.next();
+      if (((Integer) map.get(substring)) > 1) {
+        SNode endptNode = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.Endpoint", null);
+        SPropertyOperations.set(endptNode, "name", substring.toString());
+        ListSequence.fromList(SLinkOperations.getTargets(thisNode, "endpoint", true)).addElement(endptNode);
+      }
     }
   }
 }
