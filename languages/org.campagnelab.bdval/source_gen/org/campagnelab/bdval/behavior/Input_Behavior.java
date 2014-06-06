@@ -15,7 +15,7 @@ public class Input_Behavior {
   }
 
   public static void call_load_7052920786130144602(SNode thisNode) {
-    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "display", true)).removeSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "display", true)));
+    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "displayRow", true)).removeSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "displayRow", true)));
     ListSequence.fromList(SLinkOperations.getTargets(thisNode, "sampleId", true)).removeSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "sampleId", true)));
     SPropertyOperations.set(thisNode, "numberOfSamples", null);
     try {
@@ -65,7 +65,7 @@ public class Input_Behavior {
       }
       colCounter++;
     }
-    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "display", true)).addElement(rowNode);
+    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "displayRow", true)).addElement(rowNode);
     // Gets the following rows 
     Table.RowIterator rowIterator = inputTable.firstRow();
     rowIterator.next();
@@ -83,7 +83,7 @@ public class Input_Behavior {
         }
         colCounter++;
       }
-      ListSequence.fromList(SLinkOperations.getTargets(thisNode, "display", true)).addElement(rowNode);
+      ListSequence.fromList(SLinkOperations.getTargets(thisNode, "displayRow", true)).addElement(rowNode);
       rowIterator.next();
       rowCounter++;
     }

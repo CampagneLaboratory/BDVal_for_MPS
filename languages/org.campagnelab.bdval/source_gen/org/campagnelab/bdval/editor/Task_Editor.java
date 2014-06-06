@@ -34,7 +34,15 @@ public class Task_Editor extends DefaultNodeEditor {
     if (renderingCondition_jn8cz7_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_jn8cz7_c0(editorContext, node));
     }
-    editorCell.addEditorCell(this.createProperty_jn8cz7_d0(editorContext, node));
+    if (renderingCondition_jn8cz7_a3a(node, editorContext)) {
+      editorCell.addEditorCell(this.createProperty_jn8cz7_d0(editorContext, node));
+    }
+    if (renderingCondition_jn8cz7_a4a(node, editorContext)) {
+      editorCell.addEditorCell(this.createConstant_jn8cz7_e0(editorContext, node));
+    }
+    if (renderingCondition_jn8cz7_a5a(node, editorContext)) {
+      editorCell.addEditorCell(this.createProperty_jn8cz7_f0(editorContext, node));
+    }
     return editorCell;
   }
 
@@ -70,7 +78,7 @@ public class Task_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_jn8cz7_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Number of Endpoints Not in CIDs :");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Number of Endpoints in CIDs and not in Task :");
     editorCell.setCellId("Constant_jn8cz7_c0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
@@ -107,5 +115,52 @@ public class Task_Editor extends DefaultNodeEditor {
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+
+  private static boolean renderingCondition_jn8cz7_a3a(SNode node, EditorContext editorContext) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "endpoint", true)).isNotEmpty();
+  }
+
+  private EditorCell createConstant_jn8cz7_e0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Endpoint Counts match in CIDs and Task :");
+    editorCell.setCellId("Constant_jn8cz7_e0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    style.set(StyleAttributes.READ_ONLY, true);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private static boolean renderingCondition_jn8cz7_a4a(SNode node, EditorContext editorContext) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "endpoint", true)).isNotEmpty();
+  }
+
+  private EditorCell createProperty_jn8cz7_f0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("endpointCountMatch");
+    provider.setNoTargetText("");
+    provider.setReadOnly(true);
+    provider.setAllowsEmptyTarget(true);
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_endpointCountMatch");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.READ_ONLY, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private static boolean renderingCondition_jn8cz7_a5a(SNode node, EditorContext editorContext) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "endpoint", true)).isNotEmpty();
   }
 }

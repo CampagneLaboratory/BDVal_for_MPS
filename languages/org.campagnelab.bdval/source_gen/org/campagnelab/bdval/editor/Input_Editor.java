@@ -42,7 +42,9 @@ public class Input_Editor extends DefaultNodeEditor {
     if (renderingCondition_z9sdep_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_z9sdep_c0(editorContext, node));
     }
-    editorCell.addEditorCell(this.createProperty_z9sdep_d0(editorContext, node));
+    if (renderingCondition_z9sdep_a3a(node, editorContext)) {
+      editorCell.addEditorCell(this.createProperty_z9sdep_d0(editorContext, node));
+    }
     if (renderingCondition_z9sdep_a4a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_z9sdep_e0(editorContext, node));
     }
@@ -123,6 +125,10 @@ public class Input_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private static boolean renderingCondition_z9sdep_a3a(SNode node, EditorContext editorContext) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "sampleId", true)).isNotEmpty();
+  }
+
   private EditorCell createConstant_z9sdep_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Preview : ");
     editorCell.setCellId("Constant_z9sdep_e0");
@@ -141,9 +147,9 @@ public class Input_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createRefNodeList_z9sdep_f0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new Input_Editor.displayListHandler_z9sdep_f0(node, "display", editorContext);
+    AbstractCellListHandler handler = new Input_Editor.displayRowListHandler_z9sdep_f0(node, "displayRow", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
-    editorCell.setCellId("refNodeList_display");
+    editorCell.setCellId("refNodeList_displayRow");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.READ_ONLY, true);
@@ -152,8 +158,8 @@ public class Input_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class displayListHandler_z9sdep_f0 extends RefNodeListHandler {
-    public displayListHandler_z9sdep_f0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class displayRowListHandler_z9sdep_f0 extends RefNodeListHandler {
+    public displayRowListHandler_z9sdep_f0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

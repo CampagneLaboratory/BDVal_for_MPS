@@ -174,5 +174,17 @@
     </dependencies>
     <rename id="w348.3367122381614475318" type="PROPERTY" from="EndptCounts" to="EndptCountMatches" />
   </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="28" />
+    </dependencies>
+    <rename id="w348.7052920786131087223" type="CHILD" from="display" to="displayRow" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="29" />
+    </dependencies>
+    <rename id="w348.3367122381615463983" type="PROPERTY" from="test" to="endpointCountMatch" />
+  </StructureModification>
 </history>
 

@@ -34,11 +34,15 @@ public class CIDs_Editor extends DefaultNodeEditor {
     if (renderingCondition_s0w797_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_s0w797_c0(editorContext, node));
     }
-    editorCell.addEditorCell(this.createProperty_s0w797_d0(editorContext, node));
+    if (renderingCondition_s0w797_a3a(node, editorContext)) {
+      editorCell.addEditorCell(this.createProperty_s0w797_d0(editorContext, node));
+    }
     if (renderingCondition_s0w797_a4a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_s0w797_e0(editorContext, node));
     }
-    editorCell.addEditorCell(this.createProperty_s0w797_f0(editorContext, node));
+    if (renderingCondition_s0w797_a5a(node, editorContext)) {
+      editorCell.addEditorCell(this.createProperty_s0w797_f0(editorContext, node));
+    }
     return editorCell;
   }
 
@@ -114,6 +118,10 @@ public class CIDs_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private static boolean renderingCondition_s0w797_a3a(SNode node, EditorContext editorContext) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "endpoint", true)).isNotEmpty();
+  }
+
   private EditorCell createConstant_s0w797_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Number of Sample Ids Not in Input :");
     editorCell.setCellId("Constant_s0w797_e0");
@@ -152,5 +160,9 @@ public class CIDs_Editor extends DefaultNodeEditor {
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+
+  private static boolean renderingCondition_s0w797_a5a(SNode node, EditorContext editorContext) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "endpoint", true)).isNotEmpty();
   }
 }
