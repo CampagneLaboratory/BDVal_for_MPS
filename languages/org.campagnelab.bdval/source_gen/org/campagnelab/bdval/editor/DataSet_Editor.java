@@ -19,7 +19,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
@@ -168,7 +168,9 @@ public class DataSet_Editor extends DefaultNodeEditor {
     if (renderingCondition_5gxpkq_a0h0(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_5gxpkq_a7a(editorContext, node));
     }
-    editorCell.addEditorCell(this.createRefNodeList_5gxpkq_b7a(editorContext, node));
+    if (renderingCondition_5gxpkq_a1h0(node, editorContext)) {
+      editorCell.addEditorCell(this.createRefNodeList_5gxpkq_b7a(editorContext, node));
+    }
     return editorCell;
   }
 
@@ -188,8 +190,11 @@ public class DataSet_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefNodeList_5gxpkq_b7a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new DataSet_Editor.endpointListHandler_5gxpkq_b7a(node, "endpoint", editorContext);
-    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
+    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_endpoint");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -228,6 +233,10 @@ public class DataSet_Editor extends DefaultNodeEditor {
         }
       }
     }
+  }
+
+  private static boolean renderingCondition_5gxpkq_a1h0(SNode node, EditorContext editorContext) {
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "input", true), "sampleId", true)).isNotEmpty();
   }
 
   private EditorCell createConstant_5gxpkq_i0(EditorContext editorContext, SNode node) {

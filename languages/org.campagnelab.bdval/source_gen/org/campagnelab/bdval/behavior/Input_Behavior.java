@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Iterator;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class Input_Behavior {
   public static void init(SNode thisNode) {
@@ -23,18 +24,16 @@ public class Input_Behavior {
   }
 
   public static void call_load_7052920786130144602(SNode thisNode) {
-    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "displayRow", true)).removeSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "displayRow", true)));
-    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "sampleId", true)).removeSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "sampleId", true)));
+    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "displayRow", true)).clear();
+    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "sampleId", true)).clear();
     SPropertyOperations.set(thisNode, "numberOfSamples", null);
     try {
       final DAVMode davMode = new DAVMode();
       Table inputTable = davMode.getReadInputFile(SPropertyOperations.getString(thisNode, "inputFileName"));
       int cols = inputTable.getColumnNumber();
-      SPropertyOperations.set(thisNode, "numberOfSamples", "" + (cols - 1));
       Input_Behavior.call_getInputIds_7052920786130389579(thisNode, inputTable, cols);
       Input_Behavior.call_getInputDisplay_3367122381600071702(thisNode, inputTable, cols);
-      Input_Behavior.call_getEndpoints_3367122381622662959(thisNode);
-      SPropertyOperations.set(thisNode, "test", "" + (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "endpoint", true)).count()));
+      // <node> 
     } catch (Exception e) {
       throw new IllegalArgumentException("Input load failed");
     }
@@ -46,9 +45,12 @@ public class Input_Behavior {
       String idString = inputTable.getIdentifier(counter);
       SNode idNode = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.SampleId", null);
       SPropertyOperations.set(idNode, "name", idString);
+      SNode endpointNode = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.Endpoint", null);
+      SLinkOperations.setTarget(idNode, "endpoint", endpointNode, true);
       ListSequence.fromList(SLinkOperations.getTargets(thisNode, "sampleId", true)).addElement(idNode);
       counter++;
     }
+    SPropertyOperations.set(thisNode, "numberOfSamples", "" + (counter - 1));
   }
 
   public static void call_getInputDisplay_3367122381600071702(SNode thisNode, Table inputTable, int cols) {
@@ -154,7 +156,7 @@ public class Input_Behavior {
       if (((Integer) map.get(substring)) > 1) {
         SNode endptNode = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.Endpoint", null);
         SPropertyOperations.set(endptNode, "name", substring.toString());
-        ListSequence.fromList(SLinkOperations.getTargets(thisNode, "endpoint", true)).addElement(endptNode);
+        ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.DataSet"), "endpoint", true)).addElement(endptNode);
       }
     }
   }

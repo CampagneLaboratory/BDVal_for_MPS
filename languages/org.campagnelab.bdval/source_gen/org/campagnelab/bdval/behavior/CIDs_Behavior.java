@@ -9,22 +9,21 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.io.FileReader;
 import java.io.File;
 import java.io.BufferedReader;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
+import java.util.List;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class CIDs_Behavior {
   public static void init(SNode thisNode) {
   }
 
   public static void call_load_4345048909863010217(SNode thisNode) {
-    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "endpoint", true)).removeSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "endpoint", true)));
-    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "sampleId", true)).removeSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "sampleId", true)));
+    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "mismatches", true)).clear();
     SPropertyOperations.set(thisNode, "numberOfSamples", null);
-    SPropertyOperations.set(thisNode, "numberOfIdMismatches", null);
     try {
       FileReader reader = new FileReader(new File(SPropertyOperations.getString(thisNode, "cidsFileName")));
       BufferedReader datasetReader = new BufferedReader(reader);
@@ -34,52 +33,53 @@ public class CIDs_Behavior {
       if (cols != 2) {
         throw new IllegalArgumentException();
       }
-      CIDs_Behavior.call_getCidsIdsAndEndpts_3367122381605517505(thisNode, datasetReader);
-      CIDs_Behavior.call_compareSampleIds_4345048909863405924(thisNode);
+      CIDs_Behavior.call_getCidsEndpts_3367122381605517505(thisNode, datasetReader);
       CIDs_Behavior.call_displayCids_3367122381623847914(thisNode);
     } catch (Exception e) {
       throw new IllegalArgumentException("CIDs load failed");
     }
   }
 
-  public static void call_getCidsIdsAndEndpts_3367122381605517505(SNode thisNode, BufferedReader cidsTable) {
+  public static void call_getCidsEndpts_3367122381605517505(SNode thisNode, BufferedReader cidsTable) {
     try {
-      int samples = 0;
+      SNode dataSet = SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.DataSet");
+      ListSequence.fromList(SLinkOperations.getTargets(dataSet, "endpoint", true)).clear();
+      Iterable<SNode> sampleIds = SLinkOperations.getTargets(SLinkOperations.getTarget(dataSet, "input", true), "sampleId", true);
+      int cidsSamples = 0;
+      int mismatches = 0;
       String line;
+      String endpoint;
+      final Wrappers._T<String> id = new Wrappers._T<String>();
       String[] lineArray;
+      List<String> distinctEndpts = ListSequence.fromList(new ArrayList<String>());
       while ((line = cidsTable.readLine()) != null) {
+        cidsSamples++;
         lineArray = line.split("\t");
-        SNode idNode = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.SampleId", null);
-        SNode endptNode = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.Endpoint", null);
-        SPropertyOperations.set(endptNode, "name", lineArray[0]);
-        SPropertyOperations.set(idNode, "name", lineArray[1]);
-        ListSequence.fromList(SLinkOperations.getTargets(thisNode, "endpoint", true)).addElement(endptNode);
-        ListSequence.fromList(SLinkOperations.getTargets(thisNode, "sampleId", true)).addElement(idNode);
-        samples++;
+        id.value = lineArray[1];
+        SNode matchingId = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(dataSet, "input", true), "sampleId", true)).findFirst(new IWhereFilter<SNode>() {
+          public boolean accept(SNode sampleId) {
+            return SPropertyOperations.getString(sampleId, "name").matches(id.value);
+          }
+        });
+        if ((matchingId != null)) {
+          endpoint = lineArray[0];
+          SPropertyOperations.set(SLinkOperations.getTarget(matchingId, "endpoint", true), "name", endpoint);
+          if (!(ListSequence.fromList(distinctEndpts).contains(endpoint))) {
+            SNode endptNode = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.Endpoint", null);
+            SPropertyOperations.set(endptNode, "name", endpoint);
+            ListSequence.fromList(SLinkOperations.getTargets(dataSet, "endpoint", true)).addElement(endptNode);
+            ListSequence.fromList(distinctEndpts).addElement(endpoint);
+          }
+        } else {
+          SNode mismatch = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.SampleId", null);
+          SPropertyOperations.set(mismatch, "name", id.value);
+          ListSequence.fromList(SLinkOperations.getTargets(thisNode, "mismatches", true)).addElement(mismatch);
+        }
       }
-      SPropertyOperations.set(thisNode, "numberOfSamples", "" + (samples));
-
+      SPropertyOperations.set(thisNode, "numberOfSamples", "" + (cidsSamples));
     } catch (Exception e) {
       throw new IllegalArgumentException();
     }
-  }
-
-  public static void call_compareSampleIds_4345048909863405924(SNode thisNode) {
-    Iterable<SNode> cidsIds = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "sampleId", true)).toListSequence();
-    final Iterable<SNode> inputIds = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.DataSet"), "input", true), "sampleId", true);
-    final Wrappers._int counter = new Wrappers._int(0);
-    Sequence.fromIterable(cidsIds).visitAll(new IVisitor<SNode>() {
-      public void visit(final SNode cidId) {
-        if (!(Sequence.fromIterable(inputIds).any(new IWhereFilter<SNode>() {
-          public boolean accept(SNode inputId) {
-            return SPropertyOperations.getString(inputId, "name") == SPropertyOperations.getString(cidId, "name");
-          }
-        }))) {
-          counter.value++;
-        }
-      }
-    });
-    SPropertyOperations.set(thisNode, "numberOfIdMismatches", "" + (counter.value));
   }
 
   public static void call_displayCids_3367122381623847914(final SNode thisNode) {

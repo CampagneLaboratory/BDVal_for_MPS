@@ -14,7 +14,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.CIDs").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("cidsFileName", "numberOfSamples", "numberOfIdMismatches").children(new String[]{"sampleId", "endpoint", "displayRow"}, new boolean[]{true, true, true}).alias("cids", "File containing phenotypes and Ids in columns").create();
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.CIDs").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("cidsFileName", "numberOfSamples").children(new String[]{"displayRow", "mismatches"}, new boolean[]{true, true}).alias("cids", "File containing phenotypes and Ids in columns").create();
       case 1:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.DataSet").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"platform", "input", "endpoint", "cids"}, new boolean[]{false, false, true, false}).create();
       case 2:
@@ -24,7 +24,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 4:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Endpoint").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").alias("endpoint", "An endpoint ").create();
       case 5:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Input").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("inputFileName", "numberOfSamples", "test").children(new String[]{"sampleId", "displayRow", "endpoint"}, new boolean[]{true, true, true}).alias("input", "File containing input (table of ID's and genes)").create();
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Input").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("inputFileName", "numberOfSamples").children(new String[]{"sampleId", "displayRow"}, new boolean[]{true, true}).alias("input", "File containing input (table of ID's and genes)").create();
       case 6:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Platform").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("platformFileName").alias("platform", "File containing platform").create();
       case 7:

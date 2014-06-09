@@ -33,6 +33,7 @@ public class DisplayValue_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(2, Measure.SPACES));
     style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.READ_ONLY, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

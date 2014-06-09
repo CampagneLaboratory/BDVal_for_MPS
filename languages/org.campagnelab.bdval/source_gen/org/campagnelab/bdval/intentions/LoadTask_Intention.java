@@ -56,7 +56,7 @@ public class LoadTask_Intention implements IntentionFactory {
   }
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.DataSet"), "input", true), "sampleId", true)).isNotEmpty() && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.DataSet"), "cids", true), "sampleId", true)).isNotEmpty() && isNotEmptyString(SPropertyOperations.getString(node, "taskFileName"));
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.DataSet"), "input", true), "sampleId", true)).isNotEmpty() && isNotEmptyString(SPropertyOperations.getString(node, "taskFileName"));
   }
 
   public SNodeReference getIntentionNodeReference() {
