@@ -67,7 +67,7 @@ public class Input_Editor extends DefaultNodeEditor {
   private EditorCell createProperty_z9sdep_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("inputFileName");
-    provider.setNoTargetText("Input File Location");
+    provider.setNoTargetText("insert input file location");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_inputFileName");
@@ -98,7 +98,7 @@ public class Input_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_z9sdep_a2a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "sampleId", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "sample", true)).isNotEmpty();
   }
 
   private EditorCell createProperty_z9sdep_d0(EditorContext editorContext, SNode node) {
@@ -126,7 +126,7 @@ public class Input_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_z9sdep_a3a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "sampleId", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "sample", true)).isNotEmpty();
   }
 
   private EditorCell createConstant_z9sdep_e0(EditorContext editorContext, SNode node) {
@@ -143,7 +143,7 @@ public class Input_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_z9sdep_a4a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "sampleId", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "sample", true)).isNotEmpty();
   }
 
   private EditorCell createRefNodeList_z9sdep_f0(EditorContext editorContext, SNode node) {
@@ -195,6 +195,6 @@ public class Input_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_z9sdep_a5a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "sampleId", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "sample", true)).isNotEmpty();
   }
 }

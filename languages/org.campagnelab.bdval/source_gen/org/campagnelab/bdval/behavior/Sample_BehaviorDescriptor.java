@@ -7,8 +7,8 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
-public class SampleId_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
-  public SampleId_BehaviorDescriptor() {
+public class Sample_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
+  public Sample_BehaviorDescriptor() {
   }
 
   public String virtual_getFqName_1213877404258(SNode thisNode) {
@@ -17,6 +17,6 @@ public class SampleId_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor 
 
   @Override
   public String getConceptFqName() {
-    return "org.campagnelab.bdval.structure.SampleId";
+    return "org.campagnelab.bdval.structure.Sample";
   }
 }

@@ -13,9 +13,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import org.campagnelab.bdval.behavior.Input_Behavior;
-import org.campagnelab.bdval.behavior.CIDs_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class LoadInput_Intention implements IntentionFactory {
@@ -84,7 +81,6 @@ public class LoadInput_Intention implements IntentionFactory {
 
     public void execute(final SNode node, final EditorContext editorContext) {
       Input_Behavior.call_load_7052920786130144602(node);
-      CIDs_Behavior.call_displayCids_3367122381623847914(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.DataSet"), "cids", true));
     }
 
     public IntentionDescriptor getDescriptor() {

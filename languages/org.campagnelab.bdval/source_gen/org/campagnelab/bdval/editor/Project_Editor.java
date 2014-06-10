@@ -35,7 +35,8 @@ public class Project_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_o8np3d_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_o8np3d_b0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_o8np3d_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_o8np3d_c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_o8np3d_d0(editorContext, node));
     return editorCell;
   }
 
@@ -52,7 +53,7 @@ public class Project_Editor extends DefaultNodeEditor {
   private EditorCell createProperty_o8np3d_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
-    provider.setNoTargetText("<no name>");
+    provider.setNoTargetText("insert project name");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
@@ -70,8 +71,18 @@ public class Project_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_o8np3d_c0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new Project_Editor.datasetListHandler_o8np3d_c0(node, "dataset", editorContext);
+  private EditorCell createConstant_o8np3d_c0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_o8np3d_c0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefNodeList_o8np3d_d0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new Project_Editor.datasetListHandler_o8np3d_d0(node, "dataset", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_dataset");
     Style style = new StyleImpl();
@@ -81,8 +92,8 @@ public class Project_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class datasetListHandler_o8np3d_c0 extends RefNodeListHandler {
-    public datasetListHandler_o8np3d_c0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class datasetListHandler_o8np3d_d0 extends RefNodeListHandler {
+    public datasetListHandler_o8np3d_d0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

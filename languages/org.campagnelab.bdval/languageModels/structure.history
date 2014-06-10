@@ -210,5 +210,23 @@
     </dependencies>
     <rename id="w348.6032947574603936005" type="CHILD" from="mistmatches" to="mismatches" />
   </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="34" />
+    </dependencies>
+    <rename id="w348.7052920786130939214" type="CHILD" from="sampleId" to="sample" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="35" />
+    </dependencies>
+    <rename id="w348.7052920786130772514" type="CONCEPT" from="SampleId" to="Sample" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="36" />
+    </dependencies>
+    <rename id="w348.7083662764378315535" type="CHILD" from="endpointDeclaration" to="endpoint" />
+  </StructureModification>
 </history>
 

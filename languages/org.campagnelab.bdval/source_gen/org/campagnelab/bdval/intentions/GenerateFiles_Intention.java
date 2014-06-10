@@ -9,10 +9,10 @@ import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -57,11 +57,11 @@ public class GenerateFiles_Intention implements IntentionFactory {
   }
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(node, "platform", true), "platformFileName"))) && (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "input", true), "sampleId", true)).isNotEmpty()) && (ListSequence.fromList(SLinkOperations.getTargets(node, "endpoint", true)).isNotEmpty()) && (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "input", true), "sampleId", true)).any(new IWhereFilter<SNode>() {
+    return (isNotEmptyString(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.Project"), "name"))) && (isNotEmptyString(SPropertyOperations.getString(node, "name"))) && (isNotEmptyString(SPropertyOperations.getString(node, "outputLocation"))) && (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(node, "platform", true), "platformFileName"))) && (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "input", true), "sample", true)).isNotEmpty()) && (ListSequence.fromList(SLinkOperations.getTargets(node, "endpoint", true)).isNotEmpty()) && (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "input", true), "sample", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode sampleId) {
         return isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(sampleId, "endpoint", true), "name"));
       }
-    })) && (isNotEmptyString(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.Project"), "name")));
+    }));
   }
 
   public SNodeReference getIntentionNodeReference() {
@@ -88,7 +88,6 @@ public class GenerateFiles_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      // <node> 
       DataSet_Behavior.call_generateFiles_6032947574604950587(node);
     }
 

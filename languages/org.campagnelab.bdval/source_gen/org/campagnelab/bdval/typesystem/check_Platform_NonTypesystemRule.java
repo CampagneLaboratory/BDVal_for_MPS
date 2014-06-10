@@ -22,7 +22,7 @@ public class check_Platform_NonTypesystemRule extends AbstractNonTypesystemRule_
     if (isNotEmptyString(SPropertyOperations.getString(platform, "platformFileName")) && !(new File(SPropertyOperations.getString(platform, "platformFileName")).isFile())) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(platform, "Input file location does not point to a file", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "3367122381612443835", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(platform, "Platform file location does not point to a file", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "3367122381612443835", null, errorTarget);
       }
     }
   }

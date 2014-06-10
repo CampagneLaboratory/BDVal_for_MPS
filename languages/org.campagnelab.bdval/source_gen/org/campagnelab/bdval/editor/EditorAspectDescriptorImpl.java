@@ -32,9 +32,7 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 7:
         return Collections.<ConceptEditor>singletonList(new Project_Editor());
       case 8:
-        return Collections.<ConceptEditor>singletonList(new SampleId_Editor());
-      case 9:
-        return Collections.<ConceptEditor>singletonList(new Task_Editor());
+        return Collections.<ConceptEditor>singletonList(new Sample_Editor());
       default:
     }
     return Collections.<ConceptEditor>emptyList();
@@ -46,5 +44,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
 
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"org.campagnelab.bdval.structure.CIDs", "org.campagnelab.bdval.structure.DataSet", "org.campagnelab.bdval.structure.DisplayRow", "org.campagnelab.bdval.structure.DisplayValue", "org.campagnelab.bdval.structure.Endpoint", "org.campagnelab.bdval.structure.Input", "org.campagnelab.bdval.structure.Platform", "org.campagnelab.bdval.structure.Project", "org.campagnelab.bdval.structure.SampleId", "org.campagnelab.bdval.structure.Task"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"org.campagnelab.bdval.structure.CIDs", "org.campagnelab.bdval.structure.DataSet", "org.campagnelab.bdval.structure.DisplayRow", "org.campagnelab.bdval.structure.DisplayValue", "org.campagnelab.bdval.structure.Endpoint", "org.campagnelab.bdval.structure.Input", "org.campagnelab.bdval.structure.Platform", "org.campagnelab.bdval.structure.Project", "org.campagnelab.bdval.structure.Sample"};
 }
