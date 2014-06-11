@@ -57,9 +57,9 @@ public class GenerateFiles_Intention implements IntentionFactory {
   }
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return (isNotEmptyString(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.Project"), "name"))) && (isNotEmptyString(SPropertyOperations.getString(node, "name"))) && (isNotEmptyString(SPropertyOperations.getString(node, "outputLocation"))) && (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(node, "platform", true), "platformFileName"))) && (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "input", true), "sample", true)).isNotEmpty()) && (ListSequence.fromList(SLinkOperations.getTargets(node, "endpoint", true)).isNotEmpty()) && (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "input", true), "sample", true)).any(new IWhereFilter<SNode>() {
-      public boolean accept(SNode sampleId) {
-        return isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(sampleId, "endpoint", true), "name"));
+    return (isNotEmptyString(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.Project"), "name"))) && (isNotEmptyString(SPropertyOperations.getString(node, "name"))) && (isNotEmptyString(SPropertyOperations.getString(node, "outputLocation"))) && (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(node, "platform", true), "platformFileName"))) && (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "input", true), "sample", true)).isNotEmpty()) && ((SLinkOperations.getTarget(node, "task", true) != null)) && (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "input", true), "sample", true)).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode sample) {
+        return (SLinkOperations.getTarget(sample, "category", false) != null);
       }
     }));
   }

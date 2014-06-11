@@ -6,17 +6,17 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.bdval.DAVMode;
 import edu.mssm.crover.tables.Table;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Iterator;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class Input_Behavior {
   public static void init(SNode thisNode) {
@@ -26,6 +26,8 @@ public class Input_Behavior {
     SPropertyOperations.set(thisNode, "numberOfSamples", null);
     ListSequence.fromList(SLinkOperations.getTargets(thisNode, "sample", true)).clear();
     ListSequence.fromList(SLinkOperations.getTargets(thisNode, "displayRow", true)).clear();
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.DataSet"), "cids", true), "mismatches", true)).clear();
+    SPropertyOperations.set(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.DataSet"), "cids", true), "numberOfSamples", null);
     try {
       final DAVMode davMode = new DAVMode();
       Table inputTable = davMode.getReadInputFile(SPropertyOperations.getString(thisNode, "inputFileName"));
@@ -38,21 +40,27 @@ public class Input_Behavior {
     }
   }
 
-  public static void call_getInputIds_7052920786130389579(SNode thisNode, Table inputTable, int cols) {
+  public static void call_getInputIds_7052920786130389579(final SNode thisNode, Table inputTable, int cols) {
     int counter = 1;
     while (counter < cols) {
       String idString = inputTable.getIdentifier(counter);
-      SNode idNode = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.Sample", null);
-      SPropertyOperations.set(idNode, "name", idString);
-      SNode endpointNode = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.Endpoint", null);
-      SLinkOperations.setTarget(idNode, "endpoint", endpointNode, true);
-      ListSequence.fromList(SLinkOperations.getTargets(thisNode, "sample", true)).addElement(idNode);
+      SNode sampleNode = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.Sample", null);
+      SPropertyOperations.set(sampleNode, "name", idString);
+      ListSequence.fromList(SLinkOperations.getTargets(thisNode, "sample", true)).addElement(sampleNode);
       counter++;
     }
+    final int length = Input_Behavior.call_getMaxIdLength_3367122381624659193(thisNode);
+    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "sample", true)).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode sample) {
+        SPropertyOperations.set(sample, "idWithSpaces", Input_Behavior.call_reformatString_3367122381603806186(thisNode, SPropertyOperations.getString(sample, "name"), length));
+      }
+    });
     SPropertyOperations.set(thisNode, "numberOfSamples", "" + (counter - 1));
   }
 
   public static void call_getInputDisplay_3367122381600071702(SNode thisNode, Table inputTable, int cols) {
+    List<Integer> length = ListSequence.fromList(new ArrayList<Integer>());
+    String output;
     int rows = inputTable.getRowNumber();
     int colMax = 8;
     int rowMax = 10;
@@ -62,14 +70,28 @@ public class Input_Behavior {
     if (rows < rowMax) {
       rowMax = rows;
     }
+    Table.RowIterator rowIterator = inputTable.firstRow();
+    rowIterator.next();
     // Gets the first row 
     int colCounter = 0;
-    int length = Input_Behavior.call_getDisplayLength_3367122381624659193(thisNode);
     SNode rowNode = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.DisplayRow", null);
+    // Gets the first spot 
+    try {
+      SNode valNode = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.DisplayValue", null);
+      output = inputTable.getIdentifier(colCounter);
+      ListSequence.fromList(length).addElement(Math.max(inputTable.elementToString(colCounter, rowIterator).length(), output.length()) + 2);
+      SPropertyOperations.set(valNode, "value", Input_Behavior.call_reformatString_3367122381603806186(thisNode, output, ListSequence.fromList(length).getElement(colCounter)));
+      ListSequence.fromList(SLinkOperations.getTargets(rowNode, "displayValue", true)).addElement(valNode);
+      colCounter++;
+    } catch (Exception e) {
+      throw new Error();
+    }
     while (colCounter < colMax) {
       try {
         SNode valNode = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.DisplayValue", null);
-        SPropertyOperations.set(valNode, "value", Input_Behavior.call_reformatString_3367122381603806186(thisNode, inputTable.getIdentifier(colCounter), length));
+        output = inputTable.getIdentifier(colCounter);
+        ListSequence.fromList(length).addElement(Math.max(output.length() + 2, 13));
+        SPropertyOperations.set(valNode, "value", Input_Behavior.call_reformatString_3367122381603806186(thisNode, output, ListSequence.fromList(length).getElement(colCounter)));
         ListSequence.fromList(SLinkOperations.getTargets(rowNode, "displayValue", true)).addElement(valNode);
       } catch (Exception e) {
         throw new Error();
@@ -78,8 +100,6 @@ public class Input_Behavior {
     }
     ListSequence.fromList(SLinkOperations.getTargets(thisNode, "displayRow", true)).addElement(rowNode);
     // Gets the following rows 
-    Table.RowIterator rowIterator = inputTable.firstRow();
-    rowIterator.next();
     int rowCounter = 1;
     while (rowCounter < rowMax) {
       rowNode = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.DisplayRow", null);
@@ -87,7 +107,7 @@ public class Input_Behavior {
       while (colCounter < colMax) {
         try {
           SNode valNode = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.DisplayValue", null);
-          SPropertyOperations.set(valNode, "value", Input_Behavior.call_reformatString_3367122381603806186(thisNode, inputTable.elementToString(colCounter, rowIterator), length));
+          SPropertyOperations.set(valNode, "value", Input_Behavior.call_reformatString_3367122381603806186(thisNode, inputTable.elementToString(colCounter, rowIterator), ListSequence.fromList(length).getElement(colCounter)));
           ListSequence.fromList(SLinkOperations.getTargets(rowNode, "displayValue", true)).addElement(valNode);
         } catch (Exception e) {
           throw new Error();
@@ -110,8 +130,8 @@ public class Input_Behavior {
     }
   }
 
-  public static int call_getDisplayLength_3367122381624659193(SNode thisNode) {
-    final Wrappers._int stringLength = new Wrappers._int(11);
+  public static int call_getMaxIdLength_3367122381624659193(SNode thisNode) {
+    final Wrappers._int stringLength = new Wrappers._int(0);
     final Wrappers._int idLength = new Wrappers._int();
     ListSequence.fromList(SLinkOperations.getTargets(thisNode, "sample", true)).visitAll(new IVisitor<SNode>() {
       public void visit(SNode sample) {
@@ -156,7 +176,6 @@ public class Input_Behavior {
       if (((Integer) map.get(substring)) > 1) {
         SNode endptDecNode = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.Endpoint", null);
         SPropertyOperations.set(endptDecNode, "name", substring.toString());
-        ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.DataSet"), "endpoint", true)).addElement(endptDecNode);
       }
     }
   }

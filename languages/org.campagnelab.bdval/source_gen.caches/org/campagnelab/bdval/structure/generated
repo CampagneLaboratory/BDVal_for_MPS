@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-5qijqekd0kuv1h2kwcppm0sx4zq1jt2">
+<dependencies version="2" modelHash="5uflgdog67gw1uonxqml76bmpazcqb1">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="5sdbpqxziyuazpb9j1p4zdk6bnvbn49" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-5mgxduek28h3ywdzzsk4capaz4hgjm0" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="303xz1b2lyseld0axia86q3lpvucmq6" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="b4ewbuz42qcbg1awca5bacgi0vopxqt" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="a8elw7fctzg6sg8fe36u9gzu42axhdb" />
-  <common hash="-1yw7t54tnn048m24wtnbi34sxr16zat" dependsOnNodes="true">
+  <common hash="-6cvosrq0dxl8q540ifkmy9dfqwcg09a" dependsOnNodes="true">
     <dep root="3367122381622495536" />
     <dep root="4345048909861421891" />
     <dep root="4345048909863217124" />
@@ -16,6 +16,9 @@
     <dep root="7052920786130772514" />
     <dep root="7052920786130810093" />
     <dep root="7083662764383720206" />
+    <dep root="7083662764384091354" />
+    <dep root="7083662764384236370" />
+    <dep root="7083662764388713867" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -24,14 +27,17 @@
     <file name="StructureAspectDescriptor.java" />
   </common>
   <source id="7052920786129988728" name="Input" hash="346fmbn9pn0blcquxl9gu1tljt7t3tg" />
-  <source id="7052920786130131778" name="DataSet" hash="d1zgwy7z4yt5rkl06cv9mmpplnnyqta" />
+  <source id="7052920786130131778" name="DataSet" hash="a3ithe5iyhz13t6ktk7p9d89ydr6wsp" />
   <source id="7052920786130131783" name="Platform" hash="bw8l3tcbkg6pn1yowdhp5gr9g481pck" />
   <source id="7052920786130131788" name="CIDs" hash="ds9342fcknzuzs22tl8ekh0h5q54boq" />
-  <source id="7052920786130772514" name="Sample" hash="3mupb5aqh9eto3rxl621wwprdb8781f" />
+  <source id="7052920786130772514" name="Sample" hash="bazz8f2j2wi904rhjrintbdc8acmda4" />
   <source id="7052920786130810093" name="DisplayRow" hash="-85cnn4fuex7tnoqj302fcexvpjaprv3" />
   <source id="4345048909861421891" name="DisplayValue" hash="cae90owpyvwjrji7bxkwhoqd682kk32" />
-  <source id="4345048909863217124" name="Endpoint" hash="v5jrrwtiklywnje69uy6eyrn0k5yw2" />
-  <source id="3367122381622495536" name="Project" hash="-yl8vmrdmnh1eby6rbhcjc0mm6mwfke" />
-  <source id="7083662764383720206" name="EndpointCategory" hash="-aiy7xvhkutr40coy7a49pjgejykf1os" />
+  <source id="4345048909863217124" name="Endpoint" hash="2zbbjvjaciwvvjrcv1oigfxqlrlfsbh" />
+  <source id="3367122381622495536" name="Project" hash="sr1zb7h5e1irev407b0ho6w91pofr8" />
+  <source id="7083662764383720206" name="EndpointCategory" hash="-dcvyx45fnpau0akdqizv2m0jmezad1h" />
+  <source id="7083662764384091354" name="Task" hash="93vpjfgh1r3yrl5f3go8xvo5lebnync" />
+  <source id="7083662764384236370" name="CategoryReference" hash="81ky4runcuhaa6h3wlyd0gft1q5ar4b" />
+  <source id="7083662764388713867" name="Test" hash="-1498f1f1580z2pgttqdwt67c8d8f7z7" />
 </dependencies>
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-5pvst3l0jmhamco3h74mqm9awbe6ix1">
-  <common hash="8e2udgc9odq74lsewx1rqn8k4s3fxw9" />
-  <source id="7083662764383670084" name="Project" hash="-7ygd0b0ktagcaw8mp4yx5aesh5iq7w6">
-    <file name="Project" />
+<dependencies version="2" modelHash="emitvx78ymfj40gjagytbj8y7ydden5">
+  <common hash="7sq67h54hjysz5nwxl42ntqvxdeyyja" />
+  <source id="7083662764384843292" name="Sample Project" hash="98tah4r2jy4ehw31bm9qgd5pifee9b6">
+    <file name="Sample Project" />
   </source>
 </dependencies>
 

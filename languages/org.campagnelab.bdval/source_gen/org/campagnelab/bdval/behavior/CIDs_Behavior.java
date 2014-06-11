@@ -11,8 +11,6 @@ import java.io.File;
 import java.io.BufferedReader;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import java.util.List;
-import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
@@ -38,34 +36,29 @@ public class CIDs_Behavior {
   public static void call_getCidsEndpts_3367122381605517505(SNode thisNode, BufferedReader cidsTable) {
     try {
       SNode dataSet = SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.DataSet");
-      ListSequence.fromList(SLinkOperations.getTargets(dataSet, "endpoint", true)).clear();
       int cidsSamples = 0;
       String line;
-      String[] lineArray;
+      final Wrappers._T<String[]> lineArray = new Wrappers._T<String[]>();
       final Wrappers._T<String> id = new Wrappers._T<String>();
-      String endpoint;
-      List<String> distinctEndpts = ListSequence.fromList(new ArrayList<String>());
       while ((line = cidsTable.readLine()) != null) {
         cidsSamples++;
-        lineArray = line.split("\t");
-        id.value = lineArray[1];
-        SNode matchingId = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(dataSet, "input", true), "sample", true)).findFirst(new IWhereFilter<SNode>() {
+        lineArray.value = line.split("\t");
+        id.value = lineArray.value[1];
+        SNode sampleNode = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(dataSet, "input", true), "sample", true)).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode sample) {
             return SPropertyOperations.getString(sample, "name").matches(id.value);
           }
         });
-        if ((matchingId != null)) {
-          endpoint = lineArray[0];
-          SPropertyOperations.set(SLinkOperations.getTarget(matchingId, "endpoint", true), "name", endpoint);
-          if (!(ListSequence.fromList(distinctEndpts).contains(endpoint))) {
-            SNode endptNode = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.Endpoint", null);
-            SPropertyOperations.set(endptNode, "name", endpoint);
-            ListSequence.fromList(SLinkOperations.getTargets(dataSet, "endpoint", true)).addElement(endptNode);
-            ListSequence.fromList(distinctEndpts).addElement(endpoint);
+        SNode categoryNode = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(dataSet, "task", true), "categoryReference", true)).findFirst(new IWhereFilter<SNode>() {
+          public boolean accept(SNode categoryRef) {
+            return SPropertyOperations.getString(SLinkOperations.getTarget(categoryRef, "endpointCategory", false), "name").toLowerCase().matches(lineArray.value[0].toLowerCase());
           }
+        });
+        if ((sampleNode != null) && (categoryNode != null)) {
+          SLinkOperations.setTarget(sampleNode, "category", categoryNode, false);
         } else {
           SNode mismatch = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.Sample", null);
-          SPropertyOperations.set(mismatch, "name", id.value);
+          SPropertyOperations.set(mismatch, "idWithSpaces", id.value);
           ListSequence.fromList(SLinkOperations.getTargets(thisNode, "mismatches", true)).addElement(mismatch);
         }
       }

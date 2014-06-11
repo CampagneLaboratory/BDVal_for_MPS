@@ -228,5 +228,11 @@
     </dependencies>
     <rename id="w348.7083662764378315535" type="CHILD" from="endpointDeclaration" to="endpoint" />
   </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="37" />
+    </dependencies>
+    <rename id="w348.7083662764384236373" type="CHILD" from="endpointCategory" to="categoryReference" />
+  </StructureModification>
 </history>
 
