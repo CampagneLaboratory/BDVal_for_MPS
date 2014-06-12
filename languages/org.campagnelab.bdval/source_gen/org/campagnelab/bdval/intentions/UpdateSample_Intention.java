@@ -14,13 +14,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
-import org.campagnelab.bdval.behavior.Sample_Behavior;
+import org.campagnelab.bdval.behavior.CIDs_Behavior;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class UpdateSamples_Intention implements IntentionFactory {
+public class UpdateSample_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
 
-  public UpdateSamples_Intention() {
+  public UpdateSample_Intention() {
   }
 
   public String getConcept() {
@@ -28,11 +28,11 @@ public class UpdateSamples_Intention implements IntentionFactory {
   }
 
   public String getPresentation() {
-    return "UpdateSamples";
+    return "UpdateSample";
   }
 
   public String getPersistentStateKey() {
-    return "org.campagnelab.bdval.intentions.UpdateSamples_Intention";
+    return "org.campagnelab.bdval.intentions.UpdateSample_Intention";
   }
 
   public String getLanguageFqName() {
@@ -59,7 +59,7 @@ public class UpdateSamples_Intention implements IntentionFactory {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:f3ea1e25-aab8-445d-9fb9-090b3b3258bf(org.campagnelab.bdval.intentions)", "7083662764409584771");
+    return new SNodePointer("r:f3ea1e25-aab8-445d-9fb9-090b3b3258bf(org.campagnelab.bdval.intentions)", "7083662764410476843");
   }
 
   public boolean isSurroundWith() {
@@ -68,7 +68,7 @@ public class UpdateSamples_Intention implements IntentionFactory {
 
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
-      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new UpdateSamples_Intention.IntentionImplementation());
+      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new UpdateSample_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
@@ -82,11 +82,11 @@ public class UpdateSamples_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      Sample_Behavior.call_updateSamples_7083662764408749188(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.DataSet"), "input", true), "sample", true)).first());
+      CIDs_Behavior.call_updateSamples_7083662764410229694(node);
     }
 
     public IntentionDescriptor getDescriptor() {
-      return UpdateSamples_Intention.this;
+      return UpdateSample_Intention.this;
     }
   }
 }

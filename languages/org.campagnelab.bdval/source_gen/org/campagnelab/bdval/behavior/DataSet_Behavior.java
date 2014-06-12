@@ -12,6 +12,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.io.File;
 import java.util.HashMap;
+import org.apache.commons.io.FileUtils;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.List;
@@ -31,18 +32,56 @@ public class DataSet_Behavior {
     });
     String parentName = WordUtils.capitalize(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.Project"), "name")).replaceAll("\\s", "");
     String datasetName = parentName + "-" + endpointDescription.value + "-" + SPropertyOperations.getString(thisNode, "name").replaceAll("\\s", "");
-    File folder = new File(SPropertyOperations.getString(thisNode, "outputLocation") + "/" + parentName);
-    folder.mkdirs();
-    HashMap categoryCounterMap = DataSet_Behavior.call_createCIDs_6032947574604951771(thisNode, folder, datasetName);
+    String directoryName = SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.Project"), "properties", true), "outputLocation") + "/data/bdval/" + ((parentName == null ? null : parentName.trim())) + "/";
+    File directory = new File(directoryName);
+    directory.mkdirs();
+    boolean proceed;
+    proceed = DataSet_Behavior.call_copyPlatform_7083662764413093380(thisNode, directoryName, datasetName);
+    proceed = DataSet_Behavior.call_copyInput_7083662764415129152(thisNode, directoryName, datasetName, proceed);
+    HashMap categoryCounterMap = DataSet_Behavior.call_createCIDs_6032947574604951771(thisNode, directoryName, datasetName, proceed);
     if (!(categoryCounterMap.isEmpty())) {
-      DataSet_Behavior.call_createTask_6032947574607589325(thisNode, folder, datasetName, categoryCounterMap);
+      DataSet_Behavior.call_createTask_6032947574607589325(thisNode, directoryName, datasetName, categoryCounterMap);
     }
   }
 
-  public static HashMap call_createCIDs_6032947574604951771(SNode thisNode, File folder, String datasetName) {
+  public static boolean call_copyPlatform_7083662764413093380(SNode thisNode, String directoryName, String datasetName) {
+    String platformFolder = directoryName + "platform/";
+    new File(platformFolder).mkdir();
+    String fileName = platformFolder + new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "platform", true), "platformFileName")).getName();
+    if (DataSet_Behavior.call_checkFile_7083662764406992609(thisNode, fileName)) {
+      try {
+        FileUtils.copyFile(new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "platform", true), "platformFileName")), new File(fileName));
+        return true;
+      } catch (Exception e) {
+        throw new Error("Error Copying Platform File");
+      }
+    } else {
+      return false;
+    }
+  }
+
+  public static boolean call_copyInput_7083662764415129152(SNode thisNode, String directoryName, String datasetName, boolean proceed) {
+    String inputFolder = directoryName + "input/";
+    new File(inputFolder).mkdir();
+    String fileName = inputFolder + new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "input", true), "inputFileName")).getName();
+    if (proceed && DataSet_Behavior.call_checkFile_7083662764406992609(thisNode, fileName)) {
+      try {
+        FileUtils.copyFile(new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "input", true), "inputFileName")), new File(fileName));
+        return true;
+      } catch (Exception e) {
+        throw new Error("Error Copying Input File");
+      }
+    } else {
+      return false;
+    }
+  }
+
+  public static HashMap call_createCIDs_6032947574604951771(SNode thisNode, String directoryName, String datasetName, boolean proceed) {
     try {
-      String fileName = folder.toString() + "/" + datasetName + ".cids";
-      if (DataSet_Behavior.call_checkFile_7083662764406992609(thisNode, fileName)) {
+      String cidsFolder = directoryName + "cids/";
+      new File(cidsFolder).mkdir();
+      String fileName = cidsFolder.toString() + datasetName + ".cids";
+      if (proceed && DataSet_Behavior.call_checkFile_7083662764406992609(thisNode, fileName)) {
         FileWriter file = new FileWriter(fileName);
         final PrintWriter writer = new PrintWriter(file);
         writer.print(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "task", true), "endpoint", false), "name") + "\t");
@@ -75,9 +114,11 @@ public class DataSet_Behavior {
     }
   }
 
-  public static void call_createTask_6032947574607589325(SNode thisNode, File folder, String datasetName, final HashMap categoryCountMap) {
+  public static void call_createTask_6032947574607589325(SNode thisNode, String directoryName, String datasetName, final HashMap categoryCountMap) {
     try {
-      String fileName = folder.toString() + "/" + datasetName + ".tasks";
+      String taskFolder = directoryName + "tasks/";
+      new File(taskFolder).mkdir();
+      String fileName = taskFolder.toString() + datasetName + ".tasks";
       if (DataSet_Behavior.call_checkFile_7083662764406992609(thisNode, fileName)) {
         FileWriter file = new FileWriter(fileName);
         PrintWriter writer = new PrintWriter(file);

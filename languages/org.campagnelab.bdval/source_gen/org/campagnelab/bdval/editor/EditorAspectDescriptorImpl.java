@@ -36,10 +36,12 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 9:
         return Collections.<ConceptEditor>singletonList(new Project_Editor());
       case 10:
-        return Collections.<ConceptEditor>singletonList(new Sample_Editor());
+        return Collections.<ConceptEditor>singletonList(new Properties_Editor());
       case 11:
-        return Collections.<ConceptEditor>singletonList(new Task_Editor());
+        return Collections.<ConceptEditor>singletonList(new Sample_Editor());
       case 12:
+        return Collections.<ConceptEditor>singletonList(new Task_Editor());
+      case 13:
         return Collections.<ConceptEditor>singletonList(new Test_Editor());
       default:
     }
@@ -52,5 +54,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
 
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"org.campagnelab.bdval.structure.CIDs", "org.campagnelab.bdval.structure.CategoryReference", "org.campagnelab.bdval.structure.DataSet", "org.campagnelab.bdval.structure.DisplayRow", "org.campagnelab.bdval.structure.DisplayValue", "org.campagnelab.bdval.structure.Endpoint", "org.campagnelab.bdval.structure.EndpointCategory", "org.campagnelab.bdval.structure.Input", "org.campagnelab.bdval.structure.Platform", "org.campagnelab.bdval.structure.Project", "org.campagnelab.bdval.structure.Sample", "org.campagnelab.bdval.structure.Task", "org.campagnelab.bdval.structure.Test"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"org.campagnelab.bdval.structure.CIDs", "org.campagnelab.bdval.structure.CategoryReference", "org.campagnelab.bdval.structure.DataSet", "org.campagnelab.bdval.structure.DisplayRow", "org.campagnelab.bdval.structure.DisplayValue", "org.campagnelab.bdval.structure.Endpoint", "org.campagnelab.bdval.structure.EndpointCategory", "org.campagnelab.bdval.structure.Input", "org.campagnelab.bdval.structure.Platform", "org.campagnelab.bdval.structure.Project", "org.campagnelab.bdval.structure.Properties", "org.campagnelab.bdval.structure.Sample", "org.campagnelab.bdval.structure.Task", "org.campagnelab.bdval.structure.Test"};
 }

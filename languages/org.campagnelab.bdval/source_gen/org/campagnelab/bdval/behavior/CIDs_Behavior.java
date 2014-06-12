@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class CIDs_Behavior {
   public static void init(SNode thisNode) {
@@ -28,6 +29,7 @@ public class CIDs_Behavior {
         throw new IllegalArgumentException();
       }
       CIDs_Behavior.call_getCidsEndpts_3367122381605517505(thisNode, datasetReader);
+      CIDs_Behavior.call_updateSamples_7083662764410229694(thisNode);
     } catch (Exception e) {
       throw new IllegalArgumentException("Invalid CIDs File");
     }
@@ -36,12 +38,10 @@ public class CIDs_Behavior {
   public static void call_getCidsEndpts_3367122381605517505(SNode thisNode, BufferedReader cidsTable) {
     try {
       SNode dataSet = SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.DataSet");
-      int cidsSamples = 0;
       String line;
       final Wrappers._T<String[]> lineArray = new Wrappers._T<String[]>();
       final Wrappers._T<String> id = new Wrappers._T<String>();
       while ((line = cidsTable.readLine()) != null) {
-        cidsSamples++;
         lineArray.value = line.split("\t");
         id.value = lineArray.value[1];
         SNode sampleNode = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(dataSet, "input", true), "sample", true)).findFirst(new IWhereFilter<SNode>() {
@@ -54,17 +54,35 @@ public class CIDs_Behavior {
             return SPropertyOperations.getString(SLinkOperations.getTarget(categoryRef, "endpointCategory", false), "name").toLowerCase().matches(lineArray.value[0].toLowerCase());
           }
         });
-        if ((sampleNode != null) && (categoryNode != null)) {
+        if ((sampleNode != null)) {
           SLinkOperations.setTarget(sampleNode, "category", categoryNode, false);
         } else {
           SNode mismatch = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.Sample", null);
-          SPropertyOperations.set(mismatch, "idWithSpaces", id.value);
+          SPropertyOperations.set(mismatch, "displayId", id.value);
           ListSequence.fromList(SLinkOperations.getTargets(thisNode, "mismatches", true)).addElement(mismatch);
         }
       }
-      SPropertyOperations.set(thisNode, "numberOfSamples", "" + (cidsSamples));
     } catch (Exception e) {
       throw new Error();
     }
+  }
+
+  public static void call_updateSamples_7083662764410229694(final SNode thisNode) {
+    SPropertyOperations.set(thisNode, "numberOfSamples", null);
+    final Wrappers._int counter = new Wrappers._int(0);
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.DataSet"), "input", true), "sample", true)).visitAll(new IVisitor<SNode>() {
+      public void visit(final SNode sample) {
+        SNode mismatchNode = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "mismatches", true)).findFirst(new IWhereFilter<SNode>() {
+          public boolean accept(SNode node) {
+            return SPropertyOperations.getString(node, "displayId") == SPropertyOperations.getString(sample, "displayId");
+          }
+        });
+        ListSequence.fromList(SLinkOperations.getTargets(thisNode, "mismatches", true)).removeElement(mismatchNode);
+        if ((SLinkOperations.getTarget(sample, "category", false) != null)) {
+          counter.value++;
+        }
+      }
+    });
+    SPropertyOperations.set(thisNode, "numberOfSamples", "" + (counter.value));
   }
 }

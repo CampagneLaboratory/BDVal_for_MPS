@@ -38,12 +38,12 @@ public class Sample_Editor extends DefaultNodeEditor {
 
   private EditorCell createProperty_5t72dt_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("idWithSpaces");
-    provider.setNoTargetText("<no idWithSpaces>");
+    provider.setRole("displayId");
+    provider.setNoTargetText("<no displayId>");
     provider.setReadOnly(true);
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_idWithSpaces");
+    editorCell.setCellId("property_displayId");
     Style style = new StyleImpl();
     style.set(StyleAttributes.READ_ONLY, true);
     style.set(StyleAttributes.PADDING_LEFT, new Padding(5, Measure.SPACES));

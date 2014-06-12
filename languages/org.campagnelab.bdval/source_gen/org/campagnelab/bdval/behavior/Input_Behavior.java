@@ -52,7 +52,7 @@ public class Input_Behavior {
     final int length = Input_Behavior.call_getMaxIdLength_3367122381624659193(thisNode);
     ListSequence.fromList(SLinkOperations.getTargets(thisNode, "sample", true)).visitAll(new IVisitor<SNode>() {
       public void visit(SNode sample) {
-        SPropertyOperations.set(sample, "idWithSpaces", Input_Behavior.call_reformatString_3367122381603806186(thisNode, SPropertyOperations.getString(sample, "name"), length));
+        SPropertyOperations.set(sample, "displayId", Input_Behavior.call_reformatString_3367122381603806186(thisNode, SPropertyOperations.getString(sample, "name"), length));
       }
     });
     SPropertyOperations.set(thisNode, "numberOfSamples", "" + (counter - 1));

@@ -133,7 +133,7 @@ public class CIDs_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_s0w797_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Mismatching Sample Id/Category :");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Invalid Sample Id :");
     editorCell.setCellId("Constant_s0w797_e0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);

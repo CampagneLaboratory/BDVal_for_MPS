@@ -7,5 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class DataSet_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
+
   }
 }

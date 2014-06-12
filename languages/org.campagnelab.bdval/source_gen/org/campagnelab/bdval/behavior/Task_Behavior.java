@@ -30,7 +30,7 @@ public class Task_Behavior {
           counter.value++;
         } else {
           SNode mismatch = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.Sample", null);
-          SPropertyOperations.set(mismatch, "idWithSpaces", SPropertyOperations.getString(sample, "idWithSpaces"));
+          SPropertyOperations.set(mismatch, "displayId", SPropertyOperations.getString(sample, "displayId"));
           ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.DataSet"), "cids", true), "mismatches", true)).addElement(mismatch);
         }
       }

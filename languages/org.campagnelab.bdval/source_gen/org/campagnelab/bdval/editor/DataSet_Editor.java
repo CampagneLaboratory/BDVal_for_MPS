@@ -43,27 +43,24 @@ public class DataSet_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_5gxpkq_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_5gxpkq_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5gxpkq_c0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5gxpkq_d0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_5gxpkq_e0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5gxpkq_f0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5gxpkq_g0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_5gxpkq_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5gxpkq_e0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_5gxpkq_f0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5gxpkq_g0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5gxpkq_h0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5gxpkq_i0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_5gxpkq_i0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5gxpkq_j0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5gxpkq_k0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_5gxpkq_l0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5gxpkq_m0(editorContext, node));
-    if (renderingCondition_5gxpkq_a31a(node, editorContext)) {
-      editorCell.addEditorCell(this.createRefNode_5gxpkq_n0(editorContext, node));
+    if (renderingCondition_5gxpkq_a01a(node, editorContext)) {
+      editorCell.addEditorCell(this.createRefNode_5gxpkq_k0(editorContext, node));
     }
-    if (renderingCondition_5gxpkq_a41a(node, editorContext)) {
-      editorCell.addEditorCell(this.createConstant_5gxpkq_o0(editorContext, node));
+    if (renderingCondition_5gxpkq_a11a(node, editorContext)) {
+      editorCell.addEditorCell(this.createConstant_5gxpkq_l0(editorContext, node));
     }
-    if (renderingCondition_5gxpkq_a51a(node, editorContext)) {
-      editorCell.addEditorCell(this.createRefCell_5gxpkq_p0(editorContext, node));
+    if (renderingCondition_5gxpkq_a21a(node, editorContext)) {
+      editorCell.addEditorCell(this.createRefCell_5gxpkq_m0(editorContext, node));
     }
-    editorCell.addEditorCell(this.createConstant_5gxpkq_q0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5gxpkq_r0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5gxpkq_n0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5gxpkq_o0(editorContext, node));
     return editorCell;
   }
 
@@ -98,52 +95,11 @@ public class DataSet_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_5gxpkq_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_5gxpkq_c0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5gxpkq_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Desired Output Location Path :");
-    editorCell.setCellId("Constant_5gxpkq_d0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createProperty_5gxpkq_e0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("outputLocation");
-    provider.setNoTargetText("path to output location");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_outputLocation");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createConstant_5gxpkq_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_5gxpkq_f0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createRefNode_5gxpkq_g0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_5gxpkq_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("platform");
     provider.setNoTargetText("<no platform>");
@@ -169,9 +125,9 @@ public class DataSet_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5gxpkq_h0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5gxpkq_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_5gxpkq_h0");
+    editorCell.setCellId("Constant_5gxpkq_e0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -179,7 +135,7 @@ public class DataSet_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_5gxpkq_i0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_5gxpkq_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("input");
     provider.setNoTargetText("<no input>");
@@ -205,9 +161,9 @@ public class DataSet_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5gxpkq_j0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5gxpkq_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_5gxpkq_j0");
+    editorCell.setCellId("Constant_5gxpkq_g0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -215,9 +171,9 @@ public class DataSet_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5gxpkq_k0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5gxpkq_h0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Task :");
-    editorCell.setCellId("Constant_5gxpkq_k0");
+    editorCell.setCellId("Constant_5gxpkq_h0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);
@@ -225,22 +181,22 @@ public class DataSet_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createCollection_5gxpkq_l0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_5gxpkq_i0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_5gxpkq_l0");
+    editorCell.setCellId("Collection_5gxpkq_i0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createConstant_5gxpkq_a11a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5gxpkq_b11a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5gxpkq_a8a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_5gxpkq_b8a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5gxpkq_a11a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5gxpkq_a8a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Endpoint :");
-    editorCell.setCellId("Constant_5gxpkq_a11a");
+    editorCell.setCellId("Constant_5gxpkq_a8a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.EDITABLE, false);
     style.set(StyleAttributes.PADDING_LEFT, new Padding(3, Measure.SPACES));
@@ -249,7 +205,7 @@ public class DataSet_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_5gxpkq_b11a(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_5gxpkq_b8a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("task");
     provider.setNoTargetText("<no task>");
@@ -269,9 +225,9 @@ public class DataSet_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5gxpkq_m0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5gxpkq_j0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_5gxpkq_m0");
+    editorCell.setCellId("Constant_5gxpkq_j0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -279,7 +235,7 @@ public class DataSet_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_5gxpkq_n0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_5gxpkq_k0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("cids");
     provider.setNoTargetText("<no cids>");
@@ -304,13 +260,13 @@ public class DataSet_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_5gxpkq_a31a(SNode node, EditorContext editorContext) {
+  private static boolean renderingCondition_5gxpkq_a01a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "input", true), "sample", true)).isNotEmpty();
   }
 
-  private EditorCell createConstant_5gxpkq_o0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5gxpkq_l0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Categories :");
-    editorCell.setCellId("Constant_5gxpkq_o0");
+    editorCell.setCellId("Constant_5gxpkq_l0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -321,16 +277,16 @@ public class DataSet_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_5gxpkq_a41a(SNode node, EditorContext editorContext) {
+  private static boolean renderingCondition_5gxpkq_a11a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "input", true), "sample", true)).isNotEmpty();
   }
 
-  private EditorCell createRefCell_5gxpkq_p0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_5gxpkq_m0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("input");
     provider.setNoTargetText("<no input>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new DataSet_Editor._Inline_5gxpkq_a51a());
+    provider.setAuxiliaryCellProvider(new DataSet_Editor._Inline_5gxpkq_a21a());
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -351,8 +307,8 @@ public class DataSet_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline_5gxpkq_a51a extends InlineCellProvider {
-    public _Inline_5gxpkq_a51a() {
+  public static class _Inline_5gxpkq_a21a extends InlineCellProvider {
+    public _Inline_5gxpkq_a21a() {
       super();
     }
 
@@ -361,26 +317,26 @@ public class DataSet_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createCollection_5gxpkq_a0p0(editorContext, node);
+      return this.createCollection_5gxpkq_a0m0(editorContext, node);
     }
 
-    private EditorCell createCollection_5gxpkq_a0p0(EditorContext editorContext, SNode node) {
+    private EditorCell createCollection_5gxpkq_a0m0(EditorContext editorContext, SNode node) {
       EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-      editorCell.setCellId("Collection_5gxpkq_a0p0");
-      editorCell.addEditorCell(this.createRefNodeList_5gxpkq_a0a51a(editorContext, node));
+      editorCell.setCellId("Collection_5gxpkq_a0m0");
+      editorCell.addEditorCell(this.createRefNodeList_5gxpkq_a0a21a(editorContext, node));
       return editorCell;
     }
 
-    private EditorCell createRefNodeList_5gxpkq_a0a51a(EditorContext editorContext, SNode node) {
-      AbstractCellListHandler handler = new DataSet_Editor._Inline_5gxpkq_a51a.sampleListHandler_5gxpkq_a0a51a(node, "sample", editorContext);
+    private EditorCell createRefNodeList_5gxpkq_a0a21a(EditorContext editorContext, SNode node) {
+      AbstractCellListHandler handler = new DataSet_Editor._Inline_5gxpkq_a21a.sampleListHandler_5gxpkq_a0a21a(node, "sample", editorContext);
       EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
       editorCell.setCellId("refNodeList_sample");
       editorCell.setRole(handler.getElementRole());
       return editorCell;
     }
 
-    private static class sampleListHandler_5gxpkq_a0a51a extends RefNodeListHandler {
-      public sampleListHandler_5gxpkq_a0a51a(SNode ownerNode, String childRole, EditorContext context) {
+    private static class sampleListHandler_5gxpkq_a0a21a extends RefNodeListHandler {
+      public sampleListHandler_5gxpkq_a0a21a(SNode ownerNode, String childRole, EditorContext context) {
         super(ownerNode, childRole, context, false);
       }
 
@@ -416,13 +372,13 @@ public class DataSet_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static boolean renderingCondition_5gxpkq_a51a(SNode node, EditorContext editorContext) {
+  private static boolean renderingCondition_5gxpkq_a21a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "input", true), "sample", true)).isNotEmpty();
   }
 
-  private EditorCell createConstant_5gxpkq_q0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5gxpkq_n0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_5gxpkq_q0");
+    editorCell.setCellId("Constant_5gxpkq_n0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -430,9 +386,9 @@ public class DataSet_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5gxpkq_r0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5gxpkq_o0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_5gxpkq_r0");
+    editorCell.setCellId("Constant_5gxpkq_o0");
     editorCell.setDefaultText("");
     return editorCell;
   }

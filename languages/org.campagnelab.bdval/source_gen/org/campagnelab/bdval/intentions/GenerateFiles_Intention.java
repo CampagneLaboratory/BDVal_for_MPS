@@ -9,14 +9,16 @@ import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.campagnelab.bdval.behavior.DataSet_Behavior;
+import org.campagnelab.bdval.behavior.Project_Behavior;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class GenerateFiles_Intention implements IntentionFactory {
@@ -26,7 +28,7 @@ public class GenerateFiles_Intention implements IntentionFactory {
   }
 
   public String getConcept() {
-    return "org.campagnelab.bdval.structure.DataSet";
+    return "org.campagnelab.bdval.structure.Project";
   }
 
   public String getPresentation() {
@@ -57,15 +59,23 @@ public class GenerateFiles_Intention implements IntentionFactory {
   }
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return (isNotEmptyString(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.Project"), "name"))) && (isNotEmptyString(SPropertyOperations.getString(node, "name"))) && (isNotEmptyString(SPropertyOperations.getString(node, "outputLocation"))) && (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(node, "platform", true), "platformFileName"))) && (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "input", true), "sample", true)).isNotEmpty()) && ((SLinkOperations.getTarget(node, "task", true) != null)) && (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "input", true), "sample", true)).any(new IWhereFilter<SNode>() {
-      public boolean accept(SNode sample) {
-        return (SLinkOperations.getTarget(sample, "category", false) != null);
+    return isNotEmptyString(SPropertyOperations.getString(node, "name")) && (SLinkOperations.getTarget(node, "properties", true) != null) && ListSequence.fromList(SLinkOperations.getTargets(node, "endpoint", true)).isNotEmpty() && ListSequence.fromList(SLinkOperations.getTargets(node, "endpoint", true)).translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode it) {
+        return SLinkOperations.getTargets(it, "categories", true);
       }
-    }));
+    }).isNotEmpty() && isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(node, "properties", true), "outputLocation")) && ListSequence.fromList(SLinkOperations.getTargets(node, "dataset", true)).all(new IWhereFilter<SNode>() {
+      public boolean accept(SNode dataset) {
+        return isNotEmptyString(SPropertyOperations.getString(dataset, "name")) && isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(dataset, "platform", true), "platformFileName")) && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(dataset, "input", true), "sample", true)).isNotEmpty() && isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(dataset, "input", true), "inputFileName")) && (SLinkOperations.getTarget(dataset, "task", true) != null) && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(dataset, "task", true), "categoryReference", true)).isNotEmpty() && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(dataset, "input", true), "sample", true)).any(new IWhereFilter<SNode>() {
+          public boolean accept(SNode sample) {
+            return (SLinkOperations.getTarget(sample, "category", false) != null);
+          }
+        });
+      }
+    });
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:f3ea1e25-aab8-445d-9fb9-090b3b3258bf(org.campagnelab.bdval.intentions)", "6032947574604642068");
+    return new SNodePointer("r:f3ea1e25-aab8-445d-9fb9-090b3b3258bf(org.campagnelab.bdval.intentions)", "7083662764416914297");
   }
 
   public boolean isSurroundWith() {
@@ -88,7 +98,12 @@ public class GenerateFiles_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      DataSet_Behavior.call_generateFiles_6032947574604950587(node);
+      ListSequence.fromList(SLinkOperations.getTargets(node, "dataset", true)).visitAll(new IVisitor<SNode>() {
+        public void visit(SNode dataset) {
+          DataSet_Behavior.call_generateFiles_6032947574604950587(dataset);
+        }
+      });
+      Project_Behavior.call_createProperties_7083662764418572584(node);
     }
 
     public IntentionDescriptor getDescriptor() {
