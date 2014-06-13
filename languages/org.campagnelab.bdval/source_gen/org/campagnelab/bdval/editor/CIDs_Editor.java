@@ -56,7 +56,7 @@ public class CIDs_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_s0w797_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "CIDs :");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "CIDs:");
     editorCell.setCellId("Constant_s0w797_a0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.READ_ONLY, true);
@@ -67,12 +67,12 @@ public class CIDs_Editor extends DefaultNodeEditor {
 
   private EditorCell createProperty_s0w797_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("cidsFileName");
+    provider.setRole("fileName");
     provider.setNoTargetText("optional: insert cids file location");
     provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_cidsFileName");
+    editorCell.setCellId("property_fileName");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -88,7 +88,7 @@ public class CIDs_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_s0w797_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Number of Known Categories :");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Number of Known Categories:");
     editorCell.setCellId("Constant_s0w797_c0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
@@ -133,7 +133,7 @@ public class CIDs_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_s0w797_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Invalid Sample Id :");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Invalid Sample Id:");
     editorCell.setCellId("Constant_s0w797_e0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);

@@ -11,17 +11,19 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.io.File;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
+import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class check_Output_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-  public check_Output_NonTypesystemRule() {
+public class check_BDValLocation_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
+  public check_BDValLocation_NonTypesystemRule() {
   }
 
   public void applyRule(final SNode properties, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (isNotEmptyString(SPropertyOperations.getString(properties, "outputLocation")) && !(new File(SPropertyOperations.getString(properties, "outputLocation")).isDirectory())) {
+    if (isNotEmptyString(SPropertyOperations.getString(properties, "bdvalLocation")) && !(new File(SPropertyOperations.getString(properties, "bdvalLocation")).isDirectory())) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
+        errorTarget = new PropertyMessageTarget("bdvalLocation");
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(properties, "BDVal installation directory is not correct", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "7083662764418642879", null, errorTarget);
       }
     }

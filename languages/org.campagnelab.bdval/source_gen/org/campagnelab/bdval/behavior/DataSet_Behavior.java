@@ -32,7 +32,7 @@ public class DataSet_Behavior {
     });
     String parentName = WordUtils.capitalize(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.Project"), "name")).replaceAll("\\s", "");
     String datasetName = parentName + "-" + endpointDescription.value + "-" + SPropertyOperations.getString(thisNode, "name").replaceAll("\\s", "");
-    String directoryName = SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.Project"), "properties", true), "outputLocation") + "/data/bdval/" + ((parentName == null ? null : parentName.trim())) + "/";
+    String directoryName = SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.Project"), "properties", true), "bdvalLocation") + "/data/bdval/" + ((parentName == null ? null : parentName.trim())) + "/";
     File directory = new File(directoryName);
     directory.mkdirs();
     boolean proceed;
@@ -47,10 +47,10 @@ public class DataSet_Behavior {
   public static boolean call_copyPlatform_7083662764413093380(SNode thisNode, String directoryName, String datasetName) {
     String platformFolder = directoryName + "platform/";
     new File(platformFolder).mkdir();
-    String fileName = platformFolder + new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "platform", true), "platformFileName")).getName();
+    String fileName = platformFolder + new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "platform", true), "fileName")).getName();
     if (DataSet_Behavior.call_checkFile_7083662764406992609(thisNode, fileName)) {
       try {
-        FileUtils.copyFile(new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "platform", true), "platformFileName")), new File(fileName));
+        FileUtils.copyFile(new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "platform", true), "fileName")), new File(fileName));
         return true;
       } catch (Exception e) {
         throw new Error("Error Copying Platform File");
@@ -63,10 +63,10 @@ public class DataSet_Behavior {
   public static boolean call_copyInput_7083662764415129152(SNode thisNode, String directoryName, String datasetName, boolean proceed) {
     String inputFolder = directoryName + "input/";
     new File(inputFolder).mkdir();
-    String fileName = inputFolder + new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "input", true), "inputFileName")).getName();
+    String fileName = inputFolder + new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "input", true), "fileName")).getName();
     if (proceed && DataSet_Behavior.call_checkFile_7083662764406992609(thisNode, fileName)) {
       try {
-        FileUtils.copyFile(new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "input", true), "inputFileName")), new File(fileName));
+        FileUtils.copyFile(new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "input", true), "fileName")), new File(fileName));
         return true;
       } catch (Exception e) {
         throw new Error("Error Copying Input File");

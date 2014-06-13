@@ -30,7 +30,7 @@ public class Input_Behavior {
     SPropertyOperations.set(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.DataSet"), "cids", true), "numberOfSamples", null);
     try {
       final DAVMode davMode = new DAVMode();
-      Table inputTable = davMode.getReadInputFile(SPropertyOperations.getString(thisNode, "inputFileName"));
+      Table inputTable = davMode.getReadInputFile(SPropertyOperations.getString(thisNode, "fileName"));
       int cols = inputTable.getColumnNumber();
       Input_Behavior.call_getInputIds_7052920786130389579(thisNode, inputTable, cols);
       Input_Behavior.call_getInputDisplay_3367122381600071702(thisNode, inputTable, cols);

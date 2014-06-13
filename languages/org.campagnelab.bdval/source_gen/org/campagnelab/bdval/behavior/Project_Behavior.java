@@ -6,27 +6,26 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.io.File;
 import java.util.Properties;
 import java.io.OutputStream;
 import java.io.FileOutputStream;
+import java.io.File;
 
 public class Project_Behavior {
   public static void init(SNode thisNode) {
   }
 
   public static void call_createProperties_7083662764418572584(SNode thisNode) {
-    String fileName = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "outputLocation") + "/config/" + SPropertyOperations.getString(thisNode, "name").replaceAll("\\s", "") + ".properties";
+    String fileName = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "outputLocation") + "/" + SPropertyOperations.getString(thisNode, "name").replaceAll("\\s", "") + ".properties";
     if (DataSet_Behavior.call_checkFile_7083662764406992609(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "dataset", true)).first(), fileName)) {
       try {
-        new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "outputLocation") + "/config/").mkdirs();
         Properties prop = new Properties();
         OutputStream output = new FileOutputStream(new File(fileName));
         prop.setProperty("eval-dataset-root", "bdval/" + SPropertyOperations.getString(thisNode, "name").replaceAll("\\s", ""));
-        prop.setProperty("computer.type", SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "typeOfComputer"));
-        prop.setProperty("server.thread-number", "" + SPropertyOperations.getInteger(SLinkOperations.getTarget(thisNode, "properties", true), "parallelThreadsServer"));
+        prop.setProperty("computer.type", SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "computerType"));
+        prop.setProperty("server.thread-number", "" + SPropertyOperations.getInteger(SLinkOperations.getTarget(thisNode, "properties", true), "threadsServer"));
         prop.setProperty("server.memory", "-Xmx" + SPropertyOperations.getInteger(SLinkOperations.getTarget(thisNode, "properties", true), "memoryServer") + "m");
-        prop.setProperty("desktop.thread-number", "" + SPropertyOperations.getInteger(SLinkOperations.getTarget(thisNode, "properties", true), "parallelThreadsDesktop"));
+        prop.setProperty("desktop.thread-number", "" + SPropertyOperations.getInteger(SLinkOperations.getTarget(thisNode, "properties", true), "threadsDesktop"));
         prop.setProperty("desktop.memory", "-Xmx" + SPropertyOperations.getInteger(SLinkOperations.getTarget(thisNode, "properties", true), "memoryServer") + "m");
         prop.store(output, SPropertyOperations.getString(thisNode, "name") + " Properties");
       } catch (Exception e) {

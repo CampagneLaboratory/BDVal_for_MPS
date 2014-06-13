@@ -14,7 +14,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.CIDs").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("cidsFileName", "numberOfSamples").children(new String[]{"mismatches"}, new boolean[]{true}).alias("cids", "File containing phenotypes and Ids in columns").create();
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.CIDs").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("fileName", "numberOfSamples").children(new String[]{"mismatches"}, new boolean[]{true}).alias("cids", "File containing phenotypes and Ids in columns").create();
       case 1:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.CategoryReference").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("endpointCategory").create();
       case 2:
@@ -28,13 +28,13 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 6:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.EndpointCategory").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").alias("endpointCategory", "The condition of the sample for a specific endpoint").create();
       case 7:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Input").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("inputFileName", "numberOfSamples").children(new String[]{"sample", "displayRow"}, new boolean[]{true, true}).alias("input", "File containing input (table of ID's and genes)").create();
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Input").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("fileName", "numberOfSamples").children(new String[]{"sample", "displayRow"}, new boolean[]{true, true}).alias("input", "File containing input (table of ID's and genes)").create();
       case 8:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Platform").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("platformFileName").alias("platform", "File containing platform").create();
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Platform").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("fileName").alias("platform", "File containing platform").create();
       case 9:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Project").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"properties", "endpoint", "dataset"}, new boolean[]{false, true, true}).alias("project", "An entire project which can contain multiple datasets ").create();
       case 10:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Properties").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("outputLocation", "typeOfComputer", "parallelThreadsServer", "memoryServer", "parallelThreadsDesktop", "memoryDesktop").create();
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Properties").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("outputLocation", "bdvalLocation", "computerType", "threadsServer", "memoryServer", "threadsDesktop", "memoryDesktop").create();
       case 11:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Sample").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("displayId").references("category").alias("sample", "A sample- must have an id and optionally has an endpoint").create();
       case 12:

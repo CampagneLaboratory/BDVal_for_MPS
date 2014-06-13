@@ -11,6 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.io.File;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
+import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -19,9 +20,10 @@ public class check_Input_NonTypesystemRule extends AbstractNonTypesystemRule_Run
   }
 
   public void applyRule(final SNode input, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (isNotEmptyString(SPropertyOperations.getString(input, "inputFileName")) && !(new File(SPropertyOperations.getString(input, "inputFileName")).isFile())) {
+    if (isNotEmptyString(SPropertyOperations.getString(input, "fileName")) && !(new File(SPropertyOperations.getString(input, "fileName")).isFile())) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
+        errorTarget = new PropertyMessageTarget("fileName");
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(input, "Input file location does not point to a file", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "3367122381612319791", null, errorTarget);
       }
     }

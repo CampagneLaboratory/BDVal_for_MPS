@@ -77,7 +77,7 @@ public class ExtractEndpoints_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Extract Endpoints from SampleId";
+      return "Assign Categories from Sample Name";
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {

@@ -1,13 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <root nodeRef="r:b753871d-1de5-4844-bc85-33db077bf655(org.campagnelab.bdval.textGen)/7083662764412019338">
-    <nodeInfo nodeId="7083662764412019347" fileName="DataSet_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7083662764412019338" fileName="DataSet_TextGen.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="7083662764412019338" fileName="DataSet_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="0" />
-    <scopeInfo nodeId="7083662764412019338" fileName="DataSet_TextGen.java" startLine="9" startPosition="0" endLine="12" endPosition="0">
-      <varInfo nodeId="7083662764412019338" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="7083662764412019338" fileName="DataSet_TextGen.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="org.campagnelab.bdval.textGen.DataSet_TextGen" />
-  </root>
-</debugInfo>
+<debugInfo />
 

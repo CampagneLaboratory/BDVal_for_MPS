@@ -240,5 +240,47 @@
     </dependencies>
     <rename id="w348.7083662764400065823" type="PROPERTY" from="idWithSpaces" to="displayId" />
   </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="39" />
+    </dependencies>
+    <rename id="w348.7083662764418599580" type="PROPERTY" from="outputLocation" to="bdvalLocation" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="40" />
+    </dependencies>
+    <rename id="w348.7083662764416913910" type="PROPERTY" from="typeOfComputer" to="computerType" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="41" />
+    </dependencies>
+    <rename id="w348.7083662764416913912" type="PROPERTY" from="parallelThreadsServer" to="threadsServer" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="42" />
+    </dependencies>
+    <rename id="w348.7083662764416913919" type="PROPERTY" from="parallelThreadsDesktop" to="threadsDesktop" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="43" />
+    </dependencies>
+    <rename id="w348.3367122381610860816" type="PROPERTY" from="inputFileName" to="fileName" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="44" />
+    </dependencies>
+    <rename id="w348.3367122381610860821" type="PROPERTY" from="cidsFileName" to="fileName" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="45" />
+    </dependencies>
+    <rename id="w348.3367122381610860831" type="PROPERTY" from="platformFileName" to="fileName" />
+  </StructureModification>
 </history>
 

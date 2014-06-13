@@ -31,7 +31,7 @@ public class Platform_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_tw4zmk_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Platform :");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Platform:");
     editorCell.setCellId("Constant_tw4zmk_a0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.READ_ONLY, true);
@@ -42,11 +42,11 @@ public class Platform_Editor extends DefaultNodeEditor {
 
   private EditorCell createProperty_tw4zmk_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("platformFileName");
+    provider.setRole("fileName");
     provider.setNoTargetText("insert platform file location");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_platformFileName");
+    editorCell.setCellId("property_fileName");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

@@ -16,6 +16,7 @@ import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.Measure;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 
@@ -48,6 +49,14 @@ public class Sample_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.READ_ONLY, true);
     style.set(StyleAttributes.PADDING_LEFT, new Padding(5, Measure.SPACES));
     style.set(StyleAttributes.EDITABLE, false);
+    if (Sample_Editor._StyleParameter_QueryFunction_5t72dt_a3a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))) {
+      {
+        Style styleToPut;
+        styleToPut = new StyleImpl();
+        EditingStyles_StyleSheet.apply_RedText(styleToPut, editorCell);
+        style.putAll(styleToPut);
+      }
+    }
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -58,6 +67,10 @@ public class Sample_Editor extends DefaultNodeEditor {
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+
+  private static boolean _StyleParameter_QueryFunction_5t72dt_a3a0(EditorContext editorContext, SNode node) {
+    return (SLinkOperations.getTarget(node, "category", false) == null);
   }
 
   private EditorCell createRefCell_5t72dt_b0(EditorContext editorContext, SNode node) {

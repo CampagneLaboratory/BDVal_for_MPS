@@ -56,7 +56,7 @@ public class LoadCIDs_Intention implements IntentionFactory {
   }
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.DataSet"), "input", true), "sample", true)).isNotEmpty() && isNotEmptyString(SPropertyOperations.getString(node, "cidsFileName"));
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.DataSet"), "input", true), "sample", true)).isNotEmpty() && isNotEmptyString(SPropertyOperations.getString(node, "fileName"));
   }
 
   public SNodeReference getIntentionNodeReference() {

@@ -13,7 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class CIDs_Behavior {
   public static void init(SNode thisNode) {
@@ -23,13 +22,12 @@ public class CIDs_Behavior {
     SPropertyOperations.set(thisNode, "numberOfSamples", null);
     ListSequence.fromList(SLinkOperations.getTargets(thisNode, "mismatches", true)).clear();
     try {
-      FileReader reader = new FileReader(new File(SPropertyOperations.getString(thisNode, "cidsFileName")));
+      FileReader reader = new FileReader(new File(SPropertyOperations.getString(thisNode, "fileName")));
       BufferedReader datasetReader = new BufferedReader(reader);
       if (datasetReader.readLine().split("\t").length != 2) {
         throw new IllegalArgumentException();
       }
       CIDs_Behavior.call_getCidsEndpts_3367122381605517505(thisNode, datasetReader);
-      CIDs_Behavior.call_updateSamples_7083662764410229694(thisNode);
     } catch (Exception e) {
       throw new IllegalArgumentException("Invalid CIDs File");
     }
@@ -65,24 +63,5 @@ public class CIDs_Behavior {
     } catch (Exception e) {
       throw new Error();
     }
-  }
-
-  public static void call_updateSamples_7083662764410229694(final SNode thisNode) {
-    SPropertyOperations.set(thisNode, "numberOfSamples", null);
-    final Wrappers._int counter = new Wrappers._int(0);
-    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.DataSet"), "input", true), "sample", true)).visitAll(new IVisitor<SNode>() {
-      public void visit(final SNode sample) {
-        SNode mismatchNode = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "mismatches", true)).findFirst(new IWhereFilter<SNode>() {
-          public boolean accept(SNode node) {
-            return SPropertyOperations.getString(node, "displayId") == SPropertyOperations.getString(sample, "displayId");
-          }
-        });
-        ListSequence.fromList(SLinkOperations.getTargets(thisNode, "mismatches", true)).removeElement(mismatchNode);
-        if ((SLinkOperations.getTarget(sample, "category", false) != null)) {
-          counter.value++;
-        }
-      }
-    });
-    SPropertyOperations.set(thisNode, "numberOfSamples", "" + (counter.value));
   }
 }

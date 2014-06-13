@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class Task_Behavior {
   public static void init(SNode thisNode) {
@@ -28,10 +27,6 @@ public class Task_Behavior {
         if ((categoryNode != null)) {
           SLinkOperations.setTarget(sample, "category", categoryNode, false);
           counter.value++;
-        } else {
-          SNode mismatch = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.Sample", null);
-          SPropertyOperations.set(mismatch, "displayId", SPropertyOperations.getString(sample, "displayId"));
-          ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.DataSet"), "cids", true), "mismatches", true)).addElement(mismatch);
         }
       }
     });

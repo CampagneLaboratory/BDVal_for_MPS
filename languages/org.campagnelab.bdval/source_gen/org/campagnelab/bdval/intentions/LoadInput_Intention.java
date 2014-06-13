@@ -53,7 +53,7 @@ public class LoadInput_Intention implements IntentionFactory {
   }
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return isNotEmptyString(SPropertyOperations.getString(node, "inputFileName"));
+    return isNotEmptyString(SPropertyOperations.getString(node, "fileName"));
   }
 
   public SNodeReference getIntentionNodeReference() {

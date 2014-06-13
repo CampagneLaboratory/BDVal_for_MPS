@@ -17,6 +17,5 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     IntentionsManager.getInstance().registerIntentionFactory(new GenerateFiles_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new LoadCIDs_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new LoadInput_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new UpdateSample_Intention());
   }
 }
