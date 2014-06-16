@@ -12,13 +12,18 @@
     <classNode dependClassName="org.campagnelab.bdval.behavior.DisplayValue_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.EndpointCategory_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.Endpoint_BehaviorDescriptor" />
+    <classNode dependClassName="org.campagnelab.bdval.behavior.Evaluate_BehaviorDescriptor" />
+    <classNode dependClassName="org.campagnelab.bdval.behavior.GeneticAlgorithm_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.Input_BehaviorDescriptor" />
+    <classNode dependClassName="org.campagnelab.bdval.behavior.Pathway_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.Platform_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.Project_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.Properties_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.Sample_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.Task_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.Test_BehaviorDescriptor" />
+    <classNode dependClassName="org.campagnelab.bdval.behavior.TuneC_BehaviorDescriptor" />
+    <classNode dependClassName="org.campagnelab.bdval.behavior.Values_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
   </dependency>
   <dependency className="org.campagnelab.bdval.behavior.CIDs_Behavior" file="CIDs_Behavior.java">
@@ -114,6 +119,18 @@
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="org.campagnelab.bdval.behavior.Evaluate_BehaviorDescriptor" file="Evaluate_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="org.campagnelab.bdval.behavior.GeneticAlgorithm_BehaviorDescriptor" file="GeneticAlgorithm_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
   <dependency className="org.campagnelab.bdval.behavior.Input_Behavior" file="Input_Behavior.java">
     <classNode dependClassName="edu.mssm.crover.tables.Table" />
     <classNode dependClassName="java.lang.Error" />
@@ -144,6 +161,12 @@
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="org.campagnelab.bdval.behavior.Pathway_BehaviorDescriptor" file="Pathway_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
   <dependency className="org.campagnelab.bdval.behavior.Platform_BehaviorDescriptor" file="Platform_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -158,11 +181,23 @@
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Properties" />
+    <classNode dependClassName="javax.xml.parsers.DocumentBuilder" />
+    <classNode dependClassName="javax.xml.parsers.DocumentBuilderFactory" />
+    <classNode dependClassName="javax.xml.transform.OutputKeys" />
+    <classNode dependClassName="javax.xml.transform.Transformer" />
+    <classNode dependClassName="javax.xml.transform.TransformerFactory" />
+    <classNode dependClassName="javax.xml.transform.dom.DOMSource" />
+    <classNode dependClassName="javax.xml.transform.stream.StreamResult" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.DataSet_Behavior" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.w3c.dom.Document" />
+    <classNode dependClassName="org.w3c.dom.Element" />
   </dependency>
   <dependency className="org.campagnelab.bdval.behavior.Project_BehaviorDescriptor" file="Project_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -207,6 +242,18 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="org.campagnelab.bdval.behavior.Test_BehaviorDescriptor" file="Test_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="org.campagnelab.bdval.behavior.TuneC_BehaviorDescriptor" file="TuneC_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="org.campagnelab.bdval.behavior.Values_BehaviorDescriptor" file="Values_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />

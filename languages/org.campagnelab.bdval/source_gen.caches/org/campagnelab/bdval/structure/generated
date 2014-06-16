@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="91hdjppfni4efx1xg6rlgstpb9t3im5">
+<dependencies version="2" modelHash="-5tjkitr2jmhmpfn9bqk7v1o3fakquyd">
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="5sdbpqxziyuazpb9j1p4zdk6bnvbn49" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-5mgxduek28h3ywdzzsk4capaz4hgjm0" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="303xz1b2lyseld0axia86q3lpvucmq6" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="b4ewbuz42qcbg1awca5bacgi0vopxqt" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="a8elw7fctzg6sg8fe36u9gzu42axhdb" />
-  <common hash="eoayvftj1vh80b9cl9x7izyrvnusy8r" dependsOnNodes="true">
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-8chtguhcvj45cjy0bx3xiqekte2lox7" />
+  <common hash="-6q394hls13mc3xs0jrhdfjrv8zaqe6n" dependsOnNodes="true">
+    <dep root="290469645457746370" />
+    <dep root="290469645464856021" />
+    <dep root="290469645465231774" />
+    <dep root="290469645477150000" />
+    <dep root="290469645478332254" />
+    <dep root="290469645479170952" />
     <dep root="3367122381622495536" />
     <dep root="4345048909861421891" />
     <dep root="4345048909863217124" />
@@ -20,6 +30,7 @@
     <dep root="7083662764384236370" />
     <dep root="7083662764388713867" />
     <dep root="7083662764416913858" />
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -28,7 +39,7 @@
     <file name="StructureAspectDescriptor.java" />
   </common>
   <source id="7052920786129988728" name="Input" hash="-euj2xcekqckf6zr3ogl1t8zcogzal0j" />
-  <source id="7052920786130131778" name="DataSet" hash="-5hgwrzckb8ajswzruf0coer12h5n7l" />
+  <source id="7052920786130131778" name="DataSet" hash="-67z91lcszrerri29r217olf7n1jfltt" />
   <source id="7052920786130131783" name="Platform" hash="-bqkdpu2b6px1xh9cnsb5kpcc6o0ll83" />
   <source id="7052920786130131788" name="CIDs" hash="-54bp2ql82ikhra74dw4lbgcpsyvnit" />
   <source id="7052920786130772514" name="Sample" hash="132nm3ypn99orzxed3sqtz4xmih0c6j" />
@@ -40,6 +51,21 @@
   <source id="7083662764384091354" name="Task" hash="93vpjfgh1r3yrl5f3go8xvo5lebnync" />
   <source id="7083662764384236370" name="CategoryReference" hash="81ky4runcuhaa6h3wlyd0gft1q5ar4b" />
   <source id="7083662764388713867" name="Test" hash="-1498f1f1580z2pgttqdwt67c8d8f7z7" />
-  <source id="7083662764416913858" name="Properties" hash="-alcy1s1lh4yajl22jkmo4a0oa5fnnc9" />
+  <source id="7083662764416913858" name="Properties" hash="-7l6dn5rn1v3pyelhk7iiokimat5zxfl" />
+  <source id="290469645457746370" name="Values" hash="9spmejj7chbw42s5qoms04exzb6p9of" />
+  <source id="290469645464856021" name="Evaluate" hash="4g4fravclw6e46wfiqevmh7e4hiy8yi" />
+  <source id="290469645465231774" name="evaluateType" hash="b6yg6onajc4dhd7idt9dc13uvkjpys1">
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
+    <file name="evaluateType.java" />
+    <file name="evaluateType_PropertySupport.java" />
+  </source>
+  <source id="290469645477150000" name="Pathway" hash="-yjn258ncvx37jxwva53ktjr98xtdzp" />
+  <source id="290469645478332254" name="GeneticAlgorithm" hash="d0vnzyu62cs8kuf988hey6t2x1eambv" />
+  <source id="290469645479170952" name="TuneC" hash="8i6npty91krqembw9sdnks2939r7ih8" />
 </dependencies>
 

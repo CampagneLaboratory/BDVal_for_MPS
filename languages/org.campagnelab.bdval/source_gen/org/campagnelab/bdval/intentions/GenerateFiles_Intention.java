@@ -103,7 +103,7 @@ public class GenerateFiles_Intention implements IntentionFactory {
           DataSet_Behavior.call_generateFiles_6032947574604950587(dataset);
         }
       });
-      Project_Behavior.call_createProperties_7083662764418572584(node);
+      Project_Behavior.call_createFiles_290469645456423260(node);
     }
 
     public IntentionDescriptor getDescriptor() {

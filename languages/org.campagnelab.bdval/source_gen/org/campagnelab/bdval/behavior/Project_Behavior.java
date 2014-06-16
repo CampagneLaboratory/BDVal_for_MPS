@@ -10,18 +10,36 @@ import java.util.Properties;
 import java.io.OutputStream;
 import java.io.FileOutputStream;
 import java.io.File;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.DocumentBuilder;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class Project_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static void call_createProperties_7083662764418572584(SNode thisNode) {
-    String fileName = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "outputLocation") + "/" + SPropertyOperations.getString(thisNode, "name").replaceAll("\\s", "") + ".properties";
+  public static void call_createFiles_290469645456423260(SNode thisNode) {
+    String projectName = SPropertyOperations.getString(thisNode, "name").replaceAll("\\s", "");
+    Project_Behavior.call_createConfiguration_7083662764418572584(thisNode, projectName);
+    Project_Behavior.call_createXML_7083662764442215124(thisNode, projectName);
+  }
+
+  public static void call_createConfiguration_7083662764418572584(SNode thisNode, String projectName) {
+    String fileName = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "outputLocation") + "/" + projectName + "/" + projectName + "-local.properties";
     if (DataSet_Behavior.call_checkFile_7083662764406992609(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "dataset", true)).first(), fileName)) {
       try {
         Properties prop = new Properties();
         OutputStream output = new FileOutputStream(new File(fileName));
-        prop.setProperty("eval-dataset-root", "bdval/" + SPropertyOperations.getString(thisNode, "name").replaceAll("\\s", ""));
+        prop.setProperty("eval-dataset-root", SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "outputLocation") + "/" + SPropertyOperations.getString(thisNode, "name").replaceAll("\\s", ""));
         prop.setProperty("computer.type", SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "computerType"));
         prop.setProperty("server.thread-number", "" + SPropertyOperations.getInteger(SLinkOperations.getTarget(thisNode, "properties", true), "threadsServer"));
         prop.setProperty("server.memory", "-Xmx" + SPropertyOperations.getInteger(SLinkOperations.getTarget(thisNode, "properties", true), "memoryServer") + "m");
@@ -29,8 +47,337 @@ public class Project_Behavior {
         prop.setProperty("desktop.memory", "-Xmx" + SPropertyOperations.getInteger(SLinkOperations.getTarget(thisNode, "properties", true), "memoryServer") + "m");
         prop.store(output, SPropertyOperations.getString(thisNode, "name") + " Properties");
       } catch (Exception e) {
-        throw new Error("Error creating properties file");
+        throw new Error("Error creating configuration properties file");
       }
     }
+  }
+
+  public static void call_createXML_7083662764442215124(final SNode thisNode, String projectName) {
+    String fileName = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "outputLocation") + "/" + projectName + "/" + projectName + ".xml";
+    if (DataSet_Behavior.call_checkFile_7083662764406992609(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "dataset", true)).first(), fileName)) {
+      try {
+        DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+        final Document doc = docBuilder.newDocument();
+        final Element project = doc.createElement("project");
+        doc.appendChild(project);
+        project.setAttribute("name", SPropertyOperations.getString(thisNode, "name").replaceAll("\\s", ""));
+        project.setAttribute("default", "FILL THIS IN");
+        project.setAttribute("basedir", "FILL THIS IN");
+        Element dirname = doc.createElement("dirname");
+        project.appendChild(dirname);
+        dirname.setAttribute("property", "FILL THIS IN");
+        dirname.setAttribute("file", "FILL THIS IN");
+        Element importBuild = doc.createElement("import");
+        project.appendChild(importBuild);
+        importBuild.setAttribute("file", "FILL THIS IN");
+        Element localProperties = doc.createElement("property");
+        project.appendChild(localProperties);
+        localProperties.setAttribute("file", "FILL THIS IN");
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, project, "project-property-file", "FILL THIS IN");
+        Element file = doc.createElement("property");
+        project.appendChild(file);
+        file.setAttribute("file", "${project-property-file}");
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, project, "do-specific=gene-lists-only", String.valueOf(SPropertyOperations.getBoolean(SLinkOperations.getTarget(thisNode, "properties", true), "doSpecificGeneListsOnly")));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, project, "enable-flooring", String.valueOf(SPropertyOperations.getBoolean(SLinkOperations.getTarget(thisNode, "properties", true), "enableFlooring")));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, project, "ga-wrapper-population-size", String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(thisNode, "properties", true), "gaWrapperPopulationSize")));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, project, "ga-wrapper-number-of-iterations", String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(thisNode, "properties", true), "gaWrapperNumberOfIterations")));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, project, "performance-measured-maximized-by-GA", SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "performanceMeasureMaximized"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, project, "internal-CV-repeats", "--cv-repeats " + String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(thisNode, "properties", true), "internalRepeats")));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, project, "internal-CV-folds", String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(thisNode, "properties", true), "internalFolds")));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, project, "external-CV-repeats-number", String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(thisNode, "properties", true), "externalRepeats")));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, project, "external-CV-repeats", "--cv-repeats ${external-CV-repeats-number}");
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, project, "external-CV-folds", String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(thisNode, "properties", true), "externalFolds")));
+        final Wrappers._T<String> numFeatures = new Wrappers._T<String>("");
+        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "properties", true), "numFeatures", true)).visitAll(new IVisitor<SNode>() {
+          public void visit(SNode node) {
+            numFeatures.value = numFeatures.value + "," + SPropertyOperations.getInteger(node, "value");
+          }
+        });
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, project, "num-features", numFeatures.value.substring(1));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, project, "max-intermediate-features", String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(thisNode, "properties", true), "maxIntermediateFeatures")));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, project, "use-probability", String.valueOf(SPropertyOperations.getBoolean(SLinkOperations.getTarget(thisNode, "properties", true), "useProbability")));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, project, "fold-change-phi", SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "foldChangePhi"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, project, "ttest-alpha", SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "ttestAlpha"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, project, "pathway-aggregation-method", SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "pathwayAggregationMethod"));
+        // TODO: Stuff with pathways until performance measures here! 
+        // Normal targets 
+        final Wrappers._T<String> datasetName = new Wrappers._T<String>();
+        final Wrappers._T<String> execute = new Wrappers._T<String>();
+        final Wrappers._T<String> allEndpoints = new Wrappers._T<String>("");
+        ListSequence.fromList(SLinkOperations.getTargets(thisNode, "dataset", true)).visitAll(new IVisitor<SNode>() {
+          public void visit(SNode dataset) {
+            datasetName.value = DataSet_Behavior.call_getName_290469645480322571(dataset);
+            execute.value = String.valueOf(SPropertyOperations.getBoolean(dataset, "execute"));
+            Project_Behavior.call_addNormalTarget_290469645480226173(thisNode, doc, project, datasetName.value, execute.value);
+            allEndpoints.value = allEndpoints.value + " " + datasetName.value;
+          }
+        });
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, project, "all-endpoints", allEndpoints.value);
+        Element importBdval = doc.createElement("import");
+        project.appendChild(importBdval);
+        importBdval.setAttribute("file", "bdval.xml");
+        // Gets evaluate target 
+        Element evaluate = doc.createElement("target");
+        project.appendChild(evaluate);
+        evaluate.setAttribute("name", "evaluate");
+        evaluate.setAttribute("description", "Run a complete Evaluation.");
+        evaluate.setAttribute("depends", "prepare-bdval, rserve-status, tag-output-directory");
+        Element evalDelete = doc.createElement("delete");
+        evaluate.appendChild(evalDelete);
+        evalDelete.setAttribute("file", "${statistics-output}");
+        Element evalEcho = doc.createElement("echo");
+        evaluate.appendChild(evalEcho);
+        evalEcho.setAttribute("message", "Executing with ${num-threads} threads");
+        Element evalSeq = doc.createElement("sequential");
+        evaluate.appendChild(evalSeq);
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "use-feature-selection-fold=true", Project_Behavior.call_getEvalValue_290469645465927531(thisNode, "useFeatureSelectionTrue"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "use-feature-selection-fold=false", Project_Behavior.call_getEvalValue_290469645465927531(thisNode, "useFeatureSelectionFalse"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.baseline", Project_Behavior.call_getEvalValue_290469645465927531(thisNode, "baseline"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.naive-bayes", Project_Behavior.call_getEvalValue_290469645465927531(thisNode, "naiveBayes"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.logit-boost", Project_Behavior.call_getEvalValue_290469645465927531(thisNode, "logitBoost"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.logistic", Project_Behavior.call_getEvalValue_290469645465927531(thisNode, "logistic"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.random-forest", Project_Behavior.call_getEvalValue_290469645465927531(thisNode, "randomForest"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.k-star", Project_Behavior.call_getEvalValue_290469645465927531(thisNode, "kStar"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.whole-chip", Project_Behavior.call_getEvalValue_290469645465927531(thisNode, "wholeChip"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.baseline-tune-C", Project_Behavior.call_getEvalValue_290469645465927531(thisNode, "baselineTuneC"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.foldchange-genetic-algorithm", Project_Behavior.call_getEvalValue_290469645465927531(thisNode, "foldchangeGeneticAlgorithm"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.foldchange-svmglobal", Project_Behavior.call_getEvalValue_290469645465927531(thisNode, "foldchangeSvmGlobal"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.foldchange-svmiterative", Project_Behavior.call_getEvalValue_290469645465927531(thisNode, "foldchangeSvmIterative"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.full-genetic-algorithm", Project_Behavior.call_getEvalValue_290469645465927531(thisNode, "fullGeneticAlgorithm"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.genelist-genetic-algorithm", Project_Behavior.call_getEvalValue_290469645465927531(thisNode, "genelistGeneticAlgorithm"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.genelist-svmglobal", Project_Behavior.call_getEvalValue_290469645465927531(thisNode, "genelistSvmGlobal"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.genelist-svmglobal-tune-C", Project_Behavior.call_getEvalValue_290469645465927531(thisNode, "genelistSvmFlobalTuneC"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.minmax-svmglobal", Project_Behavior.call_getEvalValue_290469645465927531(thisNode, "minMaxSvmGlobal"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.pathways-ttest-svmglobal", Project_Behavior.call_getEvalValue_290469645465927531(thisNode, "pathwaysTtestSvmGlobal"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.pathways-tune-C", Project_Behavior.call_getEvalValue_290469645465927531(thisNode, "pathwaysTuneC"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.pathways.baseline", Project_Behavior.call_getEvalValue_290469645465927531(thisNode, "pathwaysBaseline"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.svmiterative", Project_Behavior.call_getEvalValue_290469645465927531(thisNode, "svmIterative"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.ttest-genetic-algorithm", Project_Behavior.call_getEvalValue_290469645465927531(thisNode, "ttestGeneticAlgorithm"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.ttest-svmglobal", Project_Behavior.call_getEvalValue_290469645465927531(thisNode, "ttestSvmGlobal"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.ttest-svmiterative", Project_Behavior.call_getEvalValue_290469645465927531(thisNode, "ttestSvmIterative"));
+        Element evalExecute = doc.createElement("execute-all-endpoints");
+        evalSeq.appendChild(evalExecute);
+        Element evalAnt1 = doc.createElement("antcall");
+        evaluate.appendChild(evalAnt1);
+        evalAnt1.setAttribute("target", "process-model-conditions");
+        Element evalAnt2 = doc.createElement("antcall");
+        evaluate.appendChild(evalAnt2);
+        evalAnt2.setAttribute("target", "zip-results");
+
+        // Gets scan-series target 
+        Element scanSeries = doc.createElement("target");
+        project.appendChild(scanSeries);
+        scanSeries.setAttribute("name", "scan-series");
+        scanSeries.setAttribute("description", "Run a complete evaluation.");
+        scanSeries.setAttribute("depends", "prepare-bdval, tag-output-directory");
+        Element scanDelete = doc.createElement("delete");
+        scanSeries.appendChild(scanDelete);
+        scanDelete.setAttribute("file", "${statistics-output}");
+        Element scanEcho = doc.createElement("echo");
+        scanSeries.appendChild(scanEcho);
+        scanEcho.setAttribute("message", "Executing with ${num-threads} threads");
+        Element scanSeq = doc.createElement("sequential");
+        scanSeries.appendChild(scanSeq);
+        Element scanVar = doc.createElement("var");
+        scanSeq.appendChild(scanVar);
+        scanVar.setAttribute("name", "FILL THIS IN");
+        scanVar.setAttribute("value", "FILL THIS IN");
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, scanSeq, "use-feature-selection-fold=true", "FILL THIS IN");
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, scanSeq, "use-feature-selection-fold=false", "FILL THIS IN");
+
+
+        // Gets pathways target 
+        Element pathways = doc.createElement("target");
+        project.appendChild(pathways);
+        pathways.setAttribute("name", "pathways");
+        pathways.setAttribute("description", "Run pathways.");
+        pathways.setAttribute("depends", "prepare-bdval, tag-output-directory");
+        Element pathDelete = doc.createElement("delete");
+        pathways.appendChild(pathDelete);
+        pathDelete.setAttribute("file", "${statistics-output}");
+        Element pathEcho = doc.createElement("echo");
+        pathways.appendChild(pathEcho);
+        pathEcho.setAttribute("message", "Executing with ${num-threads} threads");
+        Element pathSeq = doc.createElement("sequential");
+        pathways.appendChild(pathSeq);
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, pathSeq, "use-feature-selection-fold=true", Project_Behavior.call_getPathValue_290469645477141150(thisNode, "useFeatureSelectionTrue"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, pathSeq, "use-feature-selection-fold=false", Project_Behavior.call_getPathValue_290469645477141150(thisNode, "useFeatureSelectionFalse"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, pathSeq, "do.baseline", Project_Behavior.call_getPathValue_290469645477141150(thisNode, "baseline"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, pathSeq, "do.baseline-tune-C", Project_Behavior.call_getPathValue_290469645477141150(thisNode, "baselineTuneC"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, pathSeq, "do.foldchange-genetic-algorithm", Project_Behavior.call_getPathValue_290469645477141150(thisNode, "foldchangeGeneticAlgorithm"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, pathSeq, "do.foldchange-svmglobal", Project_Behavior.call_getPathValue_290469645477141150(thisNode, "foldchangeSvmGlobal"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, pathSeq, "do.foldchange-svmiterative", Project_Behavior.call_getPathValue_290469645477141150(thisNode, "foldchangeSvmIterative"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, pathSeq, "do.full-genetic-algorithm", Project_Behavior.call_getPathValue_290469645477141150(thisNode, "fullGeneticAlgorithm"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, pathSeq, "do.genelist-genetic-algorithm", Project_Behavior.call_getPathValue_290469645477141150(thisNode, "genelistGeneticAlgorithm"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, pathSeq, "do.genelist-svmglobal", Project_Behavior.call_getPathValue_290469645477141150(thisNode, "genelistSvmGlobal"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, pathSeq, "do.genelist-svmglobal-tune-C", Project_Behavior.call_getPathValue_290469645477141150(thisNode, "genelistSvmFlobalTuneC"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, pathSeq, "do.minmax-svmglobal", Project_Behavior.call_getPathValue_290469645477141150(thisNode, "minMaxSvmGlobal"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, pathSeq, "do.pathways-build-pathway-components", Project_Behavior.call_getPathValue_290469645477141150(thisNode, "pathwaysBuildComponents"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, pathSeq, "do.pathways-ttest-svmglobal", Project_Behavior.call_getPathValue_290469645477141150(thisNode, "pathwaysTtestSvmGlobal"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, pathSeq, "do.pathways-tune-C", Project_Behavior.call_getPathValue_290469645477141150(thisNode, "pathwaysTuneC"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, pathSeq, "do.pathways.baseline", Project_Behavior.call_getPathValue_290469645477141150(thisNode, "pathwaysBaseline"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, pathSeq, "do.svmiterative", Project_Behavior.call_getPathValue_290469645477141150(thisNode, "svmIterative"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, pathSeq, "do.ttest-genetic-algorithm", Project_Behavior.call_getPathValue_290469645477141150(thisNode, "ttestGeneticAlgorithm"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, pathSeq, "do.ttest-svmglobal", Project_Behavior.call_getPathValue_290469645477141150(thisNode, "ttestSvmGlobal"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, pathSeq, "do.ttest-svmiterative", Project_Behavior.call_getPathValue_290469645477141150(thisNode, "ttestSvmIterative"));
+        Element pathExecute = doc.createElement("execute-all-endpoints");
+        pathSeq.appendChild(pathExecute);
+        Element pathAnt1 = doc.createElement("antcall");
+        pathways.appendChild(pathAnt1);
+        pathAnt1.setAttribute("target", "process-model-conditions");
+        Element pathAnt2 = doc.createElement("antcall");
+        pathways.appendChild(pathAnt2);
+        pathAnt2.setAttribute("target", "zip-results");
+        // Gets genetic algorithm target 
+        Element genetic = doc.createElement("target");
+        project.appendChild(genetic);
+        genetic.setAttribute("name", "genetic-algorithm");
+        genetic.setAttribute("description", "Run Genetic Algorithm.");
+        genetic.setAttribute("depends", "prepare-bdval, tag-output-directory");
+        Element geneDelete = doc.createElement("delete");
+        genetic.appendChild(geneDelete);
+        geneDelete.setAttribute("file", "${statistics-output}");
+        Element geneEcho = doc.createElement("echo");
+        genetic.appendChild(geneEcho);
+        geneEcho.setAttribute("message", "Executing with ${num-threads} threads");
+        Element geneSeq = doc.createElement("sequential");
+        genetic.appendChild(geneSeq);
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, geneSeq, "use-feature-selection-fold=true", Project_Behavior.call_getGeneValue_290469645478312771(thisNode, "useFeatureSelectionTrue"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, geneSeq, "use-feature-selection-fold=false", Project_Behavior.call_getGeneValue_290469645478312771(thisNode, "useFeatureSelectionFalse"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, geneSeq, "do.baseline", Project_Behavior.call_getGeneValue_290469645478312771(thisNode, "baseline"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.whole-chip", Project_Behavior.call_getGeneValue_290469645478312771(thisNode, "wholeChip"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, geneSeq, "do.baseline-tune-C", Project_Behavior.call_getGeneValue_290469645478312771(thisNode, "baselineTuneC"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, geneSeq, "do.foldchange-svmglobal", Project_Behavior.call_getGeneValue_290469645478312771(thisNode, "foldchangeSvmGlobal"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, geneSeq, "do.foldchange-svmiterative", Project_Behavior.call_getGeneValue_290469645478312771(thisNode, "foldchangeSvmIterative"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, geneSeq, "do.genelist-svmglobal", Project_Behavior.call_getGeneValue_290469645478312771(thisNode, "genelistSvmGlobal"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, geneSeq, "do.genelist-svmglobal-tune-C", Project_Behavior.call_getGeneValue_290469645478312771(thisNode, "genelistSvmFlobalTuneC"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, geneSeq, "do.minmax-svmglobal", Project_Behavior.call_getGeneValue_290469645478312771(thisNode, "minMaxSvmGlobal"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, geneSeq, "do.pathways-ttest-svmglobal", Project_Behavior.call_getGeneValue_290469645478312771(thisNode, "pathwaysTtestSvmGlobal"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, geneSeq, "do.pathways-tune-C", Project_Behavior.call_getGeneValue_290469645478312771(thisNode, "pathwaysTuneC"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, geneSeq, "do.pathways.baseline", Project_Behavior.call_getGeneValue_290469645478312771(thisNode, "pathwaysBaseline"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, geneSeq, "do.svmiterative", Project_Behavior.call_getGeneValue_290469645478312771(thisNode, "svmIterative"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, geneSeq, "do.ttest-svmglobal", Project_Behavior.call_getGeneValue_290469645478312771(thisNode, "ttestSvmGlobal"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, geneSeq, "do.ttest-svmiterative", Project_Behavior.call_getGeneValue_290469645478312771(thisNode, "ttestSvmIterative"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, geneSeq, "do.full-genetic-algorithm", Project_Behavior.call_getGeneValue_290469645478312771(thisNode, "fullGeneticAlgorithm"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, geneSeq, "do.ttest-genetic-algorithm", Project_Behavior.call_getGeneValue_290469645478312771(thisNode, "ttestGeneticAlgorithm"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, geneSeq, "do.foldchange-genetic-algorithm", Project_Behavior.call_getGeneValue_290469645478312771(thisNode, "foldchangeGeneticAlgorithm"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, geneSeq, "do.genelist-genetic-algorithm", Project_Behavior.call_getGeneValue_290469645478312771(thisNode, "genelistGeneticAlgorithm"));
+        Element geneExecute = doc.createElement("execute-all-endpoints");
+        geneSeq.appendChild(geneExecute);
+        Element geneAnt1 = doc.createElement("antcall");
+        genetic.appendChild(geneAnt1);
+        geneAnt1.setAttribute("target", "process-model-conditions");
+        Element geneAnt2 = doc.createElement("antcall");
+        genetic.appendChild(geneAnt2);
+        geneAnt2.setAttribute("target", "zip-results");
+        // Gets tune-C target 
+        Element tuneC = doc.createElement("target");
+        project.appendChild(tuneC);
+        tuneC.setAttribute("name", "tune-C");
+        tuneC.setAttribute("description", "Try a few values of cost paramet C with baseline and gene lists.");
+        tuneC.setAttribute("depends", "prepare-bdval, tag-output-directory");
+        Element tuneDelete = doc.createElement("delete");
+        tuneC.appendChild(tuneDelete);
+        tuneDelete.setAttribute("file", "${statistics-output}");
+        Element tuneEcho = doc.createElement("echo");
+        tuneC.appendChild(tuneEcho);
+        tuneEcho.setAttribute("message", "Executing with ${num-threads} threads");
+        Element tuneSeq = doc.createElement("sequential");
+        tuneC.appendChild(tuneSeq);
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, tuneSeq, "use-feature-selection-fold=true", Project_Behavior.call_getTuneValue_290469645479147248(thisNode, "useFeatureSelectionTrue"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, tuneSeq, "use-feature-selection-fold=false", Project_Behavior.call_getTuneValue_290469645479147248(thisNode, "useFeatureSelectionFalse"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, tuneSeq, "do.baseline", Project_Behavior.call_getTuneValue_290469645479147248(thisNode, "baseline"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.whole-chip", Project_Behavior.call_getTuneValue_290469645479147248(thisNode, "wholeChip"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, tuneSeq, "do.foldchange-genetic-algorithm", Project_Behavior.call_getTuneValue_290469645479147248(thisNode, "foldchangeGeneticAlgorithm"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, tuneSeq, "do.foldchange-svmglobal", Project_Behavior.call_getTuneValue_290469645479147248(thisNode, "foldchangeSvmGlobal"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, tuneSeq, "do.foldchange-svmiterative", Project_Behavior.call_getTuneValue_290469645479147248(thisNode, "foldchangeSvmIterative"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, tuneSeq, "do.full-genetic-algorithm", Project_Behavior.call_getTuneValue_290469645479147248(thisNode, "fullGeneticAlgorithm"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, tuneSeq, "do.genelist-genetic-algorithm", Project_Behavior.call_getTuneValue_290469645479147248(thisNode, "genelistGeneticAlgorithm"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, tuneSeq, "do.genelist-svmglobal", Project_Behavior.call_getTuneValue_290469645479147248(thisNode, "genelistSvmGlobal"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, tuneSeq, "do.minmax-svmglobal", Project_Behavior.call_getTuneValue_290469645479147248(thisNode, "minMaxSvmGlobal"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, tuneSeq, "do.pathways-ttest-svmglobal", Project_Behavior.call_getTuneValue_290469645479147248(thisNode, "pathwaysTtestSvmGlobal"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, tuneSeq, "do.pathways.baseline", Project_Behavior.call_getTuneValue_290469645479147248(thisNode, "pathwaysBaseline"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, tuneSeq, "do.svmiterative", Project_Behavior.call_getTuneValue_290469645479147248(thisNode, "svmIterative"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, tuneSeq, "do.ttest-genetic-algorithm", Project_Behavior.call_getTuneValue_290469645479147248(thisNode, "ttestGeneticAlgorithm"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, tuneSeq, "do.ttest-svmglobal", Project_Behavior.call_getTuneValue_290469645479147248(thisNode, "ttestSvmGlobal"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, tuneSeq, "do.ttest-svmiterative", Project_Behavior.call_getTuneValue_290469645479147248(thisNode, "ttestSvmIterative"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, tuneSeq, "do.pathways-tune-C", Project_Behavior.call_getTuneValue_290469645479147248(thisNode, "pathwaysTuneC"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, tuneSeq, "do.baseline-tune-C", Project_Behavior.call_getTuneValue_290469645479147248(thisNode, "baselineTuneC"));
+        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, tuneSeq, "do.genelist-svmglobal-tune-C", Project_Behavior.call_getTuneValue_290469645479147248(thisNode, "genelistSvmFlobalTuneC"));
+        Element tuneExecute = doc.createElement("execute-all-endpoints");
+        tuneSeq.appendChild(tuneExecute);
+        Element tuneAnt1 = doc.createElement("antcall");
+        tuneC.appendChild(tuneAnt1);
+        tuneAnt1.setAttribute("target", "process-model-conditions");
+        Element tuneAnt2 = doc.createElement("antcall");
+        tuneC.appendChild(tuneAnt2);
+        tuneAnt2.setAttribute("target", "zip-results");
+        // Generate final models 
+        Element finalModels = doc.createElement("target");
+        project.appendChild(finalModels);
+        finalModels.setAttribute("name", "generate-list-final-models");
+        finalModels.setAttribute("description", "Calculate feature consensus across multiple feature selection strategies and generate models with consensus features on the whole training set.");
+        Element finalList = doc.createElement("generate-final-models-from-list");
+        finalModels.appendChild(finalList);
+        finalList.setAttribute("results-list", "FILL THIS IN");
+        // Writes file 
+        TransformerFactory transformerFactory = TransformerFactory.newInstance();
+        Transformer transformer = transformerFactory.newTransformer();
+        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+        transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
+        DOMSource source = new DOMSource(doc);
+        StreamResult result = new StreamResult(new File(fileName));
+        transformer.transform(source, result);
+      } catch (Exception e) {
+        throw new Error("Error creating xml file");
+      }
+    }
+  }
+
+  public static void call_addProperty_290469645458227196(SNode thisNode, Document doc, Element root, String name, String value) {
+    Element elem = doc.createElement("property");
+    root.appendChild(elem);
+    elem.setAttribute("name", name);
+    elem.setAttribute("value", value);
+  }
+
+  public static void call_addNormalTarget_290469645480226173(SNode thisNode, Document doc, Element root, String datasetName, String execute) {
+    Element elem = doc.createElement("var");
+    root.appendChild(elem);
+    elem.setAttribute("name", "do." + datasetName);
+    elem.setAttribute("value", execute);
+  }
+
+  public static String call_getEvalValue_290469645465927531(SNode thisNode, final String name) {
+    return String.valueOf(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "properties", true), "evaluate", true)).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode node) {
+        return SPropertyOperations.getString_def(node, "property", null).matches(name);
+      }
+    }));
+  }
+
+  public static String call_getPathValue_290469645477141150(SNode thisNode, final String name) {
+    return String.valueOf(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "properties", true), "pathway", true)).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode node) {
+        return SPropertyOperations.getString(node, "property").matches(name);
+      }
+    }));
+  }
+
+  public static String call_getGeneValue_290469645478312771(SNode thisNode, final String name) {
+    return String.valueOf(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "properties", true), "genetic", true)).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode node) {
+        return SPropertyOperations.getString(node, "property").matches(name);
+      }
+    }));
+  }
+
+  public static String call_getTuneValue_290469645479147248(SNode thisNode, final String name) {
+    return String.valueOf(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "properties", true), "tuneC", true)).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode node) {
+        return SPropertyOperations.getString(node, "property").matches(name);
+      }
+    }));
   }
 }
