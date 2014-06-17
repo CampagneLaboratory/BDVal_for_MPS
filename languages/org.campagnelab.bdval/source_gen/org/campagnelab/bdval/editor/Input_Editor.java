@@ -51,7 +51,6 @@ public class Input_Editor extends DefaultNodeEditor {
     if (renderingCondition_z9sdep_a5a(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNodeList_z9sdep_f0(editorContext, node));
     }
-    editorCell.addEditorCell(this.createConstant_z9sdep_g0(editorContext, node));
     return editorCell;
   }
 
@@ -197,15 +196,5 @@ public class Input_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_z9sdep_a5a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "sample", true)).isNotEmpty();
-  }
-
-  private EditorCell createConstant_z9sdep_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Number of Known Conditions :");
-    editorCell.setCellId("Constant_z9sdep_g0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
   }
 }

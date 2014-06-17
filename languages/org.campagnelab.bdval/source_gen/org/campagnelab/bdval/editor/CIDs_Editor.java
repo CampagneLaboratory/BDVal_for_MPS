@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -44,13 +43,7 @@ public class CIDs_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createConstant_s0w797_c0(editorContext, node));
     }
     if (renderingCondition_s0w797_a3a(node, editorContext)) {
-      editorCell.addEditorCell(this.createProperty_s0w797_d0(editorContext, node));
-    }
-    if (renderingCondition_s0w797_a4a(node, editorContext)) {
-      editorCell.addEditorCell(this.createConstant_s0w797_e0(editorContext, node));
-    }
-    if (renderingCondition_s0w797_a5a(node, editorContext)) {
-      editorCell.addEditorCell(this.createRefNodeList_s0w797_f0(editorContext, node));
+      editorCell.addEditorCell(this.createRefNodeList_s0w797_d0(editorContext, node));
     }
     return editorCell;
   }
@@ -88,53 +81,8 @@ public class CIDs_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_s0w797_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Number of Known Categories:");
-    editorCell.setCellId("Constant_s0w797_c0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    style.set(StyleAttributes.READ_ONLY, true);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private static boolean renderingCondition_s0w797_a2a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getInteger(node, "numberOfSamples") > 0;
-  }
-
-  private EditorCell createProperty_s0w797_d0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("numberOfSamples");
-    provider.setNoTargetText("");
-    provider.setReadOnly(true);
-    provider.setAllowsEmptyTarget(true);
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_numberOfSamples");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    style.set(StyleAttributes.READ_ONLY, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private static boolean renderingCondition_s0w797_a3a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getInteger(node, "numberOfSamples") > 0;
-  }
-
-  private EditorCell createConstant_s0w797_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Invalid Sample Id:");
-    editorCell.setCellId("Constant_s0w797_e0");
+    editorCell.setCellId("Constant_s0w797_c0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.red, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray)));
@@ -145,12 +93,12 @@ public class CIDs_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_s0w797_a4a(SNode node, EditorContext editorContext) {
+  private static boolean renderingCondition_s0w797_a2a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "mismatches", true)).isNotEmpty();
   }
 
-  private EditorCell createRefNodeList_s0w797_f0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new CIDs_Editor.mismatchesListHandler_s0w797_f0(node, "mismatches", editorContext);
+  private EditorCell createRefNodeList_s0w797_d0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new CIDs_Editor.mismatchesListHandler_s0w797_d0(node, "mismatches", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_mismatches");
     Style style = new StyleImpl();
@@ -162,8 +110,8 @@ public class CIDs_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class mismatchesListHandler_s0w797_f0 extends RefNodeListHandler {
-    public mismatchesListHandler_s0w797_f0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class mismatchesListHandler_s0w797_d0 extends RefNodeListHandler {
+    public mismatchesListHandler_s0w797_d0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -198,7 +146,7 @@ public class CIDs_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static boolean renderingCondition_s0w797_a5a(SNode node, EditorContext editorContext) {
+  private static boolean renderingCondition_s0w797_a3a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "mismatches", true)).isNotEmpty();
   }
 }

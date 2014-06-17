@@ -14,9 +14,6 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import java.util.HashMap;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import java.util.Iterator;
 
 public class Input_Behavior {
   public static void init(SNode thisNode) {
@@ -27,14 +24,12 @@ public class Input_Behavior {
     ListSequence.fromList(SLinkOperations.getTargets(thisNode, "sample", true)).clear();
     ListSequence.fromList(SLinkOperations.getTargets(thisNode, "displayRow", true)).clear();
     ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.DataSet"), "cids", true), "mismatches", true)).clear();
-    SPropertyOperations.set(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.DataSet"), "cids", true), "numberOfSamples", null);
     try {
       final DAVMode davMode = new DAVMode();
       Table inputTable = davMode.getReadInputFile(SPropertyOperations.getString(thisNode, "fileName"));
       int cols = inputTable.getColumnNumber();
       Input_Behavior.call_getInputIds_7052920786130389579(thisNode, inputTable, cols);
       Input_Behavior.call_getInputDisplay_3367122381600071702(thisNode, inputTable, cols);
-      // <node> 
     } catch (Exception e) {
       throw new IllegalArgumentException("Illegal Input File");
     }
@@ -142,41 +137,5 @@ public class Input_Behavior {
       }
     });
     return stringLength.value + 2;
-  }
-
-  public static void call_getEndpoints_3367122381622662959(SNode thisNode) {
-    HashMap map = new HashMap(SLinkOperations.getTargets(thisNode, "sample", true).size());
-    final List possibleEndpts = new ArrayList();
-    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "sample", true)).visitAll(new IVisitor<SNode>() {
-      public void visit(SNode sample) {
-        String[] firstSplit = SPropertyOperations.getString(sample, "name").split("-");
-        int length = firstSplit.length;
-        for (int counter = 0; counter < length; counter++) {
-          Sequence.fromIterable(Sequence.fromArray(firstSplit[counter].split("_"))).visitAll(new IVisitor<String>() {
-            public void visit(String element) {
-              possibleEndpts.add(element);
-            }
-          });
-        }
-      }
-    });
-    int listLength = possibleEndpts.size();
-    for (int counter = 0; counter < listLength; counter++) {
-      String str = possibleEndpts.get(counter).toString();
-      if (map.containsKey(str)) {
-        int value = Integer.parseInt(map.remove(str).toString());
-        map.put(str, value++);
-      } else {
-        map.put(str, 1);
-      }
-    }
-    Iterator<Object> substrings = map.keySet().iterator();
-    while (substrings.hasNext()) {
-      Object substring = substrings.next();
-      if (((Integer) map.get(substring)) > 1) {
-        SNode endptDecNode = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.Endpoint", null);
-        SPropertyOperations.set(endptDecNode, "name", substring.toString());
-      }
-    }
   }
 }

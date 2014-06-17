@@ -32,6 +32,10 @@
       <property name="name" nameId="tpck.1169194664001" value="numberOfSamples" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
     </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="290469645496904998" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="numberOfKnownConditions" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7052920786130131778" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="DataSet" />
@@ -99,15 +103,11 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="7052920786130772514" resolveInfo="Sample" />
     </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="4345048909862458382" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="numberOfSamples" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
-    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7052920786130772514" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="Sample" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="sample" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="A sample- must have an id and optionally has an endpoint" />
+    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="A sample: must have an id and optionally has an endpoint" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="7083662764400065823" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="displayId" />
@@ -241,26 +241,26 @@
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="290469645464856045" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="evaluate" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="290469645464856021" resolveInfo="Evaluate" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="290469645484202821" resolveInfo="TestsToRun" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="290469645477150003" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="pathway" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="290469645477150000" resolveInfo="Pathway" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="290469645484202821" resolveInfo="TestsToRun" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="290469645478332257" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="genetic" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="290469645478332254" resolveInfo="GeneticAlgorithm" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="290469645484202821" resolveInfo="TestsToRun" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="290469645479170955" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="tuneC" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="290469645479170952" resolveInfo="TuneC" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="290469645484202821" resolveInfo="TestsToRun" />
     </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="7083662764433578750" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="outputLocation" />
@@ -336,11 +336,11 @@
     </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="290469645457746455" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="foldChangePhi" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpee.5279705229678483898" resolveInfo="_FloatNumberValue" />
     </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="290469645457746475" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="ttestAlpha" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpee.5279705229678483898" resolveInfo="_FloatNumberValue" />
     </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="290469645457746496" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="pathwayAggregationMethod" />
@@ -355,141 +355,125 @@
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
     </node>
   </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="290469645464856021" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="Evaluate" />
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="290469645484187537" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="Condition" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="290469645464856022" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="property" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="290469645465231774" resolveInfo="evaluateType" />
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="290469645484187621" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
     </node>
   </root>
-  <root type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="290469645465231774" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="evaluateType" />
-    <property name="hasNoDefaultMember" nameId="tpce.1212080844762" value="true" />
-    <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="290469645465231775" nodeInfo="ig">
-      <property name="externalValue" nameId="tpce.1083923523172" value="useFeatureSelectionTrue" />
-      <property name="internalValue" nameId="tpce.1083923523171" value="useFeatureSelectionTrue" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="290469645466319718" nodeInfo="ig">
-      <property name="externalValue" nameId="tpce.1083923523172" value="useFeatureSelectionFalse" />
-      <property name="internalValue" nameId="tpce.1083923523171" value="useFeatureSelectionFalse" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="290469645465231827" nodeInfo="ig">
-      <property name="externalValue" nameId="tpce.1083923523172" value="baseline" />
-      <property name="internalValue" nameId="tpce.1083923523171" value="baseline" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="290469645465231830" nodeInfo="ig">
-      <property name="externalValue" nameId="tpce.1083923523172" value="naiveBayes" />
-      <property name="internalValue" nameId="tpce.1083923523171" value="naiveBayes" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="290469645465564939" nodeInfo="ig">
-      <property name="externalValue" nameId="tpce.1083923523172" value="logitBoost" />
-      <property name="internalValue" nameId="tpce.1083923523171" value="logitBoost" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="290469645465564944" nodeInfo="ig">
-      <property name="externalValue" nameId="tpce.1083923523172" value="logistic" />
-      <property name="internalValue" nameId="tpce.1083923523171" value="logisitc" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="290469645465564950" nodeInfo="ig">
-      <property name="externalValue" nameId="tpce.1083923523172" value="randomForest" />
-      <property name="internalValue" nameId="tpce.1083923523171" value="randomForest" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="290469645465564957" nodeInfo="ig">
-      <property name="externalValue" nameId="tpce.1083923523172" value="kStar" />
-      <property name="internalValue" nameId="tpce.1083923523171" value="kStar" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="290469645465564965" nodeInfo="ig">
-      <property name="externalValue" nameId="tpce.1083923523172" value="wholeChip" />
-      <property name="internalValue" nameId="tpce.1083923523171" value="wholeChip" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="290469645465564974" nodeInfo="ig">
-      <property name="externalValue" nameId="tpce.1083923523172" value="baselineTuneC" />
-      <property name="internalValue" nameId="tpce.1083923523171" value="baselineTuneC" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="290469645465564984" nodeInfo="ig">
-      <property name="externalValue" nameId="tpce.1083923523172" value="foldchangeGeneticAlgorithm" />
-      <property name="internalValue" nameId="tpce.1083923523171" value="foldchangeGeneticAlgorithm" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="290469645465565017" nodeInfo="ig">
-      <property name="externalValue" nameId="tpce.1083923523172" value="foldchangeSvmGlobal" />
-      <property name="internalValue" nameId="tpce.1083923523171" value="foldchangeSvmGlobal" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="290469645465565150" nodeInfo="ig">
-      <property name="externalValue" nameId="tpce.1083923523172" value="foldchangeSvmIterative" />
-      <property name="internalValue" nameId="tpce.1083923523171" value="foldchangeSvmIterative" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="290469645465565163" nodeInfo="ig">
-      <property name="externalValue" nameId="tpce.1083923523172" value="fullGeneticAlgorithm" />
-      <property name="internalValue" nameId="tpce.1083923523171" value="fullGeneticAlgorithm" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="290469645465565177" nodeInfo="ig">
-      <property name="externalValue" nameId="tpce.1083923523172" value="genelistGeneticAlgorithm" />
-      <property name="internalValue" nameId="tpce.1083923523171" value="genelistGeneticAlgorithm" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="290469645465565192" nodeInfo="ig">
-      <property name="externalValue" nameId="tpce.1083923523172" value="genelistSvmGlobal" />
-      <property name="internalValue" nameId="tpce.1083923523171" value="genelistSvmGlobal" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="290469645465565208" nodeInfo="ig">
-      <property name="externalValue" nameId="tpce.1083923523172" value="genelistSvmGlobalTuneC" />
-      <property name="internalValue" nameId="tpce.1083923523171" value="genelistSvmGlobalTuneC" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="290469645465565225" nodeInfo="ig">
-      <property name="externalValue" nameId="tpce.1083923523172" value="minMaxSvmGlobal" />
-      <property name="internalValue" nameId="tpce.1083923523171" value="minMaxSvmGlobal" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="290469645465565358" nodeInfo="ig">
-      <property name="externalValue" nameId="tpce.1083923523172" value="pathwaysTtestSvmGlobal" />
-      <property name="internalValue" nameId="tpce.1083923523171" value="pathwaysTtestSvmGlobal" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="290469645465565377" nodeInfo="ig">
-      <property name="externalValue" nameId="tpce.1083923523172" value="pathwaysTuneC" />
-      <property name="internalValue" nameId="tpce.1083923523171" value="pathwaysTuneC" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="290469645465565397" nodeInfo="ig">
-      <property name="externalValue" nameId="tpce.1083923523172" value="pathwaysBaseline" />
-      <property name="internalValue" nameId="tpce.1083923523171" value="pathwaysBaseline" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="290469645465565418" nodeInfo="ig">
-      <property name="externalValue" nameId="tpce.1083923523172" value="svmIterative" />
-      <property name="internalValue" nameId="tpce.1083923523171" value="svmIterative" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="290469645465565440" nodeInfo="ig">
-      <property name="externalValue" nameId="tpce.1083923523172" value="ttestGeneticAlgorithm" />
-      <property name="internalValue" nameId="tpce.1083923523171" value="ttestGeneticAlgorithm" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="290469645465565463" nodeInfo="ig">
-      <property name="externalValue" nameId="tpce.1083923523172" value="ttestSvmGlobal" />
-      <property name="internalValue" nameId="tpce.1083923523171" value="ttestSvmGlobal" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="290469645465565487" nodeInfo="ig">
-      <property name="externalValue" nameId="tpce.1083923523172" value="ttestSvmIterative" />
-      <property name="internalValue" nameId="tpce.1083923523171" value="ttestSvmIterative" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="290469645477150000" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="Pathway" />
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="290469645484202821" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="TestsToRun" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="290469645477150001" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="property" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="290469645484203070" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="useFeatureSelectionFoldTrue" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
     </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="290469645478332254" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="GeneticAlgorithm" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="290469645478332255" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="property" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="290469645484203071" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="useFeatureSelectionFoldFalse" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
     </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="290469645479170952" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="TuneC" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="290469645479170953" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="property" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="290469645484203072" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="baseline" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="290469645484203079" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="baselineTuneC" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="290469645484203073" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="naiveBayes" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="290469645484203074" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="logitBoost" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="290469645484203075" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="logistic" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="290469645484203076" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="randomForest" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="290469645484203077" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="kStar" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="290469645484203078" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="wholeChip" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="290469645484203080" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="foldchangeGeneticAlgorithm" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="290469645484203081" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="foldchangeSvmGlobal" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="290469645484203082" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="foldchangeSvmIterative" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="290469645484203083" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="fullGeneticAlgorithm" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="290469645484203084" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="genelistGeneticAlgorithm" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="290469645484203085" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="genelistSvmGlobal" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="290469645484203086" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="genelistSvmGlobalTuneC" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="290469645484203087" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="minMaxSvmGlobal" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="290469645484203398" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="pathwaysBuildPathwayComponents" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="290469645484203088" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="pathwaysTtestSvmGlobal" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="290469645484203089" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="pathwaysTuneC" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="290469645484203090" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="pathwaysBaseline" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="290469645484203091" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="svmIterative" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="290469645484203092" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="ttestGeneticAlgorithm" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="290469645484203093" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="ttestSvmGlobal" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="290469645484203094" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="ttestSvmIterative" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="290469645484204260" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="condition" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1..n" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="290469645484187537" resolveInfo="Condition" />
     </node>
   </root>
 </model>

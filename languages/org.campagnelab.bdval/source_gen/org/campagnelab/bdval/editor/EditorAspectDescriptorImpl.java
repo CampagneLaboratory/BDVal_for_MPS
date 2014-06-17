@@ -20,17 +20,17 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 1:
         return Collections.<ConceptEditor>singletonList(new CategoryReference_Editor());
       case 2:
-        return Collections.<ConceptEditor>singletonList(new DataSet_Editor());
+        return Collections.<ConceptEditor>singletonList(new Condition_Editor());
       case 3:
-        return Collections.<ConceptEditor>singletonList(new DisplayRow_Editor());
+        return Collections.<ConceptEditor>singletonList(new DataSet_Editor());
       case 4:
-        return Collections.<ConceptEditor>singletonList(new DisplayValue_Editor());
+        return Collections.<ConceptEditor>singletonList(new DisplayRow_Editor());
       case 5:
-        return Collections.<ConceptEditor>singletonList(new Endpoint_Editor());
+        return Collections.<ConceptEditor>singletonList(new DisplayValue_Editor());
       case 6:
-        return Collections.<ConceptEditor>singletonList(new EndpointCategory_Editor());
+        return Collections.<ConceptEditor>singletonList(new Endpoint_Editor());
       case 7:
-        return Collections.<ConceptEditor>singletonList(new Evaluate_Editor());
+        return Collections.<ConceptEditor>singletonList(new EndpointCategory_Editor());
       case 8:
         return Collections.<ConceptEditor>singletonList(new Input_Editor());
       case 9:
@@ -46,6 +46,8 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 14:
         return Collections.<ConceptEditor>singletonList(new Test_Editor());
       case 15:
+        return Collections.<ConceptEditor>singletonList(new TestsToRun_Editor());
+      case 16:
         return Collections.<ConceptEditor>singletonList(new Values_Editor());
       default:
     }
@@ -58,5 +60,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
 
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"org.campagnelab.bdval.structure.CIDs", "org.campagnelab.bdval.structure.CategoryReference", "org.campagnelab.bdval.structure.DataSet", "org.campagnelab.bdval.structure.DisplayRow", "org.campagnelab.bdval.structure.DisplayValue", "org.campagnelab.bdval.structure.Endpoint", "org.campagnelab.bdval.structure.EndpointCategory", "org.campagnelab.bdval.structure.Evaluate", "org.campagnelab.bdval.structure.Input", "org.campagnelab.bdval.structure.Platform", "org.campagnelab.bdval.structure.Project", "org.campagnelab.bdval.structure.Properties", "org.campagnelab.bdval.structure.Sample", "org.campagnelab.bdval.structure.Task", "org.campagnelab.bdval.structure.Test", "org.campagnelab.bdval.structure.Values"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"org.campagnelab.bdval.structure.CIDs", "org.campagnelab.bdval.structure.CategoryReference", "org.campagnelab.bdval.structure.Condition", "org.campagnelab.bdval.structure.DataSet", "org.campagnelab.bdval.structure.DisplayRow", "org.campagnelab.bdval.structure.DisplayValue", "org.campagnelab.bdval.structure.Endpoint", "org.campagnelab.bdval.structure.EndpointCategory", "org.campagnelab.bdval.structure.Input", "org.campagnelab.bdval.structure.Platform", "org.campagnelab.bdval.structure.Project", "org.campagnelab.bdval.structure.Properties", "org.campagnelab.bdval.structure.Sample", "org.campagnelab.bdval.structure.Task", "org.campagnelab.bdval.structure.Test", "org.campagnelab.bdval.structure.TestsToRun", "org.campagnelab.bdval.structure.Values"};
 }

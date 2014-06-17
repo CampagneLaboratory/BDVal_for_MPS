@@ -8,7 +8,7 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
   public TypesystemDescriptor() {
     {
-      NonTypesystemRule_Runtime nonTypesystemRule = new check_BDValLocation_NonTypesystemRule();
+      NonTypesystemRule_Runtime nonTypesystemRule = new Check_Properties_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
@@ -16,11 +16,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
-      NonTypesystemRule_Runtime nonTypesystemRule = new check_Input_NonTypesystemRule();
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_Condition_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
-      NonTypesystemRule_Runtime nonTypesystemRule = new check_OutputLocation_NonTypesystemRule();
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_Input_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {

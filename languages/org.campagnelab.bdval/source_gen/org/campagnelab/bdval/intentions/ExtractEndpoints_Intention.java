@@ -81,7 +81,7 @@ public class ExtractEndpoints_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      Task_Behavior.call_getEndpoints_7083662764400846836(node);
+      Task_Behavior.call_getEndpoints_2366055488403471001(node);
     }
 
     public IntentionDescriptor getDescriptor() {
