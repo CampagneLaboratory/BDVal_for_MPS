@@ -26,7 +26,7 @@ public class check_Task_NonTypesystemRule extends AbstractNonTypesystemRule_Runt
 
   public void applyRule(final SNode task, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     int numCategories = ListSequence.fromList(SLinkOperations.getTargets(task, "categoryReference", true)).count();
-    if (numCategories == 1) {
+    if (numCategories < 2) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         errorTarget = new ReferenceMessageTarget("categoryReference");

@@ -206,7 +206,7 @@ public class Properties_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("insert value");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("8");
+    editorCell.setCellId("property_threadsServer");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);

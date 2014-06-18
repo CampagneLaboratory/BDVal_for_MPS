@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6hx6xmah9zjeg5cvewajk79u1inojhu">
+<dependencies version="2" modelHash="7qqiq4cnxijoxzfs82035h1qr8zv8yo">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="5sdbpqxziyuazpb9j1p4zdk6bnvbn49" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-5mgxduek28h3ywdzzsk4capaz4hgjm0" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="303xz1b2lyseld0axia86q3lpvucmq6" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="b4ewbuz42qcbg1awca5bacgi0vopxqt" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="a8elw7fctzg6sg8fe36u9gzu42axhdb" />
-  <common hash="-6q394hls13mc3xs0jrhdfjrv8zaqe6n" dependsOnNodes="true">
+  <common hash="61nrmw0kx4xtb8rl88fx3halgmz5x3v" dependsOnNodes="true">
     <dep root="290469645457746370" />
     <dep root="290469645484187537" />
     <dep root="290469645484202821" />
@@ -21,7 +21,6 @@
     <dep root="7083662764383720206" />
     <dep root="7083662764384091354" />
     <dep root="7083662764384236370" />
-    <dep root="7083662764388713867" />
     <dep root="7083662764416913858" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -30,8 +29,8 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="7052920786129988728" name="Input" hash="4oiwdfe67fw515y39cpwgq98iufgj5s" />
-  <source id="7052920786130131778" name="DataSet" hash="-67z91lcszrerri29r217olf7n1jfltt" />
+  <source id="7052920786129988728" name="Input" hash="-euj2xcekqckf6zr3ogl1t8zcogzal0j" />
+  <source id="7052920786130131778" name="DataSet" hash="d5i291sf42krxybi7d7n2ewbrb86ev9" />
   <source id="7052920786130131783" name="Platform" hash="-bqkdpu2b6px1xh9cnsb5kpcc6o0ll83" />
   <source id="7052920786130131788" name="CIDs" hash="89lm2e098z7nunjabymcthkfycupn32" />
   <source id="7052920786130772514" name="Sample" hash="-3huuehfygyoy4yteman7uiipzj1sx5j" />
@@ -42,9 +41,8 @@
   <source id="7083662764383720206" name="EndpointCategory" hash="-dcvyx45fnpau0akdqizv2m0jmezad1h" />
   <source id="7083662764384091354" name="Task" hash="93vpjfgh1r3yrl5f3go8xvo5lebnync" />
   <source id="7083662764384236370" name="CategoryReference" hash="81ky4runcuhaa6h3wlyd0gft1q5ar4b" />
-  <source id="7083662764388713867" name="Test" hash="-1498f1f1580z2pgttqdwt67c8d8f7z7" />
-  <source id="7083662764416913858" name="Properties" hash="1yk4ohph803h1owtuqw8qajru7xxriw" />
-  <source id="290469645457746370" name="Values" hash="9spmejj7chbw42s5qoms04exzb6p9of" />
+  <source id="7083662764416913858" name="Properties" hash="5lpfhjot2eu06pmj7x01p6vlupffppk" />
+  <source id="290469645457746370" name="Integer" hash="e39l6vz7w4wq4bg5a32638qjlb92mmg" />
   <source id="290469645484187537" name="Condition" hash="-ed3pq3kf2pvmxfcqjpnt18pzqvfrhsk" />
   <source id="290469645484202821" name="TestsToRun" hash="ei2h5sxw1moyzmo8vx6wpiaywc513uj" />
 </dependencies>

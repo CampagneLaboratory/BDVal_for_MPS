@@ -16,11 +16,11 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new Input_BehaviorDescriptor();
       case 3:
         return new DataSet_BehaviorDescriptor();
-      case 9:
+      case 10:
         return new Platform_BehaviorDescriptor();
       case 0:
         return new CIDs_BehaviorDescriptor();
-      case 12:
+      case 13:
         return new Sample_BehaviorDescriptor();
       case 4:
         return new DisplayRow_BehaviorDescriptor();
@@ -28,20 +28,18 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new DisplayValue_BehaviorDescriptor();
       case 6:
         return new Endpoint_BehaviorDescriptor();
-      case 10:
+      case 11:
         return new Project_BehaviorDescriptor();
       case 7:
         return new EndpointCategory_BehaviorDescriptor();
-      case 13:
+      case 14:
         return new Task_BehaviorDescriptor();
       case 1:
         return new CategoryReference_BehaviorDescriptor();
-      case 14:
-        return new Test_BehaviorDescriptor();
-      case 11:
+      case 12:
         return new Properties_BehaviorDescriptor();
-      case 16:
-        return new Values_BehaviorDescriptor();
+      case 9:
+        return new Integer_BehaviorDescriptor();
       case 2:
         return new Condition_BehaviorDescriptor();
       case 15:
@@ -51,5 +49,5 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"org.campagnelab.bdval.structure.CIDs", "org.campagnelab.bdval.structure.CategoryReference", "org.campagnelab.bdval.structure.Condition", "org.campagnelab.bdval.structure.DataSet", "org.campagnelab.bdval.structure.DisplayRow", "org.campagnelab.bdval.structure.DisplayValue", "org.campagnelab.bdval.structure.Endpoint", "org.campagnelab.bdval.structure.EndpointCategory", "org.campagnelab.bdval.structure.Input", "org.campagnelab.bdval.structure.Platform", "org.campagnelab.bdval.structure.Project", "org.campagnelab.bdval.structure.Properties", "org.campagnelab.bdval.structure.Sample", "org.campagnelab.bdval.structure.Task", "org.campagnelab.bdval.structure.Test", "org.campagnelab.bdval.structure.TestsToRun", "org.campagnelab.bdval.structure.Values"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"org.campagnelab.bdval.structure.CIDs", "org.campagnelab.bdval.structure.CategoryReference", "org.campagnelab.bdval.structure.Condition", "org.campagnelab.bdval.structure.DataSet", "org.campagnelab.bdval.structure.DisplayRow", "org.campagnelab.bdval.structure.DisplayValue", "org.campagnelab.bdval.structure.Endpoint", "org.campagnelab.bdval.structure.EndpointCategory", "org.campagnelab.bdval.structure.Input", "org.campagnelab.bdval.structure.Integer", "org.campagnelab.bdval.structure.Platform", "org.campagnelab.bdval.structure.Project", "org.campagnelab.bdval.structure.Properties", "org.campagnelab.bdval.structure.Sample", "org.campagnelab.bdval.structure.Task", "org.campagnelab.bdval.structure.TestsToRun"};
 }

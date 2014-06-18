@@ -303,7 +303,7 @@
     <nodeInfo nodeId="2366055488399689965" fileName="GenerateFiles_Intention.java" startLine="110" startPosition="30" endLine="111" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="290469645456508417" fileName="GenerateFiles_Intention.java" startLine="115" startPosition="26" endLine="116" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7083662764416914297" fileName="GenerateFiles_Intention.java" startLine="120" startPosition="48" endLine="121" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7083662764417252720" fileName="GenerateFiles_Intention.java" startLine="125" startPosition="55" endLine="126" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7083662764416971834" fileName="GenerateFiles_Intention.java" startLine="125" startPosition="55" endLine="126" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7083662764416914297" fileName="GenerateFiles_Intention.java" startLine="29" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GenerateFiles_Intention#()V" />
     <nodeInfo nodeId="7083662764416914297" fileName="GenerateFiles_Intention.java" startLine="95" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
     <nodeInfo nodeId="7083662764416914297" fileName="GenerateFiles_Intention.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
@@ -322,7 +322,7 @@
     <nodeInfo nodeId="2366055488399689501" fileName="GenerateFiles_Intention.java" startLine="109" startPosition="42" endLine="112" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2366055488399690923" fileName="GenerateFiles_Intention.java" startLine="114" startPosition="9" endLine="117" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7083662764416914297" fileName="GenerateFiles_Intention.java" startLine="120" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
-    <nodeInfo nodeId="7083662764417252720" fileName="GenerateFiles_Intention.java" startLine="125" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmptyString#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="7083662764416971834" fileName="GenerateFiles_Intention.java" startLine="125" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmptyString#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="7083662764417252691" fileName="GenerateFiles_Intention.java" startLine="69" startPosition="44" endLine="74" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7083662764416932241" fileName="GenerateFiles_Intention.java" startLine="109" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="7083662764416914297" fileName="GenerateFiles_Intention.java" startLine="56" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
@@ -350,7 +350,7 @@
     <scopeInfo nodeId="2366055488399689502" fileName="GenerateFiles_Intention.java" startLine="110" startPosition="30" endLine="111" endPosition="108" />
     <scopeInfo nodeId="2366055488399690926" fileName="GenerateFiles_Intention.java" startLine="115" startPosition="26" endLine="116" endPosition="67" />
     <scopeInfo nodeId="7083662764416914297" fileName="GenerateFiles_Intention.java" startLine="120" startPosition="48" endLine="121" endPosition="42" />
-    <scopeInfo nodeId="7083662764417252720" fileName="GenerateFiles_Intention.java" startLine="125" startPosition="55" endLine="126" endPosition="43" />
+    <scopeInfo nodeId="7083662764416971834" fileName="GenerateFiles_Intention.java" startLine="125" startPosition="55" endLine="126" endPosition="43" />
     <scopeInfo nodeId="7083662764416914297" fileName="GenerateFiles_Intention.java" startLine="29" startPosition="0" endLine="31" endPosition="0" />
     <scopeInfo nodeId="7083662764416914297" fileName="GenerateFiles_Intention.java" startLine="95" startPosition="0" endLine="97" endPosition="0" />
     <scopeInfo nodeId="7083662764416914297" fileName="GenerateFiles_Intention.java" startLine="32" startPosition="0" endLine="35" endPosition="0" />
@@ -373,8 +373,8 @@
     </scopeInfo>
     <scopeInfo nodeId="7083662764416932242" fileName="GenerateFiles_Intention.java" startLine="109" startPosition="42" endLine="112" endPosition="11" />
     <scopeInfo nodeId="7083662764416914297" fileName="GenerateFiles_Intention.java" startLine="120" startPosition="0" endLine="123" endPosition="0" />
-    <scopeInfo nodeId="7083662764417252720" fileName="GenerateFiles_Intention.java" startLine="125" startPosition="0" endLine="128" endPosition="0">
-      <varInfo nodeId="7083662764417252720" varName="str" />
+    <scopeInfo nodeId="7083662764416971834" fileName="GenerateFiles_Intention.java" startLine="125" startPosition="0" endLine="128" endPosition="0">
+      <varInfo nodeId="7083662764416971834" varName="str" />
     </scopeInfo>
     <scopeInfo nodeId="7083662764416914297" fileName="GenerateFiles_Intention.java" startLine="56" startPosition="84" endLine="60" endPosition="16" />
     <scopeInfo nodeId="7083662764416914297" fileName="GenerateFiles_Intention.java" startLine="87" startPosition="99" endLine="91" endPosition="30" />
@@ -405,10 +405,10 @@
       <varInfo nodeId="7083662764416914297" varName="editorContext" />
       <varInfo nodeId="7083662764416914297" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="7083662764417021434" fileName="GenerateFiles_Intention.java" startLine="64" startPosition="319" endLine="68" endPosition="5" unitName="org.campagnelab.bdval.intentions.GenerateFiles_Intention$2" />
-    <unitInfo nodeId="7083662764417252700" fileName="GenerateFiles_Intention.java" startLine="70" startPosition="777" endLine="74" endPosition="9" unitName="org.campagnelab.bdval.intentions.GenerateFiles_Intention$2" />
+    <unitInfo nodeId="7083662764417021434" fileName="GenerateFiles_Intention.java" startLine="64" startPosition="319" endLine="68" endPosition="5" unitName="org.campagnelab.bdval.intentions.GenerateFiles_Intention$1" />
+    <unitInfo nodeId="7083662764417252700" fileName="GenerateFiles_Intention.java" startLine="70" startPosition="777" endLine="74" endPosition="9" unitName="org.campagnelab.bdval.intentions.GenerateFiles_Intention$3" />
     <unitInfo nodeId="7083662764416932241" fileName="GenerateFiles_Intention.java" startLine="108" startPosition="92" endLine="114" endPosition="7" unitName="org.campagnelab.bdval.intentions.GenerateFiles_Intention$1" />
-    <unitInfo nodeId="7083662764417252689" fileName="GenerateFiles_Intention.java" startLine="68" startPosition="225" endLine="76" endPosition="5" unitName="org.campagnelab.bdval.intentions.GenerateFiles_Intention$1" />
+    <unitInfo nodeId="7083662764417252689" fileName="GenerateFiles_Intention.java" startLine="68" startPosition="225" endLine="76" endPosition="5" unitName="org.campagnelab.bdval.intentions.GenerateFiles_Intention$2" />
     <unitInfo nodeId="7083662764416914297" fileName="GenerateFiles_Intention.java" startLine="94" startPosition="0" endLine="124" endPosition="0" unitName="org.campagnelab.bdval.intentions.GenerateFiles_Intention$IntentionImplementation" />
     <unitInfo nodeId="7083662764416914297" fileName="GenerateFiles_Intention.java" startLine="26" startPosition="0" endLine="129" endPosition="0" unitName="org.campagnelab.bdval.intentions.GenerateFiles_Intention" />
   </root>

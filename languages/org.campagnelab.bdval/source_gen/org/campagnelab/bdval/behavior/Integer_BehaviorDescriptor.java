@@ -4,12 +4,12 @@ package org.campagnelab.bdval.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 
-public class Test_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
-  public Test_BehaviorDescriptor() {
+public class Integer_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
+  public Integer_BehaviorDescriptor() {
   }
 
   @Override
   public String getConceptFqName() {
-    return "org.campagnelab.bdval.structure.Test";
+    return "org.campagnelab.bdval.structure.Integer";
   }
 }

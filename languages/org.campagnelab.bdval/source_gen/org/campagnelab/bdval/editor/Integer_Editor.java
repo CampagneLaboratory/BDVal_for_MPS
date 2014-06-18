@@ -11,12 +11,12 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
-public class Values_Editor extends DefaultNodeEditor {
+public class Integer_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createProperty_riwt5h_a(editorContext, node);
+    return this.createProperty_9ug0rr_a(editorContext, node);
   }
 
-  private EditorCell createProperty_riwt5h_a(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_9ug0rr_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("value");
     provider.setNoTargetText("<no value>");

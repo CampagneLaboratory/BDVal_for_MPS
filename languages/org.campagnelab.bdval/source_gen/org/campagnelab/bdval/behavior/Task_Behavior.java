@@ -19,7 +19,7 @@ public class Task_Behavior {
       public void visit(final SNode sample) {
         SNode categoryNode = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "categoryReference", true)).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode categoryRef) {
-            return SPropertyOperations.getString(sample, "name").toLowerCase().contains(SPropertyOperations.getString(SLinkOperations.getTarget(categoryRef, "endpointCategory", false), "name").toLowerCase());
+            return SPropertyOperations.getString(sample, "name").contains(SPropertyOperations.getString(SLinkOperations.getTarget(categoryRef, "endpointCategory", false), "name"));
           }
         });
         if ((categoryNode != null)) {

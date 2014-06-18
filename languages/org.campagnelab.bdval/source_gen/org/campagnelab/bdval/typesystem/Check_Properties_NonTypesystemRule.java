@@ -16,6 +16,7 @@ import jetbrains.mps.errors.IErrorReporter;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import org.campagnelab.bdval.behavior.Properties_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class Check_Properties_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -45,12 +46,26 @@ public class Check_Properties_NonTypesystemRule extends AbstractNonTypesystemRul
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(properties, "Pathway Aggregation Method invalid", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "290469645492843241", null, errorTarget);
       }
     }
-    List<String> computerTyples = ListSequence.fromListAndArray(new ArrayList<String>(), "desktop", "server");
-    if (!(ListSequence.fromList(computerTyples).contains(SPropertyOperations.getString(properties, "computerType")))) {
+    List<String> computerTypes = ListSequence.fromListAndArray(new ArrayList<String>(), "desktop", "server");
+    if (!(ListSequence.fromList(computerTypes).contains(SPropertyOperations.getString(properties, "computerType")))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         errorTarget = new PropertyMessageTarget("computerType");
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(properties, "Computer Type is invalid", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "2366055488404802375", null, errorTarget);
+      }
+    }
+    if (!(Properties_Behavior.call_checkFloat_3976565827575914039(properties, SPropertyOperations.getString(properties, "foldChangePhi")))) {
+      {
+        MessageTarget errorTarget = new NodeMessageTarget();
+        errorTarget = new PropertyMessageTarget("foldChangePhi");
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(properties, "Fold Change Feature Selection must be a number", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "3976565827575976951", null, errorTarget);
+      }
+    }
+    if (!(Properties_Behavior.call_checkFloat_3976565827575914039(properties, SPropertyOperations.getString(properties, "ttestAlpha")))) {
+      {
+        MessageTarget errorTarget = new NodeMessageTarget();
+        errorTarget = new PropertyMessageTarget("ttestAlpha");
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(properties, "T-test Feature Selection must be a number", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "3976565827575986461", null, errorTarget);
       }
     }
   }

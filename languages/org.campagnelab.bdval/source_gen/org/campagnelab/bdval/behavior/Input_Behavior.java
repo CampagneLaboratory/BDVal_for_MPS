@@ -57,14 +57,13 @@ public class Input_Behavior {
     List<Integer> length = ListSequence.fromList(new ArrayList<Integer>());
     String output;
     int rows = inputTable.getRowNumber();
-    int colMax = 8;
     int rowMax = 10;
-    if (cols < colMax) {
-      colMax = cols;
-    }
     if (rows < rowMax) {
       rowMax = rows;
     }
+    int colWidth;
+    int colMax = 0;
+    int characters = 0;
     Table.RowIterator rowIterator = inputTable.firstRow();
     rowIterator.next();
     // Gets the first row 
@@ -73,25 +72,29 @@ public class Input_Behavior {
     // Gets the first spot 
     try {
       SNode valNode = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.DisplayValue", null);
-      output = inputTable.getIdentifier(colCounter);
-      ListSequence.fromList(length).addElement(Math.max(inputTable.elementToString(colCounter, rowIterator).length(), output.length()) + 2);
-      SPropertyOperations.set(valNode, "value", Input_Behavior.call_reformatString_3367122381603806186(thisNode, output, ListSequence.fromList(length).getElement(colCounter)));
+      output = inputTable.getIdentifier(colMax);
+      colWidth = Math.max(inputTable.elementToString(colMax, rowIterator).length(), output.length()) + 2;
+      characters = characters + colWidth;
+      ListSequence.fromList(length).addElement(colWidth);
+      SPropertyOperations.set(valNode, "value", Input_Behavior.call_reformatString_3367122381603806186(thisNode, output, ListSequence.fromList(length).getElement(colMax)));
       ListSequence.fromList(SLinkOperations.getTargets(rowNode, "displayValue", true)).addElement(valNode);
-      colCounter++;
+      colMax++;
     } catch (Exception e) {
       throw new Error();
     }
-    while (colCounter < colMax) {
+    while (characters < 104 && colMax < cols) {
       try {
         SNode valNode = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.DisplayValue", null);
-        output = inputTable.getIdentifier(colCounter);
-        ListSequence.fromList(length).addElement(Math.max(output.length() + 2, 13));
-        SPropertyOperations.set(valNode, "value", Input_Behavior.call_reformatString_3367122381603806186(thisNode, output, ListSequence.fromList(length).getElement(colCounter)));
+        output = inputTable.getIdentifier(colMax);
+        colWidth = Math.max(output.length() + 2, 13);
+        characters = characters + colWidth;
+        ListSequence.fromList(length).addElement(colWidth);
+        SPropertyOperations.set(valNode, "value", Input_Behavior.call_reformatString_3367122381603806186(thisNode, output, ListSequence.fromList(length).getElement(colMax)));
         ListSequence.fromList(SLinkOperations.getTargets(rowNode, "displayValue", true)).addElement(valNode);
       } catch (Exception e) {
         throw new Error();
       }
-      colCounter++;
+      colMax++;
     }
     ListSequence.fromList(SLinkOperations.getTargets(thisNode, "displayRow", true)).addElement(rowNode);
     // Gets the following rows 

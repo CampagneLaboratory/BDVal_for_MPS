@@ -49,7 +49,7 @@ public class CIDs_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_s0w797_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "CIDs:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Optional CIDs File:");
     editorCell.setCellId("Constant_s0w797_a0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.READ_ONLY, true);
@@ -61,7 +61,7 @@ public class CIDs_Editor extends DefaultNodeEditor {
   private EditorCell createProperty_s0w797_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("fileName");
-    provider.setNoTargetText("optional: insert cids file location");
+    provider.setNoTargetText("insert cids file location");
     provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);

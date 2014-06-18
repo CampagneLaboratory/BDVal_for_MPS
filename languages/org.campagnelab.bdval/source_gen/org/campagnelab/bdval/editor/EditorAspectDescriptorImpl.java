@@ -34,21 +34,19 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 8:
         return Collections.<ConceptEditor>singletonList(new Input_Editor());
       case 9:
-        return Collections.<ConceptEditor>singletonList(new Platform_Editor());
+        return Collections.<ConceptEditor>singletonList(new Integer_Editor());
       case 10:
-        return Collections.<ConceptEditor>singletonList(new Project_Editor());
+        return Collections.<ConceptEditor>singletonList(new Platform_Editor());
       case 11:
-        return Collections.<ConceptEditor>singletonList(new Properties_Editor());
+        return Collections.<ConceptEditor>singletonList(new Project_Editor());
       case 12:
-        return Collections.<ConceptEditor>singletonList(new Sample_Editor());
+        return Collections.<ConceptEditor>singletonList(new Properties_Editor());
       case 13:
-        return Collections.<ConceptEditor>singletonList(new Task_Editor());
+        return Collections.<ConceptEditor>singletonList(new Sample_Editor());
       case 14:
-        return Collections.<ConceptEditor>singletonList(new Test_Editor());
+        return Collections.<ConceptEditor>singletonList(new Task_Editor());
       case 15:
         return Collections.<ConceptEditor>singletonList(new TestsToRun_Editor());
-      case 16:
-        return Collections.<ConceptEditor>singletonList(new Values_Editor());
       default:
     }
     return Collections.<ConceptEditor>emptyList();
@@ -60,5 +58,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
 
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"org.campagnelab.bdval.structure.CIDs", "org.campagnelab.bdval.structure.CategoryReference", "org.campagnelab.bdval.structure.Condition", "org.campagnelab.bdval.structure.DataSet", "org.campagnelab.bdval.structure.DisplayRow", "org.campagnelab.bdval.structure.DisplayValue", "org.campagnelab.bdval.structure.Endpoint", "org.campagnelab.bdval.structure.EndpointCategory", "org.campagnelab.bdval.structure.Input", "org.campagnelab.bdval.structure.Platform", "org.campagnelab.bdval.structure.Project", "org.campagnelab.bdval.structure.Properties", "org.campagnelab.bdval.structure.Sample", "org.campagnelab.bdval.structure.Task", "org.campagnelab.bdval.structure.Test", "org.campagnelab.bdval.structure.TestsToRun", "org.campagnelab.bdval.structure.Values"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"org.campagnelab.bdval.structure.CIDs", "org.campagnelab.bdval.structure.CategoryReference", "org.campagnelab.bdval.structure.Condition", "org.campagnelab.bdval.structure.DataSet", "org.campagnelab.bdval.structure.DisplayRow", "org.campagnelab.bdval.structure.DisplayValue", "org.campagnelab.bdval.structure.Endpoint", "org.campagnelab.bdval.structure.EndpointCategory", "org.campagnelab.bdval.structure.Input", "org.campagnelab.bdval.structure.Integer", "org.campagnelab.bdval.structure.Platform", "org.campagnelab.bdval.structure.Project", "org.campagnelab.bdval.structure.Properties", "org.campagnelab.bdval.structure.Sample", "org.campagnelab.bdval.structure.Task", "org.campagnelab.bdval.structure.TestsToRun"};
 }

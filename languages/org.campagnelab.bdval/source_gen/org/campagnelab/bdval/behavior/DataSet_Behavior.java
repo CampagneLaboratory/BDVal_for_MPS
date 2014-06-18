@@ -37,6 +37,8 @@ public class DataSet_Behavior {
     } else {
       proceed = false;
     }
+    DataSet_Behavior.call_createTestSet_3976565827563239534(thisNode, directoryName, datasetName, proceed);
+    DataSet_Behavior.call_copyPathway_3976565827563344171(thisNode, directoryName, proceed);
     return proceed;
   }
 
@@ -158,7 +160,48 @@ public class DataSet_Behavior {
     }
   }
 
+  public static void call_createTestSet_3976565827563239534(SNode thisNode, String directoryName, String datasetName, boolean proceed) {
+    String testSetFolder = directoryName + "test-sets/";
+    new File(testSetFolder).mkdir();
+    String fileName = testSetFolder.toString() + datasetName + "-samples.txt";
+    if (proceed & SPropertyOperations.getBoolean(thisNode, "testSet") && DataSet_Behavior.call_checkFile_7083662764406992609(thisNode, fileName)) {
+      try {
+        FileWriter file = new FileWriter(fileName);
+        final PrintWriter writer = new PrintWriter(file);
+        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "input", true), "sample", true)).visitAll(new IVisitor<SNode>() {
+          public void visit(SNode sample) {
+            if ((SLinkOperations.getTarget(SLinkOperations.getTarget(sample, "category", false), "endpointCategory", false) != null)) {
+              writer.print(SPropertyOperations.getString(sample, "name"));
+              writer.println();
+            }
+          }
+        });
+        writer.close();
+        file.close();
+      } catch (Exception e) {
+        throw new Error("Error Printing Test-Set File");
+      }
+    }
+  }
+
+  public static void call_copyPathway_3976565827563344171(SNode thisNode, String directoryName, boolean proceed) {
+    String pathwayFolder = directoryName + "pathways/";
+    new File(pathwayFolder).mkdir();
+    String fileName = pathwayFolder.toString() + new File(SPropertyOperations.getString(thisNode, "pathway")).getName();
+    if (proceed) {
+      try {
+        FileUtils.copyFile(new File(SPropertyOperations.getString(thisNode, "pathway")), new File(fileName));
+      } catch (Exception e) {
+        throw new Error("Error Copying Pathway File");
+      }
+    }
+  }
+
   public static boolean call_checkFile_7083662764406992609(SNode thisNode, String fileName) {
+    return true;
+  }
+
+  public static boolean call_checkFileReal_3976565827571671486(SNode thisNode, String fileName) {
     boolean proceed;
     if (new File(fileName).exists()) {
       int reply = JOptionPane.showConfirmDialog(null, fileName + " already exists. Overwrite and Continue?", "File exists", JOptionPane.YES_NO_CANCEL_OPTION);
