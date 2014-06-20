@@ -16,7 +16,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
-import org.campagnelab.bdval.behavior.TestsToRun_Behavior;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.campagnelab.bdval.behavior.DataSet_Behavior;
@@ -100,10 +99,6 @@ public class GenerateFiles_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      TestsToRun_Behavior.call_load_290469645485060636(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "properties", true), "evaluate", true));
-      TestsToRun_Behavior.call_load_290469645485060636(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "properties", true), "pathway", true));
-      TestsToRun_Behavior.call_load_290469645485060636(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "properties", true), "genetic", true));
-      TestsToRun_Behavior.call_load_290469645485060636(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "properties", true), "tuneC", true));
       final Wrappers._boolean proceed = new Wrappers._boolean(true);
       ListSequence.fromList(SLinkOperations.getTargets(node, "dataset", true)).visitAll(new IVisitor<SNode>() {
         public void visit(SNode dataset) {

@@ -34,7 +34,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.DataSet_Behavior" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.Project_Behavior" />
-    <classNode dependClassName="org.campagnelab.bdval.behavior.TestsToRun_Behavior" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />

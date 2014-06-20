@@ -21,17 +21,6 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Propert
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
-import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
-import jetbrains.mps.smodel.action.NodeFactoryManager;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
-import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
-import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
@@ -50,53 +39,33 @@ public class Properties_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_vvo4cc_d0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_vvo4cc_e0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_vvo4cc_f0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_vvo4cc_g0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_vvo4cc_h0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_vvo4cc_i0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_vvo4cc_j0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_vvo4cc_k0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_vvo4cc_l0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_vvo4cc_m0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_vvo4cc_n0(editorContext, node));
+    if (renderingCondition_vvo4cc_a6a(node, editorContext)) {
+      editorCell.addEditorCell(this.createConstant_vvo4cc_g0(editorContext, node));
+    }
+    if (renderingCondition_vvo4cc_a7a(node, editorContext)) {
+      editorCell.addEditorCell(this.createProperty_vvo4cc_h0(editorContext, node));
+    }
+    if (renderingCondition_vvo4cc_a8a(node, editorContext)) {
+      editorCell.addEditorCell(this.createConstant_vvo4cc_i0(editorContext, node));
+    }
+    if (renderingCondition_vvo4cc_a9a(node, editorContext)) {
+      editorCell.addEditorCell(this.createProperty_vvo4cc_j0(editorContext, node));
+    }
+    if (renderingCondition_vvo4cc_a01a(node, editorContext)) {
+      editorCell.addEditorCell(this.createConstant_vvo4cc_k0(editorContext, node));
+    }
+    if (renderingCondition_vvo4cc_a11a(node, editorContext)) {
+      editorCell.addEditorCell(this.createProperty_vvo4cc_l0(editorContext, node));
+    }
+    if (renderingCondition_vvo4cc_a21a(node, editorContext)) {
+      editorCell.addEditorCell(this.createConstant_vvo4cc_m0(editorContext, node));
+    }
+    if (renderingCondition_vvo4cc_a31a(node, editorContext)) {
+      editorCell.addEditorCell(this.createProperty_vvo4cc_n0(editorContext, node));
+    }
     editorCell.addEditorCell(this.createConstant_vvo4cc_o0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_vvo4cc_p0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_vvo4cc_q0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_vvo4cc_r0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_vvo4cc_s0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_vvo4cc_t0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_vvo4cc_u0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_vvo4cc_v0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_vvo4cc_w0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_vvo4cc_x0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_vvo4cc_y0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_vvo4cc_z0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_vvo4cc_ab0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_vvo4cc_bb0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_vvo4cc_cb0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_vvo4cc_db0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_vvo4cc_eb0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_vvo4cc_fb0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_vvo4cc_gb0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_vvo4cc_hb0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_vvo4cc_ib0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_vvo4cc_jb0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_vvo4cc_kb0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_vvo4cc_lb0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_vvo4cc_mb0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_vvo4cc_nb0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_vvo4cc_ob0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_vvo4cc_pb0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_vvo4cc_qb0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_vvo4cc_rb0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_vvo4cc_sb0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_vvo4cc_tb0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_vvo4cc_ub0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_vvo4cc_vb0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_vvo4cc_wb0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_vvo4cc_xb0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_vvo4cc_yb0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_vvo4cc_zb0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_vvo4cc_ac0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_vvo4cc_q0(editorContext, node));
     return editorCell;
   }
 
@@ -200,6 +169,10 @@ public class Properties_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private static boolean renderingCondition_vvo4cc_a6a(SNode node, EditorContext editorContext) {
+    return SPropertyOperations.getString(node, "computerType").matches("server");
+  }
+
   private EditorCell createProperty_vvo4cc_h0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("threadsServer");
@@ -221,11 +194,19 @@ public class Properties_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private static boolean renderingCondition_vvo4cc_a7a(SNode node, EditorContext editorContext) {
+    return SPropertyOperations.getString(node, "computerType").matches("server");
+  }
+
   private EditorCell createConstant_vvo4cc_i0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Amount of Memory to use on a Server:");
     editorCell.setCellId("Constant_vvo4cc_i0");
     editorCell.setDefaultText("");
     return editorCell;
+  }
+
+  private static boolean renderingCondition_vvo4cc_a8a(SNode node, EditorContext editorContext) {
+    return SPropertyOperations.getString(node, "computerType").matches("server");
   }
 
   private EditorCell createProperty_vvo4cc_j0(EditorContext editorContext, SNode node) {
@@ -249,11 +230,19 @@ public class Properties_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private static boolean renderingCondition_vvo4cc_a9a(SNode node, EditorContext editorContext) {
+    return SPropertyOperations.getString(node, "computerType").matches("server");
+  }
+
   private EditorCell createConstant_vvo4cc_k0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Number of Parallel Threads to use on a Desktop:");
     editorCell.setCellId("Constant_vvo4cc_k0");
     editorCell.setDefaultText("");
     return editorCell;
+  }
+
+  private static boolean renderingCondition_vvo4cc_a01a(SNode node, EditorContext editorContext) {
+    return SPropertyOperations.getString(node, "computerType").matches("desktop");
   }
 
   private EditorCell createProperty_vvo4cc_l0(EditorContext editorContext, SNode node) {
@@ -277,11 +266,19 @@ public class Properties_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private static boolean renderingCondition_vvo4cc_a11a(SNode node, EditorContext editorContext) {
+    return SPropertyOperations.getString(node, "computerType").matches("desktop");
+  }
+
   private EditorCell createConstant_vvo4cc_m0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Amount of Memory to use on a Desktop (MB):");
     editorCell.setCellId("Constant_vvo4cc_m0");
     editorCell.setDefaultText("");
     return editorCell;
+  }
+
+  private static boolean renderingCondition_vvo4cc_a21a(SNode node, EditorContext editorContext) {
+    return SPropertyOperations.getString(node, "computerType").matches("desktop");
   }
 
   private EditorCell createProperty_vvo4cc_n0(EditorContext editorContext, SNode node) {
@@ -306,6 +303,10 @@ public class Properties_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private static boolean renderingCondition_vvo4cc_a31a(SNode node, EditorContext editorContext) {
+    return SPropertyOperations.getString(node, "computerType").matches("desktop");
+  }
+
   private EditorCell createConstant_vvo4cc_o0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_vvo4cc_o0");
@@ -317,596 +318,27 @@ public class Properties_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vvo4cc_p0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Do Specific Gene Lists Only:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Approach:");
     editorCell.setCellId("Constant_vvo4cc_p0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createProperty_vvo4cc_q0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("doSpecificGeneListsOnly");
-    provider.setNoTargetText("<no doSpecificGeneListsOnly>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_doSpecificGeneListsOnly");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createConstant_vvo4cc_r0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Enable Flooring:");
-    editorCell.setCellId("Constant_vvo4cc_r0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_vvo4cc_s0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("enableFlooring");
-    provider.setNoTargetText("<no enableFlooring>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_enableFlooring");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createConstant_vvo4cc_t0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "GA Wrapper Population Size:");
-    editorCell.setCellId("Constant_vvo4cc_t0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createProperty_vvo4cc_u0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("gaWrapperPopulationSize");
-    provider.setNoTargetText("<no gaWrapperPopulationSize>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_gaWrapperPopulationSize");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createConstant_vvo4cc_v0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "GA Wrapper Number of Iterations:");
-    editorCell.setCellId("Constant_vvo4cc_v0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createProperty_vvo4cc_w0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("gaWrapperNumberOfIterations");
-    provider.setNoTargetText("<no gaWrapperNumberOfIterations>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_gaWrapperNumberOfIterations");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createConstant_vvo4cc_x0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Performance Measured Maximized by GA:");
-    editorCell.setCellId("Constant_vvo4cc_x0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createProperty_vvo4cc_y0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("performanceMeasureMaximized");
-    provider.setNoTargetText("<no performanceMeasureMaximized>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_performanceMeasureMaximized");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createConstant_vvo4cc_z0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Internal CV Repeats:");
-    editorCell.setCellId("Constant_vvo4cc_z0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createProperty_vvo4cc_ab0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("internalRepeats");
-    provider.setNoTargetText("<no internalRepeats>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_internalRepeats");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createConstant_vvo4cc_bb0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Internal CV Folds:");
-    editorCell.setCellId("Constant_vvo4cc_bb0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createProperty_vvo4cc_cb0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("internalFolds");
-    provider.setNoTargetText("<no internalFolds>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_internalFolds");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createConstant_vvo4cc_db0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "External CV Repeats:");
-    editorCell.setCellId("Constant_vvo4cc_db0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createProperty_vvo4cc_eb0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("externalRepeats");
-    provider.setNoTargetText("<no externalRepeats>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_externalRepeats");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createConstant_vvo4cc_fb0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "External CV Folds:");
-    editorCell.setCellId("Constant_vvo4cc_fb0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createProperty_vvo4cc_gb0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("externalFolds");
-    provider.setNoTargetText("<no externalFolds>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_externalFolds");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createConstant_vvo4cc_hb0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Number of Features (can enter list):");
-    editorCell.setCellId("Constant_vvo4cc_hb0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createRefNodeList_vvo4cc_ib0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new Properties_Editor.numFeaturesListHandler_vvo4cc_ib0(node, "numFeatures", editorContext);
-    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_numFeatures");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
-    return editorCell;
-  }
-
-  private static class numFeaturesListHandler_vvo4cc_ib0 extends RefNodeListHandler {
-    public numFeaturesListHandler_vvo4cc_ib0(SNode ownerNode, String childRole, EditorContext context) {
-      super(ownerNode, childRole, context, false);
-    }
-
-    public SNode createNodeToInsert(EditorContext editorContext) {
-      SNode listOwner = super.getOwner();
-      return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
-    }
-
-    public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
-      EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
-      this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
-      return elementCell;
-    }
-
-    public EditorCell createEmptyCell(EditorContext editorContext) {
-      EditorCell emptyCell = null;
-      emptyCell = super.createEmptyCell(editorContext);
-      this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
-      return emptyCell;
-    }
-
-    public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
-      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
-        elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
-        if (elementNode != null) {
-          elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
-          elementCell.addKeyMap(new RefNodeListHandlerElementKeyMap(this, ","));
-        }
-        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
-          elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
-        }
-      }
-    }
-
-    @Override
-    public EditorCell createSeparatorCell(EditorContext editorContext, SNode prevNode, SNode nextNode) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
-      editorCell.setSelectable(false);
-      Style style = new StyleImpl();
-      style.set(StyleAttributes.LAYOUT_CONSTRAINT, "");
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-      editorCell.getStyle().putAll(style);
-      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(prevNode));
-      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(prevNode));
-      return editorCell;
-    }
-  }
-
-  private EditorCell createConstant_vvo4cc_jb0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Maximum Number of Features to Keep After the First Step:");
-    editorCell.setCellId("Constant_vvo4cc_jb0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createProperty_vvo4cc_kb0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("maxIntermediateFeatures");
-    provider.setNoTargetText("<no maxIntermediateFeatures>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_maxIntermediateFeatures");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createConstant_vvo4cc_lb0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Train a Probablistic SVM:");
-    editorCell.setCellId("Constant_vvo4cc_lb0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createProperty_vvo4cc_mb0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("useProbability");
-    provider.setNoTargetText("<no useProbability>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_useProbability");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createConstant_vvo4cc_nb0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Cutoff for Fold-Change Feature Selection:");
-    editorCell.setCellId("Constant_vvo4cc_nb0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createProperty_vvo4cc_ob0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("foldChangePhi");
-    provider.setNoTargetText("<no foldChangePhi>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_foldChangePhi");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createConstant_vvo4cc_pb0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Cutoff for T-Test Feature Selection:");
-    editorCell.setCellId("Constant_vvo4cc_pb0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createProperty_vvo4cc_qb0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("ttestAlpha");
-    provider.setNoTargetText("<no ttestAlpha>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_ttestAlpha");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createConstant_vvo4cc_rb0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Type of Pathway Feature Aggregation Method:");
-    editorCell.setCellId("Constant_vvo4cc_rb0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createProperty_vvo4cc_sb0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("pathwayAggregationMethod");
-    provider.setNoTargetText("<no pathwayAggregationMethod>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_pathwayAggregationMethod");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new Properties_Editor.Properties_generic_cellMenu_vvo4cc_a0sb0()}));
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  public static class Properties_generic_cellMenu_vvo4cc_a0sb0 extends AbstractCellMenuPart_Generic_Group {
-    public Properties_generic_cellMenu_vvo4cc_a0sb0() {
-    }
-
-    public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-      return ListSequence.fromListAndArray(new ArrayList<String>(), "average", "PCA");
-    }
-
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((String) parameterObject, node, model, operationContext, editorContext);
-    }
-
-    public void handleAction_impl(String parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      if (parameterObject.matches("average")) {
-        SPropertyOperations.set(node, "pathwayAggregationMethod", "average");
-      } else if (parameterObject.matches("PCA")) {
-        SPropertyOperations.set(node, "pathwayAggregationMethod", "PCA");
-      }
-    }
-
-    public boolean isReferentPresentation() {
-      return false;
-    }
-  }
-
-  private EditorCell createConstant_vvo4cc_tb0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Evaluate:");
-    editorCell.setCellId("Constant_vvo4cc_tb0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createRefNode_vvo4cc_ub0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_vvo4cc_q0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("evaluate");
-    provider.setNoTargetText("<no evaluate>");
+    provider.setRole("approach");
+    provider.setNoTargetText("<no approach>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
-      editorCell.setRole("evaluate");
+      editorCell.setRole("approach");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createConstant_vvo4cc_vb0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Pathways:");
-    editorCell.setCellId("Constant_vvo4cc_vb0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createRefNode_vvo4cc_wb0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("pathway");
-    provider.setNoTargetText("<no pathway>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    if (editorCell.getRole() == null) {
-      editorCell.setRole("pathway");
-    }
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createConstant_vvo4cc_xb0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Genetic Algorithm:");
-    editorCell.setCellId("Constant_vvo4cc_xb0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createRefNode_vvo4cc_yb0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("genetic");
-    provider.setNoTargetText("<no genetic>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    if (editorCell.getRole() == null) {
-      editorCell.setRole("genetic");
-    }
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createConstant_vvo4cc_zb0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Tune C:");
-    editorCell.setCellId("Constant_vvo4cc_zb0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createRefNode_vvo4cc_ac0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("tuneC");
-    provider.setNoTargetText("<no tuneC>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    if (editorCell.getRole() == null) {
-      editorCell.setRole("tuneC");
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

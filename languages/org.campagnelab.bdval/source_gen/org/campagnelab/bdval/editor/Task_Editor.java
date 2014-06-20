@@ -43,7 +43,7 @@ public class Task_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_jn8cz7_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Endpoint to be Tested :");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Prediction Endpoint :");
     editorCell.setCellId("Constant_jn8cz7_a0");
     editorCell.setDefaultText("");
     return editorCell;

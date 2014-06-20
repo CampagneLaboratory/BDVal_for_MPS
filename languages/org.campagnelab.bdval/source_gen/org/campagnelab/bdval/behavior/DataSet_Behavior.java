@@ -39,6 +39,7 @@ public class DataSet_Behavior {
     }
     DataSet_Behavior.call_createTestSet_3976565827563239534(thisNode, directoryName, datasetName, proceed);
     DataSet_Behavior.call_copyPathway_3976565827563344171(thisNode, directoryName, proceed);
+    DataSet_Behavior.call_copyGene2Probes_7388448774863588431(thisNode, directoryName, proceed);
     return proceed;
   }
 
@@ -89,7 +90,7 @@ public class DataSet_Behavior {
     try {
       String cidsFolder = directoryName + "cids/";
       new File(cidsFolder).mkdir();
-      String fileName = cidsFolder.toString() + datasetName + ".cids";
+      String fileName = cidsFolder + datasetName + ".cids";
       if (proceed && DataSet_Behavior.call_checkFile_7083662764406992609(thisNode, fileName)) {
         FileWriter file = new FileWriter(fileName);
         final PrintWriter writer = new PrintWriter(file);
@@ -127,7 +128,7 @@ public class DataSet_Behavior {
     try {
       String taskFolder = directoryName + "tasks/";
       new File(taskFolder).mkdir();
-      String fileName = taskFolder.toString() + datasetName + ".tasks";
+      String fileName = taskFolder + datasetName + ".tasks";
       if (DataSet_Behavior.call_checkFile_7083662764406992609(thisNode, fileName)) {
         FileWriter file = new FileWriter(fileName);
         PrintWriter writer = new PrintWriter(file);
@@ -163,7 +164,7 @@ public class DataSet_Behavior {
   public static void call_createTestSet_3976565827563239534(SNode thisNode, String directoryName, String datasetName, boolean proceed) {
     String testSetFolder = directoryName + "test-sets/";
     new File(testSetFolder).mkdir();
-    String fileName = testSetFolder.toString() + datasetName + "-samples.txt";
+    String fileName = testSetFolder + datasetName + "-samples.txt";
     if (proceed & SPropertyOperations.getBoolean(thisNode, "testSet") && DataSet_Behavior.call_checkFile_7083662764406992609(thisNode, fileName)) {
       try {
         FileWriter file = new FileWriter(fileName);
@@ -187,12 +188,24 @@ public class DataSet_Behavior {
   public static void call_copyPathway_3976565827563344171(SNode thisNode, String directoryName, boolean proceed) {
     String pathwayFolder = directoryName + "pathways/";
     new File(pathwayFolder).mkdir();
-    String fileName = pathwayFolder.toString() + new File(SPropertyOperations.getString(thisNode, "pathway")).getName();
-    if (proceed) {
+    String fileName = pathwayFolder + new File(SPropertyOperations.getString(thisNode, "pathway")).getName();
+    if (proceed && DataSet_Behavior.call_checkFile_7083662764406992609(thisNode, fileName)) {
       try {
         FileUtils.copyFile(new File(SPropertyOperations.getString(thisNode, "pathway")), new File(fileName));
       } catch (Exception e) {
         throw new Error("Error Copying Pathway File");
+      }
+    }
+  }
+
+  public static void call_copyGene2Probes_7388448774863588431(SNode thisNode, String directoryName, boolean proceed) {
+    String pathwayFolder = directoryName + "pathways/";
+    String fileName = pathwayFolder + new File(SPropertyOperations.getString(thisNode, "geneToProbes")).getName();
+    if (proceed && DataSet_Behavior.call_checkFile_7083662764406992609(thisNode, fileName)) {
+      try {
+        FileUtils.copyFile(new File(SPropertyOperations.getString(thisNode, "geneToProbes")), new File(fileName));
+      } catch (Exception e) {
+        throw new Error("Error Copying Gene To Probes File");
       }
     }
   }

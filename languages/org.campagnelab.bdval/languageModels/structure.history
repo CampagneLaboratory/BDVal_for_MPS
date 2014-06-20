@@ -300,5 +300,23 @@
     </dependencies>
     <rename id="w348.290469645460315642" type="PROPERTY" from="execute" to="normalTarget" />
   </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="49" />
+    </dependencies>
+    <rename id="w348.290469645457746173" type="PROPERTY" from="doSpecificGeneListsOnly" to="specificGeneLists" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="50" />
+    </dependencies>
+    <rename id="w348.7388448774866532198" type="CONCEPT" from="Baseline" to="SVM" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="51" />
+    </dependencies>
+    <rename id="w348.7388448774866532324" type="CONCEPT" from="BaselineTuneC" to="SVMTuneC" />
+  </StructureModification>
 </history>
 

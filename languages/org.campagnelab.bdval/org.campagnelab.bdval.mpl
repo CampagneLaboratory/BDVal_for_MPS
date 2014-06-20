@@ -12,14 +12,20 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator generatorUID="org.campagnelab.bdval#8663900622048200163" uuid="e5d28b19-97bd-4db7-ab8f-e8d2349a95c3">
+    <generator name="" generatorUID="org.campagnelab.bdval#8663900622048200163" uuid="e5d28b19-97bd-4db7-ab8f-e8d2349a95c3">
       <models>
         <modelRoot contentPath="${module}" type="default">
           <sourceRoot location="generator/template" />
         </modelRoot>
       </models>
       <external-templates />
+      <dependencies>
+        <dependency reexport="false">479c7a8c-02f9-43b5-9139-d910cb22f298(jetbrains.mps.core.xml)</dependency>
+        <dependency reexport="false">35dbc0f6-2677-4e81-9b75-548a3c2b6d9b(org.campagnelab.bdval)</dependency>
+      </dependencies>
       <usedLanguages>
+        <usedLanguage>479c7a8c-02f9-43b5-9139-d910cb22f298(jetbrains.mps.core.xml)</usedLanguage>
+        <usedLanguage>af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)</usedLanguage>
         <usedLanguage>b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)</usedLanguage>
         <usedLanguage>d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)</usedLanguage>
         <usedLanguage>35dbc0f6-2677-4e81-9b75-548a3c2b6d9b(org.campagnelab.bdval)</usedLanguage>
@@ -48,6 +54,7 @@
     <usedLanguage>3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)</usedLanguage>
     <usedLanguage>18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)</usedLanguage>
     <usedLanguage>d7a92d38-f7db-40d0-8431-763b0c3c9f20(jetbrains.mps.lang.intentions)</usedLanguage>
+    <usedLanguage>c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)</usedLanguage>
     <usedLanguage>b83431fe-5c8f-40bc-8a36-65e25f4dd253(jetbrains.mps.lang.textGen)</usedLanguage>
     <usedLanguage>7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)</usedLanguage>
     <usedLanguage>35dbc0f6-2677-4e81-9b75-548a3c2b6d9b(org.campagnelab.bdval)</usedLanguage>
