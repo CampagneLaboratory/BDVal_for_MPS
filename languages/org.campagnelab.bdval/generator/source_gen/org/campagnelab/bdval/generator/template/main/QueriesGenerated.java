@@ -12,47 +12,52 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.campagnelab.bdval.behavior.DataSet_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
+
+  public static Object propertyMacro_GetPropertyValue_4671749543977809844(final PropertyMacroContext _context) {
+    return String.valueOf(SPropertyOperations.getBoolean(_context.getNode(), "trainSVM"));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4671749543995090152(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "cutoff");
+  }
 
   public static Object propertyMacro_GetPropertyValue_2125124408384843456(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_2125124408386290223(final PropertyMacroContext _context) {
-    return "${ant.file." + SPropertyOperations.getString(_context.getNode(), "name").replaceAll("\\s", "");
+    return "${ant.file." + SPropertyOperations.getString(_context.getNode(), "name").replaceAll("\\s", "") + "}";
   }
 
   public static Object propertyMacro_GetPropertyValue_2125124408386345809(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "properties", true), "bdvalLocation") + "/buildsupport/build.xml";
   }
 
-  public static Object propertyMacro_GetPropertyValue_2125124408386492210(final PropertyMacroContext _context) {
-    return String.valueOf(SPropertyOperations.getBoolean(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "properties", true), "approach", true), "enableFlooring"));
-  }
-
   public static Object propertyMacro_GetPropertyValue_2125124408386422321(final PropertyMacroContext _context) {
-    return String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "properties", true), "approach", true), "externalRepeats"));
+    return String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(_context.getNode(), "approach", true), "externalRepeats"));
   }
 
   public static Object propertyMacro_GetPropertyValue_2125124408386469559(final PropertyMacroContext _context) {
-    return String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "properties", true), "approach", true), "externalFolds"));
+    return String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(_context.getNode(), "approach", true), "externalFolds"));
   }
 
   public static Object propertyMacro_GetPropertyValue_2125124408386508182(final PropertyMacroContext _context) {
     final Wrappers._T<String> numFeatures = new Wrappers._T<String>("");
-    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "properties", true), "approach", true), "numFeatures", true)).visitAll(new IVisitor<SNode>() {
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "approach", true), "numFeatures", true)).visitAll(new IVisitor<SNode>() {
       public void visit(SNode number) {
         numFeatures.value = numFeatures.value + "," + SPropertyOperations.getInteger(number, "value");
       }
     });
-    return numFeatures.value;
+    return numFeatures.value.substring(1);
   }
 
   public static Object propertyMacro_GetPropertyValue_2125124408386578716(final PropertyMacroContext _context) {
-    return String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "properties", true), "approach", true), "maxIntermediateFeatures"));
+    return String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(_context.getNode(), "approach", true), "maxIntermediateFeatures"));
   }
 
   public static Object propertyMacro_GetPropertyValue_2125124408386655251(final PropertyMacroContext _context) {
@@ -85,15 +90,23 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
+  public static Object propertyMacro_GetPropertyValue_4671749543985197235(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "name").replaceAll("\\s", "");
+  }
+
+  public static Iterable<SNode> sourceNodesQuery_4671749543977798723(final SourceSubstituteMacroNodesContext _context) {
+    return SNodeOperations.getChildren(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionProperties", true));
+  }
+
   public static Iterable<SNode> sourceNodesQuery_2125124408386653548(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "dataset", true);
   }
 
   public static Iterable<SNode> sourceNodesQuery_2125124408379582228(final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "properties", true), "approach", true), "classification", true);
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "approach", true), "classification", true);
   }
 
   public static Iterable<SNode> sourceNodesQuery_2125124408386233196(final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "properties", true), "approach", true), "featureSelection", true);
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelection", true);
   }
 }

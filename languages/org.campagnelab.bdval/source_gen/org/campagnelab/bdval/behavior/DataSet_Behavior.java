@@ -38,8 +38,6 @@ public class DataSet_Behavior {
       proceed = false;
     }
     DataSet_Behavior.call_createTestSet_3976565827563239534(thisNode, directoryName, datasetName, proceed);
-    DataSet_Behavior.call_copyPathway_3976565827563344171(thisNode, directoryName, proceed);
-    DataSet_Behavior.call_copyGene2Probes_7388448774863588431(thisNode, directoryName, proceed);
     return proceed;
   }
 
@@ -181,31 +179,6 @@ public class DataSet_Behavior {
         file.close();
       } catch (Exception e) {
         throw new Error("Error Printing Test-Set File");
-      }
-    }
-  }
-
-  public static void call_copyPathway_3976565827563344171(SNode thisNode, String directoryName, boolean proceed) {
-    String pathwayFolder = directoryName + "pathways/";
-    new File(pathwayFolder).mkdir();
-    String fileName = pathwayFolder + new File(SPropertyOperations.getString(thisNode, "pathway")).getName();
-    if (proceed && DataSet_Behavior.call_checkFile_7083662764406992609(thisNode, fileName)) {
-      try {
-        FileUtils.copyFile(new File(SPropertyOperations.getString(thisNode, "pathway")), new File(fileName));
-      } catch (Exception e) {
-        throw new Error("Error Copying Pathway File");
-      }
-    }
-  }
-
-  public static void call_copyGene2Probes_7388448774863588431(SNode thisNode, String directoryName, boolean proceed) {
-    String pathwayFolder = directoryName + "pathways/";
-    String fileName = pathwayFolder + new File(SPropertyOperations.getString(thisNode, "geneToProbes")).getName();
-    if (proceed && DataSet_Behavior.call_checkFile_7083662764406992609(thisNode, fileName)) {
-      try {
-        FileUtils.copyFile(new File(SPropertyOperations.getString(thisNode, "geneToProbes")), new File(fileName));
-      } catch (Exception e) {
-        throw new Error("Error Copying Gene To Probes File");
       }
     }
   }

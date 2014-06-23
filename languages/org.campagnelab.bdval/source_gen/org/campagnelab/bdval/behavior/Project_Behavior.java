@@ -12,17 +12,6 @@ import java.io.FileOutputStream;
 import java.io.File;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.DocumentBuilder;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import java.util.List;
-import java.util.ArrayList;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.OutputKeys;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
 
 public class Project_Behavior {
   public static void init(SNode thisNode) {
@@ -33,7 +22,6 @@ public class Project_Behavior {
     boolean proceed = true;
     proceed = Project_Behavior.call_createLocalProperties_7083662764418572584(thisNode, projectName, proceed);
     proceed = Project_Behavior.call_createProperties_290469645499580654(thisNode, projectName, proceed);
-    Project_Behavior.call_createXML_7083662764442215124(thisNode, projectName, proceed);
   }
 
   public static boolean call_createLocalProperties_7083662764418572584(SNode thisNode, String projectName, boolean proceed) {
@@ -43,11 +31,15 @@ public class Project_Behavior {
         Properties prop = new Properties();
         OutputStream output = new FileOutputStream(new File(fileName));
         prop.setProperty("eval-dataset-root", SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "outputLocation") + "/" + SPropertyOperations.getString(thisNode, "name").replaceAll("\\s", ""));
-        prop.setProperty("computer.type", SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "computerType"));
-        prop.setProperty("server.thread-number", "" + SPropertyOperations.getInteger(SLinkOperations.getTarget(thisNode, "properties", true), "threadsServer"));
-        prop.setProperty("server.memory", "-Xmx" + SPropertyOperations.getInteger(SLinkOperations.getTarget(thisNode, "properties", true), "memoryServer") + "m");
-        prop.setProperty("desktop.thread-number", "" + SPropertyOperations.getInteger(SLinkOperations.getTarget(thisNode, "properties", true), "threadsDesktop"));
-        prop.setProperty("desktop.memory", "-Xmx" + SPropertyOperations.getInteger(SLinkOperations.getTarget(thisNode, "properties", true), "memoryDesktop") + "m");
+        String computerType = SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "properties", true), "computerType", true), "name");
+        prop.setProperty("computer.type", computerType);
+        if (computerType.matches("server")) {
+          prop.setProperty("server.thread-number", "" + SPropertyOperations.getInteger(SLinkOperations.getTarget(thisNode, "properties", true), "threads"));
+          prop.setProperty("server.memory", "-Xmx" + SPropertyOperations.getInteger(SLinkOperations.getTarget(thisNode, "properties", true), "memory") + "m");
+        } else {
+          prop.setProperty("desktop.thread-number", "" + SPropertyOperations.getInteger(SLinkOperations.getTarget(thisNode, "properties", true), "threads"));
+          prop.setProperty("desktop.memory", "-Xmx" + SPropertyOperations.getInteger(SLinkOperations.getTarget(thisNode, "properties", true), "memory") + "m");
+        }
         prop.store(output, SPropertyOperations.getString(thisNode, "name") + " Local Properties");
         return true;
       } catch (Exception e) {
@@ -89,11 +81,6 @@ public class Project_Behavior {
               });
             }
             prop.setProperty(datasetName.value + ".platform-file", root + "/platforms/" + new File(SPropertyOperations.getString(SLinkOperations.getTarget(dataset, "platform", true), "fileName")).getName());
-            prop.setProperty(datasetName.value + ".do-process-gene-lists", String.valueOf(SPropertyOperations.getBoolean(dataset, "processGeneList")));
-            prop.setProperty(datasetName.value + ".pathways-file", root + "/pathways/" + new File(SPropertyOperations.getString(dataset, "pathway")).getName());
-            prop.setProperty(datasetName.value + ".gene-to-probes-file", root + "/pathways/" + new File(SPropertyOperations.getString(dataset, "geneToProbes")).getName());
-            prop.setProperty(datasetName.value + ".genelists", SPropertyOperations.getString(dataset, "genelists"));
-            prop.setProperty(datasetName.value + ".floor", String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(dataset, "thresholdFloor", true), "value")));
           }
         });
         // Finish bottom: custom ID/model 
@@ -105,199 +92,5 @@ public class Project_Behavior {
     } else {
       return false;
     }
-  }
-
-  public static void call_createXML_7083662764442215124(final SNode thisNode, String projectName, boolean proceed) {
-    String fileName = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "outputLocation") + "/" + projectName + "/" + projectName + ".xml";
-    if (proceed && DataSet_Behavior.call_checkFile_7083662764406992609(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "dataset", true)).first(), fileName)) {
-      try {
-        DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
-        final Document doc = docBuilder.newDocument();
-        final Element project = doc.createElement("project");
-        doc.appendChild(project);
-        project.setAttribute("name", SPropertyOperations.getString(thisNode, "name").replaceAll("\\s", ""));
-        project.setAttribute("default", "evaluate");
-        project.setAttribute("basedir", ".");
-        Element dirname = doc.createElement("dirname");
-        project.appendChild(dirname);
-        dirname.setAttribute("property", "bdval-project.basedir");
-        dirname.setAttribute("file", "${ant.file." + projectName + "}");
-        Element importBuild = doc.createElement("import");
-        project.appendChild(importBuild);
-        importBuild.setAttribute("file", SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "bdvalLocation") + "/buildsupport/build.xml");
-        Element localProperties = doc.createElement("property");
-        project.appendChild(localProperties);
-        localProperties.setAttribute("file", "${bdval-project.basedir}/${ant.project.name}-local.properties");
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, project, "project-property-file", "${bdval-project.basedir}/${ant.project.name}.properties");
-        Element file = doc.createElement("property");
-        project.appendChild(file);
-        file.setAttribute("file", "${project-property-file}");
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, project, "do-specific-gene-lists-only", String.valueOf(SPropertyOperations.getBoolean(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "properties", true), "approach", true), "specificGeneLists")));
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, project, "enable-flooring", String.valueOf(SPropertyOperations.getBoolean(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "properties", true), "approach", true), "enableFlooring")));
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, project, "ga-wrapper-population-size", "EDITED");
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, project, "ga-wrapper-number-of-iterations", "EDITED");
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, project, "performance-measured-maximized-by-GA", "EDITED");
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, project, "internal-CV-repeats", "--cv-repeats " + "EDITED");
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, project, "internal-CV-folds", "EDITED");
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, project, "external-CV-repeats-number", String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "properties", true), "approach", true), "externalRepeats")));
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, project, "external-CV-repeats", "--cv-repeats ${external-CV-repeats-number}");
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, project, "external-CV-folds", String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "properties", true), "approach", true), "externalFolds")));
-        final Wrappers._T<String> numFeatures = new Wrappers._T<String>("");
-        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "properties", true), "approach", true), "numFeatures", true)).visitAll(new IVisitor<SNode>() {
-          public void visit(SNode node) {
-            numFeatures.value = numFeatures.value + "," + SPropertyOperations.getInteger(node, "value");
-          }
-        });
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, project, "num-features", numFeatures.value.substring(1));
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, project, "max-intermediate-features", String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "properties", true), "approach", true), "maxIntermediateFeatures")));
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, project, "use-probability", String.valueOf(SPropertyOperations.getBoolean(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "properties", true), "approach", true), "useProbability")));
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, project, "fold-change-phi", "EDITED");
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, project, "ttest-alpha", "EDITED");
-        // Pathways Stuff 
-        // TODO: Figure out pathways, run-java, svm-parameters, svm classifier, feature-option, other-performance- 
-        final List<String> pathwayFiles = ListSequence.fromList(new ArrayList<String>());
-        final Wrappers._T<String> pathwayFile = new Wrappers._T<String>();
-        ListSequence.fromList(SLinkOperations.getTargets(thisNode, "dataset", true)).visitAll(new IVisitor<SNode>() {
-          public void visit(SNode dataset) {
-            pathwayFile.value = SPropertyOperations.getString(dataset, "pathway").replaceAll("\\s", "-").toLowerCase();
-            if (!(ListSequence.fromList(pathwayFiles).contains(pathwayFile.value))) {
-              Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, project, SPropertyOperations.getString(dataset, "pathwayName"), "${bdval-project.basedir}/pathways/" + new File(SPropertyOperations.getString(dataset, "pathway")).getName());
-              ListSequence.fromList(pathwayFiles).addElement(pathwayFile.value);
-            }
-          }
-        });
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, project, "run-java", "true");
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, project, "svm-parameters", "--classifier-parameters probability=${use-probability}");
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, project, "svm-classifier", "");
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, project, "feature-option", "--normalize-features false --scale-features true --percentile-scaling false");
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, project, "other-performance-measures", "prec,rec,F-1");
-        // Normal targets 
-        final Wrappers._T<String> datasetName = new Wrappers._T<String>();
-        final Wrappers._T<String> execute = new Wrappers._T<String>();
-        final Wrappers._T<String> allEndpoints = new Wrappers._T<String>("");
-        ListSequence.fromList(SLinkOperations.getTargets(thisNode, "dataset", true)).visitAll(new IVisitor<SNode>() {
-          public void visit(SNode dataset) {
-            datasetName.value = DataSet_Behavior.call_getName_290469645480322571(dataset);
-            execute.value = String.valueOf(SPropertyOperations.getBoolean(dataset, "normalTarget"));
-            Project_Behavior.call_addNormalTarget_290469645480226173(thisNode, doc, project, datasetName.value, String.valueOf(SPropertyOperations.getBoolean(dataset, "normalTarget")));
-            allEndpoints.value = allEndpoints.value + " " + datasetName.value;
-          }
-        });
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, project, "all-endpoints", allEndpoints.value.substring(1));
-        Element importBdval = doc.createElement("import");
-        project.appendChild(importBdval);
-        importBdval.setAttribute("file", SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "bdvalLocation") + "/data/bdval.xml");
-        Element importBdvalSge = doc.createElement("import");
-        project.appendChild(importBdvalSge);
-        importBdvalSge.setAttribute("file", SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "bdvalLocation") + "/data/bdval-sge.xml");
-        // TODO: Other targets- scan series, setup-sge-job, sge-job, generate-list-final-models 
-        // Gets evaluate target 
-        Element evaluate = doc.createElement("target");
-        project.appendChild(evaluate);
-        evaluate.setAttribute("name", "evaluate");
-        evaluate.setAttribute("description", "Run a complete evaluation.");
-        evaluate.setAttribute("depends", "prepare-bdval, rserve-status, tag-output-directory");
-        Element evalDelete = doc.createElement("delete");
-        evaluate.appendChild(evalDelete);
-        evalDelete.setAttribute("file", "${statistics-output}");
-        Element evalEcho = doc.createElement("echo");
-        evaluate.appendChild(evalEcho);
-        evalEcho.setAttribute("message", "Executing with ${num-threads} threads");
-        Element evalSeq = doc.createElement("sequential");
-        evaluate.appendChild(evalSeq);
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "use-feature-selection-fold=true", "EDITED");
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "use-feature-selection-fold=false", "EDITED");
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.baseline", "EDITED");
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.naive-bayes", "EDITED");
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.logit-boost", "EDITED");
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.logistic", "EDITED");
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.random-forest", "EDITED");
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.k-star", "EDITED");
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.whole-chip", "EDITED");
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.baseline-tune-C", "EDITED");
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.foldchange-genetic-algorithm", "EDITED");
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.foldchange-svmglobal", "EDITED");
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.foldchange-svmiterative", "EDITED");
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.full-genetic-algorithm", "EDITED");
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.genelist-genetic-algorithm", "EDITED");
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.genelist-svmglobal", "EDITED");
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.genelist-svmglobal-tune-C", "EDITED");
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.minmax-svmglobal", "EDITED");
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.pathways-ttest-svmglobal", "EDITED");
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.pathways-tune-C", "EDITED");
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.pathways.baseline", "EDITED");
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.svmiterative", "EDITED");
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.ttest-genetic-algorithm", "EDITED");
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.ttest-svmglobal", "EDITED");
-        Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, evalSeq, "do.ttest-svmiterative", "EDITED");
-        Element evalExecute = doc.createElement("execute-all-endpoints");
-        evalSeq.appendChild(evalExecute);
-        Element evalAnt1 = doc.createElement("antcall");
-        evaluate.appendChild(evalAnt1);
-        evalAnt1.setAttribute("target", "process-model-conditions");
-        Element evalAnt2 = doc.createElement("antcall");
-        evaluate.appendChild(evalAnt2);
-        evalAnt2.setAttribute("target", "zip-results");
-
-        // Scan series and generate final models in holder 
-        // Writes file 
-        TransformerFactory transformerFactory = TransformerFactory.newInstance();
-        Transformer transformer = transformerFactory.newTransformer();
-        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-        transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
-        DOMSource source = new DOMSource(doc);
-        StreamResult result = new StreamResult(new File(fileName));
-        transformer.transform(source, result);
-      } catch (Exception e) {
-        throw new Error("Error creating xml file");
-      }
-    }
-  }
-
-  public static void call_addProperty_290469645458227196(SNode thisNode, Document doc, Element root, String name, String value) {
-    Element elem = doc.createElement("property");
-    root.appendChild(elem);
-    elem.setAttribute("name", name);
-    elem.setAttribute("value", value);
-  }
-
-  public static void call_addNormalTarget_290469645480226173(SNode thisNode, Document doc, Element root, String datasetName, String execute) {
-    Element elem = doc.createElement("var");
-    root.appendChild(elem);
-    elem.setAttribute("name", "do." + datasetName);
-    elem.setAttribute("value", execute);
-  }
-
-  public static void call_holder_3976565827561974393(SNode thisNode, Document doc, Element project) {
-    // Gets scan-series target 
-    Element scanSeries = doc.createElement("target");
-    project.appendChild(scanSeries);
-    scanSeries.setAttribute("name", "scan-series");
-    scanSeries.setAttribute("description", "Run a complete evaluation.");
-    scanSeries.setAttribute("depends", "prepare-bdval, tag-output-directory");
-    Element scanDelete = doc.createElement("delete");
-    scanSeries.appendChild(scanDelete);
-    scanDelete.setAttribute("file", "${statistics-output}");
-    Element scanEcho = doc.createElement("echo");
-    scanSeries.appendChild(scanEcho);
-    scanEcho.setAttribute("message", "Executing with ${num-threads} threads");
-    Element scanSeq = doc.createElement("sequential");
-    scanSeries.appendChild(scanSeq);
-    Element scanVar = doc.createElement("var");
-    scanSeq.appendChild(scanVar);
-    scanVar.setAttribute("name", "FILL THIS IN");
-    scanVar.setAttribute("value", "FILL THIS IN");
-    Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, scanSeq, "use-feature-selection-fold=true", "FILL THIS IN");
-    Project_Behavior.call_addProperty_290469645458227196(thisNode, doc, scanSeq, "use-feature-selection-fold=false", "FILL THIS IN");
-    // Generate final models 
-    Element finalModels = doc.createElement("target");
-    project.appendChild(finalModels);
-    finalModels.setAttribute("name", "generate-list-final-models");
-    finalModels.setAttribute("description", "Calculate feature consensus across multiple feature selection strategies and generate models with consensus features on the whole training set.");
-    Element finalList = doc.createElement("generate-final-models-from-list");
-    finalModels.appendChild(finalList);
-    finalList.setAttribute("results-list", "FILL THIS IN");
-
   }
 }

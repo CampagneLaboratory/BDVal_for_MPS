@@ -318,5 +318,29 @@
     </dependencies>
     <rename id="w348.7388448774866532324" type="CONCEPT" from="BaselineTuneC" to="SVMTuneC" />
   </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="52" />
+    </dependencies>
+    <rename id="w348.7083662764416913912" type="PROPERTY" from="threadsServer" to="threads" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="53" />
+    </dependencies>
+    <rename id="w348.7083662764416913915" type="PROPERTY" from="memoryServer" to="memory" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="54" />
+    </dependencies>
+    <rename id="w348.4671749543962624837" type="CONCEPT" from="desktopComputer" to="DesktopComputer" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="55" />
+    </dependencies>
+    <rename id="w348.4671749543962624901" type="CONCEPT" from="serverComputer" to="ServerComputer" />
+  </StructureModification>
 </history>
 

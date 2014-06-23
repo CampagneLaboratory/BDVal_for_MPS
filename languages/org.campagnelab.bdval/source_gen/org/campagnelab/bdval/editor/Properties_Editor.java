@@ -15,13 +15,6 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class Properties_Editor extends DefaultNodeEditor {
@@ -38,34 +31,11 @@ public class Properties_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_vvo4cc_c0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_vvo4cc_d0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_vvo4cc_e0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_vvo4cc_f0(editorContext, node));
-    if (renderingCondition_vvo4cc_a6a(node, editorContext)) {
-      editorCell.addEditorCell(this.createConstant_vvo4cc_g0(editorContext, node));
-    }
-    if (renderingCondition_vvo4cc_a7a(node, editorContext)) {
-      editorCell.addEditorCell(this.createProperty_vvo4cc_h0(editorContext, node));
-    }
-    if (renderingCondition_vvo4cc_a8a(node, editorContext)) {
-      editorCell.addEditorCell(this.createConstant_vvo4cc_i0(editorContext, node));
-    }
-    if (renderingCondition_vvo4cc_a9a(node, editorContext)) {
-      editorCell.addEditorCell(this.createProperty_vvo4cc_j0(editorContext, node));
-    }
-    if (renderingCondition_vvo4cc_a01a(node, editorContext)) {
-      editorCell.addEditorCell(this.createConstant_vvo4cc_k0(editorContext, node));
-    }
-    if (renderingCondition_vvo4cc_a11a(node, editorContext)) {
-      editorCell.addEditorCell(this.createProperty_vvo4cc_l0(editorContext, node));
-    }
-    if (renderingCondition_vvo4cc_a21a(node, editorContext)) {
-      editorCell.addEditorCell(this.createConstant_vvo4cc_m0(editorContext, node));
-    }
-    if (renderingCondition_vvo4cc_a31a(node, editorContext)) {
-      editorCell.addEditorCell(this.createProperty_vvo4cc_n0(editorContext, node));
-    }
-    editorCell.addEditorCell(this.createConstant_vvo4cc_o0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_vvo4cc_p0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_vvo4cc_q0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_vvo4cc_f0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_vvo4cc_g0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_vvo4cc_h0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_vvo4cc_i0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_vvo4cc_j0(editorContext, node));
     return editorCell;
   }
 
@@ -132,17 +102,19 @@ public class Properties_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_vvo4cc_f0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+  private EditorCell createRefNode_vvo4cc_f0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("computerType");
-    provider.setNoTargetText("insert type of computer");
+    provider.setNoTargetText("<no computerType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_computerType");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("computerType");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new Properties_Editor.Properties_computerType_cellMenu_vvo4cc_a0f0()}));
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -153,33 +125,20 @@ public class Properties_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class Properties_computerType_cellMenu_vvo4cc_a0f0 extends AbstractCellMenuPart_PropertyValues {
-    public Properties_computerType_cellMenu_vvo4cc_a0f0() {
-    }
-
-    public List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-      return ListSequence.fromListAndArray(new ArrayList<String>(), "desktop", "server");
-    }
-  }
-
   private EditorCell createConstant_vvo4cc_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Number of Parallel Threads to use on a Server (Mb):");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Number of Parallel Threads to Use (Mb):");
     editorCell.setCellId("Constant_vvo4cc_g0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private static boolean renderingCondition_vvo4cc_a6a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getString(node, "computerType").matches("server");
-  }
-
   private EditorCell createProperty_vvo4cc_h0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("threadsServer");
+    provider.setRole("threads");
     provider.setNoTargetText("insert value");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_threadsServer");
+    editorCell.setCellId("property_threads");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -194,150 +153,22 @@ public class Properties_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_vvo4cc_a7a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getString(node, "computerType").matches("server");
-  }
-
   private EditorCell createConstant_vvo4cc_i0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Amount of Memory to use on a Server:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Amount of Memory to Use:");
     editorCell.setCellId("Constant_vvo4cc_i0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private static boolean renderingCondition_vvo4cc_a8a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getString(node, "computerType").matches("server");
-  }
-
   private EditorCell createProperty_vvo4cc_j0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("memoryServer");
+    provider.setRole("memory");
     provider.setNoTargetText("insert value");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_memoryServer");
+    editorCell.setCellId("property_memory");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private static boolean renderingCondition_vvo4cc_a9a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getString(node, "computerType").matches("server");
-  }
-
-  private EditorCell createConstant_vvo4cc_k0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Number of Parallel Threads to use on a Desktop:");
-    editorCell.setCellId("Constant_vvo4cc_k0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private static boolean renderingCondition_vvo4cc_a01a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getString(node, "computerType").matches("desktop");
-  }
-
-  private EditorCell createProperty_vvo4cc_l0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("threadsDesktop");
-    provider.setNoTargetText("insert value");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_threadsDesktop");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private static boolean renderingCondition_vvo4cc_a11a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getString(node, "computerType").matches("desktop");
-  }
-
-  private EditorCell createConstant_vvo4cc_m0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Amount of Memory to use on a Desktop (MB):");
-    editorCell.setCellId("Constant_vvo4cc_m0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private static boolean renderingCondition_vvo4cc_a21a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getString(node, "computerType").matches("desktop");
-  }
-
-  private EditorCell createProperty_vvo4cc_n0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("memoryDesktop");
-    provider.setNoTargetText("insert value");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_memoryDesktop");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private static boolean renderingCondition_vvo4cc_a31a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getString(node, "computerType").matches("desktop");
-  }
-
-  private EditorCell createConstant_vvo4cc_o0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_vvo4cc_o0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_vvo4cc_p0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Approach:");
-    editorCell.setCellId("Constant_vvo4cc_p0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createRefNode_vvo4cc_q0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("approach");
-    provider.setNoTargetText("<no approach>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    if (editorCell.getRole() == null) {
-      editorCell.setRole("approach");
-    }
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

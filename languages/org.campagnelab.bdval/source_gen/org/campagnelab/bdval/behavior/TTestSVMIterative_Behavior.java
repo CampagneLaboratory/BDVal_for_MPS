@@ -8,5 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class TTestSVMIterative_Behavior {
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "name", "do.ttest-svmiterative");
+    SPropertyOperations.set(thisNode, "type", "SVM, ttest");
   }
 }

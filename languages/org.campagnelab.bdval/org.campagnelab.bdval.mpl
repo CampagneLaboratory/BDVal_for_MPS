@@ -20,6 +20,7 @@
       </models>
       <external-templates />
       <dependencies>
+        <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
         <dependency reexport="false">479c7a8c-02f9-43b5-9139-d910cb22f298(jetbrains.mps.core.xml)</dependency>
         <dependency reexport="false">35dbc0f6-2677-4e81-9b75-548a3c2b6d9b(org.campagnelab.bdval)</dependency>
       </dependencies>

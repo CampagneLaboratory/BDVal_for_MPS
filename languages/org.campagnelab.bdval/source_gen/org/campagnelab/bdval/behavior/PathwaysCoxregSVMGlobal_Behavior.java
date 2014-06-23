@@ -8,5 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class PathwaysCoxregSVMGlobal_Behavior {
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "name", "do.pathways-coxreg-svmglobal");
+    SPropertyOperations.set(thisNode, "type", "SVM");
   }
 }

@@ -8,5 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class GenelistSVMGlobal_Behavior {
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "name", "do.genelist-svmglobal");
+    SPropertyOperations.set(thisNode, "type", "SVM");
   }
 }

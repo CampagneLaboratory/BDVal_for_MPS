@@ -13,9 +13,6 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class Check_Properties_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -35,14 +32,6 @@ public class Check_Properties_NonTypesystemRule extends AbstractNonTypesystemRul
         MessageTarget errorTarget = new NodeMessageTarget();
         errorTarget = new PropertyMessageTarget("outputLocation");
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(properties, "Output location does not exist", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "290469645492820864", null, errorTarget);
-      }
-    }
-    List<String> computerTypes = ListSequence.fromListAndArray(new ArrayList<String>(), "desktop", "server");
-    if (!(ListSequence.fromList(computerTypes).contains(SPropertyOperations.getString(properties, "computerType")))) {
-      {
-        MessageTarget errorTarget = new NodeMessageTarget();
-        errorTarget = new PropertyMessageTarget("computerType");
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(properties, "Computer Type is invalid", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "2366055488404802375", null, errorTarget);
       }
     }
   }

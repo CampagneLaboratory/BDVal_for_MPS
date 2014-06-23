@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-e1lwxvtp1yoci2m2jzm43ge6dapsg3t">
+<dependencies version="2" modelHash="-9c2t7yl697rffe1839bla2uooqufqrm">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="5sdbpqxziyuazpb9j1p4zdk6bnvbn49" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-5mgxduek28h3ywdzzsk4capaz4hgjm0" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="303xz1b2lyseld0axia86q3lpvucmq6" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="b4ewbuz42qcbg1awca5bacgi0vopxqt" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="a8elw7fctzg6sg8fe36u9gzu42axhdb" />
-  <common hash="-epbs79c6h1ncxsdr6pn54v53mxsyw6h" dependsOnNodes="true">
+  <common hash="dxh4sg4oujuq4vawh8qftelkibkfdth" dependsOnNodes="true">
     <dep root="290469645457746370" />
     <dep root="3367122381622495536" />
     <dep root="4345048909861421891" />
     <dep root="4345048909863217124" />
+    <dep root="4671749543961476313" />
+    <dep root="4671749543961509611" />
+    <dep root="4671749543961520203" />
+    <dep root="4671749543962624834" />
+    <dep root="4671749543962624837" />
+    <dep root="4671749543962624901" />
+    <dep root="4671749543976303774" />
+    <dep root="4671749543976303817" />
+    <dep root="4671749543995071282" />
     <dep root="7052920786129988728" />
     <dep root="7052920786130131778" />
     <dep root="7052920786130131783" />
@@ -62,20 +71,20 @@
     <file name="StructureAspectDescriptor.java" />
   </common>
   <source id="7052920786129988728" name="Input" hash="-euj2xcekqckf6zr3ogl1t8zcogzal0j" />
-  <source id="7052920786130131778" name="DataSet" hash="du89ziepv1oh70rad17o59pyd0hnxhg" />
+  <source id="7052920786130131778" name="DataSet" hash="eg92xibn7nogk40bdnusp6zfdmr425t" />
   <source id="7052920786130131783" name="Platform" hash="-bqkdpu2b6px1xh9cnsb5kpcc6o0ll83" />
   <source id="7052920786130131788" name="CIDs" hash="89lm2e098z7nunjabymcthkfycupn32" />
   <source id="7052920786130772514" name="Sample" hash="-3huuehfygyoy4yteman7uiipzj1sx5j" />
   <source id="7052920786130810093" name="DisplayRow" hash="-85cnn4fuex7tnoqj302fcexvpjaprv3" />
   <source id="4345048909861421891" name="DisplayValue" hash="cae90owpyvwjrji7bxkwhoqd682kk32" />
   <source id="4345048909863217124" name="Endpoint" hash="2zbbjvjaciwvvjrcv1oigfxqlrlfsbh" />
-  <source id="3367122381622495536" name="Project" hash="-elbg47fnpkfmndxaaz2afbeeur63ccs" />
+  <source id="3367122381622495536" name="Project" hash="erynq0qdm7vkzf4nrzirnzgzjf565w2" />
   <source id="7083662764383720206" name="EndpointCategory" hash="-dcvyx45fnpau0akdqizv2m0jmezad1h" />
   <source id="7083662764384091354" name="Task" hash="93vpjfgh1r3yrl5f3go8xvo5lebnync" />
   <source id="7083662764384236370" name="CategoryReference" hash="81ky4runcuhaa6h3wlyd0gft1q5ar4b" />
-  <source id="7083662764416913858" name="Properties" hash="1sgpug68590onbygq7wiepqyrvqy7c2" />
+  <source id="7083662764416913858" name="Properties" hash="-54i9s7suukdnjoxreq1q6iwqqijcfd4" />
   <source id="290469645457746370" name="Integer" hash="e39l6vz7w4wq4bg5a32638qjlb92mmg" />
-  <source id="7388448774866524764" name="FeatureSelectionFoldTrue" hash="-7l4d8jdfgh8zv5y7i0fx24u2y6s8m4m" />
+  <source id="7388448774866524764" name="FeatureSelectionFoldTrue" hash="9vxnmpwu84yb4r0uskpwjgp2k6qbth7" />
   <source id="7388448774866525358" name="WekaScan" hash="bdqe1fuhyn9kcrf1vwszcyh9h05hpsj" />
   <source id="7388448774866525359" name="FCP_LogitBoost" hash="9e8es370gjtp4fut83m3o4ximyagakv" />
   <source id="7388448774866532076" name="NaiveBayes" hash="as4d5kkxdf2nv0lbm68nw38j0viu30v" />
@@ -105,9 +114,18 @@
   <source id="7388448774866532614" name="PathwaysTTestSVMGlobal" hash="98v417iu9x2os8ql7e0j1mptp2wzi2n" />
   <source id="7388448774866532615" name="PathwaysCoxregSVMGlobal" hash="2jg8am6lk3i7basomzx71j5b99ojq40" />
   <source id="7388448774866532616" name="PathwaysTuneC" hash="-26h0zbqdxmfs8y8mgo0iryk080n894l" />
-  <source id="7388448774866565678" name="Approach" hash="-6qaxzzi50or9zzhbyowoskkmwijeh8w" />
-  <source id="7388448774866569121" name="FeatureSelectionFoldFalse" hash="-e0gbjnpvoi8lrr20zvbldseb18c0k0j" />
+  <source id="7388448774866565678" name="Approach" hash="-6hqkziko4jz32m8us3q8a3jlebfder2" />
+  <source id="7388448774866569121" name="FeatureSelectionFoldFalse" hash="-8vtjjs7hrr13qusnqrx8p86v4j8jw8q" />
   <source id="7388448774869153180" name="Classification" hash="c3jmisry5dv46mpcpb20xzr34jrddna" />
-  <source id="7388448774869153291" name="FeatureSelection" hash="ct3sxg5nf1vka9gpzofzn325cwro64p" />
+  <source id="7388448774869153291" name="FeatureSelection" hash="-2cmlyeuil4k2qz2f046cpckan7qi7dn" />
+  <source id="4671749543961476313" name="PathwayAggregationMethod" hash="diyis2u4907z3p6xfcfdjbyzt8fgtyr" />
+  <source id="4671749543961509611" name="PCAAggregation" hash="7ity5nfz6uxf6qe4zz448heeqdwm6zz" />
+  <source id="4671749543961520203" name="AverageAggregation" hash="85w8gn6burzwcmg092h62332rwln7lc" />
+  <source id="4671749543962624834" name="ComputerType" hash="5hv1n8uz6cauvssuqbzfkoycrtxtwjc" />
+  <source id="4671749543962624837" name="DesktopComputer" hash="-5t183uzn1g8yuf2szjiy8y186rq2hxn" />
+  <source id="4671749543962624901" name="ServerComputer" hash="-cn6bprprg9qhbptp97pcb11oatazzmd" />
+  <source id="4671749543976303774" name="FeatureSelectionProperties" hash="93guihwvogumvsh4lcn7ir2tvyucd14" />
+  <source id="4671749543976303817" name="SVMProperties" hash="ch0tjy496w0wpgl4wkob0q3ahldzs89" />
+  <source id="4671749543995071282" name="TtestProperties" hash="-anvm5nqdv8f2quvu0hdyalwqm6fs8bj" />
 </dependencies>
 
