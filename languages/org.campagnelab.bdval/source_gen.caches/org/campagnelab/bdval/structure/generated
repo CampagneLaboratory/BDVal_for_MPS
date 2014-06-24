@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-9c2t7yl697rffe1839bla2uooqufqrm">
+<dependencies version="2" modelHash="a88fwi190z6u1sfhgzsmom7dgotq2u4">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="5sdbpqxziyuazpb9j1p4zdk6bnvbn49" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-5mgxduek28h3ywdzzsk4capaz4hgjm0" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="303xz1b2lyseld0axia86q3lpvucmq6" />
@@ -8,6 +8,11 @@
   <common hash="dxh4sg4oujuq4vawh8qftelkibkfdth" dependsOnNodes="true">
     <dep root="290469645457746370" />
     <dep root="3367122381622495536" />
+    <dep root="4027829922695044022" />
+    <dep root="4027829922695084067" />
+    <dep root="4027829922695086640" />
+    <dep root="4027829922695086695" />
+    <dep root="4027829922695086748" />
     <dep root="4345048909861421891" />
     <dep root="4345048909863217124" />
     <dep root="4671749543961476313" />
@@ -97,16 +102,16 @@
   <source id="7388448774866532324" name="SVMTuneC" hash="9w7hqbabkvoi9pv6vua06lhc9kju1eo" />
   <source id="7388448774866532325" name="MinMaxSVMGlobal" hash="7cw1dfjw8crbfjlzaqsczintxoykwxj" />
   <source id="7388448774866532326" name="SVMIterative" hash="7a1vgli7qim0z35pcbxq9oif8c1jvhh" />
-  <source id="7388448774866532327" name="TTestSVMIterative" hash="-8732om48hzuuyu4enbf4ruxsagqnvnf" />
-  <source id="7388448774866532328" name="TTestSVMGlobal" hash="-d76zphm9kh6j7yy5r5u8qhcwc1bf9q9" />
+  <source id="7388448774866532327" name="TTestSVMIterative" hash="5j76lp96iwjhhu022bkb56atvazbn6b" />
+  <source id="7388448774866532328" name="TTestSVMGlobal" hash="4n8acx06vr9chfnaie4mi5rf02wnfs6" />
   <source id="7388448774866532329" name="PermutationSVMGlobal" hash="-evev7tokqj3ve45121ug5lnqju82bec" />
   <source id="7388448774866532330" name="CoxRegSVMGlobal" hash="-a4zkbi4z0zki7rnl1qwdcqufawizeme" />
   <source id="7388448774866532332" name="GenelistSVMGlobal" hash="5fl7bcxcbqdpmmtlvhivasm48jbp9pv" />
   <source id="7388448774866532333" name="GenelistSVMGlobalTuneC" hash="7n5zgtu3oko0ailpezlhvadruer890l" />
   <source id="7388448774866532334" name="GenelistGeneticAlgorithm" hash="-1jdjioy7cx3rmifoiyoxieoaumeeoga" />
   <source id="7388448774866532336" name="FoldChangeSVMIterative" hash="-5n5o4sc2yzvsh5c8e84840ybav9zp8j" />
-  <source id="7388448774866532337" name="FoldchangeSVMGlobal" hash="6nju9tpljdal7zjkblwsubxvrvrji5w" />
-  <source id="7388448774866532609" name="TTestGeneticAlgorithm" hash="6f94v3rqjuy4iwubbjbk54p8svjegyz" />
+  <source id="7388448774866532337" name="FoldchangeSVMGlobal" hash="-3zzf845xdnl1c1y2x4o7v9pksew9oyu" />
+  <source id="7388448774866532609" name="TTestGeneticAlgorithm" hash="d3bdwfgqeik0gbwprk2ax3fns8mpx24" />
   <source id="7388448774866532610" name="FoldchangeGeneticAlgorithm" hash="6rhcyxktqdgib1gv0xahiz3h72r1aky" />
   <source id="7388448774866532611" name="FullGeneticAlgorithm" hash="-ewunobz9vmhwzvr424mtannsm6om72e" />
   <source id="7388448774866532612" name="PathwaysBuildPathwayComponents" hash="-9ahsd6bvzulhctg5mqk2h793xfztf34" />
@@ -114,7 +119,7 @@
   <source id="7388448774866532614" name="PathwaysTTestSVMGlobal" hash="98v417iu9x2os8ql7e0j1mptp2wzi2n" />
   <source id="7388448774866532615" name="PathwaysCoxregSVMGlobal" hash="2jg8am6lk3i7basomzx71j5b99ojq40" />
   <source id="7388448774866532616" name="PathwaysTuneC" hash="-26h0zbqdxmfs8y8mgo0iryk080n894l" />
-  <source id="7388448774866565678" name="Approach" hash="-6hqkziko4jz32m8us3q8a3jlebfder2" />
+  <source id="7388448774866565678" name="Approach" hash="-61wakxixp8f4wu08309lv165iw5gezb" />
   <source id="7388448774866569121" name="FeatureSelectionFoldFalse" hash="-8vtjjs7hrr13qusnqrx8p86v4j8jw8q" />
   <source id="7388448774869153180" name="Classification" hash="c3jmisry5dv46mpcpb20xzr34jrddna" />
   <source id="7388448774869153291" name="FeatureSelection" hash="-2cmlyeuil4k2qz2f046cpckan7qi7dn" />
@@ -122,10 +127,15 @@
   <source id="4671749543961509611" name="PCAAggregation" hash="7ity5nfz6uxf6qe4zz448heeqdwm6zz" />
   <source id="4671749543961520203" name="AverageAggregation" hash="85w8gn6burzwcmg092h62332rwln7lc" />
   <source id="4671749543962624834" name="ComputerType" hash="5hv1n8uz6cauvssuqbzfkoycrtxtwjc" />
-  <source id="4671749543962624837" name="DesktopComputer" hash="-5t183uzn1g8yuf2szjiy8y186rq2hxn" />
-  <source id="4671749543962624901" name="ServerComputer" hash="-cn6bprprg9qhbptp97pcb11oatazzmd" />
-  <source id="4671749543976303774" name="FeatureSelectionProperties" hash="93guihwvogumvsh4lcn7ir2tvyucd14" />
+  <source id="4671749543962624837" name="DesktopComputer" hash="-4tehmy2ko1vmjg8nna8wd9apisgcqf9" />
+  <source id="4671749543962624901" name="ServerComputer" hash="-9rsuxpbqzl0t2m70cnpyfrv345n7f08" />
+  <source id="4671749543976303774" name="FeatureSelectionProperties" hash="dfdiibtmj44buh3fnvim0oh8fo0zyv7" />
   <source id="4671749543976303817" name="SVMProperties" hash="ch0tjy496w0wpgl4wkob0q3ahldzs89" />
   <source id="4671749543995071282" name="TtestProperties" hash="-anvm5nqdv8f2quvu0hdyalwqm6fs8bj" />
+  <source id="4027829922695044022" name="FoldchangeProperties" hash="-4ek1s8vwbe42uhj0e15xx5abe58elzx" />
+  <source id="4027829922695084067" name="GeneticAlgorithmProperties" hash="-56ljlqv3v0mza2o5w4lrkr2yd1p3ywr" />
+  <source id="4027829922695086640" name="GAPerformance" hash="jssm8lthgpz20muk4t2i183zw1ma3n" />
+  <source id="4027829922695086695" name="MCCPerformance" hash="-emicb634jxv7hvhbxpqm3r033evf9n3" />
+  <source id="4027829922695086748" name="AUGPerformance" hash="-3uem2xpj70a08ujeyxbsw6hf6rdj7g7" />
 </dependencies>
 

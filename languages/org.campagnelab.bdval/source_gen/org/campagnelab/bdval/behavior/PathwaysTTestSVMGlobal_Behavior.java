@@ -8,6 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class PathwaysTTestSVMGlobal_Behavior {
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "name", "do.pathways-ttest-svmglobal");
-    SPropertyOperations.set(thisNode, "type", "SVM, ttest");
+    SPropertyOperations.set(thisNode, "type", "SVM, ttest, pathways");
   }
 }

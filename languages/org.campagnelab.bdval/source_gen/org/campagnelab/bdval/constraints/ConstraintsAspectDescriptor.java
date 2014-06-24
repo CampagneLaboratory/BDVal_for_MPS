@@ -16,11 +16,13 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         return new CategoryReference_Constraints();
       case 1:
         return new Sample_Constraints();
+      case 2:
+        return new Task_Constraints();
       default:
         // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"org.campagnelab.bdval.structure.CategoryReference", "org.campagnelab.bdval.structure.Sample"};
+  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"org.campagnelab.bdval.structure.CategoryReference", "org.campagnelab.bdval.structure.Sample", "org.campagnelab.bdval.structure.Task"};
 }

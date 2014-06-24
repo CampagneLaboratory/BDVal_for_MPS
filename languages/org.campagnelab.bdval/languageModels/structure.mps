@@ -368,7 +368,7 @@
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7388448774866532327" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="TTestSVMIterative" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="ttest-SVM Iterative" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="Ttest-SVM Iterative" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7388448774869153619" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="7388448774869153291" resolveInfo="FeatureSelection" />
@@ -376,7 +376,7 @@
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7388448774866532328" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="TTestSVMGlobal" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="ttest-SVM Global" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="Ttest-SVM Global" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7388448774869153617" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="7388448774869153291" resolveInfo="FeatureSelection" />
@@ -432,7 +432,7 @@
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7388448774866532337" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="FoldchangeSVMGlobal" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="Fold Change-SVM Iterative" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="Fold Change-SVM Global" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7388448774869153308" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="7388448774869153291" resolveInfo="FeatureSelection" />
@@ -440,7 +440,7 @@
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7388448774866532609" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="TTestGeneticAlgorithm" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="ttest-Genetic Algorithm" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="Ttest-Genetic Algorithm" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7388448774869153615" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="7388448774869153291" resolveInfo="FeatureSelection" />
@@ -505,6 +505,14 @@
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7388448774866565678" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="Approach" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="4027829922712500841" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="enableFlooring" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="4027829922712500836" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="evaluateStatistics" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="290469645457746257" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="externalRepeats" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
@@ -593,7 +601,7 @@
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4671749543962624837" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="DesktopComputer" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="desktop" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="Desktop" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4671749543964138835" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="4671749543962624834" resolveInfo="ComputerType" />
@@ -601,7 +609,7 @@
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4671749543962624901" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="ServerComputer" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="server" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="Server" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4671749543964138833" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="4671749543962624834" resolveInfo="ComputerType" />
@@ -620,6 +628,21 @@
       <property name="role" nameId="tpce.1071599776563" value="ttest" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="4671749543995071282" resolveInfo="TtestProperties" />
     </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4027829922695044018" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="foldchange" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="4671749543976303774" resolveInfo="FeatureSelectionProperties" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4027829922695084010" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="geneticAlgorithm" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="4027829922695084067" resolveInfo="GeneticAlgorithmProperties" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4027829922710629198" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="pathways" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="4671749543961476313" resolveInfo="PathwayAggregationMethod" />
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4671749543976303817" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="SVMProperties" />
@@ -635,6 +658,62 @@
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="4671749543995072017" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="cutoff" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4027829922695044022" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="FoldchangeProperties" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="4027829922695044025" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="cutoff" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4027829922695084067" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="GeneticAlgorithmProperties" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4027829922695091289" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="performance" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="4027829922695086640" resolveInfo="GAPerformance" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="4027829922695084070" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="wrapperPopulationSize" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="4027829922695084073" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="wrapperNumberIterations" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="4027829922695084077" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="internalCVRepeats" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="4027829922695084089" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="internalCVFolds" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
+    </node>
+  </root>
+  <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="4027829922695086640" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="GAPerformance" />
+    <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4027829922695086641" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4027829922695086695" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="MCCPerformance" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="MCC" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4027829922695086751" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="4027829922695086640" resolveInfo="GAPerformance" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4027829922695086748" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="AUGPerformance" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="AUG" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4027829922695086749" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="4027829922695086640" resolveInfo="GAPerformance" />
     </node>
   </root>
 </model>

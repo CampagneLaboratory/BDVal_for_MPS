@@ -8,5 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class GenelistGeneticAlgorithm_Behavior {
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "name", "do.genelist-genetic-algorithm");
+    SPropertyOperations.set(thisNode, "type", "genetic algorithm");
   }
 }

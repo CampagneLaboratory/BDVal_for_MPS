@@ -14,7 +14,7 @@ public class TTestGeneticAlgorithm_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_tcj9tk_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ttest-Genetic Algorithm");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Ttest-Genetic Algorithm");
     editorCell.setCellId("Constant_tcj9tk_a");
     editorCell.setBig(true);
     editorCell.setDefaultText("");

@@ -26,22 +26,34 @@ public class TtestProperties_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_l0inzd_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_l0inzd_a0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_l0inzd_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_l0inzd_b0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_l0inzd_c0(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createConstant_l0inzd_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Cutoff for T-test Feature Selection:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Ttest:");
     editorCell.setCellId("Constant_l0inzd_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.READ_ONLY, true);
-    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_l0inzd_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_l0inzd_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Cutoff for T-test Feature Selection:");
+    editorCell.setCellId("Constant_l0inzd_b0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.READ_ONLY, true);
+    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createProperty_l0inzd_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("cutoff");
     provider.setNoTargetText("<no cutoff>");

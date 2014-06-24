@@ -26,22 +26,34 @@ public class SVMProperties_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_7jlg8n_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_7jlg8n_a0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_7jlg8n_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7jlg8n_b0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_7jlg8n_c0(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createConstant_7jlg8n_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Train a Probabilistic SVM:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "SVM:");
     editorCell.setCellId("Constant_7jlg8n_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.READ_ONLY, true);
-    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_7jlg8n_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7jlg8n_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Train a Probabilistic SVM:");
+    editorCell.setCellId("Constant_7jlg8n_b0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.READ_ONLY, true);
+    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createProperty_7jlg8n_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("trainSVM");
     provider.setNoTargetText("<no trainSVM>");

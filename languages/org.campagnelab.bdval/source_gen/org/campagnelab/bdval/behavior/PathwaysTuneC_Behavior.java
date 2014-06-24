@@ -8,5 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class PathwaysTuneC_Behavior {
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "name", "do.pathways-tune-C");
+    SPropertyOperations.set(thisNode, "type", "pathways");
   }
 }

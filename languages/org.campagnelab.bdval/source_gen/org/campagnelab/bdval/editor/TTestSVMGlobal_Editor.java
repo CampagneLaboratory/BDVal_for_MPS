@@ -14,7 +14,7 @@ public class TTestSVMGlobal_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_yp2bsy_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ttest-SVM Global");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Ttest-SVM Global");
     editorCell.setCellId("Constant_yp2bsy_a");
     editorCell.setBig(true);
     editorCell.setDefaultText("");

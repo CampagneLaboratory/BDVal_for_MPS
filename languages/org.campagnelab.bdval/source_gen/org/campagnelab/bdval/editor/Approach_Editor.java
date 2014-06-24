@@ -42,23 +42,83 @@ public class Approach_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_6do0s2_e0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_6do0s2_f0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6do0s2_g0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_6do0s2_h0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_6do0s2_h0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6do0s2_i0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_6do0s2_j0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_6do0s2_k0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6do0s2_l0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_6do0s2_m0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_6do0s2_j0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6do0s2_k0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_6do0s2_l0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6do0s2_m0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_6do0s2_n0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_6do0s2_o0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6do0s2_p0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_6do0s2_q0(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createConstant_6do0s2_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "External CV Repeats:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Enable Flooring:");
     editorCell.setCellId("Constant_6do0s2_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createProperty_6do0s2_b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("enableFlooring");
+    provider.setNoTargetText("<no enableFlooring>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_enableFlooring");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createConstant_6do0s2_c0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Evaluate Statistics After Splits:");
+    editorCell.setCellId("Constant_6do0s2_c0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createProperty_6do0s2_d0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("evaluateStatistics");
+    provider.setNoTargetText("<no evaluateStatistics>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_evaluateStatistics");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createConstant_6do0s2_e0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "External CV Repeats:");
+    editorCell.setCellId("Constant_6do0s2_e0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createProperty_6do0s2_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("externalRepeats");
     provider.setNoTargetText("<no externalRepeats>");
@@ -79,14 +139,14 @@ public class Approach_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6do0s2_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6do0s2_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "External CV Folds:");
-    editorCell.setCellId("Constant_6do0s2_c0");
+    editorCell.setCellId("Constant_6do0s2_g0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_6do0s2_d0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_6do0s2_h0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("externalFolds");
     provider.setNoTargetText("<no externalFolds>");
@@ -107,14 +167,14 @@ public class Approach_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6do0s2_e0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6do0s2_i0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Maximum Number of Features to Keep After the First Step:");
-    editorCell.setCellId("Constant_6do0s2_e0");
+    editorCell.setCellId("Constant_6do0s2_i0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_6do0s2_f0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_6do0s2_j0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("maxIntermediateFeatures");
     provider.setNoTargetText("<no maxIntermediateFeatures>");
@@ -135,15 +195,15 @@ public class Approach_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6do0s2_g0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6do0s2_k0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Number of Features:");
-    editorCell.setCellId("Constant_6do0s2_g0");
+    editorCell.setCellId("Constant_6do0s2_k0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_6do0s2_h0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new Approach_Editor.numFeaturesListHandler_6do0s2_h0(node, "numFeatures", editorContext);
+  private EditorCell createRefNodeList_6do0s2_l0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new Approach_Editor.numFeaturesListHandler_6do0s2_l0(node, "numFeatures", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_numFeatures");
     Style style = new StyleImpl();
@@ -153,8 +213,8 @@ public class Approach_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class numFeaturesListHandler_6do0s2_h0 extends RefNodeListHandler {
-    public numFeaturesListHandler_6do0s2_h0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class numFeaturesListHandler_6do0s2_l0 extends RefNodeListHandler {
+    public numFeaturesListHandler_6do0s2_l0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -203,15 +263,15 @@ public class Approach_Editor extends DefaultNodeEditor {
     }
   }
 
-  private EditorCell createConstant_6do0s2_i0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6do0s2_m0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Feature Selection:");
-    editorCell.setCellId("Constant_6do0s2_i0");
+    editorCell.setCellId("Constant_6do0s2_m0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_6do0s2_j0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new Approach_Editor.featureSelectionListHandler_6do0s2_j0(node, "featureSelection", editorContext);
+  private EditorCell createRefNodeList_6do0s2_n0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new Approach_Editor.featureSelectionListHandler_6do0s2_n0(node, "featureSelection", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_featureSelection");
     Style style = new StyleImpl();
@@ -221,8 +281,8 @@ public class Approach_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class featureSelectionListHandler_6do0s2_j0 extends RefNodeListHandler {
-    public featureSelectionListHandler_6do0s2_j0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class featureSelectionListHandler_6do0s2_n0 extends RefNodeListHandler {
+    public featureSelectionListHandler_6do0s2_n0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -271,7 +331,7 @@ public class Approach_Editor extends DefaultNodeEditor {
     }
   }
 
-  private EditorCell createRefNode_6do0s2_k0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_6do0s2_o0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("featureSelectionProperties");
     provider.setNoTargetText("<no featureSelectionProperties>");
@@ -295,15 +355,15 @@ public class Approach_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6do0s2_l0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6do0s2_p0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Classification:");
-    editorCell.setCellId("Constant_6do0s2_l0");
+    editorCell.setCellId("Constant_6do0s2_p0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_6do0s2_m0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new Approach_Editor.classificationListHandler_6do0s2_m0(node, "classification", editorContext);
+  private EditorCell createRefNodeList_6do0s2_q0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new Approach_Editor.classificationListHandler_6do0s2_q0(node, "classification", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_classification");
     Style style = new StyleImpl();
@@ -313,8 +373,8 @@ public class Approach_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class classificationListHandler_6do0s2_m0 extends RefNodeListHandler {
-    public classificationListHandler_6do0s2_m0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class classificationListHandler_6do0s2_q0 extends RefNodeListHandler {
+    public classificationListHandler_6do0s2_q0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

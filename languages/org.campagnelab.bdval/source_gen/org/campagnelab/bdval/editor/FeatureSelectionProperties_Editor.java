@@ -35,6 +35,15 @@ public class FeatureSelectionProperties_Editor extends DefaultNodeEditor {
     if (renderingCondition_pbpsc1_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNode_pbpsc1_b0(editorContext, node));
     }
+    if (renderingCondition_pbpsc1_a2a(node, editorContext)) {
+      editorCell.addEditorCell(this.createRefNode_pbpsc1_c0(editorContext, node));
+    }
+    if (renderingCondition_pbpsc1_a3a(node, editorContext)) {
+      editorCell.addEditorCell(this.createRefNode_pbpsc1_d0(editorContext, node));
+    }
+    if (renderingCondition_pbpsc1_a4a(node, editorContext)) {
+      editorCell.addEditorCell(this.createRefNode_pbpsc1_e0(editorContext, node));
+    }
     return editorCell;
   }
 
@@ -78,6 +87,9 @@ public class FeatureSelectionProperties_Editor extends DefaultNodeEditor {
     if (editorCell.getRole() == null) {
       editorCell.setRole("ttest");
     }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -93,6 +105,96 @@ public class FeatureSelectionProperties_Editor extends DefaultNodeEditor {
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.Approach"), "featureSelection", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return isNotEmptyString(SPropertyOperations.getString(it, "type")) && SPropertyOperations.getString(it, "type").contains("ttest");
+      }
+    });
+  }
+
+  private EditorCell createRefNode_pbpsc1_c0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("foldchange");
+    provider.setNoTargetText("<no foldchange>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("foldchange");
+    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private static boolean renderingCondition_pbpsc1_a2a(SNode node, EditorContext editorContext) {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.Approach"), "featureSelection", true)).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return isNotEmptyString(SPropertyOperations.getString(it, "type")) && SPropertyOperations.getString(it, "type").contains("foldchange");
+      }
+    });
+  }
+
+  private EditorCell createRefNode_pbpsc1_d0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("geneticAlgorithm");
+    provider.setNoTargetText("<no geneticAlgorithm>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("geneticAlgorithm");
+    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private static boolean renderingCondition_pbpsc1_a3a(SNode node, EditorContext editorContext) {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.Approach"), "featureSelection", true)).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return isNotEmptyString(SPropertyOperations.getString(it, "type")) && SPropertyOperations.getString(it, "type").contains("genetic algorithm");
+      }
+    });
+  }
+
+  private EditorCell createRefNode_pbpsc1_e0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("pathways");
+    provider.setNoTargetText("<no pathways>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("pathways");
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private static boolean renderingCondition_pbpsc1_a4a(SNode node, EditorContext editorContext) {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.Approach"), "featureSelection", true)).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return isNotEmptyString(SPropertyOperations.getString(it, "type")) && SPropertyOperations.getString(it, "type").contains("pathways");
       }
     });
   }

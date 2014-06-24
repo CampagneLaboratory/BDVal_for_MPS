@@ -14,7 +14,7 @@ public class TTestSVMIterative_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_2xhu69_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ttest-SVM Iterative");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Ttest-SVM Iterative");
     editorCell.setCellId("Constant_2xhu69_a");
     editorCell.setBig(true);
     editorCell.setDefaultText("");

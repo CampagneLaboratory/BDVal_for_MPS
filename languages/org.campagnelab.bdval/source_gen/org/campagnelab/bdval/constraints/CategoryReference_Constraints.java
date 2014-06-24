@@ -37,7 +37,7 @@ public class CategoryReference_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getAncestor(_context.getContextNode(), "org.campagnelab.bdval.structure.DataSet", false, false), "org.campagnelab.bdval.structure.DataSet"), "task", true), "endpoint", false), "categories", true);
+            return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getContextNode(), "org.campagnelab.bdval.structure.DataSet", false, false), "task", true), "endpoint", false), "categories", true);
           }
 
           @Override

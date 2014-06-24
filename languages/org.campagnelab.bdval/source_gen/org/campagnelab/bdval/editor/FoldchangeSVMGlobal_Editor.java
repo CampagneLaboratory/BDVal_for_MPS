@@ -14,7 +14,7 @@ public class FoldchangeSVMGlobal_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5hnryg_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Fold Change-SVM Iterative");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Fold Change-SVM Global");
     editorCell.setCellId("Constant_5hnryg_a");
     editorCell.setBig(true);
     editorCell.setDefaultText("");

@@ -8,6 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class FoldchangeSVMGlobal_Behavior {
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "name", "do.foldchange-svmiterative");
-    SPropertyOperations.set(thisNode, "type", "SVM");
+    SPropertyOperations.set(thisNode, "type", "SVM, foldchange");
   }
 }
