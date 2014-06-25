@@ -20,13 +20,6 @@ public class Check_Properties_NonTypesystemRule extends AbstractNonTypesystemRul
   }
 
   public void applyRule(final SNode properties, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (isNotEmptyString(SPropertyOperations.getString(properties, "bdvalLocation")) && !(new File(SPropertyOperations.getString(properties, "bdvalLocation")).isDirectory())) {
-      {
-        MessageTarget errorTarget = new NodeMessageTarget();
-        errorTarget = new PropertyMessageTarget("bdvalLocation");
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(properties, "BDVal installation directory is not correct", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "290469645492819265", null, errorTarget);
-      }
-    }
     if (isNotEmptyString(SPropertyOperations.getString(properties, "outputLocation")) && !(new File(SPropertyOperations.getString(properties, "outputLocation")).isDirectory())) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
@@ -34,6 +27,14 @@ public class Check_Properties_NonTypesystemRule extends AbstractNonTypesystemRul
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(properties, "Output location does not exist", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "290469645492820864", null, errorTarget);
       }
     }
+    if (isNotEmptyString(SPropertyOperations.getString(properties, "bdvalLocation")) && !(new File(SPropertyOperations.getString(properties, "bdvalLocation")).isDirectory())) {
+      {
+        MessageTarget errorTarget = new NodeMessageTarget();
+        errorTarget = new PropertyMessageTarget("bdvalLocation");
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(properties, "BDVal installation directory is not correct", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "290469645492819265", null, errorTarget);
+      }
+    }
+
   }
 
   public String getApplicableConceptFQName() {

@@ -1,5 +1,5 @@
-<project name="Testing" default="evaluate" basedir=".">
-  <dirname property="bdval-project.basedir" file="${ant.file.Testing}"></dirname>
+<project name="TestingXML" default="evaluate" basedir=".">
+  <dirname property="bdval-project.basedir" file="${ant.file.TestingXML}"></dirname>
   <import file="/Users/vmb34/Desktop/bdval/buildsupport/build.xml"></import>
   <property file="${bdval-project.basedir}/${ant.project.name}-local.properties"></property>
   <property name="project-property-file" value="${bdval-project.basedir}/${ant.project.name}.properties"></property>
@@ -22,8 +22,8 @@
   <property name="internal-CV-folds" value="0"></property>
   
   <property name="run-java" value="true"></property>
-  <var name="do.Testing_DiseasedNoYes_Training" value="true"></var>
-  <property name="all-endpoints" value=" Testing_DiseasedNoYes_Training"></property>
+  <var name="do.TestingXML_DiseasedNoYes_Training" value="true"></var>
+  <property name="all-endpoints" value=" TestingXML_DiseasedNoYes_Training"></property>
   <import file="/Users/vmb34/Desktop/bdval/data/bdval.xml"></import>
   
   <target name="evaluate" description="Run a complete evaluation." depends="prepare-bdval, rserve-status, tag-output-directory">

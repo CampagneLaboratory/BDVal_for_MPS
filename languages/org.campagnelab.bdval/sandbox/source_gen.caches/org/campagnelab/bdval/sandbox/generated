@@ -1,10 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-dnhncxfhrfd28ad24ztnyvdyss2edy8">
-  <dep model="r:bc6dc6e9-88f3-467f-93c0-f469615cbf0b(org.campagnelab.bdval.generator.template.main@generator)" hash="5wguzvxr7znsh6ls70tvzdreekh3gq0" />
-  <common hash="-4wpt3m1zjorlik865t9vhrc6jknoul6" />
-  <source id="4027829922717016258" name="Testing" hash="-afmrocm9pva1sv2agjqnv0fpnl5fsyd">
-    <dep model="r:bc6dc6e9-88f3-467f-93c0-f469615cbf0b(org.campagnelab.bdval.generator.template.main@generator)" />
-    <file name="Testing.xml" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="6903080416n0svnsqq8b8a0e4c22du9" />
 
