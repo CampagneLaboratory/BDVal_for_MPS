@@ -291,8 +291,8 @@
     <nodeInfo nodeId="7732421842545263152" fileName="OpenTerminal_Intention.java" startLine="55" startPosition="35" endLine="56" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7732421842545263152" fileName="OpenTerminal_Intention.java" startLine="60" startPosition="37" endLine="61" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7732421842545263152" fileName="OpenTerminal_Intention.java" startLine="62" startPosition="5" endLine="63" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7732421842545317231" fileName="OpenTerminal_Intention.java" startLine="70" startPosition="87" endLine="71" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7732421842545318970" fileName="OpenTerminal_Intention.java" startLine="74" startPosition="78" endLine="75" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7732421842545317231" fileName="OpenTerminal_Intention.java" startLine="70" startPosition="87" endLine="71" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4013254535760304395" fileName="OpenTerminal_Intention.java" startLine="74" startPosition="78" endLine="75" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7732421842545263152" fileName="OpenTerminal_Intention.java" startLine="78" startPosition="48" endLine="79" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7732421842545263152" fileName="OpenTerminal_Intention.java" startLine="20" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="OpenTerminal_Intention#()V" />
     <nodeInfo nodeId="7732421842545263152" fileName="OpenTerminal_Intention.java" startLine="67" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
@@ -322,8 +322,8 @@
     <scopeInfo nodeId="7732421842545263152" fileName="OpenTerminal_Intention.java" startLine="51" startPosition="53" endLine="52" endPosition="127" />
     <scopeInfo nodeId="7732421842545263152" fileName="OpenTerminal_Intention.java" startLine="55" startPosition="35" endLine="56" endPosition="17" />
     <scopeInfo nodeId="7732421842545263152" fileName="OpenTerminal_Intention.java" startLine="60" startPosition="37" endLine="61" endPosition="128" />
-    <scopeInfo nodeId="7732421842545288093" fileName="OpenTerminal_Intention.java" startLine="70" startPosition="87" endLine="71" endPosition="29" />
-    <scopeInfo nodeId="7732421842545288095" fileName="OpenTerminal_Intention.java" startLine="74" startPosition="78" endLine="75" endPosition="64" />
+    <scopeInfo nodeId="7732421842545288093" fileName="OpenTerminal_Intention.java" startLine="70" startPosition="87" endLine="71" endPosition="28" />
+    <scopeInfo nodeId="7732421842545288095" fileName="OpenTerminal_Intention.java" startLine="74" startPosition="78" endLine="75" endPosition="76" />
     <scopeInfo nodeId="7732421842545263152" fileName="OpenTerminal_Intention.java" startLine="78" startPosition="48" endLine="79" endPosition="41" />
     <scopeInfo nodeId="7732421842545263152" fileName="OpenTerminal_Intention.java" startLine="20" startPosition="0" endLine="22" endPosition="0" />
     <scopeInfo nodeId="7732421842545263152" fileName="OpenTerminal_Intention.java" startLine="67" startPosition="0" endLine="69" endPosition="0" />

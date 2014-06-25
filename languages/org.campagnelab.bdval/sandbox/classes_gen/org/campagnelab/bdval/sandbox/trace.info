@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeRef="r:b2ac1451-2431-4f4c-8992-b8345f1cb6dc(org.campagnelab.bdval.sandbox)/4027829922717016258">
-    <unitInfo nodeId="4027829922717016258" fileName="TestingXML.xml" startLine="1" startPosition="0" endLine="40" endPosition="10" unitName="org.campagnelab.bdval.sandbox.TestingXML" />
+    <unitInfo nodeId="4027829922717016258" fileName="Testing.xml" startLine="1" startPosition="0" endLine="40" endPosition="10" unitName="org.campagnelab.bdval.sandbox.Testing" />
   </root>
 </debugInfo>
 

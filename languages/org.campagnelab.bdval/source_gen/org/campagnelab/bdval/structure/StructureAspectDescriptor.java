@@ -108,7 +108,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 46:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Project").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"properties", "approach", "endpoint", "dataset"}, new boolean[]{false, false, true, true}).alias("project", "An entire project which can contain multiple datasets ").create();
       case 47:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Properties").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("outputLocation", "bdvalLocation", "threads", "memory").children(new String[]{"computerType"}, new boolean[]{false}).create();
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Properties").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("outputLocation", "bdvalLocation", "antLocation", "threads", "memory", "location").children(new String[]{"computerType"}, new boolean[]{false}).create();
       case 48:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.RandomForest").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.Classification").alias("Random Forest", "").create();
       case 49:

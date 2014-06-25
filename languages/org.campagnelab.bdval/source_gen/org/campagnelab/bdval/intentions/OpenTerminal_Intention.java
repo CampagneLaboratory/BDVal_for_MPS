@@ -68,11 +68,11 @@ public class OpenTerminal_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Open Terminal";
+      return "Generate Run";
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      Project_Behavior.call_callBDVal_4027829922701438823(node);
+      Project_Behavior.call_writeExecutableAndRun_7732421842564140401(node);
     }
 
     public IntentionDescriptor getDescriptor() {

@@ -6,12 +6,14 @@
   <import index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="56" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <root type="w348.Project" typeId="w348.3367122381622495536" id="4027829922717016258" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="TestingXML" />
+    <property name="name" nameId="tpck.1169194664001" value="Testing" />
     <node role="properties" roleId="w348.7083662764416913977" type="w348.Properties" typeId="w348.7083662764416913858" id="4027829922717016259" nodeInfo="ng">
       <property name="outputLocation" nameId="w348.7083662764433578750" value="/Users/vmb34/Desktop" />
       <property name="bdvalLocation" nameId="w348.7083662764418599580" value="/Users/vmb34/Desktop/bdval" />
       <property name="threads" nameId="w348.7083662764416913912" value="1" />
       <property name="memory" nameId="w348.7083662764416913915" value="1200" />
+      <property name="antLocation" nameId="w348.4013254535750850394" value="/Users/vmb34/Downloads/apache-ant-1.9.4" />
+      <property name="location" nameId="w348.4013254535762310626" value="/Applications/MPS 3.1.app/bin" />
       <node role="computerType" roleId="w348.4671749543962624686" type="w348.DesktopComputer" typeId="w348.4671749543962624837" id="7732421842545252900" nodeInfo="ng">
         <property name="name" nameId="tpck.1169194664001" value="desktop" />
       </node>

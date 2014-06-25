@@ -13,6 +13,9 @@ import java.io.FileOutputStream;
 import java.io.File;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import java.io.Writer;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 
 public class Project_Behavior {
   public static void init(SNode thisNode) {
@@ -97,9 +100,24 @@ public class Project_Behavior {
     }
   }
 
-  public static void call_callBDVal_4027829922701438823(SNode thisNode) {
+  public static void call_writeExecutableAndRun_7732421842564140401(SNode thisNode) {
     try {
-      Runtime.getRuntime().exec("open -a Terminal " + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "bdvalLocation") + "/data");
+      SPropertyOperations.set(SLinkOperations.getTarget(thisNode, "properties", true), "location", Object.class.getClass().getClassLoader().getResource("/sandbox/classes_gen/org/campagnelab/bdval/sandbox/Testing.xml").getFile());
+    } catch (Exception e) {
+      throw new Error("Error moving XML file");
+    }
+    String projectName = WordUtils.capitalize(SPropertyOperations.getString(thisNode, "name").replaceAll("\\s", ""));
+    try {
+      String script = "cd " + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "bdvalLocation") + "/data \n export ANT_HOME=" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "antLocation") + "\n export PATH=${PATH}:${ANT_HOME}/bin \n ant -f " + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "outputLocation") + "/" + projectName + "/" + projectName + ".xml";
+      Writer output = new BufferedWriter(new FileWriter(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "outputLocation") + "/" + projectName + "/run.command"));
+      output.write(script);
+      output.close();
+
+    } catch (Exception e) {
+      throw new Error("Error creating executable file");
+    }
+    try {
+      Runtime.getRuntime().exec("open " + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "outputLocation") + "/" + projectName + "/run.command");
     } catch (Exception e) {
       throw new Error("Error running project");
     }

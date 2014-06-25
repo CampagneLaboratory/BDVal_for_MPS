@@ -46,6 +46,11 @@
       <property name="name" nameId="tpck.1169194664001" value="copy" />
       <property name="weight" nameId="vvvw.184542595914096177" value="10" />
       <property name="resourcesPolicy" nameId="vvvw.1675547159918562088" value="CONSUME" />
+      <node role="input" roleId="vvvw.119022571401949664" type="vvvw.ResourceTypeDeclaration" typeId="vvvw.119022571401949652" id="7732421842562315408" nodeInfo="ng">
+        <node role="resourceType" roleId="vvvw.119022571401949655" type="vvvw.ResourceClassifierType" typeId="vvvw.119022571402207412" id="7732421842563242866" nodeInfo="in">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fn29.2257725414731981663" resolveInfo="TResource" />
+        </node>
+      </node>
       <node role="dependency" roleId="vvvw.6418371274763146553" type="vvvw.TargetDependency" typeId="vvvw.6418371274763029600" id="7732421842548126947" nodeInfo="ng">
         <property name="qualifier" nameId="vvvw.8351679702044326377" value="AFTER" />
         <link role="dependsOn" roleId="vvvw.6418371274763029603" targetNodeId="tpcq.6648795410103939855" resolveInfo="generate" />
@@ -469,11 +474,6 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7732421842549994924" nodeInfo="nn" />
-      </node>
-      <node role="input" roleId="vvvw.119022571401949664" type="vvvw.ResourceTypeDeclaration" typeId="vvvw.119022571401949652" id="7732421842562315408" nodeInfo="ng">
-        <node role="resourceType" roleId="vvvw.119022571401949655" type="vvvw.ResourceClassifierType" typeId="vvvw.119022571402207412" id="7732421842563242866" nodeInfo="in">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fn29.2257725414731981663" resolveInfo="TResource" />
-        </node>
       </node>
     </node>
   </root>

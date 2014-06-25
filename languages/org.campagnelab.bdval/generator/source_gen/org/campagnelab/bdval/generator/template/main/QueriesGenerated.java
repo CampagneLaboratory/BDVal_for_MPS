@@ -154,12 +154,4 @@ public class QueriesGenerated {
       }
     });
   }
-
-  public static void mappingScript_CodeBlock_4027829922699799703(final MappingScriptContext _context) {
-    ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "org.campagnelab.bdval.structure.Project")).visitAll(new IVisitor<SNode>() {
-      public void visit(SNode project) {
-        Project_Behavior.call_callBDVal_4027829922701438823(project);
-      }
-    });
-  }
 }

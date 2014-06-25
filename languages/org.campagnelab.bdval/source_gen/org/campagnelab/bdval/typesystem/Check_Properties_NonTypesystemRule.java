@@ -34,7 +34,13 @@ public class Check_Properties_NonTypesystemRule extends AbstractNonTypesystemRul
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(properties, "BDVal installation directory is not correct", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "290469645492819265", null, errorTarget);
       }
     }
-
+    if (isNotEmptyString(SPropertyOperations.getString(properties, "antLocation")) && !(new File(SPropertyOperations.getString(properties, "antLocation")).isDirectory())) {
+      {
+        MessageTarget errorTarget = new NodeMessageTarget();
+        errorTarget = new PropertyMessageTarget("antLocation");
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(properties, "BDVal installation directory is not correct", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "4013254535750871071", null, errorTarget);
+      }
+    }
   }
 
   public String getApplicableConceptFQName() {
