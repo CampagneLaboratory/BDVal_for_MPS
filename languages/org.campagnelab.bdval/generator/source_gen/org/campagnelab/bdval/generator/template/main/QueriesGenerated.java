@@ -130,6 +130,14 @@ public class QueriesGenerated {
     return WordUtils.capitalize(SPropertyOperations.getString(_context.getNode(), "name").replaceAll("\\s", ""));
   }
 
+  public static Object propertyMacro_GetPropertyValue_2617953378946799303(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_2617953378946807909(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "properties", true), "outputLocation");
+  }
+
   public static Iterable<SNode> sourceNodesQuery_2125124408386653548(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "dataset", true);
   }

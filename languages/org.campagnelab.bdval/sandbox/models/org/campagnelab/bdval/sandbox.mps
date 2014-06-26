@@ -3,7 +3,7 @@
   <persistence version="8" />
   <language namespace="35dbc0f6-2677-4e81-9b75-548a3c2b6d9b(org.campagnelab.bdval)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
-  <import index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="56" implicit="yes" />
+  <import index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="60" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <root type="w348.Project" typeId="w348.3367122381622495536" id="4027829922717016258" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="Testing" />
@@ -31,8 +31,16 @@
       <node role="classification" roleId="w348.7388448774866567751" type="w348.Logistic" typeId="w348.7388448774866532195" id="4027829922720132217" nodeInfo="ng">
         <property name="name" nameId="tpck.1169194664001" value="do.logistic" />
       </node>
-      <node role="featureSelection" roleId="w348.7388448774866567754" type="w348.WholeChip" typeId="w348.7388448774866532323" id="4027829922720132215" nodeInfo="ng">
-        <property name="name" nameId="tpck.1169194664001" value="do.whole-chip" />
+      <node role="classification" roleId="w348.7388448774866567751" type="w348.SVM" typeId="w348.7388448774866532198" id="5089829312601025390" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="do.baseline" />
+      </node>
+      <node role="featureSelection" roleId="w348.7388448774866567754" type="w348.FoldchangeGeneticAlgorithm" typeId="w348.7388448774866532610" id="5089829312601025375" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="do.foldchange-genetic-algorithm" />
+        <property name="type" nameId="w348.4671749543972261875" value="foldchange, genetic algorithm" />
+      </node>
+      <node role="featureSelection" roleId="w348.7388448774866567754" type="w348.TTestGeneticAlgorithm" typeId="w348.7388448774866532609" id="5089829312601025381" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="do.ttest-genetic-algorithm" />
+        <property name="type" nameId="w348.4671749543972261875" value="ttest, genetic algorithm" />
       </node>
     </node>
     <node role="endpoint" roleId="w348.7083662764384080735" type="w348.Endpoint" typeId="w348.4345048909863217124" id="4027829922717016266" nodeInfo="ng">

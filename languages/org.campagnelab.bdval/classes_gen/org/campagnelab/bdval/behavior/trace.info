@@ -3,7 +3,7 @@
   <unitInfo fileName="AUGPerformance_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="org.campagnelab.bdval.behavior.AUGPerformance_BehaviorDescriptor" />
   <unitInfo fileName="Approach_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.campagnelab.bdval.behavior.Approach_BehaviorDescriptor" />
   <unitInfo fileName="AverageAggregation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.campagnelab.bdval.behavior.AverageAggregation_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="136" endPosition="0" unitName="org.campagnelab.bdval.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="138" endPosition="0" unitName="org.campagnelab.bdval.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="CIDs_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.campagnelab.bdval.behavior.CIDs_BehaviorDescriptor" />
   <unitInfo fileName="CategoryReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.campagnelab.bdval.behavior.CategoryReference_BehaviorDescriptor" />
   <unitInfo fileName="Classification_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="9" endPosition="0" unitName="org.campagnelab.bdval.behavior.Classification_BehaviorDescriptor" />
@@ -20,16 +20,17 @@
   <unitInfo fileName="FeatureSelectionFoldTrue_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="org.campagnelab.bdval.behavior.FeatureSelectionFoldTrue_BehaviorDescriptor" />
   <unitInfo fileName="FeatureSelectionProperties_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.campagnelab.bdval.behavior.FeatureSelectionProperties_BehaviorDescriptor" />
   <unitInfo fileName="FeatureSelection_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="9" endPosition="0" unitName="org.campagnelab.bdval.behavior.FeatureSelection_BehaviorDescriptor" />
-  <unitInfo fileName="FoldChangeSVMIterative_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="org.campagnelab.bdval.behavior.FoldChangeSVMIterative_BehaviorDescriptor" />
   <unitInfo fileName="FoldchangeGeneticAlgorithm_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="org.campagnelab.bdval.behavior.FoldchangeGeneticAlgorithm_BehaviorDescriptor" />
   <unitInfo fileName="FoldchangeProperties_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.campagnelab.bdval.behavior.FoldchangeProperties_BehaviorDescriptor" />
   <unitInfo fileName="FoldchangeSVMGlobal_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="org.campagnelab.bdval.behavior.FoldchangeSVMGlobal_BehaviorDescriptor" />
+  <unitInfo fileName="FoldchangeSVMIterative_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="org.campagnelab.bdval.behavior.FoldchangeSVMIterative_BehaviorDescriptor" />
   <unitInfo fileName="FullGeneticAlgorithm_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="org.campagnelab.bdval.behavior.FullGeneticAlgorithm_BehaviorDescriptor" />
   <unitInfo fileName="GAPerformance_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="9" endPosition="0" unitName="org.campagnelab.bdval.behavior.GAPerformance_BehaviorDescriptor" />
   <unitInfo fileName="GenelistGeneticAlgorithm_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="org.campagnelab.bdval.behavior.GenelistGeneticAlgorithm_BehaviorDescriptor" />
   <unitInfo fileName="GenelistSVMGlobalTuneC_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="org.campagnelab.bdval.behavior.GenelistSVMGlobalTuneC_BehaviorDescriptor" />
   <unitInfo fileName="GenelistSVMGlobal_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="org.campagnelab.bdval.behavior.GenelistSVMGlobal_BehaviorDescriptor" />
   <unitInfo fileName="GeneticAlgorithmProperties_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.campagnelab.bdval.behavior.GeneticAlgorithmProperties_BehaviorDescriptor" />
+  <unitInfo fileName="Information_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.campagnelab.bdval.behavior.Information_BehaviorDescriptor" />
   <unitInfo fileName="Input_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.campagnelab.bdval.behavior.Input_BehaviorDescriptor" />
   <unitInfo fileName="Integer_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.campagnelab.bdval.behavior.Integer_BehaviorDescriptor" />
   <unitInfo fileName="KStar_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="org.campagnelab.bdval.behavior.KStar_BehaviorDescriptor" />
@@ -57,10 +58,10 @@
   <unitInfo fileName="Sample_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="org.campagnelab.bdval.behavior.Sample_BehaviorDescriptor" />
   <unitInfo fileName="ServerComputer_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="org.campagnelab.bdval.behavior.ServerComputer_BehaviorDescriptor" />
   <unitInfo fileName="TTestGeneticAlgorithm_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="org.campagnelab.bdval.behavior.TTestGeneticAlgorithm_BehaviorDescriptor" />
+  <unitInfo fileName="TTestProperties_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.campagnelab.bdval.behavior.TTestProperties_BehaviorDescriptor" />
   <unitInfo fileName="TTestSVMGlobal_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="org.campagnelab.bdval.behavior.TTestSVMGlobal_BehaviorDescriptor" />
   <unitInfo fileName="TTestSVMIterative_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="org.campagnelab.bdval.behavior.TTestSVMIterative_BehaviorDescriptor" />
   <unitInfo fileName="Task_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.campagnelab.bdval.behavior.Task_BehaviorDescriptor" />
-  <unitInfo fileName="TtestProperties_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.campagnelab.bdval.behavior.TtestProperties_BehaviorDescriptor" />
   <unitInfo fileName="WekaScan_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="org.campagnelab.bdval.behavior.WekaScan_BehaviorDescriptor" />
   <unitInfo fileName="WholeChip_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="org.campagnelab.bdval.behavior.WholeChip_BehaviorDescriptor" />
   <root nodeRef="r:825ae26d-5123-4d82-aa5e-7977a26d188c(org.campagnelab.bdval.behavior)/2125124408380551424">
@@ -147,14 +148,14 @@
     <unitInfo nodeId="2125124408390448798" fileName="FCP_LogitBoost_Behavior.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="org.campagnelab.bdval.behavior.FCP_LogitBoost_Behavior" />
   </root>
   <root nodeRef="r:825ae26d-5123-4d82-aa5e-7977a26d188c(org.campagnelab.bdval.behavior)/2125124408390457488">
-    <nodeInfo nodeId="2125124408390457492" fileName="FoldChangeSVMIterative_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4671749543994636692" fileName="FoldChangeSVMIterative_Behavior.java" startLine="10" startPosition="76" endLine="11" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2125124408390457488" fileName="FoldChangeSVMIterative_Behavior.java" startLine="9" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="2125124408390457490" fileName="FoldChangeSVMIterative_Behavior.java" startLine="9" startPosition="43" endLine="11" endPosition="65" />
-    <scopeInfo nodeId="2125124408390457488" fileName="FoldChangeSVMIterative_Behavior.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
+    <nodeInfo nodeId="2125124408390457492" fileName="FoldchangeSVMIterative_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4671749543994636692" fileName="FoldchangeSVMIterative_Behavior.java" startLine="10" startPosition="76" endLine="11" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2125124408390457488" fileName="FoldchangeSVMIterative_Behavior.java" startLine="9" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="2125124408390457490" fileName="FoldchangeSVMIterative_Behavior.java" startLine="9" startPosition="43" endLine="11" endPosition="65" />
+    <scopeInfo nodeId="2125124408390457488" fileName="FoldchangeSVMIterative_Behavior.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
       <varInfo nodeId="2125124408390457488" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="2125124408390457488" fileName="FoldChangeSVMIterative_Behavior.java" startLine="8" startPosition="0" endLine="14" endPosition="0" unitName="org.campagnelab.bdval.behavior.FoldChangeSVMIterative_Behavior" />
+    <unitInfo nodeId="2125124408390457488" fileName="FoldchangeSVMIterative_Behavior.java" startLine="8" startPosition="0" endLine="14" endPosition="0" unitName="org.campagnelab.bdval.behavior.FoldchangeSVMIterative_Behavior" />
   </root>
   <root nodeRef="r:825ae26d-5123-4d82-aa5e-7977a26d188c(org.campagnelab.bdval.behavior)/2125124408390461899">
     <nodeInfo nodeId="2125124408390461903" fileName="FoldchangeGeneticAlgorithm_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

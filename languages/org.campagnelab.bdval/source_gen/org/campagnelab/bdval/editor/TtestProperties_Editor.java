@@ -16,24 +16,24 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
-public class TtestProperties_Editor extends DefaultNodeEditor {
+public class TTestProperties_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_l0inzd_a(editorContext, node);
+    return this.createCollection_lqyft_a(editorContext, node);
   }
 
-  private EditorCell createCollection_l0inzd_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_lqyft_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_l0inzd_a");
+    editorCell.setCellId("Collection_lqyft_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createConstant_l0inzd_a0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_l0inzd_b0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_l0inzd_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_lqyft_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_lqyft_b0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_lqyft_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_l0inzd_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_lqyft_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Ttest:");
-    editorCell.setCellId("Constant_l0inzd_a0");
+    editorCell.setCellId("Constant_lqyft_a0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -41,9 +41,9 @@ public class TtestProperties_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_l0inzd_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_lqyft_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Cutoff for T-test Feature Selection:");
-    editorCell.setCellId("Constant_l0inzd_b0");
+    editorCell.setCellId("Constant_lqyft_b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.READ_ONLY, true);
     style.set(StyleAttributes.EDITABLE, false);
@@ -53,7 +53,7 @@ public class TtestProperties_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_l0inzd_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_lqyft_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("cutoff");
     provider.setNoTargetText("<no cutoff>");

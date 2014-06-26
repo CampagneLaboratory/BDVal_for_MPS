@@ -342,5 +342,29 @@
     </dependencies>
     <rename id="w348.4671749543962624901" type="CONCEPT" from="serverComputer" to="ServerComputer" />
   </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="56" />
+    </dependencies>
+    <rename id="w348.3367122381622495536" type="CONCEPT" from="Project" to="Project2" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="57" />
+    </dependencies>
+    <rename id="w348.3367122381622495536" type="CONCEPT" from="Project2" to="Project" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="58" />
+    </dependencies>
+    <rename id="w348.7388448774866532336" type="CONCEPT" from="FoldChangeSVMIterative" to="FoldchangeSVMIterative" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="59" />
+    </dependencies>
+    <rename id="w348.4671749543995071282" type="CONCEPT" from="TtestProperties" to="TTestProperties" />
+  </StructureModification>
 </history>
 

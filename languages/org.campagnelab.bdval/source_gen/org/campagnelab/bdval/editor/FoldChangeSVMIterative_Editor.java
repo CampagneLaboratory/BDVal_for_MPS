@@ -8,14 +8,14 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
-public class FoldChangeSVMIterative_Editor extends DefaultNodeEditor {
+public class FoldchangeSVMIterative_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConstant_b8nym4_a(editorContext, node);
+    return this.createConstant_tu3imk_a(editorContext, node);
   }
 
-  private EditorCell createConstant_b8nym4_a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_tu3imk_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Fold Change-SVM Iterative");
-    editorCell.setCellId("Constant_b8nym4_a");
+    editorCell.setCellId("Constant_tu3imk_a");
     editorCell.setBig(true);
     editorCell.setDefaultText("");
     return editorCell;

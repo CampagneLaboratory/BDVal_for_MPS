@@ -209,27 +209,27 @@
     <unitInfo nodeId="2125124408390448793" fileName="FCP_LogitBoost_Editor.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="org.campagnelab.bdval.editor.FCP_LogitBoost_Editor" />
   </root>
   <root nodeRef="r:80234718-e5a8-4a44-a5b1-9d71e3e29f88(org.campagnelab.bdval.editor)/2125124408390457483">
-    <nodeInfo nodeId="2125124408390457483" fileName="FoldChangeSVMIterative_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2125124408390457485" fileName="FoldChangeSVMIterative_Editor.java" startLine="16" startPosition="87" endLine="17" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2125124408390457485" fileName="FoldChangeSVMIterative_Editor.java" startLine="17" startPosition="111" endLine="18" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2125124408390457485" fileName="FoldChangeSVMIterative_Editor.java" startLine="18" startPosition="46" endLine="19" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2125124408390457485" fileName="FoldChangeSVMIterative_Editor.java" startLine="19" startPosition="28" endLine="20" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2125124408390457485" fileName="FoldChangeSVMIterative_Editor.java" startLine="20" startPosition="34" endLine="21" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2125124408390457483" fileName="FoldChangeSVMIterative_Editor.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="2125124408390457485" fileName="FoldChangeSVMIterative_Editor.java" startLine="16" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_b8nym4_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <scopeInfo nodeId="2125124408390457483" fileName="FoldChangeSVMIterative_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="61" />
-    <scopeInfo nodeId="2125124408390457483" fileName="FoldChangeSVMIterative_Editor.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+    <nodeInfo nodeId="2125124408390457483" fileName="FoldchangeSVMIterative_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2125124408390457485" fileName="FoldchangeSVMIterative_Editor.java" startLine="16" startPosition="87" endLine="17" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2125124408390457485" fileName="FoldchangeSVMIterative_Editor.java" startLine="17" startPosition="111" endLine="18" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2125124408390457485" fileName="FoldchangeSVMIterative_Editor.java" startLine="18" startPosition="46" endLine="19" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2125124408390457485" fileName="FoldchangeSVMIterative_Editor.java" startLine="19" startPosition="28" endLine="20" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2125124408390457485" fileName="FoldchangeSVMIterative_Editor.java" startLine="20" startPosition="34" endLine="21" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2125124408390457483" fileName="FoldchangeSVMIterative_Editor.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="2125124408390457485" fileName="FoldchangeSVMIterative_Editor.java" startLine="16" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_tu3imk_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <scopeInfo nodeId="2125124408390457483" fileName="FoldchangeSVMIterative_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="61" />
+    <scopeInfo nodeId="2125124408390457483" fileName="FoldchangeSVMIterative_Editor.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="2125124408390457483" varName="editorContext" />
       <varInfo nodeId="2125124408390457483" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2125124408390457485" fileName="FoldChangeSVMIterative_Editor.java" startLine="16" startPosition="87" endLine="21" endPosition="22">
+    <scopeInfo nodeId="2125124408390457485" fileName="FoldchangeSVMIterative_Editor.java" startLine="16" startPosition="87" endLine="21" endPosition="22">
       <varInfo nodeId="2125124408390457485" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="2125124408390457485" fileName="FoldChangeSVMIterative_Editor.java" startLine="16" startPosition="0" endLine="23" endPosition="0">
+    <scopeInfo nodeId="2125124408390457485" fileName="FoldchangeSVMIterative_Editor.java" startLine="16" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="2125124408390457485" varName="editorContext" />
       <varInfo nodeId="2125124408390457485" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="2125124408390457483" fileName="FoldChangeSVMIterative_Editor.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="org.campagnelab.bdval.editor.FoldChangeSVMIterative_Editor" />
+    <unitInfo nodeId="2125124408390457483" fileName="FoldchangeSVMIterative_Editor.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="org.campagnelab.bdval.editor.FoldchangeSVMIterative_Editor" />
   </root>
   <root nodeRef="r:80234718-e5a8-4a44-a5b1-9d71e3e29f88(org.campagnelab.bdval.editor)/2125124408390461894">
     <nodeInfo nodeId="2125124408390461894" fileName="FoldchangeGeneticAlgorithm_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -3871,98 +3871,98 @@
     <unitInfo nodeId="4671749543983680069" fileName="FeatureSelectionFoldTrue_Editor.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="org.campagnelab.bdval.editor.FeatureSelectionFoldTrue_Editor" />
   </root>
   <root nodeRef="r:80234718-e5a8-4a44-a5b1-9d71e3e29f88(org.campagnelab.bdval.editor)/4671749543995082588">
-    <nodeInfo nodeId="4671749543995082588" fileName="TtestProperties_Editor.java" startLine="20" startPosition="79" endLine="21" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4671749543995082588" fileName="TtestProperties_Editor.java" startLine="24" startPosition="89" endLine="25" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4671749543995082588" fileName="TtestProperties_Editor.java" startLine="25" startPosition="96" endLine="26" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4671749543995082588" fileName="TtestProperties_Editor.java" startLine="26" startPosition="48" endLine="27" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4671749543995082588" fileName="TtestProperties_Editor.java" startLine="27" startPosition="28" endLine="28" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4671749543995082588" fileName="TtestProperties_Editor.java" startLine="27" startPosition="28" endLine="28" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4671749543995082588" fileName="TtestProperties_Editor.java" startLine="28" startPosition="81" endLine="29" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4671749543995082588" fileName="TtestProperties_Editor.java" startLine="28" startPosition="81" endLine="29" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4671749543995082588" fileName="TtestProperties_Editor.java" startLine="29" startPosition="81" endLine="30" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4671749543995082588" fileName="TtestProperties_Editor.java" startLine="29" startPosition="81" endLine="30" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4671749543995082588" fileName="TtestProperties_Editor.java" startLine="30" startPosition="81" endLine="31" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4027829922695404019" fileName="TtestProperties_Editor.java" startLine="34" startPosition="88" endLine="35" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4027829922695404019" fileName="TtestProperties_Editor.java" startLine="35" startPosition="92" endLine="36" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4027829922695404019" fileName="TtestProperties_Editor.java" startLine="36" startPosition="47" endLine="37" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4027829922695404019" fileName="TtestProperties_Editor.java" startLine="37" startPosition="34" endLine="38" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4027829922695404019" fileName="TtestProperties_Editor.java" startLine="38" startPosition="60" endLine="39" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4027829922695404019" fileName="TtestProperties_Editor.java" startLine="39" startPosition="40" endLine="40" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4027829922695404019" fileName="TtestProperties_Editor.java" startLine="40" startPosition="34" endLine="41" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4671749543995082597" fileName="TtestProperties_Editor.java" startLine="44" startPosition="88" endLine="45" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4671749543995082597" fileName="TtestProperties_Editor.java" startLine="45" startPosition="122" endLine="46" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4671749543995082597" fileName="TtestProperties_Editor.java" startLine="46" startPosition="47" endLine="47" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4671749543995082597" fileName="TtestProperties_Editor.java" startLine="47" startPosition="34" endLine="48" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4671749543995082597" fileName="TtestProperties_Editor.java" startLine="48" startPosition="47" endLine="49" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4671749543995082597" fileName="TtestProperties_Editor.java" startLine="49" startPosition="47" endLine="50" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4671749543995082597" fileName="TtestProperties_Editor.java" startLine="50" startPosition="58" endLine="51" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4671749543995082597" fileName="TtestProperties_Editor.java" startLine="51" startPosition="40" endLine="52" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4671749543995082597" fileName="TtestProperties_Editor.java" startLine="52" startPosition="34" endLine="53" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4671749543995082603" fileName="TtestProperties_Editor.java" startLine="56" startPosition="88" endLine="57" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4671749543995082603" fileName="TtestProperties_Editor.java" startLine="57" startPosition="82" endLine="58" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4671749543995082603" fileName="TtestProperties_Editor.java" startLine="58" startPosition="31" endLine="59" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4671749543995082603" fileName="TtestProperties_Editor.java" startLine="59" startPosition="44" endLine="60" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4671749543995082603" fileName="TtestProperties_Editor.java" startLine="60" startPosition="26" endLine="61" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4671749543995082603" fileName="TtestProperties_Editor.java" startLine="61" startPosition="58" endLine="62" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4671749543995082603" fileName="TtestProperties_Editor.java" startLine="62" startPosition="44" endLine="63" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4671749543995082603" fileName="TtestProperties_Editor.java" startLine="63" startPosition="73" endLine="64" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4671749543995082603" fileName="TtestProperties_Editor.java" startLine="64" startPosition="57" endLine="65" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4671749543995082603" fileName="TtestProperties_Editor.java" startLine="66" startPosition="35" endLine="67" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4671749543995082603" fileName="TtestProperties_Editor.java" startLine="67" startPosition="72" endLine="68" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4671749543995082603" fileName="TtestProperties_Editor.java" startLine="68" startPosition="78" endLine="69" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4671749543995082603" fileName="TtestProperties_Editor.java" startLine="70" startPosition="10" endLine="71" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4671749543995082588" fileName="TtestProperties_Editor.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4671749543995082603" fileName="TtestProperties_Editor.java" startLine="65" startPosition="59" endLine="71" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4671749543995082588" fileName="TtestProperties_Editor.java" startLine="24" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_l0inzd_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4027829922695404019" fileName="TtestProperties_Editor.java" startLine="34" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_l0inzd_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4671749543995082597" fileName="TtestProperties_Editor.java" startLine="44" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_l0inzd_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4671749543995082603" fileName="TtestProperties_Editor.java" startLine="56" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_l0inzd_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <scopeInfo nodeId="4671749543995082588" fileName="TtestProperties_Editor.java" startLine="20" startPosition="79" endLine="21" endPosition="63" />
-    <scopeInfo nodeId="4671749543995082588" fileName="TtestProperties_Editor.java" startLine="27" startPosition="28" endLine="28" endPosition="81" />
-    <scopeInfo nodeId="4671749543995082588" fileName="TtestProperties_Editor.java" startLine="28" startPosition="81" endLine="29" endPosition="81" />
-    <scopeInfo nodeId="4671749543995082588" fileName="TtestProperties_Editor.java" startLine="29" startPosition="81" endLine="30" endPosition="81" />
-    <scopeInfo nodeId="4671749543995082588" fileName="TtestProperties_Editor.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
+    <nodeInfo nodeId="4671749543995082588" fileName="TTestProperties_Editor.java" startLine="20" startPosition="79" endLine="21" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4671749543995082588" fileName="TTestProperties_Editor.java" startLine="24" startPosition="88" endLine="25" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4671749543995082588" fileName="TTestProperties_Editor.java" startLine="25" startPosition="96" endLine="26" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4671749543995082588" fileName="TTestProperties_Editor.java" startLine="26" startPosition="47" endLine="27" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4671749543995082588" fileName="TTestProperties_Editor.java" startLine="27" startPosition="28" endLine="28" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4671749543995082588" fileName="TTestProperties_Editor.java" startLine="27" startPosition="28" endLine="28" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4671749543995082588" fileName="TTestProperties_Editor.java" startLine="28" startPosition="80" endLine="29" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4671749543995082588" fileName="TTestProperties_Editor.java" startLine="28" startPosition="80" endLine="29" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4671749543995082588" fileName="TTestProperties_Editor.java" startLine="29" startPosition="80" endLine="30" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4671749543995082588" fileName="TTestProperties_Editor.java" startLine="29" startPosition="80" endLine="30" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4671749543995082588" fileName="TTestProperties_Editor.java" startLine="30" startPosition="80" endLine="31" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4027829922695404019" fileName="TTestProperties_Editor.java" startLine="34" startPosition="87" endLine="35" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4027829922695404019" fileName="TTestProperties_Editor.java" startLine="35" startPosition="92" endLine="36" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4027829922695404019" fileName="TTestProperties_Editor.java" startLine="36" startPosition="46" endLine="37" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4027829922695404019" fileName="TTestProperties_Editor.java" startLine="37" startPosition="34" endLine="38" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4027829922695404019" fileName="TTestProperties_Editor.java" startLine="38" startPosition="60" endLine="39" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4027829922695404019" fileName="TTestProperties_Editor.java" startLine="39" startPosition="40" endLine="40" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4027829922695404019" fileName="TTestProperties_Editor.java" startLine="40" startPosition="34" endLine="41" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4671749543995082597" fileName="TTestProperties_Editor.java" startLine="44" startPosition="87" endLine="45" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4671749543995082597" fileName="TTestProperties_Editor.java" startLine="45" startPosition="122" endLine="46" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4671749543995082597" fileName="TTestProperties_Editor.java" startLine="46" startPosition="46" endLine="47" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4671749543995082597" fileName="TTestProperties_Editor.java" startLine="47" startPosition="34" endLine="48" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4671749543995082597" fileName="TTestProperties_Editor.java" startLine="48" startPosition="47" endLine="49" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4671749543995082597" fileName="TTestProperties_Editor.java" startLine="49" startPosition="47" endLine="50" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4671749543995082597" fileName="TTestProperties_Editor.java" startLine="50" startPosition="58" endLine="51" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4671749543995082597" fileName="TTestProperties_Editor.java" startLine="51" startPosition="40" endLine="52" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4671749543995082597" fileName="TTestProperties_Editor.java" startLine="52" startPosition="34" endLine="53" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4671749543995082603" fileName="TTestProperties_Editor.java" startLine="56" startPosition="87" endLine="57" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4671749543995082603" fileName="TTestProperties_Editor.java" startLine="57" startPosition="82" endLine="58" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4671749543995082603" fileName="TTestProperties_Editor.java" startLine="58" startPosition="31" endLine="59" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4671749543995082603" fileName="TTestProperties_Editor.java" startLine="59" startPosition="44" endLine="60" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4671749543995082603" fileName="TTestProperties_Editor.java" startLine="60" startPosition="26" endLine="61" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4671749543995082603" fileName="TTestProperties_Editor.java" startLine="61" startPosition="58" endLine="62" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4671749543995082603" fileName="TTestProperties_Editor.java" startLine="62" startPosition="44" endLine="63" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4671749543995082603" fileName="TTestProperties_Editor.java" startLine="63" startPosition="73" endLine="64" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4671749543995082603" fileName="TTestProperties_Editor.java" startLine="64" startPosition="57" endLine="65" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4671749543995082603" fileName="TTestProperties_Editor.java" startLine="66" startPosition="35" endLine="67" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4671749543995082603" fileName="TTestProperties_Editor.java" startLine="67" startPosition="72" endLine="68" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4671749543995082603" fileName="TTestProperties_Editor.java" startLine="68" startPosition="78" endLine="69" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4671749543995082603" fileName="TTestProperties_Editor.java" startLine="70" startPosition="10" endLine="71" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4671749543995082588" fileName="TTestProperties_Editor.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4671749543995082603" fileName="TTestProperties_Editor.java" startLine="65" startPosition="59" endLine="71" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4671749543995082588" fileName="TTestProperties_Editor.java" startLine="24" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_lqyft_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4027829922695404019" fileName="TTestProperties_Editor.java" startLine="34" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_lqyft_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4671749543995082597" fileName="TTestProperties_Editor.java" startLine="44" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_lqyft_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4671749543995082603" fileName="TTestProperties_Editor.java" startLine="56" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_lqyft_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <scopeInfo nodeId="4671749543995082588" fileName="TTestProperties_Editor.java" startLine="20" startPosition="79" endLine="21" endPosition="62" />
+    <scopeInfo nodeId="4671749543995082588" fileName="TTestProperties_Editor.java" startLine="27" startPosition="28" endLine="28" endPosition="80" />
+    <scopeInfo nodeId="4671749543995082588" fileName="TTestProperties_Editor.java" startLine="28" startPosition="80" endLine="29" endPosition="80" />
+    <scopeInfo nodeId="4671749543995082588" fileName="TTestProperties_Editor.java" startLine="29" startPosition="80" endLine="30" endPosition="80" />
+    <scopeInfo nodeId="4671749543995082588" fileName="TTestProperties_Editor.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="4671749543995082588" varName="editorContext" />
       <varInfo nodeId="4671749543995082588" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4671749543995082603" fileName="TtestProperties_Editor.java" startLine="66" startPosition="35" endLine="69" endPosition="109">
+    <scopeInfo nodeId="4671749543995082603" fileName="TTestProperties_Editor.java" startLine="66" startPosition="35" endLine="69" endPosition="109">
       <varInfo nodeId="4671749543995082603" varName="manager" />
       <varInfo nodeId="4671749543995082603" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="4671749543995082588" fileName="TtestProperties_Editor.java" startLine="24" startPosition="89" endLine="31" endPosition="22">
+    <scopeInfo nodeId="4671749543995082588" fileName="TTestProperties_Editor.java" startLine="24" startPosition="88" endLine="31" endPosition="22">
       <varInfo nodeId="4671749543995082588" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="4027829922695404019" fileName="TtestProperties_Editor.java" startLine="34" startPosition="88" endLine="41" endPosition="22">
+    <scopeInfo nodeId="4027829922695404019" fileName="TTestProperties_Editor.java" startLine="34" startPosition="87" endLine="41" endPosition="22">
       <varInfo nodeId="4027829922695404019" varName="editorCell" />
       <varInfo nodeId="4027829922695404019" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="4671749543995082588" fileName="TtestProperties_Editor.java" startLine="24" startPosition="0" endLine="33" endPosition="0">
+    <scopeInfo nodeId="4671749543995082588" fileName="TTestProperties_Editor.java" startLine="24" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="4671749543995082588" varName="editorContext" />
       <varInfo nodeId="4671749543995082588" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4027829922695404019" fileName="TtestProperties_Editor.java" startLine="34" startPosition="0" endLine="43" endPosition="0">
+    <scopeInfo nodeId="4027829922695404019" fileName="TTestProperties_Editor.java" startLine="34" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="4027829922695404019" varName="editorContext" />
       <varInfo nodeId="4027829922695404019" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4671749543995082597" fileName="TtestProperties_Editor.java" startLine="44" startPosition="88" endLine="53" endPosition="22">
+    <scopeInfo nodeId="4671749543995082597" fileName="TTestProperties_Editor.java" startLine="44" startPosition="87" endLine="53" endPosition="22">
       <varInfo nodeId="4671749543995082597" varName="editorCell" />
       <varInfo nodeId="4671749543995082597" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="4671749543995082597" fileName="TtestProperties_Editor.java" startLine="44" startPosition="0" endLine="55" endPosition="0">
+    <scopeInfo nodeId="4671749543995082597" fileName="TTestProperties_Editor.java" startLine="44" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="4671749543995082597" varName="editorContext" />
       <varInfo nodeId="4671749543995082597" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4671749543995082603" fileName="TtestProperties_Editor.java" startLine="56" startPosition="88" endLine="71" endPosition="22">
+    <scopeInfo nodeId="4671749543995082603" fileName="TTestProperties_Editor.java" startLine="56" startPosition="87" endLine="71" endPosition="22">
       <varInfo nodeId="4671749543995082603" varName="attributeConcept" />
       <varInfo nodeId="4671749543995082603" varName="attributeKind" />
       <varInfo nodeId="4671749543995082603" varName="editorCell" />
       <varInfo nodeId="4671749543995082603" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="4671749543995082603" fileName="TtestProperties_Editor.java" startLine="56" startPosition="0" endLine="73" endPosition="0">
+    <scopeInfo nodeId="4671749543995082603" fileName="TTestProperties_Editor.java" startLine="56" startPosition="0" endLine="73" endPosition="0">
       <varInfo nodeId="4671749543995082603" varName="editorContext" />
       <varInfo nodeId="4671749543995082603" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="4671749543995082588" fileName="TtestProperties_Editor.java" startLine="19" startPosition="0" endLine="74" endPosition="0" unitName="org.campagnelab.bdval.editor.TtestProperties_Editor" />
+    <unitInfo nodeId="4671749543995082588" fileName="TTestProperties_Editor.java" startLine="19" startPosition="0" endLine="74" endPosition="0" unitName="org.campagnelab.bdval.editor.TTestProperties_Editor" />
   </root>
   <root nodeRef="r:80234718-e5a8-4a44-a5b1-9d71e3e29f88(org.campagnelab.bdval.editor)/6032947574604035487">
     <nodeInfo nodeId="6032947574604035487" fileName="Sample_Editor.java" startLine="24" startPosition="79" endLine="25" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

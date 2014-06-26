@@ -48,13 +48,13 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 15:
         return Collections.<ConceptEditor>singletonList(new FeatureSelectionProperties_Editor());
       case 16:
-        return Collections.<ConceptEditor>singletonList(new FoldChangeSVMIterative_Editor());
-      case 17:
         return Collections.<ConceptEditor>singletonList(new FoldchangeGeneticAlgorithm_Editor());
-      case 18:
+      case 17:
         return Collections.<ConceptEditor>singletonList(new FoldchangeProperties_Editor());
-      case 19:
+      case 18:
         return Collections.<ConceptEditor>singletonList(new FoldchangeSVMGlobal_Editor());
+      case 19:
+        return Collections.<ConceptEditor>singletonList(new FoldchangeSVMIterative_Editor());
       case 20:
         return Collections.<ConceptEditor>singletonList(new FullGeneticAlgorithm_Editor());
       case 21:
@@ -118,13 +118,13 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 50:
         return Collections.<ConceptEditor>singletonList(new TTestGeneticAlgorithm_Editor());
       case 51:
-        return Collections.<ConceptEditor>singletonList(new TTestSVMGlobal_Editor());
+        return Collections.<ConceptEditor>singletonList(new TTestProperties_Editor());
       case 52:
-        return Collections.<ConceptEditor>singletonList(new TTestSVMIterative_Editor());
+        return Collections.<ConceptEditor>singletonList(new TTestSVMGlobal_Editor());
       case 53:
-        return Collections.<ConceptEditor>singletonList(new Task_Editor());
+        return Collections.<ConceptEditor>singletonList(new TTestSVMIterative_Editor());
       case 54:
-        return Collections.<ConceptEditor>singletonList(new TtestProperties_Editor());
+        return Collections.<ConceptEditor>singletonList(new Task_Editor());
       case 55:
         return Collections.<ConceptEditor>singletonList(new WekaScan_Editor());
       case 56:
@@ -140,5 +140,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
 
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"org.campagnelab.bdval.structure.AUGPerformance", "org.campagnelab.bdval.structure.Approach", "org.campagnelab.bdval.structure.AverageAggregation", "org.campagnelab.bdval.structure.CIDs", "org.campagnelab.bdval.structure.CategoryReference", "org.campagnelab.bdval.structure.CoxRegSVMGlobal", "org.campagnelab.bdval.structure.DataSet", "org.campagnelab.bdval.structure.DesktopComputer", "org.campagnelab.bdval.structure.DisplayRow", "org.campagnelab.bdval.structure.DisplayValue", "org.campagnelab.bdval.structure.Endpoint", "org.campagnelab.bdval.structure.EndpointCategory", "org.campagnelab.bdval.structure.FCP_LogitBoost", "org.campagnelab.bdval.structure.FeatureSelectionFoldFalse", "org.campagnelab.bdval.structure.FeatureSelectionFoldTrue", "org.campagnelab.bdval.structure.FeatureSelectionProperties", "org.campagnelab.bdval.structure.FoldChangeSVMIterative", "org.campagnelab.bdval.structure.FoldchangeGeneticAlgorithm", "org.campagnelab.bdval.structure.FoldchangeProperties", "org.campagnelab.bdval.structure.FoldchangeSVMGlobal", "org.campagnelab.bdval.structure.FullGeneticAlgorithm", "org.campagnelab.bdval.structure.GenelistGeneticAlgorithm", "org.campagnelab.bdval.structure.GenelistSVMGlobal", "org.campagnelab.bdval.structure.GenelistSVMGlobalTuneC", "org.campagnelab.bdval.structure.GeneticAlgorithmProperties", "org.campagnelab.bdval.structure.Input", "org.campagnelab.bdval.structure.Integer", "org.campagnelab.bdval.structure.KStar", "org.campagnelab.bdval.structure.Logistic", "org.campagnelab.bdval.structure.LogitBoost", "org.campagnelab.bdval.structure.MCCPerformance", "org.campagnelab.bdval.structure.MinMaxSVMGlobal", "org.campagnelab.bdval.structure.NaiveBayes", "org.campagnelab.bdval.structure.PCAAggregation", "org.campagnelab.bdval.structure.PathwaysBaseline", "org.campagnelab.bdval.structure.PathwaysBuildPathwayComponents", "org.campagnelab.bdval.structure.PathwaysCoxregSVMGlobal", "org.campagnelab.bdval.structure.PathwaysTTestSVMGlobal", "org.campagnelab.bdval.structure.PathwaysTuneC", "org.campagnelab.bdval.structure.PermutationSVMGlobal", "org.campagnelab.bdval.structure.Platform", "org.campagnelab.bdval.structure.Project", "org.campagnelab.bdval.structure.Properties", "org.campagnelab.bdval.structure.RandomForest", "org.campagnelab.bdval.structure.SVM", "org.campagnelab.bdval.structure.SVMIterative", "org.campagnelab.bdval.structure.SVMProperties", "org.campagnelab.bdval.structure.SVMTuneC", "org.campagnelab.bdval.structure.Sample", "org.campagnelab.bdval.structure.ServerComputer", "org.campagnelab.bdval.structure.TTestGeneticAlgorithm", "org.campagnelab.bdval.structure.TTestSVMGlobal", "org.campagnelab.bdval.structure.TTestSVMIterative", "org.campagnelab.bdval.structure.Task", "org.campagnelab.bdval.structure.TtestProperties", "org.campagnelab.bdval.structure.WekaScan", "org.campagnelab.bdval.structure.WholeChip"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"org.campagnelab.bdval.structure.AUGPerformance", "org.campagnelab.bdval.structure.Approach", "org.campagnelab.bdval.structure.AverageAggregation", "org.campagnelab.bdval.structure.CIDs", "org.campagnelab.bdval.structure.CategoryReference", "org.campagnelab.bdval.structure.CoxRegSVMGlobal", "org.campagnelab.bdval.structure.DataSet", "org.campagnelab.bdval.structure.DesktopComputer", "org.campagnelab.bdval.structure.DisplayRow", "org.campagnelab.bdval.structure.DisplayValue", "org.campagnelab.bdval.structure.Endpoint", "org.campagnelab.bdval.structure.EndpointCategory", "org.campagnelab.bdval.structure.FCP_LogitBoost", "org.campagnelab.bdval.structure.FeatureSelectionFoldFalse", "org.campagnelab.bdval.structure.FeatureSelectionFoldTrue", "org.campagnelab.bdval.structure.FeatureSelectionProperties", "org.campagnelab.bdval.structure.FoldchangeGeneticAlgorithm", "org.campagnelab.bdval.structure.FoldchangeProperties", "org.campagnelab.bdval.structure.FoldchangeSVMGlobal", "org.campagnelab.bdval.structure.FoldchangeSVMIterative", "org.campagnelab.bdval.structure.FullGeneticAlgorithm", "org.campagnelab.bdval.structure.GenelistGeneticAlgorithm", "org.campagnelab.bdval.structure.GenelistSVMGlobal", "org.campagnelab.bdval.structure.GenelistSVMGlobalTuneC", "org.campagnelab.bdval.structure.GeneticAlgorithmProperties", "org.campagnelab.bdval.structure.Input", "org.campagnelab.bdval.structure.Integer", "org.campagnelab.bdval.structure.KStar", "org.campagnelab.bdval.structure.Logistic", "org.campagnelab.bdval.structure.LogitBoost", "org.campagnelab.bdval.structure.MCCPerformance", "org.campagnelab.bdval.structure.MinMaxSVMGlobal", "org.campagnelab.bdval.structure.NaiveBayes", "org.campagnelab.bdval.structure.PCAAggregation", "org.campagnelab.bdval.structure.PathwaysBaseline", "org.campagnelab.bdval.structure.PathwaysBuildPathwayComponents", "org.campagnelab.bdval.structure.PathwaysCoxregSVMGlobal", "org.campagnelab.bdval.structure.PathwaysTTestSVMGlobal", "org.campagnelab.bdval.structure.PathwaysTuneC", "org.campagnelab.bdval.structure.PermutationSVMGlobal", "org.campagnelab.bdval.structure.Platform", "org.campagnelab.bdval.structure.Project", "org.campagnelab.bdval.structure.Properties", "org.campagnelab.bdval.structure.RandomForest", "org.campagnelab.bdval.structure.SVM", "org.campagnelab.bdval.structure.SVMIterative", "org.campagnelab.bdval.structure.SVMProperties", "org.campagnelab.bdval.structure.SVMTuneC", "org.campagnelab.bdval.structure.Sample", "org.campagnelab.bdval.structure.ServerComputer", "org.campagnelab.bdval.structure.TTestGeneticAlgorithm", "org.campagnelab.bdval.structure.TTestProperties", "org.campagnelab.bdval.structure.TTestSVMGlobal", "org.campagnelab.bdval.structure.TTestSVMIterative", "org.campagnelab.bdval.structure.Task", "org.campagnelab.bdval.structure.WekaScan", "org.campagnelab.bdval.structure.WholeChip"};
 }

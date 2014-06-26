@@ -6,8 +6,8 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
-public class FoldChangeSVMIterative_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements FeatureSelection_BehaviorDescriptor {
-  public FoldChangeSVMIterative_BehaviorDescriptor() {
+public class FoldchangeSVMIterative_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements FeatureSelection_BehaviorDescriptor {
+  public FoldchangeSVMIterative_BehaviorDescriptor() {
   }
 
   public String virtual_getFqName_1213877404258(SNode thisNode) {
@@ -16,6 +16,6 @@ public class FoldChangeSVMIterative_BehaviorDescriptor extends BaseConcept_Behav
 
   @Override
   public String getConceptFqName() {
-    return "org.campagnelab.bdval.structure.FoldChangeSVMIterative";
+    return "org.campagnelab.bdval.structure.FoldchangeSVMIterative";
   }
 }
