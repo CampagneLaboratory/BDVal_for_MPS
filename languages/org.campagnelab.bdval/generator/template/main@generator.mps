@@ -25,12 +25,8 @@
   <import index="tpcw" modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" implicit="yes" />
   <root type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="8663900622048200164" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="main" />
-    <node role="mappingLabel" roleId="tpf8.1200911492601" type="tpf8.MappingLabelDeclaration" typeId="tpf8.1200911316486" id="4027829922720136986" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="xml" />
-      <link role="sourceConcept" roleId="tpf8.1200911342686" targetNodeId="w348.3367122381622495536" resolveInfo="Project" />
-      <link role="targetConcept" roleId="tpf8.1200913004646" targetNodeId="iuxj.6666499814681515200" resolveInfo="XmlFile" />
-    </node>
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="2125124408379547037" nodeInfo="ng">
+      <property name="keepSourceRoot" nameId="tpf8.1177959072138" value="true" />
       <link role="template" roleId="tpf8.1167514355421" targetNodeId="2125124408379547027" resolveInfo="xmlfile" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="w348.3367122381622495536" resolveInfo="Project" />
       <node role="conditionFunction" roleId="tpf8.1167169362365" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="4027829922716545087" nodeInfo="nn">

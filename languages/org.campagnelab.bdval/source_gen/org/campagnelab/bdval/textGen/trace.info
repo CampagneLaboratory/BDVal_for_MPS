@@ -1,3 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo />
+<debugInfo>
+  <root nodeRef="r:b753871d-1de5-4844-bc85-33db077bf655(org.campagnelab.bdval.textGen)/4092316444628621914">
+    <unitInfo nodeId="4092316444628621914" fileName="SomeTextGen.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="org.campagnelab.bdval.textGen.SomeTextGen" />
+  </root>
+</debugInfo>
 
