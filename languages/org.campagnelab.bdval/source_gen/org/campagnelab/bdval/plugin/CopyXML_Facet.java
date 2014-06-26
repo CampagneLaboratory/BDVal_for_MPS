@@ -194,7 +194,7 @@ public class CopyXML_Facet extends IFacet.Stub {
     }
 
     public int workEstimate() {
-      return 10;
+      return 400;
     }
 
     public static CopyXML_Facet.Target_copy.Parameters vars(IPropertiesPool ppool) {

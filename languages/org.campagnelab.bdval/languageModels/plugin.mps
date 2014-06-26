@@ -44,7 +44,7 @@
     </node>
     <node role="targetDeclaration" roleId="vvvw.6418371274763146558" type="vvvw.TargetDeclaration" typeId="vvvw.6418371274763029565" id="7732421842546956474" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="copy" />
-      <property name="weight" nameId="vvvw.184542595914096177" value="10" />
+      <property name="weight" nameId="vvvw.184542595914096177" value="400" />
       <property name="resourcesPolicy" nameId="vvvw.1675547159918562088" value="CONSUME" />
       <node role="input" roleId="vvvw.119022571401949664" type="vvvw.ResourceTypeDeclaration" typeId="vvvw.119022571401949652" id="7732421842562315408" nodeInfo="ng">
         <node role="resourceType" roleId="vvvw.119022571401949655" type="vvvw.ResourceClassifierType" typeId="vvvw.119022571402207412" id="7732421842563242866" nodeInfo="in">
