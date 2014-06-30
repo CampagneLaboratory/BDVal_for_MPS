@@ -18,8 +18,6 @@ import jetbrains.mps.make.resources.IPropertiesAccessor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.smodel.resources.TResource;
-import org.apache.log4j.Level;
-import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.util.SNodeOperations;
@@ -29,10 +27,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.make.script.IConfig;
-import java.util.Map;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.make.script.IPropertiesPool;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class CopyXML_Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
@@ -51,7 +50,7 @@ public class CopyXML_Facet extends IFacet.Stub {
   }
 
   public Iterable<IFacet.Name> required() {
-    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("jetbrains.mps.lang.core.TextGen")});
+    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("org.campagnelab.bdval.getInfo")});
   }
 
   public Iterable<IFacet.Name> extended() {
@@ -80,32 +79,29 @@ public class CopyXML_Facet extends IFacet.Stub {
           final Iterable<TResource> input = (Iterable<TResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
-              if (LOG.isEnabledFor(Level.WARN)) {
-                LOG.warn("Invoked CopyXML");
-              }
               _output_lne71d_a0a = Sequence.fromIterable(_output_lne71d_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new CopyXMLTuple(null, null))));
               progressMonitor.start("Copying XML files", 1);
-              monitor.reportFeedback(new IFeedback.INFORMATION(String.valueOf("Copying XML files")));
+              String info1 = "Copying XML Files";
               int counter = 0;
               for (TResource tres : Sequence.fromIterable(input)) {
                 JavaModuleFacet javaFacet = tres.module().getFacet(JavaModuleFacet.class);
                 IFile classesGenFolder = javaFacet.getClassesGen().getDescendant(SNodeOperations.getModelLongName(tres.modelDescriptor()).replace(".", "/"));
-                monitor.reportFeedback(new IFeedback.INFORMATION(String.valueOf("Class Gen Folder: " + classesGenFolder)));
+                String info2 = "Class Gen Folder: " + classesGenFolder;
                 File sourceFolder;
                 sourceFolder = new File(classesGenFolder.getPath());
-                monitor.reportFeedback(new IFeedback.INFORMATION(String.valueOf("Source Folder: " + sourceFolder)));
-                FileUtil.copyFile(new File(sourceFolder + "/" + ".xml"), new File(""));
+                String info3 = "Source Folder: " + sourceFolder;
+                FileUtil.copyFile(new File(sourceFolder + "/" + "Example" + ".xml"), new File("/Users/vmb34/Desktop/Example/" + "Example" + ".xml"));
                 counter++;
-
+                String info4 = "Project Name: " + getInfo_Facet.Target_extract.vars(pa.global()).projectNames().get(0);
+                String info5 = "Project Name: " + getInfo_Facet.Target_extract.vars(pa.global()).outputLocation().get(0);
                 String targetFolder = null;
                 for (SNode root : tres.modelDescriptor().getRootNodes()) {
-                  monitor.reportFeedback(new IFeedback.INFORMATION(String.valueOf("Tres Root Node")));
                   {
                     SNode project = root;
                     if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(project, "org.campagnelab.bdval.structure.Project")) {
                       SNode p = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(root, "org.campagnelab.bdval.structure.Project");
                       targetFolder = SPropertyOperations.getString(SLinkOperations.getTarget(p, "properties", true), "outputLocation") + SPropertyOperations.getString(p, "name").replaceAll("\\s", "");
-                      monitor.reportFeedback(new IFeedback.INFORMATION(String.valueOf("targetFolder: " + targetFolder)));
+                      String info6 = "Target Folder: " + targetFolder;
                       File targetFile = new File(targetFolder);
                       for (File fileInFolder : sourceFolder.listFiles()) {
                         FileUtil.copyFile(fileInFolder, targetFile);
@@ -133,7 +129,7 @@ public class CopyXML_Facet extends IFacet.Stub {
     }
 
     public Iterable<ITarget.Name> after() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen"), new ITarget.Name("org.campagnelab.bdval.getInfo.extract")});
     }
 
     public Iterable<ITarget.Name> notBefore() {
@@ -171,16 +167,54 @@ public class CopyXML_Facet extends IFacet.Stub {
     }
 
     public <T> T createParameters(Class<T> cls) {
-      return null;
+      return cls.cast(new Parameters());
     }
 
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
+      if (t != null) {
+        ((Tuples._2) t).assign((Tuples._2) copyFrom);
+      }
       return t;
     }
 
     public int workEstimate() {
       return 400;
+    }
+
+    public static CopyXML_Facet.Target_copy.Parameters vars(IPropertiesPool ppool) {
+      return ppool.properties(name, CopyXML_Facet.Target_copy.Parameters.class);
+    }
+
+    public static class Parameters extends MultiTuple._2<List<String>, List<String>> {
+      public Parameters() {
+        super();
+      }
+
+      public Parameters(List<String> projectNames, List<String> outputLocations) {
+        super(projectNames, outputLocations);
+      }
+
+      public List<String> projectNames(List<String> value) {
+        return super._0(value);
+      }
+
+      public List<String> outputLocations(List<String> value) {
+        return super._1(value);
+      }
+
+      public List<String> projectNames() {
+        return super._0();
+      }
+
+      public List<String> outputLocations() {
+        return super._1();
+      }
+
+      @SuppressWarnings(value = "unchecked")
+      public CopyXML_Facet.Target_copy.Parameters assignFrom(Tuples._2<List<String>, List<String>> from) {
+        return (CopyXML_Facet.Target_copy.Parameters) super.assign(from);
+      }
     }
   }
 
@@ -189,14 +223,30 @@ public class CopyXML_Facet extends IFacet.Stub {
     }
 
     public void storeValues(Map<String, String> store, IPropertiesPool properties) {
+      {
+        ITarget.Name name = new ITarget.Name("org.campagnelab.bdval.CopyXML.copy");
+        if (properties.hasProperties(name)) {
+          CopyXML_Facet.Target_copy.Parameters props = properties.properties(name, CopyXML_Facet.Target_copy.Parameters.class);
+          MapSequence.fromMap(store).put("org.campagnelab.bdval.CopyXML.copy.projectNames", null);
+          MapSequence.fromMap(store).put("org.campagnelab.bdval.CopyXML.copy.outputLocations", null);
+        }
+      }
     }
 
     public void loadValues(Map<String, String> store, IPropertiesPool properties) {
       try {
+        {
+          ITarget.Name name = new ITarget.Name("org.campagnelab.bdval.CopyXML.copy");
+          CopyXML_Facet.Target_copy.Parameters props = properties.properties(name, CopyXML_Facet.Target_copy.Parameters.class);
+          if (MapSequence.fromMap(store).containsKey("org.campagnelab.bdval.CopyXML.copy.projectNames")) {
+            props.projectNames(null);
+          }
+          if (MapSequence.fromMap(store).containsKey("org.campagnelab.bdval.CopyXML.copy.outputLocations")) {
+            props.outputLocations(null);
+          }
+        }
       } catch (RuntimeException re) {
       }
     }
   }
-
-  protected static Logger LOG = LogManager.getLogger(CopyXML_Facet.class);
 }

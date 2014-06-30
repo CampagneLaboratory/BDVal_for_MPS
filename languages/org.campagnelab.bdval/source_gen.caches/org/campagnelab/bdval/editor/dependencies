@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="org.campagnelab.bdval.editor.AUGPerformance_Editor" file="AUGPerformance_Editor.java">
+  <dependency className="org.campagnelab.bdval.editor.AUCPerformance_Editor" file="AUCPerformance_Editor.java">
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
@@ -188,7 +188,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
-    <classNode dependClassName="org.campagnelab.bdval.editor.AUGPerformance_Editor" />
+    <classNode dependClassName="org.campagnelab.bdval.editor.AUCPerformance_Editor" />
     <classNode dependClassName="org.campagnelab.bdval.editor.Approach_Editor" />
     <classNode dependClassName="org.campagnelab.bdval.editor.AverageAggregation_Editor" />
     <classNode dependClassName="org.campagnelab.bdval.editor.CIDs_Editor" />
@@ -213,6 +213,7 @@
     <classNode dependClassName="org.campagnelab.bdval.editor.GenelistSVMGlobalTuneC_Editor" />
     <classNode dependClassName="org.campagnelab.bdval.editor.GenelistSVMGlobal_Editor" />
     <classNode dependClassName="org.campagnelab.bdval.editor.GeneticAlgorithmProperties_Editor" />
+    <classNode dependClassName="org.campagnelab.bdval.editor.Information_Editor" />
     <classNode dependClassName="org.campagnelab.bdval.editor.Input_Editor" />
     <classNode dependClassName="org.campagnelab.bdval.editor.Integer_Editor" />
     <classNode dependClassName="org.campagnelab.bdval.editor.KStar_Editor" />
@@ -395,6 +396,22 @@
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
+  <dependency className="org.campagnelab.bdval.editor.Information_Editor" file="Information_Editor.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />

@@ -366,5 +366,26 @@
     </dependencies>
     <rename id="w348.4671749543995071282" type="CONCEPT" from="TtestProperties" to="TTestProperties" />
   </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="60" />
+      <model index="xeb5" modelUID="r:e483ca8d-5948-435d-bfc8-fbc4c539fca5(org.campagnelab.bdval.info.structure)" version="-1" />
+    </dependencies>
+    <move id="w348.2617953378946273647" to="xeb5.6543595179954824453" />
+    <move id="w348.2617953378946240041" to="xeb5.6543595179954824452" />
+    <move id="w348.2617953378946273649" to="xeb5.6543595179954824454" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="61" />
+    </dependencies>
+    <rename id="w348.6543595179957872350" type="CONCEPT" from="Test" to="Information" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="62" />
+    </dependencies>
+    <rename id="w348.4027829922695086748" type="CONCEPT" from="AUGPerformance" to="AUCPerformance" />
+  </StructureModification>
 </history>
 

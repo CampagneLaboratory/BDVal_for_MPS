@@ -101,13 +101,9 @@ public class Project_Behavior {
   }
 
   public static void call_writeExecutableAndRun_7732421842564140401(SNode thisNode) {
-    try {
-      SPropertyOperations.set(SLinkOperations.getTarget(thisNode, "properties", true), "location", Object.class.getClass().getClassLoader().getResource("/sandbox/classes_gen/org/campagnelab/bdval/sandbox/Testing.xml").getFile());
-    } catch (Exception e) {
-      throw new Error("Error moving XML file");
-    }
     String projectName = WordUtils.capitalize(SPropertyOperations.getString(thisNode, "name").replaceAll("\\s", ""));
     try {
+      System.out.println("test");
       String script = "cd " + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "bdvalLocation") + "/data \n export ANT_HOME=" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "antLocation") + "\n export PATH=${PATH}:${ANT_HOME}/bin \n ant -f " + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "outputLocation") + "/" + projectName + "/" + projectName + ".xml";
       Writer output = new BufferedWriter(new FileWriter(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "outputLocation") + "/" + projectName + "/run.command"));
       output.write(script);

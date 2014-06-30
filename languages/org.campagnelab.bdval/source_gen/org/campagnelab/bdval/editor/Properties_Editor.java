@@ -38,8 +38,6 @@ public class Properties_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_vvo4cc_j0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_vvo4cc_k0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_vvo4cc_l0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_vvo4cc_m0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_vvo4cc_n0(editorContext, node));
     return editorCell;
   }
 
@@ -158,7 +156,7 @@ public class Properties_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vvo4cc_i0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Number of Parallel Threads to Use (Mb):");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Number of Parallel Threads to Use:");
     editorCell.setCellId("Constant_vvo4cc_i0");
     editorCell.setDefaultText("");
     return editorCell;
@@ -186,7 +184,7 @@ public class Properties_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vvo4cc_k0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Amount of Memory to Use:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Amount of Memory to Use (Mb):");
     editorCell.setCellId("Constant_vvo4cc_k0");
     editorCell.setDefaultText("");
     return editorCell;
@@ -202,31 +200,6 @@ public class Properties_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createConstant_vvo4cc_m0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Location:");
-    editorCell.setCellId("Constant_vvo4cc_m0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createProperty_vvo4cc_n0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("location");
-    provider.setNoTargetText("<no location>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_location");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

@@ -31,7 +31,9 @@
     <echo message="Executing with ${num-threads} threads"></echo>
     <sequential>
       <property name="do.logistic" value="true"></property>
-      <property name="do.whole-chip" value="true"></property>
+      <property name="do.baseline" value="true"></property>
+      <property name="do.foldchange-genetic-algorithm" value="true"></property>
+      <property name="do.ttest-genetic-algorithm" value="true"></property>
       <execute-all-endpoints></execute-all-endpoints>
     </sequential>
     <antcall target="process-model-conditions"></antcall>
