@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="36" endPosition="0" unitName="org.campagnelab.bdval.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="44" endPosition="0" unitName="org.campagnelab.bdval.typesystem.TypesystemDescriptor" />
   <root nodeRef="r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)/290469645492818683">
     <nodeInfo nodeId="290469645492820864" fileName="Check_Properties_NonTypesystemRule.java" startLine="24" startPosition="7" endLine="25" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="290469645492820864" fileName="Check_Properties_NonTypesystemRule.java" startLine="25" startPosition="60" endLine="26" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -212,6 +212,102 @@
       <varInfo nodeId="3367122381612443766" varName="typeCheckingContext" />
     </scopeInfo>
     <unitInfo nodeId="3367122381612443766" fileName="check_Platform_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="51" endPosition="0" unitName="org.campagnelab.bdval.typesystem.check_Platform_NonTypesystemRule" />
+  </root>
+  <root nodeRef="r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)/6525722185899350393">
+    <nodeInfo nodeId="6525722185899394748" fileName="check_TTestProperties_NonTypesystemRule.java" startLine="23" startPosition="7" endLine="24" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6525722185899394748" fileName="check_TTestProperties_NonTypesystemRule.java" startLine="24" startPosition="60" endLine="25" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6525722185899394748" fileName="check_TTestProperties_NonTypesystemRule.java" startLine="25" startPosition="58" endLine="26" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6525722185899350393" fileName="check_TTestProperties_NonTypesystemRule.java" startLine="31" startPosition="46" endLine="32" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6525722185899350393" fileName="check_TTestProperties_NonTypesystemRule.java" startLine="36" startPosition="5" endLine="37" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6525722185899350393" fileName="check_TTestProperties_NonTypesystemRule.java" startLine="37" startPosition="130" endLine="38" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6525722185899350393" fileName="check_TTestProperties_NonTypesystemRule.java" startLine="42" startPosition="30" endLine="43" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6525722185901870451" fileName="check_TTestProperties_NonTypesystemRule.java" startLine="46" startPosition="55" endLine="47" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6525722185899350393" fileName="check_TTestProperties_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_TTestProperties_NonTypesystemRule#()V" />
+    <nodeInfo nodeId="6525722185899350393" fileName="check_TTestProperties_NonTypesystemRule.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6525722185899350393" fileName="check_TTestProperties_NonTypesystemRule.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="6525722185901870451" fileName="check_TTestProperties_NonTypesystemRule.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmptyString#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="6525722185899350393" fileName="check_TTestProperties_NonTypesystemRule.java" startLine="35" startPosition="68" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6525722185899394748" fileName="check_TTestProperties_NonTypesystemRule.java" startLine="22" startPosition="174" endLine="27" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6525722185899350393" fileName="check_TTestProperties_NonTypesystemRule.java" startLine="35" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="6525722185899387827" fileName="check_TTestProperties_NonTypesystemRule.java" startLine="21" startPosition="128" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6525722185899350393" fileName="check_TTestProperties_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="6525722185899350393" fileName="check_TTestProperties_NonTypesystemRule.java" startLine="18" startPosition="52" endLine="18" endPosition="52" />
+    <scopeInfo nodeId="6525722185899350393" fileName="check_TTestProperties_NonTypesystemRule.java" startLine="31" startPosition="46" endLine="32" endPosition="61" />
+    <scopeInfo nodeId="6525722185899350393" fileName="check_TTestProperties_NonTypesystemRule.java" startLine="42" startPosition="30" endLine="43" endPosition="17" />
+    <scopeInfo nodeId="6525722185901870451" fileName="check_TTestProperties_NonTypesystemRule.java" startLine="46" startPosition="55" endLine="47" endPosition="43" />
+    <scopeInfo nodeId="6525722185899350393" fileName="check_TTestProperties_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="6525722185899350393" fileName="check_TTestProperties_NonTypesystemRule.java" startLine="36" startPosition="5" endLine="38" endPosition="45">
+      <varInfo nodeId="6525722185899350393" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="6525722185899394748" fileName="check_TTestProperties_NonTypesystemRule.java" startLine="23" startPosition="7" endLine="26" endPosition="253">
+      <varInfo nodeId="6525722185899394748" varName="_reporter_2309309498" />
+      <varInfo nodeId="6525722185899394748" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="6525722185899350393" fileName="check_TTestProperties_NonTypesystemRule.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="6525722185899350393" fileName="check_TTestProperties_NonTypesystemRule.java" startLine="42" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="6525722185901870451" fileName="check_TTestProperties_NonTypesystemRule.java" startLine="46" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="6525722185901870451" varName="str" />
+    </scopeInfo>
+    <scopeInfo nodeId="6525722185899350393" fileName="check_TTestProperties_NonTypesystemRule.java" startLine="35" startPosition="68" endLine="39" endPosition="5" />
+    <scopeInfo nodeId="6525722185899387830" fileName="check_TTestProperties_NonTypesystemRule.java" startLine="22" startPosition="174" endLine="27" endPosition="7" />
+    <scopeInfo nodeId="6525722185899350393" fileName="check_TTestProperties_NonTypesystemRule.java" startLine="35" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="6525722185899350393" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="6525722185899350745" fileName="check_TTestProperties_NonTypesystemRule.java" startLine="21" startPosition="128" endLine="28" endPosition="5" />
+    <scopeInfo nodeId="6525722185899350393" fileName="check_TTestProperties_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="6525722185899350393" varName="status" />
+      <varInfo nodeId="6525722185899350393" varName="tTestProperties" />
+      <varInfo nodeId="6525722185899350393" varName="typeCheckingContext" />
+    </scopeInfo>
+    <unitInfo nodeId="6525722185899350393" fileName="check_TTestProperties_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="50" endPosition="0" unitName="org.campagnelab.bdval.typesystem.check_TTestProperties_NonTypesystemRule" />
+  </root>
+  <root nodeRef="r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)/6525722185899940437">
+    <nodeInfo nodeId="6525722185899940488" fileName="check_FoldchangeProperties_NonTypesystemRule.java" startLine="23" startPosition="7" endLine="24" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6525722185899940488" fileName="check_FoldchangeProperties_NonTypesystemRule.java" startLine="24" startPosition="60" endLine="25" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6525722185899940488" fileName="check_FoldchangeProperties_NonTypesystemRule.java" startLine="25" startPosition="58" endLine="26" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6525722185899940437" fileName="check_FoldchangeProperties_NonTypesystemRule.java" startLine="31" startPosition="46" endLine="32" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6525722185899940437" fileName="check_FoldchangeProperties_NonTypesystemRule.java" startLine="36" startPosition="5" endLine="37" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6525722185899940437" fileName="check_FoldchangeProperties_NonTypesystemRule.java" startLine="37" startPosition="130" endLine="38" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6525722185899940437" fileName="check_FoldchangeProperties_NonTypesystemRule.java" startLine="42" startPosition="30" endLine="43" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6525722185901863659" fileName="check_FoldchangeProperties_NonTypesystemRule.java" startLine="46" startPosition="55" endLine="47" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6525722185899940437" fileName="check_FoldchangeProperties_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_FoldchangeProperties_NonTypesystemRule#()V" />
+    <nodeInfo nodeId="6525722185899940437" fileName="check_FoldchangeProperties_NonTypesystemRule.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6525722185899940437" fileName="check_FoldchangeProperties_NonTypesystemRule.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="6525722185901863659" fileName="check_FoldchangeProperties_NonTypesystemRule.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmptyString#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="6525722185899940437" fileName="check_FoldchangeProperties_NonTypesystemRule.java" startLine="35" startPosition="68" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6525722185899940488" fileName="check_FoldchangeProperties_NonTypesystemRule.java" startLine="22" startPosition="184" endLine="27" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6525722185899940437" fileName="check_FoldchangeProperties_NonTypesystemRule.java" startLine="35" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="6525722185899940486" fileName="check_FoldchangeProperties_NonTypesystemRule.java" startLine="21" startPosition="133" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6525722185899940437" fileName="check_FoldchangeProperties_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="6525722185899940437" fileName="check_FoldchangeProperties_NonTypesystemRule.java" startLine="18" startPosition="57" endLine="18" endPosition="57" />
+    <scopeInfo nodeId="6525722185899940437" fileName="check_FoldchangeProperties_NonTypesystemRule.java" startLine="31" startPosition="46" endLine="32" endPosition="66" />
+    <scopeInfo nodeId="6525722185899940437" fileName="check_FoldchangeProperties_NonTypesystemRule.java" startLine="42" startPosition="30" endLine="43" endPosition="17" />
+    <scopeInfo nodeId="6525722185901863659" fileName="check_FoldchangeProperties_NonTypesystemRule.java" startLine="46" startPosition="55" endLine="47" endPosition="43" />
+    <scopeInfo nodeId="6525722185899940437" fileName="check_FoldchangeProperties_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="6525722185899940437" fileName="check_FoldchangeProperties_NonTypesystemRule.java" startLine="36" startPosition="5" endLine="38" endPosition="45">
+      <varInfo nodeId="6525722185899940437" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="6525722185899940488" fileName="check_FoldchangeProperties_NonTypesystemRule.java" startLine="23" startPosition="7" endLine="26" endPosition="258">
+      <varInfo nodeId="6525722185899940488" varName="_reporter_2309309498" />
+      <varInfo nodeId="6525722185899940488" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="6525722185899940437" fileName="check_FoldchangeProperties_NonTypesystemRule.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="6525722185899940437" fileName="check_FoldchangeProperties_NonTypesystemRule.java" startLine="42" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="6525722185901863659" fileName="check_FoldchangeProperties_NonTypesystemRule.java" startLine="46" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="6525722185901863659" varName="str" />
+    </scopeInfo>
+    <scopeInfo nodeId="6525722185899940437" fileName="check_FoldchangeProperties_NonTypesystemRule.java" startLine="35" startPosition="68" endLine="39" endPosition="5" />
+    <scopeInfo nodeId="6525722185899940487" fileName="check_FoldchangeProperties_NonTypesystemRule.java" startLine="22" startPosition="184" endLine="27" endPosition="7" />
+    <scopeInfo nodeId="6525722185899940437" fileName="check_FoldchangeProperties_NonTypesystemRule.java" startLine="35" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="6525722185899940437" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="6525722185899940438" fileName="check_FoldchangeProperties_NonTypesystemRule.java" startLine="21" startPosition="133" endLine="28" endPosition="5" />
+    <scopeInfo nodeId="6525722185899940437" fileName="check_FoldchangeProperties_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="6525722185899940437" varName="foldchangeProperties" />
+      <varInfo nodeId="6525722185899940437" varName="status" />
+      <varInfo nodeId="6525722185899940437" varName="typeCheckingContext" />
+    </scopeInfo>
+    <unitInfo nodeId="6525722185899940437" fileName="check_FoldchangeProperties_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="50" endPosition="0" unitName="org.campagnelab.bdval.typesystem.check_FoldchangeProperties_NonTypesystemRule" />
   </root>
   <root nodeRef="r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)/7083662764436503197">
     <nodeInfo nodeId="7083662764437629058" fileName="check_Task_NonTypesystemRule.java" startLine="27" startPosition="117" endLine="28" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

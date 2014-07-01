@@ -137,19 +137,28 @@ public class Project_Behavior {
 
   }
 
-  public static void call_writeExecutableAndRun_7732421842564140401(SNode thisNode) {
+  public static void call_writeExecutable_7732421842564140401(SNode thisNode) {
+    SPropertyOperations.set(thisNode, "terminalCommand", null);
     String projectName = SPropertyOperations.getString(thisNode, "name").replaceAll("\\s", "");
     try {
       String script = "cd " + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "bdvalLocation") + "/data \n export ANT_HOME=" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "antLocation") + "\n export PATH=${PATH}:${ANT_HOME}/bin \n ant -f " + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "outputLocation") + "/" + projectName + "/" + projectName + ".xml";
       Writer output = new BufferedWriter(new FileWriter(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "outputLocation") + "/" + projectName + "/run.command"));
       output.write(script);
       output.close();
+      SPropertyOperations.set(thisNode, "terminalCommand", ". " + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "outputLocation") + "/" + projectName + "/run.command");
+      System.out.println("Test");
 
     } catch (Exception e) {
       throw new Error("Error creating executable file");
     }
+  }
+
+  public static void call_runExecutable_6525722185895306710(SNode thisNode) {
+    String projectName = SPropertyOperations.getString(thisNode, "name").replaceAll("\\s", "");
+
     try {
-      Runtime.getRuntime().exec(". " + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "outputLocation") + "/" + projectName + "/run.command");
+      Runtime rt = Runtime.getRuntime();
+      Process pr = rt.exec(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "outputLocation") + "/" + projectName + "/run.command");
     } catch (Exception e) {
       throw new Error("Error running project");
     }

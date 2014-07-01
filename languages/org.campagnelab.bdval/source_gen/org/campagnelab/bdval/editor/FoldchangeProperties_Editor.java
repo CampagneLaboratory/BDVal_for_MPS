@@ -8,6 +8,9 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -23,18 +26,32 @@ public class FoldchangeProperties_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_imokuc_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_imokuc_a0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_imokuc_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_imokuc_b0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_imokuc_c0(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createConstant_imokuc_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Cutoff for Fold Change Feature Selection:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Fold Change:");
     editorCell.setCellId("Constant_imokuc_a0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_imokuc_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_imokuc_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Cutoff for Fold Change Feature Selection:");
+    editorCell.setCellId("Constant_imokuc_b0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createProperty_imokuc_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("cutoff");
     provider.setNoTargetText("<no cutoff>");

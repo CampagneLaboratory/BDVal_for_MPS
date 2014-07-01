@@ -18,7 +18,7 @@ public class WekaScan_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_wwybkl_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Weka Feature Selection Scan");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Weka Scan");
     editorCell.setCellId("Constant_wwybkl_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();

@@ -90,7 +90,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4027829922696076148(final PropertyMacroContext _context) {
-    return "--cv-repeats" + String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "geneticAlgorithm", true), "internalCVRepeats"));
+    return "--cv-repeats " + String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "geneticAlgorithm", true), "internalCVRepeats"));
   }
 
   public static Object propertyMacro_GetPropertyValue_4027829922696106464(final PropertyMacroContext _context) {
@@ -117,6 +117,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_2125124408386645805(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "properties", true), "bdvalLocation") + "/data/bdval.xml";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6525722185895891645(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "properties", true), "bdvalLocation") + "/data/bdval-sge.xml";
   }
 
   public static Object propertyMacro_GetPropertyValue_8314272953671709961(final PropertyMacroContext _context) {

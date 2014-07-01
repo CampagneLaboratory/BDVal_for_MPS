@@ -170,8 +170,12 @@
     <property name="rootable" nameId="tpce.1096454100552" value="true" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1192534361192771802" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="path" />
+      <property name="name" nameId="tpck.1169194664001" value="terminalCommand" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="6525722185905197159" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="percentComplete" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7083662764416913977" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -277,7 +281,7 @@
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7388448774866525358" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="WekaScan" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="Weka Feature Selection Scan" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="Weka Scan" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelections" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7388448774869153758" nodeInfo="ig">
@@ -485,7 +489,7 @@
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7388448774866532611" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="FullGeneticAlgorithm" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="Full Genetic Algorithm" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelections" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelections.geneticAlgorithm" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7388448774869153310" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="7388448774869153291" resolveInfo="FeatureSelection" />
@@ -494,7 +498,7 @@
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7388448774866532612" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="PathwaysBuildPathwayComponents" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="Pathways-Build Pathways Components" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelections.pathway" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelections.pathways" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7388448774869153466" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="7388448774869153291" resolveInfo="FeatureSelection" />
@@ -503,7 +507,7 @@
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7388448774866532613" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="PathwaysBaseline" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="Pathways-Baseline" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelections.pathway" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelections.pathways" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7388448774869153464" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="7388448774869153291" resolveInfo="FeatureSelection" />
@@ -511,8 +515,8 @@
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7388448774866532614" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="PathwaysTTestSVMGlobal" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="Pathways-ttest-SVM Global" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelections.pathway" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="Pathways-Ttest-SVM Global" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelections.pathways" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7388448774869153470" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="7388448774869153291" resolveInfo="FeatureSelection" />
@@ -521,7 +525,7 @@
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7388448774866532615" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="PathwaysCoxregSVMGlobal" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="Pathways-Cox Regression-SVM Global" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelections.pathway" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelections.pathways" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7388448774869153468" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="7388448774869153291" resolveInfo="FeatureSelection" />
@@ -530,7 +534,7 @@
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7388448774866532616" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="PathwaysTuneC" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="Pathways-Tune C" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelections.pathway" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelections.pathways" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7388448774869153472" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="7388448774869153291" resolveInfo="FeatureSelection" />
@@ -588,12 +592,12 @@
   </root>
   <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="4671749543961476313" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="PathwayAggregationMethod" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelections.pathway" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelections.pathways" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4671749543961509611" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="PCAAggregation" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="PCA" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelections.pathway" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelections.pathways" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4671749543961509612" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="4671749543961476313" resolveInfo="PathwayAggregationMethod" />
@@ -602,7 +606,7 @@
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4671749543961520203" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="AverageAggregation" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="average" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelections.pathway" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelections.pathways" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4671749543964138831" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="4671749543961476313" resolveInfo="PathwayAggregationMethod" />
@@ -662,7 +666,7 @@
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4027829922695084067" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="GeneticAlgorithmProperties" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelections.genelist" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelections.geneticAlgorithm" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4027829922695091289" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -689,7 +693,7 @@
   </root>
   <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="4027829922695086640" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="GAPerformance" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelections.genelist" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelections.geneticAlgorithm" />
     <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4027829922695086641" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
     </node>
@@ -697,7 +701,7 @@
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4027829922695086695" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="MCCPerformance" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="MCC" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelections.genelist" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelections.geneticAlgorithm" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4027829922695086751" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="4027829922695086640" resolveInfo="GAPerformance" />
@@ -706,7 +710,7 @@
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4027829922695086748" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="AUCPerformance" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="AUC" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelections.genelist" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelections.geneticAlgorithm" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4027829922695086749" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="4027829922695086640" resolveInfo="GAPerformance" />
@@ -729,7 +733,7 @@
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4027829922695044018" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="foldchange" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="4671749543976303774" resolveInfo="FeatureSelectionProperties" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="4027829922695044022" resolveInfo="FoldchangeProperties" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4027829922695084010" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -739,7 +743,7 @@
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4027829922710629198" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="pathways" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="4671749543961476313" resolveInfo="PathwayAggregationMethod" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="6525722185902462822" resolveInfo="PathwaysProperties" />
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7388448774866569121" nodeInfo="ig">
@@ -820,6 +824,17 @@
       <property name="role" nameId="tpce.1071599776563" value="featureSelectionProperties" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="4671749543976303774" resolveInfo="FeatureSelectionProperties" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6525722185902462822" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="PathwaysProperties" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelections.pathways" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6525722185902462823" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="aggregationMethod" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="4671749543961476313" resolveInfo="PathwayAggregationMethod" />
     </node>
   </root>
 </model>

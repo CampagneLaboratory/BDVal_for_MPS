@@ -18,7 +18,7 @@ public class PathwaysTTestSVMGlobal_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_a8sxvi_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Pathways-ttest-SVM Global");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Pathways-Ttest-SVM Global");
     editorCell.setCellId("Constant_a8sxvi_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
