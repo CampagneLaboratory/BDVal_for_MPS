@@ -20,6 +20,7 @@ public class Input_Behavior {
   }
 
   public static void call_load_7052920786130144602(SNode thisNode) {
+    SPropertyOperations.set(thisNode, "numberOfFeatures", null);
     SPropertyOperations.set(thisNode, "numberOfSamples", null);
     ListSequence.fromList(SLinkOperations.getTargets(thisNode, "sample", true)).clear();
     ListSequence.fromList(SLinkOperations.getTargets(thisNode, "displayRow", true)).clear();
@@ -27,6 +28,7 @@ public class Input_Behavior {
     try {
       final DAVMode davMode = new DAVMode();
       Table inputTable = davMode.getReadInputFile(SPropertyOperations.getString(thisNode, "fileName"));
+      SPropertyOperations.set(thisNode, "numberOfFeatures", "" + (inputTable.getRowNumber() - 1));
       int cols = inputTable.getColumnNumber();
       Input_Behavior.call_getInputIds_7052920786130389579(thisNode, inputTable, cols);
       Input_Behavior.call_getInputDisplay_3367122381600071702(thisNode, inputTable, cols);

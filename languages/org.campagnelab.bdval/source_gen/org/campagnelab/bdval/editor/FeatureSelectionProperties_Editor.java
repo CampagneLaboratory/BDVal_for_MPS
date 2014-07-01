@@ -71,7 +71,7 @@ public class FeatureSelectionProperties_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_pbpsc1_a0a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.Approach"), "featureSelection", true)).any(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionInfo"), "featureSelection", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return isNotEmptyString(SPropertyOperations.getString(it, "type")) && SPropertyOperations.getString(it, "type").contains("SVM");
       }
@@ -102,7 +102,7 @@ public class FeatureSelectionProperties_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_pbpsc1_a1a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.Approach"), "featureSelection", true)).any(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionInfo"), "featureSelection", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return isNotEmptyString(SPropertyOperations.getString(it, "type")) && SPropertyOperations.getString(it, "type").contains("ttest");
       }
@@ -133,7 +133,7 @@ public class FeatureSelectionProperties_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_pbpsc1_a2a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.Approach"), "featureSelection", true)).any(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionInfo"), "featureSelection", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return isNotEmptyString(SPropertyOperations.getString(it, "type")) && SPropertyOperations.getString(it, "type").contains("foldchange");
       }
@@ -164,7 +164,7 @@ public class FeatureSelectionProperties_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_pbpsc1_a3a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.Approach"), "featureSelection", true)).any(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionInfo"), "featureSelection", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return isNotEmptyString(SPropertyOperations.getString(it, "type")) && SPropertyOperations.getString(it, "type").contains("genetic algorithm");
       }
@@ -192,7 +192,7 @@ public class FeatureSelectionProperties_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_pbpsc1_a4a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.Approach"), "featureSelection", true)).any(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionInfo"), "featureSelection", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return isNotEmptyString(SPropertyOperations.getString(it, "type")) && SPropertyOperations.getString(it, "type").contains("pathways");
       }

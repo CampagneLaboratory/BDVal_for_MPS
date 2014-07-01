@@ -18,11 +18,11 @@ import jetbrains.mps.make.resources.IPropertiesAccessor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.smodel.resources.TResource;
+import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.util.SNodeOperations;
 import java.io.File;
-import jetbrains.mps.util.FileUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -82,15 +82,15 @@ public class CopyXML_Facet extends IFacet.Stub {
               _output_lne71d_a0a = Sequence.fromIterable(_output_lne71d_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new CopyXMLTuple(null, null))));
               progressMonitor.start("Copying XML files", 1);
               String info1 = "Copying XML Files";
+              MacrosFactory hi;
               int counter = 0;
               for (TResource tres : Sequence.fromIterable(input)) {
                 JavaModuleFacet javaFacet = tres.module().getFacet(JavaModuleFacet.class);
                 IFile classesGenFolder = javaFacet.getClassesGen().getDescendant(SNodeOperations.getModelLongName(tres.modelDescriptor()).replace(".", "/"));
-                String info2 = "Class Gen Folder: " + classesGenFolder;
+                String info2 = "Class Gen Decendants Folder: " + classesGenFolder;
                 File sourceFolder;
                 sourceFolder = new File(classesGenFolder.getPath());
                 String info3 = "Source Folder: " + sourceFolder;
-                FileUtil.copyFile(new File(sourceFolder + "/" + "Example" + ".xml"), new File("/Users/vmb34/Desktop/Example/" + "Example" + ".xml"));
                 counter++;
                 String info4 = "Project Name: " + getInfo_Facet.Target_extract.vars(pa.global()).projectNames().get(0);
                 String info5 = "Project Name: " + getInfo_Facet.Target_extract.vars(pa.global()).outputLocation().get(0);
@@ -104,7 +104,6 @@ public class CopyXML_Facet extends IFacet.Stub {
                       String info6 = "Target Folder: " + targetFolder;
                       File targetFile = new File(targetFolder);
                       for (File fileInFolder : sourceFolder.listFiles()) {
-                        FileUtil.copyFile(fileInFolder, targetFile);
                       }
                     }
                   }

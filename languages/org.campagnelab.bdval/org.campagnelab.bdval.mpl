@@ -8,6 +8,7 @@
       <sourceRoot location="fastutil-6.5.13.jar" />
       <sourceRoot location="edu.mssm.crover.tables.jar" />
       <sourceRoot location="bdval.jar" />
+      <sourceRoot location="MPSPlugin.jar" />
     </modelRoot>
   </models>
   <accessoryModels />
@@ -51,6 +52,7 @@
     <stubModelEntry path="/Users/vmb34/Documents/BDValConf/languages/lib/edu.mssm.crover.tables.jar" />
     <stubModelEntry path="/Users/vmb34/Documents/BDValConf/languages/lib/fastutil-6.5.13.jar" />
     <stubModelEntry path="/Users/vmb34/Documents/BDValConf/languages/lib/bdval.jar" />
+    <stubModelEntry path="/Users/vmb34/Documents/BDValConf/languages/lib/MPSPlugin.jar" />
   </stubModelEntries>
   <sourcePath />
   <dependencies>

@@ -68,11 +68,11 @@ public class OpenTerminal_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Generate Run";
+      return "Move XML";
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      Project_Behavior.call_writeExecutableAndRun_7732421842564140401(node);
+      Project_Behavior.call_moveXML_1192534361192495437(node);
     }
 
     public IntentionDescriptor getDescriptor() {
