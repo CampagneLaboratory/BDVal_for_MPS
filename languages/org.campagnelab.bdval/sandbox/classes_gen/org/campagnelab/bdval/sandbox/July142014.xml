@@ -1,5 +1,5 @@
-<project name="July1" default="evaluate" basedir=".">
-  <dirname property="bdval-project.basedir" file="${ant.file.July1}"></dirname>
+<project name="July142014" default="evaluate" basedir=".">
+  <dirname property="bdval-project.basedir" file="${ant.file.July142014}"></dirname>
   <import file="/Users/vmb34/Desktop/bdval/buildsupport/build.xml"></import>
   <property file="${bdval-project.basedir}/${ant.project.name}-local.properties"></property>
   <property name="project-property-file" value="${bdval-project.basedir}/${ant.project.name}.properties"></property>
@@ -10,7 +10,7 @@
   <property name="external-CV-repeats-number" value="5"></property>
   <property name="external-CV-repeats" value="--cv-repeats ${external-CV-repeats-number}"></property>
   <property name="external-CV-folds" value="5"></property>
-  <property name="num-features" value="50,20"></property>
+  <property name="num-features" value="20"></property>
   <property name="max-intermediate-features" value="400"></property>
   
   <property name="use-probability" value="false"></property>
@@ -22,8 +22,8 @@
   <property name="internal-CV-folds" value="0"></property>
   
   <property name="run-java" value="true"></property>
-  <var name="do.July1_DiseasedNoYes_Valdiation" value="true"></var>
-  <property name="all-endpoints" value=" July1_DiseasedNoYes_Valdiation"></property>
+  <var name="do.July142014_DiseasedNoYes_Valdiation" value="true"></var>
+  <property name="all-endpoints" value=" July142014_DiseasedNoYes_Valdiation"></property>
   <import file="/Users/vmb34/Desktop/bdval/data/bdval.xml"></import>
   <import file="/Users/vmb34/Desktop/bdval/data/bdval-sge.xml"></import>
   
@@ -32,8 +32,8 @@
     <echo message="Executing with ${num-threads} threads"></echo>
     <sequential>
       <property name="use-feature-selection-fold=true" value="true"></property>
-      <property name="do.whole-chip" value="true"></property>
-      <property name="do.logistic" value="true"></property>
+      <property name="do.permutation-svmglobal" value="true"></property>
+      <property name="do.random-forest" value="true"></property>
       <execute-all-endpoints></execute-all-endpoints>
     </sequential>
     <antcall target="process-model-conditions"></antcall>

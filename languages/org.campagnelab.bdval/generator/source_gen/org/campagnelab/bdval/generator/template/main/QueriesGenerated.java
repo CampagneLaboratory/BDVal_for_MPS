@@ -15,13 +15,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.campagnelab.bdval.behavior.Project_Behavior;
-import java.util.List;
-import java.util.ArrayList;
-import java.io.File;
-import java.util.Collection;
-import org.apache.commons.io.FileUtils;
-import java.util.Iterator;
-import jetbrains.mps.util.FileUtil;
 
 @Generated
 public class QueriesGenerated {
@@ -139,22 +132,6 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "name").replaceAll("\\s", "");
   }
 
-  public static Object propertyMacro_GetPropertyValue_5574214250170351779(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_5574214250170520413(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "properties", true), "outputLocation");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_5574214250170525967(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "properties", true), "bdvalLocation");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_5574214250170533259(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "properties", true), "antLocation");
-  }
-
   public static Iterable<SNode> sourceNodesQuery_2125124408386653548(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "dataset", true);
   }
@@ -182,48 +159,5 @@ public class QueriesGenerated {
         Project_Behavior.call_createFiles_290469645456423260(project);
       }
     });
-  }
-
-  public static void mappingScript_CodeBlock_5574214250170543767(final MappingScriptContext _context) {
-    final List<String> outputLocations = new ArrayList<String>();
-    final List<String> projectNames = new ArrayList<String>();
-    final Wrappers._int numProjects = new Wrappers._int(0);
-    ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "org.campagnelab.bdval.structure.Project")).visitAll(new IVisitor<SNode>() {
-      public void visit(SNode project) {
-        projectNames.add(SPropertyOperations.getString(project, "name"));
-        outputLocations.add(SPropertyOperations.getString(SLinkOperations.getTarget(project, "properties", true), "outputLocation"));
-        numProjects.value++;
-      }
-    });
-    File root = _context.getGenerator().getGeneratorSessionContext().getProject().getProjectFile();
-    String[] xml = {"xml"};
-    for (int counter = 0; counter < numProjects.value; counter++) {
-      List<File> matchingFiles = new ArrayList<File>();
-      String fileName = projectNames.get(counter) + ".xml";
-      try {
-        Collection allFiles = FileUtils.listFiles(root, xml, true);
-        for (Iterator iterator = allFiles.iterator(); iterator.hasNext();) {
-          File nextFile = (File) iterator.next();
-          if (nextFile.getName().equals(fileName)) {
-            matchingFiles.add(nextFile);
-          }
-        }
-        long lastModified = Long.MIN_VALUE;
-        File choice = null;
-        for (File file : ListSequence.fromList(matchingFiles)) {
-          if (file.lastModified() > lastModified) {
-            choice = file;
-            lastModified = file.lastModified();
-          }
-        }
-        File newFile = new File(outputLocations.get(counter) + "/" + projectNames.get(counter) + "/" + fileName);
-        FileUtil.copyFile(choice, newFile);
-      } catch (Exception e) {
-        throw new Error("Could not copy xml file into project directory");
-      }
-    }
-  }
-
-  public static void mappingScript_CodeBlock_8314272953667166829(final MappingScriptContext _context) {
   }
 }
