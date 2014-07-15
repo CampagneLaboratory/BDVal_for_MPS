@@ -37,7 +37,7 @@
     <nodeInfo nodeId="6178536078416444854" fileName="CopyXML_Facet.java" startLine="111" startPosition="94" endLine="112" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6178536078416497601" fileName="CopyXML_Facet.java" startLine="116" startPosition="81" endLine="117" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6178536078416512965" fileName="CopyXML_Facet.java" startLine="117" startPosition="56" endLine="118" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6178536078416533631" fileName="CopyXML_Facet.java" startLine="120" startPosition="33" endLine="121" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6178536078416533631" fileName="CopyXML_Facet.java" startLine="120" startPosition="33" endLine="121" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6178536078416634947" fileName="CopyXML_Facet.java" startLine="125" startPosition="47" endLine="126" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="6178536078415994512" fileName="CopyXML_Facet.java" startLine="133" startPosition="20" endLine="134" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7732421842546956474" fileName="CopyXML_Facet.java" startLine="140" startPosition="35" endLine="141" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -183,7 +183,7 @@
     <scopeInfo nodeId="6178536078416467699" fileName="CopyXML_Facet.java" startLine="114" startPosition="33" endLine="120" endPosition="33">
       <varInfo nodeId="6178536078416467701" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="6178536078416100577" fileName="CopyXML_Facet.java" startLine="101" startPosition="117" endLine="121" endPosition="165">
+    <scopeInfo nodeId="6178536078416100577" fileName="CopyXML_Facet.java" startLine="101" startPosition="117" endLine="121" endPosition="158">
       <varInfo nodeId="6178536078416306028" varName="files" />
     </scopeInfo>
     <scopeInfo nodeId="6178536078416100575" fileName="CopyXML_Facet.java" startLine="99" startPosition="29" endLine="122" endPosition="31">

@@ -32,6 +32,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "properties", true), "bdvalLocation") + "/buildsupport/build.xml";
   }
 
+  public static Object propertyMacro_GetPropertyValue_1847053361490323918(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "properties", true), "tagDescription");
+  }
+
   public static Object propertyMacro_GetPropertyValue_4027829922712528219(final PropertyMacroContext _context) {
     return String.valueOf(SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getNode(), "approach", true), "enableFlooring"));
   }
@@ -151,12 +155,15 @@ public class QueriesGenerated {
   public static void mappingScript_CodeBlock_4027829922698953951(final MappingScriptContext _context) {
     ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "org.campagnelab.bdval.structure.Project")).visitAll(new IVisitor<SNode>() {
       public void visit(SNode project) {
-        ListSequence.fromList(SLinkOperations.getTargets(project, "dataset", true)).visitAll(new IVisitor<SNode>() {
-          public void visit(SNode dataset) {
-            DataSet_Behavior.call_generateFiles_6032947574604950587(dataset, true);
-          }
-        });
-        Project_Behavior.call_createFiles_290469645456423260(project);
+        if (Project_Behavior.call_checkProjectFolder_3976565827571671486(project)) {
+          ListSequence.fromList(SLinkOperations.getTargets(project, "dataset", true)).visitAll(new IVisitor<SNode>() {
+            public void visit(SNode dataset) {
+              DataSet_Behavior.call_generateFiles_6032947574604950587(dataset);
+            }
+          });
+          Project_Behavior.call_createFiles_290469645456423260(project);
+          Project_Behavior.call_writeExecutable_7732421842564140401(project);
+        }
       }
     });
   }

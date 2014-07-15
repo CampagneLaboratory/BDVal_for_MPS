@@ -8,6 +8,9 @@ import jetbrains.mps.intentions.IntentionExecutable;
 import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
+import java.io.File;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -45,7 +48,14 @@ public class Run_Intention implements IntentionFactory {
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
+    if (!(isApplicableToNode(node, editorContext))) {
+      return false;
+    }
     return true;
+  }
+
+  private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
+    return new File(SPropertyOperations.getString(SLinkOperations.getTarget(node, "properties", true), "outputLocation") + "/" + SPropertyOperations.getString(node, "name").replaceAll("\\s", "")).isDirectory();
   }
 
   public SNodeReference getIntentionNodeReference() {
@@ -72,7 +82,7 @@ public class Run_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      Project_Behavior.call_runExecutable_6525722185895306710(node);
+      Project_Behavior.call_runAnt_6178536078419791032(node);
     }
 
     public IntentionDescriptor getDescriptor() {

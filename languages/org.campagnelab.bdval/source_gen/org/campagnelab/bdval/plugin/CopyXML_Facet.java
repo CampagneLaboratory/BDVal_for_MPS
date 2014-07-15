@@ -118,7 +118,7 @@ public class CopyXML_Facet extends IFacet.Stub {
                                     lastModified.value = file.lastModified();
                                   }
                                 }
-                                FileUtil.copyFile(choice.value, new File(destinationPath.value + "/" + projectName.value + "/" + projectName.value + "Run.command"));
+                                FileUtil.copyFile(choice.value, new File(destinationPath.value + "/" + projectName.value + "/" + projectName.value + ".xml"));
                               }
                             }
                           }

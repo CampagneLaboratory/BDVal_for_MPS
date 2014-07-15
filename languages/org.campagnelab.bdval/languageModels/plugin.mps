@@ -456,7 +456,7 @@
                                                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~File%d&lt;init&gt;(java%dlang%dString)" resolveInfo="File" />
                                                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="6178536078416598646" nodeInfo="nn">
                                                           <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6178536078416601799" nodeInfo="nn">
-                                                            <property name="value" nameId="tpee.1070475926801" value="Run.command" />
+                                                            <property name="value" nameId="tpee.1070475926801" value=".xml" />
                                                           </node>
                                                           <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="6178536078416590222" nodeInfo="nn">
                                                             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="6178536078416580304" nodeInfo="nn">

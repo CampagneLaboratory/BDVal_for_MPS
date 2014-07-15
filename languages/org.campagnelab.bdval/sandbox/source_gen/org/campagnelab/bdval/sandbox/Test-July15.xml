@@ -1,15 +1,16 @@
-<project name="OtherJuly142014" default="evaluate" basedir=".">
-  <dirname property="bdval-project.basedir" file="${ant.file.OtherJuly142014}"></dirname>
+<project name="Test-July15" default="evaluate" basedir=".">
+  <dirname property="bdval-project.basedir" file="${ant.file.Test-July15}"></dirname>
   <import file="/Users/vmb34/Desktop/bdval/buildsupport/build.xml"></import>
   <property file="${bdval-project.basedir}/${ant.project.name}-local.properties"></property>
   <property name="project-property-file" value="${bdval-project.basedir}/${ant.project.name}.properties"></property>
   <property file="${project-property-file}"></property>
+  <property name="tag-description" value="test run"></property>
   
   <property name="enable-flooring" value="false"></property>
   <property name="evaluate-statistics-after-splits" value="false"></property>
-  <property name="external-CV-repeats-number" value="5"></property>
+  <property name="external-CV-repeats-number" value="1"></property>
   <property name="external-CV-repeats" value="--cv-repeats ${external-CV-repeats-number}"></property>
-  <property name="external-CV-folds" value="5"></property>
+  <property name="external-CV-folds" value="3"></property>
   <property name="num-features" value="20"></property>
   <property name="max-intermediate-features" value="400"></property>
   
@@ -22,8 +23,8 @@
   <property name="internal-CV-folds" value="0"></property>
   
   <property name="run-java" value="true"></property>
-  <var name="do.OtherJuly142014_DiseasedNoYes_Valdiation" value="true"></var>
-  <property name="all-endpoints" value=" OtherJuly142014_DiseasedNoYes_Valdiation"></property>
+  <var name="do.Test-July15_DiseasedNoYes_Valdiation" value="true"></var>
+  <property name="all-endpoints" value=" Test-July15_DiseasedNoYes_Valdiation"></property>
   <import file="/Users/vmb34/Desktop/bdval/data/bdval.xml"></import>
   <import file="/Users/vmb34/Desktop/bdval/data/bdval-sge.xml"></import>
   
@@ -32,8 +33,8 @@
     <echo message="Executing with ${num-threads} threads"></echo>
     <sequential>
       <property name="use-feature-selection-fold=true" value="true"></property>
-      <property name="do.permutation-svmglobal" value="true"></property>
-      <property name="do.random-forest" value="true"></property>
+      <property name="do.ttest-svmglobal" value="true"></property>
+      <property name="do.k-star" value="true"></property>
       <execute-all-endpoints></execute-all-endpoints>
     </sequential>
     <antcall target="process-model-conditions"></antcall>

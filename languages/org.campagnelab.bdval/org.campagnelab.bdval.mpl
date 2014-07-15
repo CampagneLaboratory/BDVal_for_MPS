@@ -56,7 +56,10 @@
   </stubModelEntries>
   <sourcePath />
   <dependencies>
+    <dependency reexport="false">847a3235-09f9-403c-b6a9-1c294a212e92(Ant)</dependency>
+    <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
     <dependency reexport="false">8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)</dependency>
+    <dependency reexport="false">86441d7a-e194-42da-81a5-2161ec62a379(MPS.Workbench)</dependency>
     <dependency reexport="false">f33a6c9c-f660-4bdb-aecd-2d144c61f7d2(jetbrains.mps.ide.java.platform)</dependency>
     <dependency reexport="false">2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)</dependency>
     <dependency reexport="false">642f71f8-327a-425b-84f9-44ad58786d27(jetbrains.mps.lang.project.modules)</dependency>
