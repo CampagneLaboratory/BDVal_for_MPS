@@ -1,6 +1,6 @@
-<project name="Test-July15" default="evaluate" basedir=".">
-  <dirname property="bdval-project.basedir" file="${ant.file.Test-July15}"></dirname>
-  <import file="/Users/vmb34/Desktop/bdval/buildsupport/build.xml"></import>
+<project name="Testbdval1-July17" default="evaluate" basedir=".">
+  <dirname property="bdval-project.basedir" file="${ant.file.Testbdval1-July17}"></dirname>
+  <import file="/Users/vmb34/Desktop/testbdval/buildsupport/build.xml"></import>
   <property file="${bdval-project.basedir}/${ant.project.name}-local.properties"></property>
   <property name="project-property-file" value="${bdval-project.basedir}/${ant.project.name}.properties"></property>
   <property file="${project-property-file}"></property>
@@ -23,16 +23,16 @@
   <property name="internal-CV-folds" value="0"></property>
   
   <property name="run-java" value="true"></property>
-  <var name="do.Test-July15_DiseasedNoYes_Valdiation" value="true"></var>
-  <property name="all-endpoints" value=" Test-July15_DiseasedNoYes_Valdiation"></property>
-  <import file="/Users/vmb34/Desktop/bdval/data/bdval.xml"></import>
-  <import file="/Users/vmb34/Desktop/bdval/data/bdval-sge.xml"></import>
+  <var name="do.Testbdval1-July17_DiseasedNoYes_Valdiation" value="true"></var>
+  <property name="all-endpoints" value=" Testbdval1-July17_DiseasedNoYes_Valdiation"></property>
+  <import file="/Users/vmb34/Desktop/testbdval/data/bdval.xml"></import>
+  <import file="/Users/vmb34/Desktop/testbdval/data/bdval-sge.xml"></import>
   
   <target name="evaluate" description="Run a complete evaluation." depends="prepare-bdval, rserve-status, tag-output-directory">
     <delete file="${statistics-output}"></delete>
     <echo message="Executing with ${num-threads} threads"></echo>
     <sequential>
-      <property name="use-feature-selection-fold=true" value="true"></property>
+      <property name="use-feature-selection-fold=false" value="true"></property>
       <property name="do.ttest-svmglobal" value="true"></property>
       <property name="do.k-star" value="true"></property>
       <execute-all-endpoints></execute-all-endpoints>

@@ -12,6 +12,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.campagnelab.bdval.behavior.DataSet_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.campagnelab.bdval.behavior.Project_Behavior;
@@ -66,34 +67,6 @@ public class QueriesGenerated {
     return String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "maxIntermediateFeatures"));
   }
 
-  public static Object propertyMacro_GetPropertyValue_4027829922695928953(final PropertyMacroContext _context) {
-    return String.valueOf(SPropertyOperations.getBoolean(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "SVM", true), "trainSVM"));
-  }
-
-  public static Object propertyMacro_GetPropertyValue_4027829922695961756(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "ttest", true), "cutoff");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_4027829922695992568(final PropertyMacroContext _context) {
-    return String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "geneticAlgorithm", true), "wrapperPopulationSize"));
-  }
-
-  public static Object propertyMacro_GetPropertyValue_4027829922696027545(final PropertyMacroContext _context) {
-    return String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "geneticAlgorithm", true), "wrapperNumberIterations"));
-  }
-
-  public static Object propertyMacro_GetPropertyValue_4027829922696049300(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "geneticAlgorithm", true), "performance", true), "name");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_4027829922696076148(final PropertyMacroContext _context) {
-    return "--cv-repeats " + String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "geneticAlgorithm", true), "internalCVRepeats"));
-  }
-
-  public static Object propertyMacro_GetPropertyValue_4027829922696106464(final PropertyMacroContext _context) {
-    return String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "geneticAlgorithm", true), "internalCVFolds"));
-  }
-
   public static Object propertyMacro_GetPropertyValue_2125124408386655251(final PropertyMacroContext _context) {
     return "do." + DataSet_Behavior.call_getName_290469645480322571(_context.getNode());
   }
@@ -145,7 +118,11 @@ public class QueriesGenerated {
   }
 
   public static Iterable<SNode> sourceNodesQuery_2125124408386233196(final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelection", true);
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionCombo", true)).translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode it) {
+        return SLinkOperations.getTargets(it, "featureSelection", true);
+      }
+    });
   }
 
   public static Iterable<SNode> sourceNodesQuery_2125124408379582228(final SourceSubstituteMacroNodesContext _context) {

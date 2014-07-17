@@ -277,7 +277,7 @@ public class Approach_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_6do0s2_m0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return String.valueOf(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "featureSelectionInfo", true), "featureSelection", true)).count() * ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "featureSelectionInfo", true), "numberOfFeatures", true)).count() * ListSequence.fromList(SLinkOperations.getTargets(node, "classification", true)).count() * ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "featureSelectionInfo", true), "featureSelectionFold", true)).count() * SPropertyOperations.getInteger(node, "externalFolds") * SPropertyOperations.getInteger(node, "externalRepeats"));
+        return String.valueOf(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "featureSelectionInfo", true), "featureSelectionCombo", true)).count() * ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "featureSelectionInfo", true), "numberOfFeatures", true)).count() * ListSequence.fromList(SLinkOperations.getTargets(node, "classification", true)).count() * ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "featureSelectionInfo", true), "featureSelectionFold", true)).count() * SPropertyOperations.getInteger(node, "externalFolds") * SPropertyOperations.getInteger(node, "externalRepeats"));
       }
 
       public void setText(String s) {

@@ -3,7 +3,7 @@
   <unitInfo fileName="AUCPerformance_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="org.campagnelab.bdval.behavior.AUCPerformance_BehaviorDescriptor" />
   <unitInfo fileName="Approach_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.campagnelab.bdval.behavior.Approach_BehaviorDescriptor" />
   <unitInfo fileName="AverageAggregation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.campagnelab.bdval.behavior.AverageAggregation_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="140" endPosition="0" unitName="org.campagnelab.bdval.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="146" endPosition="0" unitName="org.campagnelab.bdval.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="CIDs_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.campagnelab.bdval.behavior.CIDs_BehaviorDescriptor" />
   <unitInfo fileName="CategoryReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.campagnelab.bdval.behavior.CategoryReference_BehaviorDescriptor" />
   <unitInfo fileName="Classification_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="9" endPosition="0" unitName="org.campagnelab.bdval.behavior.Classification_BehaviorDescriptor" />
@@ -16,6 +16,7 @@
   <unitInfo fileName="EndpointCategory_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="org.campagnelab.bdval.behavior.EndpointCategory_BehaviorDescriptor" />
   <unitInfo fileName="Endpoint_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="org.campagnelab.bdval.behavior.Endpoint_BehaviorDescriptor" />
   <unitInfo fileName="FCP_LogitBoost_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="org.campagnelab.bdval.behavior.FCP_LogitBoost_BehaviorDescriptor" />
+  <unitInfo fileName="FeatureSelectionCombo_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.campagnelab.bdval.behavior.FeatureSelectionCombo_BehaviorDescriptor" />
   <unitInfo fileName="FeatureSelectionFoldFalse_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="org.campagnelab.bdval.behavior.FeatureSelectionFoldFalse_BehaviorDescriptor" />
   <unitInfo fileName="FeatureSelectionFoldTrue_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="org.campagnelab.bdval.behavior.FeatureSelectionFoldTrue_BehaviorDescriptor" />
   <unitInfo fileName="FeatureSelectionFold_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="9" endPosition="0" unitName="org.campagnelab.bdval.behavior.FeatureSelectionFold_BehaviorDescriptor" />
@@ -40,6 +41,8 @@
   <unitInfo fileName="MCCPerformance_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="org.campagnelab.bdval.behavior.MCCPerformance_BehaviorDescriptor" />
   <unitInfo fileName="MinMaxSVMGlobal_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="org.campagnelab.bdval.behavior.MinMaxSVMGlobal_BehaviorDescriptor" />
   <unitInfo fileName="NaiveBayes_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="org.campagnelab.bdval.behavior.NaiveBayes_BehaviorDescriptor" />
+  <unitInfo fileName="NewFeatureSelectionInfo_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.campagnelab.bdval.behavior.NewFeatureSelectionInfo_BehaviorDescriptor" />
+  <unitInfo fileName="NewFeatureSelection_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="9" endPosition="0" unitName="org.campagnelab.bdval.behavior.NewFeatureSelection_BehaviorDescriptor" />
   <unitInfo fileName="PCAAggregation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.campagnelab.bdval.behavior.PCAAggregation_BehaviorDescriptor" />
   <unitInfo fileName="PathwayAggregationMethod_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="org.campagnelab.bdval.behavior.PathwayAggregationMethod_BehaviorDescriptor" />
   <unitInfo fileName="PathwaysBaseline_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="org.campagnelab.bdval.behavior.PathwaysBaseline_BehaviorDescriptor" />
@@ -64,6 +67,7 @@
   <unitInfo fileName="TTestSVMGlobal_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="org.campagnelab.bdval.behavior.TTestSVMGlobal_BehaviorDescriptor" />
   <unitInfo fileName="TTestSVMIterative_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="org.campagnelab.bdval.behavior.TTestSVMIterative_BehaviorDescriptor" />
   <unitInfo fileName="Task_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.campagnelab.bdval.behavior.Task_BehaviorDescriptor" />
+  <unitInfo fileName="Ttest_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="org.campagnelab.bdval.behavior.Ttest_BehaviorDescriptor" />
   <unitInfo fileName="WekaScan_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="org.campagnelab.bdval.behavior.WekaScan_BehaviorDescriptor" />
   <unitInfo fileName="WholeChip_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="org.campagnelab.bdval.behavior.WholeChip_BehaviorDescriptor" />
   <root nodeRef="r:825ae26d-5123-4d82-aa5e-7977a26d188c(org.campagnelab.bdval.behavior)/2125124408380551424">
