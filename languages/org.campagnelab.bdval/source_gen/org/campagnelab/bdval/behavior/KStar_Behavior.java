@@ -7,6 +7,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class KStar_Behavior {
   public static void init(SNode thisNode) {
-    SPropertyOperations.set(thisNode, "name", "do.k-star");
+    SPropertyOperations.set(thisNode, "name", "k-star");
+    SPropertyOperations.set(thisNode, "wekaClass", "weka.classifiers.lazy.KStar");
   }
 }

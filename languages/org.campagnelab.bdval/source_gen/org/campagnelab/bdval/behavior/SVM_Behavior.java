@@ -7,6 +7,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class SVM_Behavior {
   public static void init(SNode thisNode) {
-    SPropertyOperations.set(thisNode, "name", "do.baseline");
+    SPropertyOperations.set(thisNode, "name", "SVM");
+    SPropertyOperations.set(thisNode, "wekaClass", "edu.cornell.med.icb.learning.libsvm.LibSvmClassifier");
   }
 }

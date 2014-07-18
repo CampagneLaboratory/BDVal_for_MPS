@@ -4,10 +4,114 @@ package org.campagnelab.bdval.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.io.File;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class Approach_Behavior {
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "externalRepeats", "" + (5));
     SPropertyOperations.set(thisNode, "externalFolds", "" + (1));
+  }
+
+  public static void call_createSequenceFiles_1870354875253436007(final SNode thisNode) {
+    String directoryName = SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.Project"), "properties", true), "outputLocation") + "/" + trim_lf6v7o_a0a0a0a1(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.Project"), "name").replaceAll("\\s", "")) + "/";
+    final String sequenceFolder = directoryName + "sequences/";
+    new File(sequenceFolder).mkdir();
+
+    List<String> approaches = ListSequence.fromList(new ArrayList<String>());
+    final Wrappers._T<String> approachMethod = new Wrappers._T<String>();
+    final Wrappers._T<String> sequenceFileInfo = new Wrappers._T<String>();
+    final Wrappers._int counter = new Wrappers._int();
+    final Wrappers._int numFeatureSelections = new Wrappers._int();
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "featureSelectionInfo", true), "featureSelectionFold", true)).visitAll(new IVisitor<SNode>() {
+      public void visit(final SNode featureSelectionFold) {
+
+        ListSequence.fromList(SLinkOperations.getTargets(thisNode, "classification", true)).visitAll(new IVisitor<SNode>() {
+          public void visit(final SNode classifier) {
+            counter.value = 1;
+
+            ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "featureSelectionInfo", true), "featureSelectionCombo", true)).visitAll(new IVisitor<SNode>() {
+              public void visit(SNode featureCombo) {
+                approachMethod.value = "";
+                sequenceFileInfo.value = "";
+                numFeatureSelections.value = ListSequence.fromList(SLinkOperations.getTargets(featureCombo, "featureSelection", true)).count();
+
+                ListSequence.fromList(SLinkOperations.getTargets(featureCombo, "featureSelection", true)).visitAll(new IVisitor<SNode>() {
+                  public void visit(SNode featureSelection) {
+                    approachMethod.value = approachMethod.value + "+" + SPropertyOperations.getString(featureSelection, "name");
+                    sequenceFileInfo.value = sequenceFileInfo.value + BehaviorReflection.invokeVirtual(String.class, featureSelection, "virtual_getSequenceFileLine_1870354875253560185", new Object[]{counter.value, numFeatureSelections.value, SPropertyOperations.getBoolean(featureSelectionFold, "value")});
+                    counter.value++;
+                  }
+                });
+
+                approachMethod.value = approachMethod.value.substring(1).toLowerCase() + "-" + SPropertyOperations.getString(classifier, "name").toLowerCase() + "-fs=" + String.valueOf(SPropertyOperations.getBoolean(featureSelectionFold, "value"));
+                sequenceFileInfo.value = sequenceFileInfo.value + Approach_Behavior.call_getGenerateModelLine_1870354875254016704(thisNode, SPropertyOperations.getString(classifier, "name"));
+                sequenceFileInfo.value = sequenceFileInfo.value + Approach_Behavior.call_getPredictLine_1870354875254442471(thisNode, SPropertyOperations.getString(classifier, "name"));
+
+                SNode model = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.ModelToGenerate", null);
+                SPropertyOperations.set(model, "featureSelectionFold", "" + (SPropertyOperations.getBoolean(featureSelectionFold, "value")));
+                SPropertyOperations.set(model, "sequenceFile", approachMethod.value + ".sequence");
+                SPropertyOperations.set(model, "allClassifierParameters", " --classifier edu.cornell.med.icb.learning.weka.WekaClassifier " + "--classifier-parameters wekaClass=" + SPropertyOperations.getString(classifier, "wekaClass"));
+                SPropertyOperations.set(model, "otherOptions", "--alpha ${ttest-alpha}  --weka-class " + SPropertyOperations.getString(classifier, "wekaClass"));
+                ListSequence.fromList(SLinkOperations.getTargets(thisNode, "modelToGenerate", true)).addElement(model);
+
+                // Something with other-options, extra-classifier-parameters? 
+                try {
+                  String sequenceFileName = sequenceFolder + approachMethod.value + ".sequence";
+                  FileWriter file = new FileWriter(sequenceFileName);
+                  PrintWriter writer = new PrintWriter(file);
+                  writer.print(Approach_Behavior.call_getSequenceFileHeader_1870354875254476844(thisNode, approachMethod.value));
+                  writer.print(sequenceFileInfo.value);
+                  writer.close();
+                  file.close();
+                } catch (Exception e) {
+                  if (LOG.isEnabledFor(Level.ERROR)) {
+                    LOG.error("Error printing sequence files", e);
+                  }
+                }
+              }
+            });
+          }
+        });
+
+      }
+    });
+  }
+
+  public static String call_getGenerateModelLine_1870354875254016704(SNode thisNode, String classifier) {
+    // Have to add something for genetic algorithm 
+    return "-m write-model --overwrite-output true --gene-list %label%|%dataset-name%-%split-id%-%label%-features.txt %other-options% --split-type training --model-prefix " + classifier + "_%dataset-name%-%split-id%-%label% \n";
+  }
+
+  public static String call_getPredictLine_1870354875254442471(SNode thisNode, String classifier) {
+    return "-m predict --overwrite-output false --model " + classifier + "_%dataset-name%-%split-id%-%label%.model -o %predictions-filename% %other-options% --split-type test --true-labels %conditions%";
+  }
+
+  public static String call_getSequenceFileHeader_1870354875254476844(SNode thisNode, String approachMethod) {
+    String addoption1 = "addoption required:other-options:Other DAVMode options can be provided here\n";
+    String addoption2 = "addoption required:split-id:id of split being processed\n";
+    String addoption3 = "addoption required:alpha:confidence level for T-test\n";
+    String addoption4 = "addoption required:num-features:Number of features in the generated model\n";
+    String addoption5 = "addoption required:weka-class:Classname of the weka classifier";
+    return "def label=" + approachMethod + "-%model-id%\n" + "def predictions-filename=%dataset-name%-%label%-prediction-table.txt\n" + "def survivial=%survival%\n" + "#\n" + addoption1 + addoption2 + addoption3 + addoption4 + addoption5 + "#\n#\n";
+  }
+
+  protected static Logger LOG = LogManager.getLogger(Approach_Behavior.class);
+
+  public static String trim_lf6v7o_a0a0a0a1(String str) {
+    return (str == null ? null : str.trim());
   }
 }

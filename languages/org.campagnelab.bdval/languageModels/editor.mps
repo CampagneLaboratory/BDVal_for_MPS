@@ -2072,6 +2072,7 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1870354875249744739" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="newFeatureSelection" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.1870354875249618576" resolveInfo="NewFeatureSelectionInfo" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1870354875249762615" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1870354875249762670" nodeInfo="nn">
@@ -2114,6 +2115,9 @@
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="1870354875249762684" nodeInfo="nn">
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
         </node>
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="1870354875262487962" nodeInfo="ng">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="w348.1870354875262487940" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="1870354875249762616" nodeInfo="nn" />
     </node>

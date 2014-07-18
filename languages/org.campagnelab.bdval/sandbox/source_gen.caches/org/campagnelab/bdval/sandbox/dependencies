@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="org.campagnelab.bdval.sandbox.Testbdval1-July17" file="Testbdval1-July17.xml" />
+  <dependency className="org.campagnelab.bdval.sandbox.NewConf2" file="NewConf2.xml" />
 </dependenciesRoot>
 

@@ -8,5 +8,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class FeatureSelectionFoldFalse_Behavior {
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "name", "use-feature-selection-fold=false");
+    SPropertyOperations.set(thisNode, "value", "" + (false));
+  }
+
+  public static String virtual_getSequenceFileLine_1870354875253924602(SNode thisNode) {
+    return " --split-type training";
   }
 }

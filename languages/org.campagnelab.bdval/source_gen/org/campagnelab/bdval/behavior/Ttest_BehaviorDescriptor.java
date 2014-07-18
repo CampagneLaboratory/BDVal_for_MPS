@@ -14,6 +14,10 @@ public class Ttest_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor imp
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
 
+  public String virtual_getSequenceFileLine_1870354875253560185(SNode thisNode, int count, int size, boolean fsFold) {
+    return Ttest_Behavior.virtual_getSequenceFileLine_1870354875253560185(thisNode, count, size, fsFold);
+  }
+
   @Override
   public String getConceptFqName() {
     return "org.campagnelab.bdval.structure.Ttest";

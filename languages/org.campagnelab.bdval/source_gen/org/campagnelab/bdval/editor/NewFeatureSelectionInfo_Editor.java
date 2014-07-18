@@ -25,6 +25,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class NewFeatureSelectionInfo_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -43,6 +44,7 @@ public class NewFeatureSelectionInfo_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNodeList_uvdryc_f0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_uvdryc_g0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_uvdryc_h0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_uvdryc_i0(editorContext, node));
     return editorCell;
   }
 
@@ -262,5 +264,25 @@ public class NewFeatureSelectionInfo_Editor extends DefaultNodeEditor {
         }
       }
     }
+  }
+
+  private EditorCell createRefNode_uvdryc_i0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("featureSelectionProperties");
+    provider.setNoTargetText("<no featureSelectionProperties>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("featureSelectionProperties");
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
   }
 }

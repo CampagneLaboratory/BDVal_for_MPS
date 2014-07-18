@@ -1,0 +1,43 @@
+<project name="NewConf2" default="evaluate" basedir=".">
+  <dirname property="bdval-project.basedir" file="${ant.file.NewConf2}"></dirname>
+  <import file="/Users/vmb34/Desktop/bdval/buildsupport/build.xml"></import>
+  <property file="${bdval-project.basedir}/${ant.project.name}-local.properties"></property>
+  <property name="project-property-file" value="${bdval-project.basedir}/${ant.project.name}.properties"></property>
+  <property file="${project-property-file}"></property>
+  <property name="tag-description" value="test run"></property>
+  
+  <property name="enable-flooring" value="false"></property>
+  <property name="evaluate-statistics-after-splits" value="false"></property>
+  <property name="external-CV-repeats-number" value="1"></property>
+  <property name="external-CV-repeats" value="--cv-repeats ${external-CV-repeats-number}"></property>
+  <property name="external-CV-folds" value="3"></property>
+  <property name="num-features" value="20"></property>
+  <property name="max-intermediate-features" value="400"></property>
+  
+  <property name="ttest-alpha" value="0.04"></property>
+  
+  <property name="run-java" value="true"></property>
+  <var name="do.NewConf2_DiseasedNoYes_Validation" value="true"></var>
+  <property name="all-endpoints" value=" NewConf2_DiseasedNoYes_Validation"></property>
+  <import file="/Users/vmb34/Desktop/bdval/data/bdval.xml"></import>
+  
+  <target name="evaluate" description="Run a complete evaluation." depends="prepare-bdval, rserve-status, tag-output-directory">
+    <delete file="${statistics-output}"></delete>
+    <echo message="Executing with ${num-threads} threads"></echo>
+    <property name="do.my-execute-splits" value="true"></property>
+    <execute-all-endpoints></execute-all-endpoints>
+    <antcall target="process-model-conditions"></antcall>
+    <antcall target="zip-results"></antcall>
+  </target>
+  
+  <macrodef name="call-execute-splits" description="Calls execute split for each model to be generated">
+    <attribute name="endpoint-name"></attribute>
+    <attribute name="dataset-root"></attribute>
+    <attribute name="floor-param"></attribute>
+    <attribute name="array-params"></attribute>
+    <sequential>
+      <execute-splits feature-selection-fold="true" sequence-file="ttest-k-star-fs=true.sequence" endpoint-name="@{endpoint-name}" dataset-root="@{dataset-root}" floor-param="@{floor-param}" array-params="@{array-params}" all-classifier-parameters=" --classifier edu.cornell.med.icb.learning.weka.WekaClassifier --classifier-parameters wekaClass=weka.classifiers.lazy.KStar" other-options="--alpha ${ttest-alpha}  --weka-class weka.classifiers.lazy.KStar"></execute-splits>
+    </sequential>
+  </macrodef>
+  
+</project>

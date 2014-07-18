@@ -12,10 +12,10 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.campagnelab.bdval.behavior.DataSet_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.campagnelab.bdval.behavior.Project_Behavior;
+import org.campagnelab.bdval.behavior.Approach_Behavior;
 
 @Generated
 public class QueriesGenerated {
@@ -67,6 +67,10 @@ public class QueriesGenerated {
     return String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "maxIntermediateFeatures"));
   }
 
+  public static Object propertyMacro_GetPropertyValue_1870354875263047230(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "ttest", true), "cutoff");
+  }
+
   public static Object propertyMacro_GetPropertyValue_2125124408386655251(final PropertyMacroContext _context) {
     return "do." + DataSet_Behavior.call_getName_290469645480322571(_context.getNode());
   }
@@ -89,20 +93,20 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "properties", true), "bdvalLocation") + "/data/bdval.xml";
   }
 
-  public static Object propertyMacro_GetPropertyValue_6525722185895891645(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "properties", true), "bdvalLocation") + "/data/bdval-sge.xml";
+  public static Object propertyMacro_GetPropertyValue_1870354875263664529(final PropertyMacroContext _context) {
+    return String.valueOf(SPropertyOperations.getBoolean(_context.getNode(), "featureSelectionFold"));
   }
 
-  public static Object propertyMacro_GetPropertyValue_8314272953671709961(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
+  public static Object propertyMacro_GetPropertyValue_1870354875263664539(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "sequenceFile");
   }
 
-  public static Object propertyMacro_GetPropertyValue_2125124408386241833(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
+  public static Object propertyMacro_GetPropertyValue_1870354875263664556(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "allClassifierParameters");
   }
 
-  public static Object propertyMacro_GetPropertyValue_2125124408379589107(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
+  public static Object propertyMacro_GetPropertyValue_1870354875263664565(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "otherOptions");
   }
 
   public static Object propertyMacro_GetPropertyValue_4671749543985197235(final PropertyMacroContext _context) {
@@ -113,20 +117,8 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "dataset", true);
   }
 
-  public static Iterable<SNode> sourceNodesQuery_8314272953671712515(final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionFold", true);
-  }
-
-  public static Iterable<SNode> sourceNodesQuery_2125124408386233196(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionCombo", true)).translate(new ITranslator2<SNode, SNode>() {
-      public Iterable<SNode> translate(SNode it) {
-        return SLinkOperations.getTargets(it, "featureSelection", true);
-      }
-    });
-  }
-
-  public static Iterable<SNode> sourceNodesQuery_2125124408379582228(final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "approach", true), "classification", true);
+  public static Iterable<SNode> sourceNodesQuery_1870354875263664572(final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "approach", true), "modelToGenerate", true);
   }
 
   public static void mappingScript_CodeBlock_4027829922698953951(final MappingScriptContext _context) {
@@ -139,7 +131,7 @@ public class QueriesGenerated {
             }
           });
           Project_Behavior.call_createFiles_290469645456423260(project);
-          Project_Behavior.call_writeExecutable_7732421842564140401(project);
+          Approach_Behavior.call_createSequenceFiles_1870354875253436007(SLinkOperations.getTarget(project, "approach", true));
         }
       }
     });
