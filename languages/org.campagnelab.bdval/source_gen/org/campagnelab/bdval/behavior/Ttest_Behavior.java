@@ -8,33 +8,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class Ttest_Behavior {
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "name", "ttest");
-  }
+    SPropertyOperations.set(thisNode, "addoptions", "addoption required:alpha:confidence level for T-test\n");
+    SPropertyOperations.set(thisNode, "sequenceCommand", " t-test");
+    SPropertyOperations.set(thisNode, "sequenceInfo", " --alpha %alpha%");
+    SPropertyOperations.set(thisNode, "sequenceNumFeatures", " --report-max-probes");
+    SPropertyOperations.set(thisNode, "otherOptions", "--alpha ${ttest-alpha}");
 
-  public static String virtual_getSequenceFileLine_1870354875253560185(SNode thisNode, int count, int size, boolean fsFold) {
-    String first = "-m t-test --overwrite-output true -o " + Ttest_Behavior.call_getOutputFileName_1870354875254249064(thisNode, count, size);
-    String genestuff = " --output-gene-list --gene-list full --gene-features-dir %gene-features-dir%";
-    String ttestInfo = " --alpha %alpha% " + Ttest_Behavior.call_getNumFeaturesLine_1870354875254269345(thisNode, count, size) + " %other-options%";
-    String splitType = " --split-type " + Ttest_Behavior.call_getSplitType_1870354875254311961(thisNode, count, fsFold);
-    return first + genestuff + ttestInfo + splitType + "\n";
-  }
-
-  public static String call_getOutputFileName_1870354875254249064(SNode thisNode, int count, int size) {
-    if (count == size) {
-      return "%dataset-name%-%split-id%-%label%-features.txt";
-    } else {
-      return "%dataset-name%-%split-id%-%label%-intermediate-features.txt";
-    }
-  }
-
-  public static String call_getNumFeaturesLine_1870354875254269345(SNode thisNode, int count, int size) {
-    return "--report-max-probes %num-features%";
-  }
-
-  public static String call_getSplitType_1870354875254311961(SNode thisNode, int count, boolean fsFold) {
-    if (count == 1 && fsFold) {
-      return "feature-selection";
-    } else {
-      return "training";
-    }
   }
 }

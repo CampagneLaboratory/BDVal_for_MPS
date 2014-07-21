@@ -19,10 +19,10 @@ public class check_FoldchangeProperties_NonTypesystemRule extends AbstractNonTyp
   }
 
   public void applyRule(final SNode foldchangeProperties, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (isNotEmptyString(SPropertyOperations.getString(foldchangeProperties, "cutoff")) && !(SPropertyOperations.getString(foldchangeProperties, "cutoff").matches("\\d+(\\.\\d+)?"))) {
+    if (isNotEmptyString(SPropertyOperations.getString(foldchangeProperties, "phi")) && !(SPropertyOperations.getString(foldchangeProperties, "phi").matches("\\d+(\\.\\d+)?"))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
-        errorTarget = new PropertyMessageTarget("cutoff");
+        errorTarget = new PropertyMessageTarget("phi");
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(foldchangeProperties, "Must enter valid number ex) 0.05", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "6525722185899940488", null, errorTarget);
       }
     }

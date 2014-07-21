@@ -6,7 +6,7 @@
   <import index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="64" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <root type="w348.Project" typeId="w348.3367122381622495536" id="3649519271342711497" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="July21" />
+    <property name="name" nameId="tpck.1169194664001" value="July21-2" />
     <node role="properties" roleId="w348.7083662764416913977" type="w348.Properties" typeId="w348.7083662764416913858" id="3649519271342711498" nodeInfo="ng">
       <property name="outputLocation" nameId="w348.7083662764433578750" value="/Users/vmb34/Desktop" />
       <property name="bdvalLocation" nameId="w348.7083662764418599580" value="/Users/vmb34/Desktop/bdval" />
@@ -2330,36 +2330,49 @@
         <property name="fileName" nameId="w348.3367122381610860821" value="/Users/vmb34/Desktop/bdval/data/bdval/GSE8402/cids/GSE8402-FusionYesNo-Validation.cids" />
       </node>
     </node>
-    <node role="approach" roleId="w348.7388448774866565661" type="w348.Approach" typeId="w348.7388448774866565678" id="3649519271343287475" nodeInfo="ng">
+    <node role="approach" roleId="w348.7388448774866565661" type="w348.Approach" typeId="w348.7388448774866565678" id="3649519271369660435" nodeInfo="ng">
       <property name="externalRepeats" nameId="w348.290469645457746257" value="1" />
       <property name="externalFolds" nameId="w348.290469645457746273" value="3" />
-      <node role="featureSelectionInfo" roleId="w348.8314272953671282922" type="w348.NewFeatureSelectionInfo" typeId="w348.1870354875249618576" id="3649519271343287476" nodeInfo="ng">
-        <property name="maxIntermediateFeatures" nameId="w348.1870354875249707132" value="400" />
-        <node role="numberOfFeatures" roleId="w348.1870354875249707134" type="w348.Integer" typeId="w348.290469645457746370" id="3649519271343287477" nodeInfo="ng">
+      <node role="featureSelectionInfo" roleId="w348.8314272953671282922" type="w348.NewFeatureSelectionInfo" typeId="w348.1870354875249618576" id="3649519271369660436" nodeInfo="ng">
+        <node role="numberOfFeatures" roleId="w348.1870354875249707134" type="w348.Integer" typeId="w348.290469645457746370" id="3649519271369660437" nodeInfo="ng">
           <property name="value" nameId="w348.290469645457746371" value="20" />
         </node>
-        <node role="featureSelectionFold" roleId="w348.1870354875249707139" type="w348.FeatureSelectionFoldTrue" typeId="w348.7388448774866524764" id="3649519271343287494" nodeInfo="ng">
+        <node role="featureSelectionFold" roleId="w348.1870354875249707139" type="w348.FeatureSelectionFoldTrue" typeId="w348.7388448774866524764" id="3649519271369666482" nodeInfo="ng">
           <property name="name" nameId="tpck.1169194664001" value="use-feature-selection-fold=true" />
           <property name="value" nameId="w348.1870354875254126878" value="true" />
         </node>
-        <node role="featureSelectionProperties" roleId="w348.1870354875262487940" type="w348.FeatureSelectionProperties" typeId="w348.4671749543976303774" id="3649519271345551529" nodeInfo="ng">
-          <node role="ttest" roleId="w348.4671749543995071279" type="w348.TTestProperties" typeId="w348.4671749543995071282" id="3649519271346761470" nodeInfo="ng">
-            <property name="cutoff" nameId="w348.4671749543995072017" value="0.04" />
+        <node role="featureSelectionCombo" roleId="w348.1870354875249707136" type="w348.FeatureSelectionCombo" typeId="w348.1870354875251769793" id="3649519271370848747" nodeInfo="ng">
+          <node role="featureSelection1" roleId="w348.3649519271352989204" type="w348.Ttest" typeId="w348.1870354875249563496" id="3649519271370848757" nodeInfo="ng">
+            <property name="name" nameId="tpck.1169194664001" value="ttest" />
+            <property name="addoptions" nameId="w348.3649519271356774529" value="addoption required:alpha:confidence level for T-test&#10;" />
+            <property name="sequenceCommand" nameId="w348.3649519271360690766" value=" t-test" />
+            <property name="sequenceInfo" nameId="w348.3649519271357455932" value=" --alpha %alpha%" />
+            <property name="sequenceNumFeatures" nameId="w348.3649519271361989788" value=" --report-max-probes" />
+            <property name="otherOptions" nameId="w348.3649519271350395849" value="--alpha ${ttest-alpha}" />
           </node>
         </node>
-        <node role="featureSelectionCombo" roleId="w348.1870354875249707136" type="w348.FeatureSelectionCombo" typeId="w348.1870354875251769793" id="3649519271346761463" nodeInfo="ng">
-          <node role="featureSelection" roleId="w348.1870354875251769794" type="w348.Ttest" typeId="w348.1870354875249563496" id="3649519271346761467" nodeInfo="ng">
-            <property name="name" nameId="tpck.1169194664001" value="ttest" />
+        <node role="featureSelectionProperties" roleId="w348.1870354875262487940" type="w348.FeatureSelectionProperties" typeId="w348.4671749543976303774" id="3649519271369660441" nodeInfo="ng">
+          <node role="foldchange" roleId="w348.4027829922695044018" type="w348.FoldchangeProperties" typeId="w348.4027829922695044022" id="3649519271369666480" nodeInfo="ng">
+            <property name="phi" nameId="w348.4027829922695044025" value="1.5" />
           </node>
+          <node role="ttest" roleId="w348.4671749543995071279" type="w348.TTestProperties" typeId="w348.4671749543995071282" id="3649519271370848759" nodeInfo="ng" />
         </node>
       </node>
-      <node role="classification" roleId="w348.7388448774866567751" type="w348.SVM" typeId="w348.7388448774866532198" id="3649519271347386721" nodeInfo="ng">
+      <node role="classification" roleId="w348.7388448774866567751" type="w348.SVM" typeId="w348.7388448774866532198" id="3649519271370845074" nodeInfo="ng">
         <property name="name" nameId="tpck.1169194664001" value="SVM" />
         <property name="classname" nameId="w348.558294987374832484" value="edu.cornell.med.icb.learning.libsvm.LibSvmClassifier " />
         <property name="wekaClass" nameId="w348.3649519271340810336" value="libSVM" />
         <property name="parameters" nameId="w348.1870354875256041029" value="probability=${use-probability}" />
         <property name="otherOption" nameId="w348.3649519271340809859" value="" />
         <property name="addoption" nameId="w348.3649519271342059658" value="" />
+      </node>
+      <node role="classification" roleId="w348.7388448774866567751" type="w348.Logistic" typeId="w348.7388448774866532195" id="3649519271370848737" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="logistic" />
+        <property name="classname" nameId="w348.558294987374832484" value="edu.cornell.med.icb.learning.weka.WekaClassifier" />
+        <property name="wekaClass" nameId="w348.3649519271340810336" value="weka.classifiers.functions.Logistic" />
+        <property name="parameters" nameId="w348.1870354875256041029" value="wekaClass=weka.classifiers.functions.Logistic" />
+        <property name="otherOption" nameId="w348.3649519271340809859" value="--weka-class weka.classifiers.functions.Logistic" />
+        <property name="addoption" nameId="w348.3649519271342059658" value="addoption required:weka-class:Classname of the weka classifier&#10;" />
       </node>
     </node>
   </root>

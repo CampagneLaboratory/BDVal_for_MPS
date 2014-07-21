@@ -16,24 +16,24 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
-public class SVMProperties_Editor extends DefaultNodeEditor {
+public class SVMIterativeProperties_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_7jlg8n_a(editorContext, node);
+    return this.createCollection_co10q3_a(editorContext, node);
   }
 
-  private EditorCell createCollection_7jlg8n_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_co10q3_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_7jlg8n_a");
+    editorCell.setCellId("Collection_co10q3_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createConstant_7jlg8n_a0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7jlg8n_b0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_7jlg8n_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_co10q3_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_co10q3_b0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_co10q3_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7jlg8n_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "SVM:");
-    editorCell.setCellId("Constant_7jlg8n_a0");
+  private EditorCell createConstant_co10q3_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "SVM Iterative:");
+    editorCell.setCellId("Constant_co10q3_a0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -41,9 +41,9 @@ public class SVMProperties_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7jlg8n_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Train a Probabilistic SVM:");
-    editorCell.setCellId("Constant_7jlg8n_b0");
+  private EditorCell createConstant_co10q3_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "R Value:");
+    editorCell.setCellId("Constant_co10q3_b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.READ_ONLY, true);
     style.set(StyleAttributes.EDITABLE, false);
@@ -53,13 +53,13 @@ public class SVMProperties_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_7jlg8n_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_co10q3_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("trainSVM");
-    provider.setNoTargetText("<no trainSVM>");
+    provider.setRole("r");
+    provider.setNoTargetText("<no r>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_trainSVM");
+    editorCell.setCellId("property_r");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

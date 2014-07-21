@@ -53,11 +53,11 @@ public class FoldchangeProperties_Editor extends DefaultNodeEditor {
 
   private EditorCell createProperty_imokuc_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("cutoff");
-    provider.setNoTargetText("<no cutoff>");
+    provider.setRole("phi");
+    provider.setNoTargetText("<no phi>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_cutoff");
+    editorCell.setCellId("property_phi");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

@@ -1,5 +1,5 @@
-<project name="July21" default="evaluate" basedir=".">
-  <dirname property="bdval-project.basedir" file="${ant.file.July21}"></dirname>
+<project name="July21-2" default="evaluate" basedir=".">
+  <dirname property="bdval-project.basedir" file="${ant.file.July21-2}"></dirname>
   <import file="/Users/vmb34/Desktop/bdval/buildsupport/build.xml"></import>
   <property file="${bdval-project.basedir}/${ant.project.name}-local.properties"></property>
   <property name="project-property-file" value="${bdval-project.basedir}/${ant.project.name}.properties"></property>
@@ -12,13 +12,16 @@
   <property name="external-CV-repeats" value="--cv-repeats ${external-CV-repeats-number}"></property>
   <property name="external-CV-folds" value="3"></property>
   <property name="num-features" value="20"></property>
-  <property name="max-intermediate-features" value="400"></property>
+  <property name="max-intermediate-features" value="0"></property>
   
-  <property name="ttest-alpha" value="0.04"></property>
+  <property name="ttest-alpha" value=""></property>
+  <property name="fold-change-phi" value="1.5"></property>
+  
+  <property name="use-probability" value="false"></property>
   
   <property name="run-java" value="true"></property>
-  <var name="do.July21_DiseasedNoYes_Validation" value="true"></var>
-  <property name="all-endpoints" value=" July21_DiseasedNoYes_Validation"></property>
+  <var name="do.July21-2_DiseasedNoYes_Validation" value="true"></var>
+  <property name="all-endpoints" value=" July21-2_DiseasedNoYes_Validation"></property>
   <import file="/Users/vmb34/Desktop/bdval/data/bdval.xml"></import>
   
   <target name="evaluate" description="Run a complete evaluation." depends="prepare-bdval, rserve-status, tag-output-directory">
@@ -36,7 +39,7 @@
     <attribute name="floor-param"></attribute>
     <attribute name="array-params"></attribute>
     <sequential>
-      <execute-splits feature-selection-fold="true" sequence-file="ttest-svm-fs=true.sequence" endpoint-name="@{endpoint-name}" dataset-root="@{dataset-root}" floor-param="@{floor-param}" array-params="@{array-params}" all-classifier-parameters=" --classifier edu.cornell.med.icb.learning.libsvm.LibSvmClassifier  --classifier-parameters probability=${use-probability}" other-options="--alpha ${ttest-alpha} "></execute-splits>
+      <execute-splits feature-selection-fold="true" sequence-file="foldchange-svm-fs=true.sequence" endpoint-name="@{endpoint-name}" dataset-root="@{dataset-root}" floor-param="@{floor-param}" array-params="@{array-params}" all-classifier-parameters=" --classifier edu.cornell.med.icb.learning.libsvm.LibSvmClassifier  --classifier-parameters probability=${use-probability}" other-options="--phi ${fold-change-phi} "></execute-splits>
     </sequential>
   </macrodef>
   

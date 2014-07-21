@@ -388,7 +388,7 @@
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7388448774866532326" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="SVMIterative" />
+    <property name="name" nameId="tpck.1169194664001" value="SVMIterativeOld" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="SVM Iterative" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelections" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
@@ -677,12 +677,12 @@
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4671749543976303817" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="SVMProperties" />
+    <property name="name" nameId="tpck.1169194664001" value="SVMIterativeProperties" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelections" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="4671749543976303818" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="trainSVM" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="3649519271362723295" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="r" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4671749543995071282" nodeInfo="ig">
@@ -699,7 +699,7 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelections.foldchange" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="4027829922695044025" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="cutoff" />
+      <property name="name" nameId="tpck.1169194664001" value="phi" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     </node>
   </root>
@@ -759,15 +759,15 @@
     <property name="name" nameId="tpck.1169194664001" value="FeatureSelectionProperties" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelections" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4671749543992421474" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="SVM" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="4671749543976303817" resolveInfo="SVMProperties" />
-    </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4671749543995071279" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="ttest" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="4671749543995071282" resolveInfo="TTestProperties" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3649519271368386502" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="svmIterative" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="4671749543976303817" resolveInfo="SVMIterativeProperties" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4027829922695044018" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -861,6 +861,7 @@
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1870354875249563496" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="Ttest" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="newFeatureSelection" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="T-Test" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1870354875249616496" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1870354875249583257" resolveInfo="NewFeatureSelection" />
@@ -869,6 +870,26 @@
   <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="1870354875249583257" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="NewFeatureSelection" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="newFeatureSelection" />
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="3649519271356774529" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="addoptions" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="3649519271360690766" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="sequenceCommand" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="3649519271357455932" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="sequenceInfo" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="3649519271361989788" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="sequenceNumFeatures" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="3649519271350395849" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="otherOptions" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
     <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1870354875249616494" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
     </node>
@@ -908,11 +929,17 @@
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1870354875251769793" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="FeatureSelectionCombo" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="newFeatureSelection" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1870354875251769794" nodeInfo="ig">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3649519271352989204" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="featureSelection" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1..n" />
+      <property name="role" nameId="tpce.1071599776563" value="featureSelection1" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="1870354875249583257" resolveInfo="NewFeatureSelection" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3649519271352989206" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="featureSelection2" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1870354875249583257" resolveInfo="NewFeatureSelection" />
     </node>
   </root>
@@ -934,6 +961,31 @@
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1870354875255732271" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="otherOptions" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3649519271349200549" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="SVMGlobal" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="SVM Global" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="newFeatureSelection" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3649519271350360689" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1870354875249583257" resolveInfo="NewFeatureSelection" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3649519271360667458" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="SVMIterative" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="SVM Iterative" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3649519271362672945" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1870354875249583257" resolveInfo="NewFeatureSelection" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3649519271366496699" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="FoldChange" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="Fold Change" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3649519271366496963" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1870354875249583257" resolveInfo="NewFeatureSelection" />
     </node>
   </root>
 </model>

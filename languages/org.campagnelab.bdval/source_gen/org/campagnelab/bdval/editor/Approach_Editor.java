@@ -25,12 +25,12 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.editor.runtime.style.Padding;
-import jetbrains.mps.editor.runtime.style.Measure;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.editor.runtime.style.Padding;
+import jetbrains.mps.editor.runtime.style.Measure;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
@@ -59,7 +59,9 @@ public class Approach_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_6do0s2_j0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6do0s2_k0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_6do0s2_l0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6do0s2_m0(editorContext, node));
+    if (renderingCondition_6do0s2_a21a(node, editorContext)) {
+      editorCell.addEditorCell(this.createConstant_6do0s2_m0(editorContext, node));
+    }
     if (renderingCondition_6do0s2_a31a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_6do0s2_n0(editorContext, node));
     }
@@ -294,6 +296,14 @@ public class Approach_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
+  }
+
+  private static boolean renderingCondition_6do0s2_a21a(SNode node, EditorContext editorContext) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "classification", true)).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode classification) {
+        return SPropertyOperations.getString(classification, "name").matches("SVM");
+      }
+    });
   }
 
   private EditorCell createConstant_6do0s2_n0(EditorContext editorContext, SNode node) {
