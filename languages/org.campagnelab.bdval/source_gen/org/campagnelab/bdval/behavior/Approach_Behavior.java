@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.io.FileWriter;
 import java.io.PrintWriter;
+import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -40,7 +41,7 @@ public class Approach_Behavior {
       public void visit(final SNode featureSelectionFold) {
 
         ListSequence.fromList(SLinkOperations.getTargets(thisNode, "classification", true)).visitAll(new IVisitor<SNode>() {
-          public void visit(final SNode classifier) {
+          public void visit(final SNode classification) {
             counter.value = 1;
 
             ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "featureSelectionInfo", true), "featureSelectionCombo", true)).visitAll(new IVisitor<SNode>() {
@@ -57,15 +58,15 @@ public class Approach_Behavior {
                   }
                 });
 
-                approachMethod.value = approachMethod.value.substring(1).toLowerCase() + "-" + SPropertyOperations.getString(classifier, "name").toLowerCase() + "-fs=" + String.valueOf(SPropertyOperations.getBoolean(featureSelectionFold, "value"));
-                sequenceFileInfo.value = sequenceFileInfo.value + Approach_Behavior.call_getGenerateModelLine_1870354875254016704(thisNode, SPropertyOperations.getString(classifier, "name"));
-                sequenceFileInfo.value = sequenceFileInfo.value + Approach_Behavior.call_getPredictLine_1870354875254442471(thisNode, SPropertyOperations.getString(classifier, "name"));
+                approachMethod.value = approachMethod.value.substring(1).toLowerCase() + "-" + SPropertyOperations.getString(classification, "name").toLowerCase() + "-fs=" + String.valueOf(SPropertyOperations.getBoolean(featureSelectionFold, "value"));
+                sequenceFileInfo.value = sequenceFileInfo.value + Approach_Behavior.call_getGenerateModelLine_1870354875254016704(thisNode, SPropertyOperations.getString(classification, "name"));
+                sequenceFileInfo.value = sequenceFileInfo.value + Approach_Behavior.call_getPredictLine_1870354875254442471(thisNode, SPropertyOperations.getString(classification, "name"));
 
                 SNode model = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.ModelToGenerate", null);
                 SPropertyOperations.set(model, "featureSelectionFold", "" + (SPropertyOperations.getBoolean(featureSelectionFold, "value")));
                 SPropertyOperations.set(model, "sequenceFile", approachMethod.value + ".sequence");
-                SPropertyOperations.set(model, "allClassifierParameters", " --classifier edu.cornell.med.icb.learning.weka.WekaClassifier " + "--classifier-parameters wekaClass=" + SPropertyOperations.getString(classifier, "wekaClass"));
-                SPropertyOperations.set(model, "otherOptions", "--alpha ${ttest-alpha}  --weka-class " + SPropertyOperations.getString(classifier, "wekaClass"));
+                SPropertyOperations.set(model, "allClassifierParameters", " --classifier " + SPropertyOperations.getString(classification, "classname") + " --classifier-parameters " + SPropertyOperations.getString(classification, "parameters"));
+                SPropertyOperations.set(model, "otherOptions", "--alpha ${ttest-alpha} " + SPropertyOperations.getString(classification, "otherOption"));
                 ListSequence.fromList(SLinkOperations.getTargets(thisNode, "modelToGenerate", true)).addElement(model);
 
                 // Something with other-options, extra-classifier-parameters? 
@@ -73,10 +74,12 @@ public class Approach_Behavior {
                   String sequenceFileName = sequenceFolder + approachMethod.value + ".sequence";
                   FileWriter file = new FileWriter(sequenceFileName);
                   PrintWriter writer = new PrintWriter(file);
-                  writer.print(Approach_Behavior.call_getSequenceFileHeader_1870354875254476844(thisNode, approachMethod.value));
+                  writer.print(Approach_Behavior.call_getSequenceFileHeader_1870354875254476844(thisNode, approachMethod.value, classification));
                   writer.print(sequenceFileInfo.value);
                   writer.close();
                   file.close();
+                  // Clean this up? 
+                  FileUtils.copyFile(new File(sequenceFileName), new File(SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.Project"), "properties", true), "bdvalLocation") + "/data/sequences/" + approachMethod.value + ".sequence"));
                 } catch (Exception e) {
                   if (LOG.isEnabledFor(Level.ERROR)) {
                     LOG.error("Error printing sequence files", e);
@@ -100,13 +103,12 @@ public class Approach_Behavior {
     return "-m predict --overwrite-output false --model " + classifier + "_%dataset-name%-%split-id%-%label%.model -o %predictions-filename% %other-options% --split-type test --true-labels %conditions%";
   }
 
-  public static String call_getSequenceFileHeader_1870354875254476844(SNode thisNode, String approachMethod) {
+  public static String call_getSequenceFileHeader_1870354875254476844(SNode thisNode, String approachMethod, SNode classification) {
     String addoption1 = "addoption required:other-options:Other DAVMode options can be provided here\n";
     String addoption2 = "addoption required:split-id:id of split being processed\n";
     String addoption3 = "addoption required:alpha:confidence level for T-test\n";
     String addoption4 = "addoption required:num-features:Number of features in the generated model\n";
-    String addoption5 = "addoption required:weka-class:Classname of the weka classifier";
-    return "def label=" + approachMethod + "-%model-id%\n" + "def predictions-filename=%dataset-name%-%label%-prediction-table.txt\n" + "def survivial=%survival%\n" + "#\n" + addoption1 + addoption2 + addoption3 + addoption4 + addoption5 + "#\n#\n";
+    return "def label=" + approachMethod + "-%model-id%\n" + "def predictions-filename=%dataset-name%-%label%-prediction-table.txt\n" + "def survivial=%survival%\n" + "#\n" + addoption1 + addoption2 + addoption3 + addoption4 + SPropertyOperations.getString(classification, "addoption") + "#\n#\n";
   }
 
   protected static Logger LOG = LogManager.getLogger(Approach_Behavior.class);

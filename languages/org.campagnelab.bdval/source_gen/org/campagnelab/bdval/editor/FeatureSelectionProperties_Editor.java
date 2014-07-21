@@ -17,6 +17,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -71,9 +72,13 @@ public class FeatureSelectionProperties_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_pbpsc1_a0a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionInfo"), "featureSelection", true)).any(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return isNotEmptyString(SPropertyOperations.getString(it, "type")) && SPropertyOperations.getString(it, "type").contains("SVM");
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.NewFeatureSelectionInfo"), "featureSelectionCombo", true)).translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode it) {
+        return SLinkOperations.getTargets(it, "featureSelection", true);
+      }
+    }).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode featureSelection) {
+        return SPropertyOperations.getString(featureSelection, "name").matches("SVM");
       }
     });
   }
@@ -102,9 +107,13 @@ public class FeatureSelectionProperties_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_pbpsc1_a1a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionInfo"), "featureSelection", true)).any(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return isNotEmptyString(SPropertyOperations.getString(it, "type")) && SPropertyOperations.getString(it, "type").contains("ttest");
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.NewFeatureSelectionInfo"), "featureSelectionCombo", true)).translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode it) {
+        return SLinkOperations.getTargets(it, "featureSelection", true);
+      }
+    }).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode featureSelection) {
+        return SPropertyOperations.getString(featureSelection, "name").matches("ttest");
       }
     });
   }
@@ -133,9 +142,13 @@ public class FeatureSelectionProperties_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_pbpsc1_a2a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionInfo"), "featureSelection", true)).any(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return isNotEmptyString(SPropertyOperations.getString(it, "type")) && SPropertyOperations.getString(it, "type").contains("foldchange");
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.NewFeatureSelectionInfo"), "featureSelectionCombo", true)).translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode it) {
+        return SLinkOperations.getTargets(it, "featureSelection", true);
+      }
+    }).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode featureSelection) {
+        return SPropertyOperations.getString(featureSelection, "name").matches("fold change");
       }
     });
   }
@@ -164,9 +177,13 @@ public class FeatureSelectionProperties_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_pbpsc1_a3a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionInfo"), "featureSelection", true)).any(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return isNotEmptyString(SPropertyOperations.getString(it, "type")) && SPropertyOperations.getString(it, "type").contains("genetic algorithm");
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.NewFeatureSelectionInfo"), "featureSelectionCombo", true)).translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode it) {
+        return SLinkOperations.getTargets(it, "featureSelection", true);
+      }
+    }).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode featureSelection) {
+        return SPropertyOperations.getString(featureSelection, "name").matches("genetic algorithm");
       }
     });
   }
@@ -192,14 +209,14 @@ public class FeatureSelectionProperties_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_pbpsc1_a4a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionInfo"), "featureSelection", true)).any(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return isNotEmptyString(SPropertyOperations.getString(it, "type")) && SPropertyOperations.getString(it, "type").contains("pathways");
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.NewFeatureSelectionInfo"), "featureSelectionCombo", true)).translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode it) {
+        return SLinkOperations.getTargets(it, "featureSelection", true);
+      }
+    }).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode featureSelection) {
+        return SPropertyOperations.getString(featureSelection, "name").matches("pathways");
       }
     });
-  }
-
-  private static boolean isNotEmptyString(String str) {
-    return str != null && str.length() > 0;
   }
 }

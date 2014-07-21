@@ -16,7 +16,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 0:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.AUCPerformance").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.GAPerformance").alias("AUC", "").create();
       case 1:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Approach").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("enableFlooring", "evaluateStatistics", "externalRepeats", "externalFolds").children(new String[]{"featureSelectionInfo", "classification", "modelToGenerate"}, new boolean[]{false, true, true}).create();
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Approach").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("enableFlooring", "evaluateStatistics", "externalRepeats", "externalFolds", "probabilisticSVM").children(new String[]{"featureSelectionInfo", "classification", "modelToGenerate"}, new boolean[]{false, true, true}).create();
       case 2:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.AverageAggregation").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.PathwayAggregationMethod").alias("average", "").create();
       case 3:
@@ -24,7 +24,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 4:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.CategoryReference").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("endpointCategory").create();
       case 5:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Classification").interface_().parents("jetbrains.mps.lang.core.structure.INamedConcept").properties("wekaClass").create();
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Classification").interface_().parents("jetbrains.mps.lang.core.structure.INamedConcept").properties("classname", "wekaClass", "parameters", "otherOption", "addoption").create();
       case 6:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.ComputerType").interface_().parents("jetbrains.mps.lang.core.structure.INamedConcept").create();
       case 7:
@@ -42,7 +42,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 13:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.EndpointCategory").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").alias("endpointCategory", "The condition of the sample for a specific endpoint").create();
       case 14:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.FCP_LogitBoost").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.Classification").alias("FC+P Logistic Boost", "").create();
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.FCP_LogitBoost").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.Classification").alias("FC+P Logistic Boost", "FIGURE THIS OUT").create();
       case 15:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.FeatureSelection").interface_().parents("jetbrains.mps.lang.core.structure.INamedConcept").properties("type").create();
       case 16:

@@ -25,13 +25,16 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.editor.runtime.style.Padding;
+import jetbrains.mps.editor.runtime.style.Measure;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 
@@ -54,9 +57,17 @@ public class Approach_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_6do0s2_h0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6do0s2_i0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6do0s2_j0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_6do0s2_k0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6do0s2_l0(editorContext, node));
-    editorCell.addEditorCell(this.createReadOnlyModelAccessor_6do0s2_m0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6do0s2_k0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_6do0s2_l0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6do0s2_m0(editorContext, node));
+    if (renderingCondition_6do0s2_a31a(node, editorContext)) {
+      editorCell.addEditorCell(this.createConstant_6do0s2_n0(editorContext, node));
+    }
+    if (renderingCondition_6do0s2_a41a(node, editorContext)) {
+      editorCell.addEditorCell(this.createProperty_6do0s2_o0(editorContext, node));
+    }
+    editorCell.addEditorCell(this.createConstant_6do0s2_p0(editorContext, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_6do0s2_q0(editorContext, node));
     return editorCell;
   }
 
@@ -196,14 +207,25 @@ public class Approach_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_6do0s2_j0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Classification:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_6do0s2_j0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.FONT_SIZE, 5);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_6do0s2_k0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new Approach_Editor.classificationListHandler_6do0s2_k0(node, "classification", editorContext);
+  private EditorCell createConstant_6do0s2_k0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Classification:");
+    editorCell.setCellId("Constant_6do0s2_k0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefNodeList_6do0s2_l0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new Approach_Editor.classificationListHandler_6do0s2_l0(node, "classification", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_classification");
     Style style = new StyleImpl();
@@ -213,8 +235,8 @@ public class Approach_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class classificationListHandler_6do0s2_k0 extends RefNodeListHandler {
-    public classificationListHandler_6do0s2_k0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class classificationListHandler_6do0s2_l0 extends RefNodeListHandler {
+    public classificationListHandler_6do0s2_l0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -263,9 +285,67 @@ public class Approach_Editor extends DefaultNodeEditor {
     }
   }
 
-  private EditorCell createConstant_6do0s2_l0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6do0s2_m0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "SVM:");
+    editorCell.setCellId("Constant_6do0s2_m0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_6do0s2_n0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Train a Probabilistic SVM:");
+    editorCell.setCellId("Constant_6do0s2_n0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.PADDING_LEFT, new Padding(4, Measure.SPACES));
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private static boolean renderingCondition_6do0s2_a31a(SNode node, EditorContext editorContext) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "classification", true)).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode classification) {
+        return SPropertyOperations.getString(classification, "name").matches("SVM");
+      }
+    });
+  }
+
+  private EditorCell createProperty_6do0s2_o0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("probabilisticSVM");
+    provider.setNoTargetText("<no probabilisticSVM>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_probabilisticSVM");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private static boolean renderingCondition_6do0s2_a41a(SNode node, EditorContext editorContext) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "classification", true)).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode classification) {
+        return SPropertyOperations.getString(classification, "name").matches("SVM");
+      }
+    });
+  }
+
+  private EditorCell createConstant_6do0s2_p0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Number of Models:");
-    editorCell.setCellId("Constant_6do0s2_l0");
+    editorCell.setCellId("Constant_6do0s2_p0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
     style.set(StyleAttributes.READ_ONLY, true);
@@ -274,7 +354,7 @@ public class Approach_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createReadOnlyModelAccessor_6do0s2_m0(final EditorContext editorContext, final SNode node) {
+  private EditorCell createReadOnlyModelAccessor_6do0s2_q0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return String.valueOf(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "featureSelectionInfo", true), "featureSelectionCombo", true)).count() * ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "featureSelectionInfo", true), "numberOfFeatures", true)).count() * ListSequence.fromList(SLinkOperations.getTargets(node, "classification", true)).count() * ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "featureSelectionInfo", true), "featureSelectionFold", true)).count() * SPropertyOperations.getInteger(node, "externalFolds") * SPropertyOperations.getInteger(node, "externalRepeats"));
@@ -288,7 +368,7 @@ public class Approach_Editor extends DefaultNodeEditor {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
-    editorCell.setCellId("ReadOnlyModelAccessor_6do0s2_m0");
+    editorCell.setCellId("ReadOnlyModelAccessor_6do0s2_q0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);

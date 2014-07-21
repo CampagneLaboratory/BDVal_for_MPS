@@ -1,5 +1,5 @@
-<project name="NewConf2" default="evaluate" basedir=".">
-  <dirname property="bdval-project.basedir" file="${ant.file.NewConf2}"></dirname>
+<project name="July21" default="evaluate" basedir=".">
+  <dirname property="bdval-project.basedir" file="${ant.file.July21}"></dirname>
   <import file="/Users/vmb34/Desktop/bdval/buildsupport/build.xml"></import>
   <property file="${bdval-project.basedir}/${ant.project.name}-local.properties"></property>
   <property name="project-property-file" value="${bdval-project.basedir}/${ant.project.name}.properties"></property>
@@ -17,8 +17,8 @@
   <property name="ttest-alpha" value="0.04"></property>
   
   <property name="run-java" value="true"></property>
-  <var name="do.NewConf2_DiseasedNoYes_Validation" value="true"></var>
-  <property name="all-endpoints" value=" NewConf2_DiseasedNoYes_Validation"></property>
+  <var name="do.July21_DiseasedNoYes_Validation" value="true"></var>
+  <property name="all-endpoints" value=" July21_DiseasedNoYes_Validation"></property>
   <import file="/Users/vmb34/Desktop/bdval/data/bdval.xml"></import>
   
   <target name="evaluate" description="Run a complete evaluation." depends="prepare-bdval, rserve-status, tag-output-directory">
@@ -36,7 +36,7 @@
     <attribute name="floor-param"></attribute>
     <attribute name="array-params"></attribute>
     <sequential>
-      <execute-splits feature-selection-fold="true" sequence-file="ttest-k-star-fs=true.sequence" endpoint-name="@{endpoint-name}" dataset-root="@{dataset-root}" floor-param="@{floor-param}" array-params="@{array-params}" all-classifier-parameters=" --classifier edu.cornell.med.icb.learning.weka.WekaClassifier --classifier-parameters wekaClass=weka.classifiers.lazy.KStar" other-options="--alpha ${ttest-alpha}  --weka-class weka.classifiers.lazy.KStar"></execute-splits>
+      <execute-splits feature-selection-fold="true" sequence-file="ttest-svm-fs=true.sequence" endpoint-name="@{endpoint-name}" dataset-root="@{dataset-root}" floor-param="@{floor-param}" array-params="@{array-params}" all-classifier-parameters=" --classifier edu.cornell.med.icb.learning.libsvm.LibSvmClassifier  --classifier-parameters probability=${use-probability}" other-options="--alpha ${ttest-alpha} "></execute-splits>
     </sequential>
   </macrodef>
   
