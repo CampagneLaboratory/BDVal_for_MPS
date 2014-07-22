@@ -7,6 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class TTestProperties_Behavior {
   public static void init(SNode thisNode) {
-    SPropertyOperations.set(thisNode, "cutoff", "0.05");
+    SPropertyOperations.set(thisNode, "alpha", "0.05");
   }
 }

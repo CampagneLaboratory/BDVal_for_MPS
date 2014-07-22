@@ -68,7 +68,43 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1870354875263047230(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "ttest", true), "cutoff");
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "ttest", true), "alpha");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4989762282936359621(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "svmIterative", true), "r");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4989762282937044647(final PropertyMacroContext _context) {
+    return String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "minMax", true), "observations"));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4989762282927789736(final PropertyMacroContext _context) {
+    return String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "geneticAlgorithm", true), "wrapperPopulationSize"));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4989762282927865816(final PropertyMacroContext _context) {
+    return String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "geneticAlgorithm", true), "wrapperNumberIterations"));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4989762282927893143(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "geneticAlgorithm", true), "performance", true), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4989762282927937845(final PropertyMacroContext _context) {
+    return "--cv-repeats " + String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "geneticAlgorithm", true), "internalCVFolds"));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4989762282927972549(final PropertyMacroContext _context) {
+    return String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "geneticAlgorithm", true), "internalCVFolds"));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4989762282938251881(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "geneticAlgorithm", true), "ratio");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4989762282951694400(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "permutation", true), "alpha");
   }
 
   public static Object propertyMacro_GetPropertyValue_3649519271367157323(final PropertyMacroContext _context) {

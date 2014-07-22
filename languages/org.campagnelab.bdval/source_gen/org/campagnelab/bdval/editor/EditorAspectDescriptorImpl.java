@@ -26,125 +26,91 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 4:
         return Collections.<ConceptEditor>singletonList(new CategoryReference_Editor());
       case 5:
-        return Collections.<ConceptEditor>singletonList(new CoxRegSVMGlobal_Editor());
-      case 6:
         return Collections.<ConceptEditor>singletonList(new DataSet_Editor());
-      case 7:
+      case 6:
         return Collections.<ConceptEditor>singletonList(new DesktopComputer_Editor());
-      case 8:
+      case 7:
         return Collections.<ConceptEditor>singletonList(new DisplayRow_Editor());
-      case 9:
+      case 8:
         return Collections.<ConceptEditor>singletonList(new DisplayValue_Editor());
-      case 10:
+      case 9:
         return Collections.<ConceptEditor>singletonList(new Endpoint_Editor());
-      case 11:
+      case 10:
         return Collections.<ConceptEditor>singletonList(new EndpointCategory_Editor());
-      case 12:
+      case 11:
         return Collections.<ConceptEditor>singletonList(new FCP_LogitBoost_Editor());
-      case 13:
+      case 12:
         return Collections.<ConceptEditor>singletonList(new FeatureSelectionCombo_Editor());
-      case 14:
+      case 13:
         return Collections.<ConceptEditor>singletonList(new FeatureSelectionFoldFalse_Editor());
-      case 15:
+      case 14:
         return Collections.<ConceptEditor>singletonList(new FeatureSelectionFoldTrue_Editor());
-      case 16:
+      case 15:
         return Collections.<ConceptEditor>singletonList(new FeatureSelectionInfo_Editor());
-      case 17:
+      case 16:
         return Collections.<ConceptEditor>singletonList(new FeatureSelectionProperties_Editor());
-      case 18:
+      case 17:
         return Collections.<ConceptEditor>singletonList(new FoldChange_Editor());
-      case 19:
-        return Collections.<ConceptEditor>singletonList(new FoldchangeGeneticAlgorithm_Editor());
-      case 20:
+      case 18:
         return Collections.<ConceptEditor>singletonList(new FoldchangeProperties_Editor());
-      case 21:
-        return Collections.<ConceptEditor>singletonList(new FoldchangeSVMGlobal_Editor());
-      case 22:
-        return Collections.<ConceptEditor>singletonList(new FoldchangeSVMIterative_Editor());
-      case 23:
-        return Collections.<ConceptEditor>singletonList(new FullGeneticAlgorithm_Editor());
-      case 24:
-        return Collections.<ConceptEditor>singletonList(new GenelistGeneticAlgorithm_Editor());
-      case 25:
-        return Collections.<ConceptEditor>singletonList(new GenelistSVMGlobal_Editor());
-      case 26:
-        return Collections.<ConceptEditor>singletonList(new GenelistSVMGlobalTuneC_Editor());
-      case 27:
+      case 19:
+        return Collections.<ConceptEditor>singletonList(new GeneticAlgorithm_Editor());
+      case 20:
         return Collections.<ConceptEditor>singletonList(new GeneticAlgorithmProperties_Editor());
-      case 28:
+      case 21:
         return Collections.<ConceptEditor>singletonList(new Input_Editor());
-      case 29:
+      case 22:
         return Collections.<ConceptEditor>singletonList(new Integer_Editor());
-      case 30:
+      case 23:
         return Collections.<ConceptEditor>singletonList(new KStar_Editor());
-      case 31:
+      case 24:
         return Collections.<ConceptEditor>singletonList(new Logistic_Editor());
-      case 32:
+      case 25:
         return Collections.<ConceptEditor>singletonList(new LogitBoost_Editor());
-      case 33:
+      case 26:
         return Collections.<ConceptEditor>singletonList(new MCCPerformance_Editor());
-      case 34:
-        return Collections.<ConceptEditor>singletonList(new MinMaxSVMGlobal_Editor());
-      case 35:
+      case 27:
+        return Collections.<ConceptEditor>singletonList(new MinMax_Editor());
+      case 28:
+        return Collections.<ConceptEditor>singletonList(new MinMaxProperties_Editor());
+      case 29:
         return Collections.<ConceptEditor>singletonList(new NaiveBayes_Editor());
-      case 36:
-        return Collections.<ConceptEditor>singletonList(new NewFeatureSelectionInfo_Editor());
-      case 37:
+      case 30:
         return Collections.<ConceptEditor>singletonList(new PCAAggregation_Editor());
-      case 38:
-        return Collections.<ConceptEditor>singletonList(new PathwaysBaseline_Editor());
-      case 39:
-        return Collections.<ConceptEditor>singletonList(new PathwaysBuildPathwayComponents_Editor());
-      case 40:
-        return Collections.<ConceptEditor>singletonList(new PathwaysCoxregSVMGlobal_Editor());
-      case 41:
+      case 31:
         return Collections.<ConceptEditor>singletonList(new PathwaysProperties_Editor());
-      case 42:
-        return Collections.<ConceptEditor>singletonList(new PathwaysTTestSVMGlobal_Editor());
-      case 43:
-        return Collections.<ConceptEditor>singletonList(new PathwaysTuneC_Editor());
-      case 44:
-        return Collections.<ConceptEditor>singletonList(new PermutationSVMGlobal_Editor());
-      case 45:
+      case 32:
+        return Collections.<ConceptEditor>singletonList(new Permutation_Editor());
+      case 33:
+        return Collections.<ConceptEditor>singletonList(new PermutationProperties_Editor());
+      case 34:
         return Collections.<ConceptEditor>singletonList(new Platform_Editor());
-      case 46:
+      case 35:
         return Collections.<ConceptEditor>singletonList(new Project_Editor());
-      case 47:
+      case 36:
         return Collections.<ConceptEditor>singletonList(new Properties_Editor());
-      case 48:
+      case 37:
         return Collections.<ConceptEditor>singletonList(new RandomForest_Editor());
-      case 49:
+      case 38:
         return Collections.<ConceptEditor>singletonList(new SVM_Editor());
-      case 50:
+      case 39:
         return Collections.<ConceptEditor>singletonList(new SVMGlobal_Editor());
-      case 51:
+      case 40:
         return Collections.<ConceptEditor>singletonList(new SVMIterative_Editor());
-      case 52:
-        return Collections.<ConceptEditor>singletonList(new SVMIterativeOld_Editor());
-      case 53:
+      case 41:
         return Collections.<ConceptEditor>singletonList(new SVMIterativeProperties_Editor());
-      case 54:
+      case 42:
         return Collections.<ConceptEditor>singletonList(new SVMTuneC_Editor());
-      case 55:
+      case 43:
         return Collections.<ConceptEditor>singletonList(new Sample_Editor());
-      case 56:
+      case 44:
         return Collections.<ConceptEditor>singletonList(new ServerComputer_Editor());
-      case 57:
-        return Collections.<ConceptEditor>singletonList(new TTestGeneticAlgorithm_Editor());
-      case 58:
+      case 45:
         return Collections.<ConceptEditor>singletonList(new TTestProperties_Editor());
-      case 59:
-        return Collections.<ConceptEditor>singletonList(new TTestSVMGlobal_Editor());
-      case 60:
-        return Collections.<ConceptEditor>singletonList(new TTestSVMIterative_Editor());
-      case 61:
+      case 46:
         return Collections.<ConceptEditor>singletonList(new Task_Editor());
-      case 62:
+      case 47:
         return Collections.<ConceptEditor>singletonList(new Ttest_Editor());
-      case 63:
-        return Collections.<ConceptEditor>singletonList(new WekaScan_Editor());
-      case 64:
-        return Collections.<ConceptEditor>singletonList(new WholeChip_Editor());
       default:
     }
     return Collections.<ConceptEditor>emptyList();
@@ -156,5 +122,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
 
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"org.campagnelab.bdval.structure.AUCPerformance", "org.campagnelab.bdval.structure.Approach", "org.campagnelab.bdval.structure.AverageAggregation", "org.campagnelab.bdval.structure.CIDs", "org.campagnelab.bdval.structure.CategoryReference", "org.campagnelab.bdval.structure.CoxRegSVMGlobal", "org.campagnelab.bdval.structure.DataSet", "org.campagnelab.bdval.structure.DesktopComputer", "org.campagnelab.bdval.structure.DisplayRow", "org.campagnelab.bdval.structure.DisplayValue", "org.campagnelab.bdval.structure.Endpoint", "org.campagnelab.bdval.structure.EndpointCategory", "org.campagnelab.bdval.structure.FCP_LogitBoost", "org.campagnelab.bdval.structure.FeatureSelectionCombo", "org.campagnelab.bdval.structure.FeatureSelectionFoldFalse", "org.campagnelab.bdval.structure.FeatureSelectionFoldTrue", "org.campagnelab.bdval.structure.FeatureSelectionInfo", "org.campagnelab.bdval.structure.FeatureSelectionProperties", "org.campagnelab.bdval.structure.FoldChange", "org.campagnelab.bdval.structure.FoldchangeGeneticAlgorithm", "org.campagnelab.bdval.structure.FoldchangeProperties", "org.campagnelab.bdval.structure.FoldchangeSVMGlobal", "org.campagnelab.bdval.structure.FoldchangeSVMIterative", "org.campagnelab.bdval.structure.FullGeneticAlgorithm", "org.campagnelab.bdval.structure.GenelistGeneticAlgorithm", "org.campagnelab.bdval.structure.GenelistSVMGlobal", "org.campagnelab.bdval.structure.GenelistSVMGlobalTuneC", "org.campagnelab.bdval.structure.GeneticAlgorithmProperties", "org.campagnelab.bdval.structure.Input", "org.campagnelab.bdval.structure.Integer", "org.campagnelab.bdval.structure.KStar", "org.campagnelab.bdval.structure.Logistic", "org.campagnelab.bdval.structure.LogitBoost", "org.campagnelab.bdval.structure.MCCPerformance", "org.campagnelab.bdval.structure.MinMaxSVMGlobal", "org.campagnelab.bdval.structure.NaiveBayes", "org.campagnelab.bdval.structure.NewFeatureSelectionInfo", "org.campagnelab.bdval.structure.PCAAggregation", "org.campagnelab.bdval.structure.PathwaysBaseline", "org.campagnelab.bdval.structure.PathwaysBuildPathwayComponents", "org.campagnelab.bdval.structure.PathwaysCoxregSVMGlobal", "org.campagnelab.bdval.structure.PathwaysProperties", "org.campagnelab.bdval.structure.PathwaysTTestSVMGlobal", "org.campagnelab.bdval.structure.PathwaysTuneC", "org.campagnelab.bdval.structure.PermutationSVMGlobal", "org.campagnelab.bdval.structure.Platform", "org.campagnelab.bdval.structure.Project", "org.campagnelab.bdval.structure.Properties", "org.campagnelab.bdval.structure.RandomForest", "org.campagnelab.bdval.structure.SVM", "org.campagnelab.bdval.structure.SVMGlobal", "org.campagnelab.bdval.structure.SVMIterative", "org.campagnelab.bdval.structure.SVMIterativeOld", "org.campagnelab.bdval.structure.SVMIterativeProperties", "org.campagnelab.bdval.structure.SVMTuneC", "org.campagnelab.bdval.structure.Sample", "org.campagnelab.bdval.structure.ServerComputer", "org.campagnelab.bdval.structure.TTestGeneticAlgorithm", "org.campagnelab.bdval.structure.TTestProperties", "org.campagnelab.bdval.structure.TTestSVMGlobal", "org.campagnelab.bdval.structure.TTestSVMIterative", "org.campagnelab.bdval.structure.Task", "org.campagnelab.bdval.structure.Ttest", "org.campagnelab.bdval.structure.WekaScan", "org.campagnelab.bdval.structure.WholeChip"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"org.campagnelab.bdval.structure.AUCPerformance", "org.campagnelab.bdval.structure.Approach", "org.campagnelab.bdval.structure.AverageAggregation", "org.campagnelab.bdval.structure.CIDs", "org.campagnelab.bdval.structure.CategoryReference", "org.campagnelab.bdval.structure.DataSet", "org.campagnelab.bdval.structure.DesktopComputer", "org.campagnelab.bdval.structure.DisplayRow", "org.campagnelab.bdval.structure.DisplayValue", "org.campagnelab.bdval.structure.Endpoint", "org.campagnelab.bdval.structure.EndpointCategory", "org.campagnelab.bdval.structure.FCP_LogitBoost", "org.campagnelab.bdval.structure.FeatureSelectionCombo", "org.campagnelab.bdval.structure.FeatureSelectionFoldFalse", "org.campagnelab.bdval.structure.FeatureSelectionFoldTrue", "org.campagnelab.bdval.structure.FeatureSelectionInfo", "org.campagnelab.bdval.structure.FeatureSelectionProperties", "org.campagnelab.bdval.structure.FoldChange", "org.campagnelab.bdval.structure.FoldchangeProperties", "org.campagnelab.bdval.structure.GeneticAlgorithm", "org.campagnelab.bdval.structure.GeneticAlgorithmProperties", "org.campagnelab.bdval.structure.Input", "org.campagnelab.bdval.structure.Integer", "org.campagnelab.bdval.structure.KStar", "org.campagnelab.bdval.structure.Logistic", "org.campagnelab.bdval.structure.LogitBoost", "org.campagnelab.bdval.structure.MCCPerformance", "org.campagnelab.bdval.structure.MinMax", "org.campagnelab.bdval.structure.MinMaxProperties", "org.campagnelab.bdval.structure.NaiveBayes", "org.campagnelab.bdval.structure.PCAAggregation", "org.campagnelab.bdval.structure.PathwaysProperties", "org.campagnelab.bdval.structure.Permutation", "org.campagnelab.bdval.structure.PermutationProperties", "org.campagnelab.bdval.structure.Platform", "org.campagnelab.bdval.structure.Project", "org.campagnelab.bdval.structure.Properties", "org.campagnelab.bdval.structure.RandomForest", "org.campagnelab.bdval.structure.SVM", "org.campagnelab.bdval.structure.SVMGlobal", "org.campagnelab.bdval.structure.SVMIterative", "org.campagnelab.bdval.structure.SVMIterativeProperties", "org.campagnelab.bdval.structure.SVMTuneC", "org.campagnelab.bdval.structure.Sample", "org.campagnelab.bdval.structure.ServerComputer", "org.campagnelab.bdval.structure.TTestProperties", "org.campagnelab.bdval.structure.Task", "org.campagnelab.bdval.structure.Ttest"};
 }

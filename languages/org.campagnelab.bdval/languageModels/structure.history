@@ -393,5 +393,29 @@
     </dependencies>
     <rename id="w348.558294987374832484" type="PROPERTY" from="classname" to="classifierClassname" />
   </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="64" />
+    </dependencies>
+    <rename id="w348.1870354875249583257" type="CONCEPT" from="NewFeatureSelection" to="FeatureSelection" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="65" />
+    </dependencies>
+    <rename id="w348.1870354875249618576" type="CONCEPT" from="NewFeatureSelectionInfo" to="FeatureSelectionInfo" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="66" />
+    </dependencies>
+    <rename id="w348.4989762282928012238" type="PROPERTY" from="float" to="value" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="67" />
+    </dependencies>
+    <rename id="w348.4671749543995072017" type="PROPERTY" from="cutoff" to="alpha" />
+  </StructureModification>
 </history>
 

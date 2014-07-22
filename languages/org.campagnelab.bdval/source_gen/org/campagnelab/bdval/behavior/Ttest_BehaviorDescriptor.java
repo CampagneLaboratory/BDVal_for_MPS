@@ -6,7 +6,7 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
-public class Ttest_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements NewFeatureSelection_BehaviorDescriptor {
+public class Ttest_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements FeatureSelection_BehaviorDescriptor {
   public Ttest_BehaviorDescriptor() {
   }
 

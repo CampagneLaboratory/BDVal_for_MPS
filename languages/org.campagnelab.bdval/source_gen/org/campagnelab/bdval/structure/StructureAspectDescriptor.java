@@ -28,141 +28,105 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 6:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.ComputerType").interface_().parents("jetbrains.mps.lang.core.structure.INamedConcept").create();
       case 7:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.CoxRegSVMGlobal").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.FeatureSelection").alias("Cox Regression-SVM Global", "").create();
-      case 8:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.DataSet").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("normalTarget", "testSet").children(new String[]{"platform", "input", "task", "cids", "thresholdFloor"}, new boolean[]{false, false, false, false, false}).alias("dataset", "A set containing a platform file, input file, and the conditions for investigation").create();
-      case 9:
+      case 8:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.DesktopComputer").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.ComputerType").alias("Desktop", "").create();
-      case 10:
+      case 9:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.DisplayRow").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"displayValue"}, new boolean[]{true}).alias("displayRow", "Stores the values of a row of the input to be displayed").create();
-      case 11:
+      case 10:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.DisplayValue").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("value").create();
-      case 12:
+      case 11:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Endpoint").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"categories"}, new boolean[]{true}).alias("endpoint", "A characteristic of interest under investigation ex. diseased").create();
-      case 13:
+      case 12:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.EndpointCategory").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").alias("endpointCategory", "The condition of the sample for a specific endpoint").create();
-      case 14:
+      case 13:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.FCP_LogitBoost").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.Classification").alias("FC+P Logistic Boost", "FIGURE THIS OUT").create();
+      case 14:
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.FeatureSelection").interface_().parents("jetbrains.mps.lang.core.structure.INamedConcept").properties("addoptions", "sequenceCommand", "sequenceInfo", "sequenceNumFeatures", "otherOptions").create();
       case 15:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.FeatureSelection").interface_().parents("jetbrains.mps.lang.core.structure.INamedConcept").properties("type").create();
-      case 16:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.FeatureSelectionCombo").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"featureSelection1", "featureSelection2"}, new boolean[]{false, false}).create();
-      case 17:
+      case 16:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.FeatureSelectionFold").interface_().parents("jetbrains.mps.lang.core.structure.INamedConcept").properties("value").create();
+      case 17:
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.FeatureSelectionFoldFalse").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.FeatureSelectionFold").alias("false", "").create();
       case 18:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.FeatureSelectionFoldFalse").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.FeatureSelectionFold").alias("False", "").create();
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.FeatureSelectionFoldTrue").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.FeatureSelectionFold").alias("true", "").create();
       case 19:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.FeatureSelectionFoldTrue").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.FeatureSelectionFold").alias("True", "").create();
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.FeatureSelectionInfo").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("maxIntermediateFeatures").children(new String[]{"numberOfFeatures", "featureSelectionFold", "featureSelectionCombo", "featureSelectionProperties"}, new boolean[]{true, true, true, false}).create();
       case 20:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.FeatureSelectionInfo").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("maxIntermediateFeatures").children(new String[]{"numberOfFeatures", "featureSelectionFold", "featureSelection", "featureSelectionProperties"}, new boolean[]{true, true, true, false}).create();
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.FeatureSelectionProperties").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"ttest", "svmIterative", "minMax", "foldchange", "geneticAlgorithm", "pathways", "permutation"}, new boolean[]{false, false, false, false, false, false, false}).create();
       case 21:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.FeatureSelectionProperties").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"ttest", "svmIterative", "foldchange", "geneticAlgorithm", "pathways"}, new boolean[]{false, false, false, false, false}).create();
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.FoldChange").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.FeatureSelection").alias("Fold Change", "").create();
       case 22:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.FoldChange").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.NewFeatureSelection").alias("Fold Change", "").create();
-      case 23:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.FoldchangeGeneticAlgorithm").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.FeatureSelection").alias("Fold Change-Genetic Algorithm", "").create();
-      case 24:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.FoldchangeProperties").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("phi").create();
-      case 25:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.FoldchangeSVMGlobal").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.FeatureSelection").alias("Fold Change-SVM Global", "").create();
-      case 26:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.FoldchangeSVMIterative").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.FeatureSelection").alias("Fold Change-SVM Iterative", "").create();
-      case 27:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.FullGeneticAlgorithm").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.FeatureSelection").alias("Full Genetic Algorithm", "").create();
-      case 28:
+      case 23:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.GAPerformance").interface_().parents("jetbrains.mps.lang.core.structure.INamedConcept").create();
-      case 29:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.GenelistGeneticAlgorithm").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.FeatureSelection").alias("Genelist-Genetic Algorithm", "").create();
-      case 30:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.GenelistSVMGlobal").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.FeatureSelection").alias("Genelist-SVM Global", "").create();
-      case 31:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.GenelistSVMGlobalTuneC").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.FeatureSelection").alias("Genelist-SVM Global-Tune C", "").create();
-      case 32:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.GeneticAlgorithmProperties").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("wrapperPopulationSize", "wrapperNumberIterations", "internalCVRepeats", "internalCVFolds").children(new String[]{"performance"}, new boolean[]{false}).create();
-      case 33:
+      case 24:
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.GeneticAlgorithm").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.FeatureSelection").alias("Genetic Algorithm", "").create();
+      case 25:
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.GeneticAlgorithmProperties").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("wrapperPopulationSize", "wrapperNumberIterations", "internalCVRepeats", "internalCVFolds", "ratio").children(new String[]{"performance"}, new boolean[]{false}).create();
+      case 26:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Input").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("fileName", "numberOfSamples", "numberOfFeatures").children(new String[]{"sample", "displayRow"}, new boolean[]{true, true}).alias("input", "File containing input (table of ID's and genes)").create();
-      case 34:
+      case 27:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Integer").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("value").create();
-      case 35:
+      case 28:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.KStar").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.Classification").alias("K Star", "").create();
-      case 36:
+      case 29:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Logistic").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.Classification").alias("Logistic", "").create();
-      case 37:
+      case 30:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.LogitBoost").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.Classification").alias("Logistic Boost", "").create();
-      case 38:
+      case 31:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.MCCPerformance").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.GAPerformance").alias("MCC", "").create();
-      case 39:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.MinMaxSVMGlobal").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.FeatureSelection").alias("Min/Max-SVM Global", "").create();
-      case 40:
+      case 32:
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.MinMax").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.FeatureSelection").alias("Min/Max", "").create();
+      case 33:
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.MinMaxProperties").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("observations").create();
+      case 34:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.ModelToGenerate").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("featureSelectionFold", "sequenceFile", "allClassifierParameters", "otherOptions").create();
-      case 41:
+      case 35:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.NaiveBayes").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.Classification").alias("Naive Bayes", "").create();
-      case 42:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.NewFeatureSelection").interface_().parents("jetbrains.mps.lang.core.structure.INamedConcept").properties("addoptions", "sequenceCommand", "sequenceInfo", "sequenceNumFeatures", "otherOptions").create();
-      case 43:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.NewFeatureSelectionInfo").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("maxIntermediateFeatures").children(new String[]{"numberOfFeatures", "featureSelectionFold", "featureSelectionCombo", "featureSelectionProperties"}, new boolean[]{true, true, true, false}).create();
-      case 44:
+      case 36:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.PCAAggregation").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.PathwayAggregationMethod").alias("PCA", "").create();
-      case 45:
+      case 37:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.PathwayAggregationMethod").interface_().create();
-      case 46:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.PathwaysBaseline").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.FeatureSelection").alias("Pathways-Baseline", "").create();
-      case 47:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.PathwaysBuildPathwayComponents").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.FeatureSelection").alias("Pathways-Build Pathways Components", "").create();
-      case 48:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.PathwaysCoxregSVMGlobal").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.FeatureSelection").alias("Pathways-Cox Regression-SVM Global", "").create();
-      case 49:
+      case 38:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.PathwaysProperties").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"aggregationMethod"}, new boolean[]{false}).create();
-      case 50:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.PathwaysTTestSVMGlobal").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.FeatureSelection").alias("Pathways-Ttest-SVM Global", "").create();
-      case 51:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.PathwaysTuneC").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.FeatureSelection").alias("Pathways-Tune C", "").create();
-      case 52:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.PermutationSVMGlobal").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.FeatureSelection").alias("Permutations-SVM Global", "").create();
-      case 53:
+      case 39:
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Permutation").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.FeatureSelection").alias("Permutation", "").create();
+      case 40:
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.PermutationProperties").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("alpha").create();
+      case 41:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Platform").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("fileName").alias("platform", "File containing platform").create();
-      case 54:
+      case 42:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Project").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("terminalCommand", "percentComplete", "terminalCommand2").children(new String[]{"properties", "approach", "endpoint", "dataset"}, new boolean[]{false, false, true, true}).alias("project", "An entire project which can contain multiple datasets ").create();
-      case 55:
+      case 43:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Properties").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("outputLocation", "bdvalLocation", "antLocation", "threads", "memory", "tagDescription").children(new String[]{"computerType"}, new boolean[]{false}).create();
-      case 56:
+      case 44:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.RandomForest").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.Classification").alias("Random Forest", "").create();
-      case 57:
+      case 45:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.SVM").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.Classification").alias("SVM", "").create();
-      case 58:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.SVMGlobal").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.NewFeatureSelection").alias("SVM Global", "").create();
-      case 59:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.SVMIterative").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.NewFeatureSelection").alias("SVM Iterative", "").create();
-      case 60:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.SVMIterativeOld").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.FeatureSelection").alias("SVM Iterative", "").create();
-      case 61:
+      case 46:
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.SVMGlobal").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.FeatureSelection").alias("SVM Global", "").create();
+      case 47:
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.SVMIterative").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.FeatureSelection").alias("SVM Iterative", "").create();
+      case 48:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.SVMIterativeProperties").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("r").create();
-      case 62:
+      case 49:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.SVMTuneC").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.Classification").alias("SVM Tune C", "").create();
-      case 63:
+      case 50:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Sample").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("displayId").references("category").alias("sample", "A sample: must have an id and optionally has an endpoint").create();
-      case 64:
+      case 51:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.ServerComputer").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.ComputerType").alias("Server", "").create();
-      case 65:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.TTestGeneticAlgorithm").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.FeatureSelection").alias("Ttest-Genetic Algorithm", "").create();
-      case 66:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.TTestProperties").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("cutoff").create();
-      case 67:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.TTestSVMGlobal").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.FeatureSelection").alias("Ttest-SVM Global", "").create();
-      case 68:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.TTestSVMIterative").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.FeatureSelection").alias("Ttest-SVM Iterative", "").create();
-      case 69:
+      case 52:
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.TTestProperties").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("alpha").create();
+      case 53:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Task").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("endpoint").children(new String[]{"categoryReference"}, new boolean[]{true}).create();
-      case 70:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Ttest").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.NewFeatureSelection").alias("T-Test", "").create();
-      case 71:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.WekaScan").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.FeatureSelection").alias("Weka Scan", "").create();
-      case 72:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.WholeChip").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.FeatureSelection").alias("Whole Chip", "").create();
+      case 54:
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Ttest").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.FeatureSelection").alias("T-Test", "").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
 
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"org.campagnelab.bdval.structure.AUCPerformance", "org.campagnelab.bdval.structure.Approach", "org.campagnelab.bdval.structure.AverageAggregation", "org.campagnelab.bdval.structure.CIDs", "org.campagnelab.bdval.structure.CategoryReference", "org.campagnelab.bdval.structure.Classification", "org.campagnelab.bdval.structure.ComputerType", "org.campagnelab.bdval.structure.CoxRegSVMGlobal", "org.campagnelab.bdval.structure.DataSet", "org.campagnelab.bdval.structure.DesktopComputer", "org.campagnelab.bdval.structure.DisplayRow", "org.campagnelab.bdval.structure.DisplayValue", "org.campagnelab.bdval.structure.Endpoint", "org.campagnelab.bdval.structure.EndpointCategory", "org.campagnelab.bdval.structure.FCP_LogitBoost", "org.campagnelab.bdval.structure.FeatureSelection", "org.campagnelab.bdval.structure.FeatureSelectionCombo", "org.campagnelab.bdval.structure.FeatureSelectionFold", "org.campagnelab.bdval.structure.FeatureSelectionFoldFalse", "org.campagnelab.bdval.structure.FeatureSelectionFoldTrue", "org.campagnelab.bdval.structure.FeatureSelectionInfo", "org.campagnelab.bdval.structure.FeatureSelectionProperties", "org.campagnelab.bdval.structure.FoldChange", "org.campagnelab.bdval.structure.FoldchangeGeneticAlgorithm", "org.campagnelab.bdval.structure.FoldchangeProperties", "org.campagnelab.bdval.structure.FoldchangeSVMGlobal", "org.campagnelab.bdval.structure.FoldchangeSVMIterative", "org.campagnelab.bdval.structure.FullGeneticAlgorithm", "org.campagnelab.bdval.structure.GAPerformance", "org.campagnelab.bdval.structure.GenelistGeneticAlgorithm", "org.campagnelab.bdval.structure.GenelistSVMGlobal", "org.campagnelab.bdval.structure.GenelistSVMGlobalTuneC", "org.campagnelab.bdval.structure.GeneticAlgorithmProperties", "org.campagnelab.bdval.structure.Input", "org.campagnelab.bdval.structure.Integer", "org.campagnelab.bdval.structure.KStar", "org.campagnelab.bdval.structure.Logistic", "org.campagnelab.bdval.structure.LogitBoost", "org.campagnelab.bdval.structure.MCCPerformance", "org.campagnelab.bdval.structure.MinMaxSVMGlobal", "org.campagnelab.bdval.structure.ModelToGenerate", "org.campagnelab.bdval.structure.NaiveBayes", "org.campagnelab.bdval.structure.NewFeatureSelection", "org.campagnelab.bdval.structure.NewFeatureSelectionInfo", "org.campagnelab.bdval.structure.PCAAggregation", "org.campagnelab.bdval.structure.PathwayAggregationMethod", "org.campagnelab.bdval.structure.PathwaysBaseline", "org.campagnelab.bdval.structure.PathwaysBuildPathwayComponents", "org.campagnelab.bdval.structure.PathwaysCoxregSVMGlobal", "org.campagnelab.bdval.structure.PathwaysProperties", "org.campagnelab.bdval.structure.PathwaysTTestSVMGlobal", "org.campagnelab.bdval.structure.PathwaysTuneC", "org.campagnelab.bdval.structure.PermutationSVMGlobal", "org.campagnelab.bdval.structure.Platform", "org.campagnelab.bdval.structure.Project", "org.campagnelab.bdval.structure.Properties", "org.campagnelab.bdval.structure.RandomForest", "org.campagnelab.bdval.structure.SVM", "org.campagnelab.bdval.structure.SVMGlobal", "org.campagnelab.bdval.structure.SVMIterative", "org.campagnelab.bdval.structure.SVMIterativeOld", "org.campagnelab.bdval.structure.SVMIterativeProperties", "org.campagnelab.bdval.structure.SVMTuneC", "org.campagnelab.bdval.structure.Sample", "org.campagnelab.bdval.structure.ServerComputer", "org.campagnelab.bdval.structure.TTestGeneticAlgorithm", "org.campagnelab.bdval.structure.TTestProperties", "org.campagnelab.bdval.structure.TTestSVMGlobal", "org.campagnelab.bdval.structure.TTestSVMIterative", "org.campagnelab.bdval.structure.Task", "org.campagnelab.bdval.structure.Ttest", "org.campagnelab.bdval.structure.WekaScan", "org.campagnelab.bdval.structure.WholeChip"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"org.campagnelab.bdval.structure.AUCPerformance", "org.campagnelab.bdval.structure.Approach", "org.campagnelab.bdval.structure.AverageAggregation", "org.campagnelab.bdval.structure.CIDs", "org.campagnelab.bdval.structure.CategoryReference", "org.campagnelab.bdval.structure.Classification", "org.campagnelab.bdval.structure.ComputerType", "org.campagnelab.bdval.structure.DataSet", "org.campagnelab.bdval.structure.DesktopComputer", "org.campagnelab.bdval.structure.DisplayRow", "org.campagnelab.bdval.structure.DisplayValue", "org.campagnelab.bdval.structure.Endpoint", "org.campagnelab.bdval.structure.EndpointCategory", "org.campagnelab.bdval.structure.FCP_LogitBoost", "org.campagnelab.bdval.structure.FeatureSelection", "org.campagnelab.bdval.structure.FeatureSelectionCombo", "org.campagnelab.bdval.structure.FeatureSelectionFold", "org.campagnelab.bdval.structure.FeatureSelectionFoldFalse", "org.campagnelab.bdval.structure.FeatureSelectionFoldTrue", "org.campagnelab.bdval.structure.FeatureSelectionInfo", "org.campagnelab.bdval.structure.FeatureSelectionProperties", "org.campagnelab.bdval.structure.FoldChange", "org.campagnelab.bdval.structure.FoldchangeProperties", "org.campagnelab.bdval.structure.GAPerformance", "org.campagnelab.bdval.structure.GeneticAlgorithm", "org.campagnelab.bdval.structure.GeneticAlgorithmProperties", "org.campagnelab.bdval.structure.Input", "org.campagnelab.bdval.structure.Integer", "org.campagnelab.bdval.structure.KStar", "org.campagnelab.bdval.structure.Logistic", "org.campagnelab.bdval.structure.LogitBoost", "org.campagnelab.bdval.structure.MCCPerformance", "org.campagnelab.bdval.structure.MinMax", "org.campagnelab.bdval.structure.MinMaxProperties", "org.campagnelab.bdval.structure.ModelToGenerate", "org.campagnelab.bdval.structure.NaiveBayes", "org.campagnelab.bdval.structure.PCAAggregation", "org.campagnelab.bdval.structure.PathwayAggregationMethod", "org.campagnelab.bdval.structure.PathwaysProperties", "org.campagnelab.bdval.structure.Permutation", "org.campagnelab.bdval.structure.PermutationProperties", "org.campagnelab.bdval.structure.Platform", "org.campagnelab.bdval.structure.Project", "org.campagnelab.bdval.structure.Properties", "org.campagnelab.bdval.structure.RandomForest", "org.campagnelab.bdval.structure.SVM", "org.campagnelab.bdval.structure.SVMGlobal", "org.campagnelab.bdval.structure.SVMIterative", "org.campagnelab.bdval.structure.SVMIterativeProperties", "org.campagnelab.bdval.structure.SVMTuneC", "org.campagnelab.bdval.structure.Sample", "org.campagnelab.bdval.structure.ServerComputer", "org.campagnelab.bdval.structure.TTestProperties", "org.campagnelab.bdval.structure.Task", "org.campagnelab.bdval.structure.Ttest"};
 }

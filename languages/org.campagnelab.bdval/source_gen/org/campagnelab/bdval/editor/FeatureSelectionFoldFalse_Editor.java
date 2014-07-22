@@ -18,7 +18,7 @@ public class FeatureSelectionFoldFalse_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vhyp7k_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "False");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "false");
     editorCell.setCellId("Constant_vhyp7k_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();

@@ -18,7 +18,7 @@ public class FeatureSelectionFoldTrue_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_jk992r_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "True");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "true");
     editorCell.setCellId("Constant_jk992r_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();

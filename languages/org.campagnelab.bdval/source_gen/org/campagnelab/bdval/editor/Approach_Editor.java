@@ -69,7 +69,8 @@ public class Approach_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createProperty_6do0s2_o0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_6do0s2_p0(editorContext, node));
-    editorCell.addEditorCell(this.createReadOnlyModelAccessor_6do0s2_q0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6do0s2_q0(editorContext, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_6do0s2_r0(editorContext, node));
     return editorCell;
   }
 
@@ -291,8 +292,8 @@ public class Approach_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "SVM:");
     editorCell.setCellId("Constant_6do0s2_m0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -301,13 +302,13 @@ public class Approach_Editor extends DefaultNodeEditor {
   private static boolean renderingCondition_6do0s2_a21a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "classification", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode classification) {
-        return SPropertyOperations.getString(classification, "name").matches("SVM");
+        return isNotEmptyString(SPropertyOperations.getString(classification, "name")) && SPropertyOperations.getString(classification, "name").matches("SVM");
       }
     });
   }
 
   private EditorCell createConstant_6do0s2_n0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Train a Probabilistic SVM:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Train a Probabilitic SVM:");
     editorCell.setCellId("Constant_6do0s2_n0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_LEFT, new Padding(4, Measure.SPACES));
@@ -319,7 +320,7 @@ public class Approach_Editor extends DefaultNodeEditor {
   private static boolean renderingCondition_6do0s2_a31a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "classification", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode classification) {
-        return SPropertyOperations.getString(classification, "name").matches("SVM");
+        return isNotEmptyString(SPropertyOperations.getString(classification, "name")) && SPropertyOperations.getString(classification, "name").matches("SVM");
       }
     });
   }
@@ -348,14 +349,25 @@ public class Approach_Editor extends DefaultNodeEditor {
   private static boolean renderingCondition_6do0s2_a41a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "classification", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode classification) {
-        return SPropertyOperations.getString(classification, "name").matches("SVM");
+        return isNotEmptyString(SPropertyOperations.getString(classification, "name")) && SPropertyOperations.getString(classification, "name").matches("SVM");
       }
     });
   }
 
   private EditorCell createConstant_6do0s2_p0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Number of Models:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_6do0s2_p0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.FONT_SIZE, 5);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_6do0s2_q0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Number of Models:");
+    editorCell.setCellId("Constant_6do0s2_q0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
     style.set(StyleAttributes.READ_ONLY, true);
@@ -364,7 +376,7 @@ public class Approach_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createReadOnlyModelAccessor_6do0s2_q0(final EditorContext editorContext, final SNode node) {
+  private EditorCell createReadOnlyModelAccessor_6do0s2_r0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return String.valueOf(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "featureSelectionInfo", true), "featureSelectionCombo", true)).count() * ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "featureSelectionInfo", true), "numberOfFeatures", true)).count() * ListSequence.fromList(SLinkOperations.getTargets(node, "classification", true)).count() * ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "featureSelectionInfo", true), "featureSelectionFold", true)).count() * SPropertyOperations.getInteger(node, "externalFolds") * SPropertyOperations.getInteger(node, "externalRepeats"));
@@ -378,10 +390,14 @@ public class Approach_Editor extends DefaultNodeEditor {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
-    editorCell.setCellId("ReadOnlyModelAccessor_6do0s2_q0");
+    editorCell.setCellId("ReadOnlyModelAccessor_6do0s2_r0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     return editorCell;
+  }
+
+  private static boolean isNotEmptyString(String str) {
+    return str != null && str.length() > 0;
   }
 }
