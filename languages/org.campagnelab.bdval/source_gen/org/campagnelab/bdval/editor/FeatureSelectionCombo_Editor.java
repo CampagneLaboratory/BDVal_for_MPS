@@ -28,6 +28,8 @@ public class FeatureSelectionCombo_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_b700yy_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_b700yy_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_b700yy_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_b700yy_d0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_b700yy_e0(editorContext, node));
     return editorCell;
   }
 
@@ -80,6 +82,33 @@ public class FeatureSelectionCombo_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
       editorCell.setRole("featureSelection2");
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createConstant_b700yy_d0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "|");
+    editorCell.setCellId("Constant_b700yy_d0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_b700yy_e0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("featureSelectionOption");
+    provider.setNoTargetText("Feature Selection Option");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("featureSelectionOption");
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

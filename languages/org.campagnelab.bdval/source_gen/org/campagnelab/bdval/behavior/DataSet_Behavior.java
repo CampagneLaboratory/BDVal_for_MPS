@@ -30,6 +30,9 @@ public class DataSet_Behavior {
     directory.mkdirs();
     DataSet_Behavior.call_copyPlatform_7083662764413093380(thisNode, directoryName, datasetName);
     DataSet_Behavior.call_copyInput_7083662764415129152(thisNode, directoryName, datasetName);
+    if ((SLinkOperations.getTarget(thisNode, "otherFiles", true) != null)) {
+      DataSet_Behavior.call_copyOtherFiles_4989762282953266724(thisNode, directoryName, datasetName);
+    }
     HashMap categoryCounterMap = DataSet_Behavior.call_createCIDs_6032947574604951771(thisNode, directoryName, datasetName);
     DataSet_Behavior.call_createTask_6032947574607589325(thisNode, directoryName, datasetName, categoryCounterMap);
     DataSet_Behavior.call_createTestSet_3976565827563239534(thisNode, directoryName, datasetName);
@@ -65,6 +68,31 @@ public class DataSet_Behavior {
       FileUtils.copyFile(new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "input", true), "fileName")), new File(fileName));
     } catch (Exception e) {
       throw new Error("Error Copying Input File");
+    }
+  }
+
+  public static void call_copyOtherFiles_4989762282953266724(SNode thisNode, String directoryName, String datasetName) {
+    if (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "otherFiles", true), "pathways"))) {
+      String pathwayFolder = directoryName + "pathways/";
+      new File(pathwayFolder).mkdir();
+      String pathwaysFile = pathwayFolder + new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "otherFiles", true), "pathways")).getName();
+      String geneToProbesFile = pathwayFolder + new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "otherFiles", true), "geneToProbes")).getName();
+      try {
+        FileUtils.copyFile(new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "otherFiles", true), "pathways")), new File(pathwaysFile));
+        FileUtils.copyFile(new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "otherFiles", true), "geneToProbes")), new File(geneToProbesFile));
+      } catch (Exception e) {
+        throw new Error("Error Copying Pathway Files");
+      }
+    }
+    if (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "otherFiles", true), "survival"))) {
+      String survivalFolder = directoryName + "survivals/";
+      new File(survivalFolder).mkdir();
+      String survivalFile = survivalFolder + new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "otherFiles", true), "survival")).getName();
+      try {
+        FileUtils.copyFile(new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "otherFiles", true), "survival")), new File(survivalFile));
+      } catch (Exception e) {
+        throw new Error("Error Copying Survival File");
+      }
     }
   }
 
@@ -154,5 +182,9 @@ public class DataSet_Behavior {
     } catch (Exception e) {
       throw new Error("Error Printing Test-Set File");
     }
+  }
+
+  private static boolean isNotEmptyString(String str) {
+    return str != null && str.length() > 0;
   }
 }

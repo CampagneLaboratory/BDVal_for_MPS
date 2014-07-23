@@ -417,5 +417,11 @@
     </dependencies>
     <rename id="w348.4671749543995072017" type="PROPERTY" from="cutoff" to="alpha" />
   </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="68" />
+    </dependencies>
+    <rename id="w348.6525722185902462822" type="CONCEPT" from="PathwaysProperties" to="PathwayProperties" />
+  </StructureModification>
 </history>
 

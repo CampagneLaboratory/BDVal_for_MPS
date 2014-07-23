@@ -109,6 +109,13 @@ public class Project_Behavior {
             });
           }
           prop.setProperty(datasetName.value + ".platform-file", root + "/platforms/" + new File(SPropertyOperations.getString(SLinkOperations.getTarget(dataset, "platform", true), "fileName")).getName());
+          if (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(dataset, "otherFiles", true), "pathways"))) {
+            prop.setProperty(datasetName.value + ".pathways-file", root + "/pathways/" + new File(SPropertyOperations.getString(SLinkOperations.getTarget(dataset, "otherFiles", true), "pathways")).getName());
+            prop.setProperty(datasetName.value + ".gene-to-probes-file", root + "/pathways/" + new File(SPropertyOperations.getString(SLinkOperations.getTarget(dataset, "otherFiles", true), "geneToProbes")).getName());
+          }
+          if (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(dataset, "otherFiles", true), "survival"))) {
+            prop.setProperty(datasetName.value + ".survival-file", root + "/survivals/" + new File(SPropertyOperations.getString(SLinkOperations.getTarget(dataset, "otherFiles", true), "survival")).getName());
+          }
         }
       });
       // Finish bottom: custom ID/model 
@@ -155,5 +162,9 @@ public class Project_Behavior {
     } catch (Exception e) {
       p.fireBuildFinished(e);
     }
+  }
+
+  private static boolean isNotEmptyString(String str) {
+    return str != null && str.length() > 0;
   }
 }

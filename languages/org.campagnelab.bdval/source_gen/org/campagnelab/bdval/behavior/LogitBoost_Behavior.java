@@ -7,7 +7,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class LogitBoost_Behavior {
   public static void init(SNode thisNode) {
-    SPropertyOperations.set(thisNode, "name", "logit-boost");
+    SPropertyOperations.set(thisNode, "name", "logitBoost");
     SPropertyOperations.set(thisNode, "classname", "edu.cornell.med.icb.learning.weka.WekaClassifier");
     SPropertyOperations.set(thisNode, "wekaClass", "weka.classifiers.meta.LogitBoost");
     SPropertyOperations.set(thisNode, "parameters", "wekaClass=" + SPropertyOperations.getString(thisNode, "wekaClass"));

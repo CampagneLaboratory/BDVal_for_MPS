@@ -111,6 +111,14 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "foldchange", true), "phi");
   }
 
+  public static Object propertyMacro_GetPropertyValue_4989762282962689461(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "coxReg", true), "alpha");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4989762282957593995(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "pathways", true), "aggregationMethod", true), "name");
+  }
+
   public static Object propertyMacro_GetPropertyValue_3649519271348591714(final PropertyMacroContext _context) {
     return String.valueOf(SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getNode(), "approach", true), "probabilisticSVM"));
   }

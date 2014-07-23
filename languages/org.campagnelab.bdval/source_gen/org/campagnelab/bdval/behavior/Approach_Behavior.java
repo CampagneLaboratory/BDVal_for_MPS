@@ -13,7 +13,6 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.io.FileWriter;
 import java.io.PrintWriter;
-import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -29,7 +28,10 @@ public class Approach_Behavior {
     final String sequenceFolder = directoryName + "sequences/";
     new File(sequenceFolder).mkdir();
 
-    final Wrappers._T<String> approachMethod = new Wrappers._T<String>();
+    final Wrappers._T<String> approachMethod = new Wrappers._T<String>("generated-");
+    final Wrappers._T<String> optionDef = new Wrappers._T<String>("");
+    final Wrappers._T<String> optionAddoptions = new Wrappers._T<String>("");
+    final Wrappers._T<String> optionOther = new Wrappers._T<String>("");
     final Wrappers._T<String> fsLine = new Wrappers._T<String>();
     final Wrappers._T<String> fsAddoptions = new Wrappers._T<String>();
     final Wrappers._T<String> otherOptions = new Wrappers._T<String>();
@@ -46,7 +48,7 @@ public class Approach_Behavior {
                 twoFS.value = (SLinkOperations.getTarget(featureCombo, "featureSelection2", true) != null);
 
                 SNode featureSelection1 = SLinkOperations.getTarget(featureCombo, "featureSelection1", true);
-                approachMethod.value = SPropertyOperations.getString(featureSelection1, "name");
+                approachMethod.value = approachMethod.value + SPropertyOperations.getString(featureSelection1, "name");
                 fsLine.value = Approach_Behavior.call_getFSLine_3649519271357483092(thisNode, SPropertyOperations.getString(featureSelection1, "sequenceCommand"), SPropertyOperations.getString(featureSelection1, "sequenceInfo"), SPropertyOperations.getString(featureSelection1, "sequenceNumFeatures"), true, twoFS.value, SPropertyOperations.getBoolean(featureSelectionFold, "value"));
                 fsAddoptions.value = SPropertyOperations.getString(featureSelection1, "addoptions");
                 otherOptions.value = SPropertyOperations.getString(featureSelection1, "otherOptions");
@@ -60,32 +62,44 @@ public class Approach_Behavior {
                   otherOptions.value = otherOptions.value + " " + SPropertyOperations.getString(featureSelection2, "otherOptions") + " --max-intermediate-features ${max-intermediate-features}";
                   geneticAlgorithm.value = geneticAlgorithm.value || SNodeOperations.isInstanceOf(featureSelection2, "org.campagnelab.bdval.structure.GeneticAlgorithm");
                 }
-                approachMethod.value = approachMethod.value + "-" + SPropertyOperations.getString(classification, "name") + "-fs=" + String.valueOf(SPropertyOperations.getBoolean(featureSelectionFold, "value"));
+                if ((SLinkOperations.getTarget(featureCombo, "featureSelectionOption", true) != null)) {
+                  SNode option = SLinkOperations.getTarget(featureCombo, "featureSelectionOption", true);
+                  approachMethod.value = approachMethod.value + "-" + SPropertyOperations.getString(option, "name");
+                  optionDef.value = SPropertyOperations.getString(option, "def");
+                  optionAddoptions.value = SPropertyOperations.getString(option, "addoptions");
+                  optionOther.value = SPropertyOperations.getString(option, "otherOptions");
 
+                }
+                approachMethod.value = approachMethod.value + "-" + SPropertyOperations.getString(classification, "name") + "-fs=" + String.valueOf(SPropertyOperations.getBoolean(featureSelectionFold, "value"));
                 SNode model = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.ModelToGenerate", null);
                 SPropertyOperations.set(model, "featureSelectionFold", "" + (SPropertyOperations.getBoolean(featureSelectionFold, "value")));
                 SPropertyOperations.set(model, "sequenceFile", approachMethod.value + ".sequence");
                 SPropertyOperations.set(model, "allClassifierParameters", " --classifier " + SPropertyOperations.getString(classification, "classname") + " --classifier-parameters " + SPropertyOperations.getString(classification, "parameters"));
-                SPropertyOperations.set(model, "otherOptions", otherOptions.value + " " + SPropertyOperations.getString(classification, "otherOption"));
+                SPropertyOperations.set(model, "otherOptions", otherOptions.value + " " + SPropertyOperations.getString(classification, "otherOption") + " " + optionOther.value);
                 ListSequence.fromList(SLinkOperations.getTargets(thisNode, "modelToGenerate", true)).addElement(model);
-
                 // Something with other-options, extra-classifier-parameters? 
                 try {
                   String sequenceFileName = sequenceFolder + approachMethod.value + ".sequence";
                   FileWriter file = new FileWriter(sequenceFileName);
                   PrintWriter writer = new PrintWriter(file);
-                  writer.print(Approach_Behavior.call_getDefs_3649519271357111936(thisNode, approachMethod.value));
+                  writer.print("def label=" + approachMethod.value + "-%model-id%\n");
+                  writer.print("def predictions-filename=%dataset-name%-%label%-prediction-table.txt\n");
+                  writer.print("def survivial=%survival%\n");
+                  writer.print(optionDef.value);
                   writer.print("#\n");
-                  writer.print(Approach_Behavior.call_getAddoptions_1870354875254476844(thisNode, fsAddoptions.value, SPropertyOperations.getString(classification, "addoption")));
-                  writer.print("#\n#\n");
+                  writer.print("addoption required:other-options:Other DAVMode options can be provided here\n");
+                  writer.print("addoption required:split-id:id of split being processed\n");
+                  writer.print("addoption required:num-features:Number of features in the generated model\n");
+                  writer.print(fsAddoptions.value);
+                  writer.print(SPropertyOperations.getString(classification, "addoption"));
+                  writer.print(optionAddoptions.value);
+                  writer.print("#\n");
+                  writer.print("#\n");
                   writer.print(fsLine.value);
                   writer.print(Approach_Behavior.call_getModelLine_1870354875254016704(thisNode, SPropertyOperations.getString(classification, "name"), geneticAlgorithm.value));
                   writer.print(Approach_Behavior.call_getPredictLine_1870354875254442471(thisNode, SPropertyOperations.getString(classification, "name")));
                   writer.close();
                   file.close();
-
-                  // Clean this up? 
-                  FileUtils.copyFile(new File(sequenceFileName), new File(SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.Project"), "properties", true), "bdvalLocation") + "/data/sequences/" + approachMethod.value + ".sequence"));
 
                 } catch (Exception e) {
                   if (LOG.isEnabledFor(Level.ERROR)) {
@@ -99,17 +113,6 @@ public class Approach_Behavior {
 
       }
     });
-  }
-
-  public static String call_getDefs_3649519271357111936(SNode thisNode, String approachMethod) {
-    return "def label=" + approachMethod + "-%model-id%\n" + "def predictions-filename=%dataset-name%-%label%-prediction-table.txt\n" + "def survivial=%survival%\n";
-  }
-
-  public static String call_getAddoptions_1870354875254476844(SNode thisNode, String fsAddoptions, String cAddoptions) {
-    String addoption1 = "addoption required:other-options:Other DAVMode options can be provided here\n";
-    String addoption2 = "addoption required:split-id:id of split being processed\n";
-    String addoption3 = "addoption required:num-features:Number of features in the generated model\n";
-    return addoption1 + addoption2 + addoption3 + fsAddoptions + cAddoptions;
   }
 
   public static String call_getFSLine_3649519271357483092(SNode thisNode, String sequenceCommand, String sequenceInfo, String sequenceNumFeatures, boolean first, boolean twoFS, boolean fsFold) {

@@ -7,7 +7,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class NaiveBayes_Behavior {
   public static void init(SNode thisNode) {
-    SPropertyOperations.set(thisNode, "name", "naive-bayes");
+    SPropertyOperations.set(thisNode, "name", "naiveBayes");
     SPropertyOperations.set(thisNode, "classname", "edu.cornell.med.icb.learning.weka.WekaClassifier");
     SPropertyOperations.set(thisNode, "wekaClass", "weka.classifiers.bayes.NaiveBayesUpdateable");
     SPropertyOperations.set(thisNode, "parameters", "wekaClass=" + SPropertyOperations.getString(thisNode, "wekaClass"));

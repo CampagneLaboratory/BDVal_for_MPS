@@ -16,24 +16,24 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
-public class PathwaysProperties_Editor extends DefaultNodeEditor {
+public class PathwayProperties_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_3fp8fs_a(editorContext, node);
+    return this.createCollection_ca8wnr_a(editorContext, node);
   }
 
-  private EditorCell createCollection_3fp8fs_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ca8wnr_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_3fp8fs_a");
+    editorCell.setCellId("Collection_ca8wnr_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createConstant_3fp8fs_a0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3fp8fs_b0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_3fp8fs_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ca8wnr_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ca8wnr_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_ca8wnr_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_3fp8fs_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ca8wnr_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Pathways:");
-    editorCell.setCellId("Constant_3fp8fs_a0");
+    editorCell.setCellId("Constant_ca8wnr_a0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -41,9 +41,9 @@ public class PathwaysProperties_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_3fp8fs_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ca8wnr_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Pathways Aggregation Method:");
-    editorCell.setCellId("Constant_3fp8fs_b0");
+    editorCell.setCellId("Constant_ca8wnr_b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);
@@ -51,7 +51,7 @@ public class PathwaysProperties_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_3fp8fs_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_ca8wnr_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("aggregationMethod");
     provider.setNoTargetText("<no aggregationMethod>");
