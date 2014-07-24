@@ -4,9 +4,15 @@ package org.campagnelab.bdval.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class FeatureSelectionInfo_Behavior {
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "maxIntermediateFeatures", "" + (400));
+    SNode numFeature50 = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.Integer", null);
+    SPropertyOperations.set(numFeature50, "value", "" + (50));
+    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "numberOfFeatures", true)).addElement(numFeature50);
   }
 }

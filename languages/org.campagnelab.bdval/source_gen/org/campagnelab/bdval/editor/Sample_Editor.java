@@ -53,7 +53,7 @@ public class Sample_Editor extends DefaultNodeEditor {
       {
         Style styleToPut;
         styleToPut = new StyleImpl();
-        EditingStyles_StyleSheet.apply_RedText(styleToPut, editorCell);
+        EditingStyles_StyleSheet.apply_LightRedText(styleToPut, editorCell);
         style.putAll(styleToPut);
       }
     }
@@ -76,7 +76,7 @@ public class Sample_Editor extends DefaultNodeEditor {
   private EditorCell createRefCell_5t72dt_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("category");
-    provider.setNoTargetText("no category");
+    provider.setNoTargetText("optional: select category");
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new Sample_Editor._Inline_5t72dt_a1a());
     editorCell = provider.createEditorCell(editorContext);

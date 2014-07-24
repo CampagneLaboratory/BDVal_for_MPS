@@ -120,7 +120,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_3649519271348591714(final PropertyMacroContext _context) {
-    return String.valueOf(SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getNode(), "approach", true), "probabilisticSVM"));
+    return String.valueOf(SPropertyOperations.getBoolean(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "classificationInfo", true), "classificationProperties", true), "svmProperties", true), "probabilisticSVM"));
   }
 
   public static Object propertyMacro_GetPropertyValue_2125124408386655251(final PropertyMacroContext _context) {

@@ -10,6 +10,8 @@ import java.io.File;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.io.FileWriter;
 import java.io.PrintWriter;
@@ -37,10 +39,19 @@ public class Approach_Behavior {
     final Wrappers._T<String> otherOptions = new Wrappers._T<String>();
     final Wrappers._boolean twoFS = new Wrappers._boolean();
     final Wrappers._boolean geneticAlgorithm = new Wrappers._boolean();
+    final Wrappers._boolean wholeChip = new Wrappers._boolean();
     ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "featureSelectionInfo", true), "featureSelectionFold", true)).visitAll(new IVisitor<SNode>() {
       public void visit(final SNode featureSelectionFold) {
 
-        ListSequence.fromList(SLinkOperations.getTargets(thisNode, "classification", true)).visitAll(new IVisitor<SNode>() {
+        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "classificationInfo", true), "classificationCombo", true)).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return (SLinkOperations.getTarget(it, "classification", true) != null);
+          }
+        }).select(new ISelector<SNode, SNode>() {
+          public SNode select(SNode it) {
+            return SLinkOperations.getTarget(it, "classification", true);
+          }
+        }).visitAll(new IVisitor<SNode>() {
           public void visit(final SNode classification) {
 
             ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "featureSelectionInfo", true), "featureSelectionCombo", true)).visitAll(new IVisitor<SNode>() {
@@ -48,19 +59,20 @@ public class Approach_Behavior {
                 twoFS.value = (SLinkOperations.getTarget(featureCombo, "featureSelection2", true) != null);
 
                 SNode featureSelection1 = SLinkOperations.getTarget(featureCombo, "featureSelection1", true);
+                geneticAlgorithm.value = SNodeOperations.isInstanceOf(featureSelection1, "org.campagnelab.bdval.structure.GeneticAlgorithm");
+                wholeChip.value = SNodeOperations.isInstanceOf(featureSelection1, "org.campagnelab.bdval.structure.WholeChip");
                 approachMethod.value = approachMethod.value + SPropertyOperations.getString(featureSelection1, "name");
-                fsLine.value = Approach_Behavior.call_getFSLine_3649519271357483092(thisNode, SPropertyOperations.getString(featureSelection1, "sequenceCommand"), SPropertyOperations.getString(featureSelection1, "sequenceInfo"), SPropertyOperations.getString(featureSelection1, "sequenceNumFeatures"), true, twoFS.value, SPropertyOperations.getBoolean(featureSelectionFold, "value"));
+                fsLine.value = Approach_Behavior.call_getFSLine_3649519271357483092(thisNode, wholeChip.value, SPropertyOperations.getString(featureSelection1, "sequenceCommand"), SPropertyOperations.getString(featureSelection1, "sequenceInfo"), SPropertyOperations.getString(featureSelection1, "sequenceNumFeatures"), true, twoFS.value, SPropertyOperations.getBoolean(featureSelectionFold, "value"));
                 fsAddoptions.value = SPropertyOperations.getString(featureSelection1, "addoptions");
                 otherOptions.value = SPropertyOperations.getString(featureSelection1, "otherOptions");
-                geneticAlgorithm.value = SNodeOperations.isInstanceOf(featureSelection1, "org.campagnelab.bdval.structure.GeneticAlgorithm");
 
                 if (twoFS.value) {
                   SNode featureSelection2 = SLinkOperations.getTarget(featureCombo, "featureSelection2", true);
                   approachMethod.value = approachMethod.value + "+" + SPropertyOperations.getString(featureSelection2, "name");
-                  fsLine.value = fsLine.value + Approach_Behavior.call_getFSLine_3649519271357483092(thisNode, SPropertyOperations.getString(featureSelection2, "sequenceCommand"), SPropertyOperations.getString(featureSelection2, "sequenceInfo"), SPropertyOperations.getString(featureSelection2, "sequenceNumFeatures"), false, twoFS.value, SPropertyOperations.getBoolean(featureSelectionFold, "value"));
+                  geneticAlgorithm.value = geneticAlgorithm.value || SNodeOperations.isInstanceOf(featureSelection2, "org.campagnelab.bdval.structure.GeneticAlgorithm");
+                  fsLine.value = fsLine.value + Approach_Behavior.call_getFSLine_3649519271357483092(thisNode, wholeChip.value, SPropertyOperations.getString(featureSelection2, "sequenceCommand"), SPropertyOperations.getString(featureSelection2, "sequenceInfo"), SPropertyOperations.getString(featureSelection2, "sequenceNumFeatures"), false, twoFS.value, SPropertyOperations.getBoolean(featureSelectionFold, "value"));
                   fsAddoptions.value = fsAddoptions.value + SPropertyOperations.getString(featureSelection2, "addoptions") + "addoption required:max-intermediate-features:Maximum number of intermediate features to consider\n";
                   otherOptions.value = otherOptions.value + " " + SPropertyOperations.getString(featureSelection2, "otherOptions") + " --max-intermediate-features ${max-intermediate-features}";
-                  geneticAlgorithm.value = geneticAlgorithm.value || SNodeOperations.isInstanceOf(featureSelection2, "org.campagnelab.bdval.structure.GeneticAlgorithm");
                 }
                 if ((SLinkOperations.getTarget(featureCombo, "featureSelectionOption", true) != null)) {
                   SNode option = SLinkOperations.getTarget(featureCombo, "featureSelectionOption", true);
@@ -71,12 +83,28 @@ public class Approach_Behavior {
 
                 }
                 approachMethod.value = approachMethod.value + "-" + SPropertyOperations.getString(classification, "name") + "-fs=" + String.valueOf(SPropertyOperations.getBoolean(featureSelectionFold, "value"));
-                SNode model = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.ModelToGenerate", null);
-                SPropertyOperations.set(model, "featureSelectionFold", "" + (SPropertyOperations.getBoolean(featureSelectionFold, "value")));
-                SPropertyOperations.set(model, "sequenceFile", approachMethod.value + ".sequence");
-                SPropertyOperations.set(model, "allClassifierParameters", " --classifier " + SPropertyOperations.getString(classification, "classname") + " --classifier-parameters " + SPropertyOperations.getString(classification, "parameters"));
-                SPropertyOperations.set(model, "otherOptions", otherOptions.value + " " + SPropertyOperations.getString(classification, "otherOption") + " " + optionOther.value);
-                ListSequence.fromList(SLinkOperations.getTargets(thisNode, "modelToGenerate", true)).addElement(model);
+                SNode classificationOption = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(classification), "org.campagnelab.bdval.structure.ClassificationCombo"), "classiciationOption", true);
+
+                // Creates Model to Generate 
+                if (isNotEmptyString(SPropertyOperations.getString(classificationOption, "name")) && SPropertyOperations.getString(classificationOption, "name").matches("tuneC")) {
+                  ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "classificationInfo", true), "classificationProperties", true), "tuneCProperties", true), "cValue", true)).visitAll(new IVisitor<SNode>() {
+                    public void visit(SNode cValue) {
+                      SNode model = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.ModelToGenerate", null);
+                      SPropertyOperations.set(model, "featureSelectionFold", "" + (SPropertyOperations.getBoolean(featureSelectionFold, "value")));
+                      SPropertyOperations.set(model, "sequenceFile", approachMethod.value + ".sequence");
+                      SPropertyOperations.set(model, "allClassifierParameters", " --classifier " + SPropertyOperations.getString(classification, "classname") + " --classifier-parameters " + SPropertyOperations.getString(classification, "parameters") + ",C=" + SPropertyOperations.getString(cValue, "value"));
+                      SPropertyOperations.set(model, "otherOptions", otherOptions.value + SPropertyOperations.getString(classification, "otherOption") + optionOther.value);
+                      ListSequence.fromList(SLinkOperations.getTargets(thisNode, "modelToGenerate", true)).addElement(model);
+                    }
+                  });
+                } else {
+                  SNode model = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.ModelToGenerate", null);
+                  SPropertyOperations.set(model, "featureSelectionFold", "" + (SPropertyOperations.getBoolean(featureSelectionFold, "value")));
+                  SPropertyOperations.set(model, "sequenceFile", approachMethod.value + ".sequence");
+                  SPropertyOperations.set(model, "allClassifierParameters", " --classifier " + SPropertyOperations.getString(classification, "classname") + " --classifier-parameters " + SPropertyOperations.getString(classification, "parameters"));
+                  SPropertyOperations.set(model, "otherOptions", otherOptions.value + SPropertyOperations.getString(classification, "otherOption") + optionOther.value);
+                  ListSequence.fromList(SLinkOperations.getTargets(thisNode, "modelToGenerate", true)).addElement(model);
+                }
                 // Something with other-options, extra-classifier-parameters? 
                 try {
                   String sequenceFileName = sequenceFolder + approachMethod.value + ".sequence";
@@ -96,7 +124,7 @@ public class Approach_Behavior {
                   writer.print("#\n");
                   writer.print("#\n");
                   writer.print(fsLine.value);
-                  writer.print(Approach_Behavior.call_getModelLine_1870354875254016704(thisNode, SPropertyOperations.getString(classification, "name"), geneticAlgorithm.value));
+                  writer.print(Approach_Behavior.call_getModelLine_1870354875254016704(thisNode, wholeChip.value, SPropertyOperations.getString(classification, "name"), geneticAlgorithm.value));
                   writer.print(Approach_Behavior.call_getPredictLine_1870354875254442471(thisNode, SPropertyOperations.getString(classification, "name")));
                   writer.close();
                   file.close();
@@ -115,8 +143,12 @@ public class Approach_Behavior {
     });
   }
 
-  public static String call_getFSLine_3649519271357483092(SNode thisNode, String sequenceCommand, String sequenceInfo, String sequenceNumFeatures, boolean first, boolean twoFS, boolean fsFold) {
-    return "-m" + sequenceCommand + " --overwrite-output true -o" + Approach_Behavior.call_getOutputFileName_3649519271357483143(thisNode, first, twoFS) + " --output-gene-list --gene-list" + Approach_Behavior.call_getGeneList_4989762282933334050(thisNode, first, twoFS) + " --gene-features-dir %gene-features-dir%" + sequenceInfo + sequenceNumFeatures + Approach_Behavior.call_getNumFeaturesInfo_3649519271357483162(thisNode, first, twoFS) + " %other-options%" + " --split-type" + Approach_Behavior.call_getSplitType_3649519271357483198(thisNode, first, fsFold) + "\n";
+  public static String call_getFSLine_3649519271357483092(SNode thisNode, boolean wholeChip, String sequenceCommand, String sequenceInfo, String sequenceNumFeatures, boolean first, boolean twoFS, boolean fsFold) {
+    if (wholeChip) {
+      return "";
+    } else {
+      return "-m" + sequenceCommand + " --overwrite-output true -o" + Approach_Behavior.call_getOutputFileName_3649519271357483143(thisNode, first, twoFS) + " --output-gene-list --gene-list" + Approach_Behavior.call_getGeneList_4989762282933334050(thisNode, first, twoFS) + " --gene-features-dir %gene-features-dir%" + sequenceInfo + sequenceNumFeatures + Approach_Behavior.call_getNumFeaturesInfo_3649519271357483162(thisNode, first, twoFS) + " %other-options%" + " --split-type" + Approach_Behavior.call_getSplitType_3649519271357483198(thisNode, first, fsFold) + "\n";
+    }
   }
 
   public static String call_getOutputFileName_3649519271357483143(SNode thisNode, boolean first, boolean twoFS) {
@@ -153,12 +185,16 @@ public class Approach_Behavior {
     }
   }
 
-  public static String call_getModelLine_1870354875254016704(SNode thisNode, String classifier, boolean geneticAlgorithm) {
+  public static String call_getModelLine_1870354875254016704(SNode thisNode, boolean wholeChip, String classifier, boolean geneticAlgorithm) {
     String gaString = "";
     if (geneticAlgorithm) {
       gaString = " --use-parameters %dataset-name%-%split-id%-%label%-optimal-parameters.txt";
     }
-    return "-m write-model --overwrite-output true --gene-list %label%|%dataset-name%-%split-id%-%label%-features.txt" + gaString + " %other-options% --split-type training --model-prefix " + classifier + "_%dataset-name%-%split-id%-%label%\n";
+    String genelistString = " %label%|%dataset-name%-%split-id%-%label%-features.txt";
+    if (wholeChip) {
+      genelistString = " full";
+    }
+    return "-m write-model --overwrite-output true --gene-list" + genelistString + gaString + " %other-options% --split-type training --model-prefix " + classifier + "_%dataset-name%-%split-id%-%label%\n";
   }
 
   public static String call_getPredictLine_1870354875254442471(SNode thisNode, String classifier) {
@@ -169,5 +205,9 @@ public class Approach_Behavior {
 
   public static String trim_lf6v7o_a0a0a0a1(String str) {
     return (str == null ? null : str.trim());
+  }
+
+  private static boolean isNotEmptyString(String str) {
+    return str != null && str.length() > 0;
   }
 }

@@ -52,7 +52,7 @@ public class Task_Editor extends DefaultNodeEditor {
   private EditorCell createRefCell_jn8cz7_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("endpoint");
-    provider.setNoTargetText("insert desired endpoint");
+    provider.setNoTargetText("select endpoint");
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new Task_Editor._Inline_jn8cz7_a1a());
     editorCell = provider.createEditorCell(editorContext);
@@ -90,7 +90,7 @@ public class Task_Editor extends DefaultNodeEditor {
     private EditorCell createProperty_jn8cz7_a0b0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
-      provider.setNoTargetText("<no name>");
+      provider.setNoTargetText("select endpoint");
       provider.setReadOnly(true);
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);

@@ -25,7 +25,7 @@ public class check_GeneticAlgorithmProperties_NonTypesystemRule extends Abstract
   public void applyRule(final SNode geneticAlgorithmProperties, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     boolean geneticAlgorithm = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(geneticAlgorithmProperties, "org.campagnelab.bdval.structure.FeatureSelectionInfo", false, false), "featureSelectionCombo", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode combo) {
-        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name").matches("geneticAlgorithm")) || ((SLinkOperations.getTarget(combo, "featureSelection2", true) != null) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name").matches("geneticAlgorithm"));
+        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name").matches("geneticAlgorithm")) || (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name").matches("geneticAlgorithm"));
       }
     });
     if (geneticAlgorithm && (SLinkOperations.getTarget(geneticAlgorithmProperties, "performance", true) == null)) {

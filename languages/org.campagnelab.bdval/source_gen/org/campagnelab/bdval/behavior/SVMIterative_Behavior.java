@@ -12,6 +12,6 @@ public class SVMIterative_Behavior {
     SPropertyOperations.set(thisNode, "sequenceCommand", " svm-weights-iterative");
     SPropertyOperations.set(thisNode, "sequenceInfo", " -r %r%");
     SPropertyOperations.set(thisNode, "sequenceNumFeatures", " --num-features");
-    SPropertyOperations.set(thisNode, "otherOptions", "--r ${svmIterative-r}");
+    SPropertyOperations.set(thisNode, "otherOptions", " --r ${svmIterative-r}");
   }
 }

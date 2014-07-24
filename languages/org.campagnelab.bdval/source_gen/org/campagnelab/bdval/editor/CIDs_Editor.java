@@ -61,7 +61,7 @@ public class CIDs_Editor extends DefaultNodeEditor {
   private EditorCell createProperty_s0w797_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("fileName");
-    provider.setNoTargetText("insert cids file location");
+    provider.setNoTargetText("optional: enter path");
     provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);

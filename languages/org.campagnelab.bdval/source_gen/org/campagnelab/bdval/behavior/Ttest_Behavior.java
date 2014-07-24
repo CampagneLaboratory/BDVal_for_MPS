@@ -12,7 +12,7 @@ public class Ttest_Behavior {
     SPropertyOperations.set(thisNode, "sequenceCommand", " t-test");
     SPropertyOperations.set(thisNode, "sequenceInfo", " --alpha %alpha%");
     SPropertyOperations.set(thisNode, "sequenceNumFeatures", " --report-max-probes");
-    SPropertyOperations.set(thisNode, "otherOptions", "--alpha ${ttest-alpha}");
+    SPropertyOperations.set(thisNode, "otherOptions", " --alpha ${ttest-alpha}");
 
   }
 }

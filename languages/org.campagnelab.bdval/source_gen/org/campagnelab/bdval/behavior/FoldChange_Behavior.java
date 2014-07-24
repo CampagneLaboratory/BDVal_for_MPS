@@ -12,6 +12,6 @@ public class FoldChange_Behavior {
     SPropertyOperations.set(thisNode, "sequenceCommand", " fold-change");
     SPropertyOperations.set(thisNode, "sequenceInfo", " --ratio %phi%");
     SPropertyOperations.set(thisNode, "sequenceNumFeatures", " --report-max-probes");
-    SPropertyOperations.set(thisNode, "otherOptions", "--phi ${fold-change-phi}");
+    SPropertyOperations.set(thisNode, "otherOptions", " --phi ${fold-change-phi}");
   }
 }

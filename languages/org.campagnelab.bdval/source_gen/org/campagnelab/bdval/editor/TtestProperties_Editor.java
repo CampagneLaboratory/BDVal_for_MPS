@@ -56,7 +56,7 @@ public class TTestProperties_Editor extends DefaultNodeEditor {
   private EditorCell createProperty_lqyft_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("alpha");
-    provider.setNoTargetText("<no alpha>");
+    provider.setNoTargetText("enter value");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_alpha");

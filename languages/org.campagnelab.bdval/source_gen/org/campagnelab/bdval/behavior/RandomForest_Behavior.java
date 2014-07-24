@@ -11,7 +11,7 @@ public class RandomForest_Behavior {
     SPropertyOperations.set(thisNode, "classname", "edu.cornell.med.icb.learning.weka.WekaClassifier");
     SPropertyOperations.set(thisNode, "wekaClass", "weka.classifiers.trees.RandomForest");
     SPropertyOperations.set(thisNode, "parameters", "wekaClass=" + SPropertyOperations.getString(thisNode, "wekaClass"));
-    SPropertyOperations.set(thisNode, "otherOption", "--weka-class " + SPropertyOperations.getString(thisNode, "wekaClass"));
+    SPropertyOperations.set(thisNode, "otherOption", " --weka-class " + SPropertyOperations.getString(thisNode, "wekaClass"));
     SPropertyOperations.set(thisNode, "addoption", "addoption required:weka-class:Classname of the weka classifier\n");
 
 

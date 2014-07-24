@@ -56,7 +56,7 @@ public class SVMIterativeProperties_Editor extends DefaultNodeEditor {
   private EditorCell createProperty_co10q3_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("r");
-    provider.setNoTargetText("<no r>");
+    provider.setNoTargetText("enter value");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_r");

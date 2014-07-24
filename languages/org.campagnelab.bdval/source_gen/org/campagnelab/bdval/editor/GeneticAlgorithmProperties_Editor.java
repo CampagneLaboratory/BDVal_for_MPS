@@ -65,7 +65,7 @@ public class GeneticAlgorithmProperties_Editor extends DefaultNodeEditor {
   private EditorCell createProperty_i9xwap_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("ratio");
-    provider.setNoTargetText("<no ratio>");
+    provider.setNoTargetText("enter value");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_ratio");
@@ -96,7 +96,7 @@ public class GeneticAlgorithmProperties_Editor extends DefaultNodeEditor {
   private EditorCell createProperty_i9xwap_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("internalCVRepeats");
-    provider.setNoTargetText("<no internalCVRepeats>");
+    provider.setNoTargetText("enter value");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_internalCVRepeats");
@@ -127,7 +127,7 @@ public class GeneticAlgorithmProperties_Editor extends DefaultNodeEditor {
   private EditorCell createProperty_i9xwap_g0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("internalCVFolds");
-    provider.setNoTargetText("<no internalCVFolds>");
+    provider.setNoTargetText("enter value");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_internalCVFolds");
@@ -158,7 +158,7 @@ public class GeneticAlgorithmProperties_Editor extends DefaultNodeEditor {
   private EditorCell createProperty_i9xwap_i0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("wrapperPopulationSize");
-    provider.setNoTargetText("<no wrapperPopulationSize>");
+    provider.setNoTargetText("enter value");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_wrapperPopulationSize");
@@ -189,7 +189,7 @@ public class GeneticAlgorithmProperties_Editor extends DefaultNodeEditor {
   private EditorCell createProperty_i9xwap_k0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("wrapperNumberIterations");
-    provider.setNoTargetText("<no wrapperNumberIterations>");
+    provider.setNoTargetText("enter value");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_wrapperNumberIterations");
@@ -220,7 +220,7 @@ public class GeneticAlgorithmProperties_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_i9xwap_m0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("performance");
-    provider.setNoTargetText("<no performance>");
+    provider.setNoTargetText("select method");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {

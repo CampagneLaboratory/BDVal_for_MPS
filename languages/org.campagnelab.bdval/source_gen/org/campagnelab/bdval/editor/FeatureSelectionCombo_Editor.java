@@ -22,7 +22,7 @@ public class FeatureSelectionCombo_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createCollection_b700yy_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_b700yy_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_b700yy_a0(editorContext, node));
@@ -36,7 +36,7 @@ public class FeatureSelectionCombo_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_b700yy_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("featureSelection1");
-    provider.setNoTargetText("<no featureSelection1>");
+    provider.setNoTargetText("select feature selection");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
@@ -77,7 +77,7 @@ public class FeatureSelectionCombo_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_b700yy_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("featureSelection2");
-    provider.setNoTargetText("<no featureSelection2>");
+    provider.setNoTargetText("optional: select second feature selection");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
@@ -97,14 +97,28 @@ public class FeatureSelectionCombo_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_b700yy_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "|");
     editorCell.setCellId("Constant_b700yy_d0");
+    Style style = new StyleImpl();
+    if (FeatureSelectionCombo_Editor._StyleParameter_QueryFunction_b700yy_a0d0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))) {
+      {
+        Style styleToPut;
+        styleToPut = new StyleImpl();
+        EditingStyles_StyleSheet.apply_LightGreyText(styleToPut, editorCell);
+        style.putAll(styleToPut);
+      }
+    }
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
+  }
+
+  private static boolean _StyleParameter_QueryFunction_b700yy_a0d0(EditorContext editorContext, SNode node) {
+    return (SLinkOperations.getTarget(node, "featureSelectionOption", true) == null);
   }
 
   private EditorCell createRefNode_b700yy_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("featureSelectionOption");
-    provider.setNoTargetText("Feature Selection Option");
+    provider.setNoTargetText("optional: select mode");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {

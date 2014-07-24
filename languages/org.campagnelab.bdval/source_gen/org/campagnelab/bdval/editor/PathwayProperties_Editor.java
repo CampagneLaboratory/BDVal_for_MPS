@@ -54,7 +54,7 @@ public class PathwayProperties_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_ca8wnr_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("aggregationMethod");
-    provider.setNoTargetText("<no aggregationMethod>");
+    provider.setNoTargetText("select method");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {

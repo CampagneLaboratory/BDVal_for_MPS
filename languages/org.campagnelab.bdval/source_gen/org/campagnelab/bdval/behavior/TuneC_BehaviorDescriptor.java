@@ -6,8 +6,8 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
-public class FCP_LogitBoost_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements Classification_BehaviorDescriptor {
-  public FCP_LogitBoost_BehaviorDescriptor() {
+public class TuneC_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ClassificationOption_BehaviorDescriptor {
+  public TuneC_BehaviorDescriptor() {
   }
 
   public String virtual_getFqName_1213877404258(SNode thisNode) {
@@ -16,6 +16,6 @@ public class FCP_LogitBoost_BehaviorDescriptor extends BaseConcept_BehaviorDescr
 
   @Override
   public String getConceptFqName() {
-    return "org.campagnelab.bdval.structure.FCP_LogitBoost";
+    return "org.campagnelab.bdval.structure.TuneC";
   }
 }

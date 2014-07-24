@@ -12,7 +12,7 @@ public class Permutation_Behavior {
     SPropertyOperations.set(thisNode, "sequenceCommand", " permutation");
     SPropertyOperations.set(thisNode, "sequenceInfo", " --alpha %alpha%");
     SPropertyOperations.set(thisNode, "sequenceNumFeatures", " --report-max-probes");
-    SPropertyOperations.set(thisNode, "otherOptions", "--alpha ${perm-alpha}");
+    SPropertyOperations.set(thisNode, "otherOptions", " --alpha ${perm-alpha}");
 
   }
 }

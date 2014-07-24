@@ -53,7 +53,7 @@ public class Properties_Editor extends DefaultNodeEditor {
   private EditorCell createProperty_vvo4cc_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("outputLocation");
-    provider.setNoTargetText("<no outputLocation>");
+    provider.setNoTargetText("enter path");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_outputLocation");
@@ -81,7 +81,7 @@ public class Properties_Editor extends DefaultNodeEditor {
   private EditorCell createProperty_vvo4cc_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("bdvalLocation");
-    provider.setNoTargetText("insert BDVal Location");
+    provider.setNoTargetText("enter path");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_bdvalLocation");
@@ -109,7 +109,7 @@ public class Properties_Editor extends DefaultNodeEditor {
   private EditorCell createProperty_vvo4cc_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("antLocation");
-    provider.setNoTargetText("<no antLocation>");
+    provider.setNoTargetText("enter path");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_antLocation");
@@ -137,7 +137,7 @@ public class Properties_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_vvo4cc_h0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("computerType");
-    provider.setNoTargetText("<no computerType>");
+    provider.setNoTargetText("select type");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
@@ -167,7 +167,7 @@ public class Properties_Editor extends DefaultNodeEditor {
   private EditorCell createProperty_vvo4cc_j0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("threads");
-    provider.setNoTargetText("insert value");
+    provider.setNoTargetText("enter value");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_threads");
@@ -195,7 +195,7 @@ public class Properties_Editor extends DefaultNodeEditor {
   private EditorCell createProperty_vvo4cc_l0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("memory");
-    provider.setNoTargetText("insert value");
+    provider.setNoTargetText("enter value");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_memory");
@@ -223,7 +223,7 @@ public class Properties_Editor extends DefaultNodeEditor {
   private EditorCell createProperty_vvo4cc_n0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("tagDescription");
-    provider.setNoTargetText("<no tagDescription>");
+    provider.setNoTargetText("enter description");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_tagDescription");

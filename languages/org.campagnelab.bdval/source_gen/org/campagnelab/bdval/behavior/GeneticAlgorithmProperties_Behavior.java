@@ -4,6 +4,8 @@ package org.campagnelab.bdval.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class GeneticAlgorithmProperties_Behavior {
   public static void init(SNode thisNode) {
@@ -12,5 +14,7 @@ public class GeneticAlgorithmProperties_Behavior {
     SPropertyOperations.set(thisNode, "internalCVRepeats", "" + (5));
     SPropertyOperations.set(thisNode, "internalCVFolds", "" + (3));
     SPropertyOperations.set(thisNode, "ratio", "0.5");
+    SNode MCC = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.MCCPerformance", null);
+    SLinkOperations.setTarget(thisNode, "performance", MCC, true);
   }
 }

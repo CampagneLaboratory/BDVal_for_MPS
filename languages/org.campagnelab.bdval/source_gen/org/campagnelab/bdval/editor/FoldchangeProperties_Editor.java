@@ -54,7 +54,7 @@ public class FoldchangeProperties_Editor extends DefaultNodeEditor {
   private EditorCell createProperty_imokuc_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("phi");
-    provider.setNoTargetText("<no phi>");
+    provider.setNoTargetText("enter value");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_phi");

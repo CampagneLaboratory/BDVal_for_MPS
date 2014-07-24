@@ -19,7 +19,7 @@ public class Integer_Editor extends DefaultNodeEditor {
   private EditorCell createProperty_9ug0rr_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("value");
-    provider.setNoTargetText("<no value>");
+    provider.setNoTargetText("enter value");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_value");

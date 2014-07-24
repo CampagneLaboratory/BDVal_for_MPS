@@ -33,7 +33,7 @@ public class CategoryReference_Editor extends DefaultNodeEditor {
   private EditorCell createRefCell_dzi49r_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("endpointCategory");
-    provider.setNoTargetText("insert category");
+    provider.setNoTargetText("select category");
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new CategoryReference_Editor._Inline_dzi49r_a0a());
     editorCell = provider.createEditorCell(editorContext);

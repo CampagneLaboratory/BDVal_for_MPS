@@ -6,11 +6,12 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class EditingStyles_StyleSheet {
-  public static void apply_RedText(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
+  public static void apply_LightRedText(Style style, EditorCell editorCell) {
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(new Color(11285042)));
   }
 
   public static void apply_LightGreyText(Style style, EditorCell editorCell) {

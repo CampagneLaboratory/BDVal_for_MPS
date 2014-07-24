@@ -66,7 +66,7 @@ public class Project_Editor extends DefaultNodeEditor {
   private EditorCell createProperty_o8np3d_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
-    provider.setNoTargetText("insert project name");
+    provider.setNoTargetText("enter name");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
@@ -140,7 +140,7 @@ public class Project_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_o8np3d_g0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("properties");
-    provider.setNoTargetText("<no properties>");
+    provider.setNoTargetText("press enter to expand");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
@@ -185,7 +185,7 @@ public class Project_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_o8np3d_j0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("approach");
-    provider.setNoTargetText("<no approach>");
+    provider.setNoTargetText("press enter to expand");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
@@ -233,6 +233,7 @@ public class Project_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
+    editorCell.setGridLayout(true);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

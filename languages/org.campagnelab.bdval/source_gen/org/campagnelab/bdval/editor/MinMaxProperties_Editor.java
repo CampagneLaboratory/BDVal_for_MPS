@@ -54,7 +54,7 @@ public class MinMaxProperties_Editor extends DefaultNodeEditor {
   private EditorCell createProperty_j9qpmb_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("observations");
-    provider.setNoTargetText("<no observations>");
+    provider.setNoTargetText("enter value");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_observations");

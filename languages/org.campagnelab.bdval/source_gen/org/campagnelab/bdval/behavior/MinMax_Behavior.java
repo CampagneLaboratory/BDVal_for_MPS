@@ -12,7 +12,7 @@ public class MinMax_Behavior {
     SPropertyOperations.set(thisNode, "sequenceCommand", " min-max");
     SPropertyOperations.set(thisNode, "sequenceInfo", " --min-max-observations %min-max-observations%");
     SPropertyOperations.set(thisNode, "sequenceNumFeatures", " --report-max-probes");
-    SPropertyOperations.set(thisNode, "otherOptions", "--min-max-observations ${minMax-observations}");
+    SPropertyOperations.set(thisNode, "otherOptions", " --min-max-observations ${minMax-observations}");
 
   }
 }

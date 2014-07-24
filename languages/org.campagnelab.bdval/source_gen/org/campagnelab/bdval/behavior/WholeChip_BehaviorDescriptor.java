@@ -6,8 +6,8 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
-public class SVMTuneC_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements Classification_BehaviorDescriptor {
-  public SVMTuneC_BehaviorDescriptor() {
+public class WholeChip_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements FeatureSelection_BehaviorDescriptor {
+  public WholeChip_BehaviorDescriptor() {
   }
 
   public String virtual_getFqName_1213877404258(SNode thisNode) {
@@ -16,6 +16,6 @@ public class SVMTuneC_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor 
 
   @Override
   public String getConceptFqName() {
-    return "org.campagnelab.bdval.structure.SVMTuneC";
+    return "org.campagnelab.bdval.structure.WholeChip";
   }
 }

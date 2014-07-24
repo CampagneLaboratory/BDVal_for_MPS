@@ -59,7 +59,7 @@ public class FeatureSelectionProperties_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_pbpsc1_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("svmIterative");
-    provider.setNoTargetText("<no svmIterative>");
+    provider.setNoTargetText("press enter to expand");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
@@ -83,7 +83,7 @@ public class FeatureSelectionProperties_Editor extends DefaultNodeEditor {
     final String name = "svmIterative";
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionInfo"), "featureSelectionCombo", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode combo) {
-        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name").matches(name)) || ((SLinkOperations.getTarget(combo, "featureSelection2", true) != null) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name").matches(name));
+        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name").matches(name)) || (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name").matches(name));
       }
     });
   }
@@ -91,7 +91,7 @@ public class FeatureSelectionProperties_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_pbpsc1_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("ttest");
-    provider.setNoTargetText("<no ttest>");
+    provider.setNoTargetText("press enter to expand");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
@@ -115,7 +115,7 @@ public class FeatureSelectionProperties_Editor extends DefaultNodeEditor {
     final String name = "ttest";
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionInfo"), "featureSelectionCombo", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode combo) {
-        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name").matches(name)) || ((SLinkOperations.getTarget(combo, "featureSelection2", true) != null) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name").matches(name));
+        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name").matches(name)) || (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name").matches(name));
       }
     });
   }
@@ -123,7 +123,7 @@ public class FeatureSelectionProperties_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_pbpsc1_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("geneticAlgorithm");
-    provider.setNoTargetText("<no geneticAlgorithm>");
+    provider.setNoTargetText("press enter to expand");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
@@ -147,7 +147,7 @@ public class FeatureSelectionProperties_Editor extends DefaultNodeEditor {
     final String name = "geneticAlgorithm";
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionInfo"), "featureSelectionCombo", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode combo) {
-        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name").matches(name)) || ((SLinkOperations.getTarget(combo, "featureSelection2", true) != null) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name").matches(name));
+        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name").matches(name)) || (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name").matches(name));
       }
     });
   }
@@ -155,7 +155,7 @@ public class FeatureSelectionProperties_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_pbpsc1_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("foldchange");
-    provider.setNoTargetText("<no foldchange>");
+    provider.setNoTargetText("press enter to expand");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
@@ -179,7 +179,7 @@ public class FeatureSelectionProperties_Editor extends DefaultNodeEditor {
     final String name = "foldchange";
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionInfo"), "featureSelectionCombo", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode combo) {
-        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name").matches(name)) || ((SLinkOperations.getTarget(combo, "featureSelection2", true) != null) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name").matches(name));
+        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name").matches(name)) || (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name").matches(name));
       }
     });
   }
@@ -187,7 +187,7 @@ public class FeatureSelectionProperties_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_pbpsc1_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("permutation");
-    provider.setNoTargetText("<no permutation>");
+    provider.setNoTargetText("press enter to expand");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
@@ -211,7 +211,7 @@ public class FeatureSelectionProperties_Editor extends DefaultNodeEditor {
     final String name = "permutation";
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionInfo"), "featureSelectionCombo", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode combo) {
-        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name").matches(name)) || ((SLinkOperations.getTarget(combo, "featureSelection2", true) != null) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name").matches(name));
+        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name").matches(name)) || (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name").matches(name));
       }
     });
   }
@@ -219,7 +219,7 @@ public class FeatureSelectionProperties_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_pbpsc1_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("minMax");
-    provider.setNoTargetText("<no minMax>");
+    provider.setNoTargetText("press enter to expand");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
@@ -243,7 +243,7 @@ public class FeatureSelectionProperties_Editor extends DefaultNodeEditor {
     final String name = "minMax";
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionInfo"), "featureSelectionCombo", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode combo) {
-        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name").matches(name)) || ((SLinkOperations.getTarget(combo, "featureSelection2", true) != null) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name").matches(name));
+        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name").matches(name)) || (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name").matches(name));
       }
     });
   }
@@ -251,7 +251,7 @@ public class FeatureSelectionProperties_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_pbpsc1_g0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("coxReg");
-    provider.setNoTargetText("<no coxReg>");
+    provider.setNoTargetText("press enter to expand");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
@@ -275,7 +275,7 @@ public class FeatureSelectionProperties_Editor extends DefaultNodeEditor {
     final String name = "coxReg";
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionInfo"), "featureSelectionCombo", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode combo) {
-        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name").matches(name)) || ((SLinkOperations.getTarget(combo, "featureSelection2", true) != null) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name").matches(name));
+        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name").matches(name)) || (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name").matches(name));
       }
     });
   }
@@ -283,7 +283,7 @@ public class FeatureSelectionProperties_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_pbpsc1_h0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("pathways");
-    provider.setNoTargetText("<no pathways>");
+    provider.setNoTargetText("press enter to expand");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {

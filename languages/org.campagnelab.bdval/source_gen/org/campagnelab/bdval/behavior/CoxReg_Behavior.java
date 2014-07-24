@@ -12,6 +12,6 @@ public class CoxReg_Behavior {
     SPropertyOperations.set(thisNode, "sequenceCommand", " cox-regression");
     SPropertyOperations.set(thisNode, "sequenceInfo", " --survival %survival% --alpha %alpha%");
     SPropertyOperations.set(thisNode, "sequenceNumFeatures", " --report-max-probes");
-    SPropertyOperations.set(thisNode, "otherOptions", "--alpha ${coxreg-alpha}");
+    SPropertyOperations.set(thisNode, "otherOptions", " --alpha ${coxreg-alpha}");
   }
 }

@@ -15,8 +15,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -29,6 +27,8 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
+import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -54,7 +54,7 @@ public class DataSet_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_5gxpkq_f0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_5gxpkq_g0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5gxpkq_h0(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_5gxpkq_i0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_5gxpkq_i0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_5gxpkq_j0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5gxpkq_k0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_5gxpkq_l0(editorContext, node));
@@ -89,14 +89,14 @@ public class DataSet_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_SIZE, 14);
     editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
+    editorCell.setDefaultText("press enter to expand");
     return editorCell;
   }
 
   private EditorCell createProperty_5gxpkq_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
-    provider.setNoTargetText("insert data set name");
+    provider.setNoTargetText("enter name");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
@@ -138,7 +138,7 @@ public class DataSet_Editor extends DefaultNodeEditor {
   private EditorCell createProperty_5gxpkq_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("normalTarget");
-    provider.setNoTargetText("<no normalTarget>");
+    provider.setNoTargetText("select value");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_normalTarget");
@@ -169,7 +169,7 @@ public class DataSet_Editor extends DefaultNodeEditor {
   private EditorCell createProperty_5gxpkq_g0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("testSet");
-    provider.setNoTargetText("<no testSet>");
+    provider.setNoTargetText("select value");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_testSet");
@@ -197,17 +197,14 @@ public class DataSet_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_5gxpkq_i0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
+  private EditorCell createProperty_5gxpkq_i0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("thresholdFloor");
-    provider.setNoTargetText("<no thresholdFloor>");
+    provider.setNoTargetText("optional: enter value");
+    provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new DataSet_Editor._Inline_5gxpkq_a8a());
     editorCell = provider.createEditorCell(editorContext);
-    if (editorCell.getRole() == null) {
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("thresholdFloor");
-    }
+    editorCell.setCellId("property_thresholdFloor");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -220,39 +217,6 @@ public class DataSet_Editor extends DefaultNodeEditor {
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  public static class _Inline_5gxpkq_a8a extends InlineCellProvider {
-    public _Inline_5gxpkq_a8a() {
-      super();
-    }
-
-    public EditorCell createEditorCell(EditorContext editorContext) {
-      return this.createEditorCell(editorContext, this.getSNode());
-    }
-
-    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_5gxpkq_a0i0(editorContext, node);
-    }
-
-    private EditorCell createProperty_5gxpkq_a0i0(EditorContext editorContext, SNode node) {
-      CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-      provider.setRole("value");
-      provider.setNoTargetText("<no value>");
-      provider.setReadOnly(true);
-      EditorCell editorCell;
-      editorCell = provider.createEditorCell(editorContext);
-      editorCell.setCellId("property_value");
-      editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-      SNode attributeConcept = provider.getRoleAttribute();
-      Class attributeKind = provider.getRoleAttributeClass();
-      if (attributeConcept != null) {
-        IOperationContext opContext = editorContext.getOperationContext();
-        EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-        return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-      } else
-      return editorCell;
-    }
   }
 
   private EditorCell createRefNode_5gxpkq_j0(EditorContext editorContext, SNode node) {
@@ -292,7 +256,7 @@ public class DataSet_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_5gxpkq_l0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("task");
-    provider.setNoTargetText("<no task>");
+    provider.setNoTargetText("press enter to expand");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
@@ -323,7 +287,7 @@ public class DataSet_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_5gxpkq_n0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("platform");
-    provider.setNoTargetText("<no platform>");
+    provider.setNoTargetText("press enter to expand");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
@@ -359,7 +323,7 @@ public class DataSet_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_5gxpkq_p0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("input");
-    provider.setNoTargetText("<no input>");
+    provider.setNoTargetText("press enter to expand");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
@@ -395,7 +359,7 @@ public class DataSet_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_5gxpkq_r0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("cids");
-    provider.setNoTargetText("<no cids>");
+    provider.setNoTargetText("press enter to expand");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
@@ -437,6 +401,7 @@ public class DataSet_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
+    style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -471,6 +436,8 @@ public class DataSet_Editor extends DefaultNodeEditor {
     editorCell.setCellId("ReadOnlyModelAccessor_5gxpkq_u0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
+    style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

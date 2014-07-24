@@ -12,14 +12,14 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
-public class FCP_LogitBoost_Editor extends DefaultNodeEditor {
+public class WholeChip_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConstant_5lci86_a(editorContext, node);
+    return this.createConstant_bzgpr8_a(editorContext, node);
   }
 
-  private EditorCell createConstant_5lci86_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "FC+P Logistic Boost");
-    editorCell.setCellId("Constant_5lci86_a");
+  private EditorCell createConstant_bzgpr8_a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Whole Chip");
+    editorCell.setCellId("Constant_bzgpr8_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);

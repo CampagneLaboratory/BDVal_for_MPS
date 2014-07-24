@@ -43,7 +43,7 @@ public class Platform_Editor extends DefaultNodeEditor {
   private EditorCell createProperty_tw4zmk_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("fileName");
-    provider.setNoTargetText("insert platform file location");
+    provider.setNoTargetText("enter path");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_fileName");

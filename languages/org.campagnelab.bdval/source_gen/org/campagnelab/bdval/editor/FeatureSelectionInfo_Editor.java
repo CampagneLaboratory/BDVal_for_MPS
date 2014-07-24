@@ -205,6 +205,7 @@ public class FeatureSelectionInfo_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
+    editorCell.setGridLayout(true);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -266,7 +267,7 @@ public class FeatureSelectionInfo_Editor extends DefaultNodeEditor {
   private EditorCell createProperty_f0jmv8_h0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("maxIntermediateFeatures");
-    provider.setNoTargetText("<no maxIntermediateFeatures>");
+    provider.setNoTargetText("enter value");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_maxIntermediateFeatures");
