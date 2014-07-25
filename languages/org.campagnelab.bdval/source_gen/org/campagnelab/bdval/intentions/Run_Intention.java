@@ -82,7 +82,7 @@ public class Run_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      Project_Behavior.call_runAnt_6178536078419791032(node);
+      Project_Behavior.call_createRunWindow_6752420586317975318(node);
     }
 
     public IntentionDescriptor getDescriptor() {

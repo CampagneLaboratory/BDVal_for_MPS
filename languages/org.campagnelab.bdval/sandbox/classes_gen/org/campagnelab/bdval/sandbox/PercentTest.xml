@@ -12,7 +12,7 @@
   <property name="evaluate-statistics-after-splits" value="false"></property>
   <property name="external-CV-repeats-number" value="1"></property>
   <property name="external-CV-repeats" value="--cv-repeats ${external-CV-repeats-number}"></property>
-  <property name="external-CV-folds" value="3"></property>
+  <property name="external-CV-folds" value="5"></property>
   <property name="num-features" value="20"></property>
   <property name="max-intermediate-features" value="400"></property>
   

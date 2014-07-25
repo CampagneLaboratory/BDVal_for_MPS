@@ -173,7 +173,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "approach", true), "modelToGenerate", true);
   }
 
-  public static void mappingScript_CodeBlock_4027829922698953951(final MappingScriptContext _context) {
+  public static void mappingScript_CodeBlock_6752420586317910245(final MappingScriptContext _context) {
     ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "org.campagnelab.bdval.structure.Project")).visitAll(new IVisitor<SNode>() {
       public void visit(SNode project) {
         if (Project_Behavior.call_checkProjectFolder_3976565827571671486(project)) {

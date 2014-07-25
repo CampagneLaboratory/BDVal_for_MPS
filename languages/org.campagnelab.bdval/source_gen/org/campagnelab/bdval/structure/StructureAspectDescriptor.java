@@ -114,7 +114,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 49:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Platform").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("fileName").alias("platform", "File containing platform").create();
       case 50:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Project").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("terminalCommand", "percentComplete", "terminalCommand2").children(new String[]{"properties", "approach", "endpoint", "dataset"}, new boolean[]{false, false, true, true}).alias("project", "An entire project which can contain multiple datasets ").create();
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Project").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"properties", "approach", "endpoint", "dataset"}, new boolean[]{false, false, true, true}).alias("project", "An entire project which can contain multiple datasets ").create();
       case 51:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Properties").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("outputLocation", "bdvalLocation", "antLocation", "threads", "memory", "tagDescription").children(new String[]{"computerType"}, new boolean[]{false}).create();
       case 52:

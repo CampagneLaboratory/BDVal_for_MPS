@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="org.campagnelab.bdval.sandbox.Example" file="Example.xml" />
   <dependency className="org.campagnelab.bdval.sandbox.PercentTest" file="PercentTest.xml" />
 </dependenciesRoot>
 

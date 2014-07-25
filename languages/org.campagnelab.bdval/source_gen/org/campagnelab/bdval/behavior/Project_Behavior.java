@@ -14,6 +14,15 @@ import java.io.FileOutputStream;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import javax.swing.JFrame;
+import java.awt.BorderLayout;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JProgressBar;
+import javax.swing.JPanel;
+import javax.swing.BorderFactory;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 import org.apache.tools.ant.Project;
 import java.io.PrintStream;
 import org.apache.tools.ant.DefaultLogger;
@@ -125,59 +134,114 @@ public class Project_Behavior {
     }
   }
 
-  public static void call_runAnt_6178536078419791032(SNode thisNode) {
-    new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "outputLocation") + "/" + SPropertyOperations.getString(thisNode, "name") + "/messeges.txt");
-    Thread antCall = new Thread() {
-      public void run() {
-        Project p = new Project();
-        String outputLocation = "/Users/vmb34/Desktop";
-        String name = "PercentTest";
-        try {
-          File messages = new File(outputLocation + "/" + name + "/messeges.txt");
-          PrintStream printStream = new PrintStream(messages);
-          File buildFile = new File(outputLocation + "/" + name + "/" + name + ".xml");
-          p.setUserProperty("ant.file", buildFile.getAbsolutePath());
-          DefaultLogger consoleLogger = new DefaultLogger();
-          consoleLogger.setErrorPrintStream(System.err);
-          consoleLogger.setOutputPrintStream(printStream);
-          consoleLogger.setMessageOutputLevel(Project.MSG_INFO);
-          p.addBuildListener(consoleLogger);
-          p.fireBuildStarted();
-          p.init();
-          ProjectHelper helper = ProjectHelper.getProjectHelper();
-          p.addReference("ant.projectHelper", helper);
-          helper.parse(p, buildFile);
-          p.executeTarget(p.getDefaultTarget());
-          p.fireBuildFinished(null);
-        } catch (Exception e) {
-          p.fireBuildFinished(e);
-          throw new Error("Error running");
-        }
-      }
-    };
-    antCall.start();
+  public static void call_createRunWindow_6752420586317975318(SNode thisNode) {
+    JFrame frame = new JFrame("BDVal " + SPropertyOperations.getString(thisNode, "name") + " Project");
+    frame.setLayout(new BorderLayout());
+    frame.setSize(500, 90);
 
-    try {
-      String outputLocation = "/Users/vmb34/Desktop";
-      String name = "PercentTest";
-      File messages = new File(outputLocation + "/" + name + "/messeges.txt");
-      BufferedReader br = new BufferedReader(new FileReader(messages));
-      String line;
-      int counter = 0;
-      int seconds = 0;
-      while (true) {
-        line = br.readLine();
-        if (line == null && seconds < 75) {
-          Thread.sleep(1000);
-          seconds++;
-        } else {
-          counter++;
-          SPropertyOperations.set(thisNode, "percentComplete", "" + (counter));
-        }
+    final JButton runButton = new JButton("Run");
+    final JLabel label = new JLabel();
+    final JProgressBar progressBar = new JProgressBar();
+
+    JPanel panel = new JPanel(new BorderLayout());
+    panel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+    panel.add(runButton, BorderLayout.WEST);
+    panel.add(label, BorderLayout.EAST);
+    panel.add(progressBar, BorderLayout.SOUTH);
+
+    frame.setContentPane(panel);
+    frame.setLocationRelativeTo(null);
+    frame.setVisible(true);
+
+    progressBar.setValue(0);
+    progressBar.setStringPainted(true);
+
+    // calculate number of models 
+    final int numModels = 5 + 1;
+
+    final SNode project = thisNode;
+    final String folder = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "outputLocation") + "/" + SPropertyOperations.getString(thisNode, "name").replaceAll("\\s", "").trim() + "/";
+    final String name = SPropertyOperations.getString(thisNode, "name").replaceAll("\\s", "").trim();
+    runButton.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        runButton.setEnabled(false);
+        new File(folder + "messages.txt");
+        Thread antCall = new Thread() {
+          public void run() {
+            Project p = new Project();
+            try {
+              File messages = new File(folder + "messages.txt");
+              PrintStream printStream = new PrintStream(messages);
+              File buildFile = new File(folder + name + ".xml");
+              p.setUserProperty("ant.file", buildFile.getAbsolutePath());
+              DefaultLogger consoleLogger = new DefaultLogger();
+              consoleLogger.setErrorPrintStream(System.err);
+              consoleLogger.setOutputPrintStream(printStream);
+              consoleLogger.setMessageOutputLevel(Project.MSG_INFO);
+              p.addBuildListener(consoleLogger);
+              p.fireBuildStarted();
+              p.init();
+              ProjectHelper helper = ProjectHelper.getProjectHelper();
+              p.addReference("ant.projectHelper", helper);
+              helper.parse(p, buildFile);
+              p.executeTarget(p.getDefaultTarget());
+              p.fireBuildFinished(null);
+            } catch (Exception e) {
+              p.fireBuildFinished(e);
+              throw new Error("Error running ant");
+            }
+          }
+        };
+        antCall.start();
+        Thread monitorProgress = new Thread() {
+          public void run() {
+            boolean stop = false;
+            String line;
+            int counter = 0;
+            try {
+              BufferedReader br = new BufferedReader(new FileReader(folder + "messages.txt"));
+              label.setText("Initializing");
+              while (!(stop)) {
+                line = br.readLine();
+                if (line == null) {
+                  Thread.sleep(1000);
+                } else {
+                  if (line.contains("execute-splits ->") || line.contains("Item:-m predict")) {
+                    counter++;
+                    progressBar.setValue((counter * 100) / numModels);
+                    if (counter < numModels) {
+                      label.setText("Processing " + counter + " of " + (numModels - 1));
+                    }
+                  }
+                  stop = line.contains("Total time:");
+                }
+              }
+              progressBar.setValue(100);
+              label.setText("Done!");
+            } catch (Exception e) {
+              throw new Error("Error monitoring progress");
+            }
+          }
+        };
+        monitorProgress.start();
       }
-    } catch (Exception e) {
-      throw new Error("Error with reader");
-    }
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   }
 

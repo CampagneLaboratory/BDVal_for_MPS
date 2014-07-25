@@ -206,7 +206,7 @@
     <nodeInfo nodeId="6525722185905227908" fileName="Run_Intention.java" startLine="70" startPosition="37" endLine="71" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6525722185905227908" fileName="Run_Intention.java" startLine="72" startPosition="5" endLine="73" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6525722185905229244" fileName="Run_Intention.java" startLine="80" startPosition="87" endLine="81" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1847053361482428542" fileName="Run_Intention.java" startLine="84" startPosition="78" endLine="85" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6752420586318694371" fileName="Run_Intention.java" startLine="84" startPosition="78" endLine="85" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6525722185905227908" fileName="Run_Intention.java" startLine="88" startPosition="48" endLine="89" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6525722185905227908" fileName="Run_Intention.java" startLine="23" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Run_Intention#()V" />
     <nodeInfo nodeId="6525722185905227908" fileName="Run_Intention.java" startLine="77" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
@@ -240,7 +240,7 @@
     <scopeInfo nodeId="6525722185905227908" fileName="Run_Intention.java" startLine="65" startPosition="35" endLine="66" endPosition="17" />
     <scopeInfo nodeId="6525722185905227908" fileName="Run_Intention.java" startLine="70" startPosition="37" endLine="71" endPosition="119" />
     <scopeInfo nodeId="6525722185905227910" fileName="Run_Intention.java" startLine="80" startPosition="87" endLine="81" endPosition="27" />
-    <scopeInfo nodeId="6525722185905227912" fileName="Run_Intention.java" startLine="84" startPosition="78" endLine="85" endPosition="61" />
+    <scopeInfo nodeId="6752420586318694328" fileName="Run_Intention.java" startLine="84" startPosition="78" endLine="85" endPosition="70" />
     <scopeInfo nodeId="6525722185905227908" fileName="Run_Intention.java" startLine="88" startPosition="48" endLine="89" endPosition="32" />
     <scopeInfo nodeId="6525722185905227908" fileName="Run_Intention.java" startLine="23" startPosition="0" endLine="25" endPosition="0" />
     <scopeInfo nodeId="6525722185905227908" fileName="Run_Intention.java" startLine="77" startPosition="0" endLine="79" endPosition="0" />
