@@ -18,7 +18,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ClassificationProperties_Editor extends DefaultNodeEditor {
@@ -64,29 +63,21 @@ public class ClassificationProperties_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_1faogp_a0a(SNode node, EditorContext editorContext) {
     final String name = "SVM";
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.ClassificationInfo"), "classificationCombo", true)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return (SLinkOperations.getTarget(it, "classification", true) != null);
-      }
-    }).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return SLinkOperations.getTarget(it, "classification", true);
-      }
-    }).any(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.ClassificationInfo"), "classification", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode classification) {
-        return isNotEmptyString(SPropertyOperations.getString(classification, "name")) && SPropertyOperations.getString(classification, "name").matches(name);
+        return isNotEmptyString(SPropertyOperations.getString(classification, "name")) && SPropertyOperations.getString(classification, "name").contains(name);
       }
     });
   }
 
   private EditorCell createRefNode_1faogp_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("tuneCProperties");
+    provider.setRole("svmTuneCProperties");
     provider.setNoTargetText("press enter to expand");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
-      editorCell.setRole("tuneCProperties");
+      editorCell.setRole("svmTuneCProperties");
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -100,18 +91,10 @@ public class ClassificationProperties_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_1faogp_a1a(SNode node, EditorContext editorContext) {
-    final String name = "tuneC";
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.ClassificationInfo"), "classificationCombo", true)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return (SLinkOperations.getTarget(it, "classiciationOption", true) != null);
-      }
-    }).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return SLinkOperations.getTarget(it, "classiciationOption", true);
-      }
-    }).any(new IWhereFilter<SNode>() {
-      public boolean accept(SNode classificationOption) {
-        return SPropertyOperations.getString(classificationOption, "name").matches(name);
+    final String name = "SVMTuneC";
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.ClassificationInfo"), "classification", true)).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode classification) {
+        return isNotEmptyString(SPropertyOperations.getString(classification, "name")) && SPropertyOperations.getString(classification, "name").matches(name);
       }
     });
   }

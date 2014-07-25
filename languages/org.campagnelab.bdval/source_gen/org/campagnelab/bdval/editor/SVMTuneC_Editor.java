@@ -12,14 +12,14 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
-public class TuneC_Editor extends DefaultNodeEditor {
+public class SVMTuneC_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConstant_byey6o_a(editorContext, node);
+    return this.createConstant_331ved_a(editorContext, node);
   }
 
-  private EditorCell createConstant_byey6o_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Tune C");
-    editorCell.setCellId("Constant_byey6o_a");
+  private EditorCell createConstant_331ved_a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "SVM Tune C");
+    editorCell.setCellId("Constant_331ved_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);

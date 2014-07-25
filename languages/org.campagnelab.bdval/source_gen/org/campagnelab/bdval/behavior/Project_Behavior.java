@@ -14,12 +14,12 @@ import java.io.FileOutputStream;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import java.io.Writer;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import org.apache.tools.ant.Project;
+import java.io.PrintStream;
 import org.apache.tools.ant.DefaultLogger;
 import org.apache.tools.ant.ProjectHelper;
+import java.io.BufferedReader;
+import java.io.FileReader;
 
 public class Project_Behavior {
   public static void init(SNode thisNode) {
@@ -125,43 +125,60 @@ public class Project_Behavior {
     }
   }
 
-  public static void call_writeExecutable_7732421842564140401(SNode thisNode) {
-    SPropertyOperations.set(thisNode, "terminalCommand", null);
-    String projectName = SPropertyOperations.getString(thisNode, "name").replaceAll("\\s", "");
-    try {
-      String script = "export ANT_HOME=" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "antLocation") + "\n export PATH=${PATH}:${ANT_HOME}/bin \n ant -f " + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "outputLocation") + "/" + projectName + "/" + projectName + ".xml";
-      Writer output = new BufferedWriter(new FileWriter(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "outputLocation") + "/" + projectName + "/run.command"));
-      output.write(script);
-      output.close();
-      SPropertyOperations.set(thisNode, "terminalCommand", projectName);
-      SPropertyOperations.set(thisNode, "terminalCommand2", projectName);
-      System.out.println("Test");
-
-    } catch (Exception e) {
-      throw new Error("Error creating executable file");
-    }
-  }
-
   public static void call_runAnt_6178536078419791032(SNode thisNode) {
-    File buildFile = new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "outputLocation") + "/" + SPropertyOperations.getString(thisNode, "name") + "/" + SPropertyOperations.getString(thisNode, "name") + ".xml");
-    Project p = new Project();
-    p.setUserProperty("ant.file", buildFile.getAbsolutePath());
-    DefaultLogger consoleLogger = new DefaultLogger();
-    consoleLogger.setErrorPrintStream(System.err);
-    consoleLogger.setOutputPrintStream(System.out);
-    consoleLogger.setMessageOutputLevel(Project.MSG_INFO);
-    p.addBuildListener(consoleLogger);
+    new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "outputLocation") + "/" + SPropertyOperations.getString(thisNode, "name") + "/messeges.txt");
+    Thread antCall = new Thread() {
+      public void run() {
+        Project p = new Project();
+        String outputLocation = "/Users/vmb34/Desktop";
+        String name = "PercentTest";
+        try {
+          File messages = new File(outputLocation + "/" + name + "/messeges.txt");
+          PrintStream printStream = new PrintStream(messages);
+          File buildFile = new File(outputLocation + "/" + name + "/" + name + ".xml");
+          p.setUserProperty("ant.file", buildFile.getAbsolutePath());
+          DefaultLogger consoleLogger = new DefaultLogger();
+          consoleLogger.setErrorPrintStream(System.err);
+          consoleLogger.setOutputPrintStream(printStream);
+          consoleLogger.setMessageOutputLevel(Project.MSG_INFO);
+          p.addBuildListener(consoleLogger);
+          p.fireBuildStarted();
+          p.init();
+          ProjectHelper helper = ProjectHelper.getProjectHelper();
+          p.addReference("ant.projectHelper", helper);
+          helper.parse(p, buildFile);
+          p.executeTarget(p.getDefaultTarget());
+          p.fireBuildFinished(null);
+        } catch (Exception e) {
+          p.fireBuildFinished(e);
+          throw new Error("Error running");
+        }
+      }
+    };
+    antCall.start();
+
     try {
-      p.fireBuildStarted();
-      p.init();
-      ProjectHelper helper = ProjectHelper.getProjectHelper();
-      p.addReference("ant.projectHelper", helper);
-      helper.parse(p, buildFile);
-      p.executeTarget(p.getDefaultTarget());
-      p.fireBuildFinished(null);
+      String outputLocation = "/Users/vmb34/Desktop";
+      String name = "PercentTest";
+      File messages = new File(outputLocation + "/" + name + "/messeges.txt");
+      BufferedReader br = new BufferedReader(new FileReader(messages));
+      String line;
+      int counter = 0;
+      int seconds = 0;
+      while (true) {
+        line = br.readLine();
+        if (line == null && seconds < 75) {
+          Thread.sleep(1000);
+          seconds++;
+        } else {
+          counter++;
+          SPropertyOperations.set(thisNode, "percentComplete", "" + (counter));
+        }
+      }
     } catch (Exception e) {
-      p.fireBuildFinished(e);
+      throw new Error("Error with reader");
     }
+
   }
 
   private static boolean isNotEmptyString(String str) {

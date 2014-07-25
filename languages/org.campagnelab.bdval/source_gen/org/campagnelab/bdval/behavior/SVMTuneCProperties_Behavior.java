@@ -8,7 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
-public class TuneCProperties_Behavior {
+public class SVMTuneCProperties_Behavior {
   public static void init(SNode thisNode) {
     SNode cValue05 = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.Float", null);
     SPropertyOperations.set(cValue05, "value", "0.5");

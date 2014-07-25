@@ -21,24 +21,24 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
-public class TuneCProperties_Editor extends DefaultNodeEditor {
+public class SVMTuneCProperties_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_weacrb_a(editorContext, node);
+    return this.createCollection_qg1dvg_a(editorContext, node);
   }
 
-  private EditorCell createCollection_weacrb_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_qg1dvg_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_weacrb_a");
+    editorCell.setCellId("Collection_qg1dvg_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createConstant_weacrb_a0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_weacrb_b0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_weacrb_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_qg1dvg_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_qg1dvg_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_qg1dvg_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_weacrb_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_qg1dvg_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Tune C:");
-    editorCell.setCellId("Constant_weacrb_a0");
+    editorCell.setCellId("Constant_qg1dvg_a0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -46,9 +46,9 @@ public class TuneCProperties_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_weacrb_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_qg1dvg_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "C Values for Tune C Classification:");
-    editorCell.setCellId("Constant_weacrb_b0");
+    editorCell.setCellId("Constant_qg1dvg_b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);
@@ -56,16 +56,16 @@ public class TuneCProperties_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_weacrb_c0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new TuneCProperties_Editor.cValueListHandler_weacrb_c0(node, "cValue", editorContext);
+  private EditorCell createRefNodeList_qg1dvg_c0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new SVMTuneCProperties_Editor.cValueListHandler_qg1dvg_c0(node, "cValue", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_cValue");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private static class cValueListHandler_weacrb_c0 extends RefNodeListHandler {
-    public cValueListHandler_weacrb_c0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class cValueListHandler_qg1dvg_c0 extends RefNodeListHandler {
+    public cValueListHandler_qg1dvg_c0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

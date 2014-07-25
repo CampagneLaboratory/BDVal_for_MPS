@@ -892,11 +892,11 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationInfo" />
     <property name="name" nameId="tpck.1169194664001" value="ClassificationInfo" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4989762282967569775" nodeInfo="ig">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4989762283050821438" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="classificationCombo" />
+      <property name="role" nameId="tpce.1071599776563" value="classification" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="4989762282967568270" resolveInfo="ClassificationCombo" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="7388448774869153180" resolveInfo="Classification" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4989762282967454364" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -916,8 +916,8 @@
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4989762282968843270" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="tuneCProperties" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="4989762282967630223" resolveInfo="TuneCProperties" />
+      <property name="role" nameId="tpce.1071599776563" value="svmTuneCProperties" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="4989762282967630223" resolveInfo="SVMTuneCProperties" />
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4989762282967436238" nodeInfo="ig">
@@ -929,42 +929,6 @@
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
     </node>
   </root>
-  <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="4989762282967568172" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="ClassificationOption" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationInfo.classificationOptions" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="4989762282967613555" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="extraClassifierParameters" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    </node>
-    <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4989762282967568173" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4989762282967568221" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="TuneC" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="Tune C" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationInfo.classificationOptions" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4989762282967568222" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="4989762282967568172" resolveInfo="ClassificationOption" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4989762282967568270" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="ClassificationCombo" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationInfo" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4989762282967568271" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="classification" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="7388448774869153180" resolveInfo="Classification" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4989762282967568273" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="classiciationOption" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="4989762282967568172" resolveInfo="ClassificationOption" />
-    </node>
-  </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4989762282967629772" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="Float" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
@@ -974,7 +938,7 @@
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4989762282967630223" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="TuneCProperties" />
+    <property name="name" nameId="tpck.1169194664001" value="SVMTuneCProperties" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationInfo.classificationProperties" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4989762282967630224" nodeInfo="ig">
@@ -991,6 +955,15 @@
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4989762282976782238" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1870354875249583257" resolveInfo="FeatureSelection" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4989762283050789095" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationInfo.classifications" />
+    <property name="name" nameId="tpck.1169194664001" value="SVMTuneC" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="SVM Tune C" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4989762283050789311" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="7388448774869153180" resolveInfo="Classification" />
     </node>
   </root>
 </model>

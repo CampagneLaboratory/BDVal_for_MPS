@@ -10,6 +10,6 @@ public class Pathway_Behavior {
     SPropertyOperations.set(thisNode, "name", "pathway");
     SPropertyOperations.set(thisNode, "def", "");
     SPropertyOperations.set(thisNode, "addoptions", "");
-    SPropertyOperations.set(thisNode, "otherOptions", "--pathways ${@{endpoint-name}.pathways-file}" + " --gene-to-probes ${@{endpoint-name}.gene-to-probes-file}" + " --pathway-aggregation-method ${pathway-aggregation-method}");
+    SPropertyOperations.set(thisNode, "otherOptions", " --pathways ${@{endpoint-name}.pathways-file}" + " --gene-to-probes ${@{endpoint-name}.gene-to-probes-file}" + " --pathway-aggregation-method ${pathway-aggregation-method}");
   }
 }
