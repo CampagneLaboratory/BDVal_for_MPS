@@ -23,9 +23,9 @@ public class DataSet_Behavior {
   }
 
   public static void call_generateFiles_6032947574604950587(SNode thisNode) {
-    String parentName = SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.Project"), "name").replaceAll("\\s", "");
+    String parentName = trim_26g5o_a0a0a1(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.Project"), "name").replaceAll("\\s", ""));
     String datasetName = DataSet_Behavior.call_getName_290469645480322571(thisNode);
-    String directoryName = SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.Project"), "properties", true), "outputLocation") + "/" + ((parentName == null ? null : parentName.trim())) + "/";
+    String directoryName = SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.Project"), "properties", true), "outputLocation") + "/" + parentName + "/";
     File directory = new File(directoryName);
     directory.mkdirs();
     DataSet_Behavior.call_copyPlatform_7083662764413093380(thisNode, directoryName, datasetName);
@@ -163,25 +163,31 @@ public class DataSet_Behavior {
   }
 
   public static void call_createTestSet_3976565827563239534(SNode thisNode, String directoryName, String datasetName) {
-    String testSetFolder = directoryName + "test-sets/";
-    new File(testSetFolder).mkdir();
-    String fileName = testSetFolder + datasetName + "-samples.txt";
-    try {
-      FileWriter file = new FileWriter(fileName);
-      final PrintWriter writer = new PrintWriter(file);
-      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "input", true), "sample", true)).visitAll(new IVisitor<SNode>() {
-        public void visit(SNode sample) {
-          if ((SLinkOperations.getTarget(SLinkOperations.getTarget(sample, "category", false), "endpointCategory", false) != null)) {
-            writer.print(SPropertyOperations.getString(sample, "name"));
-            writer.println();
+    if (SPropertyOperations.getBoolean(thisNode, "testSet")) {
+      String testSetFolder = directoryName + "test-sets/";
+      new File(testSetFolder).mkdir();
+      String fileName = testSetFolder + datasetName + "-samples.txt";
+      try {
+        FileWriter file = new FileWriter(fileName);
+        final PrintWriter writer = new PrintWriter(file);
+        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "input", true), "sample", true)).visitAll(new IVisitor<SNode>() {
+          public void visit(SNode sample) {
+            if ((SLinkOperations.getTarget(SLinkOperations.getTarget(sample, "category", false), "endpointCategory", false) != null)) {
+              writer.print(SPropertyOperations.getString(sample, "name"));
+              writer.println();
+            }
           }
-        }
-      });
-      writer.close();
-      file.close();
-    } catch (Exception e) {
-      throw new Error("Error Printing Test-Set File");
+        });
+        writer.close();
+        file.close();
+      } catch (Exception e) {
+        throw new Error("Error Printing Test-Set File");
+      }
     }
+  }
+
+  public static String trim_26g5o_a0a0a1(String str) {
+    return (str == null ? null : str.trim());
   }
 
   private static boolean isNotEmptyString(String str) {

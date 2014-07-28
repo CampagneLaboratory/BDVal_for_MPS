@@ -9,24 +9,4 @@ public class Properties_Behavior {
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "outputLocation", System.getProperty("user.home") + "/BDValProjects");
   }
-
-  public static boolean call_checkFloat_3976565827575914039(SNode thisNode, String number) {
-    int length = number.length();
-    int counter = 0;
-    boolean decimal = false;
-    boolean isOkay = true;
-    while (counter < length && isOkay) {
-      if (!(Character.isDigit(number.charAt(counter)))) {
-        if (!(number.charAt(counter) == '.')) {
-          isOkay = false;
-        } else if (decimal) {
-          isOkay = false;
-        } else {
-          decimal = true;
-        }
-      }
-      counter++;
-    }
-    return isOkay;
-  }
 }

@@ -16,8 +16,6 @@ import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.campagnelab.bdval.behavior.Project_Behavior;
 import org.campagnelab.bdval.behavior.Approach_Behavior;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 
 @Generated
 public class QueriesGenerated {
@@ -186,27 +184,9 @@ public class QueriesGenerated {
           });
           Project_Behavior.call_createFiles_290469645456423260(project);
           Approach_Behavior.call_createSequenceFiles_1870354875253436007(SLinkOperations.getTarget(project, "approach", true));
-          Project_Behavior.call_createRunWindow_6752420586317975318(project);
+          Project_Behavior.call_dialogWindow_7860773100997324157(project);
         }
       }
     });
-  }
-
-  public static void mappingScript_CodeBlock_1786878599153986002(final MappingScriptContext _context) {
-    Thread frameThread = new Thread() {
-      public void run() {
-        Object[] options = {"Run BDVal", "Cancel"};
-        JFrame runFrame = new JFrame();
-        int reply = JOptionPane.showOptionDialog(runFrame, "Run BDVal", "Title", JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[1]);
-        switch (reply) {
-          case JOptionPane.OK_OPTION:
-            JFrame statusFrame = new JFrame("Running");
-            statusFrame.setVisible(true);
-          default:
-        }
-      }
-    };
-    frameThread.start();
-
   }
 }

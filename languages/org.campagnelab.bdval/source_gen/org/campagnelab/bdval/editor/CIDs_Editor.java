@@ -81,13 +81,14 @@ public class CIDs_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_s0w797_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Invalid Sample Id:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Invalid Sample Id (Present in CIDs but not Input File):");
     editorCell.setCellId("Constant_s0w797_c0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.red, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray)));
     style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     style.set(StyleAttributes.READ_ONLY, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

@@ -14,10 +14,6 @@ public class FeatureSelectionFoldTrue_BehaviorDescriptor extends BaseConcept_Beh
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
 
-  public String virtual_getSequenceFileLine_1870354875253924602(SNode thisNode) {
-    return FeatureSelectionFoldTrue_Behavior.virtual_getSequenceFileLine_1870354875253924602(thisNode);
-  }
-
   @Override
   public String getConceptFqName() {
     return "org.campagnelab.bdval.structure.FeatureSelectionFoldTrue";

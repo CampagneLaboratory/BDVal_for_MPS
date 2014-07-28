@@ -19,7 +19,7 @@ public class Float_Editor extends DefaultNodeEditor {
   private EditorCell createProperty_76f62g_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("value");
-    provider.setNoTargetText("enter value");
+    provider.setNoTargetText("<no value>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_value");

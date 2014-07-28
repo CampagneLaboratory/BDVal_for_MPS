@@ -26,7 +26,7 @@ public class Sample_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createCollection_5t72dt_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5t72dt_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
@@ -39,12 +39,12 @@ public class Sample_Editor extends DefaultNodeEditor {
 
   private EditorCell createProperty_5t72dt_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("displayId");
-    provider.setNoTargetText("<no displayId>");
+    provider.setRole("name");
+    provider.setNoTargetText("<no name>");
     provider.setReadOnly(true);
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_displayId");
+    editorCell.setCellId("property_name");
     Style style = new StyleImpl();
     style.set(StyleAttributes.READ_ONLY, true);
     style.set(StyleAttributes.PADDING_LEFT, new Padding(5, Measure.SPACES));
@@ -165,7 +165,7 @@ public class Sample_Editor extends DefaultNodeEditor {
         provider.setAllowsEmptyTarget(true);
         EditorCell editorCell;
         editorCell = provider.createEditorCell(editorContext);
-        editorCell.setCellId("property_name");
+        editorCell.setCellId("property_name_1");
         Style style = new StyleImpl();
         style.set(StyleAttributes.READ_ONLY, false);
         style.set(StyleAttributes.EDITABLE, true);

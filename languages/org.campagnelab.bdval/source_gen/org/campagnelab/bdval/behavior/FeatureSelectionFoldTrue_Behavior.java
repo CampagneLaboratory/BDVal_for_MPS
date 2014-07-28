@@ -10,8 +10,4 @@ public class FeatureSelectionFoldTrue_Behavior {
     SPropertyOperations.set(thisNode, "name", "use-feature-selection-fold=true");
     SPropertyOperations.set(thisNode, "value", "" + (true));
   }
-
-  public static String virtual_getSequenceFileLine_1870354875253924602(SNode thisNode) {
-    return " --split-type feature-selection";
-  }
 }

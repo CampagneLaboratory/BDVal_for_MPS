@@ -259,7 +259,6 @@ public class Project_Editor extends DefaultNodeEditor {
     editorCell.setCellId("refNodeList_dataset");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());
     return editorCell;

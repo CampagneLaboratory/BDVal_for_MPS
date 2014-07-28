@@ -28,17 +28,18 @@ public class CIDs_Behavior {
       }
       CIDs_Behavior.call_getCidsEndpts_3367122381605517505(thisNode, datasetReader);
     } catch (Exception e) {
-      throw new IllegalArgumentException("Invalid CIDs File");
+      throw new Error("Invalid CIDs File");
     }
   }
 
-  public static void call_getCidsEndpts_3367122381605517505(SNode thisNode, BufferedReader cidsTable) {
+  public static void call_getCidsEndpts_3367122381605517505(SNode thisNode, BufferedReader cidsReader) {
     try {
       SNode dataSet = SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.DataSet");
-      String line;
       final Wrappers._T<String[]> lineArray = new Wrappers._T<String[]>();
+      String line;
       final Wrappers._T<String> id = new Wrappers._T<String>();
-      while ((line = cidsTable.readLine()) != null) {
+
+      while ((line = cidsReader.readLine()) != null) {
         lineArray.value = line.split("\t");
         id.value = lineArray.value[1];
         SNode sampleNode = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(dataSet, "input", true), "sample", true)).findFirst(new IWhereFilter<SNode>() {
@@ -55,7 +56,7 @@ public class CIDs_Behavior {
           SLinkOperations.setTarget(sampleNode, "category", categoryNode, false);
         } else {
           SNode mismatch = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.Sample", null);
-          SPropertyOperations.set(mismatch, "displayId", id.value);
+          SPropertyOperations.set(mismatch, "name", id.value);
           ListSequence.fromList(SLinkOperations.getTargets(thisNode, "mismatches", true)).addElement(mismatch);
         }
       }

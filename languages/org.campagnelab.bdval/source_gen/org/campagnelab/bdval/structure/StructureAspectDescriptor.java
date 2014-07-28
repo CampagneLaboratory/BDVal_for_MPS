@@ -134,7 +134,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 59:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.SVMTuneCProperties").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"cValue"}, new boolean[]{true}).create();
       case 60:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Sample").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("displayId").references("category").alias("sample", "A sample: must have an id and optionally has an endpoint").create();
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Sample").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").references("category").alias("sample", "A sample: must have an id and optionally has an endpoint").create();
       case 61:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.ServerComputer").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.ComputerType").alias("Server", "").create();
       case 62:

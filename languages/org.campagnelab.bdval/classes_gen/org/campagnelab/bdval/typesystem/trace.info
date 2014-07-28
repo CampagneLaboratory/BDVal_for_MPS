@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="44" endPosition="0" unitName="org.campagnelab.bdval.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="40" endPosition="0" unitName="org.campagnelab.bdval.typesystem.TypesystemDescriptor" />
   <root nodeRef="r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)/290469645492818683">
     <nodeInfo nodeId="290469645492820864" fileName="Check_Properties_NonTypesystemRule.java" startLine="24" startPosition="7" endLine="25" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="290469645492820864" fileName="Check_Properties_NonTypesystemRule.java" startLine="25" startPosition="60" endLine="26" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -430,38 +430,6 @@
     <unitInfo nodeId="7083662764437712472" fileName="check_Task_NonTypesystemRule.java" startLine="51" startPosition="104" endLine="57" endPosition="9" unitName="org.campagnelab.bdval.typesystem.check_Task_NonTypesystemRule$3" />
     <unitInfo nodeId="7083662764437697791" fileName="check_Task_NonTypesystemRule.java" startLine="48" startPosition="100" endLine="65" endPosition="5" unitName="org.campagnelab.bdval.typesystem.check_Task_NonTypesystemRule$2" />
     <unitInfo nodeId="7083662764436503197" fileName="check_Task_NonTypesystemRule.java" startLine="23" startPosition="0" endLine="83" endPosition="0" unitName="org.campagnelab.bdval.typesystem.check_Task_NonTypesystemRule" />
-  </root>
-  <root nodeRef="r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)/7388448774865345522">
-    <nodeInfo nodeId="7388448774865345522" fileName="check_DataSet_NonTypesystemRule.java" startLine="19" startPosition="46" endLine="20" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7388448774865345522" fileName="check_DataSet_NonTypesystemRule.java" startLine="24" startPosition="5" endLine="25" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7388448774865345522" fileName="check_DataSet_NonTypesystemRule.java" startLine="25" startPosition="130" endLine="26" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7388448774865345522" fileName="check_DataSet_NonTypesystemRule.java" startLine="30" startPosition="30" endLine="31" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7388448774865345522" fileName="check_DataSet_NonTypesystemRule.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_DataSet_NonTypesystemRule#()V" />
-    <nodeInfo nodeId="7388448774865345522" fileName="check_DataSet_NonTypesystemRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-    <nodeInfo nodeId="7388448774865345522" fileName="check_DataSet_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7388448774865345522" fileName="check_DataSet_NonTypesystemRule.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="7388448774865345522" fileName="check_DataSet_NonTypesystemRule.java" startLine="23" startPosition="68" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7388448774865345522" fileName="check_DataSet_NonTypesystemRule.java" startLine="23" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <scopeInfo nodeId="7388448774865345522" fileName="check_DataSet_NonTypesystemRule.java" startLine="13" startPosition="44" endLine="13" endPosition="44" />
-    <scopeInfo nodeId="7388448774865345874" fileName="check_DataSet_NonTypesystemRule.java" startLine="16" startPosition="120" endLine="16" endPosition="120" />
-    <scopeInfo nodeId="7388448774865345522" fileName="check_DataSet_NonTypesystemRule.java" startLine="19" startPosition="46" endLine="20" endPosition="53" />
-    <scopeInfo nodeId="7388448774865345522" fileName="check_DataSet_NonTypesystemRule.java" startLine="30" startPosition="30" endLine="31" endPosition="17" />
-    <scopeInfo nodeId="7388448774865345522" fileName="check_DataSet_NonTypesystemRule.java" startLine="13" startPosition="0" endLine="15" endPosition="0" />
-    <scopeInfo nodeId="7388448774865345522" fileName="check_DataSet_NonTypesystemRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0">
-      <varInfo nodeId="7388448774865345522" varName="dataSet" />
-      <varInfo nodeId="7388448774865345522" varName="status" />
-      <varInfo nodeId="7388448774865345522" varName="typeCheckingContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="7388448774865345522" fileName="check_DataSet_NonTypesystemRule.java" startLine="24" startPosition="5" endLine="26" endPosition="45">
-      <varInfo nodeId="7388448774865345522" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="7388448774865345522" fileName="check_DataSet_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="7388448774865345522" fileName="check_DataSet_NonTypesystemRule.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="7388448774865345522" fileName="check_DataSet_NonTypesystemRule.java" startLine="23" startPosition="68" endLine="27" endPosition="5" />
-    <scopeInfo nodeId="7388448774865345522" fileName="check_DataSet_NonTypesystemRule.java" startLine="23" startPosition="0" endLine="29" endPosition="0">
-      <varInfo nodeId="7388448774865345522" varName="argument" />
-    </scopeInfo>
-    <unitInfo nodeId="7388448774865345522" fileName="check_DataSet_NonTypesystemRule.java" startLine="12" startPosition="0" endLine="34" endPosition="0" unitName="org.campagnelab.bdval.typesystem.check_DataSet_NonTypesystemRule" />
   </root>
 </debugInfo>
 

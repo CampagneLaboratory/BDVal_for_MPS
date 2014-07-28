@@ -559,14 +559,6 @@
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="w348.7083662764416913858" resolveInfo="Properties" />
     </node>
   </root>
-  <root type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="7388448774865345522" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="check_DataSet" />
-    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="7388448774865345874" nodeInfo="sn" />
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="7388448774865345876" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="dataSet" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="w348.7052920786130131778" resolveInfo="DataSet" />
-    </node>
-  </root>
   <root type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="4989762282945506882" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="check_GeneticAlgorithmProperties" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelectionProperties.geneticAlgorithmProperties" />

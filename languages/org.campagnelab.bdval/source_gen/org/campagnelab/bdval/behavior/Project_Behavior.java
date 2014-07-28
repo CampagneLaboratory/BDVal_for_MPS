@@ -16,13 +16,10 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import javax.swing.JFrame;
 import java.awt.BorderLayout;
-import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JProgressBar;
 import javax.swing.JPanel;
 import javax.swing.BorderFactory;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 import org.apache.tools.ant.Project;
 import java.io.PrintStream;
 import org.apache.tools.ant.DefaultLogger;
@@ -139,13 +136,11 @@ public class Project_Behavior {
     frame.setLayout(new BorderLayout());
     frame.setSize(500, 90);
 
-    final JButton runButton = new JButton("Run");
     final JLabel label = new JLabel();
     final JProgressBar progressBar = new JProgressBar();
 
     JPanel panel = new JPanel(new BorderLayout());
     panel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
-    panel.add(runButton, BorderLayout.WEST);
     panel.add(label, BorderLayout.EAST);
     panel.add(progressBar, BorderLayout.SOUTH);
 
@@ -161,70 +156,65 @@ public class Project_Behavior {
     final SNode project = thisNode;
     final String folder = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "outputLocation") + "/" + SPropertyOperations.getString(thisNode, "name").replaceAll("\\s", "").trim() + "/";
     final String name = SPropertyOperations.getString(thisNode, "name").replaceAll("\\s", "").trim();
-    runButton.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        runButton.setEnabled(false);
-        new File(folder + "messages.txt");
-        Thread antCall = new Thread() {
-          public void run() {
-            Project p = new Project();
-            try {
-              File messages = new File(folder + "messages.txt");
-              PrintStream printStream = new PrintStream(messages);
-              File buildFile = new File(folder + name + ".xml");
-              p.setUserProperty("ant.file", buildFile.getAbsolutePath());
-              DefaultLogger consoleLogger = new DefaultLogger();
-              consoleLogger.setErrorPrintStream(System.err);
-              consoleLogger.setOutputPrintStream(printStream);
-              consoleLogger.setMessageOutputLevel(Project.MSG_INFO);
-              p.addBuildListener(consoleLogger);
-              p.fireBuildStarted();
-              p.init();
-              ProjectHelper helper = ProjectHelper.getProjectHelper();
-              p.addReference("ant.projectHelper", helper);
-              helper.parse(p, buildFile);
-              p.executeTarget(p.getDefaultTarget());
-              p.fireBuildFinished(null);
-            } catch (Exception e) {
-              p.fireBuildFinished(e);
-              throw new Error("Error running ant");
-            }
-          }
-        };
-        antCall.start();
-        Thread monitorProgress = new Thread() {
-          public void run() {
-            boolean stop = false;
-            String line = "";
-            int counter = 0;
-            try {
-              BufferedReader br = new BufferedReader(new FileReader(folder + "messages.txt"));
-              label.setText("Initializing");
-              while (!(stop)) {
-                line = br.readLine();
-                if (line == null) {
-                  Thread.sleep(1000);
-                } else {
-                  if (line.contains("execute-splits ->") || line.contains("Item:-m predict")) {
-                    counter++;
-                    progressBar.setValue((counter * 100) / numModels);
-                    if (counter < numModels) {
-                      label.setText("Processing " + counter + " of " + (numModels - 1));
-                    }
-                  }
-                  stop = line.contains("Total time:");
+    new File(folder + "messages.txt");
+    Thread antCall = new Thread() {
+      public void run() {
+        Project p = new Project();
+        try {
+          File messages = new File(folder + "messages.txt");
+          PrintStream printStream = new PrintStream(messages);
+          File buildFile = new File(folder + name + ".xml");
+          p.setUserProperty("ant.file", buildFile.getAbsolutePath());
+          DefaultLogger consoleLogger = new DefaultLogger();
+          consoleLogger.setErrorPrintStream(System.err);
+          consoleLogger.setOutputPrintStream(printStream);
+          consoleLogger.setMessageOutputLevel(Project.MSG_INFO);
+          p.addBuildListener(consoleLogger);
+          p.fireBuildStarted();
+          p.init();
+          ProjectHelper helper = ProjectHelper.getProjectHelper();
+          p.addReference("ant.projectHelper", helper);
+          helper.parse(p, buildFile);
+          p.executeTarget(p.getDefaultTarget());
+          p.fireBuildFinished(null);
+        } catch (Exception e) {
+          p.fireBuildFinished(e);
+          throw new Error("Error running ant");
+        }
+      }
+    };
+    antCall.start();
+    Thread monitorProgress = new Thread() {
+      public void run() {
+        boolean stop = false;
+        String line = "";
+        int counter = 0;
+        try {
+          BufferedReader br = new BufferedReader(new FileReader(folder + "messages.txt"));
+          label.setText("Initializing");
+          while (!(stop)) {
+            line = br.readLine();
+            if (line == null) {
+              Thread.sleep(1000);
+            } else {
+              if (line.contains("execute-splits ->") || line.contains("Item:-m predict")) {
+                counter++;
+                progressBar.setValue((counter * 100) / numModels);
+                if (counter < numModels) {
+                  label.setText("Processing " + counter + " of " + (numModels - 1));
                 }
               }
-              progressBar.setValue(100);
-              label.setText("Done!");
-            } catch (Exception e) {
-              throw new Error("Error monitoring progress");
+              stop = line.contains("Total time:");
             }
           }
-        };
-        monitorProgress.start();
+          progressBar.setValue(100);
+          label.setText("Done!");
+        } catch (Exception e) {
+          throw new Error("Error monitoring progress");
+        }
       }
-    });
+    };
+    monitorProgress.start();
   }
 
   public static int call_getNumModels_7860773100992528077(SNode thisNode) {
@@ -251,6 +241,25 @@ public class Project_Behavior {
       }
     });
     return featureSelectionNum.value * classificationsNum.value * ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(approach, "featureSelectionInfo", true), "numberOfFeatures", true)).count() * SPropertyOperations.getInteger(approach, "externalFolds") * SPropertyOperations.getInteger(approach, "externalRepeats");
+  }
+
+  public static void call_dialogWindow_7860773100997324157(SNode thisNode) {
+    final String name = SPropertyOperations.getString(thisNode, "name");
+    final String description = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "tagDescription");
+    final SNode project = thisNode;
+    Thread frameThread = new Thread() {
+      public void run() {
+        Object[] options = {"Run BDVal", "Cancel"};
+        JFrame runFrame = new JFrame();
+        int reply = JOptionPane.showOptionDialog(runFrame, "Run BDVal " + description + " Project", name + " Project", JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
+        switch (reply) {
+          case JOptionPane.OK_OPTION:
+            Project_Behavior.call_createRunWindow_6752420586317975318(project);
+          default:
+        }
+      }
+    };
+    frameThread.start();
   }
 
   private static boolean isNotEmptyString(String str) {

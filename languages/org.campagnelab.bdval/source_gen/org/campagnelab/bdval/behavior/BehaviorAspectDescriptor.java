@@ -122,14 +122,14 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new ClassificationProperties_BehaviorDescriptor();
       case 50:
         return new SVMProperties_BehaviorDescriptor();
-      case 20:
-        return new Float_BehaviorDescriptor();
       case 52:
         return new SVMTuneCProperties_BehaviorDescriptor();
       case 58:
         return new WholeChip_BehaviorDescriptor();
       case 51:
         return new SVMTuneC_BehaviorDescriptor();
+      case 20:
+        return new Float_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }

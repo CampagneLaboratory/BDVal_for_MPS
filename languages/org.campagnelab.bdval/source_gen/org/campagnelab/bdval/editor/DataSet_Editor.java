@@ -513,6 +513,7 @@ public class DataSet_Editor extends DefaultNodeEditor {
       AbstractCellListHandler handler = new DataSet_Editor._Inline_5gxpkq_a22a.sampleListHandler_5gxpkq_a0a22a(node, "sample", editorContext);
       EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
       editorCell.setCellId("refNodeList_sample");
+      editorCell.setGridLayout(true);
       editorCell.setRole(handler.getElementRole());
       return editorCell;
     }
