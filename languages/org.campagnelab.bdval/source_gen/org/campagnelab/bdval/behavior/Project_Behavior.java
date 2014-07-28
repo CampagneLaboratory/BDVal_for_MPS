@@ -156,8 +156,7 @@ public class Project_Behavior {
     progressBar.setValue(0);
     progressBar.setStringPainted(true);
 
-    // calculate number of models 
-    final int numModels = 5 + 1;
+    final int numModels = Project_Behavior.call_getNumModels_7860773100992528077(thisNode) + 1;
 
     final SNode project = thisNode;
     final String folder = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "outputLocation") + "/" + SPropertyOperations.getString(thisNode, "name").replaceAll("\\s", "").trim() + "/";
@@ -196,7 +195,7 @@ public class Project_Behavior {
         Thread monitorProgress = new Thread() {
           public void run() {
             boolean stop = false;
-            String line;
+            String line = "";
             int counter = 0;
             try {
               BufferedReader br = new BufferedReader(new FileReader(folder + "messages.txt"));
@@ -226,23 +225,32 @@ public class Project_Behavior {
         monitorProgress.start();
       }
     });
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  public static int call_getNumModels_7860773100992528077(SNode thisNode) {
+    final SNode approach = SLinkOperations.getTarget(thisNode, "approach", true);
+    final Wrappers._int classificationsNum = new Wrappers._int(0);
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(approach, "classificationInfo", true), "classification", true)).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode classification) {
+        if (SPropertyOperations.getString(classification, "name").matches("SVMTuneC")) {
+          classificationsNum.value = classificationsNum.value + ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(approach, "classificationInfo", true), "classificationProperties", true), "svmTuneCProperties", true), "cValue", true)).count();
+        } else {
+          classificationsNum.value++;
+        }
+      }
+    });
+    final int foldNum = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(approach, "featureSelectionInfo", true), "featureSelectionFold", true)).count();
+    final Wrappers._int featureSelectionNum = new Wrappers._int(0);
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(approach, "featureSelectionInfo", true), "featureSelectionCombo", true)).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode featureSelectionCombo) {
+        if (SPropertyOperations.getString(SLinkOperations.getTarget(featureSelectionCombo, "featureSelection1", true), "name").matches("wholeChip")) {
+          featureSelectionNum.value++;
+        } else {
+          featureSelectionNum.value = featureSelectionNum.value + foldNum;
+        }
+      }
+    });
+    return featureSelectionNum.value * classificationsNum.value * ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(approach, "featureSelectionInfo", true), "numberOfFeatures", true)).count() * SPropertyOperations.getInteger(approach, "externalFolds") * SPropertyOperations.getInteger(approach, "externalRepeats");
   }
 
   private static boolean isNotEmptyString(String str) {

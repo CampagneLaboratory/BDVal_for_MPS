@@ -1,11 +1,11 @@
-<project name="PercentTest" default="evaluate" basedir=".">
+<project name="Example" default="evaluate" basedir=".">
   <!--Set up-->
-  <dirname property="bdval-project.basedir" file="${ant.file.PercentTest}"></dirname>
+  <dirname property="bdval-project.basedir" file="${ant.file.Example}"></dirname>
   <import file="/Users/vmb34/Desktop/bdval/buildsupport/build.xml"></import>
   <property file="${bdval-project.basedir}/${ant.project.name}-local.properties"></property>
   <property name="project-property-file" value="${bdval-project.basedir}/${ant.project.name}.properties"></property>
   <property file="${project-property-file}"></property>
-  <property name="tag-description" value="test run"></property>
+  <property name="tag-description" value="Example run"></property>
   
   <!--Basic Properties-->
   <property name="enable-flooring" value="false"></property>
@@ -13,7 +13,7 @@
   <property name="external-CV-repeats-number" value="1"></property>
   <property name="external-CV-repeats" value="--cv-repeats ${external-CV-repeats-number}"></property>
   <property name="external-CV-folds" value="5"></property>
-  <property name="num-features" value="20"></property>
+  <property name="num-features" value="50"></property>
   <property name="max-intermediate-features" value="400"></property>
   
   <!--Feature Selection Properties-->
@@ -37,8 +37,8 @@
   
   <!--Additional Properties-->
   <property name="run-java" value="true"></property>
-  <var name="do.PercentTest_DiseasedNoYes_Validation" value="true"></var>
-  <property name="all-endpoints" value=" PercentTest_DiseasedNoYes_Validation"></property>
+  <var name="do.Example_DiseasedNoYes_Validation" value="true"></var>
+  <property name="all-endpoints" value=" Example_DiseasedNoYes_Validation"></property>
   <import file="/Users/vmb34/Desktop/bdval/data/bdval.xml"></import>
   
   
@@ -58,6 +58,7 @@
     <attribute name="array-params"></attribute>
     <sequential>
       <execute-splits feature-selection-fold="true" sequence-file="generated-svmGlobal-kStar-fs=true.sequence" endpoint-name="@{endpoint-name}" dataset-root="@{dataset-root}" floor-param="@{floor-param}" array-params="@{array-params}" all-classifier-parameters=" --classifier edu.cornell.med.icb.learning.weka.WekaClassifier --classifier-parameters wekaClass=weka.classifiers.lazy.KStar" other-options=" --weka-class weka.classifiers.lazy.KStar"></execute-splits>
+      <execute-splits feature-selection-fold="true" sequence-file="generated-svmGlobal-SVM-fs=true.sequence" endpoint-name="@{endpoint-name}" dataset-root="@{dataset-root}" floor-param="@{floor-param}" array-params="@{array-params}" all-classifier-parameters=" --classifier edu.cornell.med.icb.learning.libsvm.LibSvmClassifier  --classifier-parameters probability=${use-probability}" other-options=""></execute-splits>
     </sequential>
   </macrodef>
   

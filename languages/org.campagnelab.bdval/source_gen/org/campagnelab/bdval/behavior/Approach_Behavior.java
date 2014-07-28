@@ -19,8 +19,8 @@ import org.apache.log4j.LogManager;
 
 public class Approach_Behavior {
   public static void init(SNode thisNode) {
-    SPropertyOperations.set(thisNode, "externalRepeats", "" + (5));
-    SPropertyOperations.set(thisNode, "externalFolds", "" + (1));
+    SPropertyOperations.set(thisNode, "externalRepeats", "" + (1));
+    SPropertyOperations.set(thisNode, "externalFolds", "" + (5));
   }
 
   public static void call_createSequenceFiles_1870354875253436007(final SNode thisNode) {

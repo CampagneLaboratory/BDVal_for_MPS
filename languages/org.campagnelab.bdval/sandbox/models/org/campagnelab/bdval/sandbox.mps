@@ -6,14 +6,14 @@
   <import index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="69" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <root type="w348.Project" typeId="w348.3367122381622495536" id="3649519271342711497" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="PercentTest" />
+    <property name="name" nameId="tpck.1169194664001" value="Example" />
     <node role="properties" roleId="w348.7083662764416913977" type="w348.Properties" typeId="w348.7083662764416913858" id="3649519271342711498" nodeInfo="ng">
       <property name="outputLocation" nameId="w348.7083662764433578750" value="/Users/vmb34/Desktop" />
       <property name="bdvalLocation" nameId="w348.7083662764418599580" value="/Users/vmb34/Desktop/bdval" />
       <property name="antLocation" nameId="w348.4013254535750850394" value="/Users/vmb34/Desktop/apache-ant-1.9.4" />
       <property name="threads" nameId="w348.7083662764416913912" value="1" />
       <property name="memory" nameId="w348.7083662764416913915" value="1200" />
-      <property name="tagDescription" nameId="w348.1847053361490302608" value="test run" />
+      <property name="tagDescription" nameId="w348.1847053361490302608" value="Example run" />
       <node role="computerType" roleId="w348.4671749543962624686" type="w348.DesktopComputer" typeId="w348.4671749543962624837" id="3649519271342711516" nodeInfo="ng">
         <property name="name" nameId="tpck.1169194664001" value="desktop" />
       </node>
@@ -2340,7 +2340,7 @@
       <node role="featureSelectionInfo" roleId="w348.8314272953671282922" type="w348.FeatureSelectionInfo" typeId="w348.1870354875249618576" id="4989762282984426803" nodeInfo="ng">
         <property name="maxIntermediateFeatures" nameId="w348.1870354875249707132" value="400" />
         <node role="numberOfFeatures" roleId="w348.1870354875249707134" type="w348.Integer" typeId="w348.290469645457746370" id="4989762282984426804" nodeInfo="ng">
-          <property name="value" nameId="w348.290469645457746371" value="20" />
+          <property name="value" nameId="w348.290469645457746371" value="50" />
         </node>
         <node role="featureSelectionCombo" roleId="w348.1870354875249707136" type="w348.FeatureSelectionCombo" typeId="w348.1870354875251769793" id="4989762282984426806" nodeInfo="ng">
           <node role="featureSelection1" roleId="w348.3649519271352989204" type="w348.SVMGlobal" typeId="w348.3649519271349200549" id="4989762283054879553" nodeInfo="ng">
@@ -2408,6 +2408,14 @@
           <property name="parameters" nameId="w348.1870354875256041029" value="wekaClass=weka.classifiers.lazy.KStar" />
           <property name="otherOption" nameId="w348.3649519271340809859" value=" --weka-class weka.classifiers.lazy.KStar" />
           <property name="addoption" nameId="w348.3649519271342059658" value="addoption required:weka-class:Classname of the weka classifier&#10;" />
+        </node>
+        <node role="classification" roleId="w348.4989762283050821438" type="w348.SVM" typeId="w348.7388448774866532198" id="7860773100994842701" nodeInfo="ng">
+          <property name="name" nameId="tpck.1169194664001" value="SVM" />
+          <property name="classname" nameId="w348.558294987374832484" value="edu.cornell.med.icb.learning.libsvm.LibSvmClassifier " />
+          <property name="wekaClass" nameId="w348.3649519271340810336" value="libSVM" />
+          <property name="parameters" nameId="w348.1870354875256041029" value="probability=${use-probability}" />
+          <property name="otherOption" nameId="w348.3649519271340809859" value="" />
+          <property name="addoption" nameId="w348.3649519271342059658" value="" />
         </node>
       </node>
     </node>
