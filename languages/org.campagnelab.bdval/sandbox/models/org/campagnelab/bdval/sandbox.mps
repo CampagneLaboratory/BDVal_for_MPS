@@ -6,7 +6,7 @@
   <import index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="69" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <root type="w348.Project" typeId="w348.3367122381622495536" id="7860773101046601985" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="Example" />
+    <property name="name" nameId="tpck.1169194664001" value="Example3" />
     <node role="properties" roleId="w348.7083662764416913977" type="w348.Properties" typeId="w348.7083662764416913858" id="7860773101046601986" nodeInfo="ng">
       <property name="outputLocation" nameId="w348.7083662764433578750" value="/Users/vmb34/Desktop" />
       <property name="bdvalLocation" nameId="w348.7083662764418599580" value="/Users/vmb34/Desktop/bdval" />
@@ -19,8 +19,8 @@
       </node>
     </node>
     <node role="approach" roleId="w348.7388448774866565661" type="w348.Approach" typeId="w348.7388448774866565678" id="7860773101046601988" nodeInfo="ng">
-      <property name="externalRepeats" nameId="w348.290469645457746257" value="1" />
-      <property name="externalFolds" nameId="w348.290469645457746273" value="6" />
+      <property name="externalRepeats" nameId="w348.290469645457746257" value="2" />
+      <property name="externalFolds" nameId="w348.290469645457746273" value="7" />
       <node role="featureSelectionInfo" roleId="w348.8314272953671282922" type="w348.FeatureSelectionInfo" typeId="w348.1870354875249618576" id="7860773101046601989" nodeInfo="ng">
         <property name="maxIntermediateFeatures" nameId="w348.1870354875249707132" value="400" />
         <node role="numberOfFeatures" roleId="w348.1870354875249707134" type="w348.Integer" typeId="w348.290469645457746370" id="7860773101046601990" nodeInfo="ng">
@@ -68,7 +68,7 @@
       </node>
     </node>
     <node role="dataset" roleId="w348.3367122381622495571" type="w348.DataSet" typeId="w348.7052920786130131778" id="7860773101046602000" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="Validation" />
+      <property name="name" nameId="tpck.1169194664001" value="Test" />
       <property name="normalTarget" nameId="w348.290469645460315642" value="true" />
       <node role="platform" roleId="w348.7052920786130131802" type="w348.Platform" typeId="w348.7052920786130131783" id="7860773101046602001" nodeInfo="ng">
         <property name="fileName" nameId="w348.3367122381610860831" value="/Users/vmb34/Documents/files/platform/GPL5474_family.soft" />

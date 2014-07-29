@@ -8,6 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.apache.commons.lang.WordUtils;
 import java.io.File;
 import javax.swing.JOptionPane;
+import org.apache.commons.io.FileUtils;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.Properties;
@@ -35,17 +36,22 @@ public class Project_Behavior {
 
   public static void call_setup_7860773101052430949(SNode thisNode) {
     SPropertyOperations.set(thisNode, "trimmedName", SPropertyOperations.getString(thisNode, "name").replaceAll("\\s", "").trim());
-    SPropertyOperations.set(thisNode, "projectFolder", SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "outputLocation") + "/" + SPropertyOperations.getString(thisNode, "trimmedName") + "/" + WordUtils.capitalize(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "tagDescription").replaceAll("\\s", "")) + "/");
+    SPropertyOperations.set(thisNode, "projectFolder", SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "outputLocation") + "/" + SPropertyOperations.getString(thisNode, "trimmedName") + "/" + WordUtils.capitalize(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "tagDescription").replaceAll("\\s", "").trim()) + "/");
     Project_Behavior.call_checkProjectFolder_3976565827571671486(thisNode);
-
   }
 
   public static void call_checkProjectFolder_3976565827571671486(SNode thisNode) {
     boolean proceed = true;
     File directoryFile = new File(SPropertyOperations.getString(thisNode, "projectFolder"));
     if (directoryFile.exists()) {
-      int reply = JOptionPane.showConfirmDialog(null, SPropertyOperations.getString(thisNode, "projectFolder") + " exists already\n" + "Overwrite any duplicate files and continue?", "Change project name/tag description to prevent overwrite", JOptionPane.OK_CANCEL_OPTION);
-      if (reply != JOptionPane.OK_OPTION) {
+      int reply = JOptionPane.showConfirmDialog(null, "Change project name/tag description to prevent deletion\n\n" + SPropertyOperations.getString(thisNode, "projectFolder") + " exists already\n" + "Delete folder and its contents and continue?", "Project with same name and tag description already exists", JOptionPane.OK_CANCEL_OPTION);
+      if (reply == JOptionPane.OK_OPTION) {
+        try {
+          FileUtils.deleteDirectory(directoryFile);
+        } catch (Exception e) {
+          throw new Error("Error deleting existing Project Folder");
+        }
+      } else {
         proceed = false;
       }
     }
@@ -144,14 +150,14 @@ public class Project_Behavior {
         JFrame runFrame = new JFrame();
         int reply = JOptionPane.showOptionDialog(runFrame, "Run BDVal " + description + " Project", name + " Project", JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
         if (reply == JOptionPane.OK_OPTION) {
-          Project_Behavior.call_showStatusWindow_6752420586317975318(project);
+          Project_Behavior.call_runBDVal_6752420586317975318(project);
         }
       }
     };
     frameThread.start();
   }
 
-  public static void call_showStatusWindow_6752420586317975318(SNode thisNode) {
+  public static void call_runBDVal_6752420586317975318(SNode thisNode) {
 
     final JLabel statusLabel = new JLabel();
     final JProgressBar progressBar = new JProgressBar();
@@ -173,16 +179,15 @@ public class Project_Behavior {
     final int numModels = Project_Behavior.call_getNumModels_7860773100992528077(thisNode);
     final String folder = SPropertyOperations.getString(thisNode, "projectFolder");
     final String name = SPropertyOperations.getString(thisNode, "trimmedName");
-    final String messageFile = name + "-runMessages-" + new Timestamp(new Date().getTime());
-    new File(folder + messageFile);
+    final String messageName = name + "-runMessages-" + String.format("%1$TF=%1$TR", new Timestamp(new Date().getTime())).replaceAll("-", "").replaceAll("=", "-").replaceAll(":", "") + ".txt";
+    final File messageFile = new File(folder + messageName);
 
     // Starts ant to run BDVal project 
     Thread antCall = new Thread() {
       public void run() {
         Project p = new Project();
         try {
-          File messages = new File(folder + messageFile);
-          PrintStream printStream = new PrintStream(messages);
+          PrintStream printStream = new PrintStream(messageFile);
           File buildFile = new File(folder + name + ".xml");
           p.setUserProperty("ant.file", buildFile.getAbsolutePath());
           DefaultLogger consoleLogger = new DefaultLogger();
@@ -213,7 +218,7 @@ public class Project_Behavior {
         int counter = 0;
 
         try {
-          BufferedReader br = new BufferedReader(new FileReader(folder + messageFile));
+          BufferedReader br = new BufferedReader(new FileReader(messageFile));
           statusLabel.setText("Initializing");
           while (!(stop)) {
             line = br.readLine();

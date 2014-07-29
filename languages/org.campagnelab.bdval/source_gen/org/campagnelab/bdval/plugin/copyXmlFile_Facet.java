@@ -18,30 +18,26 @@ import jetbrains.mps.make.resources.IPropertiesAccessor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.smodel.resources.TResource;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import java.io.File;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.internal.make.runtime.util.DeltaReconciler;
+import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.apache.commons.lang.WordUtils;
-import java.util.Collection;
-import org.apache.commons.io.FileUtils;
-import java.util.Iterator;
 import jetbrains.mps.util.FileUtil;
+import java.io.File;
 import jetbrains.mps.make.script.IConfig;
 import java.util.Map;
 import jetbrains.mps.make.script.IPropertiesPool;
 
-public class CopyXML_Facet extends IFacet.Stub {
+public class copyXmlFile_Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
-  private IFacet.Name name = new IFacet.Name("org.campagnelab.bdval.CopyXML");
+  private IFacet.Name name = new IFacet.Name("org.campagnelab.bdval.copyXmlFile");
 
-  public CopyXML_Facet() {
-    ListSequence.fromList(targets).addElement(new CopyXML_Facet.Target_copyXml());
+  public copyXmlFile_Facet() {
+    ListSequence.fromList(targets).addElement(new copyXmlFile_Facet.Target_copyFile());
   }
 
   public Iterable<ITarget> targets() {
@@ -65,75 +61,59 @@ public class CopyXML_Facet extends IFacet.Stub {
   }
 
   public IPropertiesPersistence propertiesPersistence() {
-    return new CopyXML_Facet.TargetProperties();
+    return new copyXmlFile_Facet.TargetProperties();
   }
 
-  public static class Target_copyXml implements ITargetEx {
-    private static final ITarget.Name name = new ITarget.Name("org.campagnelab.bdval.CopyXML.copyXml");
+  public static class Target_copyFile implements ITargetEx {
+    private static final ITarget.Name name = new ITarget.Name("org.campagnelab.bdval.copyXmlFile.copyFile");
 
-    public Target_copyXml() {
+    public Target_copyFile() {
     }
 
     public IJob createJob() {
       return new IJob.Stub() {
         @Override
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
-          Iterable<IResource> _output_lne71d_a0a = null;
+          Iterable<IResource> _output_e9sj27_a0a = null;
           final Iterable<TResource> input = (Iterable<TResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
-              final Wrappers._T<String> outputPath = new Wrappers._T<String>();
-              final Wrappers._T<String> destinationPath = new Wrappers._T<String>();
-              final Wrappers._T<String> projectName = new Wrappers._T<String>();
-              final String[] xml = {"xml"};
-              final Wrappers._T<List<File>> matchingFiles = new Wrappers._T<List<File>>();
-              final Wrappers._long lastModified = new Wrappers._long();
-              final Wrappers._T<File> choice = new Wrappers._T<File>();
-
-              Sequence.fromIterable(input).visitAll(new IVisitor<TResource>() {
-                public void visit(final TResource tres) {
-                  for (final SModel model : Sequence.fromIterable(tres.module().getModels())) {
-                    tres.modelDescriptor().getRepository().getModelAccess().runReadAction(new Runnable() {
-                      public void run() {
-                        try {
-                          for (SNode rootNodes : Sequence.fromIterable(tres.modelDescriptor().getRootNodes())) {
-                            {
-                              SNode project = rootNodes;
-                              if (SNodeOperations.isInstanceOf(project, "org.campagnelab.bdval.structure.Project")) {
-                                matchingFiles.value = new ArrayList<File>();
-                                lastModified.value = Long.MIN_VALUE;
-                                choice.value = null;
-                                outputPath.value = SModuleOperations.getOutputPathFor(model);
-                                projectName.value = SPropertyOperations.getString(project, "name");
-                                destinationPath.value = SPropertyOperations.getString(SLinkOperations.getTarget(project, "properties", true), "outputLocation") + "/" + projectName.value + "/" + WordUtils.capitalize(SPropertyOperations.getString(SLinkOperations.getTarget(project, "properties", true), "tagDescription").replaceAll("\\s", "")) + "/";
-
-                                Collection files = FileUtils.listFiles(new File(outputPath.value), xml, true);
-                                for (Iterator iterator = files.iterator(); iterator.hasNext();) {
-                                  File currFile = (File) iterator.next();
-                                  if (currFile.getName().equals(projectName.value + ".xml")) {
-                                    matchingFiles.value.add(currFile);
-                                  }
+              try {
+                for (final TResource tres : Sequence.fromIterable(input)) {
+                  tres.modelDescriptor().getRepository().getModelAccess().runReadAction(new Runnable() {
+                    public void run() {
+                      for (SNode rootNode : Sequence.fromIterable(tres.modelDescriptor().getRootNodes())) {
+                        {
+                          SNode project = rootNode;
+                          if (SNodeOperations.isInstanceOf(project, "org.campagnelab.bdval.structure.Project")) {
+                            String name = SPropertyOperations.getString(project, "name").replaceAll("\\s", "").trim();
+                            final String fileName = name + ".xml";
+                            final IFile[] pluginXml = new IFile[1];
+                            new DeltaReconciler(tres.delta()).visitAll(new FilesDelta.Visitor() {
+                              @Override
+                              public boolean acceptWritten(IFile file) {
+                                if (eq_3m2hzf_a0a0a0a0a0d0b0a0a0a0a0a0a0a0a0a2a0a0a0a2j(file.getName(), fileName)) {
+                                  pluginXml[0] = file;
+                                  return false;
                                 }
-                                for (File file : ListSequence.fromList(matchingFiles.value)) {
-                                  if (file.lastModified() > lastModified.value) {
-                                    choice.value = file;
-                                    lastModified.value = file.lastModified();
-                                  }
-                                }
-                                FileUtil.copyFile(choice.value, new File(destinationPath.value + projectName.value + ".xml"));
+                                return true;
                               }
+                            });
+                            String outputLocation = SPropertyOperations.getString(SLinkOperations.getTarget(project, "properties", true), "outputLocation") + "/" + name + "/" + WordUtils.capitalize(SPropertyOperations.getString(SLinkOperations.getTarget(project, "properties", true), "tagDescription").replaceAll("\\s", "").trim());
+                            if (pluginXml[0] != null) {
+                              FileUtil.copyFile(new File(pluginXml[0].getPath()), new File(outputLocation + "/" + fileName));
                             }
                           }
-                        } catch (Exception e) {
-                          throw new Error("Error copying XML file into correct folder");
                         }
                       }
-                    });
-                  }
+                    }
+                  });
                 }
-              });
+              } catch (Exception e) {
+                throw new Error("Error in plugin");
+              }
             default:
-              return new IResult.SUCCESS(_output_lne71d_a0a);
+              return new IResult.SUCCESS(_output_e9sj27_a0a);
           }
         }
       };
@@ -192,6 +172,10 @@ public class CopyXML_Facet extends IFacet.Stub {
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       return t;
+    }
+
+    private static boolean eq_3m2hzf_a0a0a0a0a0d0b0a0a0a0a0a0a0a0a0a2a0a0a0a2j(Object a, Object b) {
+      return (a != null ? a.equals(b) : a == b);
     }
   }
 
