@@ -8,25 +8,53 @@
   <root type="w348.Project" typeId="w348.3367122381622495536" id="7860773101046601985" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="Example" />
     <node role="properties" roleId="w348.7083662764416913977" type="w348.Properties" typeId="w348.7083662764416913858" id="7860773101046601986" nodeInfo="ng">
-      <property name="outputLocation" nameId="w348.7083662764433578750" value="/Users/vmb34/BDValProjects" />
-      <node role="computerType" roleId="w348.4671749543962624686" type="w348.ComputerType" typeId="w348.4671749543962624834" id="7860773101046601987" nodeInfo="ng" />
+      <property name="outputLocation" nameId="w348.7083662764433578750" value="/Users/vmb34/Desktop" />
+      <property name="bdvalLocation" nameId="w348.7083662764418599580" value="/Users/vmb34/Desktop/bdval" />
+      <property name="antLocation" nameId="w348.4013254535750850394" value="/Users/vmb34/Desktop/apache-ant-1.9.4" />
+      <property name="threads" nameId="w348.7083662764416913912" value="1" />
+      <property name="memory" nameId="w348.7083662764416913915" value="1200" />
+      <property name="tagDescription" nameId="w348.1847053361490302608" value="Example Run" />
+      <node role="computerType" roleId="w348.4671749543962624686" type="w348.DesktopComputer" typeId="w348.4671749543962624837" id="7860773101050651625" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="desktop" />
+      </node>
     </node>
     <node role="approach" roleId="w348.7388448774866565661" type="w348.Approach" typeId="w348.7388448774866565678" id="7860773101046601988" nodeInfo="ng">
       <property name="externalRepeats" nameId="w348.290469645457746257" value="1" />
-      <property name="externalFolds" nameId="w348.290469645457746273" value="5" />
+      <property name="externalFolds" nameId="w348.290469645457746273" value="6" />
       <node role="featureSelectionInfo" roleId="w348.8314272953671282922" type="w348.FeatureSelectionInfo" typeId="w348.1870354875249618576" id="7860773101046601989" nodeInfo="ng">
         <property name="maxIntermediateFeatures" nameId="w348.1870354875249707132" value="400" />
         <node role="numberOfFeatures" roleId="w348.1870354875249707134" type="w348.Integer" typeId="w348.290469645457746370" id="7860773101046601990" nodeInfo="ng">
           <property name="value" nameId="w348.290469645457746371" value="50" />
         </node>
-        <node role="featureSelectionFold" roleId="w348.1870354875249707139" type="w348.FeatureSelectionFold" typeId="w348.8314272953670775634" id="7860773101046601991" nodeInfo="ng" />
-        <node role="featureSelectionCombo" roleId="w348.1870354875249707136" type="w348.FeatureSelectionCombo" typeId="w348.1870354875251769793" id="7860773101046601992" nodeInfo="ng">
-          <node role="featureSelection1" roleId="w348.3649519271352989204" type="w348.FeatureSelection" typeId="w348.1870354875249583257" id="7860773101046601993" nodeInfo="ng" />
+        <node role="featureSelectionFold" roleId="w348.1870354875249707139" type="w348.FeatureSelectionFoldTrue" typeId="w348.7388448774866524764" id="7860773101050651628" nodeInfo="ng">
+          <property name="name" nameId="tpck.1169194664001" value="use-feature-selection-fold=true" />
+          <property name="value" nameId="w348.1870354875254126878" value="true" />
         </node>
-        <node role="featureSelectionProperties" roleId="w348.1870354875262487940" type="w348.FeatureSelectionProperties" typeId="w348.4671749543976303774" id="7860773101046601994" nodeInfo="ng" />
+        <node role="featureSelectionCombo" roleId="w348.1870354875249707136" type="w348.FeatureSelectionCombo" typeId="w348.1870354875251769793" id="7860773101046601992" nodeInfo="ng">
+          <node role="featureSelection1" roleId="w348.3649519271352989204" type="w348.Ttest" typeId="w348.1870354875249563496" id="7860773101050651631" nodeInfo="ng">
+            <property name="name" nameId="tpck.1169194664001" value="ttest" />
+            <property name="addoptions" nameId="w348.3649519271356774529" value="addoption required:alpha:confidence level for T-test&#10;" />
+            <property name="sequenceCommand" nameId="w348.3649519271360690766" value=" t-test" />
+            <property name="sequenceInfo" nameId="w348.3649519271357455932" value=" --alpha %alpha%" />
+            <property name="sequenceNumFeatures" nameId="w348.3649519271361989788" value=" --report-max-probes" />
+            <property name="otherOptions" nameId="w348.3649519271350395849" value=" --alpha ${ttest-alpha}" />
+          </node>
+        </node>
+        <node role="featureSelectionProperties" roleId="w348.1870354875262487940" type="w348.FeatureSelectionProperties" typeId="w348.4671749543976303774" id="7860773101046601994" nodeInfo="ng">
+          <node role="ttest" roleId="w348.4671749543995071279" type="w348.TTestProperties" typeId="w348.4671749543995071282" id="7860773101050651634" nodeInfo="ng">
+            <property name="alpha" nameId="w348.4671749543995072017" value="0.05" />
+          </node>
+        </node>
       </node>
       <node role="classificationInfo" roleId="w348.4989762282967505312" type="w348.ClassificationInfo" typeId="w348.4989762282967436234" id="7860773101046601995" nodeInfo="ng">
-        <node role="classification" roleId="w348.4989762283050821438" type="w348.Classification" typeId="w348.7388448774869153180" id="7860773101046601996" nodeInfo="ng" />
+        <node role="classification" roleId="w348.4989762283050821438" type="w348.KStar" typeId="w348.7388448774866532197" id="7860773101050651636" nodeInfo="ng">
+          <property name="name" nameId="tpck.1169194664001" value="kStar" />
+          <property name="classname" nameId="w348.558294987374832484" value="edu.cornell.med.icb.learning.weka.WekaClassifier" />
+          <property name="wekaClass" nameId="w348.3649519271340810336" value="weka.classifiers.lazy.KStar" />
+          <property name="parameters" nameId="w348.1870354875256041029" value="wekaClass=weka.classifiers.lazy.KStar" />
+          <property name="otherOption" nameId="w348.3649519271340809859" value=" --weka-class weka.classifiers.lazy.KStar" />
+          <property name="addoption" nameId="w348.3649519271342059658" value="addoption required:weka-class:Classname of the weka classifier&#10;" />
+        </node>
         <node role="classificationProperties" roleId="w348.4989762282967454364" type="w348.ClassificationProperties" typeId="w348.4989762282967436237" id="7860773101046601997" nodeInfo="ng" />
       </node>
     </node>
@@ -40,7 +68,11 @@
       </node>
     </node>
     <node role="dataset" roleId="w348.3367122381622495571" type="w348.DataSet" typeId="w348.7052920786130131778" id="7860773101046602000" nodeInfo="ng">
-      <node role="platform" roleId="w348.7052920786130131802" type="w348.Platform" typeId="w348.7052920786130131783" id="7860773101046602001" nodeInfo="ng" />
+      <property name="name" nameId="tpck.1169194664001" value="Validation" />
+      <property name="normalTarget" nameId="w348.290469645460315642" value="true" />
+      <node role="platform" roleId="w348.7052920786130131802" type="w348.Platform" typeId="w348.7052920786130131783" id="7860773101046602001" nodeInfo="ng">
+        <property name="fileName" nameId="w348.3367122381610860831" value="/Users/vmb34/Documents/files/platform/GPL5474_family.soft" />
+      </node>
       <node role="input" roleId="w348.7052920786130131800" type="w348.Input" typeId="w348.7052920786129988728" id="7860773101046602002" nodeInfo="ng">
         <property name="fileName" nameId="w348.3367122381610860816" value="/Users/vmb34/Documents/files/input/GSE8402_family.soft" />
         <property name="numberOfFeatures" nameId="w348.8314272953671775977" value="6144" />
@@ -1879,6 +1911,7 @@
       <node role="cids" roleId="w348.7052920786130143935" type="w348.CIDs" typeId="w348.7052920786130131788" id="7860773101046602005" nodeInfo="ng">
         <property name="fileName" nameId="w348.3367122381610860821" value="/Users/vmb34/Documents/files/cids/GSE8402-FusionYesNo-TrainingSplit.cids" />
       </node>
+      <node role="otherFiles" roleId="w348.4989762282962863154" type="w348.OtherFiles" typeId="w348.4989762282962778824" id="7860773101050670015" nodeInfo="ng" />
     </node>
   </root>
 </model>

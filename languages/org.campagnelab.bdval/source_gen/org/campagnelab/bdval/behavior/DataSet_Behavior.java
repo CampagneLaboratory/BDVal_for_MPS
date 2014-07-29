@@ -6,12 +6,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import java.io.File;
 import java.util.HashMap;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.apache.commons.lang.WordUtils;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import java.io.File;
 import org.apache.commons.io.FileUtils;
 import java.io.FileWriter;
 import java.io.PrintWriter;
@@ -20,22 +20,20 @@ import java.util.ArrayList;
 
 public class DataSet_Behavior {
   public static void init(SNode thisNode) {
+    SPropertyOperations.set(thisNode, "normalTarget", "" + (true));
   }
 
   public static void call_generateFiles_6032947574604950587(SNode thisNode) {
-    String parentName = trim_26g5o_a0a0a1(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.Project"), "name").replaceAll("\\s", ""));
+    String projectFolder = SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.Project"), "projectFolder");
     String datasetName = DataSet_Behavior.call_getName_290469645480322571(thisNode);
-    String directoryName = SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.Project"), "properties", true), "outputLocation") + "/" + parentName + "/";
-    File directory = new File(directoryName);
-    directory.mkdirs();
-    DataSet_Behavior.call_copyPlatform_7083662764413093380(thisNode, directoryName, datasetName);
-    DataSet_Behavior.call_copyInput_7083662764415129152(thisNode, directoryName, datasetName);
+    DataSet_Behavior.call_copyPlatform_7083662764413093380(thisNode, projectFolder, datasetName);
+    DataSet_Behavior.call_copyInput_7083662764415129152(thisNode, projectFolder, datasetName);
     if ((SLinkOperations.getTarget(thisNode, "otherFiles", true) != null)) {
-      DataSet_Behavior.call_copyOtherFiles_4989762282953266724(thisNode, directoryName, datasetName);
+      DataSet_Behavior.call_copyOtherFiles_4989762282953266724(thisNode, projectFolder, datasetName);
     }
-    HashMap categoryCounterMap = DataSet_Behavior.call_createCIDs_6032947574604951771(thisNode, directoryName, datasetName);
-    DataSet_Behavior.call_createTask_6032947574607589325(thisNode, directoryName, datasetName, categoryCounterMap);
-    DataSet_Behavior.call_createTestSet_3976565827563239534(thisNode, directoryName, datasetName);
+    HashMap categoryCounterMap = DataSet_Behavior.call_generateCIDs_6032947574604951771(thisNode, projectFolder, datasetName);
+    DataSet_Behavior.call_generateTask_6032947574607589325(thisNode, projectFolder, datasetName, categoryCounterMap);
+    DataSet_Behavior.call_generateTestSet_3976565827563239534(thisNode, projectFolder, datasetName);
   }
 
   public static String call_getName_290469645480322571(SNode thisNode) {
@@ -45,12 +43,12 @@ public class DataSet_Behavior {
         endpointDescription.value = endpointDescription.value + WordUtils.capitalizeFully(SPropertyOperations.getString(SLinkOperations.getTarget(category, "endpointCategory", false), "name")).replaceAll("\\s", "");
       }
     });
-    String parentName = SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.Project"), "name").replaceAll("\\s", "");
+    String parentName = SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.Project"), "trimmedName");
     return parentName + "_" + endpointDescription.value + "_" + SPropertyOperations.getString(thisNode, "name").replaceAll("\\s", "");
   }
 
-  public static void call_copyPlatform_7083662764413093380(SNode thisNode, String directoryName, String datasetName) {
-    String platformFolder = directoryName + "platforms/";
+  public static void call_copyPlatform_7083662764413093380(SNode thisNode, String projectFolder, String datasetName) {
+    String platformFolder = projectFolder + "platforms/";
     new File(platformFolder).mkdir();
     String fileName = platformFolder + new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "platform", true), "fileName")).getName();
     try {
@@ -60,8 +58,8 @@ public class DataSet_Behavior {
     }
   }
 
-  public static void call_copyInput_7083662764415129152(SNode thisNode, String directoryName, String datasetName) {
-    String inputFolder = directoryName + "inputs/";
+  public static void call_copyInput_7083662764415129152(SNode thisNode, String projectFolder, String datasetName) {
+    String inputFolder = projectFolder + "inputs/";
     new File(inputFolder).mkdir();
     String fileName = inputFolder + new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "input", true), "fileName")).getName();
     try {
@@ -71,9 +69,9 @@ public class DataSet_Behavior {
     }
   }
 
-  public static void call_copyOtherFiles_4989762282953266724(SNode thisNode, String directoryName, String datasetName) {
+  public static void call_copyOtherFiles_4989762282953266724(SNode thisNode, String projectFoler, String datasetName) {
     if (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "otherFiles", true), "pathways"))) {
-      String pathwayFolder = directoryName + "pathways/";
+      String pathwayFolder = projectFoler + "pathways/";
       new File(pathwayFolder).mkdir();
       String pathwaysFile = pathwayFolder + new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "otherFiles", true), "pathways")).getName();
       String geneToProbesFile = pathwayFolder + new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "otherFiles", true), "geneToProbes")).getName();
@@ -85,7 +83,7 @@ public class DataSet_Behavior {
       }
     }
     if (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "otherFiles", true), "survival"))) {
-      String survivalFolder = directoryName + "survivals/";
+      String survivalFolder = projectFoler + "survivals/";
       new File(survivalFolder).mkdir();
       String survivalFile = survivalFolder + new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "otherFiles", true), "survival")).getName();
       try {
@@ -96,9 +94,9 @@ public class DataSet_Behavior {
     }
   }
 
-  public static HashMap call_createCIDs_6032947574604951771(SNode thisNode, String directoryName, String datasetName) {
+  public static HashMap call_generateCIDs_6032947574604951771(SNode thisNode, String projectFoler, String datasetName) {
     try {
-      String cidsFolder = directoryName + "cids/";
+      String cidsFolder = projectFoler + "cids/";
       new File(cidsFolder).mkdir();
       String fileName = cidsFolder + datasetName + ".cids";
       FileWriter file = new FileWriter(fileName);
@@ -130,9 +128,9 @@ public class DataSet_Behavior {
     }
   }
 
-  public static void call_createTask_6032947574607589325(SNode thisNode, String directoryName, String datasetName, final HashMap categoryCountMap) {
+  public static void call_generateTask_6032947574607589325(SNode thisNode, String projectFolder, String datasetName, final HashMap categoryCountMap) {
     try {
-      String taskFolder = directoryName + "tasks/";
+      String taskFolder = projectFolder + "tasks/";
       new File(taskFolder).mkdir();
       String fileName = taskFolder + datasetName + ".tasks";
       FileWriter file = new FileWriter(fileName);
@@ -162,9 +160,9 @@ public class DataSet_Behavior {
     }
   }
 
-  public static void call_createTestSet_3976565827563239534(SNode thisNode, String directoryName, String datasetName) {
+  public static void call_generateTestSet_3976565827563239534(SNode thisNode, String projectFolder, String datasetName) {
     if (SPropertyOperations.getBoolean(thisNode, "testSet")) {
-      String testSetFolder = directoryName + "test-sets/";
+      String testSetFolder = projectFolder + "test-sets/";
       new File(testSetFolder).mkdir();
       String fileName = testSetFolder + datasetName + "-samples.txt";
       try {
@@ -184,10 +182,6 @@ public class DataSet_Behavior {
         throw new Error("Error Printing Test-Set File");
       }
     }
-  }
-
-  public static String trim_26g5o_a0a0a1(String str) {
-    return (str == null ? null : str.trim());
   }
 
   private static boolean isNotEmptyString(String str) {

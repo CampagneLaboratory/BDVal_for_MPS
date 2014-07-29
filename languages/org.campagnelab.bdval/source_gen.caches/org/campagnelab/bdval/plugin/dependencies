@@ -36,6 +36,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.resources.TResource" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="org.apache.commons.io.FileUtils" />
+    <classNode dependClassName="org.apache.commons.lang.WordUtils" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />

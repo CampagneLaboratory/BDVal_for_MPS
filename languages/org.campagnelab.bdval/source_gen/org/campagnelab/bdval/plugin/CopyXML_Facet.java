@@ -27,6 +27,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.apache.commons.lang.WordUtils;
 import java.util.Collection;
 import org.apache.commons.io.FileUtils;
 import java.util.Iterator;
@@ -103,8 +104,9 @@ public class CopyXML_Facet extends IFacet.Stub {
                                 lastModified.value = Long.MIN_VALUE;
                                 choice.value = null;
                                 outputPath.value = SModuleOperations.getOutputPathFor(model);
-                                destinationPath.value = SPropertyOperations.getString(SLinkOperations.getTarget(project, "properties", true), "outputLocation");
                                 projectName.value = SPropertyOperations.getString(project, "name");
+                                destinationPath.value = SPropertyOperations.getString(SLinkOperations.getTarget(project, "properties", true), "outputLocation") + "/" + projectName.value + "/" + WordUtils.capitalize(SPropertyOperations.getString(SLinkOperations.getTarget(project, "properties", true), "tagDescription").replaceAll("\\s", "")) + "/";
+
                                 Collection files = FileUtils.listFiles(new File(outputPath.value), xml, true);
                                 for (Iterator iterator = files.iterator(); iterator.hasNext();) {
                                   File currFile = (File) iterator.next();
@@ -118,7 +120,7 @@ public class CopyXML_Facet extends IFacet.Stub {
                                     lastModified.value = file.lastModified();
                                   }
                                 }
-                                FileUtil.copyFile(choice.value, new File(destinationPath.value + "/" + projectName.value + "/" + projectName.value + ".xml"));
+                                FileUtil.copyFile(choice.value, new File(destinationPath.value + projectName.value + ".xml"));
                               }
                             }
                           }
