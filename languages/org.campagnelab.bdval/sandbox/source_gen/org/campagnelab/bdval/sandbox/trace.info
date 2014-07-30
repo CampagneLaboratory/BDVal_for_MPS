@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeRef="r:b2ac1451-2431-4f4c-8992-b8345f1cb6dc(org.campagnelab.bdval.sandbox)/7860773101046601985">
-    <unitInfo nodeId="7860773101046601985" fileName="Example.xml" startLine="1" startPosition="0" endLine="65" endPosition="10" unitName="org.campagnelab.bdval.sandbox.Example" />
+  <root nodeRef="r:b2ac1451-2431-4f4c-8992-b8345f1cb6dc(org.campagnelab.bdval.sandbox)/1911754720579092993">
+    <unitInfo nodeId="1911754720579092993" fileName="Example.xml" startLine="1" startPosition="0" endLine="65" endPosition="10" unitName="org.campagnelab.bdval.sandbox.Example" />
   </root>
 </debugInfo>
 

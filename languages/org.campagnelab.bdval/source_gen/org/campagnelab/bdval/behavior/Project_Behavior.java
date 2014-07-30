@@ -19,13 +19,15 @@ import java.io.InputStream;
 import java.io.FileInputStream;
 import javax.swing.JLabel;
 import javax.swing.JProgressBar;
+import javax.swing.JTextArea;
+import javax.swing.JScrollPane;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import javax.swing.BorderFactory;
 import java.sql.Timestamp;
 import java.util.Date;
-import org.apache.tools.ant.Project;
 import java.io.PrintStream;
+import org.apache.tools.ant.Project;
 import org.apache.tools.ant.DefaultLogger;
 import org.apache.tools.ant.ProjectHelper;
 import java.io.BufferedReader;
@@ -45,7 +47,7 @@ public class Project_Behavior {
     boolean proceed = true;
     File directoryFile = new File(SPropertyOperations.getString(thisNode, "projectFolder"));
     if (directoryFile.exists()) {
-      int reply = JOptionPane.showConfirmDialog(null, "Change project name/tag description to prevent deletion\n\n" + SPropertyOperations.getString(thisNode, "projectFolder") + " exists already\n" + "Overwrite any duplicate files and continue?", "Project with this name and tag description already exists", JOptionPane.OK_CANCEL_OPTION);
+      int reply = JOptionPane.showConfirmDialog(null, "Change project name/tag description to prevent deletion\n\n" + SPropertyOperations.getString(thisNode, "projectFolder") + " already exists\n" + "Overwrite any duplicate files and continue?", "Project with this name and tag description already exists", JOptionPane.OK_CANCEL_OPTION);
       if (reply != JOptionPane.OK_OPTION) {
         proceed = false;
       }
@@ -64,6 +66,7 @@ public class Project_Behavior {
       }
     });
     Approach_Behavior.call_generateSequenceFiles_1870354875253436007(SLinkOperations.getTarget(thisNode, "approach", true));
+    Project_Behavior.call_generateMemoProperties_1911754720586693397(thisNode);
   }
 
   public static void call_generateLocalProperties_7083662764418572584(SNode thisNode) {
@@ -81,7 +84,6 @@ public class Project_Behavior {
         prop.setProperty("desktop.thread-number", "" + SPropertyOperations.getInteger(SLinkOperations.getTarget(thisNode, "properties", true), "threads"));
         prop.setProperty("desktop.memory", "-Xmx" + SPropertyOperations.getInteger(SLinkOperations.getTarget(thisNode, "properties", true), "memory") + "m");
       }
-      prop.setProperty("number.models", String.valueOf(Project_Behavior.call_getNumModels_7860773100992528077(thisNode)));
       prop.store(output, SPropertyOperations.getString(thisNode, "name") + " Local Properties");
     } catch (Exception e) {
       throw new Error("Error creating local properties file");
@@ -136,6 +138,34 @@ public class Project_Behavior {
     }
   }
 
+  public static void call_generateMemoProperties_1911754720586693397(SNode thisNode) {
+    String memoFolder = SPropertyOperations.getString(thisNode, "projectFolder") + "memo/";
+    new File(memoFolder).mkdir();
+    String fileName = memoFolder + "memo.properties";
+    int numModels = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "approach", true), "modelToGenerate", true)).count() * ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "approach", true), "featureSelectionInfo", true), "numberOfFeatures", true)).count() * SPropertyOperations.getInteger(SLinkOperations.getTarget(thisNode, "approach", true), "externalFolds") * SPropertyOperations.getInteger(SLinkOperations.getTarget(thisNode, "approach", true), "externalRepeats");
+    final Wrappers._T<String> models = new Wrappers._T<String>("");
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "approach", true), "modelToGenerate", true)).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode modelToGenerate) {
+        models.value = models.value + SPropertyOperations.getString(modelToGenerate, "name") + "\n";
+      }
+    });
+    try {
+      Properties prop = new Properties();
+      OutputStream output = new FileOutputStream(new File(fileName));
+      prop.setProperty("project.name", "BDVal " + SPropertyOperations.getString(thisNode, "name") + " Project");
+      prop.setProperty("project.trimmed.name", SPropertyOperations.getString(thisNode, "trimmedName"));
+      prop.setProperty("project.folder", SPropertyOperations.getString(thisNode, "projectFolder"));
+      prop.setProperty("tag", SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "tagDescription"));
+      prop.setProperty("models.number", String.valueOf(numModels));
+      prop.setProperty("models.description", models.value);
+      prop.setProperty("folds", String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(thisNode, "approach", true), "externalFolds")));
+      prop.setProperty("repeats", String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(thisNode, "approach", true), "externalRepeats")));
+      prop.store(output, SPropertyOperations.getString(thisNode, "name") + " information for rerunning through MPS");
+    } catch (Exception e) {
+      throw new Error("Error creating memo properties file");
+    }
+  }
+
   public static void call_showRunWindow_7860773100997324157(SNode thisNode) {
     final String name = SPropertyOperations.getString(thisNode, "name");
     final String description = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "tagDescription");
@@ -147,48 +177,62 @@ public class Project_Behavior {
         JFrame runFrame = new JFrame();
         int reply = JOptionPane.showOptionDialog(runFrame, "Run BDVal " + description + " Project", name + " Project", JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
         if (reply == JOptionPane.OK_OPTION) {
-          Project_Behavior.call_runBDVal_6752420586317975318(project, new File(SPropertyOperations.getString(project, "projectFolder") + SPropertyOperations.getString(project, "trimmedName") + "-local.properties"));
+          Project_Behavior.call_runBDVal_6752420586317975318(project, SPropertyOperations.getString(project, "projectFolder") + "memo/memo.properties");
         }
       }
     };
     frameThread.start();
   }
 
-  public static void call_runBDVal_6752420586317975318(SNode thisNode, File localPropertiesFile) {
+  public static void call_runBDVal_6752420586317975318(SNode thisNode, String memoFile) {
     try {
       Properties prop = new Properties();
-      InputStream input = new FileInputStream(localPropertiesFile);
-      final int numModels = Integer.getInteger(prop.getProperty("number.models"));
-      final String tag = localPropertiesFile.getParentFile().getName();
-      final String name = localPropertiesFile.getParentFile().getParentFile().getName();
+      InputStream input = new FileInputStream(memoFile);
+      prop.load(input);
+      final int numModels = Integer.parseInt(prop.getProperty("models.number"));
+      final String name = prop.getProperty("project.trimmed.name");
+      final String folder = prop.getProperty("project.folder");
+      String tag = prop.getProperty("tag");
+      String modelInfo = prop.getProperty("models.description");
+      String folds = prop.getProperty("folds");
+      String repeats = prop.getProperty("repeats");
+      String header = prop.getProperty("project.name");
+      input.close();
 
       final JLabel statusLabel = new JLabel();
       final JProgressBar progressBar = new JProgressBar();
       progressBar.setValue(0);
       progressBar.setStringPainted(true);
 
+      JLabel descriptionLabel = new JLabel("Running " + tag);
+
+      JTextArea modelText = new JTextArea("Project Summary:\n" + modelInfo + "Folds: " + folds + "    Repeats: " + repeats);
+      modelText.setEditable(false);
+      JScrollPane scrollPane = new JScrollPane(modelText);
+
       JPanel panel = new JPanel(new BorderLayout());
       panel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+      panel.add(descriptionLabel, BorderLayout.WEST);
       panel.add(statusLabel, BorderLayout.EAST);
-      panel.add(progressBar, BorderLayout.SOUTH);
 
-      JFrame frame = new JFrame("BDVal " + SPropertyOperations.getString(thisNode, "name") + " Project");
+      JFrame frame = new JFrame(header);
       frame.setLayout(new BorderLayout());
-      frame.setSize(500, 90);
-      frame.setContentPane(panel);
+      frame.add(panel, BorderLayout.NORTH);
+      frame.add(scrollPane, BorderLayout.CENTER);
+      frame.add(progressBar, BorderLayout.SOUTH);
+      frame.setSize(500, 130);
       frame.setLocationRelativeTo(null);
       frame.setVisible(true);
 
-      final String folder = SPropertyOperations.getString(thisNode, "projectFolder");
       final String messageName = name + "-runMessages-" + String.format("%1$TF=%1$TR", new Timestamp(new Date().getTime())).replaceAll("-", "").replaceAll("=", "-").replaceAll(":", "") + ".txt";
-      final File messageFile = new File(folder + messageName);
+      final File messageFile = new File(folder + "memo/" + messageName);
+      final PrintStream printStream = new PrintStream(messageFile);
 
       // Starts ant to run BDVal project 
       Thread antCall = new Thread() {
         public void run() {
           Project p = new Project();
           try {
-            PrintStream printStream = new PrintStream(messageFile);
             File buildFile = new File(folder + name + ".xml");
             p.setUserProperty("ant.file", buildFile.getAbsolutePath());
             DefaultLogger consoleLogger = new DefaultLogger();
@@ -214,9 +258,10 @@ public class Project_Behavior {
       // Reads messages file to monitor progress 
       Thread monitorProgress = new Thread() {
         public void run() {
-          boolean stop = false;
-          String line;
           int counter = 0;
+          String line;
+          boolean stop = false;
+          boolean success = true;
 
           try {
             BufferedReader br = new BufferedReader(new FileReader(messageFile));
@@ -232,12 +277,20 @@ public class Project_Behavior {
                   if (counter <= numModels) {
                     statusLabel.setText("Processing " + counter + " of " + (numModels));
                   }
+                } else if (line.contains("CAUGHT FAILED BUILD")) {
+                  stop = true;
+                  success = false;
+                } else {
+                  stop = line.contains("Total time:");
                 }
-                stop = line.contains("Total time:");
               }
             }
+            if (success) {
+              statusLabel.setText("Done!");
+            } else {
+              statusLabel.setText("Build Failed");
+            }
             progressBar.setValue(100);
-            statusLabel.setText("Done!");
           } catch (Exception e) {
             throw new Error("Error monitoring progress");
           }
@@ -248,35 +301,6 @@ public class Project_Behavior {
     } catch (Exception e) {
       throw new Error("Error running BDVal");
     }
-
-
-
-  }
-
-  public static int call_getNumModels_7860773100992528077(SNode thisNode) {
-    final SNode approach = SLinkOperations.getTarget(thisNode, "approach", true);
-    final Wrappers._int classificationsNum = new Wrappers._int(0);
-    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(approach, "classificationInfo", true), "classification", true)).visitAll(new IVisitor<SNode>() {
-      public void visit(SNode classification) {
-        if (SPropertyOperations.getString(classification, "name").matches("SVMTuneC")) {
-          classificationsNum.value = classificationsNum.value + ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(approach, "classificationInfo", true), "classificationProperties", true), "svmTuneCProperties", true), "cValue", true)).count();
-        } else {
-          classificationsNum.value++;
-        }
-      }
-    });
-    final int foldNum = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(approach, "featureSelectionInfo", true), "featureSelectionFold", true)).count();
-    final Wrappers._int featureSelectionNum = new Wrappers._int(0);
-    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(approach, "featureSelectionInfo", true), "featureSelectionCombo", true)).visitAll(new IVisitor<SNode>() {
-      public void visit(SNode featureSelectionCombo) {
-        if (SPropertyOperations.getString(SLinkOperations.getTarget(featureSelectionCombo, "featureSelection1", true), "name").matches("wholeChip")) {
-          featureSelectionNum.value++;
-        } else {
-          featureSelectionNum.value = featureSelectionNum.value + foldNum;
-        }
-      }
-    });
-    return featureSelectionNum.value * classificationsNum.value * ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(approach, "featureSelectionInfo", true), "numberOfFeatures", true)).count() * SPropertyOperations.getInteger(approach, "externalFolds") * SPropertyOperations.getInteger(approach, "externalRepeats");
   }
 
   private static boolean isNotEmptyString(String str) {

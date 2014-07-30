@@ -27,6 +27,14 @@ public class check_Directory_NonTypesystemRule extends AbstractNonTypesystemRule
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(directory, "Location does not point to an existing directory", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "1911754720568106156", null, errorTarget);
       }
     }
+    if (isNotEmptyString(SPropertyOperations.getString(directory, "directoryLocation")) && new File(SPropertyOperations.getString(directory, "directoryLocation")).isDirectory() && SPropertyOperations.getString(directory, "directoryLocation").endsWith("/")) {
+      {
+        MessageTarget errorTarget = new NodeMessageTarget();
+        errorTarget = new PropertyMessageTarget("directoryLocation");
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(directory, "Remove '/' from end of directory location", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "1911754720579127982", null, errorTarget);
+      }
+    }
+
   }
 
   public String getApplicableConceptFQName() {

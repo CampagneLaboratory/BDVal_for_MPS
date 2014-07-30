@@ -4,13 +4,14 @@ package org.campagnelab.bdval.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.io.File;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import org.apache.commons.lang.WordUtils;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import org.apache.log4j.Level;
@@ -24,6 +25,7 @@ public class Approach_Behavior {
   }
 
   public static void call_generateSequenceFiles_1870354875253436007(final SNode thisNode) {
+    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "modelToGenerate", true)).clear();
     String directoryName = SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.Project"), "projectFolder");
     final String sequenceFolder = directoryName + "sequences/";
     new File(sequenceFolder).mkdir();
@@ -85,21 +87,23 @@ public class Approach_Behavior {
                 if (SPropertyOperations.getString(classification, "name").matches("SVMTuneC")) {
                   ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "classificationInfo", true), "classificationProperties", true), "svmTuneCProperties", true), "cValue", true)).visitAll(new IVisitor<SNode>() {
                     public void visit(SNode cValue) {
-                      SNode model = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.ModelToGenerate", null);
-                      SPropertyOperations.set(model, "featureSelectionFold", "" + (SPropertyOperations.getBoolean(featureSelectionFold, "value")));
-                      SPropertyOperations.set(model, "sequenceFile", approachMethod.value + ".sequence");
-                      SPropertyOperations.set(model, "allClassifierParameters", " --classifier " + SPropertyOperations.getString(classification, "classname") + " --classifier-parameters " + SPropertyOperations.getString(classification, "parameters") + ",C=" + SPropertyOperations.getString(cValue, "value"));
-                      SPropertyOperations.set(model, "otherOptions", otherOptions.value + SPropertyOperations.getString(classification, "otherOption") + optionOther.value);
-                      ListSequence.fromList(SLinkOperations.getTargets(thisNode, "modelToGenerate", true)).addElement(model);
+                      SNode genModel = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.ModelToGenerate", null);
+                      SPropertyOperations.set(genModel, "name", WordUtils.capitalize(approachMethod.value.substring(10).replaceAll("\\+", " \\+ ").replaceAll("-", ", ")) + " (c=" + SPropertyOperations.getString(cValue, "value") + ")");
+                      SPropertyOperations.set(genModel, "featureSelectionFold", "" + (SPropertyOperations.getBoolean(featureSelectionFold, "value")));
+                      SPropertyOperations.set(genModel, "sequenceFile", approachMethod.value + ".sequence");
+                      SPropertyOperations.set(genModel, "allClassifierParameters", " --classifier " + SPropertyOperations.getString(classification, "classname") + " --classifier-parameters " + SPropertyOperations.getString(classification, "parameters") + ",C=" + SPropertyOperations.getString(cValue, "value"));
+                      SPropertyOperations.set(genModel, "otherOptions", otherOptions.value + SPropertyOperations.getString(classification, "otherOption") + optionOther.value);
+                      ListSequence.fromList(SLinkOperations.getTargets(thisNode, "modelToGenerate", true)).addElement(genModel);
                     }
                   });
                 } else {
-                  SNode model = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.ModelToGenerate", null);
-                  SPropertyOperations.set(model, "featureSelectionFold", "" + (SPropertyOperations.getBoolean(featureSelectionFold, "value")));
-                  SPropertyOperations.set(model, "sequenceFile", approachMethod.value + ".sequence");
-                  SPropertyOperations.set(model, "allClassifierParameters", " --classifier " + SPropertyOperations.getString(classification, "classname") + " --classifier-parameters " + SPropertyOperations.getString(classification, "parameters"));
-                  SPropertyOperations.set(model, "otherOptions", otherOptions.value + SPropertyOperations.getString(classification, "otherOption") + optionOther.value);
-                  ListSequence.fromList(SLinkOperations.getTargets(thisNode, "modelToGenerate", true)).addElement(model);
+                  SNode genModel = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.ModelToGenerate", null);
+                  SPropertyOperations.set(genModel, "name", WordUtils.capitalize(approachMethod.value.substring(10).replaceAll("(\\p{Ll})(\\p{Lu})", "$1 $2").replaceAll("\\+", " \\+ ").replaceAll("-", ", ")));
+                  SPropertyOperations.set(genModel, "featureSelectionFold", "" + (SPropertyOperations.getBoolean(featureSelectionFold, "value")));
+                  SPropertyOperations.set(genModel, "sequenceFile", approachMethod.value + ".sequence");
+                  SPropertyOperations.set(genModel, "allClassifierParameters", " --classifier " + SPropertyOperations.getString(classification, "classname") + " --classifier-parameters " + SPropertyOperations.getString(classification, "parameters"));
+                  SPropertyOperations.set(genModel, "otherOptions", otherOptions.value + SPropertyOperations.getString(classification, "otherOption") + optionOther.value);
+                  ListSequence.fromList(SLinkOperations.getTargets(thisNode, "modelToGenerate", true)).addElement(genModel);
                 }
 
                 // Writes sequence file 

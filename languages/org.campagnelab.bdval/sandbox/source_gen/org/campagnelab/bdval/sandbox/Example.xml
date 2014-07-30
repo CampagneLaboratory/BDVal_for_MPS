@@ -5,7 +5,7 @@
   <property file="${bdval-project.basedir}/${ant.project.name}-local.properties"></property>
   <property name="project-property-file" value="${bdval-project.basedir}/${ant.project.name}.properties"></property>
   <property file="${project-property-file}"></property>
-  <property name="tag-description" value="Example Run"></property>
+  <property name="tag-description" value="Test"></property>
   
   <!--Basic Properties-->
   <property name="enable-flooring" value="false"></property>
@@ -18,27 +18,27 @@
   
   <!--Feature Selection Properties-->
   <property name="ttest-alpha" value="0.05"></property>
-  <property name="svmIterative-r" value=""></property>
-  <property name="minMax-observations" value="0"></property>
-  <property name="ga-wrapper-population-size" value="0"></property>
-  <property name="ga-wrapper-number-of-iterations" value="0"></property>
-  <property name="performance-measure-maximized-by-GA" value=""></property>
-  <property name="internal-CV-repeats" value="--cv-repeats 0"></property>
-  <property name="internal-CV-folds" value="0"></property>
-  <property name="ga-ratio" value=""></property>
-  <property name="perm-alpha" value=""></property>
-  <property name="fold-change-phi" value=""></property>
-  <property name="coxreg-alpha" value=""></property>
+  <property name="svmIterative-r" value="0.5"></property>
+  <property name="minMax-observations" value="3"></property>
+  <property name="ga-wrapper-population-size" value="20"></property>
+  <property name="ga-wrapper-number-of-iterations" value="20"></property>
+  <property name="performance-measure-maximized-by-GA" value="MCC"></property>
+  <property name="internal-CV-repeats" value="--cv-repeats 3"></property>
+  <property name="internal-CV-folds" value="3"></property>
+  <property name="ga-ratio" value="0.5"></property>
+  <property name="perm-alpha" value="0.05"></property>
+  <property name="fold-change-phi" value="0.5"></property>
+  <property name="coxreg-alpha" value="0.05"></property>
   
-  <property name="pathway-aggregation-method" value=""></property>
+  <property name="pathway-aggregation-method" value="PCA"></property>
   
   <!--Classification Properties-->
   <property name="use-probability" value="false"></property>
   
   <!--Additional Properties-->
   <property name="run-java" value="true"></property>
-  <var name="do.Example_DiseasedNoYes_Test" value="true"></var>
-  <property name="all-endpoints" value=" Example_DiseasedNoYes_Test"></property>
+  <var name="do.Example_DiseasedYesNo_Training" value="true"></var>
+  <property name="all-endpoints" value=" Example_DiseasedYesNo_Training"></property>
   <import file="/Users/vmb34/Desktop/bdval/data/bdval.xml"></import>
   
   

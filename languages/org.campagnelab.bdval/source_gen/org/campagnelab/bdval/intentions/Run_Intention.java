@@ -14,6 +14,11 @@ import java.io.File;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
+import java.util.HashMap;
+import org.apache.commons.io.FileUtils;
+import java.util.Iterator;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class Run_Intention implements IntentionFactory {
@@ -54,7 +59,7 @@ public class Run_Intention implements IntentionFactory {
   }
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "properties", true), "outputDirectory", true), "directoryLocation")) && isNotEmptyString(SPropertyOperations.getString(node, "name")) && new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(node, "name").replaceAll("\\s", "")).isDirectory();
+    return isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "properties", true), "outputDirectory", true), "directoryLocation")) && isNotEmptyString(SPropertyOperations.getString(node, "name")) && new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(node, "name").replaceAll("\\s", "")).isDirectory() && (new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(node, "name").replaceAll("\\s", "")).list().length > 0);
   }
 
   public SNodeReference getIntentionNodeReference() {
@@ -77,10 +82,31 @@ public class Run_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Run Project";
+      return "Run Previously Build Project";
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
+      String name = SPropertyOperations.getString(node, "name").replaceAll("\\s", "");
+      File rootDirectory = new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + name);
+      SPropertyOperations.set(node, "test1", rootDirectory.getParent());
+
+      String[] extensions = {"xml", "properties"};
+      File file;
+      File tagDirectory;
+      HashMap map = new HashMap();
+
+      Collection possibleFiles = FileUtils.listFiles(rootDirectory, extensions, true);
+      for (Iterator iterator = possibleFiles.iterator(); iterator.hasNext();) {
+        file = (File) iterator.next();
+        tagDirectory = new File(file.getParentFile().getParentFile().getAbsolutePath());
+        if (file.getName().matches("memo.properties") && new File(tagDirectory + "/" + name + ".xml").exists()) {
+          map.put(tagDirectory.getName(), file.getAbsolutePath());
+        }
+      }
+      JComboBox options = new JComboBox(map.keySet().toArray());
+      JFrame frame = new JFrame();
+      frame.add(options);
+      frame.setVisible(true);
     }
 
     public IntentionDescriptor getDescriptor() {
