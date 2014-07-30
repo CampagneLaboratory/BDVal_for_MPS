@@ -1,0 +1,65 @@
+<project name="Example" default="evaluate" basedir=".">
+  <!--Set up-->
+  <dirname property="bdval-project.basedir" file="${ant.file.Example}"></dirname>
+  <import file="/Users/vmb34/Desktop/bdval/buildsupport/build.xml"></import>
+  <property file="${bdval-project.basedir}/${ant.project.name}-local.properties"></property>
+  <property name="project-property-file" value="${bdval-project.basedir}/${ant.project.name}.properties"></property>
+  <property file="${project-property-file}"></property>
+  <property name="tag-description" value="Example Run"></property>
+  
+  <!--Basic Properties-->
+  <property name="enable-flooring" value="false"></property>
+  <property name="evaluate-statistics-after-splits" value="false"></property>
+  <property name="external-CV-repeats-number" value="1"></property>
+  <property name="external-CV-repeats" value="--cv-repeats ${external-CV-repeats-number}"></property>
+  <property name="external-CV-folds" value="3"></property>
+  <property name="num-features" value="20"></property>
+  <property name="max-intermediate-features" value="400"></property>
+  
+  <!--Feature Selection Properties-->
+  <property name="ttest-alpha" value="0.05"></property>
+  <property name="svmIterative-r" value=""></property>
+  <property name="minMax-observations" value="0"></property>
+  <property name="ga-wrapper-population-size" value="0"></property>
+  <property name="ga-wrapper-number-of-iterations" value="0"></property>
+  <property name="performance-measure-maximized-by-GA" value=""></property>
+  <property name="internal-CV-repeats" value="--cv-repeats 0"></property>
+  <property name="internal-CV-folds" value="0"></property>
+  <property name="ga-ratio" value=""></property>
+  <property name="perm-alpha" value=""></property>
+  <property name="fold-change-phi" value=""></property>
+  <property name="coxreg-alpha" value=""></property>
+  
+  <property name="pathway-aggregation-method" value=""></property>
+  
+  <!--Classification Properties-->
+  <property name="use-probability" value="false"></property>
+  
+  <!--Additional Properties-->
+  <property name="run-java" value="true"></property>
+  <var name="do.Example_DiseasedNoYes_Test" value="true"></var>
+  <property name="all-endpoints" value=" Example_DiseasedNoYes_Test"></property>
+  <import file="/Users/vmb34/Desktop/bdval/data/bdval.xml"></import>
+  
+  
+  <target name="evaluate" description="Run a complete evaluation." depends="prepare-bdval, rserve-status, tag-output-directory">
+    <delete file="${statistics-output}"></delete>
+    <echo message="Executing with ${num-threads} threads"></echo>
+    <property name="do.my-execute-splits" value="true"></property>
+    <execute-all-endpoints></execute-all-endpoints>
+    <antcall target="process-model-conditions"></antcall>
+    <antcall target="zip-results"></antcall>
+  </target>
+  
+  <macrodef name="call-execute-splits" description="Calls execute split for each model to be generated">
+    <attribute name="endpoint-name"></attribute>
+    <attribute name="dataset-root"></attribute>
+    <attribute name="floor-param"></attribute>
+    <attribute name="array-params"></attribute>
+    <sequential>
+      <execute-splits feature-selection-fold="true" sequence-file="generated-ttest-SVMTuneC-fs=true.sequence" endpoint-name="@{endpoint-name}" dataset-root="@{dataset-root}" floor-param="@{floor-param}" array-params="@{array-params}" all-classifier-parameters=" --classifier edu.cornell.med.icb.learning.libsvm.LibSvmClassifier  --classifier-parameters probability=${use-probability},C=0.5" other-options=" --alpha ${ttest-alpha}"></execute-splits>
+      <execute-splits feature-selection-fold="true" sequence-file="generated-ttest-SVMTuneC-fs=true.sequence" endpoint-name="@{endpoint-name}" dataset-root="@{dataset-root}" floor-param="@{floor-param}" array-params="@{array-params}" all-classifier-parameters=" --classifier edu.cornell.med.icb.learning.libsvm.LibSvmClassifier  --classifier-parameters probability=${use-probability},C=1" other-options=" --alpha ${ttest-alpha}"></execute-splits>
+    </sequential>
+  </macrodef>
+  
+</project>

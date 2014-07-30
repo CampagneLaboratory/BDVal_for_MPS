@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 
 public class Sample_Editor extends DefaultNodeEditor {
@@ -87,6 +88,7 @@ public class Sample_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_LEFT, new Padding(3, Measure.SPACES));
     style.set(StyleAttributes.READ_ONLY, false);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -170,6 +172,7 @@ public class Sample_Editor extends DefaultNodeEditor {
         style.set(StyleAttributes.READ_ONLY, false);
         style.set(StyleAttributes.EDITABLE, true);
         style.set(StyleAttributes.PADDING_LEFT, new Padding(3, Measure.SPACES));
+        style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         style.set(StyleAttributes.AUTO_DELETABLE, true);
         editorCell.getStyle().putAll(style);
         editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

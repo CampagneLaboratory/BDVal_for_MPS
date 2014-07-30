@@ -34,7 +34,8 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_2125124408386345809(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "properties", true), "bdvalLocation") + "/buildsupport/build.xml";
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "properties", true), "bdvalDirectory", true), "directoryLocation") + "/buildsupport/build.xml";
+
   }
 
   public static Object propertyMacro_GetPropertyValue_1847053361490323918(final PropertyMacroContext _context) {
@@ -146,7 +147,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_2125124408386645805(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "properties", true), "bdvalLocation") + "/data/bdval.xml";
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "properties", true), "bdvalDirectory", true), "directoryLocation") + "/data/bdval.xml";
   }
 
   public static Object propertyMacro_GetPropertyValue_1870354875263664529(final PropertyMacroContext _context) {

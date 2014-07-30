@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.apache.commons.lang.WordUtils;
 import java.io.File;
 import javax.swing.JOptionPane;
-import org.apache.commons.io.FileUtils;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.Properties;
@@ -16,6 +15,8 @@ import java.io.OutputStream;
 import java.io.FileOutputStream;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import javax.swing.JFrame;
+import java.io.InputStream;
+import java.io.FileInputStream;
 import javax.swing.JLabel;
 import javax.swing.JProgressBar;
 import javax.swing.JPanel;
@@ -36,7 +37,7 @@ public class Project_Behavior {
 
   public static void call_setup_7860773101052430949(SNode thisNode) {
     SPropertyOperations.set(thisNode, "trimmedName", SPropertyOperations.getString(thisNode, "name").replaceAll("\\s", "").trim());
-    SPropertyOperations.set(thisNode, "projectFolder", SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "outputLocation") + "/" + SPropertyOperations.getString(thisNode, "trimmedName") + "/" + WordUtils.capitalize(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "tagDescription").replaceAll("\\s", "").trim()) + "/");
+    SPropertyOperations.set(thisNode, "projectFolder", SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(thisNode, "trimmedName") + "/" + WordUtils.capitalize(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "tagDescription").replaceAll("\\s", "").trim()) + "/");
     Project_Behavior.call_checkProjectFolder_3976565827571671486(thisNode);
   }
 
@@ -44,14 +45,8 @@ public class Project_Behavior {
     boolean proceed = true;
     File directoryFile = new File(SPropertyOperations.getString(thisNode, "projectFolder"));
     if (directoryFile.exists()) {
-      int reply = JOptionPane.showConfirmDialog(null, "Change project name/tag description to prevent deletion\n\n" + SPropertyOperations.getString(thisNode, "projectFolder") + " exists already\n" + "Delete folder and its contents and continue?", "Project with same name and tag description already exists", JOptionPane.OK_CANCEL_OPTION);
-      if (reply == JOptionPane.OK_OPTION) {
-        try {
-          FileUtils.deleteDirectory(directoryFile);
-        } catch (Exception e) {
-          throw new Error("Error deleting existing Project Folder");
-        }
-      } else {
+      int reply = JOptionPane.showConfirmDialog(null, "Change project name/tag description to prevent deletion\n\n" + SPropertyOperations.getString(thisNode, "projectFolder") + " exists already\n" + "Overwrite any duplicate files and continue?", "Project with this name and tag description already exists", JOptionPane.OK_CANCEL_OPTION);
+      if (reply != JOptionPane.OK_OPTION) {
         proceed = false;
       }
     }
@@ -86,6 +81,7 @@ public class Project_Behavior {
         prop.setProperty("desktop.thread-number", "" + SPropertyOperations.getInteger(SLinkOperations.getTarget(thisNode, "properties", true), "threads"));
         prop.setProperty("desktop.memory", "-Xmx" + SPropertyOperations.getInteger(SLinkOperations.getTarget(thisNode, "properties", true), "memory") + "m");
       }
+      prop.setProperty("number.models", String.valueOf(Project_Behavior.call_getNumModels_7860773100992528077(thisNode)));
       prop.store(output, SPropertyOperations.getString(thisNode, "name") + " Local Properties");
     } catch (Exception e) {
       throw new Error("Error creating local properties file");
@@ -103,7 +99,7 @@ public class Project_Behavior {
         public void visit(final SNode dataset) {
           datasetName.value = DataSet_Behavior.call_getName_290469645480322571(dataset);
           prop.setProperty(datasetName.value + ".dataset-name", SPropertyOperations.getString(thisNode, "trimmedName"));
-          prop.setProperty(datasetName.value + ".dataset-file", root + "/inputs/" + new File(SPropertyOperations.getString(SLinkOperations.getTarget(dataset, "input", true), "fileName")).getName());
+          prop.setProperty(datasetName.value + ".dataset-file", root + "/inputs/" + new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(dataset, "input", true), "file", true), "fileLocation")).getName());
           prop.setProperty(datasetName.value + ".cids-file", root + "/cids/" + datasetName.value + ".cids");
           prop.setProperty(datasetName.value + ".tasks-file", root + "/tasks/" + datasetName.value + ".tasks");
           // TODO: Fill in floor 
@@ -116,20 +112,20 @@ public class Project_Behavior {
                   nonTargetName.value = datasetName.value + "." + SPropertyOperations.getString(nonTarget, "name").replaceAll("\\s", "").toLowerCase();
                   prop.setProperty(nonTargetName.value + ".test-samples", root + "/test-sets/" + DataSet_Behavior.call_getName_290469645480322571(nonTarget) + "-samples.txt");
                   prop.setProperty(nonTargetName.value + ".true-labels", root + "/cids/" + DataSet_Behavior.call_getName_290469645480322571(nonTarget) + ".cids");
-                  if (!(SPropertyOperations.getString(SLinkOperations.getTarget(nonTarget, "input", true), "fileName").matches(SPropertyOperations.getString(SLinkOperations.getTarget(dataset, "input", true), "fileName")))) {
-                    prop.setProperty(nonTargetName.value + ".dataset-file", root + "/inputs/" + new File(SPropertyOperations.getString(SLinkOperations.getTarget(nonTarget, "input", true), "fileName")).getName());
+                  if (!(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(nonTarget, "input", true), "file", true), "fileLocation").matches(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(dataset, "input", true), "file", true), "fileLocation")))) {
+                    prop.setProperty(nonTargetName.value + ".dataset-file", root + "/inputs/" + new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(nonTarget, "input", true), "file", true), "fileLocation")).getName());
                   }
                 }
               }
             });
           }
-          prop.setProperty(datasetName.value + ".platform-file", root + "/platforms/" + new File(SPropertyOperations.getString(SLinkOperations.getTarget(dataset, "platform", true), "fileName")).getName());
-          if (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(dataset, "otherFiles", true), "pathways"))) {
-            prop.setProperty(datasetName.value + ".pathways-file", root + "/pathways/" + new File(SPropertyOperations.getString(SLinkOperations.getTarget(dataset, "otherFiles", true), "pathways")).getName());
-            prop.setProperty(datasetName.value + ".gene-to-probes-file", root + "/pathways/" + new File(SPropertyOperations.getString(SLinkOperations.getTarget(dataset, "otherFiles", true), "geneToProbes")).getName());
+          prop.setProperty(datasetName.value + ".platform-file", root + "/platforms/" + new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(dataset, "platform", true), "file", true), "fileLocation")).getName());
+          if (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(dataset, "otherFiles", true), "pathwaysFile", true), "fileLocation"))) {
+            prop.setProperty(datasetName.value + ".pathways-file", root + "/pathways/" + new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(dataset, "otherFiles", true), "pathwaysFile", true), "fileLocation")).getName());
+            prop.setProperty(datasetName.value + ".gene-to-probes-file", root + "/pathways/" + new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(dataset, "otherFiles", true), "geneToProbesFile", true), "fileLocation")).getName());
           }
-          if (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(dataset, "otherFiles", true), "survival"))) {
-            prop.setProperty(datasetName.value + ".survival-file", root + "/survivals/" + new File(SPropertyOperations.getString(SLinkOperations.getTarget(dataset, "otherFiles", true), "survival")).getName());
+          if (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(dataset, "otherFiles", true), "survivalFile", true), "fileLocation"))) {
+            prop.setProperty(datasetName.value + ".survival-file", root + "/survivals/" + new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(dataset, "otherFiles", true), "survivalFile", true), "fileLocation")).getName());
           }
         }
       });
@@ -144,105 +140,117 @@ public class Project_Behavior {
     final String name = SPropertyOperations.getString(thisNode, "name");
     final String description = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "tagDescription");
     final SNode project = thisNode;
+
     Thread frameThread = new Thread() {
       public void run() {
         Object[] options = {"Run BDVal", "Cancel"};
         JFrame runFrame = new JFrame();
         int reply = JOptionPane.showOptionDialog(runFrame, "Run BDVal " + description + " Project", name + " Project", JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
         if (reply == JOptionPane.OK_OPTION) {
-          Project_Behavior.call_runBDVal_6752420586317975318(project);
+          Project_Behavior.call_runBDVal_6752420586317975318(project, new File(SPropertyOperations.getString(project, "projectFolder") + SPropertyOperations.getString(project, "trimmedName") + "-local.properties"));
         }
       }
     };
     frameThread.start();
   }
 
-  public static void call_runBDVal_6752420586317975318(SNode thisNode) {
+  public static void call_runBDVal_6752420586317975318(SNode thisNode, File localPropertiesFile) {
+    try {
+      Properties prop = new Properties();
+      InputStream input = new FileInputStream(localPropertiesFile);
+      final int numModels = Integer.getInteger(prop.getProperty("number.models"));
+      final String tag = localPropertiesFile.getParentFile().getName();
+      final String name = localPropertiesFile.getParentFile().getParentFile().getName();
 
-    final JLabel statusLabel = new JLabel();
-    final JProgressBar progressBar = new JProgressBar();
-    progressBar.setValue(0);
-    progressBar.setStringPainted(true);
+      final JLabel statusLabel = new JLabel();
+      final JProgressBar progressBar = new JProgressBar();
+      progressBar.setValue(0);
+      progressBar.setStringPainted(true);
 
-    JPanel panel = new JPanel(new BorderLayout());
-    panel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
-    panel.add(statusLabel, BorderLayout.EAST);
-    panel.add(progressBar, BorderLayout.SOUTH);
+      JPanel panel = new JPanel(new BorderLayout());
+      panel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+      panel.add(statusLabel, BorderLayout.EAST);
+      panel.add(progressBar, BorderLayout.SOUTH);
 
-    JFrame frame = new JFrame("BDVal " + SPropertyOperations.getString(thisNode, "name") + " Project");
-    frame.setLayout(new BorderLayout());
-    frame.setSize(500, 90);
-    frame.setContentPane(panel);
-    frame.setLocationRelativeTo(null);
-    frame.setVisible(true);
+      JFrame frame = new JFrame("BDVal " + SPropertyOperations.getString(thisNode, "name") + " Project");
+      frame.setLayout(new BorderLayout());
+      frame.setSize(500, 90);
+      frame.setContentPane(panel);
+      frame.setLocationRelativeTo(null);
+      frame.setVisible(true);
 
-    final int numModels = Project_Behavior.call_getNumModels_7860773100992528077(thisNode);
-    final String folder = SPropertyOperations.getString(thisNode, "projectFolder");
-    final String name = SPropertyOperations.getString(thisNode, "trimmedName");
-    final String messageName = name + "-runMessages-" + String.format("%1$TF=%1$TR", new Timestamp(new Date().getTime())).replaceAll("-", "").replaceAll("=", "-").replaceAll(":", "") + ".txt";
-    final File messageFile = new File(folder + messageName);
+      final String folder = SPropertyOperations.getString(thisNode, "projectFolder");
+      final String messageName = name + "-runMessages-" + String.format("%1$TF=%1$TR", new Timestamp(new Date().getTime())).replaceAll("-", "").replaceAll("=", "-").replaceAll(":", "") + ".txt";
+      final File messageFile = new File(folder + messageName);
 
-    // Starts ant to run BDVal project 
-    Thread antCall = new Thread() {
-      public void run() {
-        Project p = new Project();
-        try {
-          PrintStream printStream = new PrintStream(messageFile);
-          File buildFile = new File(folder + name + ".xml");
-          p.setUserProperty("ant.file", buildFile.getAbsolutePath());
-          DefaultLogger consoleLogger = new DefaultLogger();
-          consoleLogger.setErrorPrintStream(System.err);
-          consoleLogger.setOutputPrintStream(printStream);
-          consoleLogger.setMessageOutputLevel(Project.MSG_INFO);
-          p.addBuildListener(consoleLogger);
-          p.fireBuildStarted();
-          p.init();
-          ProjectHelper helper = ProjectHelper.getProjectHelper();
-          p.addReference("ant.projectHelper", helper);
-          helper.parse(p, buildFile);
-          p.executeTarget(p.getDefaultTarget());
-          p.fireBuildFinished(null);
-        } catch (Exception e) {
-          p.fireBuildFinished(e);
-          throw new Error("Error running ant");
-        }
-      }
-    };
-    antCall.start();
-
-    // Reads messages file to monitor progress 
-    Thread monitorProgress = new Thread() {
-      public void run() {
-        boolean stop = false;
-        String line;
-        int counter = 0;
-
-        try {
-          BufferedReader br = new BufferedReader(new FileReader(messageFile));
-          statusLabel.setText("Initializing");
-          while (!(stop)) {
-            line = br.readLine();
-            if (line == null) {
-              Thread.sleep(1000);
-            } else {
-              if (line.contains("execute-splits ->") || line.contains("Item:-m predict")) {
-                counter++;
-                progressBar.setValue(((counter * 100) / (numModels + 1)) - 1);
-                if (counter <= numModels) {
-                  statusLabel.setText("Processing " + counter + " of " + (numModels));
-                }
-              }
-              stop = line.contains("Total time:");
-            }
+      // Starts ant to run BDVal project 
+      Thread antCall = new Thread() {
+        public void run() {
+          Project p = new Project();
+          try {
+            PrintStream printStream = new PrintStream(messageFile);
+            File buildFile = new File(folder + name + ".xml");
+            p.setUserProperty("ant.file", buildFile.getAbsolutePath());
+            DefaultLogger consoleLogger = new DefaultLogger();
+            consoleLogger.setErrorPrintStream(System.err);
+            consoleLogger.setOutputPrintStream(printStream);
+            consoleLogger.setMessageOutputLevel(Project.MSG_INFO);
+            p.addBuildListener(consoleLogger);
+            p.fireBuildStarted();
+            p.init();
+            ProjectHelper helper = ProjectHelper.getProjectHelper();
+            p.addReference("ant.projectHelper", helper);
+            helper.parse(p, buildFile);
+            p.executeTarget(p.getDefaultTarget());
+            p.fireBuildFinished(null);
+          } catch (Exception e) {
+            p.fireBuildFinished(e);
+            throw new Error("Error running ant");
           }
-          progressBar.setValue(100);
-          statusLabel.setText("Done!");
-        } catch (Exception e) {
-          throw new Error("Error monitoring progress");
         }
-      }
-    };
-    monitorProgress.start();
+      };
+      antCall.start();
+
+      // Reads messages file to monitor progress 
+      Thread monitorProgress = new Thread() {
+        public void run() {
+          boolean stop = false;
+          String line;
+          int counter = 0;
+
+          try {
+            BufferedReader br = new BufferedReader(new FileReader(messageFile));
+            statusLabel.setText("Initializing");
+            while (!(stop)) {
+              line = br.readLine();
+              if (line == null) {
+                Thread.sleep(1000);
+              } else {
+                if (line.contains("execute-splits ->") || line.contains("Item:-m predict")) {
+                  counter++;
+                  progressBar.setValue(((counter * 100) / (numModels + 1)) - 1);
+                  if (counter <= numModels) {
+                    statusLabel.setText("Processing " + counter + " of " + (numModels));
+                  }
+                }
+                stop = line.contains("Total time:");
+              }
+            }
+            progressBar.setValue(100);
+            statusLabel.setText("Done!");
+          } catch (Exception e) {
+            throw new Error("Error monitoring progress");
+          }
+        }
+      };
+      monitorProgress.start();
+
+    } catch (Exception e) {
+      throw new Error("Error running BDVal");
+    }
+
+
+
   }
 
   public static int call_getNumModels_7860773100992528077(SNode thisNode) {

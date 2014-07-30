@@ -68,6 +68,7 @@
     <classNode dependClassName="org.campagnelab.bdval.behavior.CoxReg_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.DataSet_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.DesktopComputer_BehaviorDescriptor" />
+    <classNode dependClassName="org.campagnelab.bdval.behavior.Directory_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.DisplayRow_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.DisplayValue_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.EndpointCategory_BehaviorDescriptor" />
@@ -77,6 +78,7 @@
     <classNode dependClassName="org.campagnelab.bdval.behavior.FeatureSelectionFoldTrue_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.FeatureSelectionInfo_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.FeatureSelectionProperties_BehaviorDescriptor" />
+    <classNode dependClassName="org.campagnelab.bdval.behavior.File_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.Float_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.FoldChange_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.FoldchangeProperties_BehaviorDescriptor" />
@@ -125,6 +127,7 @@
     <classNode dependClassName="java.lang.Error" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.IllegalArgumentException" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -236,6 +239,12 @@
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="org.campagnelab.bdval.behavior.Directory_BehaviorDescriptor" file="Directory_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
   <dependency className="org.campagnelab.bdval.behavior.DisplayRow_BehaviorDescriptor" file="DisplayRow_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -338,6 +347,12 @@
   <dependency className="org.campagnelab.bdval.behavior.FeatureSelection_BehaviorDescriptor" file="FeatureSelection_BehaviorDescriptor.java">
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
     <classNode extendsClassName="java.lang.Cloneable" />
+  </dependency>
+  <dependency className="org.campagnelab.bdval.behavior.File_BehaviorDescriptor" file="File_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="org.campagnelab.bdval.behavior.Float_BehaviorDescriptor" file="Float_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -621,12 +636,15 @@
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="java.io.BufferedReader" />
     <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.io.FileInputStream" />
     <classNode dependClassName="java.io.FileOutputStream" />
     <classNode dependClassName="java.io.FileReader" />
+    <classNode dependClassName="java.io.InputStream" />
     <classNode dependClassName="java.io.OutputStream" />
     <classNode dependClassName="java.io.PrintStream" />
     <classNode dependClassName="java.lang.Error" />
     <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
@@ -645,7 +663,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="org.apache.commons.io.FileUtils" />
     <classNode dependClassName="org.apache.commons.lang.WordUtils" />
     <classNode dependClassName="org.apache.tools.ant.DefaultLogger" />
     <classNode dependClassName="org.apache.tools.ant.Project" />
@@ -666,6 +683,8 @@
   </dependency>
   <dependency className="org.campagnelab.bdval.behavior.Properties_Behavior" file="Properties_Behavior.java">
     <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>

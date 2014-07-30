@@ -12,13 +12,14 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Table;
 import jetbrains.mps.editor.runtime.style.TableComponent;
@@ -39,7 +40,7 @@ public class Input_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_z9sdep_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_z9sdep_a0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_z9sdep_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_z9sdep_b0(editorContext, node));
     if (renderingCondition_z9sdep_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_z9sdep_c0(editorContext, node));
     }
@@ -71,13 +72,15 @@ public class Input_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_z9sdep_b0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("fileName");
-    provider.setNoTargetText("enter path");
+  private EditorCell createRefNode_z9sdep_b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("file");
+    provider.setNoTargetText("<no file>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_fileName");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("file");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);

@@ -9,6 +9,9 @@ import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.io.File;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -42,18 +45,25 @@ public class LoadInput_Intention implements IntentionFactory {
   }
 
   public boolean isAvailableInChildNodes() {
-    return false;
+    return true;
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
+    if (editorContext.getSelectedNode() != node && !(isVisibleInChild(node, editorContext.getSelectedNode(), editorContext))) {
+      return false;
+    }
     return true;
   }
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return isNotEmptyString(SPropertyOperations.getString(node, "fileName"));
+    return isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(node, "file", true), "fileLocation")) && new File(SPropertyOperations.getString(SLinkOperations.getTarget(node, "file", true), "fileLocation")).exists();
+  }
+
+  private boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {
+    return SNodeOperations.isInstanceOf(childNode, "org.campagnelab.bdval.structure.File");
   }
 
   public SNodeReference getIntentionNodeReference() {

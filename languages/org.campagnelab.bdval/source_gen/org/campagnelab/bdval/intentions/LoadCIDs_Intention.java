@@ -8,10 +8,13 @@ import jetbrains.mps.intentions.IntentionExecutable;
 import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.io.File;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -45,18 +48,34 @@ public class LoadCIDs_Intention implements IntentionFactory {
   }
 
   public boolean isAvailableInChildNodes() {
-    return false;
+    return true;
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
+    if (editorContext.getSelectedNode() != node && !(isVisibleInChild(node, editorContext.getSelectedNode(), editorContext))) {
+      return false;
+    }
     return true;
   }
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.DataSet"), "input", true), "sample", true)).isNotEmpty() && isNotEmptyString(SPropertyOperations.getString(node, "fileName"));
+    SNode dataset = SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.DataSet");
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(dataset, "input", true), "sample", true)).isNotEmpty() && isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(node, "file", true), "fileLocation")) && new File(SPropertyOperations.getString(SLinkOperations.getTarget(node, "file", true), "fileLocation")).exists() && (SLinkOperations.getTarget(SLinkOperations.getTarget(dataset, "task", true), "endpoint", false) != null) && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(dataset, "task", true), "categoryReference", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return (SLinkOperations.getTarget(it, "endpointCategory", false) != null);
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SLinkOperations.getTarget(it, "endpointCategory", false);
+      }
+    }).isNotEmpty();
+  }
+
+  private boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {
+    return SNodeOperations.isInstanceOf(childNode, "org.campagnelab.bdval.structure.File");
   }
 
   public SNodeReference getIntentionNodeReference() {

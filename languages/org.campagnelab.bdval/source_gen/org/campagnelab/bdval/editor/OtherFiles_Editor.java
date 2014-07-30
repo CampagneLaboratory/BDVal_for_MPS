@@ -14,7 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
@@ -34,19 +34,19 @@ public class OtherFiles_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createConstant_fiu8c2_a0(editorContext, node));
     }
     if (renderingCondition_fiu8c2_a1a(node, editorContext)) {
-      editorCell.addEditorCell(this.createProperty_fiu8c2_b0(editorContext, node));
+      editorCell.addEditorCell(this.createRefNode_fiu8c2_b0(editorContext, node));
     }
     if (renderingCondition_fiu8c2_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_fiu8c2_c0(editorContext, node));
     }
     if (renderingCondition_fiu8c2_a3a(node, editorContext)) {
-      editorCell.addEditorCell(this.createProperty_fiu8c2_d0(editorContext, node));
+      editorCell.addEditorCell(this.createRefNode_fiu8c2_d0(editorContext, node));
     }
     if (renderingCondition_fiu8c2_a4a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_fiu8c2_e0(editorContext, node));
     }
     if (renderingCondition_fiu8c2_a5a(node, editorContext)) {
-      editorCell.addEditorCell(this.createProperty_fiu8c2_f0(editorContext, node));
+      editorCell.addEditorCell(this.createRefNode_fiu8c2_f0(editorContext, node));
     }
     return editorCell;
   }
@@ -67,13 +67,15 @@ public class OtherFiles_Editor extends DefaultNodeEditor {
     });
   }
 
-  private EditorCell createProperty_fiu8c2_b0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("pathways");
-    provider.setNoTargetText("<no pathways>");
+  private EditorCell createRefNode_fiu8c2_b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("pathwaysFile");
+    provider.setNoTargetText("<no pathwaysFile>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_pathways");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("pathwaysFile");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -113,13 +115,15 @@ public class OtherFiles_Editor extends DefaultNodeEditor {
     });
   }
 
-  private EditorCell createProperty_fiu8c2_d0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("geneToProbes");
-    provider.setNoTargetText("<no geneToProbes>");
+  private EditorCell createRefNode_fiu8c2_d0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("geneToProbesFile");
+    provider.setNoTargetText("<no geneToProbesFile>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_geneToProbes");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("geneToProbesFile");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -159,13 +163,15 @@ public class OtherFiles_Editor extends DefaultNodeEditor {
     });
   }
 
-  private EditorCell createProperty_fiu8c2_f0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("survival");
-    provider.setNoTargetText("<no survival>");
+  private EditorCell createRefNode_fiu8c2_f0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("survivalFile");
+    provider.setNoTargetText("<no survivalFile>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_survival");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("survivalFile");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

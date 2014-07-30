@@ -12,7 +12,8 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
@@ -38,7 +39,7 @@ public class CIDs_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_s0w797_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_s0w797_a0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_s0w797_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_s0w797_b0(editorContext, node));
     if (renderingCondition_s0w797_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_s0w797_c0(editorContext, node));
     }
@@ -58,16 +59,18 @@ public class CIDs_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_s0w797_b0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("fileName");
-    provider.setNoTargetText("optional: enter path");
-    provider.setAllowsEmptyTarget(true);
+  private EditorCell createRefNode_s0w797_b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("file");
+    provider.setNoTargetText("optional: press enter to enter file path");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_fileName");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("file");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -8,13 +8,12 @@ import jetbrains.mps.intentions.IntentionExecutable;
 import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import java.io.File;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.io.File;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
-import org.campagnelab.bdval.behavior.Project_Behavior;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class Run_Intention implements IntentionFactory {
@@ -55,7 +54,7 @@ public class Run_Intention implements IntentionFactory {
   }
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return new File(SPropertyOperations.getString(SLinkOperations.getTarget(node, "properties", true), "outputLocation") + "/" + SPropertyOperations.getString(node, "name").replaceAll("\\s", "")).isDirectory();
+    return isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "properties", true), "outputDirectory", true), "directoryLocation")) && isNotEmptyString(SPropertyOperations.getString(node, "name")) && new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(node, "name").replaceAll("\\s", "")).isDirectory();
   }
 
   public SNodeReference getIntentionNodeReference() {
@@ -82,11 +81,14 @@ public class Run_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      Project_Behavior.call_runBDVal_6752420586317975318(node);
     }
 
     public IntentionDescriptor getDescriptor() {
       return Run_Intention.this;
     }
+  }
+
+  private static boolean isNotEmptyString(String str) {
+    return str != null && str.length() > 0;
   }
 }

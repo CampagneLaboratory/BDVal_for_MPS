@@ -21,7 +21,7 @@ public class CIDs_Behavior {
   public static void call_load_4345048909863010217(SNode thisNode) {
     ListSequence.fromList(SLinkOperations.getTargets(thisNode, "mismatches", true)).clear();
     try {
-      FileReader reader = new FileReader(new File(SPropertyOperations.getString(thisNode, "fileName")));
+      FileReader reader = new FileReader(new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "file", true), "fileLocation")));
       BufferedReader datasetReader = new BufferedReader(reader);
       if (datasetReader.readLine().split("\t").length != 2) {
         throw new IllegalArgumentException();
@@ -35,13 +35,13 @@ public class CIDs_Behavior {
   public static void call_getCidsEndpts_3367122381605517505(SNode thisNode, BufferedReader cidsReader) {
     try {
       SNode dataSet = SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.DataSet");
-      final Wrappers._T<String[]> lineArray = new Wrappers._T<String[]>();
+      final Wrappers._T<Object[]> lineArray = new Wrappers._T<Object[]>();
       String line;
       final Wrappers._T<String> id = new Wrappers._T<String>();
 
       while ((line = cidsReader.readLine()) != null) {
         lineArray.value = line.split("\t");
-        id.value = lineArray.value[1];
+        id.value = lineArray.value[1].toString();
         SNode sampleNode = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(dataSet, "input", true), "sample", true)).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode sample) {
             return SPropertyOperations.getString(sample, "name").matches(id.value);
@@ -49,7 +49,7 @@ public class CIDs_Behavior {
         });
         SNode categoryNode = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(dataSet, "task", true), "categoryReference", true)).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode categoryRef) {
-            return SPropertyOperations.getString(SLinkOperations.getTarget(categoryRef, "endpointCategory", false), "name").toLowerCase().matches(lineArray.value[0].toLowerCase());
+            return SPropertyOperations.getString(SLinkOperations.getTarget(categoryRef, "endpointCategory", false), "name").matches(lineArray.value[0].toString());
           }
         });
         if ((sampleNode != null)) {

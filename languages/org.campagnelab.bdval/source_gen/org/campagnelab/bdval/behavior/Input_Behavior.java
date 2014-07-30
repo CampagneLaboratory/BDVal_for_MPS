@@ -23,7 +23,7 @@ public class Input_Behavior {
     ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.DataSet"), "cids", true), "mismatches", true)).clear();
     try {
       final DAVMode davMode = new DAVMode();
-      Table inputTable = davMode.getReadInputFile(SPropertyOperations.getString(thisNode, "fileName"));
+      Table inputTable = davMode.getReadInputFile(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "file", true), "fileLocation"));
       SPropertyOperations.set(thisNode, "numberOfFeatures", "" + (inputTable.getRowNumber() - 1));
       int cols = inputTable.getColumnNumber();
       Input_Behavior.call_getInputIds_7052920786130389579(thisNode, inputTable, cols);

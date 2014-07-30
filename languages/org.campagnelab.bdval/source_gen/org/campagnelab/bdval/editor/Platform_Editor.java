@@ -12,7 +12,7 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
@@ -26,7 +26,7 @@ public class Platform_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_tw4zmk_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_tw4zmk_a0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_tw4zmk_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_tw4zmk_b0(editorContext, node));
     return editorCell;
   }
 
@@ -40,13 +40,15 @@ public class Platform_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_tw4zmk_b0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("fileName");
-    provider.setNoTargetText("enter path");
+  private EditorCell createRefNode_tw4zmk_b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("file");
+    provider.setNoTargetText("<no file>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_fileName");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("file");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

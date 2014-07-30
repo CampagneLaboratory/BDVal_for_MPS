@@ -15,22 +15,22 @@ import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class check_CIDs_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-  public check_CIDs_NonTypesystemRule() {
+public class check_File_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
+  public check_File_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode cids, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (isNotEmptyString(SPropertyOperations.getString(cids, "fileName")) && !(new File(SPropertyOperations.getString(cids, "fileName")).isFile())) {
+  public void applyRule(final SNode file, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    if (isNotEmptyString(SPropertyOperations.getString(file, "fileLocation")) && !(new File(SPropertyOperations.getString(file, "fileLocation")).isFile())) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
-        errorTarget = new PropertyMessageTarget("fileName");
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(cids, "CIDs file location does not point to a file", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "3367122381612436478", null, errorTarget);
+        errorTarget = new PropertyMessageTarget("fileLocation");
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(file, "Location does not point to an existing file", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "1911754720566015683", null, errorTarget);
       }
     }
   }
 
   public String getApplicableConceptFQName() {
-    return "org.campagnelab.bdval.structure.CIDs";
+    return "org.campagnelab.bdval.structure.File";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {

@@ -15,22 +15,22 @@ import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class check_Platform_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-  public check_Platform_NonTypesystemRule() {
+public class check_Directory_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
+  public check_Directory_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode platform, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (isNotEmptyString(SPropertyOperations.getString(platform, "fileName")) && !(new File(SPropertyOperations.getString(platform, "fileName")).isFile())) {
+  public void applyRule(final SNode directory, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    if (isNotEmptyString(SPropertyOperations.getString(directory, "directoryLocation")) && !(new File(SPropertyOperations.getString(directory, "directoryLocation")).isDirectory())) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
-        errorTarget = new PropertyMessageTarget("fileName");
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(platform, "Platform file location does not point to a file", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "3367122381612443835", null, errorTarget);
+        errorTarget = new PropertyMessageTarget("directoryLocation");
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(directory, "Location does not point to an existing directory", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "1911754720568106156", null, errorTarget);
       }
     }
   }
 
   public String getApplicableConceptFQName() {
-    return "org.campagnelab.bdval.structure.Platform";
+    return "org.campagnelab.bdval.structure.Directory";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {

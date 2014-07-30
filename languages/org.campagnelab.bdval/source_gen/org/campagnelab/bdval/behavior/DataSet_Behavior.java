@@ -50,9 +50,9 @@ public class DataSet_Behavior {
   public static void call_copyPlatform_7083662764413093380(SNode thisNode, String projectFolder, String datasetName) {
     String platformFolder = projectFolder + "platforms/";
     new File(platformFolder).mkdir();
-    String fileName = platformFolder + new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "platform", true), "fileName")).getName();
+    String fileName = platformFolder + new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "platform", true), "file", true), "fileLocation")).getName();
     try {
-      FileUtils.copyFile(new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "platform", true), "fileName")), new File(fileName));
+      FileUtils.copyFile(new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "platform", true), "file", true), "fileLocation")), new File(fileName));
     } catch (Exception e) {
       throw new Error("Error Copying Platform File");
     }
@@ -61,33 +61,33 @@ public class DataSet_Behavior {
   public static void call_copyInput_7083662764415129152(SNode thisNode, String projectFolder, String datasetName) {
     String inputFolder = projectFolder + "inputs/";
     new File(inputFolder).mkdir();
-    String fileName = inputFolder + new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "input", true), "fileName")).getName();
+    String fileName = inputFolder + new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "input", true), "file", true), "fileLocation")).getName();
     try {
-      FileUtils.copyFile(new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "input", true), "fileName")), new File(fileName));
+      FileUtils.copyFile(new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "input", true), "file", true), "fileLocation")), new File(fileName));
     } catch (Exception e) {
       throw new Error("Error Copying Input File");
     }
   }
 
   public static void call_copyOtherFiles_4989762282953266724(SNode thisNode, String projectFoler, String datasetName) {
-    if (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "otherFiles", true), "pathways"))) {
+    if (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "otherFiles", true), "pathwaysFile", true), "fileLocation"))) {
       String pathwayFolder = projectFoler + "pathways/";
       new File(pathwayFolder).mkdir();
-      String pathwaysFile = pathwayFolder + new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "otherFiles", true), "pathways")).getName();
-      String geneToProbesFile = pathwayFolder + new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "otherFiles", true), "geneToProbes")).getName();
+      String pathwaysFile = pathwayFolder + new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "otherFiles", true), "pathwaysFile", true), "fileLocation")).getName();
+      String geneToProbesFile = pathwayFolder + new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "otherFiles", true), "geneToProbesFile", true), "fileLocation")).getName();
       try {
-        FileUtils.copyFile(new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "otherFiles", true), "pathways")), new File(pathwaysFile));
-        FileUtils.copyFile(new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "otherFiles", true), "geneToProbes")), new File(geneToProbesFile));
+        FileUtils.copyFile(new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "otherFiles", true), "pathwaysFile", true), "fileLocation")), new File(pathwaysFile));
+        FileUtils.copyFile(new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "otherFiles", true), "geneToProbesFile", true), "fileLocation")), new File(geneToProbesFile));
       } catch (Exception e) {
         throw new Error("Error Copying Pathway Files");
       }
     }
-    if (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "otherFiles", true), "survival"))) {
+    if (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "otherFiles", true), "survivalFile", true), "fileLocation"))) {
       String survivalFolder = projectFoler + "survivals/";
       new File(survivalFolder).mkdir();
-      String survivalFile = survivalFolder + new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "otherFiles", true), "survival")).getName();
+      String survivalFile = survivalFolder + new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "otherFiles", true), "survivalFile", true), "fileLocation")).getName();
       try {
-        FileUtils.copyFile(new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "otherFiles", true), "survival")), new File(survivalFile));
+        FileUtils.copyFile(new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "otherFiles", true), "survivalFile", true), "fileLocation")), new File(survivalFile));
       } catch (Exception e) {
         throw new Error("Error Copying Survival File");
       }

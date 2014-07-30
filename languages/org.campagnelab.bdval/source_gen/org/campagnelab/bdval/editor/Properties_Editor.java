@@ -9,13 +9,13 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class Properties_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -27,11 +27,11 @@ public class Properties_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_vvo4cc_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_vvo4cc_a0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_vvo4cc_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_vvo4cc_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_vvo4cc_c0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_vvo4cc_d0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_vvo4cc_d0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_vvo4cc_e0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_vvo4cc_f0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_vvo4cc_f0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_vvo4cc_g0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_vvo4cc_h0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_vvo4cc_i0(editorContext, node));
@@ -50,13 +50,15 @@ public class Properties_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_vvo4cc_b0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("outputLocation");
-    provider.setNoTargetText("enter path");
+  private EditorCell createRefNode_vvo4cc_b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("outputDirectory");
+    provider.setNoTargetText("<no outputDirectory>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_outputLocation");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("outputDirectory");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -78,13 +80,15 @@ public class Properties_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_vvo4cc_d0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("bdvalLocation");
-    provider.setNoTargetText("enter path");
+  private EditorCell createRefNode_vvo4cc_d0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("bdvalDirectory");
+    provider.setNoTargetText("<no bdvalDirectory>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_bdvalLocation");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("bdvalDirectory");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -106,13 +110,15 @@ public class Properties_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_vvo4cc_f0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("antLocation");
-    provider.setNoTargetText("enter path");
+  private EditorCell createRefNode_vvo4cc_f0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("antDirectory");
+    provider.setNoTargetText("<no antDirectory>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_antLocation");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("antDirectory");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);

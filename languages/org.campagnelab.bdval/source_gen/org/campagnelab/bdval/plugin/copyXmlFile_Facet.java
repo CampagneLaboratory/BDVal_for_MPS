@@ -99,7 +99,7 @@ public class copyXmlFile_Facet extends IFacet.Stub {
                                 return true;
                               }
                             });
-                            String outputLocation = SPropertyOperations.getString(SLinkOperations.getTarget(project, "properties", true), "outputLocation") + "/" + name + "/" + WordUtils.capitalize(SPropertyOperations.getString(SLinkOperations.getTarget(project, "properties", true), "tagDescription").replaceAll("\\s", "").trim());
+                            String outputLocation = SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(project, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + name + "/" + WordUtils.capitalize(SPropertyOperations.getString(SLinkOperations.getTarget(project, "properties", true), "tagDescription").replaceAll("\\s", "").trim());
                             if (pluginXml[0] != null) {
                               FileUtil.copyFile(new File(pluginXml[0].getPath()), new File(outputLocation + "/" + fileName));
                             }

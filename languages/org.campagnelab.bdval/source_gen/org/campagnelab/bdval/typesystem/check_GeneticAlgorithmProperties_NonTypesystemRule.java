@@ -32,7 +32,7 @@ public class check_GeneticAlgorithmProperties_NonTypesystemRule extends Abstract
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         errorTarget = new ReferenceMessageTarget("performance");
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(geneticAlgorithmProperties, "Must specify Genetic Algorithm Performance", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "4989762282945551076", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(geneticAlgorithmProperties, "Must Specify Genetic Algorithm Performance", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "4989762282945551076", null, errorTarget);
       }
     }
   }
