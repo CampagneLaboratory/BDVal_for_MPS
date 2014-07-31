@@ -6,18 +6,16 @@
   <import index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="69" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <root type="w348.Project" typeId="w348.3367122381622495536" id="1911754720579092993" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="Example2" />
-    <property name="test1" value="/Users/vmb34/Desktop" />
-    <property name="test2" value="/Users/vmb34/Desktop/Example/Test/Example.xml" />
+    <property name="name" nameId="tpck.1169194664001" value="Backup" />
     <node role="properties" roleId="w348.7083662764416913977" type="w348.Properties" typeId="w348.7083662764416913858" id="1911754720579092994" nodeInfo="ng">
       <property name="threads" nameId="w348.7083662764416913912" value="1" />
       <property name="memory" nameId="w348.7083662764416913915" value="1200" />
-      <property name="tagDescription" nameId="w348.1847053361490302608" value="Invalid" />
+      <property name="tagDescription" nameId="w348.1847053361490302608" value="BaseDirTest2" />
       <node role="outputDirectory" roleId="w348.1911754720568108889" type="w348.Directory" typeId="w348.1911754720568105445" id="1911754720579092995" nodeInfo="ng">
         <property name="directoryLocation" nameId="w348.1911754720568105446" value="/Users/vmb34/Desktop" />
       </node>
       <node role="bdvalDirectory" roleId="w348.1911754720568108892" type="w348.Directory" typeId="w348.1911754720568105445" id="1911754720579092996" nodeInfo="ng">
-        <property name="directoryLocation" nameId="w348.1911754720568105446" value="/Users/vmb34/Desktop/bdval" />
+        <property name="directoryLocation" nameId="w348.1911754720568105446" value="/Users/vmb34/Desktop/bdval_short" />
       </node>
       <node role="antDirectory" roleId="w348.1911754720568108896" type="w348.Directory" typeId="w348.1911754720568105445" id="1911754720579092997" nodeInfo="ng">
         <property name="directoryLocation" nameId="w348.1911754720568105446" value="/Users/vmb34/Desktop/apache-ant-1.9.4" />
@@ -31,8 +29,8 @@
       <property name="externalFolds" nameId="w348.290469645457746273" value="3" />
       <node role="featureSelectionInfo" roleId="w348.8314272953671282922" type="w348.FeatureSelectionInfo" typeId="w348.1870354875249618576" id="1911754720579093000" nodeInfo="ng">
         <property name="maxIntermediateFeatures" nameId="w348.1870354875249707132" value="400" />
-        <node role="featureSelectionCombo" roleId="w348.1870354875249707136" type="w348.FeatureSelectionCombo" typeId="w348.1870354875251769793" id="1911754720599853661" nodeInfo="ng">
-          <node role="featureSelection1" roleId="w348.3649519271352989204" type="w348.Ttest" typeId="w348.1870354875249563496" id="1911754720599853665" nodeInfo="ng">
+        <node role="featureSelectionCombo" roleId="w348.1870354875249707136" type="w348.FeatureSelectionCombo" typeId="w348.1870354875251769793" id="8381115952222486779" nodeInfo="ng">
+          <node role="featureSelection1" roleId="w348.3649519271352989204" type="w348.Ttest" typeId="w348.1870354875249563496" id="8381115952226812209" nodeInfo="ng">
             <property name="name" nameId="tpck.1169194664001" value="ttest" />
             <property name="addoptions" nameId="w348.3649519271356774529" value="addoption required:alpha:confidence level for T-test&#10;" />
             <property name="sequenceCommand" nameId="w348.3649519271360690766" value=" t-test" />
@@ -40,13 +38,15 @@
             <property name="sequenceNumFeatures" nameId="w348.3649519271361989788" value=" --report-max-probes" />
             <property name="otherOptions" nameId="w348.3649519271350395849" value=" --alpha ${ttest-alpha}" />
           </node>
+          <node role="featureSelectionOption" roleId="w348.4989762282952412244" type="w348.Pathway" typeId="w348.4989762282952360856" id="8381115952223929198" nodeInfo="ng">
+            <property name="name" nameId="tpck.1169194664001" value="pathway" />
+            <property name="def" nameId="w348.4989762282952312362" value="" />
+            <property name="addoptions" nameId="w348.4989762282952312364" value="" />
+            <property name="otherOptions" nameId="w348.4989762282954698886" value=" --pathways ${@{endpoint-name}.pathways-file} --gene-to-probes ${@{endpoint-name}.gene-to-probes-file} --pathway-aggregation-method ${pathway-aggregation-method}" />
+          </node>
         </node>
         <node role="numberOfFeatures" roleId="w348.1870354875249707134" type="w348.Integer" typeId="w348.290469645457746370" id="1911754720579093001" nodeInfo="ng">
           <property name="value" nameId="w348.290469645457746371" value="20" />
-        </node>
-        <node role="featureSelectionFold" roleId="w348.1870354875249707139" type="w348.FeatureSelectionFoldTrue" typeId="w348.7388448774866524764" id="1911754720599880447" nodeInfo="ng">
-          <property name="name" nameId="tpck.1169194664001" value="use-feature-selection-fold=true" />
-          <property name="value" nameId="w348.1870354875254126878" value="true" />
         </node>
         <node role="featureSelectionProperties" roleId="w348.1870354875262487940" type="w348.FeatureSelectionProperties" typeId="w348.4671749543976303774" id="1911754720579093005" nodeInfo="ng">
           <node role="ttest" roleId="w348.4671749543995071279" type="w348.TTestProperties" typeId="w348.4671749543995071282" id="1911754720585010173" nodeInfo="ng">
@@ -83,6 +83,10 @@
             </node>
           </node>
         </node>
+        <node role="featureSelectionFold" roleId="w348.1870354875249707139" type="w348.FeatureSelectionFoldFalse" typeId="w348.7388448774866569121" id="2926118483681157225" nodeInfo="ng">
+          <property name="name" nameId="tpck.1169194664001" value="use-feature-selection-fold=false" />
+          <property name="value" nameId="w348.1870354875254126878" value="false" />
+        </node>
       </node>
       <node role="classificationInfo" roleId="w348.4989762282967505312" type="w348.ClassificationInfo" typeId="w348.4989762282967436234" id="1911754720579093006" nodeInfo="ng">
         <node role="classificationProperties" roleId="w348.4989762282967454364" type="w348.ClassificationProperties" typeId="w348.4989762282967436237" id="1911754720579093008" nodeInfo="ng">
@@ -96,8 +100,8 @@
             </node>
           </node>
         </node>
-        <node role="classification" roleId="w348.4989762283050821438" type="w348.SVMTuneC" typeId="w348.4989762283050789095" id="1911754720599925043" nodeInfo="ng">
-          <property name="name" nameId="tpck.1169194664001" value="SVMTuneC" />
+        <node role="classification" roleId="w348.4989762283050821438" type="w348.SVM" typeId="w348.7388448774866532198" id="8381115952226815051" nodeInfo="ng">
+          <property name="name" nameId="tpck.1169194664001" value="SVM" />
           <property name="classname" nameId="w348.558294987374832484" value="edu.cornell.med.icb.learning.libsvm.LibSvmClassifier " />
           <property name="wekaClass" nameId="w348.3649519271340810336" value="libSVM" />
           <property name="parameters" nameId="w348.1870354875256041029" value="probability=${use-probability}" />

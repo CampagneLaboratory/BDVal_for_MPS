@@ -51,8 +51,6 @@ public class Approach_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_6do0s2_k0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6do0s2_l0(editorContext, node));
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_6do0s2_m0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6do0s2_n0(editorContext, node));
-    editorCell.addEditorCell(this.createReadOnlyModelAccessor_6do0s2_o0(editorContext, node));
     return editorCell;
   }
 
@@ -279,39 +277,6 @@ public class Approach_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.READ_ONLY, true);
     editorCell.getStyle().putAll(style);
-    return editorCell;
-  }
-
-  private EditorCell createConstant_6do0s2_n0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Number of C Values:");
-    editorCell.setCellId("Constant_6do0s2_n0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createReadOnlyModelAccessor_6do0s2_o0(final EditorContext editorContext, final SNode node) {
-    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
-      public String getText() {
-        final Wrappers._int counter = new Wrappers._int(0);
-        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "classificationInfo", true), "classificationProperties", true), "svmTuneCProperties", true), "cValue", true)).visitAll(new IVisitor<SNode>() {
-          public void visit(SNode it) {
-            counter.value++;
-          }
-        });
-        return String.valueOf(counter.value);
-
-      }
-
-      public void setText(String s) {
-      }
-
-      public boolean isValidText(String s) {
-        return EqualUtil.equals(s, getText());
-      }
-    }, node);
-    editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
-    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
-    editorCell.setCellId("ReadOnlyModelAccessor_6do0s2_o0");
     return editorCell;
   }
 

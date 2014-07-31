@@ -33,9 +33,8 @@ public class QueriesGenerated {
     return "${ant.file." + SPropertyOperations.getString(_context.getNode(), "name").replaceAll("\\s", "") + "}";
   }
 
-  public static Object propertyMacro_GetPropertyValue_2125124408386345809(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "properties", true), "bdvalDirectory", true), "directoryLocation") + "/buildsupport/build.xml";
-
+  public static Object propertyMacro_GetPropertyValue_8381115952226070471(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "properties", true), "bdvalDirectory", true), "directoryLocation");
   }
 
   public static Object propertyMacro_GetPropertyValue_1847053361490323918(final PropertyMacroContext _context) {
@@ -97,7 +96,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4989762282927937845(final PropertyMacroContext _context) {
-    return "--cv-repeats " + String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "geneticAlgorithm", true), "internalCVFolds"));
+    return String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "geneticAlgorithm", true), "internalCVFolds"));
   }
 
   public static Object propertyMacro_GetPropertyValue_4989762282927972549(final PropertyMacroContext _context) {
@@ -144,10 +143,6 @@ public class QueriesGenerated {
       }
     });
     return allDatasets.value;
-  }
-
-  public static Object propertyMacro_GetPropertyValue_2125124408386645805(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "properties", true), "bdvalDirectory", true), "directoryLocation") + "/data/bdval.xml";
   }
 
   public static Object propertyMacro_GetPropertyValue_1870354875263664529(final PropertyMacroContext _context) {

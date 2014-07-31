@@ -1,17 +1,17 @@
-<project name="Example" default="evaluate" basedir=".">
+<project name="Backup" default="evaluate" basedir=".">
   <!--Set up-->
-  <dirname property="bdval-project.basedir" file="${ant.file.Example}"></dirname>
-  <import file="/Users/vmb34/Desktop/bdval/buildsupport/build.xml"></import>
+  <dirname property="bdval-project.basedir" file="${ant.file.Backup}"></dirname>
+  <property name="bdval-dir" value="/Users/vmb34/Desktop/bdval_short"></property>
+  <import file="${bdval-dir}/buildsupport/build.xml"></import>
   <property file="${bdval-project.basedir}/${ant.project.name}-local.properties"></property>
   <property name="project-property-file" value="${bdval-project.basedir}/${ant.project.name}.properties"></property>
   <property file="${project-property-file}"></property>
-  <property name="tag-description" value="Invalid"></property>
+  <property name="tag-description" value="BaseDirTest2"></property>
   
   <!--Basic Properties-->
   <property name="enable-flooring" value="false"></property>
   <property name="evaluate-statistics-after-splits" value="false"></property>
-  <property name="external-CV-repeats-number" value="1"></property>
-  <property name="external-CV-repeats" value="--cv-repeats ${external-CV-repeats-number}"></property>
+  <property name="external-CV-repeats" value="1"></property>
   <property name="external-CV-folds" value="3"></property>
   <property name="num-features" value="20"></property>
   <property name="max-intermediate-features" value="400"></property>
@@ -23,7 +23,7 @@
   <property name="ga-wrapper-population-size" value="20"></property>
   <property name="ga-wrapper-number-of-iterations" value="20"></property>
   <property name="performance-measure-maximized-by-GA" value="MCC"></property>
-  <property name="internal-CV-repeats" value="--cv-repeats 3"></property>
+  <property name="internal-CV-repeats" value="3"></property>
   <property name="internal-CV-folds" value="3"></property>
   <property name="ga-ratio" value="0.5"></property>
   <property name="perm-alpha" value="0.05"></property>
@@ -37,12 +37,12 @@
   
   <!--Additional Properties-->
   <property name="run-java" value="true"></property>
-  <var name="do.Example_DiseasedYesNo_Training" value="true"></var>
-  <property name="all-endpoints" value=" Example_DiseasedYesNo_Training"></property>
-  <import file="/Users/vmb34/Desktop/bdval/data/bdval.xml"></import>
+  <var name="do.Backup_DiseasedYesNo_Training" value="true"></var>
+  <property name="all-endpoints" value=" Backup_DiseasedYesNo_Training"></property>
+  <import file="${bdval-dir}/data/bdval.xml"></import>
   
   
-  <target name="evaluate" description="Run a complete evaluation." depends="prepare-bdval, rserve-status, tag-output-directory">
+  <target name="evaluate" description="Run a complete evaluation." depends="rserve-status, tag-output-directory">
     <delete file="${statistics-output}"></delete>
     <echo message="Executing with ${num-threads} threads"></echo>
     <property name="do.my-execute-splits" value="true"></property>
@@ -57,8 +57,7 @@
     <attribute name="floor-param"></attribute>
     <attribute name="array-params"></attribute>
     <sequential>
-      <execute-splits feature-selection-fold="true" sequence-file="generated-ttest-SVMTuneC-fs=true.sequence" endpoint-name="@{endpoint-name}" dataset-root="@{dataset-root}" floor-param="@{floor-param}" array-params="@{array-params}" all-classifier-parameters=" --classifier edu.cornell.med.icb.learning.libsvm.LibSvmClassifier  --classifier-parameters probability=${use-probability},C=0.5" other-options=" --alpha ${ttest-alpha}"></execute-splits>
-      <execute-splits feature-selection-fold="true" sequence-file="generated-ttest-SVMTuneC-fs=true.sequence" endpoint-name="@{endpoint-name}" dataset-root="@{dataset-root}" floor-param="@{floor-param}" array-params="@{array-params}" all-classifier-parameters=" --classifier edu.cornell.med.icb.learning.libsvm.LibSvmClassifier  --classifier-parameters probability=${use-probability},C=1" other-options=" --alpha ${ttest-alpha}"></execute-splits>
+      <execute-splits feature-selection-fold="false" sequence-file="generated-ttest-pathway-SVM-fs=false.sequence" endpoint-name="@{endpoint-name}" dataset-root="@{dataset-root}" floor-param="@{floor-param}" array-params="@{array-params}" all-classifier-parameters=" --classifier edu.cornell.med.icb.learning.libsvm.LibSvmClassifier  --classifier-parameters probability=${use-probability}" other-options=" --alpha ${ttest-alpha} --pathways ${@{endpoint-name}.pathways-file} --gene-to-probes ${@{endpoint-name}.gene-to-probes-file} --pathway-aggregation-method ${pathway-aggregation-method}"></execute-splits>
     </sequential>
   </macrodef>
   

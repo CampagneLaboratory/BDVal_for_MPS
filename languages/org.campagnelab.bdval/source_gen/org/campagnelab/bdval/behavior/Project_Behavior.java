@@ -14,16 +14,16 @@ import java.util.Properties;
 import java.io.OutputStream;
 import java.io.FileOutputStream;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import javax.swing.JFrame;
 import java.io.InputStream;
 import java.io.FileInputStream;
 import javax.swing.JLabel;
-import javax.swing.JProgressBar;
-import javax.swing.JTextArea;
-import javax.swing.JScrollPane;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import javax.swing.BorderFactory;
+import javax.swing.JProgressBar;
+import javax.swing.JTextArea;
+import javax.swing.JScrollPane;
+import javax.swing.JFrame;
 import java.sql.Timestamp;
 import java.util.Date;
 import java.io.PrintStream;
@@ -60,13 +60,13 @@ public class Project_Behavior {
     projectDirectory.mkdirs();
     Project_Behavior.call_generateLocalProperties_7083662764418572584(thisNode);
     Project_Behavior.call_generateProperties_290469645499580654(thisNode);
+    Approach_Behavior.call_generateSequenceFiles_1870354875253436007(SLinkOperations.getTarget(thisNode, "approach", true));
+    Project_Behavior.call_generateMemoProperties_1911754720586693397(thisNode);
     ListSequence.fromList(SLinkOperations.getTargets(thisNode, "dataset", true)).visitAll(new IVisitor<SNode>() {
       public void visit(SNode dataset) {
         DataSet_Behavior.call_generateFiles_6032947574604950587(dataset);
       }
     });
-    Approach_Behavior.call_generateSequenceFiles_1870354875253436007(SLinkOperations.getTarget(thisNode, "approach", true));
-    Project_Behavior.call_generateMemoProperties_1911754720586693397(thisNode);
   }
 
   public static void call_generateLocalProperties_7083662764418572584(SNode thisNode) {
@@ -167,15 +167,20 @@ public class Project_Behavior {
   }
 
   public static void call_showRunWindow_7860773100997324157(SNode thisNode) {
-    final String name = SPropertyOperations.getString(thisNode, "name");
-    final String description = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "tagDescription");
     final SNode project = thisNode;
-
     Thread frameThread = new Thread() {
       public void run() {
+        int counter = 0;
+        while (!(new File(SPropertyOperations.getString(project, "projectFolder") + SPropertyOperations.getString(project, "trimmedName") + ".xml").exists()) && counter < 60) {
+          try {
+            Thread.sleep(250);
+            counter++;
+          } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error waiting for xml file before showing run window");
+          }
+        }
         Object[] options = {"Run BDVal", "Cancel"};
-        JFrame runFrame = new JFrame();
-        int reply = JOptionPane.showOptionDialog(runFrame, "Run BDVal " + description + " Project", name + " Project", JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
+        int reply = JOptionPane.showOptionDialog(null, "Run BDVal " + SPropertyOperations.getString(SLinkOperations.getTarget(project, "properties", true), "tagDescription") + " Project", SPropertyOperations.getString(project, "name") + " Project", JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
         if (reply == JOptionPane.OK_OPTION) {
           Project_Behavior.call_runBDVal_6752420586317975318(project, SPropertyOperations.getString(project, "projectFolder") + "memo/memo.properties");
         }
@@ -200,20 +205,20 @@ public class Project_Behavior {
       input.close();
 
       final JLabel statusLabel = new JLabel();
-      final JProgressBar progressBar = new JProgressBar();
-      progressBar.setValue(0);
-      progressBar.setStringPainted(true);
-
       JLabel descriptionLabel = new JLabel("Tag Description: " + tag);
-
-      JTextArea modelText = new JTextArea("Project Summary:\n" + modelInfo + "Folds: " + folds + "    Repeats: " + repeats);
-      modelText.setEditable(false);
-      JScrollPane scrollPane = new JScrollPane(modelText);
 
       JPanel panel = new JPanel(new BorderLayout());
       panel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
       panel.add(descriptionLabel, BorderLayout.WEST);
       panel.add(statusLabel, BorderLayout.EAST);
+
+      final JProgressBar progressBar = new JProgressBar();
+      progressBar.setValue(0);
+      progressBar.setStringPainted(true);
+
+      JTextArea modelText = new JTextArea("Project Summary:\n" + modelInfo + "Folds: " + folds + "    Repeats: " + repeats);
+      modelText.setEditable(false);
+      JScrollPane scrollPane = new JScrollPane(modelText);
 
       JFrame frame = new JFrame(header);
       frame.setLayout(new BorderLayout());
@@ -249,7 +254,7 @@ public class Project_Behavior {
             p.fireBuildFinished(null);
           } catch (Exception e) {
             p.fireBuildFinished(e);
-            throw new Error("Error running ant");
+            JOptionPane.showMessageDialog(null, "Error running ANT");
           }
         }
       };
@@ -292,14 +297,13 @@ public class Project_Behavior {
             }
             progressBar.setValue(100);
           } catch (Exception e) {
-            throw new Error("Error monitoring progress");
+            JOptionPane.showMessageDialog(null, "Error monitoring project progress");
           }
         }
       };
       monitorProgress.start();
-
     } catch (Exception e) {
-      throw new Error("Error running BDVal");
+      JOptionPane.showMessageDialog(null, "Unsuccessful BDVal run");
     }
   }
 

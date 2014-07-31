@@ -1023,7 +1023,7 @@
                                 <property name="value" nameId="tpee.1070475926801" value="Project xml file and memo folder must be in selected directory" />
                               </node>
                               <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8673723939652165445" nodeInfo="nn">
-                                <property name="value" nameId="tpee.1070475926801" value="Invalid Selection/n" />
+                                <property name="value" nameId="tpee.1070475926801" value="Invalid Selection\n" />
                               </node>
                             </node>
                           </node>

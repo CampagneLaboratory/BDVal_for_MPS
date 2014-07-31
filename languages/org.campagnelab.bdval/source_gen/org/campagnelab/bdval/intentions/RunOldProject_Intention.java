@@ -130,7 +130,7 @@ public class RunOldProject_Intention implements IntentionFactory {
           if (new File(tagDir + "/" + name + ".xml").exists() && new File(tagDir + "/memo/memo.properties").exists()) {
             Project_Behavior.call_runBDVal_6752420586317975318(node, tagDir + "/memo/memo.properties");
           } else {
-            JOptionPane.showMessageDialog(null, "Invalid Selection/n" + "Project xml file and memo folder must be in selected directory");
+            JOptionPane.showMessageDialog(null, "Invalid Selection\n" + "Project xml file and memo folder must be in selected directory");
           }
         }
       }
