@@ -5,7 +5,7 @@
   <property file="${bdval-project.basedir}/${ant.project.name}-local.properties"></property>
   <property name="project-property-file" value="${bdval-project.basedir}/${ant.project.name}.properties"></property>
   <property file="${project-property-file}"></property>
-  <property name="tag-description" value="Test"></property>
+  <property name="tag-description" value="Invalid"></property>
   
   <!--Basic Properties-->
   <property name="enable-flooring" value="false"></property>

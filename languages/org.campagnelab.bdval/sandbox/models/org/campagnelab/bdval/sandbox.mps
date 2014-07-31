@@ -6,13 +6,13 @@
   <import index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="69" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <root type="w348.Project" typeId="w348.3367122381622495536" id="1911754720579092993" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="Example" />
-    <property name="test1" nameId="w348.1911754720629514492" value="/Users/vmb34/Desktop" />
-    <property name="test2" nameId="w348.1911754720629514497" value="/Users/vmb34/Desktop/Example/Test/Example.xml" />
+    <property name="name" nameId="tpck.1169194664001" value="Example2" />
+    <property name="test1" value="/Users/vmb34/Desktop" />
+    <property name="test2" value="/Users/vmb34/Desktop/Example/Test/Example.xml" />
     <node role="properties" roleId="w348.7083662764416913977" type="w348.Properties" typeId="w348.7083662764416913858" id="1911754720579092994" nodeInfo="ng">
       <property name="threads" nameId="w348.7083662764416913912" value="1" />
       <property name="memory" nameId="w348.7083662764416913915" value="1200" />
-      <property name="tagDescription" nameId="w348.1847053361490302608" value="Test" />
+      <property name="tagDescription" nameId="w348.1847053361490302608" value="Invalid" />
       <node role="outputDirectory" roleId="w348.1911754720568108889" type="w348.Directory" typeId="w348.1911754720568105445" id="1911754720579092995" nodeInfo="ng">
         <property name="directoryLocation" nameId="w348.1911754720568105446" value="/Users/vmb34/Desktop" />
       </node>

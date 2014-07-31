@@ -204,7 +204,7 @@ public class Project_Behavior {
       progressBar.setValue(0);
       progressBar.setStringPainted(true);
 
-      JLabel descriptionLabel = new JLabel("Running " + tag);
+      JLabel descriptionLabel = new JLabel("Tag Description: " + tag);
 
       JTextArea modelText = new JTextArea("Project Summary:\n" + modelInfo + "Folds: " + folds + "    Repeats: " + repeats);
       modelText.setEditable(false);
