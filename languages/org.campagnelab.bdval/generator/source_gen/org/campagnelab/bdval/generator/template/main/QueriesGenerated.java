@@ -180,6 +180,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "trimmedName");
   }
 
+  public static Object propertyMacro_GetPropertyValue_8241402136315226201(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "projectFolder") + "memo/memo.properties";
+  }
+
   public static Iterable<SNode> sourceNodesQuery_8241402136297909054(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "dataset", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

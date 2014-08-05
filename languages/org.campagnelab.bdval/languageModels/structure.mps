@@ -612,6 +612,12 @@
       <property name="role" nameId="tpce.1071599776563" value="coxReg" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="4989762282962457995" resolveInfo="CoxRegProperties" />
     </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3918118240355752336" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="genelist" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="8241402136294612830" resolveInfo="GenelistRef" />
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7388448774866569121" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="FeatureSelectionFoldFalse" />
@@ -870,9 +876,9 @@
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="Genelist" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelections" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8241402136294591013" nodeInfo="ig">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3918118240357356631" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="genelist" />
+      <property name="role" nameId="tpce.1071599776563" value="savedGenelist" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="8241402136291306827" resolveInfo="SavedGenelist" />
     </node>
@@ -1033,6 +1039,7 @@
     <property name="name" nameId="tpck.1169194664001" value="SavedGenelist" />
     <property name="final" nameId="tpce.4628067390765956807" value="true" />
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8241402136291307200" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -1046,6 +1053,7 @@
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8241402136294612830" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="GenelistRef" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8241402136294612858" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="reference" />

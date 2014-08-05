@@ -13,10 +13,10 @@
     <nodeInfo nodeId="8241402136294570102" fileName="QueriesGenerated.java" startLine="29" startPosition="96" endLine="30" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8241402136295600226" fileName="QueriesGenerated.java" startLine="30" startPosition="73" endLine="31" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8241402136295610769" fileName="QueriesGenerated.java" startLine="31" startPosition="80" endLine="32" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8241402136294589893" fileName="QueriesGenerated.java" startLine="32" startPosition="75" endLine="33" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8241402136294589893" fileName="QueriesGenerated.java" startLine="32" startPosition="75" endLine="33" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8241402136293916549" fileName="QueriesGenerated.java" startLine="25" startPosition="19" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="8241402136293805130" fileName="QueriesGenerated.java" startLine="20" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="nodeFactory_NodeSetup_Genelist_8241402136293805130#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSetupContext;)V" />
-    <scopeInfo nodeId="8241402136293916552" fileName="QueriesGenerated.java" startLine="26" startPosition="72" endLine="33" endPosition="127" />
+    <scopeInfo nodeId="8241402136293916552" fileName="QueriesGenerated.java" startLine="26" startPosition="72" endLine="33" endPosition="132" />
     <scopeInfo nodeId="8241402136293916549" fileName="QueriesGenerated.java" startLine="25" startPosition="19" endLine="34" endPosition="5">
       <varInfo nodeId="8241402136293916555" varName="iterator" />
     </scopeInfo>

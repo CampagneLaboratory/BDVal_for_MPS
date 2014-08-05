@@ -1,10 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="org.campagnelab.bdval.sandbox.KendallTau" file="KendallTau.xml" />
+  <dependency className="org.campagnelab.bdval.sandbox.RunnerTest" file="RunnerTest.xml" />
   <dependency className="org.campagnelab.bdval.sandbox.runner" file="runner.java">
+    <classNode dependClassName="java.awt.BorderLayout" />
+    <classNode dependClassName="java.io.BufferedReader" />
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.io.FileInputStream" />
+    <classNode dependClassName="java.io.FileReader" />
+    <classNode dependClassName="java.io.InputStream" />
+    <classNode dependClassName="java.io.PrintStream" />
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="java.lang.Thread" />
+    <classNode dependClassName="java.sql.Timestamp" />
+    <classNode dependClassName="java.util.Date" />
+    <classNode dependClassName="java.util.Properties" />
+    <classNode dependClassName="javax.swing.BorderFactory" />
+    <classNode dependClassName="javax.swing.JFrame" />
+    <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="javax.swing.JOptionPane" />
+    <classNode dependClassName="javax.swing.JPanel" />
+    <classNode dependClassName="javax.swing.JProgressBar" />
+    <classNode dependClassName="javax.swing.JScrollPane" />
+    <classNode dependClassName="javax.swing.JTextArea" />
+    <classNode dependClassName="org.apache.tools.ant.DefaultLogger" />
+    <classNode dependClassName="org.apache.tools.ant.Project" />
+    <classNode dependClassName="org.apache.tools.ant.ProjectHelper" />
   </dependency>
 </dependenciesRoot>
 

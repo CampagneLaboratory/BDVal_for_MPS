@@ -16,6 +16,12 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
+import javax.swing.JComponent;
+import org.campagnelab.ui.code.Swing.ButtonCallback;
+import org.campagnelab.bdval.behavior.CIDs_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.campagnelab.ui.code.Swing.Button;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -40,11 +46,12 @@ public class CIDs_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_s0w797_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_s0w797_b0(editorContext, node));
-    if (renderingCondition_s0w797_a2a(node, editorContext)) {
-      editorCell.addEditorCell(this.createConstant_s0w797_c0(editorContext, node));
-    }
+    editorCell.addEditorCell(this.createJComponent_s0w797_c0(editorContext, node));
     if (renderingCondition_s0w797_a3a(node, editorContext)) {
-      editorCell.addEditorCell(this.createRefNodeList_s0w797_d0(editorContext, node));
+      editorCell.addEditorCell(this.createConstant_s0w797_d0(editorContext, node));
+    }
+    if (renderingCondition_s0w797_a4a(node, editorContext)) {
+      editorCell.addEditorCell(this.createRefNodeList_s0w797_e0(editorContext, node));
     }
     return editorCell;
   }
@@ -69,7 +76,6 @@ public class CIDs_Editor extends DefaultNodeEditor {
       editorCell.setRole("file");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -83,26 +89,46 @@ public class CIDs_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_s0w797_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createJComponent_s0w797_c0(EditorContext editorContext, SNode node) {
+    EditorCell editorCell = EditorCell_Component.createComponentCell(editorContext, node, CIDs_Editor._QueryFunction_JComponent_s0w797_a2a(node, editorContext), "_s0w797_c0");
+    editorCell.setCellId("JComponent_s0w797_c0");
+    return editorCell;
+  }
+
+  private static JComponent _QueryFunction_JComponent_s0w797_a2a(final SNode node, final EditorContext editorContext) {
+    ButtonCallback callback = new ButtonCallback(node, editorContext) {
+      public void process(final SNode n, final EditorContext editorContext) {
+        {
+          final SNode node = ((SNode) n);
+          CIDs_Behavior.call_load_4345048909863010217(SNodeOperations.cast(node, "org.campagnelab.bdval.structure.CIDs"));
+        }
+      }
+    };
+    return Button.createButton("Load", editorContext, node, callback);
+
+  }
+
+  private EditorCell createConstant_s0w797_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Invalid Sample Id (Present in CIDs but not Input File):");
-    editorCell.setCellId("Constant_s0w797_c0");
+    editorCell.setCellId("Constant_s0w797_d0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.red, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray)));
     style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     style.set(StyleAttributes.READ_ONLY, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private static boolean renderingCondition_s0w797_a2a(SNode node, EditorContext editorContext) {
+  private static boolean renderingCondition_s0w797_a3a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "mismatches", true)).isNotEmpty();
   }
 
-  private EditorCell createRefNodeList_s0w797_d0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new CIDs_Editor.mismatchesListHandler_s0w797_d0(node, "mismatches", editorContext);
+  private EditorCell createRefNodeList_s0w797_e0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new CIDs_Editor.mismatchesListHandler_s0w797_e0(node, "mismatches", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_mismatches");
     Style style = new StyleImpl();
@@ -114,8 +140,8 @@ public class CIDs_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class mismatchesListHandler_s0w797_d0 extends RefNodeListHandler {
-    public mismatchesListHandler_s0w797_d0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class mismatchesListHandler_s0w797_e0 extends RefNodeListHandler {
+    public mismatchesListHandler_s0w797_e0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -151,7 +177,7 @@ public class CIDs_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static boolean renderingCondition_s0w797_a3a(SNode node, EditorContext editorContext) {
+  private static boolean renderingCondition_s0w797_a4a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "mismatches", true)).isNotEmpty();
   }
 }

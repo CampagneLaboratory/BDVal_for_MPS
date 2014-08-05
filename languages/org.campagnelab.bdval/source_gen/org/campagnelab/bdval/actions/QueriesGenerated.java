@@ -30,7 +30,7 @@ public class QueriesGenerated {
       SPropertyOperations.set(savedGenelistNode, "name", file.getName());
       SPropertyOperations.set(fileNode, "fileLocation", file.getAbsolutePath());
       SLinkOperations.setTarget(savedGenelistNode, "file", fileNode, true);
-      ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "genelist", true)).addElement(savedGenelistNode);
+      ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "savedGenelist", true)).addElement(savedGenelistNode);
     }
   }
 }

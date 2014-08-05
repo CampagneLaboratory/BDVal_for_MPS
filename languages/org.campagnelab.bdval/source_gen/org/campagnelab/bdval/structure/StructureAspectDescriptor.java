@@ -64,7 +64,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 24:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.FeatureSelectionOption").interface_().parents("jetbrains.mps.lang.core.structure.INamedConcept").properties("def", "addoptions", "otherOptions", "extraClassifierParameters").create();
       case 25:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.FeatureSelectionProperties").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"ttest", "svmIterative", "minMax", "foldchange", "geneticAlgorithm", "pathways", "permutation", "kendallTau", "coxReg"}, new boolean[]{false, false, false, false, false, false, false, false, false}).create();
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.FeatureSelectionProperties").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"ttest", "svmIterative", "minMax", "foldchange", "geneticAlgorithm", "pathways", "permutation", "kendallTau", "coxReg", "genelist"}, new boolean[]{false, false, false, false, false, false, false, false, false, true}).create();
       case 26:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.File").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("fileLocation").create();
       case 27:
@@ -76,7 +76,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 30:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.GAPerformance").interface_().parents("jetbrains.mps.lang.core.structure.INamedConcept").create();
       case 31:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Genelist").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.FeatureSelection").children(new String[]{"genelist"}, new boolean[]{true}).alias("Genelist", "").create();
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Genelist").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.FeatureSelection").children(new String[]{"savedGenelist"}, new boolean[]{true}).alias("Genelist", "").create();
       case 32:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.GenelistRef").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("savedGenelist").create();
       case 33:

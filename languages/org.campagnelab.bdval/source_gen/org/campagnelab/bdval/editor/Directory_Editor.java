@@ -6,24 +6,39 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
+import javax.swing.JComponent;
+import org.campagnelab.ui.code.Swing.FileSelectorCallback;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.campagnelab.ui.code.Swing.FileSelector;
 
 public class Directory_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createProperty_1yoxjz_a(editorContext, node);
+    return this.createCollection_1yoxjz_a(editorContext, node);
   }
 
-  private EditorCell createProperty_1yoxjz_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_1yoxjz_a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_1yoxjz_a");
+    editorCell.setBig(true);
+    editorCell.addEditorCell(this.createProperty_1yoxjz_a0(editorContext, node));
+    editorCell.addEditorCell(this.createJComponent_1yoxjz_b0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createProperty_1yoxjz_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("directoryLocation");
     provider.setNoTargetText("enter directory path");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_directoryLocation");
-    editorCell.setBig(true);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -33,5 +48,20 @@ public class Directory_Editor extends DefaultNodeEditor {
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+
+  private EditorCell createJComponent_1yoxjz_b0(EditorContext editorContext, SNode node) {
+    EditorCell editorCell = EditorCell_Component.createComponentCell(editorContext, node, Directory_Editor._QueryFunction_JComponent_1yoxjz_a1a(node, editorContext), "_1yoxjz_b0");
+    editorCell.setCellId("JComponent_1yoxjz_b0");
+    return editorCell;
+  }
+
+  private static JComponent _QueryFunction_JComponent_1yoxjz_a1a(final SNode node, final EditorContext editorContext) {
+    FileSelectorCallback callback = new FileSelectorCallback(node, editorContext) {
+      public void process(final String path, final SNode node, final EditorContext editorContext) {
+        SPropertyOperations.set(SNodeOperations.cast(node, "org.campagnelab.bdval.structure.Directory"), "directoryLocation", path);
+      }
+    };
+    return FileSelector.createSelectionButton("defaultPath", true, true, editorContext, node, callback);
   }
 }
