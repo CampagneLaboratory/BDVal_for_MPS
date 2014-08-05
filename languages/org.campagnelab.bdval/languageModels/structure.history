@@ -423,5 +423,17 @@
     </dependencies>
     <rename id="w348.6525722185902462822" type="CONCEPT" from="PathwaysProperties" to="PathwayProperties" />
   </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="69" />
+    </dependencies>
+    <rename id="w348.3649519271362723295" type="PROPERTY" from="r" to="ratio" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="70" />
+    </dependencies>
+    <rename id="w348.8241402136294612858" type="REFERENCE" from="genelist" to="savedGenelist" />
+  </StructureModification>
 </history>
 

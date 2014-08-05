@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeRef="r:b2ac1451-2431-4f4c-8992-b8345f1cb6dc(org.campagnelab.bdval.sandbox)/1911754720579092993">
-    <unitInfo nodeId="1911754720579092993" fileName="Backup.xml" startLine="1" startPosition="0" endLine="64" endPosition="10" unitName="org.campagnelab.bdval.sandbox.Backup" />
+  <root nodeRef="r:b2ac1451-2431-4f4c-8992-b8345f1cb6dc(org.campagnelab.bdval.sandbox)/1118580873845581994">
+    <nodeInfo nodeId="1118580873845581994" fileName="runner.java" startLine="8" startPosition="42" endLine="9" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1118580873845581994" fileName="runner.java" startLine="9" startPosition="47" endLine="10" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1118580873845581994" fileName="runner.java" startLine="10" startPosition="166" endLine="12" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1118580873845581994" fileName="runner.java" startLine="8" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
+    <scopeInfo nodeId="1118580873845581994" fileName="runner.java" startLine="11" startPosition="21" endLine="11" endPosition="21" />
+    <scopeInfo nodeId="1118580873845581994" fileName="runner.java" startLine="8" startPosition="42" endLine="12" endPosition="5">
+      <varInfo nodeId="1118580873845581994" varName="options" />
+      <varInfo nodeId="1118580873845581994" varName="reply" />
+    </scopeInfo>
+    <scopeInfo nodeId="1118580873845581994" fileName="runner.java" startLine="8" startPosition="0" endLine="14" endPosition="0">
+      <varInfo nodeId="1118580873845581994" varName="args" />
+    </scopeInfo>
+    <unitInfo nodeId="1118580873845581994" fileName="Genelist.xml" startLine="1" startPosition="0" endLine="67" endPosition="10" unitName="org.campagnelab.bdval.sandbox.Genelist" />
+    <unitInfo nodeId="1118580873845581994" fileName="runner.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="org.campagnelab.bdval.sandbox.runner" />
   </root>
 </debugInfo>
 

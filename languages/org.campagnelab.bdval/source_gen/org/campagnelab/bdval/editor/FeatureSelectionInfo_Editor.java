@@ -24,6 +24,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -262,7 +263,7 @@ public class FeatureSelectionInfo_Editor extends DefaultNodeEditor {
   private static boolean renderingCondition_f0jmv8_a6a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "featureSelectionCombo", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode combo) {
-        return (SLinkOperations.getTarget(combo, "featureSelection2", true) != null);
+        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && !(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name").matches("genelist"))) && (SLinkOperations.getTarget(combo, "featureSelection2", true) != null);
       }
     });
   }
@@ -291,7 +292,7 @@ public class FeatureSelectionInfo_Editor extends DefaultNodeEditor {
   private static boolean renderingCondition_f0jmv8_a7a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "featureSelectionCombo", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode combo) {
-        return (SLinkOperations.getTarget(combo, "featureSelection2", true) != null);
+        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && !(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name").matches("genelist"))) && (SLinkOperations.getTarget(combo, "featureSelection2", true) != null);
       }
     });
   }
@@ -317,5 +318,9 @@ public class FeatureSelectionInfo_Editor extends DefaultNodeEditor {
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+
+  private static boolean isNotEmptyString(String str) {
+    return str != null && str.length() > 0;
   }
 }

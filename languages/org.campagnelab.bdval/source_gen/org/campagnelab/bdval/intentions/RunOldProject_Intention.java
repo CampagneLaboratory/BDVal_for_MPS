@@ -87,7 +87,7 @@ public class RunOldProject_Intention implements IntentionFactory {
       String name;
       File rootDirectory;
       File file;
-      File tagDir;
+      File dir;
       String[] extensions = {"xml", "properties"};
       HashMap map = new HashMap();
 
@@ -97,9 +97,9 @@ public class RunOldProject_Intention implements IntentionFactory {
         Collection possibleFiles = FileUtils.listFiles(rootDirectory, extensions, true);
         for (Iterator iterator = possibleFiles.iterator(); iterator.hasNext();) {
           file = (File) iterator.next();
-          tagDir = new File(file.getParentFile().getParent());
-          if (file.getName().matches("memo.properties") && new File(tagDir + "/" + name + ".xml").exists()) {
-            map.put(tagDir.getName(), file.getAbsolutePath());
+          dir = new File(file.getParentFile().getParent());
+          if (file.getName().matches("memo.properties") && new File(dir + "/" + name + ".xml").exists()) {
+            map.put(dir.getName(), file.getAbsolutePath());
           }
         }
       } catch (Exception e) {
@@ -125,10 +125,10 @@ public class RunOldProject_Intention implements IntentionFactory {
         chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         int fileReply = chooser.showOpenDialog(null);
         if (fileReply == JFileChooser.APPROVE_OPTION) {
-          tagDir = chooser.getSelectedFile();
-          name = tagDir.getParentFile().getName();
-          if (new File(tagDir + "/" + name + ".xml").exists() && new File(tagDir + "/memo/memo.properties").exists()) {
-            Project_Behavior.call_runBDVal_6752420586317975318(node, tagDir + "/memo/memo.properties");
+          dir = chooser.getSelectedFile();
+          name = dir.getParentFile().getName();
+          if (new File(dir + "/" + name + ".xml").exists() && new File(dir + "/memo/memo.properties").exists()) {
+            Project_Behavior.call_runBDVal_6752420586317975318(node, dir + "/memo/memo.properties");
           } else {
             JOptionPane.showMessageDialog(null, "Invalid Selection\n" + "Project xml file and memo folder must be in selected directory");
           }

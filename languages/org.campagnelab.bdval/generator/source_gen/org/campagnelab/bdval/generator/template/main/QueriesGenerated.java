@@ -13,6 +13,9 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.campagnelab.bdval.behavior.DataSet_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.campagnelab.bdval.behavior.Project_Behavior;
@@ -76,7 +79,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4989762282936359621(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "svmIterative", true), "r");
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "svmIterative", true), "ratio");
   }
 
   public static Object propertyMacro_GetPropertyValue_4989762282937044647(final PropertyMacroContext _context) {
@@ -117,6 +120,14 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_4989762282962689461(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "coxReg", true), "alpha");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_8241402136297963690(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "savedGenelist", false), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_8241402136297982615(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "savedGenelist", false), "name") + " --gene-list-file " + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "savedGenelist", false), "file", true), "fileLocation");
   }
 
   public static Object propertyMacro_GetPropertyValue_4989762282957593995(final PropertyMacroContext _context) {
@@ -165,6 +176,22 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "trimmedName");
   }
 
+  public static Iterable<SNode> sourceNodesQuery_8241402136297909054(final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "dataset", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return (SLinkOperations.getTarget(it, "otherFiles", true) != null);
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SLinkOperations.getTarget(it, "otherFiles", true);
+      }
+    }).translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode it) {
+        return SLinkOperations.getTargets(it, "genelistFiles", true);
+      }
+    });
+  }
+
   public static Iterable<SNode> sourceNodesQuery_2125124408386653548(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "dataset", true);
   }
@@ -179,7 +206,6 @@ public class QueriesGenerated {
         Project_Behavior.call_setup_7860773101052430949(project);
         if (SPropertyOperations.getBoolean(project, "proceed")) {
           Project_Behavior.call_generateAllFiles_290469645456423260(project);
-          Project_Behavior.call_showRunWindow_7860773100997324157(project);
         }
       }
     });

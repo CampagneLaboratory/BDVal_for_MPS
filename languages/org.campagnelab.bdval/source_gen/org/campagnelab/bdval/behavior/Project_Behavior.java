@@ -39,7 +39,7 @@ public class Project_Behavior {
 
   public static void call_setup_7860773101052430949(SNode thisNode) {
     SPropertyOperations.set(thisNode, "trimmedName", SPropertyOperations.getString(thisNode, "name").replaceAll("\\s", "").trim());
-    SPropertyOperations.set(thisNode, "projectFolder", SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(thisNode, "trimmedName") + "/" + WordUtils.capitalize(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "tagDescription").replaceAll("\\s", "").trim()) + "/");
+    SPropertyOperations.set(thisNode, "projectFolder", SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(thisNode, "trimmedName") + "/" + WordUtils.capitalize(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "directoryName").replaceAll("\\s", "").trim()) + "/");
     Project_Behavior.call_checkProjectFolder_3976565827571671486(thisNode);
   }
 
@@ -179,10 +179,14 @@ public class Project_Behavior {
             JOptionPane.showMessageDialog(null, "Error waiting for xml file before showing run window");
           }
         }
-        Object[] options = {"Run BDVal", "Cancel"};
-        int reply = JOptionPane.showOptionDialog(null, "Run BDVal " + SPropertyOperations.getString(SLinkOperations.getTarget(project, "properties", true), "tagDescription") + " Project", SPropertyOperations.getString(project, "name") + " Project", JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
-        if (reply == JOptionPane.OK_OPTION) {
-          Project_Behavior.call_runBDVal_6752420586317975318(project, SPropertyOperations.getString(project, "projectFolder") + "memo/memo.properties");
+        if (new File(SPropertyOperations.getString(project, "projectFolder") + SPropertyOperations.getString(project, "trimmedName") + ".xml").exists()) {
+          Object[] options = {"Cancel", "Run BDVal"};
+          int reply = JOptionPane.showOptionDialog(null, "Run BDVal " + SPropertyOperations.getString(SLinkOperations.getTarget(project, "properties", true), "tagDescription") + " Project", SPropertyOperations.getString(project, "name") + " Project", JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[1]);
+          if (reply == 1) {
+            Project_Behavior.call_runBDVal_6752420586317975318(project, SPropertyOperations.getString(project, "projectFolder") + "memo/memo.properties");
+          }
+        } else {
+          JOptionPane.showMessageDialog(null, "Error\nTimed out waiting for xml file to move into correct folder");
         }
       }
     };

@@ -40,6 +40,8 @@ public class Properties_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_vvo4cc_l0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_vvo4cc_m0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_vvo4cc_n0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_vvo4cc_o0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_vvo4cc_p0(editorContext, node));
     return editorCell;
   }
 
@@ -220,13 +222,41 @@ public class Properties_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vvo4cc_m0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Tag Description:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Directory Name:");
     editorCell.setCellId("Constant_vvo4cc_m0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createProperty_vvo4cc_n0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("directoryName");
+    provider.setNoTargetText("<no directoryName>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_directoryName");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createConstant_vvo4cc_o0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Tag Description:");
+    editorCell.setCellId("Constant_vvo4cc_o0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createProperty_vvo4cc_p0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("tagDescription");
     provider.setNoTargetText("enter description");

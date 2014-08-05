@@ -21,6 +21,7 @@ import java.util.ArrayList;
 public class DataSet_Behavior {
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "normalTarget", "" + (true));
+
   }
 
   public static void call_generateFiles_6032947574604950587(SNode thisNode) {

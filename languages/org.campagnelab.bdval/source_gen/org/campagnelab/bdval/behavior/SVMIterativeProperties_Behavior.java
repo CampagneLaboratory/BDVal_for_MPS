@@ -7,6 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class SVMIterativeProperties_Behavior {
   public static void init(SNode thisNode) {
-    SPropertyOperations.set(thisNode, "r", "0.5");
+    SPropertyOperations.set(thisNode, "ratio", "0.5");
   }
 }

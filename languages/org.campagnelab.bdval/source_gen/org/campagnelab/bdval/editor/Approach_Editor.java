@@ -253,6 +253,9 @@ public class Approach_Editor extends DefaultNodeEditor {
           public void visit(SNode featureSelectionCombo) {
             if (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(featureSelectionCombo, "featureSelection1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(featureSelectionCombo, "featureSelection1", true), "name").matches("wholeChip")) {
               featureSelectionNum.value++;
+            } else if (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(featureSelectionCombo, "featureSelection1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(featureSelectionCombo, "featureSelection1", true), "name").matches("genelist")) {
+              // Edit this! 
+              featureSelectionNum.value = featureSelectionNum.value + foldNum;
             } else {
               featureSelectionNum.value = featureSelectionNum.value + foldNum;
             }

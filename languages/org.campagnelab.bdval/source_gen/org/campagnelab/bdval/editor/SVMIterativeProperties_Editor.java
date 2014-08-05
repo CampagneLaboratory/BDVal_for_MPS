@@ -42,7 +42,7 @@ public class SVMIterativeProperties_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_co10q3_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "R Value:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Ratio:");
     editorCell.setCellId("Constant_co10q3_b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.READ_ONLY, true);
@@ -55,11 +55,11 @@ public class SVMIterativeProperties_Editor extends DefaultNodeEditor {
 
   private EditorCell createProperty_co10q3_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("r");
+    provider.setRole("ratio");
     provider.setNoTargetText("enter value");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_r");
+    editorCell.setCellId("property_ratio");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
