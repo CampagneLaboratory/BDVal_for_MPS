@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="org.campagnelab.bdval.sandbox.Genelist" file="Genelist.xml" />
+  <dependency className="org.campagnelab.bdval.sandbox.KendallTau" file="KendallTau.xml" />
   <dependency className="org.campagnelab.bdval.sandbox.runner" file="runner.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />

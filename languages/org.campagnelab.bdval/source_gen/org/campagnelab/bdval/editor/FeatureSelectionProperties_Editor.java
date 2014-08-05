@@ -53,6 +53,9 @@ public class FeatureSelectionProperties_Editor extends DefaultNodeEditor {
     if (renderingCondition_pbpsc1_a7a(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNode_pbpsc1_h0(editorContext, node));
     }
+    if (renderingCondition_pbpsc1_a8a(node, editorContext)) {
+      editorCell.addEditorCell(this.createRefNode_pbpsc1_i0(editorContext, node));
+    }
     return editorCell;
   }
 
@@ -282,6 +285,38 @@ public class FeatureSelectionProperties_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefNode_pbpsc1_h0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("kendallTau");
+    provider.setNoTargetText("press enter to expand");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("kendallTau");
+    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private static boolean renderingCondition_pbpsc1_a7a(SNode node, EditorContext editorContext) {
+    final String name = "kendallTau";
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionInfo"), "featureSelectionCombo", true)).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode combo) {
+        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name").matches(name)) || (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name").matches(name));
+      }
+    });
+  }
+
+  private EditorCell createRefNode_pbpsc1_i0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("pathways");
     provider.setNoTargetText("press enter to expand");
     EditorCell editorCell;
@@ -303,7 +338,7 @@ public class FeatureSelectionProperties_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_pbpsc1_a7a(SNode node, EditorContext editorContext) {
+  private static boolean renderingCondition_pbpsc1_a8a(SNode node, EditorContext editorContext) {
     final String name = "pathway";
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionInfo"), "featureSelectionCombo", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode combo) {

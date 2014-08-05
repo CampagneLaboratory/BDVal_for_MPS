@@ -57,8 +57,12 @@ public class OtherFiles_Editor extends DefaultNodeEditor {
     if (renderingCondition_fiu8c2_a5a(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNode_fiu8c2_f0(editorContext, node));
     }
-    editorCell.addEditorCell(this.createConstant_fiu8c2_g0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_fiu8c2_h0(editorContext, node));
+    if (renderingCondition_fiu8c2_a6a(node, editorContext)) {
+      editorCell.addEditorCell(this.createConstant_fiu8c2_g0(editorContext, node));
+    }
+    if (renderingCondition_fiu8c2_a7a(node, editorContext)) {
+      editorCell.addEditorCell(this.createRefNodeList_fiu8c2_h0(editorContext, node));
+    }
     return editorCell;
   }
 
@@ -213,6 +217,15 @@ public class OtherFiles_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private static boolean renderingCondition_fiu8c2_a6a(SNode node, EditorContext editorContext) {
+    final String name = "genelist";
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "org.campagnelab.bdval.structure.Project", false, false), "approach", true), "featureSelectionInfo", true), "featureSelectionCombo", true)).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode combo) {
+        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name").matches(name)) || ((SLinkOperations.getTarget(combo, "featureSelection2", true) != null) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name").matches(name));
+      }
+    });
+  }
+
   private EditorCell createRefNodeList_fiu8c2_h0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new OtherFiles_Editor.genelistFilesListHandler_fiu8c2_h0(node, "genelistFiles", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -270,6 +283,15 @@ public class OtherFiles_Editor extends DefaultNodeEditor {
       editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(prevNode));
       return editorCell;
     }
+  }
+
+  private static boolean renderingCondition_fiu8c2_a7a(SNode node, EditorContext editorContext) {
+    final String name = "genelist";
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "org.campagnelab.bdval.structure.Project", false, false), "approach", true), "featureSelectionInfo", true), "featureSelectionCombo", true)).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode combo) {
+        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name").matches(name)) || ((SLinkOperations.getTarget(combo, "featureSelection2", true) != null) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name").matches(name));
+      }
+    });
   }
 
   private static boolean isNotEmptyString(String str) {

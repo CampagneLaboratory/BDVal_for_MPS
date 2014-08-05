@@ -61,7 +61,7 @@ public class Approach_Behavior {
                 geneticAlgorithm.value = SNodeOperations.isInstanceOf(featureSelection1, "org.campagnelab.bdval.structure.GeneticAlgorithm");
                 wholeChip.value = SNodeOperations.isInstanceOf(featureSelection1, "org.campagnelab.bdval.structure.WholeChip");
                 genelist.value = SNodeOperations.isInstanceOf(featureSelection1, "org.campagnelab.bdval.structure.Genelist");
-                approachMethod.value = "generated-" + SPropertyOperations.getString(featureSelection1, "name");
+                approachMethod.value = SPropertyOperations.getString(featureSelection1, "name");
                 fsLine.value = Approach_Behavior.call_getFSLine_3649519271357483092(thisNode, wholeChip.value, genelist.value, SPropertyOperations.getString(featureSelection1, "sequenceCommand"), SPropertyOperations.getString(featureSelection1, "sequenceInfo"), SPropertyOperations.getString(featureSelection1, "sequenceNumFeatures"), true, twoFS.value, SPropertyOperations.getBoolean(featureSelectionFold, "value"));
                 addoptions.value = SPropertyOperations.getString(featureSelection1, "addoptions");
                 otherOptions.value = SPropertyOperations.getString(featureSelection1, "otherOptions");
@@ -133,7 +133,7 @@ public class Approach_Behavior {
 
                 // Writes sequence file 
                 try {
-                  String sequenceFileName = sequenceFolder + approachMethod.value + ".sequence";
+                  String sequenceFileName = sequenceFolder + "generated-" + approachMethod.value + ".sequence";
                   FileWriter file = new FileWriter(sequenceFileName);
                   PrintWriter writer = new PrintWriter(file);
                   writer.print("def label=" + approachMethod.value + genelistDef.value + "-%model-id%\n");
@@ -170,7 +170,7 @@ public class Approach_Behavior {
     SNode genModel = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.ModelToGenerate", null);
     SPropertyOperations.set(genModel, "name", WordUtils.capitalize(approachMethod.substring(10).replaceAll("\\+", " \\+ ").replaceAll("-", ", ")));
     SPropertyOperations.set(genModel, "featureSelectionFold", "" + (fsFold));
-    SPropertyOperations.set(genModel, "sequenceFile", approachMethod + ".sequence");
+    SPropertyOperations.set(genModel, "sequenceFile", "generated-" + approachMethod + ".sequence");
     SPropertyOperations.set(genModel, "allClassifierParameters", " --classifier " + className + " --classifier-parameters " + classParams);
     SPropertyOperations.set(genModel, "otherOptions", otherOptions);
     if ((cValue != null && cValue.length() > 0)) {

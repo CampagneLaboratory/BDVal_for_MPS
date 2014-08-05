@@ -3,7 +3,7 @@
   <unitInfo fileName="AUCPerformance_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="org.campagnelab.bdval.behavior.AUCPerformance_BehaviorDescriptor" />
   <unitInfo fileName="Approach_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.campagnelab.bdval.behavior.Approach_BehaviorDescriptor" />
   <unitInfo fileName="AverageAggregation_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="org.campagnelab.bdval.behavior.AverageAggregation_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="148" endPosition="0" unitName="org.campagnelab.bdval.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="152" endPosition="0" unitName="org.campagnelab.bdval.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="CIDs_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.campagnelab.bdval.behavior.CIDs_BehaviorDescriptor" />
   <unitInfo fileName="CategoryReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.campagnelab.bdval.behavior.CategoryReference_BehaviorDescriptor" />
   <unitInfo fileName="ClassificationInfo_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.campagnelab.bdval.behavior.ClassificationInfo_BehaviorDescriptor" />
@@ -39,6 +39,8 @@
   <unitInfo fileName="Input_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.campagnelab.bdval.behavior.Input_BehaviorDescriptor" />
   <unitInfo fileName="Integer_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.campagnelab.bdval.behavior.Integer_BehaviorDescriptor" />
   <unitInfo fileName="KStar_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="org.campagnelab.bdval.behavior.KStar_BehaviorDescriptor" />
+  <unitInfo fileName="KendallTauProperties_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.campagnelab.bdval.behavior.KendallTauProperties_BehaviorDescriptor" />
+  <unitInfo fileName="KendallTau_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="org.campagnelab.bdval.behavior.KendallTau_BehaviorDescriptor" />
   <unitInfo fileName="Logistic_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="org.campagnelab.bdval.behavior.Logistic_BehaviorDescriptor" />
   <unitInfo fileName="LogitBoost_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="org.campagnelab.bdval.behavior.LogitBoost_BehaviorDescriptor" />
   <unitInfo fileName="MCCPerformance_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="org.campagnelab.bdval.behavior.MCCPerformance_BehaviorDescriptor" />
@@ -1490,6 +1492,29 @@
     <unitInfo nodeId="6752420586318510087" fileName="Project_Behavior.java" startLine="268" startPosition="35" endLine="307" endPosition="7" unitName="org.campagnelab.bdval.behavior.Project_Behavior$6" />
     <unitInfo nodeId="7083662764418572530" fileName="Project_Behavior.java" startLine="36" startPosition="0" endLine="318" endPosition="0" unitName="org.campagnelab.bdval.behavior.Project_Behavior" />
   </root>
+  <root nodeRef="r:825ae26d-5123-4d82-aa5e-7977a26d188c(org.campagnelab.bdval.behavior)/8241402136310293317">
+    <nodeInfo nodeId="8241402136310298435" fileName="KendallTau_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8241402136310304778" fileName="KendallTau_Behavior.java" startLine="10" startPosition="60" endLine="11" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8241402136310324973" fileName="KendallTau_Behavior.java" startLine="11" startPosition="118" endLine="12" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8241402136310341550" fileName="KendallTau_Behavior.java" startLine="12" startPosition="72" endLine="13" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8241402136310347200" fileName="KendallTau_Behavior.java" startLine="13" startPosition="74" endLine="14" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8241402136310351812" fileName="KendallTau_Behavior.java" startLine="14" startPosition="85" endLine="15" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8241402136310293317" fileName="KendallTau_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="8241402136310293319" fileName="KendallTau_Behavior.java" startLine="9" startPosition="43" endLine="15" endPosition="86" />
+    <scopeInfo nodeId="8241402136310293317" fileName="KendallTau_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0">
+      <varInfo nodeId="8241402136310293317" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="8241402136310293317" fileName="KendallTau_Behavior.java" startLine="8" startPosition="0" endLine="18" endPosition="0" unitName="org.campagnelab.bdval.behavior.KendallTau_Behavior" />
+  </root>
+  <root nodeRef="r:825ae26d-5123-4d82-aa5e-7977a26d188c(org.campagnelab.bdval.behavior)/8241402136310399315">
+    <nodeInfo nodeId="8241402136310399346" fileName="KendallTauProperties_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8241402136310399315" fileName="KendallTauProperties_Behavior.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="8241402136310399317" fileName="KendallTauProperties_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="54" />
+    <scopeInfo nodeId="8241402136310399315" fileName="KendallTauProperties_Behavior.java" startLine="9" startPosition="0" endLine="12" endPosition="0">
+      <varInfo nodeId="8241402136310399315" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="8241402136310399315" fileName="KendallTauProperties_Behavior.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="org.campagnelab.bdval.behavior.KendallTauProperties_Behavior" />
+  </root>
   <root nodeRef="r:825ae26d-5123-4d82-aa5e-7977a26d188c(org.campagnelab.bdval.behavior)/8314272953675900650">
     <nodeInfo nodeId="8314272953675923463" fileName="Approach_Behavior.java" startLine="25" startPosition="43" endLine="26" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8314272953675927142" fileName="Approach_Behavior.java" startLine="26" startPosition="67" endLine="27" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1520,8 +1545,8 @@
     <nodeInfo nodeId="4989762282927444676" fileName="Approach_Behavior.java" startLine="60" startPosition="109" endLine="61" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4989762282977049889" fileName="Approach_Behavior.java" startLine="61" startPosition="141" endLine="62" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8241402136284073739" fileName="Approach_Behavior.java" startLine="62" startPosition="127" endLine="63" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3649519271353165308" fileName="Approach_Behavior.java" startLine="63" startPosition="125" endLine="64" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3649519271357515013" fileName="Approach_Behavior.java" startLine="64" startPosition="111" endLine="65" endPosition="417" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3649519271353165308" fileName="Approach_Behavior.java" startLine="63" startPosition="125" endLine="64" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3649519271357515013" fileName="Approach_Behavior.java" startLine="64" startPosition="96" endLine="65" endPosition="417" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3649519271356806889" fileName="Approach_Behavior.java" startLine="65" startPosition="417" endLine="66" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3649519271353265481" fileName="Approach_Behavior.java" startLine="66" startPosition="98" endLine="67" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4989762282927484712" fileName="Approach_Behavior.java" startLine="67" startPosition="102" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -1555,8 +1580,8 @@
     <nodeInfo nodeId="8241402136297853144" fileName="Approach_Behavior.java" startLine="129" startPosition="26" endLine="130" endPosition="380" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5136529682729731284" fileName="Approach_Behavior.java" startLine="132" startPosition="17" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="5136529682729746144" fileName="Approach_Behavior.java" startLine="133" startPosition="0" endLine="134" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1870354875256698126" fileName="Approach_Behavior.java" startLine="135" startPosition="21" endLine="136" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1870354875256698132" fileName="Approach_Behavior.java" startLine="136" startPosition="96" endLine="137" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1870354875256698126" fileName="Approach_Behavior.java" startLine="135" startPosition="21" endLine="136" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1870354875256698132" fileName="Approach_Behavior.java" startLine="136" startPosition="111" endLine="137" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1870354875256698138" fileName="Approach_Behavior.java" startLine="137" startPosition="69" endLine="138" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3649519271357133800" fileName="Approach_Behavior.java" startLine="138" startPosition="61" endLine="139" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4989762282960325617" fileName="Approach_Behavior.java" startLine="139" startPosition="106" endLine="140" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1579,8 +1604,8 @@
     <nodeInfo nodeId="8241402136296608925" fileName="Approach_Behavior.java" startLine="169" startPosition="190" endLine="170" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8241402136296608962" fileName="Approach_Behavior.java" startLine="170" startPosition="111" endLine="171" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8241402136296612558" fileName="Approach_Behavior.java" startLine="171" startPosition="147" endLine="172" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8241402136296617929" fileName="Approach_Behavior.java" startLine="172" startPosition="77" endLine="173" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8241402136296629143" fileName="Approach_Behavior.java" startLine="173" startPosition="84" endLine="174" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8241402136296617929" fileName="Approach_Behavior.java" startLine="172" startPosition="77" endLine="173" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8241402136296629143" fileName="Approach_Behavior.java" startLine="173" startPosition="99" endLine="174" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8241402136296649995" fileName="Approach_Behavior.java" startLine="174" startPosition="139" endLine="175" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8241402136296661171" fileName="Approach_Behavior.java" startLine="176" startPosition="50" endLine="177" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8241402136296677327" fileName="Approach_Behavior.java" startLine="177" startPosition="121" endLine="178" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

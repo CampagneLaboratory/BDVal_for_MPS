@@ -13,7 +13,7 @@
     <scopeInfo nodeId="1118580873845581994" fileName="runner.java" startLine="8" startPosition="0" endLine="14" endPosition="0">
       <varInfo nodeId="1118580873845581994" varName="args" />
     </scopeInfo>
-    <unitInfo nodeId="1118580873845581994" fileName="Genelist.xml" startLine="1" startPosition="0" endLine="67" endPosition="10" unitName="org.campagnelab.bdval.sandbox.Genelist" />
+    <unitInfo nodeId="1118580873845581994" fileName="KendallTau.xml" startLine="1" startPosition="0" endLine="65" endPosition="10" unitName="org.campagnelab.bdval.sandbox.KendallTau" />
     <unitInfo nodeId="1118580873845581994" fileName="runner.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="org.campagnelab.bdval.sandbox.runner" />
   </root>
 </debugInfo>
