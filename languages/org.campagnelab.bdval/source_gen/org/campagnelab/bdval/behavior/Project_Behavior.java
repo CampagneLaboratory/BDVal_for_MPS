@@ -5,7 +5,6 @@ package org.campagnelab.bdval.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.apache.commons.lang.WordUtils;
 import java.io.File;
 import javax.swing.JOptionPane;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -39,7 +38,7 @@ public class Project_Behavior {
 
   public static void call_setup_7860773101052430949(SNode thisNode) {
     SPropertyOperations.set(thisNode, "trimmedName", SPropertyOperations.getString(thisNode, "name").replaceAll("\\s", "").trim());
-    SPropertyOperations.set(thisNode, "projectFolder", SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(thisNode, "trimmedName") + "/" + WordUtils.capitalize(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "directoryName").replaceAll("\\s", "").trim()) + "/");
+    SPropertyOperations.set(thisNode, "projectFolder", SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(thisNode, "trimmedName") + "/" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "directoryName") + "/");
     Project_Behavior.call_checkProjectFolder_3976565827571671486(thisNode);
   }
 
@@ -92,6 +91,8 @@ public class Project_Behavior {
 
   public static void call_generateProperties_290469645499580654(final SNode thisNode) {
     String fileName = SPropertyOperations.getString(thisNode, "projectFolder") + SPropertyOperations.getString(thisNode, "trimmedName") + ".properties";
+    final Wrappers._T<String> floor = new Wrappers._T<String>();
+    final Wrappers._T<String> arrayParam = new Wrappers._T<String>();
     try {
       final Properties prop = new Properties();
       OutputStream output = new FileOutputStream(new File(fileName));
@@ -99,13 +100,24 @@ public class Project_Behavior {
       final String root = "${eval-dataset-root}";
       ListSequence.fromList(SLinkOperations.getTargets(thisNode, "dataset", true)).visitAll(new IVisitor<SNode>() {
         public void visit(final SNode dataset) {
+          floor.value = "";
+          arrayParam.value = "";
+          if (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(dataset, "platform", true), "floor"))) {
+            floor.value = SPropertyOperations.getString(SLinkOperations.getTarget(dataset, "platform", true), "floor");
+          }
+          ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(dataset, "platform", true), "arrayParameter", true)).visitAll(new IVisitor<SNode>() {
+            public void visit(SNode arrayNode) {
+              arrayParam.value = arrayParam.value + SPropertyOperations.getString(arrayNode, "command");
+            }
+          });
           datasetName.value = DataSet_Behavior.call_getName_290469645480322571(dataset);
           prop.setProperty(datasetName.value + ".dataset-name", SPropertyOperations.getString(thisNode, "trimmedName"));
           prop.setProperty(datasetName.value + ".dataset-file", root + "/inputs/" + new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(dataset, "input", true), "file", true), "fileLocation")).getName());
+          prop.setProperty(datasetName.value + ".platform-file", root + "/platforms/" + new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(dataset, "platform", true), "file", true), "fileLocation")).getName());
           prop.setProperty(datasetName.value + ".cids-file", root + "/cids/" + datasetName.value + ".cids");
           prop.setProperty(datasetName.value + ".tasks-file", root + "/tasks/" + datasetName.value + ".tasks");
-          // TODO: Fill in floor 
-          prop.setProperty(datasetName.value + "floor", "");
+          prop.setProperty(datasetName.value + ".floor", floor.value);
+          prop.setProperty(datasetName.value + ".array-parameters", arrayParam.value.substring(1));
           if (SPropertyOperations.getBoolean(dataset, "normalTarget")) {
             final Wrappers._T<String> nonTargetName = new Wrappers._T<String>();
             ListSequence.fromList(SLinkOperations.getTargets(thisNode, "dataset", true)).visitAll(new IVisitor<SNode>() {
@@ -121,7 +133,6 @@ public class Project_Behavior {
               }
             });
           }
-          prop.setProperty(datasetName.value + ".platform-file", root + "/platforms/" + new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(dataset, "platform", true), "file", true), "fileLocation")).getName());
           if (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(dataset, "otherFiles", true), "pathwaysFile", true), "fileLocation"))) {
             prop.setProperty(datasetName.value + ".pathways-file", root + "/pathways/" + new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(dataset, "otherFiles", true), "pathwaysFile", true), "fileLocation")).getName());
             prop.setProperty(datasetName.value + ".gene-to-probes-file", root + "/pathways/" + new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(dataset, "otherFiles", true), "geneToProbesFile", true), "fileLocation")).getName());

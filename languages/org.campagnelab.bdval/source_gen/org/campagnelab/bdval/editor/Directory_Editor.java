@@ -62,6 +62,6 @@ public class Directory_Editor extends DefaultNodeEditor {
         SPropertyOperations.set(SNodeOperations.cast(node, "org.campagnelab.bdval.structure.Directory"), "directoryLocation", path);
       }
     };
-    return FileSelector.createSelectionButton("defaultPath", true, true, editorContext, node, callback);
+    return FileSelector.createSelectionButton("defaultPath", false, true, editorContext, node, callback);
   }
 }

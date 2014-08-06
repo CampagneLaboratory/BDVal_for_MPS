@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -64,7 +65,7 @@ public class ExtractEndpoints_Intention implements IntentionFactory {
       public SNode select(SNode it) {
         return SLinkOperations.getTarget(it, "endpointCategory", false);
       }
-    }).isNotEmpty();
+    }).isNotEmpty() && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.DataSet"), "input", true), "sample", true)).isNotEmpty();
   }
 
   public SNodeReference getIntentionNodeReference() {

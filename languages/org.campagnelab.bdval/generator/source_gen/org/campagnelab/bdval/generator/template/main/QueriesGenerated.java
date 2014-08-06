@@ -44,10 +44,6 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "properties", true), "tagDescription");
   }
 
-  public static Object propertyMacro_GetPropertyValue_4027829922712528219(final PropertyMacroContext _context) {
-    return String.valueOf(SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getNode(), "approach", true), "enableFlooring"));
-  }
-
   public static Object propertyMacro_GetPropertyValue_4027829922712548839(final PropertyMacroContext _context) {
     return String.valueOf(SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getNode(), "approach", true), "evaluateStatistics"));
   }

@@ -33,7 +33,7 @@ public class GenelistRef_Editor extends DefaultNodeEditor {
   private EditorCell createRefCell_2wb3q_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("savedGenelist");
-    provider.setNoTargetText("<no savedGenelist>");
+    provider.setNoTargetText("select genelist");
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new GenelistRef_Editor._Inline_2wb3q_a0a());
     editorCell = provider.createEditorCell(editorContext);

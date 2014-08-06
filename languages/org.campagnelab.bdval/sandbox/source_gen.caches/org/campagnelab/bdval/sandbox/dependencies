@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="org.campagnelab.bdval.sandbox.RunnerTest" file="RunnerTest.xml" />
+  <dependency className="org.campagnelab.bdval.sandbox.8-6" file="8-6.xml" />
   <dependency className="org.campagnelab.bdval.sandbox.runner" file="runner.java">
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="java.io.BufferedReader" />

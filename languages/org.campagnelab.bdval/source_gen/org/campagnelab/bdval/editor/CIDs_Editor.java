@@ -12,20 +12,25 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import javax.swing.JComponent;
+import org.campagnelab.ui.code.Swing.FileSelectorCallback;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.campagnelab.ui.code.Swing.FileSelector;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.io.File;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.campagnelab.ui.code.Swing.ButtonCallback;
 import org.campagnelab.bdval.behavior.CIDs_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.campagnelab.ui.code.Swing.Button;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -45,13 +50,16 @@ public class CIDs_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_s0w797_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_s0w797_a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_s0w797_b0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_s0w797_b0(editorContext, node));
     editorCell.addEditorCell(this.createJComponent_s0w797_c0(editorContext, node));
     if (renderingCondition_s0w797_a3a(node, editorContext)) {
-      editorCell.addEditorCell(this.createConstant_s0w797_d0(editorContext, node));
+      editorCell.addEditorCell(this.createCollection_s0w797_d0(editorContext, node));
     }
     if (renderingCondition_s0w797_a4a(node, editorContext)) {
-      editorCell.addEditorCell(this.createRefNodeList_s0w797_e0(editorContext, node));
+      editorCell.addEditorCell(this.createConstant_s0w797_e0(editorContext, node));
+    }
+    if (renderingCondition_s0w797_a5a(node, editorContext)) {
+      editorCell.addEditorCell(this.createRefNodeList_s0w797_f0(editorContext, node));
     }
     return editorCell;
   }
@@ -66,18 +74,14 @@ public class CIDs_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_s0w797_b0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("file");
-    provider.setNoTargetText("optional: press enter to enter file path");
+  private EditorCell createProperty_s0w797_b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("fileLocation");
+    provider.setNoTargetText("optional: enter file path");
+    provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    if (editorCell.getRole() == null) {
-      editorCell.setRole("file");
-    }
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    editorCell.getStyle().putAll(style);
+    editorCell.setCellId("property_fileLocation");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -96,11 +100,49 @@ public class CIDs_Editor extends DefaultNodeEditor {
   }
 
   private static JComponent _QueryFunction_JComponent_s0w797_a2a(final SNode node, final EditorContext editorContext) {
+    FileSelectorCallback callback = new FileSelectorCallback(node, editorContext) {
+      public void process(final String path, final SNode node, final EditorContext editorContext) {
+        SPropertyOperations.set(SNodeOperations.cast(node, "org.campagnelab.bdval.structure.CIDs"), "fileLocation", path);
+      }
+    };
+    return FileSelector.createSelectionButton("defaultPath", true, true, editorContext, node, callback);
+  }
+
+  private EditorCell createCollection_s0w797_d0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_s0w797_d0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createJComponent_s0w797_a3a(editorContext, node));
+    return editorCell;
+  }
+
+  private static boolean renderingCondition_s0w797_a3a(SNode node, EditorContext editorContext) {
+    SNode dataset = SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.DataSet");
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(dataset, "input", true), "sample", true)).isNotEmpty() && isNotEmptyString(SPropertyOperations.getString(node, "fileLocation")) && new File(SPropertyOperations.getString(node, "fileLocation")).isFile() && (SLinkOperations.getTarget(SLinkOperations.getTarget(dataset, "task", true), "endpoint", false) != null) && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(dataset, "task", true), "categoryReference", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return (SLinkOperations.getTarget(it, "endpointCategory", false) != null);
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SLinkOperations.getTarget(it, "endpointCategory", false);
+      }
+    }).isNotEmpty();
+  }
+
+  private EditorCell createJComponent_s0w797_a3a(EditorContext editorContext, SNode node) {
+    EditorCell editorCell = EditorCell_Component.createComponentCell(editorContext, node, CIDs_Editor._QueryFunction_JComponent_s0w797_a0d0(node, editorContext), "_s0w797_a3a");
+    editorCell.setCellId("JComponent_s0w797_a3a");
+    return editorCell;
+  }
+
+  private static JComponent _QueryFunction_JComponent_s0w797_a0d0(final SNode node, final EditorContext editorContext) {
     ButtonCallback callback = new ButtonCallback(node, editorContext) {
       public void process(final SNode n, final EditorContext editorContext) {
         {
           final SNode node = ((SNode) n);
-          CIDs_Behavior.call_load_4345048909863010217(SNodeOperations.cast(node, "org.campagnelab.bdval.structure.CIDs"));
+          CIDs_Behavior.call_load_4345048909863010217(node);
         }
       }
     };
@@ -108,9 +150,9 @@ public class CIDs_Editor extends DefaultNodeEditor {
 
   }
 
-  private EditorCell createConstant_s0w797_d0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_s0w797_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Invalid Sample Id (Present in CIDs but not Input File):");
-    editorCell.setCellId("Constant_s0w797_d0");
+    editorCell.setCellId("Constant_s0w797_e0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.red, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray)));
@@ -123,12 +165,12 @@ public class CIDs_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_s0w797_a3a(SNode node, EditorContext editorContext) {
+  private static boolean renderingCondition_s0w797_a4a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "mismatches", true)).isNotEmpty();
   }
 
-  private EditorCell createRefNodeList_s0w797_e0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new CIDs_Editor.mismatchesListHandler_s0w797_e0(node, "mismatches", editorContext);
+  private EditorCell createRefNodeList_s0w797_f0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new CIDs_Editor.mismatchesListHandler_s0w797_f0(node, "mismatches", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_mismatches");
     Style style = new StyleImpl();
@@ -140,8 +182,8 @@ public class CIDs_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class mismatchesListHandler_s0w797_e0 extends RefNodeListHandler {
-    public mismatchesListHandler_s0w797_e0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class mismatchesListHandler_s0w797_f0 extends RefNodeListHandler {
+    public mismatchesListHandler_s0w797_f0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -177,7 +219,11 @@ public class CIDs_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static boolean renderingCondition_s0w797_a4a(SNode node, EditorContext editorContext) {
+  private static boolean renderingCondition_s0w797_a5a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "mismatches", true)).isNotEmpty();
+  }
+
+  private static boolean isNotEmptyString(String str) {
+    return str != null && str.length() > 0;
   }
 }

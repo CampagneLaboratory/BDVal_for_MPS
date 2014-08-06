@@ -44,52 +44,22 @@ public class Approach_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_6do0s2_d0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6do0s2_e0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_6do0s2_f0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6do0s2_g0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_6do0s2_h0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_6do0s2_i0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_6do0s2_j0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6do0s2_k0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6do0s2_l0(editorContext, node));
-    editorCell.addEditorCell(this.createReadOnlyModelAccessor_6do0s2_m0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_6do0s2_g0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_6do0s2_h0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6do0s2_i0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6do0s2_j0(editorContext, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_6do0s2_k0(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createConstant_6do0s2_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Enable Flooring:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Evaluate Statistics After Splits:");
     editorCell.setCellId("Constant_6do0s2_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createProperty_6do0s2_b0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("enableFlooring");
-    provider.setNoTargetText("select value");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_enableFlooring");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createConstant_6do0s2_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Evaluate Statistics After Splits:");
-    editorCell.setCellId("Constant_6do0s2_c0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createProperty_6do0s2_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("evaluateStatistics");
     provider.setNoTargetText("select value");
@@ -110,14 +80,14 @@ public class Approach_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6do0s2_e0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6do0s2_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "External CV Repeats:");
-    editorCell.setCellId("Constant_6do0s2_e0");
+    editorCell.setCellId("Constant_6do0s2_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_6do0s2_f0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_6do0s2_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("externalRepeats");
     provider.setNoTargetText("enter value");
@@ -138,14 +108,14 @@ public class Approach_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6do0s2_g0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6do0s2_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "External CV Folds:");
-    editorCell.setCellId("Constant_6do0s2_g0");
+    editorCell.setCellId("Constant_6do0s2_e0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_6do0s2_h0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_6do0s2_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("externalFolds");
     provider.setNoTargetText("enter value");
@@ -166,7 +136,7 @@ public class Approach_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_6do0s2_i0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_6do0s2_g0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("featureSelectionInfo");
     provider.setNoTargetText("press enter to expand");
@@ -189,7 +159,7 @@ public class Approach_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_6do0s2_j0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_6do0s2_h0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("classificationInfo");
     provider.setNoTargetText("press enter to expand");
@@ -212,9 +182,9 @@ public class Approach_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6do0s2_k0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6do0s2_i0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_6do0s2_k0");
+    editorCell.setCellId("Constant_6do0s2_i0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.FONT_SIZE, 5);
@@ -223,9 +193,9 @@ public class Approach_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6do0s2_l0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6do0s2_j0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Number of Models:");
-    editorCell.setCellId("Constant_6do0s2_l0");
+    editorCell.setCellId("Constant_6do0s2_j0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
     style.set(StyleAttributes.READ_ONLY, true);
@@ -234,7 +204,7 @@ public class Approach_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createReadOnlyModelAccessor_6do0s2_m0(final EditorContext editorContext, final SNode node) {
+  private EditorCell createReadOnlyModelAccessor_6do0s2_k0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         final Wrappers._int classificationsNum = new Wrappers._int(0);
@@ -274,7 +244,7 @@ public class Approach_Editor extends DefaultNodeEditor {
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
-    editorCell.setCellId("ReadOnlyModelAccessor_6do0s2_m0");
+    editorCell.setCellId("ReadOnlyModelAccessor_6do0s2_k0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);

@@ -8,6 +8,11 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
+import java.awt.Color;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -15,9 +20,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.openapi.editor.style.Style;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -29,6 +31,16 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
+import javax.swing.JComponent;
+import org.campagnelab.ui.code.Swing.FileSelectorCallback;
+import java.io.File;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import java.sql.Timestamp;
+import java.util.Date;
+import org.apache.commons.io.FileUtils;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import org.campagnelab.ui.code.Swing.FileSelector;
 
 public class OtherFiles_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -49,127 +61,28 @@ public class OtherFiles_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createConstant_fiu8c2_c0(editorContext, node));
     }
     if (renderingCondition_fiu8c2_a3a(node, editorContext)) {
-      editorCell.addEditorCell(this.createRefNode_fiu8c2_d0(editorContext, node));
+      editorCell.addEditorCell(this.createRefNodeList_fiu8c2_d0(editorContext, node));
     }
     if (renderingCondition_fiu8c2_a4a(node, editorContext)) {
-      editorCell.addEditorCell(this.createConstant_fiu8c2_e0(editorContext, node));
+      editorCell.addEditorCell(this.createCollection_fiu8c2_e0(editorContext, node));
     }
     if (renderingCondition_fiu8c2_a5a(node, editorContext)) {
-      editorCell.addEditorCell(this.createRefNode_fiu8c2_f0(editorContext, node));
-    }
-    if (renderingCondition_fiu8c2_a6a(node, editorContext)) {
-      editorCell.addEditorCell(this.createConstant_fiu8c2_g0(editorContext, node));
-    }
-    if (renderingCondition_fiu8c2_a7a(node, editorContext)) {
-      editorCell.addEditorCell(this.createRefNodeList_fiu8c2_h0(editorContext, node));
+      editorCell.addEditorCell(this.createCollection_fiu8c2_f0(editorContext, node));
     }
     return editorCell;
   }
 
   private EditorCell createConstant_fiu8c2_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Pathway File:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Survival File:");
     editorCell.setCellId("Constant_fiu8c2_a0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(13434879)));
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private static boolean renderingCondition_fiu8c2_a0a(SNode node, EditorContext editorContext) {
-    final String name = "pathway";
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "org.campagnelab.bdval.structure.Project", false, false), "approach", true), "featureSelectionInfo", true), "featureSelectionCombo", true)).any(new IWhereFilter<SNode>() {
-      public boolean accept(SNode combo) {
-        return (SLinkOperations.getTarget(combo, "featureSelectionOption", true) != null) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelectionOption", true), "name").matches(name);
-      }
-    });
-  }
-
-  private EditorCell createRefNode_fiu8c2_b0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("pathwaysFile");
-    provider.setNoTargetText("<no pathwaysFile>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    if (editorCell.getRole() == null) {
-      editorCell.setRole("pathwaysFile");
-    }
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private static boolean renderingCondition_fiu8c2_a1a(SNode node, EditorContext editorContext) {
-    final String name = "pathway";
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "org.campagnelab.bdval.structure.Project", false, false), "approach", true), "featureSelectionInfo", true), "featureSelectionCombo", true)).any(new IWhereFilter<SNode>() {
-      public boolean accept(SNode combo) {
-        return (SLinkOperations.getTarget(combo, "featureSelectionOption", true) != null) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelectionOption", true), "name").matches(name);
-      }
-    });
-  }
-
-  private EditorCell createConstant_fiu8c2_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Gene to Probes File:");
-    editorCell.setCellId("Constant_fiu8c2_c0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private static boolean renderingCondition_fiu8c2_a2a(SNode node, EditorContext editorContext) {
-    final String name = "pathway";
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "org.campagnelab.bdval.structure.Project", false, false), "approach", true), "featureSelectionInfo", true), "featureSelectionCombo", true)).any(new IWhereFilter<SNode>() {
-      public boolean accept(SNode combo) {
-        return (SLinkOperations.getTarget(combo, "featureSelectionOption", true) != null) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelectionOption", true), "name").matches(name);
-      }
-    });
-  }
-
-  private EditorCell createRefNode_fiu8c2_d0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("geneToProbesFile");
-    provider.setNoTargetText("<no geneToProbesFile>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    if (editorCell.getRole() == null) {
-      editorCell.setRole("geneToProbesFile");
-    }
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private static boolean renderingCondition_fiu8c2_a3a(SNode node, EditorContext editorContext) {
-    final String name = "pathway";
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "org.campagnelab.bdval.structure.Project", false, false), "approach", true), "featureSelectionInfo", true), "featureSelectionCombo", true)).any(new IWhereFilter<SNode>() {
-      public boolean accept(SNode combo) {
-        return (SLinkOperations.getTarget(combo, "featureSelectionOption", true) != null) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelectionOption", true), "name").matches(name);
-      }
-    });
-  }
-
-  private EditorCell createConstant_fiu8c2_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Survival File:");
-    editorCell.setCellId("Constant_fiu8c2_e0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private static boolean renderingCondition_fiu8c2_a4a(SNode node, EditorContext editorContext) {
     final String name = "coxReg";
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "org.campagnelab.bdval.structure.Project", false, false), "approach", true), "featureSelectionInfo", true), "featureSelectionCombo", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode combo) {
@@ -178,7 +91,7 @@ public class OtherFiles_Editor extends DefaultNodeEditor {
     });
   }
 
-  private EditorCell createRefNode_fiu8c2_f0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_fiu8c2_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("survivalFile");
     provider.setNoTargetText("<no survivalFile>");
@@ -201,7 +114,7 @@ public class OtherFiles_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_fiu8c2_a5a(SNode node, EditorContext editorContext) {
+  private static boolean renderingCondition_fiu8c2_a1a(SNode node, EditorContext editorContext) {
     final String name = "coxReg";
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "org.campagnelab.bdval.structure.Project", false, false), "approach", true), "featureSelectionInfo", true), "featureSelectionCombo", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode combo) {
@@ -210,14 +123,17 @@ public class OtherFiles_Editor extends DefaultNodeEditor {
     });
   }
 
-  private EditorCell createConstant_fiu8c2_g0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_fiu8c2_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Genelist:");
-    editorCell.setCellId("Constant_fiu8c2_g0");
+    editorCell.setCellId("Constant_fiu8c2_c0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(12642496)));
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private static boolean renderingCondition_fiu8c2_a6a(SNode node, EditorContext editorContext) {
+  private static boolean renderingCondition_fiu8c2_a2a(SNode node, EditorContext editorContext) {
     final String name = "genelist";
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "org.campagnelab.bdval.structure.Project", false, false), "approach", true), "featureSelectionInfo", true), "featureSelectionCombo", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode combo) {
@@ -226,16 +142,16 @@ public class OtherFiles_Editor extends DefaultNodeEditor {
     });
   }
 
-  private EditorCell createRefNodeList_fiu8c2_h0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new OtherFiles_Editor.genelistFilesListHandler_fiu8c2_h0(node, "genelistFiles", editorContext);
+  private EditorCell createRefNodeList_fiu8c2_d0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new OtherFiles_Editor.genelistFilesListHandler_fiu8c2_d0(node, "genelistFiles", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_genelistFiles");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private static class genelistFilesListHandler_fiu8c2_h0 extends RefNodeListHandler {
-    public genelistFilesListHandler_fiu8c2_h0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class genelistFilesListHandler_fiu8c2_d0 extends RefNodeListHandler {
+    public genelistFilesListHandler_fiu8c2_d0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -285,13 +201,164 @@ public class OtherFiles_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static boolean renderingCondition_fiu8c2_a7a(SNode node, EditorContext editorContext) {
+  private static boolean renderingCondition_fiu8c2_a3a(SNode node, EditorContext editorContext) {
     final String name = "genelist";
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "org.campagnelab.bdval.structure.Project", false, false), "approach", true), "featureSelectionInfo", true), "featureSelectionCombo", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode combo) {
         return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name").matches(name)) || ((SLinkOperations.getTarget(combo, "featureSelection2", true) != null) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name").matches(name));
       }
     });
+  }
+
+  private EditorCell createCollection_fiu8c2_e0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_fiu8c2_e0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createJComponent_fiu8c2_a4a(editorContext, node));
+    return editorCell;
+  }
+
+  private static boolean renderingCondition_fiu8c2_a4a(SNode node, EditorContext editorContext) {
+    final String name = "genelist";
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "org.campagnelab.bdval.structure.Project", false, false), "approach", true), "featureSelectionInfo", true), "featureSelectionCombo", true)).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode combo) {
+        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name").matches(name)) || ((SLinkOperations.getTarget(combo, "featureSelection2", true) != null) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name").matches(name));
+      }
+    });
+  }
+
+  private EditorCell createJComponent_fiu8c2_a4a(EditorContext editorContext, SNode node) {
+    EditorCell editorCell = EditorCell_Component.createComponentCell(editorContext, node, OtherFiles_Editor._QueryFunction_JComponent_fiu8c2_a0e0(node, editorContext), "_fiu8c2_a4a");
+    editorCell.setCellId("JComponent_fiu8c2_a4a");
+    return editorCell;
+  }
+
+  private static JComponent _QueryFunction_JComponent_fiu8c2_a0e0(final SNode node, final EditorContext editorContext) {
+    FileSelectorCallback callback = new FileSelectorCallback(node, editorContext) {
+      public void process(final String path, final SNode node, final EditorContext editorContext) {
+        {
+          String genelistFolder = SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(SNodeOperations.cast(node, "org.campagnelab.bdval.structure.OtherFiles"), "org.campagnelab.bdval.structure.Project", false, false), "properties", true), "bdvalDirectory", true), "directoryLocation") + "/data/gene-lists/";
+          File newGenelist = new File(path);
+          final Wrappers._T<String> fileName = new Wrappers._T<String>(newGenelist.getName());
+          if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(SNodeOperations.cast(node, "org.campagnelab.bdval.structure.OtherFiles"), "org.campagnelab.bdval.structure.Project", false, false), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "savedGenelist", true)).any(new IWhereFilter<SNode>() {
+            public boolean accept(SNode savedGenelist) {
+              return SPropertyOperations.getString(savedGenelist, "name").matches(fileName.value);
+            }
+          })) {
+            fileName.value = fileName.value + "-" + String.format("%1$TF=%1$TR", new Timestamp(new Date().getTime())).replaceAll("-", "").replaceAll("=", "-").replaceAll(":", "");
+          }
+          try {
+            FileUtils.copyFile(newGenelist, new File(genelistFolder + fileName.value));
+            SNode savedGenelist = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.SavedGenelist", null);
+            SNode fileNode = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.File", null);
+            SPropertyOperations.set(fileNode, "fileLocation", genelistFolder + fileName.value);
+            SLinkOperations.setTarget(savedGenelist, "file", fileNode, true);
+            SPropertyOperations.set(savedGenelist, "name", fileName.value);
+            ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "org.campagnelab.bdval.structure.Project", false, false), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "savedGenelist", true)).addElement(savedGenelist);
+            SNode genelistRef = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.GenelistRef", null);
+            SLinkOperations.setTarget(genelistRef, "savedGenelist", savedGenelist, false);
+            ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "org.campagnelab.bdval.structure.OtherFiles"), "genelistFiles", true)).addElement(genelistRef);
+          } catch (Exception e) {
+            throw new Error("Unable to copy new genelist file into bdval genelist directory");
+          }
+
+        }
+      }
+    };
+    return FileSelector.createSelectionButton("defaultPath", true, true, editorContext, node, callback);
+  }
+
+  private EditorCell createCollection_fiu8c2_f0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_fiu8c2_f0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createConstant_fiu8c2_a5a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_fiu8c2_b5a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_fiu8c2_c5a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_fiu8c2_d5a(editorContext, node));
+    return editorCell;
+  }
+
+  private static boolean renderingCondition_fiu8c2_a5a(SNode node, EditorContext editorContext) {
+    final String name = "pathway";
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "org.campagnelab.bdval.structure.Project", false, false), "approach", true), "featureSelectionInfo", true), "featureSelectionCombo", true)).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode combo) {
+        return (SLinkOperations.getTarget(combo, "featureSelectionOption", true) != null) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelectionOption", true), "name").matches(name);
+      }
+    });
+  }
+
+  private EditorCell createConstant_fiu8c2_a5a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Pathway File:");
+    editorCell.setCellId("Constant_fiu8c2_a5a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(13684991)));
+    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_fiu8c2_b5a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("pathwaysFile");
+    provider.setNoTargetText("<no pathwaysFile>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("pathwaysFile");
+    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createConstant_fiu8c2_c5a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Gene to Probes File:");
+    editorCell.setCellId("Constant_fiu8c2_c5a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(13684991)));
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_fiu8c2_d5a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("geneToProbesFile");
+    provider.setNoTargetText("<no geneToProbesFile>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("geneToProbesFile");
+    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
   }
 
   private static boolean isNotEmptyString(String str) {

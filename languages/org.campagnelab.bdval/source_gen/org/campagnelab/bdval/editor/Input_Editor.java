@@ -15,16 +15,17 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.io.File;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import javax.swing.JComponent;
 import org.campagnelab.ui.code.Swing.ButtonCallback;
 import org.campagnelab.bdval.behavior.Input_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.campagnelab.ui.code.Swing.Button;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Table;
@@ -47,7 +48,9 @@ public class Input_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_z9sdep_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_z9sdep_b0(editorContext, node));
-    editorCell.addEditorCell(this.createJComponent_z9sdep_c0(editorContext, node));
+    if (renderingCondition_z9sdep_a2a(node, editorContext)) {
+      editorCell.addEditorCell(this.createCollection_z9sdep_c0(editorContext, node));
+    }
     if (renderingCondition_z9sdep_a3a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_z9sdep_d0(editorContext, node));
     }
@@ -99,18 +102,32 @@ public class Input_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createJComponent_z9sdep_c0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = EditorCell_Component.createComponentCell(editorContext, node, Input_Editor._QueryFunction_JComponent_z9sdep_a2a(node, editorContext), "_z9sdep_c0");
-    editorCell.setCellId("JComponent_z9sdep_c0");
+  private EditorCell createCollection_z9sdep_c0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_z9sdep_c0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createJComponent_z9sdep_a2a(editorContext, node));
     return editorCell;
   }
 
-  private static JComponent _QueryFunction_JComponent_z9sdep_a2a(final SNode node, final EditorContext editorContext) {
+  private static boolean renderingCondition_z9sdep_a2a(SNode node, EditorContext editorContext) {
+    return isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(node, "file", true), "fileLocation")) && new File(SPropertyOperations.getString(SLinkOperations.getTarget(node, "file", true), "fileLocation")).isFile();
+  }
+
+  private EditorCell createJComponent_z9sdep_a2a(EditorContext editorContext, SNode node) {
+    EditorCell editorCell = EditorCell_Component.createComponentCell(editorContext, node, Input_Editor._QueryFunction_JComponent_z9sdep_a0c0(node, editorContext), "_z9sdep_a2a");
+    editorCell.setCellId("JComponent_z9sdep_a2a");
+    return editorCell;
+  }
+
+  private static JComponent _QueryFunction_JComponent_z9sdep_a0c0(final SNode node, final EditorContext editorContext) {
     ButtonCallback callback = new ButtonCallback(node, editorContext) {
       public void process(final SNode n, final EditorContext editorContext) {
         {
           final SNode node = ((SNode) n);
-          Input_Behavior.call_load_7052920786130144602(SNodeOperations.cast(node, "org.campagnelab.bdval.structure.Input"));
+          Input_Behavior.call_load_7052920786130144602(node);
         }
       }
     };
@@ -276,5 +293,9 @@ public class Input_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_z9sdep_a8a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "sample", true)).isNotEmpty();
+  }
+
+  private static boolean isNotEmptyString(String str) {
+    return str != null && str.length() > 0;
   }
 }
