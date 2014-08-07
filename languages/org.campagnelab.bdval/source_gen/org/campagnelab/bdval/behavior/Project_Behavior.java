@@ -9,6 +9,7 @@ import java.io.File;
 import javax.swing.JOptionPane;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import org.apache.commons.io.FileUtils;
 import java.util.Properties;
 import java.io.OutputStream;
 import java.io.FileOutputStream;
@@ -57,6 +58,7 @@ public class Project_Behavior {
   public static void call_generateAllFiles_290469645456423260(SNode thisNode) {
     File projectDirectory = new File(SPropertyOperations.getString(thisNode, "projectFolder"));
     projectDirectory.mkdirs();
+    Project_Behavior.call_copyPlatform_8962624141197218263(thisNode, SPropertyOperations.getString(thisNode, "projectFolder"));
     Project_Behavior.call_generateLocalProperties_7083662764418572584(thisNode);
     Project_Behavior.call_generateProperties_290469645499580654(thisNode);
     Approach_Behavior.call_generateSequenceFiles_1870354875253436007(SLinkOperations.getTarget(thisNode, "approach", true));
@@ -66,6 +68,17 @@ public class Project_Behavior {
         DataSet_Behavior.call_generateFiles_6032947574604950587(dataset);
       }
     });
+  }
+
+  public static void call_copyPlatform_8962624141197218263(SNode thisNode, String projectFolder) {
+    String platformFolder = projectFolder + "platforms/";
+    new File(platformFolder).mkdir();
+    String fileName = platformFolder + new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "platform", true), "file", true), "fileLocation")).getName();
+    try {
+      FileUtils.copyFile(new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "platform", true), "file", true), "fileLocation")), new File(fileName));
+    } catch (Exception e) {
+      throw new Error("Error Copying Platform File");
+    }
   }
 
   public static void call_generateLocalProperties_7083662764418572584(SNode thisNode) {
@@ -91,29 +104,30 @@ public class Project_Behavior {
 
   public static void call_generateProperties_290469645499580654(final SNode thisNode) {
     String fileName = SPropertyOperations.getString(thisNode, "projectFolder") + SPropertyOperations.getString(thisNode, "trimmedName") + ".properties";
-    final Wrappers._T<String> floor = new Wrappers._T<String>();
-    final Wrappers._T<String> arrayParam = new Wrappers._T<String>();
+    final Wrappers._T<String> datasetName = new Wrappers._T<String>();
+    final String root = "${eval-dataset-root}";
+    final Wrappers._T<String> arrayParam = new Wrappers._T<String>("");
+    final Wrappers._T<String> floor = new Wrappers._T<String>("");
+
+    final String platformFile = root + "/platforms/" + new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "platform", true), "file", true), "fileLocation")).getName();
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "platform", true), "arrayParameter", true)).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode arrayNode) {
+        arrayParam.value = arrayParam.value + SPropertyOperations.getString(arrayNode, "command");
+      }
+    });
+    if (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "platform", true), "floor"))) {
+      floor.value = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "platform", true), "floor");
+    }
+
     try {
       final Properties prop = new Properties();
       OutputStream output = new FileOutputStream(new File(fileName));
-      final Wrappers._T<String> datasetName = new Wrappers._T<String>();
-      final String root = "${eval-dataset-root}";
       ListSequence.fromList(SLinkOperations.getTargets(thisNode, "dataset", true)).visitAll(new IVisitor<SNode>() {
         public void visit(final SNode dataset) {
-          floor.value = "";
-          arrayParam.value = "";
-          if (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(dataset, "platform", true), "floor"))) {
-            floor.value = SPropertyOperations.getString(SLinkOperations.getTarget(dataset, "platform", true), "floor");
-          }
-          ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(dataset, "platform", true), "arrayParameter", true)).visitAll(new IVisitor<SNode>() {
-            public void visit(SNode arrayNode) {
-              arrayParam.value = arrayParam.value + SPropertyOperations.getString(arrayNode, "command");
-            }
-          });
           datasetName.value = DataSet_Behavior.call_getName_290469645480322571(dataset);
           prop.setProperty(datasetName.value + ".dataset-name", SPropertyOperations.getString(thisNode, "trimmedName"));
           prop.setProperty(datasetName.value + ".dataset-file", root + "/inputs/" + new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(dataset, "input", true), "file", true), "fileLocation")).getName());
-          prop.setProperty(datasetName.value + ".platform-file", root + "/platforms/" + new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(dataset, "platform", true), "file", true), "fileLocation")).getName());
+          prop.setProperty(datasetName.value + ".platform-file", platformFile);
           prop.setProperty(datasetName.value + ".cids-file", root + "/cids/" + datasetName.value + ".cids");
           prop.setProperty(datasetName.value + ".tasks-file", root + "/tasks/" + datasetName.value + ".tasks");
           prop.setProperty(datasetName.value + ".floor", floor.value);

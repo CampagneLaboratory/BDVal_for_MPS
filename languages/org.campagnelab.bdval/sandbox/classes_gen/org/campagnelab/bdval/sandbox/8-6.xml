@@ -6,14 +6,14 @@
   <property file="${bdval-project.basedir}/${ant.project.name}-local.properties"></property>
   <property name="project-property-file" value="${bdval-project.basedir}/${ant.project.name}.properties"></property>
   <property file="${project-property-file}"></property>
-  <property name="tag-description" value="test"></property>
+  <property name="tag-description" value="testing new platform location"></property>
   
   <!--Basic Properties-->
   <property name="enable-flooring" value="true"></property>
   <property name="evaluate-statistics-after-splits" value="false"></property>
   <property name="external-CV-repeats" value="1"></property>
   <property name="external-CV-folds" value="3"></property>
-  <property name="num-features" value="50"></property>
+  <property name="num-features" value="20"></property>
   <property name="max-intermediate-features" value="400"></property>
   
   <!--Feature Selection Properties-->
@@ -26,12 +26,11 @@
   <property name="internal-CV-repeats" value="0"></property>
   <property name="internal-CV-folds" value="0"></property>
   <property name="ga-ratio" value=""></property>
-  <property name="perm-alpha" value=""></property>
+  <property name="perm-alpha" value="0.05"></property>
   <property name="fold-change-phi" value=""></property>
   <property name="kendallTau-ratio" value=""></property>
   <property name="coxreg-alpha" value=""></property>
   
-  <property name="GDS183-28-genes-ensembl-genbank-refseq" value="GDS183-28-genes-ensembl-genbank-refseq --gene-list-file /Users/vmb34/Desktop/bdval/data/gene-lists/GDS183-28-genes-ensembl-genbank-refseq"></property>
   <property name="pathway-aggregation-method" value=""></property>
   
   <!--Classification Properties-->
@@ -39,8 +38,8 @@
   
   <!--Additional Properties-->
   <property name="run-java" value="true"></property>
-  <var name="do.8-6_DiseasedNoYes_test" value="true"></var>
-  <property name="all-endpoints" value=" 8-6_DiseasedNoYes_test"></property>
+  <var name="do.8-6_DiseasedYesNo_test" value="true"></var>
+  <property name="all-endpoints" value=" 8-6_DiseasedYesNo_test"></property>
   <import file="${bdval-dir}/data/bdval.xml"></import>
   
   
@@ -59,8 +58,8 @@
     <attribute name="floor-param"></attribute>
     <attribute name="array-params"></attribute>
     <sequential>
-      <execute-splits feature-selection-fold="false" sequence-file="generated-genelist+svmGlobal-kStar-fs=false.sequence" endpoint-name="@{endpoint-name}" dataset-root="@{dataset-root}" floor-param="@{floor-param}" array-params="@{array-params}" all-classifier-parameters=" --classifier edu.cornell.med.icb.learning.weka.WekaClassifier --classifier-parameters wekaClass=weka.classifiers.lazy.KStar" other-options="  --weka-class weka.classifiers.lazy.KStar --which-gene-list ${GDS183-28-genes-ensembl-genbank-refseq}"></execute-splits>
-      <execute-splits feature-selection-fold="true" sequence-file="generated-genelist+svmGlobal-kStar-fs=true.sequence" endpoint-name="@{endpoint-name}" dataset-root="@{dataset-root}" floor-param="@{floor-param}" array-params="@{array-params}" all-classifier-parameters=" --classifier edu.cornell.med.icb.learning.weka.WekaClassifier --classifier-parameters wekaClass=weka.classifiers.lazy.KStar" other-options="  --weka-class weka.classifiers.lazy.KStar --which-gene-list ${GDS183-28-genes-ensembl-genbank-refseq}"></execute-splits>
+      <execute-splits feature-selection-fold="false" sequence-file="generated-permutation-naiveBayes-fs=false.sequence" endpoint-name="@{endpoint-name}" dataset-root="@{dataset-root}" floor-param="@{floor-param}" array-params="@{array-params}" all-classifier-parameters=" --classifier edu.cornell.med.icb.learning.weka.WekaClassifier --classifier-parameters wekaClass=weka.classifiers.bayes.NaiveBayesUpdateable" other-options=" --alpha ${perm-alpha} --weka-class weka.classifiers.bayes.NaiveBayesUpdateable"></execute-splits>
+      <execute-splits feature-selection-fold="true" sequence-file="generated-permutation-naiveBayes-fs=true.sequence" endpoint-name="@{endpoint-name}" dataset-root="@{dataset-root}" floor-param="@{floor-param}" array-params="@{array-params}" all-classifier-parameters=" --classifier edu.cornell.med.icb.learning.weka.WekaClassifier --classifier-parameters wekaClass=weka.classifiers.bayes.NaiveBayesUpdateable" other-options=" --alpha ${perm-alpha} --weka-class weka.classifiers.bayes.NaiveBayesUpdateable"></execute-splits>
     </sequential>
   </macrodef>
   

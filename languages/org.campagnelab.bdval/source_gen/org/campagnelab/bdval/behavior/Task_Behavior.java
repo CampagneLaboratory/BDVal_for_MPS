@@ -9,6 +9,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import java.util.Iterator;
 
 public class Task_Behavior {
   public static void init(SNode thisNode) {
@@ -25,6 +27,29 @@ public class Task_Behavior {
         if ((categoryNode != null)) {
           SLinkOperations.setTarget(sample, "category", categoryNode, false);
         }
+      }
+    });
+  }
+
+  public static boolean call_checkForEndpoints_8962624141198443578(SNode thisNode) {
+    final Wrappers._boolean nameHasEndpoint = new Wrappers._boolean(false);
+    Iterator sampleIterator = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.DataSet"), "input", true), "sample", true).iterator();
+    final Wrappers._T<SNode> sample = new Wrappers._T<SNode>();
+    while (!(nameHasEndpoint.value) && sampleIterator.hasNext()) {
+      sample.value = (SNode) sampleIterator.next();
+      ListSequence.fromList(SLinkOperations.getTargets(thisNode, "categoryReference", true)).visitAll(new IVisitor<SNode>() {
+        public void visit(SNode categoryRef) {
+          nameHasEndpoint.value = nameHasEndpoint.value || SPropertyOperations.getString(sample.value, "name").contains(SPropertyOperations.getString(SLinkOperations.getTarget(categoryRef, "endpointCategory", false), "name"));
+        }
+      });
+    }
+    return nameHasEndpoint.value;
+  }
+
+  public static void call_clearCategoryAssignments_8962624141199537893(SNode thisNode) {
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.DataSet"), "input", true), "sample", true)).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode sample) {
+        SLinkOperations.setTarget(sample, "category", null, false);
       }
     });
   }

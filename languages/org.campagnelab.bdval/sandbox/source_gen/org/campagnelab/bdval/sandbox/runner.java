@@ -31,7 +31,7 @@ public class runner {
     if (reply == 1) {
       String memoFile;
       if (args.length == 0) {
-        memoFile = "/Users/vmb34/Desktop/8-6/test7/memo/memo.properties";
+        memoFile = "/Users/vmb34/Desktop/8-6/test10/memo/memo.properties";
       } else {
         memoFile = args[0];
       }
@@ -88,18 +88,17 @@ public class runner {
               DefaultLogger consoleLogger = new DefaultLogger();
               consoleLogger.setErrorPrintStream(System.err);
               consoleLogger.setOutputPrintStream(printStream);
-              consoleLogger.setMessageOutputLevel(Project.MSG_INFO);
+              consoleLogger.setMessageOutputLevel(Project.MSG_ERR);
               p.addBuildListener(consoleLogger);
               p.fireBuildStarted();
               p.init();
               ProjectHelper helper = ProjectHelper.getProjectHelper();
-              p.addReference("ant.projectHelpter", helper);
+              p.addReference("ant.projectHelper", helper);
               helper.parse(p, buildFile);
               p.executeTarget(p.getDefaultTarget());
               p.fireBuildFinished(null);
             } catch (Exception e) {
-              p.fireBuildFinished(e);
-              JOptionPane.showMessageDialog(null, "Error running ANT");
+              System.out.println("Error running ANT");
             }
           }
         };
@@ -142,13 +141,13 @@ public class runner {
               }
               progressBar.setValue(100);
             } catch (Exception e) {
-              JOptionPane.showMessageDialog(null, "Error monitoring project progress");
+              System.out.println("Error monitoring project progress");
             }
           }
         };
         monitorProgress.start();
       } catch (Exception e) {
-        JOptionPane.showMessageDialog(null, "Unsuccessful BDVal run");
+        System.out.println("Unsuccessful BDVal run");
       }
     }
   }

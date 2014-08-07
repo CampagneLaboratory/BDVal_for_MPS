@@ -13,10 +13,10 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.campagnelab.bdval.behavior.Task_Behavior;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
-import org.campagnelab.bdval.behavior.Task_Behavior;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ExtractEndpoints_Intention implements IntentionFactory {
@@ -65,7 +65,7 @@ public class ExtractEndpoints_Intention implements IntentionFactory {
       public SNode select(SNode it) {
         return SLinkOperations.getTarget(it, "endpointCategory", false);
       }
-    }).isNotEmpty() && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.DataSet"), "input", true), "sample", true)).isNotEmpty();
+    }).isNotEmpty() && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.DataSet"), "input", true), "sample", true)).isNotEmpty() && Task_Behavior.call_checkForEndpoints_8962624141198443578(node);
   }
 
   public SNodeReference getIntentionNodeReference() {

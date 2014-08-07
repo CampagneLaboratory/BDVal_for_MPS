@@ -27,7 +27,6 @@ public class DataSet_Behavior {
   public static void call_generateFiles_6032947574604950587(SNode thisNode) {
     String projectFolder = SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.Project"), "projectFolder");
     String datasetName = DataSet_Behavior.call_getName_290469645480322571(thisNode);
-    DataSet_Behavior.call_copyPlatform_7083662764413093380(thisNode, projectFolder, datasetName);
     DataSet_Behavior.call_copyInput_7083662764415129152(thisNode, projectFolder, datasetName);
     if ((SLinkOperations.getTarget(thisNode, "otherFiles", true) != null)) {
       DataSet_Behavior.call_copyOtherFiles_4989762282953266724(thisNode, projectFolder, datasetName);
@@ -46,17 +45,6 @@ public class DataSet_Behavior {
     });
     String parentName = SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.Project"), "trimmedName");
     return parentName + "_" + endpointDescription.value + "_" + SPropertyOperations.getString(thisNode, "name").replaceAll("\\s", "");
-  }
-
-  public static void call_copyPlatform_7083662764413093380(SNode thisNode, String projectFolder, String datasetName) {
-    String platformFolder = projectFolder + "platforms/";
-    new File(platformFolder).mkdir();
-    String fileName = platformFolder + new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "platform", true), "file", true), "fileLocation")).getName();
-    try {
-      FileUtils.copyFile(new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "platform", true), "file", true), "fileLocation")), new File(fileName));
-    } catch (Exception e) {
-      throw new Error("Error Copying Platform File");
-    }
   }
 
   public static void call_copyInput_7083662764415129152(SNode thisNode, String projectFolder, String datasetName) {

@@ -12,17 +12,20 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import javax.swing.JComponent;
 import org.campagnelab.ui.code.Swing.FileSelectorCallback;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.campagnelab.ui.code.Swing.FileSelector;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.io.File;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -50,7 +53,7 @@ public class CIDs_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_s0w797_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_s0w797_a0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_s0w797_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_s0w797_b0(editorContext, node));
     editorCell.addEditorCell(this.createJComponent_s0w797_c0(editorContext, node));
     if (renderingCondition_s0w797_a3a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_s0w797_d0(editorContext, node));
@@ -74,14 +77,17 @@ public class CIDs_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_s0w797_b0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("fileLocation");
-    provider.setNoTargetText("optional: enter file path");
-    provider.setAllowsEmptyTarget(true);
+  private EditorCell createRefCell_s0w797_b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
+    provider.setRole("file");
+    provider.setNoTargetText("<no file>");
     EditorCell editorCell;
+    provider.setAuxiliaryCellProvider(new CIDs_Editor._Inline_s0w797_a1a());
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_fileLocation");
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("file");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -93,6 +99,39 @@ public class CIDs_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  public static class _Inline_s0w797_a1a extends InlineCellProvider {
+    public _Inline_s0w797_a1a() {
+      super();
+    }
+
+    public EditorCell createEditorCell(EditorContext editorContext) {
+      return this.createEditorCell(editorContext, this.getSNode());
+    }
+
+    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+      return this.createProperty_s0w797_a0b0(editorContext, node);
+    }
+
+    private EditorCell createProperty_s0w797_a0b0(EditorContext editorContext, SNode node) {
+      CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+      provider.setRole("fileLocation");
+      provider.setNoTargetText("optional: enter path");
+      provider.setAllowsEmptyTarget(true);
+      EditorCell editorCell;
+      editorCell = provider.createEditorCell(editorContext);
+      editorCell.setCellId("property_fileLocation");
+      editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+      SNode attributeConcept = provider.getRoleAttribute();
+      Class attributeKind = provider.getRoleAttributeClass();
+      if (attributeConcept != null) {
+        IOperationContext opContext = editorContext.getOperationContext();
+        EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+        return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+      } else
+      return editorCell;
+    }
+  }
+
   private EditorCell createJComponent_s0w797_c0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = EditorCell_Component.createComponentCell(editorContext, node, CIDs_Editor._QueryFunction_JComponent_s0w797_a2a(node, editorContext), "_s0w797_c0");
     editorCell.setCellId("JComponent_s0w797_c0");
@@ -102,7 +141,11 @@ public class CIDs_Editor extends DefaultNodeEditor {
   private static JComponent _QueryFunction_JComponent_s0w797_a2a(final SNode node, final EditorContext editorContext) {
     FileSelectorCallback callback = new FileSelectorCallback(node, editorContext) {
       public void process(final String path, final SNode node, final EditorContext editorContext) {
-        SPropertyOperations.set(SNodeOperations.cast(node, "org.campagnelab.bdval.structure.CIDs"), "fileLocation", path);
+        {
+          SNode fileNode = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.File", null);
+          SPropertyOperations.set(fileNode, "fileLocation", path);
+          SLinkOperations.setTarget(SNodeOperations.cast(node, "org.campagnelab.bdval.structure.CIDs"), "file", fileNode, true);
+        }
       }
     };
     return FileSelector.createSelectionButton("defaultPath", true, true, editorContext, node, callback);
@@ -120,7 +163,7 @@ public class CIDs_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_s0w797_a3a(SNode node, EditorContext editorContext) {
     SNode dataset = SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.DataSet");
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(dataset, "input", true), "sample", true)).isNotEmpty() && isNotEmptyString(SPropertyOperations.getString(node, "fileLocation")) && new File(SPropertyOperations.getString(node, "fileLocation")).isFile() && (SLinkOperations.getTarget(SLinkOperations.getTarget(dataset, "task", true), "endpoint", false) != null) && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(dataset, "task", true), "categoryReference", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(dataset, "input", true), "sample", true)).isNotEmpty() && isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(node, "file", true), "fileLocation")) && new File(SPropertyOperations.getString(SLinkOperations.getTarget(node, "file", true), "fileLocation")).isFile() && (SLinkOperations.getTarget(SLinkOperations.getTarget(dataset, "task", true), "endpoint", false) != null) && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(dataset, "task", true), "categoryReference", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (SLinkOperations.getTarget(it, "endpointCategory", false) != null);
       }

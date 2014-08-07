@@ -63,7 +63,7 @@ public class LoadCIDs_Intention implements IntentionFactory {
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     SNode dataset = SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.DataSet");
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(dataset, "input", true), "sample", true)).isNotEmpty() && isNotEmptyString(SPropertyOperations.getString(node, "fileLocation")) && new File(SPropertyOperations.getString(node, "fileLocation")).exists() && (SLinkOperations.getTarget(SLinkOperations.getTarget(dataset, "task", true), "endpoint", false) != null) && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(dataset, "task", true), "categoryReference", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(dataset, "input", true), "sample", true)).isNotEmpty() && isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(node, "file", true), "fileLocation")) && new File(SPropertyOperations.getString(SLinkOperations.getTarget(node, "file", true), "fileLocation")).exists() && (SLinkOperations.getTarget(SLinkOperations.getTarget(dataset, "task", true), "endpoint", false) != null) && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(dataset, "task", true), "categoryReference", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (SLinkOperations.getTarget(it, "endpointCategory", false) != null);
       }

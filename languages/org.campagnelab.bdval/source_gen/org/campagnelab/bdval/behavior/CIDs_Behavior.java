@@ -21,7 +21,7 @@ public class CIDs_Behavior {
   public static void call_load_4345048909863010217(SNode thisNode) {
     ListSequence.fromList(SLinkOperations.getTargets(thisNode, "mismatches", true)).clear();
     try {
-      FileReader reader = new FileReader(new File(SPropertyOperations.getString(thisNode, "fileLocation")));
+      FileReader reader = new FileReader(new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "file", true), "fileLocation")));
       BufferedReader datasetReader = new BufferedReader(reader);
       if (datasetReader.readLine().split("\t").length != 2) {
         throw new IllegalArgumentException();

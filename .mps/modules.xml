@@ -4,6 +4,7 @@
     <projectModules>
       <modulePath path="$PROJECT_DIR$/languages/org.campagnelab.bdval/org.campagnelab.bdval.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/org.campagnelab.bdval/sandbox/org.campagnelab.bdval.sandbox.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/org.apache.ant.launcher/org.apache.ant.launcher.msd" folder="" />
     </projectModules>
   </component>
 </project>

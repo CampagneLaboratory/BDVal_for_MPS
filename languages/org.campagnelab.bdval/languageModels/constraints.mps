@@ -10,7 +10,9 @@
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="5" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
+  <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <root type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="7083662764386722345" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="dataset" />
     <link role="concept" roleId="tp1t.1213093996982" targetNodeId="w348.7083662764384236370" resolveInfo="CategoryReference" />
     <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="7083662764386722346" nodeInfo="ng">
       <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="w348.7083662764384236371" />
@@ -48,6 +50,7 @@
     </node>
   </root>
   <root type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="2366055488402655448" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="dataset" />
     <link role="concept" roleId="tp1t.1213093996982" targetNodeId="w348.7052920786130772514" resolveInfo="Sample" />
     <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="2366055488402655517" nodeInfo="ng">
       <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="w348.7083662764384145279" />
@@ -83,6 +86,7 @@
     </node>
   </root>
   <root type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="4027829922717486444" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="dataset" />
     <link role="concept" roleId="tp1t.1213093996982" targetNodeId="w348.7083662764384091354" resolveInfo="Task" />
     <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="4027829922717489546" nodeInfo="ng">
       <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="w348.7083662764384193813" />
