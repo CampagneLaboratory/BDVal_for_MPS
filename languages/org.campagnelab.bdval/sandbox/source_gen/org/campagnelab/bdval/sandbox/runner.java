@@ -31,7 +31,7 @@ public class runner {
     if (reply == 1) {
       String memoFile;
       if (args.length == 0) {
-        memoFile = "/Users/vmb34/Desktop/8-6/test10/memo/memo.properties";
+        memoFile = "/Users/vmb34/Desktop/8-7/test4/memo/memo.properties";
       } else {
         memoFile = args[0];
       }
@@ -75,6 +75,7 @@ public class runner {
         frame.setVisible(true);
 
         final String messageName = name + "-runMessages-" + String.format("%1$TF=%1$TR", new Timestamp(new Date().getTime())).replaceAll("-", "").replaceAll("=", "-").replaceAll(":", "") + ".txt";
+
         final File messageFile = new File(folder + "memo/" + messageName);
         final PrintStream printStream = new PrintStream(messageFile);
 
@@ -88,7 +89,7 @@ public class runner {
               DefaultLogger consoleLogger = new DefaultLogger();
               consoleLogger.setErrorPrintStream(System.err);
               consoleLogger.setOutputPrintStream(printStream);
-              consoleLogger.setMessageOutputLevel(Project.MSG_ERR);
+              consoleLogger.setMessageOutputLevel(Project.MSG_INFO);
               p.addBuildListener(consoleLogger);
               p.fireBuildStarted();
               p.init();
@@ -98,7 +99,8 @@ public class runner {
               p.executeTarget(p.getDefaultTarget());
               p.fireBuildFinished(null);
             } catch (Exception e) {
-              System.out.println("Error running ANT");
+              p.fireBuildFinished(e);
+              JOptionPane.showMessageDialog(null, "Error running ANT");
             }
           }
         };

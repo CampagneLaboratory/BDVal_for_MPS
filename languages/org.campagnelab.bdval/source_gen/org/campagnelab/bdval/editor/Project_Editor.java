@@ -16,6 +16,14 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.editor.runtime.style.Padding;
+import jetbrains.mps.editor.runtime.style.Measure;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
+import javax.swing.JComponent;
+import org.campagnelab.ui.code.Swing.ButtonCallback;
+import org.campagnelab.bdval.behavior.Status_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.campagnelab.ui.code.Swing.Button;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -41,17 +49,18 @@ public class Project_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_o8np3d_e0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_o8np3d_f0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_o8np3d_g0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_o8np3d_h0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_o8np3d_i0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_o8np3d_h0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_o8np3d_i0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_o8np3d_j0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_o8np3d_k0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_o8np3d_l0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_o8np3d_k0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_o8np3d_l0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_o8np3d_m0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_o8np3d_n0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_o8np3d_o0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_o8np3d_p0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_o8np3d_q0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_o8np3d_r0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_o8np3d_n0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_o8np3d_o0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_o8np3d_p0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_o8np3d_q0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_o8np3d_r0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_o8np3d_s0(editorContext, node));
     return editorCell;
   }
 
@@ -147,14 +156,44 @@ public class Project_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Status:");
     editorCell.setCellId("Constant_o8np3d_g0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.FONT_SIZE, 14);
+    style.set(StyleAttributes.PADDING_RIGHT, new Padding(4, Measure.SPACES));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_o8np3d_h0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_o8np3d_h0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_o8np3d_h0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createJComponent_o8np3d_a7a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createJComponent_o8np3d_a7a(EditorContext editorContext, SNode node) {
+    EditorCell editorCell = EditorCell_Component.createComponentCell(editorContext, node, Project_Editor._QueryFunction_JComponent_o8np3d_a0h0(node, editorContext), "_o8np3d_a7a");
+    editorCell.setCellId("JComponent_o8np3d_a7a");
+    return editorCell;
+  }
+
+  private static JComponent _QueryFunction_JComponent_o8np3d_a0h0(final SNode node, final EditorContext editorContext) {
+    ButtonCallback callback = new ButtonCallback(node, editorContext) {
+      public void process(final SNode n, final EditorContext editorContext) {
+        {
+          final SNode node = ((SNode) n);
+          Status_Behavior.call_updateStatus_4578313781751627046(SLinkOperations.getTarget(node, "status", true));
+        }
+      }
+    };
+    return Button.createButton("Update", editorContext, node, callback);
+
+  }
+
+  private EditorCell createRefNode_o8np3d_i0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("status");
     provider.setNoTargetText("<no status>");
@@ -178,9 +217,9 @@ public class Project_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_o8np3d_i0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_o8np3d_j0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_o8np3d_i0");
+    editorCell.setCellId("Constant_o8np3d_j0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -188,9 +227,9 @@ public class Project_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_o8np3d_j0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_o8np3d_k0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Approach:");
-    editorCell.setCellId("Constant_o8np3d_j0");
+    editorCell.setCellId("Constant_o8np3d_k0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.FONT_SIZE, 14);
@@ -199,7 +238,7 @@ public class Project_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_o8np3d_k0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_o8np3d_l0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("approach");
     provider.setNoTargetText("press enter to expand");
@@ -223,9 +262,9 @@ public class Project_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_o8np3d_l0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_o8np3d_m0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_o8np3d_l0");
+    editorCell.setCellId("Constant_o8np3d_m0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -233,9 +272,9 @@ public class Project_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_o8np3d_m0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_o8np3d_n0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Endpoints:");
-    editorCell.setCellId("Constant_o8np3d_m0");
+    editorCell.setCellId("Constant_o8np3d_n0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_SIZE, 14);
     editorCell.getStyle().putAll(style);
@@ -243,8 +282,8 @@ public class Project_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_o8np3d_n0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new Project_Editor.endpointListHandler_o8np3d_n0(node, "endpoint", editorContext);
+  private EditorCell createRefNodeList_o8np3d_o0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new Project_Editor.endpointListHandler_o8np3d_o0(node, "endpoint", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_endpoint");
     Style style = new StyleImpl();
@@ -255,8 +294,8 @@ public class Project_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class endpointListHandler_o8np3d_n0 extends RefNodeListHandler {
-    public endpointListHandler_o8np3d_n0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class endpointListHandler_o8np3d_o0 extends RefNodeListHandler {
+    public endpointListHandler_o8np3d_o0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -292,9 +331,9 @@ public class Project_Editor extends DefaultNodeEditor {
     }
   }
 
-  private EditorCell createConstant_o8np3d_o0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_o8np3d_p0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_o8np3d_o0");
+    editorCell.setCellId("Constant_o8np3d_p0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -302,7 +341,7 @@ public class Project_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_o8np3d_p0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_o8np3d_q0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("platform");
     provider.setNoTargetText("<no platform>");
@@ -325,9 +364,9 @@ public class Project_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_o8np3d_q0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_o8np3d_r0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_o8np3d_q0");
+    editorCell.setCellId("Constant_o8np3d_r0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.FONT_SIZE, 20);
@@ -336,19 +375,20 @@ public class Project_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_o8np3d_r0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new Project_Editor.datasetListHandler_o8np3d_r0(node, "dataset", editorContext);
+  private EditorCell createRefNodeList_o8np3d_s0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new Project_Editor.datasetListHandler_o8np3d_s0(node, "dataset", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_dataset");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private static class datasetListHandler_o8np3d_r0 extends RefNodeListHandler {
-    public datasetListHandler_o8np3d_r0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class datasetListHandler_o8np3d_s0 extends RefNodeListHandler {
+    public datasetListHandler_o8np3d_s0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

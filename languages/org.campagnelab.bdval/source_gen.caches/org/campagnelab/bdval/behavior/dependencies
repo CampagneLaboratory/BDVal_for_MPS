@@ -916,14 +916,14 @@
   </dependency>
   <dependency className="org.campagnelab.bdval.behavior.Status_Behavior" file="Status_Behavior.java">
     <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.io.FileFilter" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="org.apache.commons.io.FileUtils" />
-    <classNode dependClassName="org.apache.commons.io.filefilter.FileFileFilter" />
-    <classNode dependClassName="org.apache.commons.io.filefilter.TrueFileFilter" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="org.campagnelab.bdval.behavior.Status_BehaviorDescriptor" file="Status_BehaviorDescriptor.java">

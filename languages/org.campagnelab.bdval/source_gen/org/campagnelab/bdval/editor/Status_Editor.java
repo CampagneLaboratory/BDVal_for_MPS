@@ -7,29 +7,20 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
-import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import java.io.File;
-import java.io.FileFilter;
-import org.campagnelab.bdval.behavior.Status_Behavior;
-import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class Status_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -40,56 +31,27 @@ public class Status_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_gjf57x_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createReadOnlyModelAccessor_gjf57x_a0(editorContext, node));
+    if (renderingCondition_gjf57x_a0a(node, editorContext)) {
+      editorCell.addEditorCell(this.createConstant_gjf57x_a0(editorContext, node));
+    }
     if (renderingCondition_gjf57x_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNodeList_gjf57x_b0(editorContext, node));
     }
     return editorCell;
   }
 
-  private EditorCell createReadOnlyModelAccessor_gjf57x_a0(final EditorContext editorContext, final SNode node) {
-    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
-      public String getText() {
-        String output = "No Projects Have Been Run";
-        SNode project = SNodeOperations.getAncestor(node, "org.campagnelab.bdval.structure.Project", false, false);
-        String projectName = SPropertyOperations.getString(project, "name").replaceAll("\\s", "").trim();
-        String outputLocation = SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(project, "properties", true), "outputDirectory", true), "directoryLocation");
-        String directory = SPropertyOperations.getString(SLinkOperations.getTarget(project, "properties", true), "directoryName");
-        if ((projectName != null && projectName.length() > 0) && (outputLocation != null && outputLocation.length() > 0) && (directory != null && directory.length() > 0) && new File(outputLocation + "/" + projectName + "/" + directory).isDirectory()) {
-          FileFilter customFilter = new FileFilter() {
-            public boolean accept(File file) {
-              return file.isDirectory() && file.getName().contains("-results");
-            }
-          };
-          File[] files = new File(outputLocation + "/" + projectName + "/" + directory).listFiles(customFilter);
-
-          if (files != null && files.length > 0) {
-            Status_Behavior.call_getResults_8962624141213118054(node, files);
-            output = "";
-          } else {
-            SLinkOperations.getTargets(node, "result", true).clear();
-          }
-        }
-        return output;
-      }
-
-      public void setText(String s) {
-      }
-
-      public boolean isValidText(String s) {
-        return EqualUtil.equals(s, getText());
-      }
-    }, node);
-    editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
-    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
-    editorCell.setCellId("ReadOnlyModelAccessor_gjf57x_a0");
+  private EditorCell createConstant_gjf57x_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "No Previously Run Projects");
+    editorCell.setCellId("Constant_gjf57x_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.READ_ONLY, true);
-    style.set(StyleAttributes.EDITABLE, false);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
     return editorCell;
+  }
+
+  private static boolean renderingCondition_gjf57x_a0a(SNode node, EditorContext editorContext) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "result", true)).isEmpty();
   }
 
   private EditorCell createRefNodeList_gjf57x_b0(EditorContext editorContext, SNode node) {
@@ -141,10 +103,6 @@ public class Status_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_gjf57x_a1a(SNode node, EditorContext editorContext) {
-    SNode project = SNodeOperations.getAncestor(node, "org.campagnelab.bdval.structure.Project", false, false);
-    String name = SPropertyOperations.getString(project, "name").replaceAll("\\s", "").trim();
-    String outputLocation = SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(project, "properties", true), "outputDirectory", true), "directoryLocation");
-    String directory = SPropertyOperations.getString(SLinkOperations.getTarget(project, "properties", true), "directoryName");
-    return (name != null && name.length() > 0) && (outputLocation != null && outputLocation.length() > 0) && (directory != null && directory.length() > 0) && new File(outputLocation + "/" + name + "/" + directory).isDirectory() && ListSequence.fromList(SLinkOperations.getTargets(node, "result", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "result", true)).isNotEmpty();
   }
 }

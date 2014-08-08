@@ -1,12 +1,12 @@
-<project name="8-6" default="evaluate" basedir=".">
+<project name="8-7" default="evaluate" basedir=".">
   <!--Set up-->
-  <dirname property="bdval-project.basedir" file="${ant.file.8-6}"></dirname>
+  <dirname property="bdval-project.basedir" file="${ant.file.8-7}"></dirname>
   <property name="bdval-dir" value="/Users/vmb34/Desktop/bdval"></property>
   <import file="${bdval-dir}/buildsupport/build.xml"></import>
   <property file="${bdval-project.basedir}/${ant.project.name}-local.properties"></property>
   <property name="project-property-file" value="${bdval-project.basedir}/${ant.project.name}.properties"></property>
   <property file="${project-property-file}"></property>
-  <property name="tag-description" value="testing new platform location"></property>
+  <property name="tag-description" value="testing DS_store file"></property>
   
   <!--Basic Properties-->
   <property name="enable-flooring" value="true"></property>
@@ -17,7 +17,7 @@
   <property name="max-intermediate-features" value="400"></property>
   
   <!--Feature Selection Properties-->
-  <property name="ttest-alpha" value=""></property>
+  <property name="ttest-alpha" value="0.05"></property>
   <property name="svmIterative-r" value=""></property>
   <property name="minMax-observations" value="0"></property>
   <property name="ga-wrapper-population-size" value="0"></property>
@@ -38,8 +38,8 @@
   
   <!--Additional Properties-->
   <property name="run-java" value="true"></property>
-  <var name="do.8-6_DiseasedYesNo_test" value="true"></var>
-  <property name="all-endpoints" value=" 8-6_DiseasedYesNo_test"></property>
+  <var name="do.8-7_DiseasedYesNo_test" value="true"></var>
+  <property name="all-endpoints" value=" 8-7_DiseasedYesNo_test"></property>
   <import file="${bdval-dir}/data/bdval.xml"></import>
   
   
@@ -58,8 +58,7 @@
     <attribute name="floor-param"></attribute>
     <attribute name="array-params"></attribute>
     <sequential>
-      <execute-splits feature-selection-fold="false" sequence-file="generated-permutation-naiveBayes-fs=false.sequence" endpoint-name="@{endpoint-name}" dataset-root="@{dataset-root}" floor-param="@{floor-param}" array-params="@{array-params}" all-classifier-parameters=" --classifier edu.cornell.med.icb.learning.weka.WekaClassifier --classifier-parameters wekaClass=weka.classifiers.bayes.NaiveBayesUpdateable" other-options=" --alpha ${perm-alpha} --weka-class weka.classifiers.bayes.NaiveBayesUpdateable"></execute-splits>
-      <execute-splits feature-selection-fold="true" sequence-file="generated-permutation-naiveBayes-fs=true.sequence" endpoint-name="@{endpoint-name}" dataset-root="@{dataset-root}" floor-param="@{floor-param}" array-params="@{array-params}" all-classifier-parameters=" --classifier edu.cornell.med.icb.learning.weka.WekaClassifier --classifier-parameters wekaClass=weka.classifiers.bayes.NaiveBayesUpdateable" other-options=" --alpha ${perm-alpha} --weka-class weka.classifiers.bayes.NaiveBayesUpdateable"></execute-splits>
+      <execute-splits feature-selection-fold="false" sequence-file="generated-ttest-SVM-fs=false.sequence" endpoint-name="@{endpoint-name}" dataset-root="@{dataset-root}" floor-param="@{floor-param}" array-params="@{array-params}" all-classifier-parameters=" --classifier edu.cornell.med.icb.learning.libsvm.LibSvmClassifier  --classifier-parameters probability=${use-probability}" other-options=" --alpha ${ttest-alpha}"></execute-splits>
     </sequential>
   </macrodef>
   

@@ -30,6 +30,7 @@ public class Result_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_ouom3r_c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ouom3r_d0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_ouom3r_e0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ouom3r_f0(editorContext, node));
     return editorCell;
   }
 
@@ -91,6 +92,9 @@ public class Result_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_numberModels");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -99,6 +103,13 @@ public class Result_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
+    return editorCell;
+  }
+
+  private EditorCell createConstant_ouom3r_f0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_ouom3r_f0");
+    editorCell.setDefaultText("");
     return editorCell;
   }
 }

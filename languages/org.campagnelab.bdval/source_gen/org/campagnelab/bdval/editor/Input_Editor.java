@@ -69,6 +69,7 @@ public class Input_Editor extends DefaultNodeEditor {
     if (renderingCondition_z9sdep_a8a(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNodeList_z9sdep_i0(editorContext, node));
     }
+    editorCell.addEditorCell(this.createConstant_z9sdep_j0(editorContext, node));
     return editorCell;
   }
 
@@ -131,7 +132,7 @@ public class Input_Editor extends DefaultNodeEditor {
         }
       }
     };
-    return Button.createButton("Load", editorContext, node, callback);
+    return Button.createButton("Preview", editorContext, node, callback);
 
   }
 
@@ -249,6 +250,7 @@ public class Input_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.READ_ONLY, true);
     style.set(StyleAttributes.TABLE_COMPONENT, TableComponent.VERTICAL_COLLECTION);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
@@ -293,6 +295,18 @@ public class Input_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_z9sdep_a8a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "sample", true)).isNotEmpty();
+  }
+
+  private EditorCell createConstant_z9sdep_j0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Note: Only shows first few lines/columns of table");
+    editorCell.setCellId("Constant_z9sdep_j0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
+    style.set(StyleAttributes.READ_ONLY, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
   }
 
   private static boolean isNotEmptyString(String str) {

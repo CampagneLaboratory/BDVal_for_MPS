@@ -5,12 +5,12 @@
   <import index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="71" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <root type="w348.Project" typeId="w348.3367122381622495536" id="8962624141198440391" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="8-6" />
+    <property name="name" nameId="tpck.1169194664001" value="8-7" />
     <node role="properties" roleId="w348.7083662764416913977" type="w348.Properties" typeId="w348.7083662764416913858" id="8962624141198440392" nodeInfo="ng">
       <property name="threads" nameId="w348.7083662764416913912" value="1" />
       <property name="memory" nameId="w348.7083662764416913915" value="1200" />
-      <property name="directoryName" nameId="w348.3015647834783938295" value="test10" />
-      <property name="tagDescription" nameId="w348.1847053361490302608" value="testing new platform location" />
+      <property name="directoryName" nameId="w348.3015647834783938295" value="test4" />
+      <property name="tagDescription" nameId="w348.1847053361490302608" value="testing DS_store file" />
       <node role="outputDirectory" roleId="w348.1911754720568108889" type="w348.Directory" typeId="w348.1911754720568105445" id="8962624141198440393" nodeInfo="ng">
         <property name="directoryLocation" nameId="w348.1911754720568105446" value="/Users/vmb34/Desktop" />
       </node>
@@ -29,6 +29,16 @@
       <property name="externalFolds" nameId="w348.290469645457746273" value="3" />
       <node role="featureSelectionInfo" roleId="w348.8314272953671282922" type="w348.FeatureSelectionInfo" typeId="w348.1870354875249618576" id="8962624141198440398" nodeInfo="ng">
         <property name="maxIntermediateFeatures" nameId="w348.1870354875249707132" value="400" />
+        <node role="featureSelectionCombo" roleId="w348.1870354875249707136" type="w348.FeatureSelectionCombo" typeId="w348.1870354875251769793" id="2366800169539408619" nodeInfo="ng">
+          <node role="featureSelection1" roleId="w348.3649519271352989204" type="w348.Ttest" typeId="w348.1870354875249563496" id="2366800169539408623" nodeInfo="ng">
+            <property name="name" nameId="tpck.1169194664001" value="ttest" />
+            <property name="addoptions" nameId="w348.3649519271356774529" value="addoption required:alpha:Confidence level for T-test&#10;" />
+            <property name="sequenceCommand" nameId="w348.3649519271360690766" value=" t-test" />
+            <property name="sequenceInfo" nameId="w348.3649519271357455932" value=" --alpha %alpha%" />
+            <property name="sequenceNumFeatures" nameId="w348.3649519271361989788" value=" --report-max-probes" />
+            <property name="otherOptions" nameId="w348.3649519271350395849" value=" --alpha ${ttest-alpha}" />
+          </node>
+        </node>
         <node role="numberOfFeatures" roleId="w348.1870354875249707134" type="w348.Integer" typeId="w348.290469645457746370" id="8962624141198440399" nodeInfo="ng">
           <property name="value" nameId="w348.290469645457746371" value="20" />
         </node>
@@ -36,36 +46,195 @@
           <property name="name" nameId="tpck.1169194664001" value="use-feature-selection-fold=false" />
           <property name="value" nameId="w348.1870354875254126878" value="false" />
         </node>
-        <node role="featureSelectionFold" roleId="w348.1870354875249707139" type="w348.FeatureSelectionFoldTrue" typeId="w348.7388448774866524764" id="8962624141198440561" nodeInfo="ng">
-          <property name="name" nameId="tpck.1169194664001" value="use-feature-selection-fold=true" />
-          <property name="value" nameId="w348.1870354875254126878" value="true" />
-        </node>
-        <node role="featureSelectionCombo" roleId="w348.1870354875249707136" type="w348.FeatureSelectionCombo" typeId="w348.1870354875251769793" id="8962624141198440401" nodeInfo="ng">
-          <node role="featureSelection1" roleId="w348.3649519271352989204" type="w348.Permutation" typeId="w348.4989762282949988176" id="8962624141198440565" nodeInfo="ng">
-            <property name="name" nameId="tpck.1169194664001" value="permutation" />
-            <property name="addoptions" nameId="w348.3649519271356774529" value="addoption required:alpha:confidence level for permutation&#10;" />
-            <property name="sequenceCommand" nameId="w348.3649519271360690766" value=" permutation" />
-            <property name="sequenceInfo" nameId="w348.3649519271357455932" value=" --alpha %alpha%" />
-            <property name="sequenceNumFeatures" nameId="w348.3649519271361989788" value=" --report-max-probes" />
-            <property name="otherOptions" nameId="w348.3649519271350395849" value=" --alpha ${perm-alpha}" />
-          </node>
-        </node>
         <node role="featureSelectionProperties" roleId="w348.1870354875262487940" type="w348.FeatureSelectionProperties" typeId="w348.4671749543976303774" id="8962624141198440403" nodeInfo="ng">
           <node role="permutation" roleId="w348.4989762282950543043" type="w348.PermutationProperties" typeId="w348.4989762282950066887" id="8962624141198440568" nodeInfo="ng">
             <property name="alpha" nameId="w348.4989762282950066888" value="0.05" />
           </node>
+          <node role="ttest" roleId="w348.4671749543995071279" type="w348.TTestProperties" typeId="w348.4671749543995071282" id="2366800169534038809" nodeInfo="ng">
+            <property name="alpha" nameId="w348.4671749543995072017" value="0.05" />
+          </node>
+          <node role="savedGenelist" roleId="w348.8962624141168478174" type="w348.SavedGenelist" typeId="w348.8241402136291306827" id="2366800169539407868" nodeInfo="ng">
+            <property name="name" nameId="tpck.1169194664001" value="GDS1070-ensembl-genbank-refseq" />
+            <node role="file" roleId="w348.8241402136291307200" type="w348.File" typeId="w348.1911754720566014109" id="2366800169539407869" nodeInfo="ng">
+              <property name="fileLocation" nameId="w348.1911754720566014318" value="/Users/vmb34/Desktop/bdval_test/data/gene-lists/GDS1070-ensembl-genbank-refseq" />
+            </node>
+          </node>
+          <node role="savedGenelist" roleId="w348.8962624141168478174" type="w348.SavedGenelist" typeId="w348.8241402136291306827" id="2366800169539407870" nodeInfo="ng">
+            <property name="name" nameId="tpck.1169194664001" value="GDS183-28-genes-ensembl-genbank-refseq" />
+            <node role="file" roleId="w348.8241402136291307200" type="w348.File" typeId="w348.1911754720566014109" id="2366800169539407871" nodeInfo="ng">
+              <property name="fileLocation" nameId="w348.1911754720566014318" value="/Users/vmb34/Desktop/bdval_test/data/gene-lists/GDS183-28-genes-ensembl-genbank-refseq" />
+            </node>
+          </node>
+          <node role="savedGenelist" roleId="w348.8962624141168478174" type="w348.SavedGenelist" typeId="w348.8241402136291306827" id="2366800169539407872" nodeInfo="ng">
+            <property name="name" nameId="tpck.1169194664001" value="GDS232-82-genes-ensembl-genbank-refseq" />
+            <node role="file" roleId="w348.8241402136291307200" type="w348.File" typeId="w348.1911754720566014109" id="2366800169539407873" nodeInfo="ng">
+              <property name="fileLocation" nameId="w348.1911754720566014318" value="/Users/vmb34/Desktop/bdval_test/data/gene-lists/GDS232-82-genes-ensembl-genbank-refseq" />
+            </node>
+          </node>
+          <node role="savedGenelist" roleId="w348.8962624141168478174" type="w348.SavedGenelist" typeId="w348.8241402136291306827" id="2366800169539407874" nodeInfo="ng">
+            <property name="name" nameId="tpck.1169194664001" value="GDS232-85-genes-genbank" />
+            <node role="file" roleId="w348.8241402136291307200" type="w348.File" typeId="w348.1911754720566014109" id="2366800169539407875" nodeInfo="ng">
+              <property name="fileLocation" nameId="w348.1911754720566014318" value="/Users/vmb34/Desktop/bdval_test/data/gene-lists/GDS232-85-genes-genbank" />
+            </node>
+          </node>
+          <node role="savedGenelist" roleId="w348.8962624141168478174" type="w348.SavedGenelist" typeId="w348.8241402136291306827" id="2366800169539407876" nodeInfo="ng">
+            <property name="name" nameId="tpck.1169194664001" value="HM10-ens-genbank-refseq" />
+            <node role="file" roleId="w348.8241402136291307200" type="w348.File" typeId="w348.1911754720566014109" id="2366800169539407877" nodeInfo="ng">
+              <property name="fileLocation" nameId="w348.1911754720566014318" value="/Users/vmb34/Desktop/bdval_test/data/gene-lists/HM10-ens-genbank-refseq" />
+            </node>
+          </node>
+          <node role="savedGenelist" roleId="w348.8962624141168478174" type="w348.SavedGenelist" typeId="w348.8241402136291306827" id="2366800169539407878" nodeInfo="ng">
+            <property name="name" nameId="tpck.1169194664001" value="HM100-ens-genbank-refseq" />
+            <node role="file" roleId="w348.8241402136291307200" type="w348.File" typeId="w348.1911754720566014109" id="2366800169539407879" nodeInfo="ng">
+              <property name="fileLocation" nameId="w348.1911754720566014318" value="/Users/vmb34/Desktop/bdval_test/data/gene-lists/HM100-ens-genbank-refseq" />
+            </node>
+          </node>
+          <node role="savedGenelist" roleId="w348.8962624141168478174" type="w348.SavedGenelist" typeId="w348.8241402136291306827" id="2366800169539407880" nodeInfo="ng">
+            <property name="name" nameId="tpck.1169194664001" value="HM199-ens-genbank-refseq" />
+            <node role="file" roleId="w348.8241402136291307200" type="w348.File" typeId="w348.1911754720566014109" id="2366800169539407881" nodeInfo="ng">
+              <property name="fileLocation" nameId="w348.1911754720566014318" value="/Users/vmb34/Desktop/bdval_test/data/gene-lists/HM199-ens-genbank-refseq" />
+            </node>
+          </node>
+          <node role="savedGenelist" roleId="w348.8962624141168478174" type="w348.SavedGenelist" typeId="w348.8241402136291306827" id="2366800169539407882" nodeInfo="ng">
+            <property name="name" nameId="tpck.1169194664001" value="HM200-ens-genbank-refseq" />
+            <node role="file" roleId="w348.8241402136291307200" type="w348.File" typeId="w348.1911754720566014109" id="2366800169539407883" nodeInfo="ng">
+              <property name="fileLocation" nameId="w348.1911754720566014318" value="/Users/vmb34/Desktop/bdval_test/data/gene-lists/HM200-ens-genbank-refseq" />
+            </node>
+          </node>
+          <node role="savedGenelist" roleId="w348.8962624141168478174" type="w348.SavedGenelist" typeId="w348.8241402136291306827" id="2366800169539407884" nodeInfo="ng">
+            <property name="name" nameId="tpck.1169194664001" value="HM50-ens-genbank-refseq" />
+            <node role="file" roleId="w348.8241402136291307200" type="w348.File" typeId="w348.1911754720566014109" id="2366800169539407885" nodeInfo="ng">
+              <property name="fileLocation" nameId="w348.1911754720566014318" value="/Users/vmb34/Desktop/bdval_test/data/gene-lists/HM50-ens-genbank-refseq" />
+            </node>
+          </node>
+          <node role="savedGenelist" roleId="w348.8962624141168478174" type="w348.SavedGenelist" typeId="w348.8241402136291306827" id="2366800169539407886" nodeInfo="ng">
+            <property name="name" nameId="tpck.1169194664001" value="Merged-ensembl-genbank-refseq" />
+            <node role="file" roleId="w348.8241402136291307200" type="w348.File" typeId="w348.1911754720566014109" id="2366800169539407887" nodeInfo="ng">
+              <property name="fileLocation" nameId="w348.1911754720566014318" value="/Users/vmb34/Desktop/bdval_test/data/gene-lists/Merged-ensembl-genbank-refseq" />
+            </node>
+          </node>
+          <node role="savedGenelist" roleId="w348.8962624141168478174" type="w348.SavedGenelist" typeId="w348.8241402136291306827" id="2366800169539407888" nodeInfo="ng">
+            <property name="name" nameId="tpck.1169194664001" value="NC01-2000-ensembl-genbank-refseq" />
+            <node role="file" roleId="w348.8241402136291307200" type="w348.File" typeId="w348.1911754720566014109" id="2366800169539407889" nodeInfo="ng">
+              <property name="fileLocation" nameId="w348.1911754720566014318" value="/Users/vmb34/Desktop/bdval_test/data/gene-lists/NC01-2000-ensembl-genbank-refseq" />
+            </node>
+          </node>
+          <node role="savedGenelist" roleId="w348.8962624141168478174" type="w348.SavedGenelist" typeId="w348.8241402136291306827" id="2366800169539407890" nodeInfo="ng">
+            <property name="name" nameId="tpck.1169194664001" value="Nutt-AO-50-ens-genbank-refseq" />
+            <node role="file" roleId="w348.8241402136291307200" type="w348.File" typeId="w348.1911754720566014109" id="2366800169539407891" nodeInfo="ng">
+              <property name="fileLocation" nameId="w348.1911754720566014318" value="/Users/vmb34/Desktop/bdval_test/data/gene-lists/Nutt-AO-50-ens-genbank-refseq" />
+            </node>
+          </node>
+          <node role="savedGenelist" roleId="w348.8962624141168478174" type="w348.SavedGenelist" typeId="w348.8241402136291306827" id="2366800169539407892" nodeInfo="ng">
+            <property name="name" nameId="tpck.1169194664001" value="Nutt-GBM-50-ens-genbank-refseq" />
+            <node role="file" roleId="w348.8241402136291307200" type="w348.File" typeId="w348.1911754720566014109" id="2366800169539407893" nodeInfo="ng">
+              <property name="fileLocation" nameId="w348.1911754720566014318" value="/Users/vmb34/Desktop/bdval_test/data/gene-lists/Nutt-GBM-50-ens-genbank-refseq" />
+            </node>
+          </node>
+          <node role="savedGenelist" roleId="w348.8962624141168478174" type="w348.SavedGenelist" typeId="w348.8241402136291306827" id="2366800169539407894" nodeInfo="ng">
+            <property name="name" nameId="tpck.1169194664001" value="Pomeroy-400-classic-desmoplastic-genes-ensembl-refseq" />
+            <node role="file" roleId="w348.8241402136291307200" type="w348.File" typeId="w348.1911754720566014109" id="2366800169539407895" nodeInfo="ng">
+              <property name="fileLocation" nameId="w348.1911754720566014318" value="/Users/vmb34/Desktop/bdval_test/data/gene-lists/Pomeroy-400-classic-desmoplastic-genes-ensembl-refseq" />
+            </node>
+          </node>
+          <node role="savedGenelist" roleId="w348.8962624141168478174" type="w348.SavedGenelist" typeId="w348.8241402136291306827" id="2366800169539407896" nodeInfo="ng">
+            <property name="name" nameId="tpck.1169194664001" value="Pomeroy-400-classic-desmoplastic.affy" />
+            <node role="file" roleId="w348.8241402136291307200" type="w348.File" typeId="w348.1911754720566014109" id="2366800169539407897" nodeInfo="ng">
+              <property name="fileLocation" nameId="w348.1911754720566014318" value="/Users/vmb34/Desktop/bdval_test/data/gene-lists/Pomeroy-400-classic-desmoplastic.affy" />
+            </node>
+          </node>
+          <node role="savedGenelist" roleId="w348.8962624141168478174" type="w348.SavedGenelist" typeId="w348.8241402136291306827" id="2366800169539407898" nodeInfo="ng">
+            <property name="name" nameId="tpck.1169194664001" value="Pomeroy-400-classic-desmoplastic.genbank" />
+            <node role="file" roleId="w348.8241402136291307200" type="w348.File" typeId="w348.1911754720566014109" id="2366800169539407899" nodeInfo="ng">
+              <property name="fileLocation" nameId="w348.1911754720566014318" value="/Users/vmb34/Desktop/bdval_test/data/gene-lists/Pomeroy-400-classic-desmoplastic.genbank" />
+            </node>
+          </node>
+          <node role="savedGenelist" roleId="w348.8962624141168478174" type="w348.SavedGenelist" typeId="w348.8241402136291306827" id="2366800169539407900" nodeInfo="ng">
+            <property name="name" nameId="tpck.1169194664001" value="Pomeroy-class-0-genes-ensembl-refseq" />
+            <node role="file" roleId="w348.8241402136291307200" type="w348.File" typeId="w348.1911754720566014109" id="2366800169539407901" nodeInfo="ng">
+              <property name="fileLocation" nameId="w348.1911754720566014318" value="/Users/vmb34/Desktop/bdval_test/data/gene-lists/Pomeroy-class-0-genes-ensembl-refseq" />
+            </node>
+          </node>
+          <node role="savedGenelist" roleId="w348.8962624141168478174" type="w348.SavedGenelist" typeId="w348.8241402136291306827" id="2366800169539407902" nodeInfo="ng">
+            <property name="name" nameId="tpck.1169194664001" value="Pomeroy-class-0.affy" />
+            <node role="file" roleId="w348.8241402136291307200" type="w348.File" typeId="w348.1911754720566014109" id="2366800169539407903" nodeInfo="ng">
+              <property name="fileLocation" nameId="w348.1911754720566014318" value="/Users/vmb34/Desktop/bdval_test/data/gene-lists/Pomeroy-class-0.affy" />
+            </node>
+          </node>
+          <node role="savedGenelist" roleId="w348.8962624141168478174" type="w348.SavedGenelist" typeId="w348.8241402136291306827" id="2366800169539407904" nodeInfo="ng">
+            <property name="name" nameId="tpck.1169194664001" value="Pomeroy-class-1-genes-ensembl-refseq" />
+            <node role="file" roleId="w348.8241402136291307200" type="w348.File" typeId="w348.1911754720566014109" id="2366800169539407905" nodeInfo="ng">
+              <property name="fileLocation" nameId="w348.1911754720566014318" value="/Users/vmb34/Desktop/bdval_test/data/gene-lists/Pomeroy-class-1-genes-ensembl-refseq" />
+            </node>
+          </node>
+          <node role="savedGenelist" roleId="w348.8962624141168478174" type="w348.SavedGenelist" typeId="w348.8241402136291306827" id="2366800169539407906" nodeInfo="ng">
+            <property name="name" nameId="tpck.1169194664001" value="Pomeroy-class-1.affy" />
+            <node role="file" roleId="w348.8241402136291307200" type="w348.File" typeId="w348.1911754720566014109" id="2366800169539407907" nodeInfo="ng">
+              <property name="fileLocation" nameId="w348.1911754720566014318" value="/Users/vmb34/Desktop/bdval_test/data/gene-lists/Pomeroy-class-1.affy" />
+            </node>
+          </node>
+          <node role="savedGenelist" roleId="w348.8962624141168478174" type="w348.SavedGenelist" typeId="w348.8241402136291306827" id="2366800169539407908" nodeInfo="ng">
+            <property name="name" nameId="tpck.1169194664001" value="Pomeroy-class-2-genes-ensembl-refseq" />
+            <node role="file" roleId="w348.8241402136291307200" type="w348.File" typeId="w348.1911754720566014109" id="2366800169539407909" nodeInfo="ng">
+              <property name="fileLocation" nameId="w348.1911754720566014318" value="/Users/vmb34/Desktop/bdval_test/data/gene-lists/Pomeroy-class-2-genes-ensembl-refseq" />
+            </node>
+          </node>
+          <node role="savedGenelist" roleId="w348.8962624141168478174" type="w348.SavedGenelist" typeId="w348.8241402136291306827" id="2366800169539407910" nodeInfo="ng">
+            <property name="name" nameId="tpck.1169194664001" value="Pomeroy-class-2.affy" />
+            <node role="file" roleId="w348.8241402136291307200" type="w348.File" typeId="w348.1911754720566014109" id="2366800169539407911" nodeInfo="ng">
+              <property name="fileLocation" nameId="w348.1911754720566014318" value="/Users/vmb34/Desktop/bdval_test/data/gene-lists/Pomeroy-class-2.affy" />
+            </node>
+          </node>
+          <node role="savedGenelist" roleId="w348.8962624141168478174" type="w348.SavedGenelist" typeId="w348.8241402136291306827" id="2366800169539407912" nodeInfo="ng">
+            <property name="name" nameId="tpck.1169194664001" value="Pomeroy-class-3-genes-ensembl-refseq" />
+            <node role="file" roleId="w348.8241402136291307200" type="w348.File" typeId="w348.1911754720566014109" id="2366800169539407913" nodeInfo="ng">
+              <property name="fileLocation" nameId="w348.1911754720566014318" value="/Users/vmb34/Desktop/bdval_test/data/gene-lists/Pomeroy-class-3-genes-ensembl-refseq" />
+            </node>
+          </node>
+          <node role="savedGenelist" roleId="w348.8962624141168478174" type="w348.SavedGenelist" typeId="w348.8241402136291306827" id="2366800169539407914" nodeInfo="ng">
+            <property name="name" nameId="tpck.1169194664001" value="Pomeroy-class-3.affy" />
+            <node role="file" roleId="w348.8241402136291307200" type="w348.File" typeId="w348.1911754720566014109" id="2366800169539407915" nodeInfo="ng">
+              <property name="fileLocation" nameId="w348.1911754720566014318" value="/Users/vmb34/Desktop/bdval_test/data/gene-lists/Pomeroy-class-3.affy" />
+            </node>
+          </node>
+          <node role="savedGenelist" roleId="w348.8962624141168478174" type="w348.SavedGenelist" typeId="w348.8241402136291306827" id="2366800169539407916" nodeInfo="ng">
+            <property name="name" nameId="tpck.1169194664001" value="Pomeroy-class-4-genes-ensembl-refseq" />
+            <node role="file" roleId="w348.8241402136291307200" type="w348.File" typeId="w348.1911754720566014109" id="2366800169539407917" nodeInfo="ng">
+              <property name="fileLocation" nameId="w348.1911754720566014318" value="/Users/vmb34/Desktop/bdval_test/data/gene-lists/Pomeroy-class-4-genes-ensembl-refseq" />
+            </node>
+          </node>
+          <node role="savedGenelist" roleId="w348.8962624141168478174" type="w348.SavedGenelist" typeId="w348.8241402136291306827" id="2366800169539407918" nodeInfo="ng">
+            <property name="name" nameId="tpck.1169194664001" value="Pomeroy-class-4.affy" />
+            <node role="file" roleId="w348.8241402136291307200" type="w348.File" typeId="w348.1911754720566014109" id="2366800169539407919" nodeInfo="ng">
+              <property name="fileLocation" nameId="w348.1911754720566014318" value="/Users/vmb34/Desktop/bdval_test/data/gene-lists/Pomeroy-class-4.affy" />
+            </node>
+          </node>
+          <node role="savedGenelist" roleId="w348.8962624141168478174" type="w348.SavedGenelist" typeId="w348.8241402136291306827" id="2366800169539407920" nodeInfo="ng">
+            <property name="name" nameId="tpck.1169194664001" value="rhodes2004-57-ensembl-genbank-refseq" />
+            <node role="file" roleId="w348.8241402136291307200" type="w348.File" typeId="w348.1911754720566014109" id="2366800169539407921" nodeInfo="ng">
+              <property name="fileLocation" nameId="w348.1911754720566014318" value="/Users/vmb34/Desktop/bdval_test/data/gene-lists/rhodes2004-57-ensembl-genbank-refseq" />
+            </node>
+          </node>
+          <node role="savedGenelist" roleId="w348.8962624141168478174" type="w348.SavedGenelist" typeId="w348.8241402136291306827" id="2366800169539407922" nodeInfo="ng">
+            <property name="name" nameId="tpck.1169194664001" value="vantVeer2002-genes-ensembl-refseq" />
+            <node role="file" roleId="w348.8241402136291307200" type="w348.File" typeId="w348.1911754720566014109" id="2366800169539407923" nodeInfo="ng">
+              <property name="fileLocation" nameId="w348.1911754720566014318" value="/Users/vmb34/Desktop/bdval_test/data/gene-lists/vantVeer2002-genes-ensembl-refseq" />
+            </node>
+          </node>
         </node>
       </node>
       <node role="classificationInfo" roleId="w348.4989762282967505312" type="w348.ClassificationInfo" typeId="w348.4989762282967436234" id="8962624141198440404" nodeInfo="ng">
-        <node role="classification" roleId="w348.4989762283050821438" type="w348.NaiveBayes" typeId="w348.7388448774866532076" id="8962624141198440570" nodeInfo="ng">
-          <property name="name" nameId="tpck.1169194664001" value="naiveBayes" />
-          <property name="classname" nameId="w348.558294987374832484" value="edu.cornell.med.icb.learning.weka.WekaClassifier" />
-          <property name="wekaClass" nameId="w348.3649519271340810336" value="weka.classifiers.bayes.NaiveBayesUpdateable" />
-          <property name="parameters" nameId="w348.1870354875256041029" value="wekaClass=weka.classifiers.bayes.NaiveBayesUpdateable" />
-          <property name="otherOption" nameId="w348.3649519271340809859" value=" --weka-class weka.classifiers.bayes.NaiveBayesUpdateable" />
-          <property name="addoption" nameId="w348.3649519271342059658" value="addoption required:weka-class:Classname of the weka classifier&#10;" />
+        <node role="classification" roleId="w348.4989762283050821438" type="w348.SVM" typeId="w348.7388448774866532198" id="2366800169534038811" nodeInfo="ng">
+          <property name="name" nameId="tpck.1169194664001" value="SVM" />
+          <property name="classname" nameId="w348.558294987374832484" value="edu.cornell.med.icb.learning.libsvm.LibSvmClassifier " />
+          <property name="wekaClass" nameId="w348.3649519271340810336" value="libSVM" />
+          <property name="parameters" nameId="w348.1870354875256041029" value="probability=${use-probability}" />
+          <property name="otherOption" nameId="w348.3649519271340809859" value="" />
+          <property name="addoption" nameId="w348.3649519271342059658" value="" />
         </node>
-        <node role="classificationProperties" roleId="w348.4989762282967454364" type="w348.ClassificationProperties" typeId="w348.4989762282967436237" id="8962624141198440406" nodeInfo="ng" />
+        <node role="classificationProperties" roleId="w348.4989762282967454364" type="w348.ClassificationProperties" typeId="w348.4989762282967436237" id="8962624141198440406" nodeInfo="ng">
+          <node role="svmProperties" roleId="w348.4989762282967440724" type="w348.SVMProperties" typeId="w348.4989762282967436238" id="2366800169534038814" nodeInfo="ng" />
+        </node>
       </node>
     </node>
     <node role="endpoint" roleId="w348.7083662764384080735" type="w348.Endpoint" typeId="w348.4345048909863217124" id="8962624141198440407" nodeInfo="ng">
@@ -1946,25 +2115,9 @@
       </node>
     </node>
     <node role="status" roleId="w348.8962624141203321320" type="w348.Status" typeId="w348.8962624141203321241" id="8962624141204178064" nodeInfo="ng">
-      <node role="result" roleId="w348.8962624141203322103" type="w348.Result" typeId="w348.8962624141203321355" id="8962624141236096397" nodeInfo="ng">
-        <property name="name" nameId="tpck.1169194664001" value="20140806-1150-results" />
-        <property name="numberModels" nameId="w348.8962624141208854028" value="1" />
-      </node>
-      <node role="result" roleId="w348.8962624141203322103" type="w348.Result" typeId="w348.8962624141203321355" id="8962624141236096398" nodeInfo="ng">
-        <property name="name" nameId="tpck.1169194664001" value="20140806-1152-results" />
-        <property name="numberModels" nameId="w348.8962624141208854028" value="1" />
-      </node>
-      <node role="result" roleId="w348.8962624141203322103" type="w348.Result" typeId="w348.8962624141203321355" id="8962624141236096399" nodeInfo="ng">
-        <property name="name" nameId="tpck.1169194664001" value="20140806-1153-results" />
-        <property name="numberModels" nameId="w348.8962624141208854028" value="0" />
-      </node>
-      <node role="result" roleId="w348.8962624141203322103" type="w348.Result" typeId="w348.8962624141203321355" id="8962624141236096400" nodeInfo="ng">
-        <property name="name" nameId="tpck.1169194664001" value="20140806-1156-results" />
-        <property name="numberModels" nameId="w348.8962624141208854028" value="0" />
-      </node>
-      <node role="result" roleId="w348.8962624141203322103" type="w348.Result" typeId="w348.8962624141203321355" id="8962624141236096401" nodeInfo="ng">
-        <property name="name" nameId="tpck.1169194664001" value="20140806-1204-results" />
-        <property name="numberModels" nameId="w348.8962624141208854028" value="4" />
+      <node role="result" roleId="w348.8962624141203322103" type="w348.Result" typeId="w348.8962624141203321355" id="2366800169539475049" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="20140808-1445-results" />
+        <property name="numberModels" nameId="w348.8962624141208854028" value="3" />
       </node>
     </node>
   </root>

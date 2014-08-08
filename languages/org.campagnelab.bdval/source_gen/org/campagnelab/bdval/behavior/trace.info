@@ -1945,38 +1945,48 @@
     <unitInfo nodeId="8314272953675900650" fileName="Approach_Behavior.java" startLine="24" startPosition="0" endLine="248" endPosition="0" unitName="org.campagnelab.bdval.behavior.Approach_Behavior" />
   </root>
   <root nodeRef="r:825ae26d-5123-4d82-aa5e-7977a26d188c(org.campagnelab.bdval.behavior)/8962624141212303574">
-    <nodeInfo nodeId="8962624141212340168" fileName="Status_Behavior.java" startLine="19" startPosition="89" endLine="20" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8962624141220750372" fileName="Status_Behavior.java" startLine="23" startPosition="88" endLine="24" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8962624141213153725" fileName="Status_Behavior.java" startLine="25" startPosition="29" endLine="26" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8962624141213153758" fileName="Status_Behavior.java" startLine="26" startPosition="19" endLine="27" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8962624141213154034" fileName="Status_Behavior.java" startLine="27" startPosition="96" endLine="28" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8962624141213159624" fileName="Status_Behavior.java" startLine="28" startPosition="62" endLine="29" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8962624141213183359" fileName="Status_Behavior.java" startLine="29" startPosition="182" endLine="30" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4578313781752000558" fileName="Status_Behavior.java" startLine="19" startPosition="76" endLine="20" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4578313781751937540" fileName="Status_Behavior.java" startLine="20" startPosition="65" endLine="21" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4578313781751645439" fileName="Status_Behavior.java" startLine="21" startPosition="17" endLine="22" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4578313781751854154" fileName="Status_Behavior.java" startLine="24" startPosition="40" endLine="25" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2366800169534884816" fileName="Status_Behavior.java" startLine="27" startPosition="6" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2366800169534856050" fileName="Status_Behavior.java" startLine="28" startPosition="0" endLine="29" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4578313781751863994" fileName="Status_Behavior.java" startLine="29" startPosition="27" endLine="30" endPosition="408" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4578313781751939234" fileName="Status_Behavior.java" startLine="32" startPosition="31" endLine="33" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4578313781751939510" fileName="Status_Behavior.java" startLine="33" startPosition="98" endLine="34" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4578313781751943853" fileName="Status_Behavior.java" startLine="34" startPosition="64" endLine="35" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4578313781751983622" fileName="Status_Behavior.java" startLine="35" startPosition="149" endLine="36" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8962624141212303574" fileName="Status_Behavior.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="8962624141212303574" fileName="Status_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_GetResults_8962624141212303655#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="8962624141213149348" fileName="Status_Behavior.java" startLine="24" startPosition="88" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8962624141212303574" fileName="Status_Behavior.java" startLine="23" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getResults_8962624141213118054#(Lorg/jetbrains/mps/openapi/model/SNode;[Ljava/io/File;)V" />
+    <nodeInfo nodeId="4578313781751853781" fileName="Status_Behavior.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/io/File;)Z" />
+    <nodeInfo nodeId="4578313781751668995" fileName="Status_Behavior.java" startLine="22" startPosition="115" endLine="27" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4578313781751936038" fileName="Status_Behavior.java" startLine="31" startPosition="44" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4578313781751925560" fileName="Status_Behavior.java" startLine="30" startPosition="408" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8962624141212303574" fileName="Status_Behavior.java" startLine="19" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_updateStatus_4578313781751627046#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="8962624141212303576" fileName="Status_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
-    <scopeInfo nodeId="8962624141212303658" fileName="Status_Behavior.java" startLine="19" startPosition="89" endLine="20" endPosition="28" />
+    <scopeInfo nodeId="4578313781751853787" fileName="Status_Behavior.java" startLine="24" startPosition="40" endLine="25" endPosition="73" />
     <scopeInfo nodeId="8962624141212303574" fileName="Status_Behavior.java" startLine="16" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="8962624141212303574" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8962624141212303574" fileName="Status_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
-      <varInfo nodeId="8962624141212340155" varName="test" />
+    <scopeInfo nodeId="4578313781751853781" fileName="Status_Behavior.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="4578313781751853785" varName="file" />
+    </scopeInfo>
+    <scopeInfo nodeId="4578313781751936041" fileName="Status_Behavior.java" startLine="32" startPosition="31" endLine="36" endPosition="103" />
+    <scopeInfo nodeId="4578313781751925563" fileName="Status_Behavior.java" startLine="31" startPosition="44" endLine="37" endPosition="7" />
+    <scopeInfo nodeId="4578313781751936038" fileName="Status_Behavior.java" startLine="31" startPosition="44" endLine="37" endPosition="7">
+      <varInfo nodeId="4578313781751936039" varName="file" />
+    </scopeInfo>
+    <scopeInfo nodeId="4578313781751627200" fileName="Status_Behavior.java" startLine="19" startPosition="76" endLine="38" endPosition="5">
+      <varInfo nodeId="4578313781751863995" varName="files" />
+      <varInfo nodeId="4578313781751645442" varName="project" />
+      <varInfo nodeId="4578313781751937543" varName="result" />
+      <varInfo nodeId="4578313781751668996" varName="resultsFilter" />
+      <varInfo nodeId="2366800169534856051" varName="zip" />
+    </scopeInfo>
+    <scopeInfo nodeId="8962624141212303574" fileName="Status_Behavior.java" startLine="19" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="8962624141212303574" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8962624141213149351" fileName="Status_Behavior.java" startLine="25" startPosition="29" endLine="30" endPosition="101">
-      <varInfo nodeId="8962624141213153728" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="8962624141213149348" fileName="Status_Behavior.java" startLine="24" startPosition="88" endLine="31" endPosition="5">
-      <varInfo nodeId="8962624141213149349" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="8962624141213118057" fileName="Status_Behavior.java" startLine="23" startPosition="88" endLine="31" endPosition="5" />
-    <scopeInfo nodeId="8962624141212303574" fileName="Status_Behavior.java" startLine="23" startPosition="0" endLine="33" endPosition="0">
-      <varInfo nodeId="8962624141213118075" varName="files" />
-      <varInfo nodeId="8962624141212303574" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="8962624141212303574" fileName="Status_Behavior.java" startLine="15" startPosition="0" endLine="34" endPosition="0" unitName="org.campagnelab.bdval.behavior.Status_Behavior" />
+    <unitInfo nodeId="4578313781751853779" fileName="Status_Behavior.java" startLine="23" startPosition="35" endLine="27" endPosition="5" unitName="org.campagnelab.bdval.behavior.Status_Behavior$1" />
+    <unitInfo nodeId="8962624141212303574" fileName="Status_Behavior.java" startLine="15" startPosition="0" endLine="41" endPosition="0" unitName="org.campagnelab.bdval.behavior.Status_Behavior" />
   </root>
 </debugInfo>
 
