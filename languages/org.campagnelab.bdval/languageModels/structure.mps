@@ -185,10 +185,6 @@
     <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="An entire project which can contain multiple datasets " />
     <property name="rootable" nameId="tpce.1096454100552" value="true" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="7860773101052088581" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="trimmedName" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="7860773101052305691" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="projectFolder" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />

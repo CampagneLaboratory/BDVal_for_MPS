@@ -173,7 +173,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4671749543985197235(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "trimmedName");
+    return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_8241402136315226201(final PropertyMacroContext _context) {

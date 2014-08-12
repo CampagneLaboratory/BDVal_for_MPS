@@ -38,8 +38,7 @@ public class Project_Behavior {
   }
 
   public static void call_setup_7860773101052430949(SNode thisNode) {
-    SPropertyOperations.set(thisNode, "trimmedName", SPropertyOperations.getString(thisNode, "name").replaceAll("\\s", "").trim());
-    SPropertyOperations.set(thisNode, "projectFolder", SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(thisNode, "trimmedName") + "/" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "directoryName") + "/");
+    SPropertyOperations.set(thisNode, "projectFolder", SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(thisNode, "name") + "/" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "directoryName") + "/");
     Project_Behavior.call_checkProjectFolder_3976565827571671486(thisNode);
   }
 
@@ -87,7 +86,7 @@ public class Project_Behavior {
   }
 
   public static void call_generateLocalProperties_7083662764418572584(SNode thisNode) {
-    String fileName = SPropertyOperations.getString(thisNode, "projectFolder") + SPropertyOperations.getString(thisNode, "trimmedName") + "-local.properties";
+    String fileName = SPropertyOperations.getString(thisNode, "projectFolder") + SPropertyOperations.getString(thisNode, "name") + "-local.properties";
     try {
       Properties prop = new Properties();
       OutputStream output = new FileOutputStream(new File(fileName));
@@ -108,7 +107,7 @@ public class Project_Behavior {
   }
 
   public static void call_generateProperties_290469645499580654(final SNode thisNode) {
-    String fileName = SPropertyOperations.getString(thisNode, "projectFolder") + SPropertyOperations.getString(thisNode, "trimmedName") + ".properties";
+    String fileName = SPropertyOperations.getString(thisNode, "projectFolder") + SPropertyOperations.getString(thisNode, "name") + ".properties";
     final Wrappers._T<String> datasetName = new Wrappers._T<String>();
     final String root = "${eval-dataset-root}";
     final Wrappers._T<String> arrayParam = new Wrappers._T<String>("");
@@ -130,7 +129,7 @@ public class Project_Behavior {
       ListSequence.fromList(SLinkOperations.getTargets(thisNode, "dataset", true)).visitAll(new IVisitor<SNode>() {
         public void visit(final SNode dataset) {
           datasetName.value = DataSet_Behavior.call_getName_290469645480322571(dataset);
-          prop.setProperty(datasetName.value + ".dataset-name", SPropertyOperations.getString(thisNode, "trimmedName"));
+          prop.setProperty(datasetName.value + ".dataset-name", SPropertyOperations.getString(thisNode, "name"));
           prop.setProperty(datasetName.value + ".dataset-file", root + "/inputs/" + new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(dataset, "input", true), "file", true), "fileLocation")).getName());
           prop.setProperty(datasetName.value + ".platform-file", platformFile);
           prop.setProperty(datasetName.value + ".cids-file", root + "/cids/" + datasetName.value + ".cids");
@@ -162,6 +161,7 @@ public class Project_Behavior {
         }
       });
       // Finish bottom: custom ID/model 
+      prop.setProperty("define.model-id.column-id", "id-parameter-scan-series");
       prop.store(output, SPropertyOperations.getString(thisNode, "name") + " Properties");
     } catch (Exception e) {
       throw new Error("Error creating properties file");
@@ -183,7 +183,7 @@ public class Project_Behavior {
       Properties prop = new Properties();
       OutputStream output = new FileOutputStream(new File(fileName));
       prop.setProperty("project.header", "BDVal " + SPropertyOperations.getString(thisNode, "name") + "/" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "directoryName") + " Project");
-      prop.setProperty("project.trimmed.name", SPropertyOperations.getString(thisNode, "trimmedName"));
+      prop.setProperty("project.name", SPropertyOperations.getString(thisNode, "name"));
       prop.setProperty("project.folder", SPropertyOperations.getString(thisNode, "projectFolder"));
       prop.setProperty("tag", SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "tagDescription"));
       prop.setProperty("models.number", String.valueOf(numModels));
@@ -201,7 +201,7 @@ public class Project_Behavior {
     Thread frameThread = new Thread() {
       public void run() {
         int counter = 0;
-        while (!(new File(SPropertyOperations.getString(project, "projectFolder") + SPropertyOperations.getString(project, "trimmedName") + ".xml").exists()) && counter < 60) {
+        while (!(new File(SPropertyOperations.getString(project, "projectFolder") + SPropertyOperations.getString(project, "name") + ".xml").exists()) && counter < 60) {
           try {
             Thread.sleep(250);
             counter++;
@@ -209,7 +209,7 @@ public class Project_Behavior {
             JOptionPane.showMessageDialog(null, "Error waiting for xml file before showing run window");
           }
         }
-        if (new File(SPropertyOperations.getString(project, "projectFolder") + SPropertyOperations.getString(project, "trimmedName") + ".xml").exists()) {
+        if (new File(SPropertyOperations.getString(project, "projectFolder") + SPropertyOperations.getString(project, "name") + ".xml").exists()) {
           Object[] options = {"Cancel", "Run BDVal"};
           int reply = JOptionPane.showOptionDialog(null, "Run BDVal " + SPropertyOperations.getString(SLinkOperations.getTarget(project, "properties", true), "tagDescription") + " Project", SPropertyOperations.getString(project, "name") + " Project", JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[1]);
           if (reply == 1) {
@@ -229,7 +229,7 @@ public class Project_Behavior {
       InputStream input = new FileInputStream(memoFile);
       prop.load(input);
       final int numModels = Integer.parseInt(prop.getProperty("models.number"));
-      final String name = prop.getProperty("project.trimmed.name");
+      final String name = prop.getProperty("projec.name");
       final String folder = prop.getProperty("project.folder");
       String tag = prop.getProperty("tag");
       String modelInfo = prop.getProperty("models.description");

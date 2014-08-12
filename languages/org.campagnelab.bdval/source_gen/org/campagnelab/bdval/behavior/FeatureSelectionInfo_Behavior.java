@@ -11,8 +11,17 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class FeatureSelectionInfo_Behavior {
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "maxIntermediateFeatures", "" + (400));
+
     SNode numFeature50 = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.Integer", null);
     SPropertyOperations.set(numFeature50, "value", "" + (50));
     ListSequence.fromList(SLinkOperations.getTargets(thisNode, "numberOfFeatures", true)).addElement(numFeature50);
+
+    SNode fsFold = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.FeatureSelectionFoldTrue", null);
+    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "featureSelectionFold", true)).addElement(fsFold);
+
+    SNode fsCombo = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.FeatureSelectionCombo", null);
+    SNode fs = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.Ttest", null);
+    SLinkOperations.setTarget(fsCombo, "featureSelection1", fs, true);
+    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "featureSelectionCombo", true)).addElement(fsCombo);
   }
 }

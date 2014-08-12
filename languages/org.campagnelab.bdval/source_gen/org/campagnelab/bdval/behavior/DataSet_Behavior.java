@@ -43,7 +43,7 @@ public class DataSet_Behavior {
         endpointDescription.value = endpointDescription.value + WordUtils.capitalizeFully(SPropertyOperations.getString(SLinkOperations.getTarget(category, "endpointCategory", false), "name")).replaceAll("\\s", "");
       }
     });
-    String parentName = SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.Project"), "trimmedName");
+    String parentName = SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.Project"), "name");
     return parentName + "_" + endpointDescription.value + "_" + SPropertyOperations.getString(thisNode, "name").replaceAll("\\s", "");
   }
 

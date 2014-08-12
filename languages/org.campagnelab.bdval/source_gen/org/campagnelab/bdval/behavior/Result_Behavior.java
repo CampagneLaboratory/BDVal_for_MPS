@@ -20,11 +20,10 @@ public class Result_Behavior {
 
   public static void call_evaluateStatistics_3634366430331113687(SNode thisNode) {
     SNode project = SNodeOperations.getAncestor(thisNode, "org.campagnelab.bdval.structure.Project", false, false);
-    String name = SPropertyOperations.getString(project, "name").replaceAll("\\s", "").trim();
-    String folder = SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(project, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + name + "/" + SPropertyOperations.getString(SLinkOperations.getTarget(project, "properties", true), "directoryName") + "/";
+    String folder = SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(project, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(project, "name") + "/" + SPropertyOperations.getString(SLinkOperations.getTarget(project, "properties", true), "directoryName") + "/";
     Project p = new Project();
     try {
-      File buildFile = new File(folder + name + ".xml");
+      File buildFile = new File(folder + SPropertyOperations.getString(project, "name") + ".xml");
       p.setUserProperty("ant.file", buildFile.getAbsolutePath());
 
       DefaultLogger consoleLogger = new DefaultLogger();
@@ -33,8 +32,8 @@ public class Result_Behavior {
       consoleLogger.setMessageOutputLevel(Project.MSG_INFO);
       p.addBuildListener(consoleLogger);
 
-      p.setProperty("results-directory", SPropertyOperations.getString(thisNode, "name"));
-      p.setProperty("model-conditions", "model-conditions.txt");
+      p.setProperty("results-directory", folder + SPropertyOperations.getString(thisNode, "name"));
+      p.setProperty("model-conditions", folder + SPropertyOperations.getString(thisNode, "name") + "/" + "model-conditions.txt");
       p.setProperty("other-measures", "bias");
 
       p.fireBuildStarted();

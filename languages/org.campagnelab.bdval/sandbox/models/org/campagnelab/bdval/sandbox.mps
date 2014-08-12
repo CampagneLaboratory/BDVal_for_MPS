@@ -9,7 +9,7 @@
     <node role="properties" roleId="w348.7083662764416913977" type="w348.Properties" typeId="w348.7083662764416913858" id="8962624141198440392" nodeInfo="ng">
       <property name="threads" nameId="w348.7083662764416913912" value="1" />
       <property name="memory" nameId="w348.7083662764416913915" value="1200" />
-      <property name="directoryName" nameId="w348.3015647834783938295" value="test" />
+      <property name="directoryName" nameId="w348.3015647834783938295" value="test3" />
       <property name="tagDescription" nameId="w348.1847053361490302608" value="testing" />
       <node role="outputDirectory" roleId="w348.1911754720568108889" type="w348.Directory" typeId="w348.1911754720568105445" id="8962624141198440393" nodeInfo="ng">
         <property name="directoryLocation" nameId="w348.1911754720568105446" value="/Users/vmb34/Desktop" />
@@ -27,7 +27,6 @@
     <node role="approach" roleId="w348.7388448774866565661" type="w348.Approach" typeId="w348.7388448774866565678" id="8962624141198440397" nodeInfo="ng">
       <property name="externalRepeats" nameId="w348.290469645457746257" value="1" />
       <property name="externalFolds" nameId="w348.290469645457746273" value="3" />
-      <property name="evaluateStatistics" nameId="w348.4027829922712500836" value="true" />
       <node role="featureSelectionInfo" roleId="w348.8314272953671282922" type="w348.FeatureSelectionInfo" typeId="w348.1870354875249618576" id="8962624141198440398" nodeInfo="ng">
         <property name="maxIntermediateFeatures" nameId="w348.1870354875249707132" value="400" />
         <node role="featureSelectionCombo" roleId="w348.1870354875249707136" type="w348.FeatureSelectionCombo" typeId="w348.1870354875251769793" id="7490862968980863778" nodeInfo="ng">
@@ -2158,10 +2157,16 @@
       </node>
     </node>
     <node role="status" roleId="w348.8962624141203321320" type="w348.Status" typeId="w348.8962624141203321241" id="8962624141204178064" nodeInfo="ng">
-      <node role="result" roleId="w348.8962624141203322103" type="w348.Result" typeId="w348.8962624141203321355" id="6380268605221585891" nodeInfo="ng">
-        <property name="name" nameId="tpck.1169194664001" value="20140812-1012-results" />
+      <node role="result" roleId="w348.8962624141203322103" type="w348.Result" typeId="w348.8962624141203321355" id="6380268605232274478" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="20140812-1112-results" />
         <property name="numberModels" nameId="w348.8962624141208854028" value="3" />
-        <property name="noMaqcii" nameId="w348.6380268605208667220" value="true" />
+        <property name="MCC" nameId="w348.6380268605206732762" value="0.2" />
+        <property name="accuracy" nameId="w348.6380268605206751873" value="0.76" />
+        <property name="sensitivity" nameId="w348.6380268605206751912" value="0.83" />
+        <property name="specificity" nameId="w348.6380268605206751945" value="0.38" />
+        <property name="AUC" nameId="w348.6380268605206751972" value="0.66" />
+        <property name="RMSE" nameId="w348.6380268605206752007" value="0.97" />
+        <property name="noMaqcii" nameId="w348.6380268605208667220" value="false" />
       </node>
     </node>
   </root>

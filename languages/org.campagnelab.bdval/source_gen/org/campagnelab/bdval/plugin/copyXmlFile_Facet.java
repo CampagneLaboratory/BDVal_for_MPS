@@ -86,20 +86,19 @@ public class copyXmlFile_Facet extends IFacet.Stub {
                         {
                           SNode project = rootNode;
                           if (SNodeOperations.isInstanceOf(project, "org.campagnelab.bdval.structure.Project")) {
-                            String name = SPropertyOperations.getString(project, "name").replaceAll("\\s", "").trim();
-                            final String fileName = name + ".xml";
+                            final String fileName = SPropertyOperations.getString(project, "name") + ".xml";
                             final IFile[] pluginXml = new IFile[1];
                             new DeltaReconciler(tres.delta()).visitAll(new FilesDelta.Visitor() {
                               @Override
                               public boolean acceptWritten(IFile file) {
-                                if (eq_3m2hzf_a0a0a0a0a0d0b0a0a0a0a0a0a0a0a0a2a0a0a0a2j(file.getName(), fileName)) {
+                                if (eq_3m2hzf_a0a0a0a0a0c0b0a0a0a0a0a0a0a0a0a2a0a0a0a2j(file.getName(), fileName)) {
                                   pluginXml[0] = file;
                                   return false;
                                 }
                                 return true;
                               }
                             });
-                            String outputLocation = SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(project, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + name + "/" + WordUtils.capitalize(SPropertyOperations.getString(SLinkOperations.getTarget(project, "properties", true), "directoryName").replaceAll("\\s", "").trim());
+                            String outputLocation = SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(project, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(project, "name") + "/" + WordUtils.capitalize(SPropertyOperations.getString(SLinkOperations.getTarget(project, "properties", true), "directoryName").replaceAll("\\s", "").trim());
                             if (pluginXml[0] != null) {
                               FileUtil.copyFile(new File(pluginXml[0].getPath()), new File(outputLocation + "/" + fileName));
                             }
@@ -174,7 +173,7 @@ public class copyXmlFile_Facet extends IFacet.Stub {
       return t;
     }
 
-    private static boolean eq_3m2hzf_a0a0a0a0a0d0b0a0a0a0a0a0a0a0a0a2a0a0a0a2j(Object a, Object b) {
+    private static boolean eq_3m2hzf_a0a0a0a0a0c0b0a0a0a0a0a0a0a0a0a2a0a0a0a2j(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);
     }
   }

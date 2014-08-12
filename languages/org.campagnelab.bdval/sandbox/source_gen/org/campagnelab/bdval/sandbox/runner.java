@@ -31,7 +31,7 @@ public class runner {
     if (reply == 1) {
       String memoFile;
       if (args.length == 0) {
-        memoFile = "/Users/vmb34/Desktop/8-12/test5/memo/memo.properties";
+        memoFile = "/Users/vmb34/Desktop/8-12/test8/memo/memo.properties";
       } else {
         memoFile = args[0];
       }
@@ -40,7 +40,7 @@ public class runner {
         InputStream input = new FileInputStream(memoFile);
         prop.load(input);
         final int numModels = Integer.parseInt(prop.getProperty("models.number"));
-        final String name = prop.getProperty("project.trimmed.name");
+        final String name = prop.getProperty("project.name");
         final String folder = prop.getProperty("project.folder");
         String tag = prop.getProperty("tag");
         String modelInfo = prop.getProperty("models.description");
@@ -100,6 +100,7 @@ public class runner {
               p.fireBuildFinished(null);
             } catch (Exception e) {
               p.fireBuildFinished(e);
+              statusLabel.setText("Build Failed");
               JOptionPane.showMessageDialog(null, "Error running ANT");
             }
           }
