@@ -85,8 +85,8 @@ public class Approach_Behavior {
                   SNode option = SLinkOperations.getTarget(featureCombo, "featureSelectionOption", true);
                   approachMethod.value = approachMethod.value + "-" + SPropertyOperations.getString(option, "name");
                   defs.value = defs.value + SPropertyOperations.getString(option, "def");
-                  addoptions.value = SPropertyOperations.getString(option, "addoptions");
-                  otherOptions.value = SPropertyOperations.getString(option, "otherOptions");
+                  addoptions.value = addoptions.value + SPropertyOperations.getString(option, "addoptions");
+                  otherOptions.value = otherOptions.value + SPropertyOperations.getString(option, "otherOptions");
                 }
 
                 approachMethod.value = approachMethod.value + "-" + SPropertyOperations.getString(classification, "name") + "-fs=" + String.valueOf(SPropertyOperations.getBoolean(featureSelectionFold, "value"));
@@ -168,7 +168,7 @@ public class Approach_Behavior {
 
   public static void call_generateModel_8241402136296602911(SNode thisNode, String approachMethod, String cValue, boolean fsFold, String className, String classParams, String otherOptions) {
     SNode genModel = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.ModelToGenerate", null);
-    SPropertyOperations.set(genModel, "name", WordUtils.capitalize(approachMethod.substring(10).replaceAll("\\+", " \\+ ").replaceAll("-", ", ")));
+    SPropertyOperations.set(genModel, "name", WordUtils.capitalize(approachMethod.replaceAll("\\+", " \\+ ").replaceAll("-", ", ")));
     SPropertyOperations.set(genModel, "featureSelectionFold", "" + (fsFold));
     SPropertyOperations.set(genModel, "sequenceFile", "generated-" + approachMethod + ".sequence");
     SPropertyOperations.set(genModel, "allClassifierParameters", " --classifier " + className + " --classifier-parameters " + classParams);

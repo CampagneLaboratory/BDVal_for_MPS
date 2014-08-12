@@ -1141,6 +1141,34 @@
       <property name="name" nameId="tpck.1169194664001" value="numberModels" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
     </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="6380268605208667220" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="noMaqcii" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="6380268605206732762" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="MCC" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="4989762282928488779" resolveInfo="float" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="6380268605206751873" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="accuracy" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="4989762282928488779" resolveInfo="float" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="6380268605206751912" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="sensitivity" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="4989762282928488779" resolveInfo="float" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="6380268605206751945" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="specificity" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="4989762282928488779" resolveInfo="float" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="6380268605206751972" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="AUC" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="4989762282928488779" resolveInfo="float" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="6380268605206752007" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="RMSE" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="4989762282928488779" resolveInfo="float" />
+    </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="8962624141208829128" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
     </node>

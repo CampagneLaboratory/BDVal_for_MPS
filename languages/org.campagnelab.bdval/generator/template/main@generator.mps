@@ -1697,7 +1697,7 @@
           <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="2125124408379582202" nodeInfo="ng">
             <property name="attrName" nameId="iuxj.6666499814681447926" value="depends" />
             <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="2125124408379582208" nodeInfo="ng">
-              <property name="text" nameId="iuxj.6666499814681541920" value="prepare-bdval, rserve-status, tag-output-directory" />
+              <property name="text" nameId="iuxj.6666499814681541920" value="prepare-bdval, tag-output-directory" />
             </node>
           </node>
           <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="2125124408386248529" nodeInfo="ng">
@@ -2311,7 +2311,7 @@
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1911754720623937199" nodeInfo="nn">
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~Properties%dgetProperty(java%dlang%dString)%cjava%dlang%dString" resolveInfo="getProperty" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1911754720623937384" nodeInfo="nn">
-                          <property name="value" nameId="tpee.1070475926801" value="project.name" />
+                          <property name="value" nameId="tpee.1070475926801" value="project.header" />
                         </node>
                       </node>
                     </node>

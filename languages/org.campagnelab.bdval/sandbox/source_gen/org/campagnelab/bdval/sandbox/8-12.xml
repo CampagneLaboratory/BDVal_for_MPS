@@ -1,12 +1,12 @@
-<project name="8-7" default="evaluate" basedir=".">
+<project name="8-12" default="evaluate" basedir=".">
   <!--Set up-->
-  <dirname property="bdval-project.basedir" file="${ant.file.8-7}"></dirname>
+  <dirname property="bdval-project.basedir" file="${ant.file.8-12}"></dirname>
   <property name="bdval-dir" value="/Users/vmb34/Desktop/bdval"></property>
   <import file="${bdval-dir}/buildsupport/build.xml"></import>
   <property file="${bdval-project.basedir}/${ant.project.name}-local.properties"></property>
   <property name="project-property-file" value="${bdval-project.basedir}/${ant.project.name}.properties"></property>
   <property file="${project-property-file}"></property>
-  <property name="tag-description" value="testing DS_store file"></property>
+  <property name="tag-description" value="testing restat mode (true)"></property>
   
   <!--Basic Properties-->
   <property name="enable-flooring" value="true"></property>
@@ -18,32 +18,33 @@
   
   <!--Feature Selection Properties-->
   <property name="ttest-alpha" value="0.05"></property>
-  <property name="svmIterative-r" value=""></property>
-  <property name="minMax-observations" value="0"></property>
-  <property name="ga-wrapper-population-size" value="0"></property>
-  <property name="ga-wrapper-number-of-iterations" value="0"></property>
-  <property name="performance-measure-maximized-by-GA" value=""></property>
-  <property name="internal-CV-repeats" value="0"></property>
-  <property name="internal-CV-folds" value="0"></property>
-  <property name="ga-ratio" value=""></property>
+  <property name="svmIterative-r" value="0.5"></property>
+  <property name="minMax-observations" value="3"></property>
+  <property name="ga-wrapper-population-size" value="20"></property>
+  <property name="ga-wrapper-number-of-iterations" value="20"></property>
+  <property name="performance-measure-maximized-by-GA" value="MCC"></property>
+  <property name="internal-CV-repeats" value="3"></property>
+  <property name="internal-CV-folds" value="3"></property>
+  <property name="ga-ratio" value="0.5"></property>
   <property name="perm-alpha" value="0.05"></property>
-  <property name="fold-change-phi" value=""></property>
-  <property name="kendallTau-ratio" value=""></property>
+  <property name="fold-change-phi" value="0.25"></property>
+  <property name="kendallTau-ratio" value="0.25"></property>
   <property name="coxreg-alpha" value=""></property>
   
-  <property name="pathway-aggregation-method" value=""></property>
+  <property name="GDS1070-ensembl-genbank-refseq" value="GDS1070-ensembl-genbank-refseq --gene-list-file /Users/vmb34/Desktop/bdval_test/data/gene-lists/GDS1070-ensembl-genbank-refseq"></property>
+  <property name="pathway-aggregation-method" value="PCA"></property>
   
   <!--Classification Properties-->
   <property name="use-probability" value="false"></property>
   
   <!--Additional Properties-->
   <property name="run-java" value="true"></property>
-  <var name="do.8-7_DiseasedYesNo_test" value="true"></var>
-  <property name="all-endpoints" value=" 8-7_DiseasedYesNo_test"></property>
+  <var name="do.8-12_DiseasedYesNo_test" value="true"></var>
+  <property name="all-endpoints" value=" 8-12_DiseasedYesNo_test"></property>
   <import file="${bdval-dir}/data/bdval.xml"></import>
   
   
-  <target name="evaluate" description="Run a complete evaluation." depends="prepare-bdval, rserve-status, tag-output-directory">
+  <target name="evaluate" description="Run a complete evaluation." depends="prepare-bdval, tag-output-directory">
     <delete file="${statistics-output}"></delete>
     <echo message="Executing with ${num-threads} threads"></echo>
     <property name="do.my-execute-splits" value="true"></property>
@@ -58,7 +59,7 @@
     <attribute name="floor-param"></attribute>
     <attribute name="array-params"></attribute>
     <sequential>
-      <execute-splits feature-selection-fold="false" sequence-file="generated-ttest-SVM-fs=false.sequence" endpoint-name="@{endpoint-name}" dataset-root="@{dataset-root}" floor-param="@{floor-param}" array-params="@{array-params}" all-classifier-parameters=" --classifier edu.cornell.med.icb.learning.libsvm.LibSvmClassifier  --classifier-parameters probability=${use-probability}" other-options=" --alpha ${ttest-alpha}"></execute-splits>
+      <execute-splits feature-selection-fold="true" sequence-file="generated-svmIterative-logistic-fs=true.sequence" endpoint-name="@{endpoint-name}" dataset-root="@{dataset-root}" floor-param="@{floor-param}" array-params="@{array-params}" all-classifier-parameters=" --classifier edu.cornell.med.icb.learning.weka.WekaClassifier --classifier-parameters wekaClass=weka.classifiers.functions.Logistic" other-options=" --r ${svmIterative-r} --weka-class weka.classifiers.functions.Logistic"></execute-splits>
     </sequential>
   </macrodef>
   

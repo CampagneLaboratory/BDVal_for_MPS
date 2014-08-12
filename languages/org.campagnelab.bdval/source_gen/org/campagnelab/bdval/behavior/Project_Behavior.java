@@ -177,7 +177,7 @@ public class Project_Behavior {
     try {
       Properties prop = new Properties();
       OutputStream output = new FileOutputStream(new File(fileName));
-      prop.setProperty("project.name", "BDVal " + SPropertyOperations.getString(thisNode, "name") + " Project");
+      prop.setProperty("project.header", "BDVal " + SPropertyOperations.getString(thisNode, "name") + "/" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "directoryName") + " Project");
       prop.setProperty("project.trimmed.name", SPropertyOperations.getString(thisNode, "trimmedName"));
       prop.setProperty("project.folder", SPropertyOperations.getString(thisNode, "projectFolder"));
       prop.setProperty("tag", SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "tagDescription"));

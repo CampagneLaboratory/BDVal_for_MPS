@@ -10,6 +10,7 @@ import java.io.File;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.filefilter.SuffixFileFilter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class Status_Behavior {
@@ -27,12 +28,26 @@ public class Status_Behavior {
     };
 
     String[] zip = {"zip"};
+    File[] maqciiFiles;
+    long lastMod;
+    String maqcii;
     File[] files = new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(project, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(project, "name").replaceAll("\\s", "").trim() + "/" + SPropertyOperations.getString(SLinkOperations.getTarget(project, "properties", true), "directoryName")).listFiles(resultsFilter);
     if (files != null && files.length > 0) {
       for (File file : files) {
         result = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.Result", null);
         SPropertyOperations.set(result, "name", file.getName());
         SPropertyOperations.set(result, "numberModels", "" + (FileUtils.listFiles(new File(file.getAbsolutePath() + "/models/"), zip, true).size()));
+        FileFilter maqciiFileFilter = new SuffixFileFilter("-maqcii-submission.txt");
+        maqciiFiles = file.listFiles(maqciiFileFilter);
+        lastMod = Long.MIN_VALUE;
+        maqcii = "";
+        for (File maqciiFile : maqciiFiles) {
+          if (maqciiFile.lastModified() > lastMod) {
+            maqcii = maqciiFile.getAbsolutePath();
+            lastMod = maqciiFile.lastModified();
+          }
+        }
+        Result_Behavior.call_readMAQCIIfile_6380268605206873743(result, maqcii);
         ListSequence.fromList(SLinkOperations.getTargets(thisNode, "result", true)).addElement(result);
       }
     }

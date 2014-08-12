@@ -134,7 +134,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 59:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.RandomForest").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.Classification").alias("Random Forest", "").create();
       case 60:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Result").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("numberModels").create();
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Result").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("numberModels", "noMaqcii", "MCC", "accuracy", "sensitivity", "specificity", "AUC", "RMSE").create();
       case 61:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.SVM").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.Classification").alias("SVM", "").create();
       case 62:

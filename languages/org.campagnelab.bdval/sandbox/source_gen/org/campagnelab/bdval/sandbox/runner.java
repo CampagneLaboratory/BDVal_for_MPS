@@ -31,7 +31,7 @@ public class runner {
     if (reply == 1) {
       String memoFile;
       if (args.length == 0) {
-        memoFile = "/Users/vmb34/Desktop/8-7/test4/memo/memo.properties";
+        memoFile = "/Users/vmb34/Desktop/8-12/test5/memo/memo.properties";
       } else {
         memoFile = args[0];
       }
@@ -46,7 +46,7 @@ public class runner {
         String modelInfo = prop.getProperty("models.description");
         String folds = prop.getProperty("folds");
         String repeats = prop.getProperty("repeats");
-        String header = prop.getProperty("project.name");
+        String header = prop.getProperty("project.header");
         input.close();
 
         final JLabel statusLabel = new JLabel();
