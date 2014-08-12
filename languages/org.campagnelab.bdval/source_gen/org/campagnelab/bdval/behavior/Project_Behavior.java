@@ -71,13 +71,18 @@ public class Project_Behavior {
   }
 
   public static void call_copyPlatform_8962624141197218263(SNode thisNode, String projectFolder) {
+    File platformFile = new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "platform", true), "file", true), "fileLocation"));
+    if (!(platformFile.exists())) {
+      return;
+    }
     String platformFolder = projectFolder + "platforms/";
+
     new File(platformFolder).mkdir();
-    String fileName = platformFolder + new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "platform", true), "file", true), "fileLocation")).getName();
+    String fileName = platformFolder + platformFile.getName();
     try {
-      FileUtils.copyFile(new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "platform", true), "file", true), "fileLocation")), new File(fileName));
+      FileUtils.copyFile(platformFile, new File(fileName));
     } catch (Exception e) {
-      throw new Error("Error Copying Platform File");
+      throw new Error("Error Copying Platform File", e);
     }
   }
 
