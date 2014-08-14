@@ -31,7 +31,7 @@ public class runner {
     if (reply == 1) {
       String memoFile;
       if (args.length == 0) {
-        memoFile = "/Users/vmb34/Desktop/8-14/test1/memo/memo.properties";
+        memoFile = "/Users/vmb34/Desktop/8-14/test2/memo/memo.properties";
       } else {
         memoFile = args[0];
       }

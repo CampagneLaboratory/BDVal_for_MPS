@@ -66,10 +66,13 @@
     <dependency reexport="false">86441d7a-e194-42da-81a5-2161ec62a379(MPS.Workbench)</dependency>
     <dependency reexport="false">4caf0310-491e-41f5-8a9b-2006b3a94898(jetbrains.mps.execution.util)</dependency>
     <dependency reexport="false">2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)</dependency>
+    <dependency reexport="false">642f71f8-327a-425b-84f9-44ad58786d27(jetbrains.mps.lang.project.modules)</dependency>
     <dependency reexport="false">696c1165-4a59-463b-bc5d-902caab85dd0(jetbrains.mps.make.facet)</dependency>
     <dependency reexport="false">f8e20673-3f65-44e9-84c0-c4a4b6ede37e(jetbrains.mps.make.facets)</dependency>
     <dependency reexport="false">a1250a4d-c090-42c3-ad7c-d298a3357dd4(jetbrains.mps.make.runtime)</dependency>
     <dependency reexport="false">df9d410f-2ebb-43f7-893a-483a4f085250(jetbrains.mps.smodel.resources)</dependency>
+    <dependency reexport="false">656823ce-3459-4971-ad0b-b6ab119258e1(org.campagnelab.bdval.charts)</dependency>
+    <dependency reexport="false">5ec1cd3d-0a50-4049-a8fa-ae768d7baa25(org.campagnelab.mps.XChart)</dependency>
     <dependency reexport="false">2b3d76b7-a9ea-44f6-8a30-283c3ffb5f0a(org.campagnelab.ui.code)</dependency>
   </dependencies>
   <usedLanguages>

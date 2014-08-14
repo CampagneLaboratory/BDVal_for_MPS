@@ -7,135 +7,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c48fbd45-d314-4c9d-a051-89880743e048" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/sandbox/source_gen/org/campagnelab/bdval/sandbox/8-14.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/behavior/FloatRange_Behavior.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/behavior/FloatRange_BehaviorDescriptor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/editor/FloatRange_Editor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Approach_Behavior$1$1$1$1.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Approach_Behavior$1$1$1$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Approach_Behavior$1$1$1$2.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Approach_Behavior$1$1$1$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Approach_Behavior$1$1$1$3.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Approach_Behavior$1$1$1$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Approach_Behavior$1$1$1$4$1.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Approach_Behavior$1$1$1$4$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Approach_Behavior$1$1$1$4.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Approach_Behavior$1$1$1$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Approach_Behavior$1$1$1$5.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Approach_Behavior$1$1$1$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Approach_Behavior$1$1$1.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Approach_Behavior$1$1$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Approach_Behavior$1$1.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Approach_Behavior$1$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Approach_Behavior$1.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Approach_Behavior$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Approach_Behavior.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Approach_Behavior.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/editor/Approach_Editor$1.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/editor/Approach_Editor$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/BehaviorAspectDescriptor.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/BehaviorAspectDescriptor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/CoxReg_Behavior.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/CoxReg_Behavior.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/DataSet_Behavior$4.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/DataSet_Behavior$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/DataSet_Behavior.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/DataSet_Behavior.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/editor/DataSet_Editor$1.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/editor/DataSet_Editor$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/editor/DataSet_Editor$2.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/editor/DataSet_Editor$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/editor/DataSet_Editor$3.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/editor/DataSet_Editor$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/editor/DataSet_Editor$4$1.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/editor/DataSet_Editor$4$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/editor/DataSet_Editor$4.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/editor/DataSet_Editor$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/editor/DataSet_Editor$5.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/editor/DataSet_Editor$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/editor/DataSet_Editor$6.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/editor/DataSet_Editor$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/editor/DataSet_Editor.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/editor/DataSet_Editor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/editor/EditorAspectDescriptorImpl.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/editor/EditorAspectDescriptorImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/FoldChange_Behavior.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/FoldChange_Behavior.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Genelist_Behavior.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Genelist_Behavior.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/GeneticAlgorithm_Behavior.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/GeneticAlgorithm_Behavior.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/KendallTau_Behavior.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/KendallTau_Behavior.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/MinMax_Behavior.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/MinMax_Behavior.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Permutation_Behavior.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Permutation_Behavior.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Project_Behavior$3$1.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Project_Behavior$3$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Project_Behavior$3.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Project_Behavior$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Project_Behavior$4.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Project_Behavior$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Project_Behavior$5.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Project_Behavior$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Project_Behavior$6.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Project_Behavior$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Project_Behavior$7.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Project_Behavior$7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Project_Behavior.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Project_Behavior.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/editor/Project_Editor$1.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/editor/Project_Editor$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/editor/Project_Editor.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/editor/Project_Editor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/generator/classes_gen/org/campagnelab/bdval/generator/template/main/QueriesGenerated$3.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/generator/classes_gen/org/campagnelab/bdval/generator/template/main/QueriesGenerated$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/generator/classes_gen/org/campagnelab/bdval/generator/template/main/QueriesGenerated$4.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/generator/classes_gen/org/campagnelab/bdval/generator/template/main/QueriesGenerated$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/generator/classes_gen/org/campagnelab/bdval/generator/template/main/QueriesGenerated$5.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/generator/classes_gen/org/campagnelab/bdval/generator/template/main/QueriesGenerated$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/generator/classes_gen/org/campagnelab/bdval/generator/template/main/QueriesGenerated.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/generator/classes_gen/org/campagnelab/bdval/generator/template/main/QueriesGenerated.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/solutions/org.campagnelab.bdval.charts/source_gen/org/campagnelab/bdval/charts/mcc/ChartViewer_Charts.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/solutions/org.campagnelab.bdval.charts/source_gen.caches/org/campagnelab/bdval/charts/mcc/dependencies" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/solutions/org.campagnelab.bdval.charts/source_gen.caches/org/campagnelab/bdval/charts/mcc/generated" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/solutions/org.campagnelab.bdval.charts/models/org/campagnelab/bdval/charts/mcc.mps" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/solutions/org.campagnelab.bdval.charts/org.campagnelab.bdval.charts.msd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/solutions/org.campagnelab.bdval.charts/classes_gen/org/campagnelab/bdval/charts/mcc/trace.info" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/solutions/org.campagnelab.bdval.charts/source_gen/org/campagnelab/bdval/charts/mcc/trace.info" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Result_Behavior.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Result_Behavior.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/editor/Result_Editor$1.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/editor/Result_Editor$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/editor/Result_Editor$2.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/editor/Result_Editor$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/editor/Result_Editor.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/editor/Result_Editor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/SVMGlobal_Behavior.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/SVMGlobal_Behavior.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/SVMIterative_Behavior.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/SVMIterative_Behavior.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Status_Behavior$1.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Status_Behavior$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Status_Behavior.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Status_Behavior.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/editor/Status_Editor$resultListHandler_gjf57x_c0.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/editor/Status_Editor$resultListHandler_gjf57x_c0.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/editor/Status_Editor.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/editor/Status_Editor.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/structure/StructureAspectDescriptor.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/structure/StructureAspectDescriptor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Ttest_Behavior.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/Ttest_Behavior.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/WholeChip_Behavior.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/WholeChip_Behavior.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/typesystem/check_Project_NonTypesystemRule$1.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/typesystem/check_Project_NonTypesystemRule$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/sandbox/classes_gen/org/campagnelab/bdval/sandbox/runner$1.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/sandbox/classes_gen/org/campagnelab/bdval/sandbox/runner$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/sandbox/classes_gen/org/campagnelab/bdval/sandbox/runner$2.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/sandbox/classes_gen/org/campagnelab/bdval/sandbox/runner$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/sandbox/classes_gen/org/campagnelab/bdval/sandbox/runner.class" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/sandbox/classes_gen/org/campagnelab/bdval/sandbox/runner.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/behavior/Approach_Behavior.java" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/behavior/Approach_Behavior.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/editor/Approach_Editor.java" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/editor/Approach_Editor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/behavior/BehaviorAspectDescriptor.java" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/behavior/BehaviorAspectDescriptor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/behavior/CoxReg_Behavior.java" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/behavior/CoxReg_Behavior.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/behavior/DataSet_Behavior.java" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/behavior/DataSet_Behavior.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/editor/DataSet_Editor.java" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/editor/DataSet_Editor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/editor/EditorAspectDescriptorImpl.java" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/editor/EditorAspectDescriptorImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/behavior/FoldChange_Behavior.java" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/behavior/FoldChange_Behavior.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/behavior/Genelist_Behavior.java" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/behavior/Genelist_Behavior.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/behavior/GeneticAlgorithm_Behavior.java" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/behavior/GeneticAlgorithm_Behavior.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/behavior/KendallTau_Behavior.java" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/behavior/KendallTau_Behavior.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/behavior/MinMax_Behavior.java" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/behavior/MinMax_Behavior.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/behavior/Permutation_Behavior.java" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/behavior/Permutation_Behavior.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/behavior/Project_Behavior.java" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/behavior/Project_Behavior.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/editor/Project_Editor.java" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/editor/Project_Editor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/generator/source_gen/org/campagnelab/bdval/generator/template/main/QueriesGenerated.java" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/generator/source_gen/org/campagnelab/bdval/generator/template/main/QueriesGenerated.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/behavior/Result_Behavior.java" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/behavior/Result_Behavior.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/editor/Result_Editor.java" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/editor/Result_Editor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/behavior/SVMGlobal_Behavior.java" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/behavior/SVMGlobal_Behavior.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/behavior/SVMIterative_Behavior.java" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/behavior/SVMIterative_Behavior.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/behavior/Status_Behavior.java" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/behavior/Status_Behavior.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/editor/Status_Editor.java" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/editor/Status_Editor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/structure/StructureAspectDescriptor.java" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/structure/StructureAspectDescriptor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/behavior/Ttest_Behavior.java" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/behavior/Ttest_Behavior.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/behavior/WholeChip_Behavior.java" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/behavior/WholeChip_Behavior.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/languageModels/actions.mps" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/languageModels/actions.mps" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/languageModels/behavior.mps" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/languageModels/behavior.mps" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/typesystem/check_Project_NonTypesystemRule.java" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/typesystem/check_Project_NonTypesystemRule.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/languageModels/constraints.mps" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/languageModels/constraints.mps" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/sandbox/source_gen.caches/org/campagnelab/bdval/sandbox/dependencies" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/sandbox/source_gen.caches/org/campagnelab/bdval/sandbox/dependencies" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen.caches/org/campagnelab/bdval/behavior/dependencies" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen.caches/org/campagnelab/bdval/behavior/dependencies" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen.caches/org/campagnelab/bdval/editor/dependencies" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen.caches/org/campagnelab/bdval/editor/dependencies" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/languageModels/editor.mps" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/languageModels/editor.mps" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/generator/source_gen.caches/org/campagnelab/bdval/generator/template/main/generated" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/generator/source_gen.caches/org/campagnelab/bdval/generator/template/main/generated" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/sandbox/source_gen.caches/org/campagnelab/bdval/sandbox/generated" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/sandbox/source_gen.caches/org/campagnelab/bdval/sandbox/generated" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen.caches/org/campagnelab/bdval/generated" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen.caches/org/campagnelab/bdval/generated" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen.caches/org/campagnelab/bdval/actions/generated" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen.caches/org/campagnelab/bdval/actions/generated" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen.caches/org/campagnelab/bdval/behavior/generated" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen.caches/org/campagnelab/bdval/behavior/generated" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen.caches/org/campagnelab/bdval/constraints/generated" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen.caches/org/campagnelab/bdval/constraints/generated" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen.caches/org/campagnelab/bdval/editor/generated" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen.caches/org/campagnelab/bdval/editor/generated" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen.caches/org/campagnelab/bdval/intentions/generated" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen.caches/org/campagnelab/bdval/intentions/generated" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen.caches/org/campagnelab/bdval/plugin/generated" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen.caches/org/campagnelab/bdval/plugin/generated" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen.caches/org/campagnelab/bdval/structure/generated" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen.caches/org/campagnelab/bdval/structure/generated" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen.caches/org/campagnelab/bdval/textGen/generated" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen.caches/org/campagnelab/bdval/textGen/generated" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen.caches/org/campagnelab/bdval/typesystem/generated" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen.caches/org/campagnelab/bdval/typesystem/generated" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/languageModels/intentions.mps" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/languageModels/intentions.mps" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/generator/template/main@generator.mps" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/generator/template/main@generator.mps" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/languageModels/plugin.mps" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/languageModels/plugin.mps" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.mps/modules.xml" afterPath="$PROJECT_DIR$/.mps/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/org.campagnelab.bdval.mpl" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/org.campagnelab.bdval.mpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/sandbox/org.campagnelab.bdval.sandbox.msd" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/sandbox/org.campagnelab.bdval.sandbox.msd" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/sandbox/source_gen/org/campagnelab/bdval/sandbox/runner.java" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/sandbox/source_gen/org/campagnelab/bdval/sandbox/runner.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/sandbox/models/org/campagnelab/bdval/sandbox.mps" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/sandbox/models/org/campagnelab/bdval/sandbox.mps" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/languageModels/structure.history" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/languageModels/structure.history" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/languageModels/structure.mps" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/languageModels/structure.mps" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/languageModels/textGen.mps" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/languageModels/textGen.mps" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/trace.info" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/behavior/trace.info" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/editor/trace.info" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/editor/trace.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/structure/trace.info" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/structure/trace.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/typesystem/trace.info" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/classes_gen/org/campagnelab/bdval/typesystem/trace.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/generator/classes_gen/org/campagnelab/bdval/generator/template/main/trace.info" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/generator/classes_gen/org/campagnelab/bdval/generator/template/main/trace.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/generator/source_gen/org/campagnelab/bdval/generator/template/main/trace.info" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/generator/source_gen/org/campagnelab/bdval/generator/template/main/trace.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/sandbox/classes_gen/org/campagnelab/bdval/sandbox/trace.info" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/sandbox/classes_gen/org/campagnelab/bdval/sandbox/trace.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/sandbox/source_gen/org/campagnelab/bdval/sandbox/trace.info" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/sandbox/source_gen/org/campagnelab/bdval/sandbox/trace.info" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/behavior/trace.info" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/behavior/trace.info" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/editor/trace.info" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/editor/trace.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/structure/trace.info" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/structure/trace.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/typesystem/trace.info" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/typesystem/trace.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/org.campagnelab.bdval/languageModels/typesystem.mps" afterPath="$PROJECT_DIR$/languages/org.campagnelab.bdval/languageModels/typesystem.mps" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.mps/workspace.xml" afterPath="$PROJECT_DIR$/.mps/workspace.xml" />
     </list>
     <ignored path="BDValConf.iws" />
@@ -152,7 +58,7 @@
       <list>
         <TabState>
           <option name="title" value="Console" />
-          <option name="history" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;model modelUID=&quot;r:7948b5b7-b60c-4ba9-bbe1-0468f4e904ec(TempModel_1408045790347305000)&quot;&gt;&#10;  &lt;persistence version=&quot;8&quot; /&gt;&#10;  &lt;language namespace=&quot;de1ad86d-6e50-4a02-b306-d4d17f64c375(jetbrains.mps.console.base)&quot; /&gt;&#10;  &lt;language namespace=&quot;f26691d2-0def-4c06-aec6-2cb90c4af0a4(jetbrains.mps.console.scripts)&quot; /&gt;&#10;  &lt;language namespace=&quot;1a8554c4-eb84-43ba-8c34-6f0d90c6e75a(jetbrains.mps.console.blCommand)&quot; /&gt;&#10;  &lt;language namespace=&quot;a5e4de53-46a3-44da-aab3-68fdf1c34ed0(jetbrains.mps.console.ideCommands)&quot; /&gt;&#10;  &lt;language namespace=&quot;995a7394-7f76-4b8b-a929-c53448708106(jetbrains.mps.console.internalCommands)&quot; /&gt;&#10;  &lt;devkit namespace=&quot;fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)&quot; /&gt;&#10;  &lt;import index=&quot;eynw&quot; modelUID=&quot;r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)&quot; version=&quot;1&quot; /&gt;&#10;  &lt;import index=&quot;z2sp&quot; modelUID=&quot;r:e712f353-5c3c-4288-adce-87c956a52ffb(jetbrains.mps.console.scripts.structure)&quot; version=&quot;0&quot; /&gt;&#10;  &lt;import index=&quot;3xdn&quot; modelUID=&quot;r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.console.blCommand.structure)&quot; version=&quot;3&quot; /&gt;&#10;  &lt;import index=&quot;caxt&quot; modelUID=&quot;r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)&quot; version=&quot;-1&quot; /&gt;&#10;  &lt;import index=&quot;wns9&quot; modelUID=&quot;r:90445206-a973-4c1d-b760-30e5c77b7497(jetbrains.mps.console.internalCommands.structure)&quot; version=&quot;-1&quot; /&gt;&#10;  &lt;import index=&quot;tpck&quot; modelUID=&quot;r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)&quot; version=&quot;0&quot; implicit=&quot;yes&quot; /&gt;&#10;  &lt;import index=&quot;tpee&quot; modelUID=&quot;r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)&quot; version=&quot;5&quot; implicit=&quot;yes&quot; /&gt;&#10;  &lt;root type=&quot;eynw.ConsoleRoot&quot; typeId=&quot;eynw.1583916890557930028&quot; id=&quot;6380268605260266886&quot; nodeInfo=&quot;ng&quot;&gt;&#10;    &lt;node role=&quot;history&quot; roleId=&quot;eynw.1583916890557930415&quot; type=&quot;eynw.History&quot; typeId=&quot;eynw.757553790980850366&quot; id=&quot;5136529682717031499&quot; nodeInfo=&quot;ng&quot;&gt;&#10;      &lt;node role=&quot;item&quot; roleId=&quot;eynw.7195119950189425818&quot; type=&quot;eynw.CommandHolder&quot; typeId=&quot;eynw.351968380916615243&quot; id=&quot;1274586333636357168&quot; nodeInfo=&quot;ng&quot;&gt;&#10;        &lt;property name=&quot;name&quot; nameId=&quot;tpck.1169194664001&quot; value=&quot;CommandHolder&quot; /&gt;&#10;        &lt;node role=&quot;command&quot; roleId=&quot;eynw.351968380916615460&quot; type=&quot;3xdn.BLExpression&quot; typeId=&quot;3xdn.7656298970878093785&quot; id=&quot;1274586333636357169&quot; nodeInfo=&quot;ng&quot;&gt;&#10;          &lt;node role=&quot;expression&quot; roleId=&quot;3xdn.7656298970878093890&quot; type=&quot;caxt.Clean&quot; typeId=&quot;caxt.2840424593938220297&quot; id=&quot;1274586333636357170&quot; nodeInfo=&quot;ng&quot;&gt;&#10;            &lt;node role=&quot;parameter&quot; roleId=&quot;3xdn.4307205004132279624&quot; type=&quot;3xdn.QueryParameterList&quot; typeId=&quot;3xdn.4307205004132277753&quot; id=&quot;1274586333636357171&quot; nodeInfo=&quot;ng&quot; /&gt;&#10;          &lt;/node&gt;&#10;        &lt;/node&gt;&#10;      &lt;/node&gt;&#10;      &lt;node role=&quot;item&quot; roleId=&quot;eynw.7195119950189425818&quot; type=&quot;eynw.CommandHolder&quot; typeId=&quot;eynw.351968380916615243&quot; id=&quot;6380268605223438385&quot; nodeInfo=&quot;ng&quot;&gt;&#10;        &lt;property name=&quot;name&quot; nameId=&quot;tpck.1169194664001&quot; value=&quot;CommandHolder&quot; /&gt;&#10;        &lt;node role=&quot;command&quot; roleId=&quot;eynw.351968380916615460&quot; type=&quot;3xdn.BLCommand&quot; typeId=&quot;3xdn.5464054275389846505&quot; id=&quot;6380268605223438386&quot; nodeInfo=&quot;ng&quot;&gt;&#10;          &lt;node role=&quot;body&quot; roleId=&quot;3xdn.1769790395579689573&quot; type=&quot;tpee.StatementList&quot; typeId=&quot;tpee.1068580123136&quot; id=&quot;6380268605223438387&quot; nodeInfo=&quot;sn&quot;&gt;&#10;            &lt;node role=&quot;statement&quot; roleId=&quot;tpee.1068581517665&quot; type=&quot;tpee.ExpressionStatement&quot; typeId=&quot;tpee.1068580123155&quot; id=&quot;6380268605223438388&quot; nodeInfo=&quot;nn&quot;&gt;&#10;              &lt;node role=&quot;expression&quot; roleId=&quot;tpee.1068580123156&quot; type=&quot;caxt.Clean&quot; typeId=&quot;caxt.2840424593938220297&quot; id=&quot;6380268605223438389&quot; nodeInfo=&quot;ng&quot;&gt;&#10;                &lt;node role=&quot;parameter&quot; roleId=&quot;3xdn.4307205004132279624&quot; type=&quot;3xdn.QueryParameterList&quot; typeId=&quot;3xdn.4307205004132277753&quot; id=&quot;6380268605223438390&quot; nodeInfo=&quot;ng&quot; /&gt;&#10;              &lt;/node&gt;&#10;            &lt;/node&gt;&#10;          &lt;/node&gt;&#10;        &lt;/node&gt;&#10;      &lt;/node&gt;&#10;    &lt;/node&gt;&#10;    &lt;node role=&quot;commandHolder&quot; roleId=&quot;eynw.1583916890557930417&quot; type=&quot;eynw.CommandHolder&quot; typeId=&quot;eynw.351968380916615243&quot; id=&quot;6380268605260266887&quot; nodeInfo=&quot;ng&quot;&gt;&#10;      &lt;property name=&quot;name&quot; nameId=&quot;tpck.1169194664001&quot; value=&quot;CommandHolder&quot; /&gt;&#10;    &lt;/node&gt;&#10;  &lt;/root&gt;&#10;&lt;/model&gt;&#10;&#10;" />
+          <option name="history" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;model modelUID=&quot;r:ba9e5ac9-8309-4fe7-9340-c98bb48712b2(TempModel_1408056142149423000)&quot;&gt;&#10;  &lt;persistence version=&quot;8&quot; /&gt;&#10;  &lt;language namespace=&quot;de1ad86d-6e50-4a02-b306-d4d17f64c375(jetbrains.mps.console.base)&quot; /&gt;&#10;  &lt;language namespace=&quot;f26691d2-0def-4c06-aec6-2cb90c4af0a4(jetbrains.mps.console.scripts)&quot; /&gt;&#10;  &lt;language namespace=&quot;1a8554c4-eb84-43ba-8c34-6f0d90c6e75a(jetbrains.mps.console.blCommand)&quot; /&gt;&#10;  &lt;language namespace=&quot;a5e4de53-46a3-44da-aab3-68fdf1c34ed0(jetbrains.mps.console.ideCommands)&quot; /&gt;&#10;  &lt;language namespace=&quot;995a7394-7f76-4b8b-a929-c53448708106(jetbrains.mps.console.internalCommands)&quot; /&gt;&#10;  &lt;devkit namespace=&quot;fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)&quot; /&gt;&#10;  &lt;import index=&quot;eynw&quot; modelUID=&quot;r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)&quot; version=&quot;1&quot; /&gt;&#10;  &lt;import index=&quot;z2sp&quot; modelUID=&quot;r:e712f353-5c3c-4288-adce-87c956a52ffb(jetbrains.mps.console.scripts.structure)&quot; version=&quot;0&quot; /&gt;&#10;  &lt;import index=&quot;3xdn&quot; modelUID=&quot;r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.console.blCommand.structure)&quot; version=&quot;3&quot; /&gt;&#10;  &lt;import index=&quot;caxt&quot; modelUID=&quot;r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)&quot; version=&quot;-1&quot; /&gt;&#10;  &lt;import index=&quot;wns9&quot; modelUID=&quot;r:90445206-a973-4c1d-b760-30e5c77b7497(jetbrains.mps.console.internalCommands.structure)&quot; version=&quot;-1&quot; /&gt;&#10;  &lt;import index=&quot;tpck&quot; modelUID=&quot;r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)&quot; version=&quot;0&quot; implicit=&quot;yes&quot; /&gt;&#10;  &lt;import index=&quot;tpee&quot; modelUID=&quot;r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)&quot; version=&quot;5&quot; implicit=&quot;yes&quot; /&gt;&#10;  &lt;root type=&quot;eynw.ConsoleRoot&quot; typeId=&quot;eynw.1583916890557930028&quot; id=&quot;8887253018859732688&quot; nodeInfo=&quot;ng&quot;&gt;&#10;    &lt;node role=&quot;history&quot; roleId=&quot;eynw.1583916890557930415&quot; type=&quot;eynw.History&quot; typeId=&quot;eynw.757553790980850366&quot; id=&quot;5136529682717031499&quot; nodeInfo=&quot;ng&quot;&gt;&#10;      &lt;node role=&quot;item&quot; roleId=&quot;eynw.7195119950189425818&quot; type=&quot;eynw.CommandHolder&quot; typeId=&quot;eynw.351968380916615243&quot; id=&quot;1274586333636357168&quot; nodeInfo=&quot;ng&quot;&gt;&#10;        &lt;property name=&quot;name&quot; nameId=&quot;tpck.1169194664001&quot; value=&quot;CommandHolder&quot; /&gt;&#10;        &lt;node role=&quot;command&quot; roleId=&quot;eynw.351968380916615460&quot; type=&quot;3xdn.BLExpression&quot; typeId=&quot;3xdn.7656298970878093785&quot; id=&quot;1274586333636357169&quot; nodeInfo=&quot;ng&quot;&gt;&#10;          &lt;node role=&quot;expression&quot; roleId=&quot;3xdn.7656298970878093890&quot; type=&quot;caxt.Clean&quot; typeId=&quot;caxt.2840424593938220297&quot; id=&quot;1274586333636357170&quot; nodeInfo=&quot;ng&quot;&gt;&#10;            &lt;node role=&quot;parameter&quot; roleId=&quot;3xdn.4307205004132279624&quot; type=&quot;3xdn.QueryParameterList&quot; typeId=&quot;3xdn.4307205004132277753&quot; id=&quot;1274586333636357171&quot; nodeInfo=&quot;ng&quot; /&gt;&#10;          &lt;/node&gt;&#10;        &lt;/node&gt;&#10;      &lt;/node&gt;&#10;      &lt;node role=&quot;item&quot; roleId=&quot;eynw.7195119950189425818&quot; type=&quot;eynw.CommandHolder&quot; typeId=&quot;eynw.351968380916615243&quot; id=&quot;6380268605223438385&quot; nodeInfo=&quot;ng&quot;&gt;&#10;        &lt;property name=&quot;name&quot; nameId=&quot;tpck.1169194664001&quot; value=&quot;CommandHolder&quot; /&gt;&#10;        &lt;node role=&quot;command&quot; roleId=&quot;eynw.351968380916615460&quot; type=&quot;3xdn.BLCommand&quot; typeId=&quot;3xdn.5464054275389846505&quot; id=&quot;6380268605223438386&quot; nodeInfo=&quot;ng&quot;&gt;&#10;          &lt;node role=&quot;body&quot; roleId=&quot;3xdn.1769790395579689573&quot; type=&quot;tpee.StatementList&quot; typeId=&quot;tpee.1068580123136&quot; id=&quot;6380268605223438387&quot; nodeInfo=&quot;sn&quot;&gt;&#10;            &lt;node role=&quot;statement&quot; roleId=&quot;tpee.1068581517665&quot; type=&quot;tpee.ExpressionStatement&quot; typeId=&quot;tpee.1068580123155&quot; id=&quot;6380268605223438388&quot; nodeInfo=&quot;nn&quot;&gt;&#10;              &lt;node role=&quot;expression&quot; roleId=&quot;tpee.1068580123156&quot; type=&quot;caxt.Clean&quot; typeId=&quot;caxt.2840424593938220297&quot; id=&quot;6380268605223438389&quot; nodeInfo=&quot;ng&quot;&gt;&#10;                &lt;node role=&quot;parameter&quot; roleId=&quot;3xdn.4307205004132279624&quot; type=&quot;3xdn.QueryParameterList&quot; typeId=&quot;3xdn.4307205004132277753&quot; id=&quot;6380268605223438390&quot; nodeInfo=&quot;ng&quot; /&gt;&#10;              &lt;/node&gt;&#10;            &lt;/node&gt;&#10;          &lt;/node&gt;&#10;        &lt;/node&gt;&#10;      &lt;/node&gt;&#10;    &lt;/node&gt;&#10;    &lt;node role=&quot;commandHolder&quot; roleId=&quot;eynw.1583916890557930417&quot; type=&quot;eynw.CommandHolder&quot; typeId=&quot;eynw.351968380916615243&quot; id=&quot;8887253018859732689&quot; nodeInfo=&quot;ng&quot;&gt;&#10;      &lt;property name=&quot;name&quot; nameId=&quot;tpck.1169194664001&quot; value=&quot;CommandHolder&quot; /&gt;&#10;    &lt;/node&gt;&#10;  &lt;/root&gt;&#10;&lt;/model&gt;&#10;&#10;" />
         </TabState>
       </list>
     </option>
@@ -173,19 +79,78 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="8-14" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="8-14" pinned="false" current="false" current-in-tab="false">
         <entry file="mps://node://org.campagnelab.bdval.sandbox/org.campagnelab.bdval.sandbox/8-14">
+          <provider selected="true" editor-type-id="MPSFileEditor">
+            <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
+              <memento viewPositionX="0" viewPositionY="0">
+                <selectionStack>
+                  <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellSelection">
+                    <property name="caretXRelative" value="-107" />
+                    <property name="caretX" value="0" />
+                    <property name="sideSelectDirection" value="NONE" />
+                    <cellInfo cellId="JComponent_o8np3d_a7a" cellNumber="0" isInList="false">
+                      <node node_reference="r:b2ac1451-2431-4f4c-8992-b8345f1cb6dc(org.campagnelab.bdval.sandbox)/8962624141198440391" />
+                    </cellInfo>
+                  </stackElement>
+                </selectionStack>
+                <errorLabels />
+                <folded />
+                <enabledHints />
+              </memento>
+              <inspectorMemento viewPositionX="0" viewPositionY="0">
+                <selectionStack />
+                <errorLabels />
+                <folded />
+                <enabledHints />
+              </inspectorMemento>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="20140814-1710-restat-maqcii-submission.txt" pinned="false" current="true" current-in-tab="true">
+        <entry file="mps://node://org.campagnelab.bdval.charts/org.campagnelab.bdval.charts.mcc/20140814-1710-restat-maqcii-submission.txt">
           <provider selected="true" editor-type-id="MPSFileEditor">
             <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
               <memento viewPositionX="0" viewPositionY="0">
                 <selectionStack>
                   <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
                     <property name="hasNonTrivialSelection" value="false" />
-                    <property name="caretXRelative" value="40" />
-                    <property name="caretX" value="195" />
+                    <property name="caretXRelative" value="336" />
+                    <property name="caretX" value="411" />
                     <property name="sideSelectDirection" value="NONE" />
-                    <cellInfo cellId="property_directoryName" cellNumber="0" isInList="false">
-                      <node node_reference="r:b2ac1451-2431-4f4c-8992-b8345f1cb6dc(org.campagnelab.bdval.sandbox)/8962624141198440392" />
+                    <cellInfo cellId="property_name" cellNumber="0" isInList="false">
+                      <node node_reference="r:fd287fb3-5cb6-4a4c-87db-faf1c4bce228(org.campagnelab.bdval.charts.mcc)/3525262167365436335" />
+                    </cellInfo>
+                  </stackElement>
+                </selectionStack>
+                <errorLabels />
+                <folded />
+                <enabledHints />
+              </memento>
+              <inspectorMemento viewPositionX="0" viewPositionY="0">
+                <selectionStack />
+                <errorLabels />
+                <folded />
+                <enabledHints />
+              </inspectorMemento>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Charts" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://node://org.campagnelab.bdval.charts/org.campagnelab.bdval.charts.mcc/Charts">
+          <provider selected="true" editor-type-id="MPSFileEditor">
+            <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
+              <memento viewPositionX="0" viewPositionY="0">
+                <selectionStack>
+                  <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                    <property name="hasNonTrivialSelection" value="false" />
+                    <property name="caretXRelative" value="48" />
+                    <property name="caretX" value="63" />
+                    <property name="sideSelectDirection" value="NONE" />
+                    <cellInfo cellId="Constant_dnpd9w_a0" cellNumber="0" isInList="false">
+                      <node node_reference="r:fd287fb3-5cb6-4a4c-87db-faf1c4bce228(org.campagnelab.bdval.charts.mcc)/3525262167365437466" />
                     </cellInfo>
                   </stackElement>
                 </selectionStack>
@@ -207,120 +172,6 @@
         <entry file="mps://node://org.campagnelab.bdval/org.campagnelab.bdval.structure/Result">
           <provider selected="true" editor-type-id="MPSFileEditor">
             <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
-              <memento viewPositionX="0" viewPositionY="519">
-                <selectionStack />
-                <errorLabels />
-                <folded />
-                <enabledHints />
-              </memento>
-              <inspectorMemento viewPositionX="0" viewPositionY="0">
-                <selectionStack />
-                <errorLabels />
-                <folded />
-                <enabledHints />
-              </inspectorMemento>
-              <node node_ref="r:825ae26d-5123-4d82-aa5e-7977a26d188c(org.campagnelab.bdval.behavior)/3634366430331107814" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Approach" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://node://org.campagnelab.bdval/org.campagnelab.bdval.structure/Approach">
-          <provider selected="true" editor-type-id="MPSFileEditor">
-            <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
-              <memento viewPositionX="0" viewPositionY="900">
-                <selectionStack>
-                  <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                    <property name="hasNonTrivialSelection" value="false" />
-                    <property name="caretXRelative" value="168" />
-                    <property name="caretX" value="919" />
-                    <property name="sideSelectDirection" value="NONE" />
-                    <cellInfo cellId="property_value" cellNumber="0" isInList="false">
-                      <node node_reference="r:825ae26d-5123-4d82-aa5e-7977a26d188c(org.campagnelab.bdval.behavior)/8241402136298911577" />
-                    </cellInfo>
-                  </stackElement>
-                </selectionStack>
-                <errorLabels />
-                <folded />
-                <enabledHints />
-              </memento>
-              <inspectorMemento viewPositionX="0" viewPositionY="0">
-                <selectionStack />
-                <errorLabels />
-                <folded />
-                <enabledHints />
-              </inspectorMemento>
-              <node node_ref="r:825ae26d-5123-4d82-aa5e-7977a26d188c(org.campagnelab.bdval.behavior)/8314272953675900650" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Genelist" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://node://org.campagnelab.bdval/org.campagnelab.bdval.structure/Genelist">
-          <provider selected="true" editor-type-id="MPSFileEditor">
-            <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
-              <memento viewPositionX="0" viewPositionY="0">
-                <selectionStack>
-                  <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                    <property name="hasNonTrivialSelection" value="false" />
-                    <property name="caretXRelative" value="0" />
-                    <property name="caretX" value="151" />
-                    <property name="sideSelectDirection" value="NONE" />
-                    <cellInfo cellId="property_value" cellNumber="0" isInList="false">
-                      <node node_reference="r:825ae26d-5123-4d82-aa5e-7977a26d188c(org.campagnelab.bdval.behavior)/6380268605262945857" />
-                    </cellInfo>
-                  </stackElement>
-                </selectionStack>
-                <errorLabels />
-                <folded />
-                <enabledHints />
-              </memento>
-              <inspectorMemento viewPositionX="0" viewPositionY="0">
-                <selectionStack />
-                <errorLabels />
-                <folded />
-                <enabledHints />
-              </inspectorMemento>
-              <node node_ref="r:825ae26d-5123-4d82-aa5e-7977a26d188c(org.campagnelab.bdval.behavior)/4989762282952313580" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Project" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://node://org.campagnelab.bdval/org.campagnelab.bdval.structure/Project">
-          <provider selected="true" editor-type-id="MPSFileEditor">
-            <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
-              <memento viewPositionX="0" viewPositionY="230">
-                <selectionStack>
-                  <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                    <property name="hasNonTrivialSelection" value="false" />
-                    <property name="caretXRelative" value="0" />
-                    <property name="caretX" value="404" />
-                    <property name="sideSelectDirection" value="NONE" />
-                    <cellInfo cellId="Constant_y5igai_a0" cellNumber="0" isInList="false">
-                      <node node_reference="r:bc6dc6e9-88f3-467f-93c0-f469615cbf0b(org.campagnelab.bdval.generator.template.main@generator)/6380268605260365754" />
-                    </cellInfo>
-                  </stackElement>
-                </selectionStack>
-                <errorLabels />
-                <folded />
-                <enabledHints />
-              </memento>
-              <inspectorMemento viewPositionX="0" viewPositionY="0">
-                <selectionStack />
-                <errorLabels />
-                <folded />
-                <enabledHints />
-              </inspectorMemento>
-              <node node_ref="r:bc6dc6e9-88f3-467f-93c0-f469615cbf0b(org.campagnelab.bdval.generator.template.main@generator)/2125124408379547027" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CIDs" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://node://org.campagnelab.bdval/org.campagnelab.bdval.structure/CIDs">
-          <provider selected="true" editor-type-id="MPSFileEditor">
-            <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
               <memento viewPositionX="0" viewPositionY="0">
                 <selectionStack />
                 <errorLabels />
@@ -333,38 +184,7 @@
                 <folded />
                 <enabledHints />
               </inspectorMemento>
-              <node node_ref="r:825ae26d-5123-4d82-aa5e-7977a26d188c(org.campagnelab.bdval.behavior)/4345048909863010214" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FloatRange" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://node://org.campagnelab.bdval/org.campagnelab.bdval.structure/FloatRange">
-          <provider selected="true" editor-type-id="MPSFileEditor">
-            <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
-              <memento viewPositionX="0" viewPositionY="0">
-                <selectionStack>
-                  <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                    <property name="hasNonTrivialSelection" value="false" />
-                    <property name="caretXRelative" value="0" />
-                    <property name="caretX" value="147" />
-                    <property name="sideSelectDirection" value="NONE" />
-                    <cellInfo cellId="property_name" cellNumber="0" isInList="false">
-                      <node node_reference="r:825ae26d-5123-4d82-aa5e-7977a26d188c(org.campagnelab.bdval.behavior)/6380268605263234414" />
-                    </cellInfo>
-                  </stackElement>
-                </selectionStack>
-                <errorLabels />
-                <folded />
-                <enabledHints />
-              </memento>
-              <inspectorMemento viewPositionX="0" viewPositionY="0">
-                <selectionStack />
-                <errorLabels />
-                <folded />
-                <enabledHints />
-              </inspectorMemento>
-              <node node_ref="r:825ae26d-5123-4d82-aa5e-7977a26d188c(org.campagnelab.bdval.behavior)/6380268605263234414" />
+              <node node_ref="r:80234718-e5a8-4a44-a5b1-9d71e3e29f88(org.campagnelab.bdval.editor)/8962624141209100247" />
             </state>
           </provider>
         </entry>
@@ -434,9 +254,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="61" />
-    <option name="y" value="90" />
-    <option name="width" value="1686" />
+    <option name="x" value="71" />
+    <option name="y" value="69" />
+    <option name="width" value="1697" />
     <option name="height" value="996" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -507,6 +327,9 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Favorites">
+        <subPane />
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -538,134 +361,6 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="org.campagnelab.bdval">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="org.campagnelab.bdval#8663900622048200163">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="org">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="org.campagnelab.bdval.generator.template.main">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Empty">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Project">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="org.campagnelab.bdval">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="org.campagnelab.bdval.behavior">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Empty">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Project">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="org.campagnelab.bdval">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="org.campagnelab.bdval.behavior">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="featureSelectionInfo">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Empty">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Project">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="org.campagnelab.bdval">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="org.campagnelab.bdval.behavior">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="featureSelectionInfo">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="featureSelections">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Empty">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Project">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="org.campagnelab.bdval">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="org.campagnelab.bdval.editor">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Empty">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Project">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="org.campagnelab.bdval">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="org.campagnelab.bdval.structure">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Empty">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Project">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="org.campagnelab.bdval.sandbox">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
@@ -675,6 +370,28 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="org.campagnelab.bdval.sandbox">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Empty">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Project">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="org.campagnelab.bdval.charts">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="org">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="org.campagnelab.bdval.charts.mcc">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -725,9 +442,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Favorites">
-        <subPane />
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -745,55 +459,7 @@
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
   </component>
-  <component name="RunManager" selected="Java Application.Node 8-14">
-    <configuration default="false" name="Node 8-6" type="Java Application" factoryName="Java" temporary="true">
-      <MyState />
-      <myNode>
-        <MyState>
-          <option name="myNodeId" value="8962624141180967618" />
-          <option name="myModelId" value="r:b2ac1451-2431-4f4c-8992-b8345f1cb6dc(org.campagnelab.bdval.sandbox)" />
-        </MyState>
-      </myNode>
-      <myRunParameters>
-        <MyState>
-          <option name="myJavaRunParameters">
-            <JavaRunParameters>
-              <option name="jrePath" />
-              <option name="programParameters" />
-              <option name="useAlternativeJre" value="false" />
-              <option name="vmOptions" />
-              <option name="workingDirectory" />
-            </JavaRunParameters>
-          </option>
-        </MyState>
-      </myRunParameters>
-      <RunnerSettings RunnerId="Default Runner" />
-      <ConfigurationWrapper RunnerId="Default Runner" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Node 8-7" type="Java Application" factoryName="Java" temporary="true">
-      <MyState />
-      <myNode>
-        <MyState>
-          <option name="myNodeId" value="8962624141198440391" />
-          <option name="myModelId" value="r:b2ac1451-2431-4f4c-8992-b8345f1cb6dc(org.campagnelab.bdval.sandbox)" />
-        </MyState>
-      </myNode>
-      <myRunParameters>
-        <MyState>
-          <option name="myJavaRunParameters">
-            <JavaRunParameters>
-              <option name="jrePath" />
-              <option name="programParameters" />
-              <option name="useAlternativeJre" value="false" />
-              <option name="vmOptions" />
-              <option name="workingDirectory" />
-            </JavaRunParameters>
-          </option>
-        </MyState>
-      </myRunParameters>
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Java Application.Node 8-12">
     <configuration default="false" name="Node 8-12" type="Java Application" factoryName="Java" temporary="true">
       <MyState />
       <myNode>
@@ -863,6 +529,54 @@
       </myRunParameters>
       <method />
     </configuration>
+    <configuration default="false" name="Node 8-6" type="Java Application" factoryName="Java" temporary="true">
+      <MyState />
+      <myNode>
+        <MyState>
+          <option name="myNodeId" value="8962624141180967618" />
+          <option name="myModelId" value="r:b2ac1451-2431-4f4c-8992-b8345f1cb6dc(org.campagnelab.bdval.sandbox)" />
+        </MyState>
+      </myNode>
+      <myRunParameters>
+        <MyState>
+          <option name="myJavaRunParameters">
+            <JavaRunParameters>
+              <option name="jrePath" />
+              <option name="programParameters" />
+              <option name="useAlternativeJre" value="false" />
+              <option name="vmOptions" />
+              <option name="workingDirectory" />
+            </JavaRunParameters>
+          </option>
+        </MyState>
+      </myRunParameters>
+      <RunnerSettings RunnerId="Default Runner" />
+      <ConfigurationWrapper RunnerId="Default Runner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Node 8-7" type="Java Application" factoryName="Java" temporary="true">
+      <MyState />
+      <myNode>
+        <MyState>
+          <option name="myNodeId" value="8962624141198440391" />
+          <option name="myModelId" value="r:b2ac1451-2431-4f4c-8992-b8345f1cb6dc(org.campagnelab.bdval.sandbox)" />
+        </MyState>
+      </myNode>
+      <myRunParameters>
+        <MyState>
+          <option name="myJavaRunParameters">
+            <JavaRunParameters>
+              <option name="jrePath" />
+              <option name="programParameters" />
+              <option name="useAlternativeJre" value="false" />
+              <option name="vmOptions" />
+              <option name="workingDirectory" />
+            </JavaRunParameters>
+          </option>
+        </MyState>
+      </myRunParameters>
+      <method />
+    </configuration>
     <configuration default="true" type="Java Application" factoryName="Java">
       <MyState />
       <myNode>
@@ -886,49 +600,13 @@
       </myRunParameters>
       <method />
     </configuration>
-    <configuration default="true" type="JUnit Tests" factoryName="JUnit Tests">
-      <MyState />
-      <myJUnitSettings>
-        <MyState>
-          <option name="myModel" />
-          <option name="myModule" />
-          <option name="myTestCases">
-            <list />
-          </option>
-          <option name="myTestMethods">
-            <list />
-          </option>
-          <option name="myRunType" value="PROJECT" />
-        </MyState>
-      </myJUnitSettings>
-      <myJavaRunParameters>
-        <MyState>
-          <option name="myJavaRunParameters">
-            <JavaRunParameters>
-              <option name="jrePath" />
-              <option name="programParameters" />
-              <option name="useAlternativeJre" value="false" />
-              <option name="vmOptions" />
-              <option name="workingDirectory" />
-            </JavaRunParameters>
-          </option>
-        </MyState>
-      </myJavaRunParameters>
-      <method />
-    </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Java Application.Node 8-6" />
-      <item index="1" class="java.lang.String" itemvalue="Java Application.Node 8-7" />
-      <item index="2" class="java.lang.String" itemvalue="Java Application.Node 8-12" />
-      <item index="3" class="java.lang.String" itemvalue="Java Application.Node 8-13" />
-      <item index="4" class="java.lang.String" itemvalue="Java Application.Node 8-14" />
+      <item index="0" class="java.lang.String" itemvalue="Java Application.Node 8-12" />
+      <item index="1" class="java.lang.String" itemvalue="Java Application.Node 8-13" />
+      <item index="2" class="java.lang.String" itemvalue="Java Application.Node 8-14" />
+      <item index="3" class="java.lang.String" itemvalue="Java Application.Node 8-6" />
+      <item index="4" class="java.lang.String" itemvalue="Java Application.Node 8-7" />
     </list>
-    <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Java Application.Node 8-14" />
-        <item index="1" class="java.lang.String" itemvalue="Java Application.Node 8-13" />
-      </list>
-    </recent_temporary>
     <configuration name="&lt;template&gt;" type="Application" default="true" selected="false">
       <option name="MAIN_CLASS_NAME" />
       <option name="VM_PARAMETERS" />
@@ -969,32 +647,32 @@
     <configuration>$USER_HOME$/.subversion</configuration>
   </component>
   <component name="ToolWindowManager">
-    <frame x="61" y="90" width="1686" height="996" extended-state="0" />
-    <editor active="true" />
+    <frame x="71" y="69" width="1697" height="996" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32686085" sideWeight="0.49967384" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Usages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32633787" sideWeight="0.4986835" order="22" side_tool="false" content_ui="tabs" />
+      <window_info id="Usages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.326257" sideWeight="0.49838606" order="22" side_tool="false" content_ui="tabs" />
       <window_info id="Supertypes" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2932138" sideWeight="0.46203765" order="24" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34189945" sideWeight="0.51073986" order="24" side_tool="true" content_ui="tabs" />
       <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32686085" sideWeight="0.4970646" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Migration" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279396" sideWeight="0.49902153" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Model Checker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34270272" sideWeight="0.44493392" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Model Checker" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34189945" sideWeight="0.48926014" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Bookmarks" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Generation Tracer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19099098" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24327785" sideWeight="0.54445165" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3162291" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2424581" sideWeight="0.543554" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2495226" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Classpath Explorer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="RefactoringView" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32036847" sideWeight="0.49481687" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspector" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2547486" sideWeight="0.46186185" order="23" side_tool="true" content_ui="tabs" />
+      <window_info id="RefactoringView" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31955308" sideWeight="0.49403343" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspector" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25306576" sideWeight="0.32756564" order="23" side_tool="true" content_ui="tabs" />
       <window_info id="Node Explorer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32586786" sideWeight="0.49848208" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Typesystem Trace" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Typechecker State" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
       <window_info id="Dependencies Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290398" sideWeight="0.49964106" order="18" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39918116" sideWeight="0.49965447" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2547486" sideWeight="0.5375375" order="19" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3094972" sideWeight="0.6718377" order="19" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24852768" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Module Dependencies" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32948583" sideWeight="0.4997367" order="20" side_tool="false" content_ui="tabs" />
       <window_info id="Class Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32948717" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1076,309 +754,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Merged remote changes" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="mps://node://org.campagnelab.bdval/org.campagnelab.bdval.structure/LoggedArray">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
-          <memento viewPositionX="0" viewPositionY="0">
-            <selectionStack>
-              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="0" />
-                <property name="caretX" value="147" />
-                <property name="sideSelectDirection" value="NONE" />
-                <cellInfo cellId="property_name" cellNumber="0" isInList="false">
-                  <node node_reference="r:825ae26d-5123-4d82-aa5e-7977a26d188c(org.campagnelab.bdval.behavior)/3918118240378123537" />
-                </cellInfo>
-              </stackElement>
-            </selectionStack>
-            <errorLabels />
-            <folded />
-            <enabledHints />
-          </memento>
-          <inspectorMemento viewPositionX="0" viewPositionY="0">
-            <selectionStack />
-            <errorLabels />
-            <folded />
-            <enabledHints />
-          </inspectorMemento>
-          <node node_ref="r:825ae26d-5123-4d82-aa5e-7977a26d188c(org.campagnelab.bdval.behavior)/3918118240378123537" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://node://org.campagnelab.bdval/org.campagnelab.bdval.structure/SingleColorArray">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
-          <memento viewPositionX="0" viewPositionY="0">
-            <selectionStack>
-              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="0" />
-                <property name="caretX" value="147" />
-                <property name="sideSelectDirection" value="NONE" />
-                <cellInfo cellId="property_name" cellNumber="0" isInList="false">
-                  <node node_reference="r:825ae26d-5123-4d82-aa5e-7977a26d188c(org.campagnelab.bdval.behavior)/3918118240378127189" />
-                </cellInfo>
-              </stackElement>
-            </selectionStack>
-            <errorLabels />
-            <folded />
-            <enabledHints />
-          </memento>
-          <inspectorMemento viewPositionX="0" viewPositionY="0">
-            <selectionStack />
-            <errorLabels />
-            <folded />
-            <enabledHints />
-          </inspectorMemento>
-          <node node_ref="r:825ae26d-5123-4d82-aa5e-7977a26d188c(org.campagnelab.bdval.behavior)/3918118240378127189" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://node://org.campagnelab.bdval/org.campagnelab.bdval.structure/Directory">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
-          <memento viewPositionX="0" viewPositionY="0">
-            <selectionStack>
-              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="8" />
-                <property name="caretX" value="251" />
-                <property name="sideSelectDirection" value="NONE" />
-                <cellInfo cellId="Constant_bgoakl_a0" cellNumber="0" isInList="false">
-                  <node node_reference="r:80234718-e5a8-4a44-a5b1-9d71e3e29f88(org.campagnelab.bdval.editor)/8962624141158368549" />
-                </cellInfo>
-              </stackElement>
-            </selectionStack>
-            <errorLabels />
-            <folded />
-            <enabledHints />
-          </memento>
-          <inspectorMemento viewPositionX="0" viewPositionY="0">
-            <selectionStack />
-            <errorLabels />
-            <folded />
-            <enabledHints />
-          </inspectorMemento>
-          <node node_ref="r:80234718-e5a8-4a44-a5b1-9d71e3e29f88(org.campagnelab.bdval.editor)/1911754720568105453" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://node://org.campagnelab.bdval/org.campagnelab.bdval.structure/File">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
-          <memento viewPositionX="0" viewPositionY="0">
-            <selectionStack>
-              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="8" />
-                <property name="caretX" value="55" />
-                <property name="sideSelectDirection" value="NONE" />
-                <cellInfo cellId="Constant_eb7h0d_c4a" cellNumber="0" isInList="false">
-                  <node node_reference="r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)/1911754720566015681" />
-                </cellInfo>
-              </stackElement>
-              <stackElement className="jetbrains.mps.nodeEditor.selection.NodeRangeSelection">
-                <property name="lastNodeId" value="1911754720566015681" />
-                <property name="modelId" value="r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)" />
-                <property name="parentNodeId" value="1911754720566014677" />
-                <property name="firstNodeId" value="1911754720566015681" />
-                <property name="role" value="statement" />
-              </stackElement>
-            </selectionStack>
-            <errorLabels />
-            <folded />
-            <enabledHints />
-          </memento>
-          <inspectorMemento viewPositionX="0" viewPositionY="0">
-            <selectionStack />
-            <errorLabels />
-            <folded />
-            <enabledHints />
-          </inspectorMemento>
-          <node node_ref="r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)/1911754720566014325" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://node://org.campagnelab.bdval/org.campagnelab.bdval.structure/OtherFiles">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
-          <memento viewPositionX="0" viewPositionY="0">
-            <selectionStack>
-              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="24" />
-                <property name="caretX" value="595" />
-                <property name="sideSelectDirection" value="NONE" />
-                <cellInfo cellId="Constant_bgoakl_a1a" cellNumber="0" isInList="false">
-                  <node node_reference="r:80234718-e5a8-4a44-a5b1-9d71e3e29f88(org.campagnelab.bdval.editor)/8962624141166023866" />
-                </cellInfo>
-              </stackElement>
-            </selectionStack>
-            <errorLabels />
-            <folded />
-            <enabledHints />
-          </memento>
-          <inspectorMemento viewPositionX="0" viewPositionY="0">
-            <selectionStack />
-            <errorLabels />
-            <folded />
-            <enabledHints />
-          </inspectorMemento>
-          <node node_ref="r:80234718-e5a8-4a44-a5b1-9d71e3e29f88(org.campagnelab.bdval.editor)/4989762282962785557" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://node://org.campagnelab.bdval/org.campagnelab.bdval.structure/Pathway">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
-          <memento viewPositionX="0" viewPositionY="0">
-            <selectionStack>
-              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="32" />
-                <property name="caretX" value="79" />
-                <property name="sideSelectDirection" value="NONE" />
-                <cellInfo cellId="property_text" cellNumber="0" isInList="false">
-                  <node node_reference="r:80234718-e5a8-4a44-a5b1-9d71e3e29f88(org.campagnelab.bdval.editor)/4989762282952360866" />
-                </cellInfo>
-              </stackElement>
-            </selectionStack>
-            <errorLabels />
-            <folded />
-            <enabledHints />
-          </memento>
-          <inspectorMemento viewPositionX="0" viewPositionY="0">
-            <selectionStack />
-            <errorLabels />
-            <folded />
-            <enabledHints />
-          </inspectorMemento>
-          <node node_ref="r:80234718-e5a8-4a44-a5b1-9d71e3e29f88(org.campagnelab.bdval.editor)/4989762282952360864" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/languages/org.campagnelab.bdval/source_gen/org/campagnelab/bdval/editor/OtherFiles_Editor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="3089" max-vertical-offset="4905">
-          <caret line="219" column="10" selection-start-line="219" selection-start-column="10" selection-end-line="219" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://node://org.campagnelab.bdval/org.campagnelab.bdval.structure/FeatureSelectionProperties">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
-          <memento viewPositionX="0" viewPositionY="0">
-            <selectionStack>
-              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="0" />
-                <property name="caretX" value="15" />
-                <property name="sideSelectDirection" value="NONE" />
-                <cellInfo cellId="Constant_ueqr71_c0a" cellNumber="0" isInList="false">
-                  <node node_reference="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)/4671749543976303774" />
-                </cellInfo>
-              </stackElement>
-            </selectionStack>
-            <errorLabels />
-            <folded />
-            <enabledHints />
-          </memento>
-          <inspectorMemento viewPositionX="0" viewPositionY="0">
-            <selectionStack />
-            <errorLabels />
-            <folded />
-            <enabledHints />
-          </inspectorMemento>
-          <node node_ref="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)/4671749543976303774" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://node://org.campagnelab.bdval/org.campagnelab.bdval.structure/ArrayParameter">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
-          <memento viewPositionX="0" viewPositionY="0">
-            <selectionStack>
-              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="48" />
-                <property name="caretX" value="155" />
-                <property name="sideSelectDirection" value="NONE" />
-                <cellInfo cellId="property_name" cellNumber="0" isInList="false">
-                  <node node_reference="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)/3918118240378117986" />
-                </cellInfo>
-              </stackElement>
-            </selectionStack>
-            <errorLabels />
-            <folded />
-            <enabledHints />
-          </memento>
-          <inspectorMemento viewPositionX="0" viewPositionY="0">
-            <selectionStack />
-            <errorLabels />
-            <folded />
-            <enabledHints />
-          </inspectorMemento>
-          <node node_ref="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)/3918118240378107098" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://node://org.campagnelab.bdval/org.campagnelab.bdval.structure/Float">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
-          <memento viewPositionX="0" viewPositionY="0">
-            <selectionStack>
-              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="0" />
-                <property name="caretX" value="15" />
-                <property name="sideSelectDirection" value="NONE" />
-                <cellInfo cellId="Constant_ueqr71_c0a" cellNumber="0" isInList="false">
-                  <node node_reference="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)/7860773100998725765" />
-                </cellInfo>
-              </stackElement>
-            </selectionStack>
-            <errorLabels />
-            <folded />
-            <enabledHints />
-          </memento>
-          <inspectorMemento viewPositionX="0" viewPositionY="0">
-            <selectionStack />
-            <errorLabels />
-            <folded />
-            <enabledHints />
-          </inspectorMemento>
-          <node node_ref="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)/7860773100998725765" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://node://Ant/org.apache.tools.ant@java_stub/Project">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
-          <memento viewPositionX="0" viewPositionY="0">
-            <selectionStack>
-              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="48" />
-                <property name="caretX" value="131" />
-                <property name="sideSelectDirection" value="NONE" />
-                <cellInfo cellId="property_name" cellNumber="0" isInList="false">
-                  <node node_reference="f:java_stub#847a3235-09f9-403c-b6a9-1c294a212e92#org.apache.tools.ant(Ant/org.apache.tools.ant@java_stub)/~Project.&lt;init&gt;%28%29" />
-                </cellInfo>
-              </stackElement>
-            </selectionStack>
-            <errorLabels />
-            <folded />
-            <enabledHints />
-          </memento>
-          <inspectorMemento viewPositionX="0" viewPositionY="-4">
-            <selectionStack />
-            <errorLabels />
-            <folded />
-            <enabledHints />
-          </inspectorMemento>
-        </state>
-      </provider>
-    </entry>
     <entry file="mps://node://jetbrains.mps.build.workflow/jetbrains.mps.build.workflow.structure/BwfProject">
       <provider selected="true" editor-type-id="MPSFileEditor">
         <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
@@ -1817,34 +1192,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="mps://node://org.campagnelab.bdval#8663900622048200163/org.campagnelab.bdval.generator.template.main@generator/GenerateFiles">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
-          <memento viewPositionX="0" viewPositionY="0">
-            <selectionStack>
-              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="8" />
-                <property name="caretX" value="281" />
-                <property name="sideSelectDirection" value="NONE" />
-                <cellInfo cellId="Constant_zedcwq_b0" cellNumber="0" isInList="false">
-                  <node node_reference="r:bc6dc6e9-88f3-467f-93c0-f469615cbf0b(org.campagnelab.bdval.generator.template.main@generator)/6752420586317949500" />
-                </cellInfo>
-              </stackElement>
-            </selectionStack>
-            <errorLabels />
-            <folded />
-            <enabledHints />
-          </memento>
-          <inspectorMemento viewPositionX="0" viewPositionY="0">
-            <selectionStack />
-            <errorLabels />
-            <folded />
-            <enabledHints />
-          </inspectorMemento>
-        </state>
-      </provider>
-    </entry>
     <entry file="mps://node://org.campagnelab.bdval/org.campagnelab.bdval.structure/SavedGenelist">
       <provider selected="true" editor-type-id="MPSFileEditor">
         <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
@@ -2250,68 +1597,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="mps://node://org.campagnelab.bdval.sandbox/org.campagnelab.bdval.sandbox/8-14">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
-          <memento viewPositionX="0" viewPositionY="0">
-            <selectionStack>
-              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="40" />
-                <property name="caretX" value="195" />
-                <property name="sideSelectDirection" value="NONE" />
-                <cellInfo cellId="property_directoryName" cellNumber="0" isInList="false">
-                  <node node_reference="r:b2ac1451-2431-4f4c-8992-b8345f1cb6dc(org.campagnelab.bdval.sandbox)/8962624141198440392" />
-                </cellInfo>
-              </stackElement>
-            </selectionStack>
-            <errorLabels />
-            <folded />
-            <enabledHints />
-          </memento>
-          <inspectorMemento viewPositionX="0" viewPositionY="0">
-            <selectionStack />
-            <errorLabels />
-            <folded />
-            <enabledHints />
-          </inspectorMemento>
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://node://org.campagnelab.bdval/org.campagnelab.bdval.structure/Result">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
-          <memento viewPositionX="0" viewPositionY="519">
-            <selectionStack />
-            <errorLabels />
-            <folded />
-            <enabledHints />
-          </memento>
-          <inspectorMemento viewPositionX="0" viewPositionY="0">
-            <selectionStack />
-            <errorLabels />
-            <folded />
-            <enabledHints />
-          </inspectorMemento>
-          <node node_ref="r:825ae26d-5123-4d82-aa5e-7977a26d188c(org.campagnelab.bdval.behavior)/3634366430331107814" />
-        </state>
-      </provider>
-    </entry>
     <entry file="mps://node://org.campagnelab.bdval/org.campagnelab.bdval.structure/FloatRange">
       <provider selected="true" editor-type-id="MPSFileEditor">
         <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
           <memento viewPositionX="0" viewPositionY="0">
-            <selectionStack>
-              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="0" />
-                <property name="caretX" value="147" />
-                <property name="sideSelectDirection" value="NONE" />
-                <cellInfo cellId="property_name" cellNumber="0" isInList="false">
-                  <node node_reference="r:825ae26d-5123-4d82-aa5e-7977a26d188c(org.campagnelab.bdval.behavior)/6380268605263234414" />
-                </cellInfo>
-              </stackElement>
-            </selectionStack>
+            <selectionStack />
             <errorLabels />
             <folded />
             <enabledHints />
@@ -2359,7 +1649,17 @@
       <provider selected="true" editor-type-id="MPSFileEditor">
         <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
           <memento viewPositionX="0" viewPositionY="0">
-            <selectionStack />
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="0" />
+                <property name="caretX" value="147" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="property_name" cellNumber="0" isInList="false">
+                  <node node_reference="r:825ae26d-5123-4d82-aa5e-7977a26d188c(org.campagnelab.bdval.behavior)/4345048909863010214" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
             <errorLabels />
             <folded />
             <enabledHints />
@@ -2378,17 +1678,7 @@
       <provider selected="true" editor-type-id="MPSFileEditor">
         <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
           <memento viewPositionX="0" viewPositionY="0">
-            <selectionStack>
-              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
-                <property name="hasNonTrivialSelection" value="false" />
-                <property name="caretXRelative" value="0" />
-                <property name="caretX" value="151" />
-                <property name="sideSelectDirection" value="NONE" />
-                <cellInfo cellId="property_value" cellNumber="0" isInList="false">
-                  <node node_reference="r:825ae26d-5123-4d82-aa5e-7977a26d188c(org.campagnelab.bdval.behavior)/6380268605262945857" />
-                </cellInfo>
-              </stackElement>
-            </selectionStack>
+            <selectionStack />
             <errorLabels />
             <folded />
             <enabledHints />
@@ -2406,15 +1696,15 @@
     <entry file="mps://node://org.campagnelab.bdval/org.campagnelab.bdval.structure/Project">
       <provider selected="true" editor-type-id="MPSFileEditor">
         <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
-          <memento viewPositionX="0" viewPositionY="230">
+          <memento viewPositionX="0" viewPositionY="10">
             <selectionStack>
               <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
                 <property name="hasNonTrivialSelection" value="false" />
                 <property name="caretXRelative" value="0" />
-                <property name="caretX" value="404" />
+                <property name="caretX" value="66" />
                 <property name="sideSelectDirection" value="NONE" />
-                <cellInfo cellId="Constant_y5igai_a0" cellNumber="0" isInList="false">
-                  <node node_reference="r:bc6dc6e9-88f3-467f-93c0-f469615cbf0b(org.campagnelab.bdval.generator.template.main@generator)/6380268605260365754" />
+                <cellInfo cellId="property_name" cellNumber="0" isInList="false">
+                  <node node_reference="r:bc6dc6e9-88f3-467f-93c0-f469615cbf0b(org.campagnelab.bdval.generator.template.main@generator)/2125124408379547030" />
                 </cellInfo>
               </stackElement>
             </selectionStack>
@@ -2458,6 +1748,416 @@
             <enabledHints />
           </inspectorMemento>
           <node node_ref="r:825ae26d-5123-4d82-aa5e-7977a26d188c(org.campagnelab.bdval.behavior)/8314272953675900650" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://org.campagnelab.mps.XChart/org.campagnelab.mps.XChart.structure/Page">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </memento>
+          <inspectorMemento viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </inspectorMemento>
+          <node node_ref="r:989540b8-cc89-4ed5-ba78-cf2ce766b8ce(org.campagnelab.mps.XChart.structure)/5270176140464602975" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://org.campagnelab.mps.XChart/org.campagnelab.mps.XChart.structure/FileRef">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="0" />
+                <property name="caretX" value="15" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="Constant_ueqr71_c0a" cellNumber="0" isInList="false">
+                  <node node_reference="r:989540b8-cc89-4ed5-ba78-cf2ce766b8ce(org.campagnelab.mps.XChart.structure)/5270176140465521300" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </memento>
+          <inspectorMemento viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </inspectorMemento>
+          <node node_ref="r:989540b8-cc89-4ed5-ba78-cf2ce766b8ce(org.campagnelab.mps.XChart.structure)/5270176140465521300" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://org.campagnelab.mps.XChart/org.campagnelab.mps.XChart.structure/DelimitedFile">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="0" />
+                <property name="caretX" value="15" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="Constant_ueqr71_c0a" cellNumber="0" isInList="false">
+                  <node node_reference="r:989540b8-cc89-4ed5-ba78-cf2ce766b8ce(org.campagnelab.mps.XChart.structure)/2202909375770430354" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </memento>
+          <inspectorMemento viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </inspectorMemento>
+          <node node_ref="r:989540b8-cc89-4ed5-ba78-cf2ce766b8ce(org.campagnelab.mps.XChart.structure)/2202909375770430354" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://org.campagnelab.mps.XChart/org.campagnelab.mps.XChart.structure/Doubles">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="32" />
+                <property name="caretX" value="187" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="TransactionalProperty_7v1nzk_b0a" cellNumber="0" isInList="false">
+                  <node node_reference="r:989540b8-cc89-4ed5-ba78-cf2ce766b8ce(org.campagnelab.mps.XChart.structure)/2202909375770435047" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </memento>
+          <inspectorMemento viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </inspectorMemento>
+          <node node_ref="r:989540b8-cc89-4ed5-ba78-cf2ce766b8ce(org.campagnelab.mps.XChart.structure)/2202909375770435047" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://org.campagnelab.mps.XChart/org.campagnelab.mps.XChart.structure/ColumnToDoubles">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="0" />
+                <property name="caretX" value="15" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="Constant_ueqr71_c0a" cellNumber="0" isInList="false">
+                  <node node_reference="r:989540b8-cc89-4ed5-ba78-cf2ce766b8ce(org.campagnelab.mps.XChart.structure)/2202909375770435040" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </memento>
+          <inspectorMemento viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </inspectorMemento>
+          <node node_ref="r:989540b8-cc89-4ed5-ba78-cf2ce766b8ce(org.campagnelab.mps.XChart.structure)/2202909375770435040" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://org.campagnelab.mps.XChart/org.campagnelab.mps.XChart.structure/Column">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </memento>
+          <inspectorMemento viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </inspectorMemento>
+          <node node_ref="r:989540b8-cc89-4ed5-ba78-cf2ce766b8ce(org.campagnelab.mps.XChart.structure)/2202909375770434159" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://org.campagnelab.mps.XChart/org.campagnelab.mps.XChart.structure/DoublesReference">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="0" />
+                <property name="caretX" value="15" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="Constant_ueqr71_c0a" cellNumber="0" isInList="false">
+                  <node node_reference="r:989540b8-cc89-4ed5-ba78-cf2ce766b8ce(org.campagnelab.mps.XChart.structure)/6638345083850864456" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </memento>
+          <inspectorMemento viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </inspectorMemento>
+          <node node_ref="r:989540b8-cc89-4ed5-ba78-cf2ce766b8ce(org.campagnelab.mps.XChart.structure)/6638345083850864456" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://org.campagnelab.bdval.charts/org.campagnelab.bdval.charts.mcc/ChartViewer_Charts">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="8" />
+                <property name="caretX" value="323" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="Constant_eb7h0d_a4a" cellNumber="0" isInList="false">
+                  <node node_reference="r:fd287fb3-5cb6-4a4c-87db-faf1c4bce228(org.campagnelab.bdval.charts.mcc)/3525262167365310891" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorLabels>
+              <errorLabel errorText="build" cellNumber="1" isInList="false">
+                <node node_reference="r:fd287fb3-5cb6-4a4c-87db-faf1c4bce228(org.campagnelab.bdval.charts.mcc)/3525262167365310838" />
+                <parent cellId="Collection_jyer24_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:fd287fb3-5cb6-4a4c-87db-faf1c4bce228(org.campagnelab.bdval.charts.mcc)/3525262167365310838" />
+                </parent>
+              </errorLabel>
+              <errorLabel errorText="theme" cellNumber="1" isInList="false">
+                <node node_reference="r:fd287fb3-5cb6-4a4c-87db-faf1c4bce228(org.campagnelab.bdval.charts.mcc)/3525262167365310830" />
+                <parent cellId="Collection_jyer24_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:fd287fb3-5cb6-4a4c-87db-faf1c4bce228(org.campagnelab.bdval.charts.mcc)/3525262167365310830" />
+                </parent>
+              </errorLabel>
+              <errorLabel errorText="title" cellNumber="1" isInList="false">
+                <node node_reference="r:fd287fb3-5cb6-4a4c-87db-faf1c4bce228(org.campagnelab.bdval.charts.mcc)/3525262167365310832" />
+                <parent cellId="Collection_jyer24_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:fd287fb3-5cb6-4a4c-87db-faf1c4bce228(org.campagnelab.bdval.charts.mcc)/3525262167365310832" />
+                </parent>
+              </errorLabel>
+              <errorLabel errorText="theme" cellNumber="1" isInList="false">
+                <node node_reference="r:fd287fb3-5cb6-4a4c-87db-faf1c4bce228(org.campagnelab.bdval.charts.mcc)/3525262167365310933" />
+                <parent cellId="Collection_jyer24_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:fd287fb3-5cb6-4a4c-87db-faf1c4bce228(org.campagnelab.bdval.charts.mcc)/3525262167365310933" />
+                </parent>
+              </errorLabel>
+              <errorLabel errorText="build" cellNumber="1" isInList="false">
+                <node node_reference="r:fd287fb3-5cb6-4a4c-87db-faf1c4bce228(org.campagnelab.bdval.charts.mcc)/3525262167365310941" />
+                <parent cellId="Collection_jyer24_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:fd287fb3-5cb6-4a4c-87db-faf1c4bce228(org.campagnelab.bdval.charts.mcc)/3525262167365310941" />
+                </parent>
+              </errorLabel>
+              <errorLabel errorText="xAxisTitle" cellNumber="1" isInList="false">
+                <node node_reference="r:fd287fb3-5cb6-4a4c-87db-faf1c4bce228(org.campagnelab.bdval.charts.mcc)/3525262167365310937" />
+                <parent cellId="Collection_jyer24_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:fd287fb3-5cb6-4a4c-87db-faf1c4bce228(org.campagnelab.bdval.charts.mcc)/3525262167365310937" />
+                </parent>
+              </errorLabel>
+              <errorLabel errorText="width" cellNumber="1" isInList="false">
+                <node node_reference="r:fd287fb3-5cb6-4a4c-87db-faf1c4bce228(org.campagnelab.bdval.charts.mcc)/3525262167365310826" />
+                <parent cellId="Collection_jyer24_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:fd287fb3-5cb6-4a4c-87db-faf1c4bce228(org.campagnelab.bdval.charts.mcc)/3525262167365310826" />
+                </parent>
+              </errorLabel>
+              <errorLabel errorText="xAxisTitle" cellNumber="1" isInList="false">
+                <node node_reference="r:fd287fb3-5cb6-4a4c-87db-faf1c4bce228(org.campagnelab.bdval.charts.mcc)/3525262167365310834" />
+                <parent cellId="Collection_jyer24_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:fd287fb3-5cb6-4a4c-87db-faf1c4bce228(org.campagnelab.bdval.charts.mcc)/3525262167365310834" />
+                </parent>
+              </errorLabel>
+              <errorLabel errorText="yAxisTitle" cellNumber="1" isInList="false">
+                <node node_reference="r:fd287fb3-5cb6-4a4c-87db-faf1c4bce228(org.campagnelab.bdval.charts.mcc)/3525262167365310836" />
+                <parent cellId="Collection_jyer24_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:fd287fb3-5cb6-4a4c-87db-faf1c4bce228(org.campagnelab.bdval.charts.mcc)/3525262167365310836" />
+                </parent>
+              </errorLabel>
+              <errorLabel errorText="width" cellNumber="1" isInList="false">
+                <node node_reference="r:fd287fb3-5cb6-4a4c-87db-faf1c4bce228(org.campagnelab.bdval.charts.mcc)/3525262167365310929" />
+                <parent cellId="Collection_jyer24_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:fd287fb3-5cb6-4a4c-87db-faf1c4bce228(org.campagnelab.bdval.charts.mcc)/3525262167365310929" />
+                </parent>
+              </errorLabel>
+              <errorLabel errorText="chartType" cellNumber="1" isInList="false">
+                <node node_reference="r:fd287fb3-5cb6-4a4c-87db-faf1c4bce228(org.campagnelab.bdval.charts.mcc)/3525262167365310824" />
+                <parent cellId="Collection_jyer24_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:fd287fb3-5cb6-4a4c-87db-faf1c4bce228(org.campagnelab.bdval.charts.mcc)/3525262167365310824" />
+                </parent>
+              </errorLabel>
+              <errorLabel errorText="title" cellNumber="1" isInList="false">
+                <node node_reference="r:fd287fb3-5cb6-4a4c-87db-faf1c4bce228(org.campagnelab.bdval.charts.mcc)/3525262167365310935" />
+                <parent cellId="Collection_jyer24_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:fd287fb3-5cb6-4a4c-87db-faf1c4bce228(org.campagnelab.bdval.charts.mcc)/3525262167365310935" />
+                </parent>
+              </errorLabel>
+              <errorLabel errorText="height" cellNumber="1" isInList="false">
+                <node node_reference="r:fd287fb3-5cb6-4a4c-87db-faf1c4bce228(org.campagnelab.bdval.charts.mcc)/3525262167365310931" />
+                <parent cellId="Collection_jyer24_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:fd287fb3-5cb6-4a4c-87db-faf1c4bce228(org.campagnelab.bdval.charts.mcc)/3525262167365310931" />
+                </parent>
+              </errorLabel>
+              <errorLabel errorText="height" cellNumber="1" isInList="false">
+                <node node_reference="r:fd287fb3-5cb6-4a4c-87db-faf1c4bce228(org.campagnelab.bdval.charts.mcc)/3525262167365310828" />
+                <parent cellId="Collection_jyer24_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:fd287fb3-5cb6-4a4c-87db-faf1c4bce228(org.campagnelab.bdval.charts.mcc)/3525262167365310828" />
+                </parent>
+              </errorLabel>
+              <errorLabel errorText="chartType" cellNumber="1" isInList="false">
+                <node node_reference="r:fd287fb3-5cb6-4a4c-87db-faf1c4bce228(org.campagnelab.bdval.charts.mcc)/3525262167365310927" />
+                <parent cellId="Collection_jyer24_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:fd287fb3-5cb6-4a4c-87db-faf1c4bce228(org.campagnelab.bdval.charts.mcc)/3525262167365310927" />
+                </parent>
+              </errorLabel>
+              <errorLabel errorText="yAxisTitle" cellNumber="1" isInList="false">
+                <node node_reference="r:fd287fb3-5cb6-4a4c-87db-faf1c4bce228(org.campagnelab.bdval.charts.mcc)/3525262167365310939" />
+                <parent cellId="Collection_jyer24_a" cellNumber="0" isInList="false">
+                  <node node_reference="r:fd287fb3-5cb6-4a4c-87db-faf1c4bce228(org.campagnelab.bdval.charts.mcc)/3525262167365310939" />
+                </parent>
+              </errorLabel>
+            </errorLabels>
+            <folded />
+            <enabledHints />
+          </memento>
+          <inspectorMemento viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </inspectorMemento>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://org.campagnelab.bdval.sandbox/org.campagnelab.bdval.sandbox/8-14">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellSelection">
+                <property name="caretXRelative" value="-107" />
+                <property name="caretX" value="0" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="JComponent_o8np3d_a7a" cellNumber="0" isInList="false">
+                  <node node_reference="r:b2ac1451-2431-4f4c-8992-b8345f1cb6dc(org.campagnelab.bdval.sandbox)/8962624141198440391" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </memento>
+          <inspectorMemento viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </inspectorMemento>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://org.campagnelab.bdval.charts/org.campagnelab.bdval.charts.mcc/Charts">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="48" />
+                <property name="caretX" value="63" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="Constant_dnpd9w_a0" cellNumber="0" isInList="false">
+                  <node node_reference="r:fd287fb3-5cb6-4a4c-87db-faf1c4bce228(org.campagnelab.bdval.charts.mcc)/3525262167365437466" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </memento>
+          <inspectorMemento viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </inspectorMemento>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://org.campagnelab.bdval/org.campagnelab.bdval.structure/Result">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </memento>
+          <inspectorMemento viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </inspectorMemento>
+          <node node_ref="r:80234718-e5a8-4a44-a5b1-9d71e3e29f88(org.campagnelab.bdval.editor)/8962624141209100247" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://org.campagnelab.bdval.charts/org.campagnelab.bdval.charts.mcc/20140814-1710-restat-maqcii-submission.txt">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="336" />
+                <property name="caretX" value="411" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="property_name" cellNumber="0" isInList="false">
+                  <node node_reference="r:fd287fb3-5cb6-4a4c-87db-faf1c4bce228(org.campagnelab.bdval.charts.mcc)/3525262167365436335" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </memento>
+          <inspectorMemento viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorLabels />
+            <folded />
+            <enabledHints />
+          </inspectorMemento>
         </state>
       </provider>
     </entry>

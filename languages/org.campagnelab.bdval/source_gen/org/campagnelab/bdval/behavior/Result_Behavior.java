@@ -60,6 +60,13 @@ public class Result_Behavior {
           SLinkOperations.setTarget(thisNode, "AUC", Result_Behavior.call_checkMinMax_6380268605259355313(thisNode, SLinkOperations.getTarget(thisNode, "AUC", true), lineArray[8].toString()), true);
           SLinkOperations.setTarget(thisNode, "RMSE", Result_Behavior.call_checkMinMax_6380268605259355313(thisNode, SLinkOperations.getTarget(thisNode, "RMSE", true), lineArray[9].toString()), true);
         }
+        SLinkOperations.setTarget(thisNode, "MCC", Result_Behavior.call_checkNaN_6380268605264471520(thisNode, SLinkOperations.getTarget(thisNode, "MCC", true)), true);
+        SLinkOperations.setTarget(thisNode, "accuracy", Result_Behavior.call_checkNaN_6380268605264471520(thisNode, SLinkOperations.getTarget(thisNode, "accuracy", true)), true);
+        SLinkOperations.setTarget(thisNode, "sensitivity", Result_Behavior.call_checkNaN_6380268605264471520(thisNode, SLinkOperations.getTarget(thisNode, "sensitivity", true)), true);
+        SLinkOperations.setTarget(thisNode, "specificity", Result_Behavior.call_checkNaN_6380268605264471520(thisNode, SLinkOperations.getTarget(thisNode, "specificity", true)), true);
+        SLinkOperations.setTarget(thisNode, "AUC", Result_Behavior.call_checkNaN_6380268605264471520(thisNode, SLinkOperations.getTarget(thisNode, "AUC", true)), true);
+        SLinkOperations.setTarget(thisNode, "RMSE", Result_Behavior.call_checkNaN_6380268605264471520(thisNode, SLinkOperations.getTarget(thisNode, "RMSE", true)), true);
+        SPropertyOperations.set(thisNode, "maqciiFile", file);
         SPropertyOperations.set(thisNode, "noMaqcii", "" + (false));
       } catch (Exception e) {
         SPropertyOperations.set(thisNode, "noMaqcii", "" + (true));
@@ -75,6 +82,20 @@ public class Result_Behavior {
     }
     if (Float.valueOf(currentValue) < Float.valueOf(SPropertyOperations.getString(rangeNode, "min"))) {
       SPropertyOperations.set(rangeNode, "min", currentValue);
+    }
+    return rangeNode;
+  }
+
+  public static SNode call_checkNaN_6380268605264471520(SNode thisNode, SNode rangeNode) {
+    try {
+      if (Integer.parseInt(SPropertyOperations.getString(rangeNode, "max")) == Integer.MIN_VALUE) {
+        SPropertyOperations.set(rangeNode, "max", "NaN");
+      }
+      if (Integer.parseInt(SPropertyOperations.getString(rangeNode, "min")) == Integer.MAX_VALUE) {
+        SPropertyOperations.set(rangeNode, "min", "NaN");
+      }
+    } catch (NumberFormatException e) {
+      // rangeNode.value as a float would throw error 
     }
     return rangeNode;
   }
@@ -140,6 +161,5 @@ public class Result_Behavior {
       p.fireBuildFinished(e);
       throw new Error("Error calculating statistics" + e);
     }
-
   }
 }
