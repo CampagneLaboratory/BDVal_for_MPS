@@ -8,6 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class CoxReg_Behavior {
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "name", "coxReg");
+    SPropertyOperations.set(thisNode, "defs", "");
     SPropertyOperations.set(thisNode, "addoptions", "addoption required:alpha:confidence level for Cox_Reg\n" + "addoption required:survival:survival data file\n");
     SPropertyOperations.set(thisNode, "sequenceCommand", " cox-regression");
     SPropertyOperations.set(thisNode, "sequenceInfo", " --survival %survival% --alpha %alpha%");

@@ -8,6 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class Ttest_Behavior {
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "name", "ttest");
+    SPropertyOperations.set(thisNode, "defs", "");
     SPropertyOperations.set(thisNode, "addoptions", "addoption required:alpha:Confidence level for T-test\n");
     SPropertyOperations.set(thisNode, "sequenceCommand", " t-test");
     SPropertyOperations.set(thisNode, "sequenceInfo", " --alpha %alpha%");

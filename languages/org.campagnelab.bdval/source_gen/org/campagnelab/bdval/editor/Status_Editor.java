@@ -11,8 +11,11 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.io.File;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -35,7 +38,10 @@ public class Status_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createConstant_gjf57x_a0(editorContext, node));
     }
     if (renderingCondition_gjf57x_a1a(node, editorContext)) {
-      editorCell.addEditorCell(this.createRefNodeList_gjf57x_b0(editorContext, node));
+      editorCell.addEditorCell(this.createConstant_gjf57x_b0(editorContext, node));
+    }
+    if (renderingCondition_gjf57x_a2a(node, editorContext)) {
+      editorCell.addEditorCell(this.createRefNodeList_gjf57x_c0(editorContext, node));
     }
     return editorCell;
   }
@@ -51,11 +57,28 @@ public class Status_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_gjf57x_a0a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "result", true)).isEmpty();
+    SNode project = SNodeOperations.getAncestor(node, "org.campagnelab.bdval.structure.Project", false, false);
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "result", true)).isEmpty() && isNotEmptyString(SPropertyOperations.getString(project, "name")) && isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(project, "properties", true), "outputDirectory", true), "directoryLocation")) && new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(project, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(project, "name")).isDirectory();
+
   }
 
-  private EditorCell createRefNodeList_gjf57x_b0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new Status_Editor.resultListHandler_gjf57x_b0(node, "result", editorContext);
+  private EditorCell createConstant_gjf57x_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "BDValConf has not been built in this location");
+    editorCell.setCellId("Constant_gjf57x_b0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private static boolean renderingCondition_gjf57x_a1a(SNode node, EditorContext editorContext) {
+    SNode project = SNodeOperations.getAncestor(node, "org.campagnelab.bdval.structure.Project", false, false);
+    return SLinkOperations.getTargets(node, "result", true).isEmpty() && (isEmptyString(SPropertyOperations.getString(project, "name")) || isEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(project, "properties", true), "outputDirectory", true), "directoryLocation")) || !(new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(project, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(project, "name")).isDirectory()));
+  }
+
+  private EditorCell createRefNodeList_gjf57x_c0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new Status_Editor.resultListHandler_gjf57x_c0(node, "result", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_result");
     Style style = new StyleImpl();
@@ -65,8 +88,8 @@ public class Status_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class resultListHandler_gjf57x_b0 extends RefNodeListHandler {
-    public resultListHandler_gjf57x_b0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class resultListHandler_gjf57x_c0 extends RefNodeListHandler {
+    public resultListHandler_gjf57x_c0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -102,7 +125,15 @@ public class Status_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static boolean renderingCondition_gjf57x_a1a(SNode node, EditorContext editorContext) {
+  private static boolean renderingCondition_gjf57x_a2a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "result", true)).isNotEmpty();
+  }
+
+  private static boolean isNotEmptyString(String str) {
+    return str != null && str.length() > 0;
+  }
+
+  private static boolean isEmptyString(String str) {
+    return str == null || str.length() == 0;
   }
 }

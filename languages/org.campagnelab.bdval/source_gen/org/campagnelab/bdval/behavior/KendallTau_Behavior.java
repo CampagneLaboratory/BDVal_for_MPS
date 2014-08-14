@@ -8,6 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class KendallTau_Behavior {
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "name", "kendallTau");
+    SPropertyOperations.set(thisNode, "defs", "");
     SPropertyOperations.set(thisNode, "addoptions", "addoption required:ratio:Kendall tau value used as threshold\n");
     SPropertyOperations.set(thisNode, "sequenceCommand", " kendal-tau");
     SPropertyOperations.set(thisNode, "sequenceInfo", " --ratio %ratio%");

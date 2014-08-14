@@ -15,7 +15,7 @@ import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "35dbc0f6-2677-4e81-9b75-548a3c2b6d9b(org.campagnelab.bdval)";
-  private static String[] EXTENDED_LANGUAGE_IDS = new String[]{"jetbrains.mps.execution.util"};
+  private static String[] EXTENDED_LANGUAGE_IDS = new String[]{"jetbrains.mps.execution.util", "jetbrains.mps.baseLanguage"};
   private EditorAspectDescriptorImpl myEditorAspectDescriptor;
 
   public Language() {

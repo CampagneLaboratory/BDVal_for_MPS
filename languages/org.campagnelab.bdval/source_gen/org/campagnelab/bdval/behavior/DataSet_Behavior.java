@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 public class DataSet_Behavior {
   public static void init(SNode thisNode) {
-    SPropertyOperations.set(thisNode, "normalTarget", "" + (true));
+    SPropertyOperations.set(thisNode, "run", "" + (true));
 
   }
 
@@ -43,7 +43,7 @@ public class DataSet_Behavior {
         endpointDescription.value = endpointDescription.value + WordUtils.capitalizeFully(SPropertyOperations.getString(SLinkOperations.getTarget(category, "endpointCategory", false), "name")).replaceAll("\\s", "");
       }
     });
-    String parentName = SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.Project"), "trimmedName");
+    String parentName = SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.Project"), "name");
     return parentName + "_" + endpointDescription.value + "_" + SPropertyOperations.getString(thisNode, "name").replaceAll("\\s", "");
   }
 
@@ -150,7 +150,9 @@ public class DataSet_Behavior {
   }
 
   public static void call_generateTestSet_3976565827563239534(SNode thisNode, String projectFolder, String datasetName) {
-    if (SPropertyOperations.getBoolean(thisNode, "testSet")) {
+    // TODO: fix this 
+    boolean testset = false;
+    if (testset) {
       String testSetFolder = projectFolder + "test-sets/";
       new File(testSetFolder).mkdir();
       String fileName = testSetFolder + datasetName + "-samples.txt";

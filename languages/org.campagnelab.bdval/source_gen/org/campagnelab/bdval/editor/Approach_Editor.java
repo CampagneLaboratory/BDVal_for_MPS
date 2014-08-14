@@ -232,7 +232,7 @@ public class Approach_Editor extends DefaultNodeEditor {
           }
         });
 
-        return String.valueOf(featureSelectionNum.value * classificationsNum.value * ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "featureSelectionInfo", true), "numberOfFeatures", true)).count() * SPropertyOperations.getInteger(node, "externalFolds") * SPropertyOperations.getInteger(node, "externalRepeats"));
+        return String.valueOf(featureSelectionNum.value * classificationsNum.value * ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "featureSelectionInfo", true), "numberOfFeatures", true)).count());
       }
 
       public void setText(String s) {

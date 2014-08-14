@@ -8,10 +8,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class SVMIterative_Behavior {
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "name", "svmIterative");
-    SPropertyOperations.set(thisNode, "addoptions", "addoption required:r:SVM Iterative ratio for each iteration\n");
+    SPropertyOperations.set(thisNode, "defs", "");
+    SPropertyOperations.set(thisNode, "addoptions", "addoption required:ratio:SVM Iterative ratio for each iteration\n");
     SPropertyOperations.set(thisNode, "sequenceCommand", " svm-weights-iterative");
-    SPropertyOperations.set(thisNode, "sequenceInfo", " -r %r%");
+    SPropertyOperations.set(thisNode, "sequenceInfo", " -r %ratio%");
     SPropertyOperations.set(thisNode, "sequenceNumFeatures", " --num-features");
-    SPropertyOperations.set(thisNode, "otherOptions", " --r ${svmIterative-r}");
+    SPropertyOperations.set(thisNode, "otherOptions", " --ratio ${svmIterative-r}");
   }
 }

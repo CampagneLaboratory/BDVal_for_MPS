@@ -63,6 +63,7 @@ public class Approach_Behavior {
                 genelist.value = SNodeOperations.isInstanceOf(featureSelection1, "org.campagnelab.bdval.structure.Genelist");
                 approachMethod.value = SPropertyOperations.getString(featureSelection1, "name");
                 fsLine.value = Approach_Behavior.call_getFSLine_3649519271357483092(thisNode, wholeChip.value, genelist.value, SPropertyOperations.getString(featureSelection1, "sequenceCommand"), SPropertyOperations.getString(featureSelection1, "sequenceInfo"), SPropertyOperations.getString(featureSelection1, "sequenceNumFeatures"), true, twoFS.value, SPropertyOperations.getBoolean(featureSelectionFold, "value"));
+                defs.value = SPropertyOperations.getString(featureSelection1, "defs");
                 addoptions.value = SPropertyOperations.getString(featureSelection1, "addoptions");
                 otherOptions.value = SPropertyOperations.getString(featureSelection1, "otherOptions");
 
@@ -72,6 +73,7 @@ public class Approach_Behavior {
                   approachMethod.value = approachMethod.value + "+" + SPropertyOperations.getString(featureSelection2, "name");
                   geneticAlgorithm.value = geneticAlgorithm.value || SNodeOperations.isInstanceOf(featureSelection2, "org.campagnelab.bdval.structure.GeneticAlgorithm");
                   fsLine.value = fsLine.value + Approach_Behavior.call_getFSLine_3649519271357483092(thisNode, wholeChip.value, genelist.value, SPropertyOperations.getString(featureSelection2, "sequenceCommand"), SPropertyOperations.getString(featureSelection2, "sequenceInfo"), SPropertyOperations.getString(featureSelection2, "sequenceNumFeatures"), false, twoFS.value, SPropertyOperations.getBoolean(featureSelectionFold, "value"));
+                  defs.value = defs.value + SPropertyOperations.getString(featureSelection2, "defs");
                   addoptions.value = addoptions.value + SPropertyOperations.getString(featureSelection2, "addoptions");
                   otherOptions.value = otherOptions.value + " " + SPropertyOperations.getString(featureSelection2, "otherOptions");
                   if (!(wholeChip.value) && !(genelist.value)) {
@@ -85,8 +87,8 @@ public class Approach_Behavior {
                   SNode option = SLinkOperations.getTarget(featureCombo, "featureSelectionOption", true);
                   approachMethod.value = approachMethod.value + "-" + SPropertyOperations.getString(option, "name");
                   defs.value = defs.value + SPropertyOperations.getString(option, "def");
-                  addoptions.value = SPropertyOperations.getString(option, "addoptions");
-                  otherOptions.value = SPropertyOperations.getString(option, "otherOptions");
+                  addoptions.value = addoptions.value + SPropertyOperations.getString(option, "addoptions");
+                  otherOptions.value = otherOptions.value + SPropertyOperations.getString(option, "otherOptions");
                 }
 
                 approachMethod.value = approachMethod.value + "-" + SPropertyOperations.getString(classification, "name") + "-fs=" + String.valueOf(SPropertyOperations.getBoolean(featureSelectionFold, "value"));
@@ -136,7 +138,7 @@ public class Approach_Behavior {
                   String sequenceFileName = sequenceFolder + "generated-" + approachMethod.value + ".sequence";
                   FileWriter file = new FileWriter(sequenceFileName);
                   PrintWriter writer = new PrintWriter(file);
-                  writer.print("def label=" + approachMethod.value + genelistDef.value + "-%model-id%\n");
+                  writer.print("def label=" + approachMethod.value + "-%model-id%\n");
                   writer.print("def predictions-filename=%dataset-name%-%label%-prediction-table.txt\n");
                   writer.print("def survivial=%survival%\n");
                   writer.print(defs.value);
@@ -168,7 +170,7 @@ public class Approach_Behavior {
 
   public static void call_generateModel_8241402136296602911(SNode thisNode, String approachMethod, String cValue, boolean fsFold, String className, String classParams, String otherOptions) {
     SNode genModel = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.ModelToGenerate", null);
-    SPropertyOperations.set(genModel, "name", WordUtils.capitalize(approachMethod.substring(10).replaceAll("\\+", " \\+ ").replaceAll("-", ", ")));
+    SPropertyOperations.set(genModel, "name", WordUtils.capitalize(approachMethod.replaceAll("\\+", " \\+ ").replaceAll("-", ", ")));
     SPropertyOperations.set(genModel, "featureSelectionFold", "" + (fsFold));
     SPropertyOperations.set(genModel, "sequenceFile", "generated-" + approachMethod + ".sequence");
     SPropertyOperations.set(genModel, "allClassifierParameters", " --classifier " + className + " --classifier-parameters " + classParams);
