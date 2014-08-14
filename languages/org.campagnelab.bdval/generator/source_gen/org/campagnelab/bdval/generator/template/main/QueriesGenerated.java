@@ -78,10 +78,6 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "svmIterative", true), "ratio");
   }
 
-  public static Object propertyMacro_GetPropertyValue_4989762282937044647(final PropertyMacroContext _context) {
-    return String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "minMax", true), "observations"));
-  }
-
   public static Object propertyMacro_GetPropertyValue_4989762282927789736(final PropertyMacroContext _context) {
     return String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "geneticAlgorithm", true), "wrapperPopulationSize"));
   }
@@ -106,6 +102,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "geneticAlgorithm", true), "ratio");
   }
 
+  public static Object propertyMacro_GetPropertyValue_6380268605258498167(final PropertyMacroContext _context) {
+    return String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "minMax", true), "observations"));
+  }
+
   public static Object propertyMacro_GetPropertyValue_4989762282951694400(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "permutation", true), "alpha");
   }
@@ -122,11 +122,11 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "coxReg", true), "alpha");
   }
 
-  public static Object propertyMacro_GetPropertyValue_8241402136297963690(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_6380268605260340968(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "savedGenelist", false), "name");
   }
 
-  public static Object propertyMacro_GetPropertyValue_8241402136297982615(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_6380268605260365755(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "savedGenelist", false), "name") + " --gene-list-file " + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "savedGenelist", false), "file", true), "fileLocation");
   }
 
@@ -143,7 +143,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_2125124408386672505(final PropertyMacroContext _context) {
-    return String.valueOf(SPropertyOperations.getBoolean(_context.getNode(), "normalTarget"));
+    return String.valueOf(SPropertyOperations.getBoolean(_context.getNode(), "run"));
   }
 
   public static Object propertyMacro_GetPropertyValue_2125124408386691000(final PropertyMacroContext _context) {
@@ -180,7 +180,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "projectFolder") + "memo/memo.properties";
   }
 
-  public static Iterable<SNode> sourceNodesQuery_8241402136297909054(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_6380268605260307875(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "dataset", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (SLinkOperations.getTarget(it, "otherFiles", true) != null);

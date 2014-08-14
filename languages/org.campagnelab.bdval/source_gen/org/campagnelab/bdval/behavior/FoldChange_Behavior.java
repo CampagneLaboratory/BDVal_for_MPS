@@ -8,6 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class FoldChange_Behavior {
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "name", "foldchange");
+    SPropertyOperations.set(thisNode, "defs", "");
     SPropertyOperations.set(thisNode, "addoptions", "addoption required:phi:Ratio for fold-change\n");
     SPropertyOperations.set(thisNode, "sequenceCommand", " fold-change");
     SPropertyOperations.set(thisNode, "sequenceInfo", " --ratio %phi%");

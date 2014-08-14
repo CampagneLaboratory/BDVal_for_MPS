@@ -435,5 +435,11 @@
     </dependencies>
     <rename id="w348.8241402136294612858" type="REFERENCE" from="genelist" to="savedGenelist" />
   </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="71" />
+    </dependencies>
+    <rename id="w348.290469645460315642" type="PROPERTY" from="normalTarget" to="run" />
+  </StructureModification>
 </history>
 

@@ -136,11 +136,13 @@ public class Project_Behavior {
           prop.setProperty(datasetName.value + ".tasks-file", root + "/tasks/" + datasetName.value + ".tasks");
           prop.setProperty(datasetName.value + ".floor", floor.value);
           prop.setProperty(datasetName.value + ".array-parameters", arrayParam.value.substring(1));
-          if (SPropertyOperations.getBoolean(dataset, "normalTarget")) {
+          if (SPropertyOperations.getBoolean(dataset, "run")) {
             final Wrappers._T<String> nonTargetName = new Wrappers._T<String>();
+            // TODO: figure out test set 
+            final boolean testset = false;
             ListSequence.fromList(SLinkOperations.getTargets(thisNode, "dataset", true)).visitAll(new IVisitor<SNode>() {
               public void visit(SNode nonTarget) {
-                if (SPropertyOperations.getBoolean(nonTarget, "testSet")) {
+                if (testset) {
                   nonTargetName.value = datasetName.value + "." + SPropertyOperations.getString(nonTarget, "name").replaceAll("\\s", "").toLowerCase();
                   prop.setProperty(nonTargetName.value + ".test-samples", root + "/test-sets/" + DataSet_Behavior.call_getName_290469645480322571(nonTarget) + "-samples.txt");
                   prop.setProperty(nonTargetName.value + ".true-labels", root + "/cids/" + DataSet_Behavior.call_getName_290469645480322571(nonTarget) + ".cids");
@@ -172,7 +174,7 @@ public class Project_Behavior {
     String memoFolder = SPropertyOperations.getString(thisNode, "projectFolder") + "memo/";
     new File(memoFolder).mkdir();
     String fileName = memoFolder + "memo.properties";
-    int numModels = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "approach", true), "modelToGenerate", true)).count() * ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "approach", true), "featureSelectionInfo", true), "numberOfFeatures", true)).count() * SPropertyOperations.getInteger(SLinkOperations.getTarget(thisNode, "approach", true), "externalFolds") * SPropertyOperations.getInteger(SLinkOperations.getTarget(thisNode, "approach", true), "externalRepeats");
+    int numModels = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "approach", true), "modelToGenerate", true)).count() * ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "approach", true), "featureSelectionInfo", true), "numberOfFeatures", true)).count();
     final Wrappers._T<String> models = new Wrappers._T<String>("");
     ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "approach", true), "modelToGenerate", true)).visitAll(new IVisitor<SNode>() {
       public void visit(SNode modelToGenerate) {

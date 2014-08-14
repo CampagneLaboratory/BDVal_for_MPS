@@ -8,7 +8,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class MinMax_Behavior {
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "name", "minMax");
-    SPropertyOperations.set(thisNode, "addoptions", "addoption required:min-max-observations:Number of observations for min/max\n");
+    SPropertyOperations.set(thisNode, "defs", "");
+    SPropertyOperations.set(thisNode, "addoptions", "addoption required:min-max-observations:Number of observations for min/max");
     SPropertyOperations.set(thisNode, "sequenceCommand", " min-max");
     SPropertyOperations.set(thisNode, "sequenceInfo", " --min-max-observations %min-max-observations%");
     SPropertyOperations.set(thisNode, "sequenceNumFeatures", " --report-max-probes");

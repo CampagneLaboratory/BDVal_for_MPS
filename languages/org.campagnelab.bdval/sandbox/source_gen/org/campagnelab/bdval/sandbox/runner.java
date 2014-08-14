@@ -31,7 +31,7 @@ public class runner {
     if (reply == 1) {
       String memoFile;
       if (args.length == 0) {
-        memoFile = "/Users/vmb34/Desktop/8-12/test8/memo/memo.properties";
+        memoFile = "/Users/vmb34/Desktop/8-14/test1/memo/memo.properties";
       } else {
         memoFile = args[0];
       }
@@ -48,6 +48,9 @@ public class runner {
         String repeats = prop.getProperty("repeats");
         String header = prop.getProperty("project.header");
         input.close();
+
+        final int numFolds = Integer.parseInt(folds);
+        final int numRepeats = Integer.parseInt(repeats);
 
         final JLabel statusLabel = new JLabel();
         JLabel descriptionLabel = new JLabel("Tag Description: " + tag);
@@ -74,7 +77,7 @@ public class runner {
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
 
-        final String messageName = name + "-runMessages-" + String.format("%1$TF=%1$TR", new Timestamp(new Date().getTime())).replaceAll("-", "").replaceAll("=", "-").replaceAll(":", "") + ".txt";
+        final String messageName = name + "-evaluate-" + String.format("%1$TF=%1$TR", new Timestamp(new Date().getTime())).replaceAll("-", "").replaceAll("=", "-").replaceAll(":", "") + ".txt";
 
         final File messageFile = new File(folder + "memo/" + messageName);
         final PrintStream printStream = new PrintStream(messageFile);
@@ -86,17 +89,19 @@ public class runner {
             try {
               File buildFile = new File(folder + name + ".xml");
               p.setUserProperty("ant.file", buildFile.getAbsolutePath());
+
               DefaultLogger consoleLogger = new DefaultLogger();
               consoleLogger.setErrorPrintStream(System.err);
               consoleLogger.setOutputPrintStream(printStream);
               consoleLogger.setMessageOutputLevel(Project.MSG_INFO);
+
               p.addBuildListener(consoleLogger);
               p.fireBuildStarted();
               p.init();
               ProjectHelper helper = ProjectHelper.getProjectHelper();
               p.addReference("ant.projectHelper", helper);
               helper.parse(p, buildFile);
-              p.executeTarget(p.getDefaultTarget());
+              p.executeTarget("evaluate");
               p.fireBuildFinished(null);
             } catch (Exception e) {
               p.fireBuildFinished(e);
@@ -111,6 +116,8 @@ public class runner {
         Thread monitorProgress = new Thread() {
           public void run() {
             int counter = 0;
+            int sections = numModels * numFolds * numRepeats;
+            int modelCounter = 0;
             String line;
             boolean stop = false;
             boolean success = true;
@@ -123,12 +130,17 @@ public class runner {
                 if (line == null) {
                   Thread.sleep(1000);
                 } else {
-                  if (line.contains("execute-splits ->") || line.contains("Item:-m predict")) {
+                  if (line.contains("execute-splits ->") && counter == 0) {
                     counter++;
-                    progressBar.setValue(((counter * 100) / (numModels + 1)) - 1);
-                    if (counter <= numModels) {
-                      statusLabel.setText("Processing " + counter + " of " + (numModels));
-                    }
+                    progressBar.setValue(((counter * 100) / (sections + 1)) - 1);
+                    modelCounter++;
+                    statusLabel.setText("Processing " + modelCounter + " of " + (numModels));
+                  } else if (line.contains("Item:-m predict")) {
+                    counter++;
+                    progressBar.setValue(((counter * 100) / (sections + 1)) - 1);
+                  } else if (line.contains("execute-splits ->")) {
+                    modelCounter++;
+                    statusLabel.setText("Processing " + modelCounter + " of " + (numModels));
                   } else if (line.contains("CAUGHT FAILED BUILD")) {
                     stop = true;
                     success = false;

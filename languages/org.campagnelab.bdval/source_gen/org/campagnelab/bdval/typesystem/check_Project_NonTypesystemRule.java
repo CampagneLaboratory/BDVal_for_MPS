@@ -26,7 +26,7 @@ public class check_Project_NonTypesystemRule extends AbstractNonTypesystemRule_R
     final Wrappers._boolean normalTarget = new Wrappers._boolean(false);
     ListSequence.fromList(SLinkOperations.getTargets(project, "dataset", true)).visitAll(new IVisitor<SNode>() {
       public void visit(SNode dataset) {
-        normalTarget.value = normalTarget.value || SPropertyOperations.getBoolean(dataset, "normalTarget");
+        normalTarget.value = normalTarget.value || SPropertyOperations.getBoolean(dataset, "run");
       }
     });
     if (ListSequence.fromList(SLinkOperations.getTargets(project, "dataset", true)).isNotEmpty() && !(normalTarget.value)) {
