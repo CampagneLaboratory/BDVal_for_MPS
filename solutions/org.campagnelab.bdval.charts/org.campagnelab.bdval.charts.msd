@@ -7,7 +7,6 @@
   </models>
   <sourcePath />
   <dependencies>
-    <dependency reexport="false">93c79ecc-0b8c-4e6d-8503-7665491f0ed4(org.campagnelab.bdval.sandbox)</dependency>
     <dependency reexport="false">5ec1cd3d-0a50-4049-a8fa-ae768d7baa25(org.campagnelab.mps.XChart)</dependency>
   </dependencies>
   <usedLanguages>
