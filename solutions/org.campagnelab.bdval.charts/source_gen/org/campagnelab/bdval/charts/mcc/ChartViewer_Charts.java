@@ -23,7 +23,7 @@ public class ChartViewer_Charts {
       {
         // Histogram BarChart 
 
-        chart = new ChartBuilder().chartType(StyleManager.ChartType.Bar).width(400).height(400).theme(StyleManager.ChartTheme.GGPlot2).title("Cross Validation AUC").xAxisTitle("AUC").yAxisTitle(" ").build();
+        chart = new ChartBuilder().chartType(StyleManager.ChartType.Bar).width(350).height(250).theme(StyleManager.ChartTheme.GGPlot2).title("Cross Validation AUC").xAxisTitle("AUC").yAxisTitle(" ").build();
         chart.getStyleManager().setLegendVisible(false);
         chart.getStyleManager().setLegendPosition(StyleManager.LegendPosition.InsideN);
         ArrayList<Double> x = new ArrayList<Double>();
@@ -48,7 +48,7 @@ public class ChartViewer_Charts {
       {
         // Histogram BarChart 
 
-        chart = new ChartBuilder().chartType(StyleManager.ChartType.Bar).width(400).height(400).theme(StyleManager.ChartTheme.GGPlot2).title("Cross Validation MCC").xAxisTitle("MCC").yAxisTitle(" ").build();
+        chart = new ChartBuilder().chartType(StyleManager.ChartType.Bar).width(350).height(250).theme(StyleManager.ChartTheme.GGPlot2).title("Cross Validation MCC").xAxisTitle("MCC").yAxisTitle(" ").build();
         chart.getStyleManager().setLegendVisible(false);
         chart.getStyleManager().setLegendPosition(StyleManager.LegendPosition.InsideN);
         ArrayList<Double> x = new ArrayList<Double>();

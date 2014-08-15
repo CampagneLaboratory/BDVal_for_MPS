@@ -25,6 +25,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
@@ -219,19 +220,23 @@ public class Approach_Editor extends DefaultNodeEditor {
         });
         final int foldNum = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "featureSelectionInfo", true), "featureSelectionFold", true)).count();
         final Wrappers._int featureSelectionNum = new Wrappers._int(0);
-        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "featureSelectionInfo", true), "featureSelectionCombo", true)).visitAll(new IVisitor<SNode>() {
-          public void visit(SNode featureSelectionCombo) {
-            if (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(featureSelectionCombo, "featureSelection1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(featureSelectionCombo, "featureSelection1", true), "name").matches("wholeChip")) {
-              featureSelectionNum.value++;
-            } else if (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(featureSelectionCombo, "featureSelection1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(featureSelectionCombo, "featureSelection1", true), "name").matches("genelist")) {
-              // Edit this! 
-              featureSelectionNum.value = featureSelectionNum.value + foldNum;
-            } else {
-              featureSelectionNum.value = featureSelectionNum.value + foldNum;
+        ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(node, "org.campagnelab.bdval.structure.Project", false, false), "dataset", true)).visitAll(new IVisitor<SNode>() {
+          public void visit(final SNode dataset) {
+            if (SPropertyOperations.getBoolean(dataset, "run")) {
+              ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "featureSelectionInfo", true), "featureSelectionCombo", true)).visitAll(new IVisitor<SNode>() {
+                public void visit(SNode featureSelectionCombo) {
+                  if (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(featureSelectionCombo, "featureSelection1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(featureSelectionCombo, "featureSelection1", true), "name").matches("wholeChip")) {
+                    featureSelectionNum.value++;
+                  } else if (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(featureSelectionCombo, "featureSelection1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(featureSelectionCombo, "featureSelection1", true), "name").matches("genelist")) {
+                    featureSelectionNum.value = featureSelectionNum.value + (SLinkOperations.getTargets(SLinkOperations.getTarget(dataset, "otherFiles", true), "genelistFiles", true).size() * foldNum);
+                  } else {
+                    featureSelectionNum.value = featureSelectionNum.value + foldNum;
+                  }
+                }
+              });
             }
           }
         });
-
         return String.valueOf(featureSelectionNum.value * classificationsNum.value * ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "featureSelectionInfo", true), "numberOfFeatures", true)).count());
       }
 

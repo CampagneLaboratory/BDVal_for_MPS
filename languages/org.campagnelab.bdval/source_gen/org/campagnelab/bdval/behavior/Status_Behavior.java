@@ -7,8 +7,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.io.File;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.apache.commons.io.filefilter.IOFileFilter;
+import org.apache.commons.io.filefilter.SuffixFileFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.filefilter.TrueFileFilter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.io.FileFilter;
 
@@ -21,13 +24,13 @@ public class Status_Behavior {
     SNode result;
     SNode project = SNodeOperations.getAncestor(thisNode, "org.campagnelab.bdval.structure.Project", false, false);
     File[] files = Status_Behavior.call_getResultFolders_6380268605234707429(thisNode, SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(project, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(project, "name") + "/" + SPropertyOperations.getString(SLinkOperations.getTarget(project, "properties", true), "directoryName"));
+    IOFileFilter predictionsFileFilter = new SuffixFileFilter("-prediction-table.txt");
 
-    String[] zip = {"zip"};
     if (files != null && files.length > 0) {
       for (File file : files) {
         result = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.Result", null);
         SPropertyOperations.set(result, "name", file.getName());
-        SPropertyOperations.set(result, "numberModels", "" + (FileUtils.listFiles(new File(file.getAbsolutePath() + "/models/"), zip, true).size()));
+        SPropertyOperations.set(result, "numberModels", "" + (FileUtils.listFiles(new File(file.getAbsolutePath() + "/predictions/"), predictionsFileFilter, TrueFileFilter.INSTANCE).size()));
         Result_Behavior.call_readMaqciiFile_6380268605206873743(result, Result_Behavior.call_getMaqciiFile_6380268605234804481(result, file));
         ListSequence.fromList(SLinkOperations.getTargets(thisNode, "result", true)).addElement(result);
       }

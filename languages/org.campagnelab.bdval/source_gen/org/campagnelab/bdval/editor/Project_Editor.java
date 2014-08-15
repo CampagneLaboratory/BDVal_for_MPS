@@ -189,7 +189,7 @@ public class Project_Editor extends DefaultNodeEditor {
         }
       }
     };
-    return Button.createButton("Update", editorContext, node, callback);
+    return Button.createButton("Refresh", editorContext, node, callback);
 
   }
 

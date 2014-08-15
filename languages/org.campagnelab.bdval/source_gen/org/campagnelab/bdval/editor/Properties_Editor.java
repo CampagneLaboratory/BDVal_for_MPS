@@ -41,7 +41,7 @@ public class Properties_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_vvo4cc_m0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_vvo4cc_n0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_vvo4cc_o0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_vvo4cc_p0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_vvo4cc_p0(editorContext, node));
     return editorCell;
   }
 
@@ -256,7 +256,17 @@ public class Properties_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_vvo4cc_p0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_vvo4cc_p0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createFlow(editorContext, node);
+    editorCell.setCellId("Collection_vvo4cc_p0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createProperty_vvo4cc_a51a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createProperty_vvo4cc_a51a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("tagDescription");
     provider.setNoTargetText("enter description");

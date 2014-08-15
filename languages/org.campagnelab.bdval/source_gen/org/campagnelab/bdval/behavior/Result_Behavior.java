@@ -42,7 +42,6 @@ public class Result_Behavior {
       try {
         FileReader reader = new FileReader(new File(file));
         BufferedReader fileReader = new BufferedReader(reader);
-        fileReader.readLine();
         SLinkOperations.setTarget(thisNode, "MCC", SConceptOperations.createNewNode("org.campagnelab.bdval.structure.FloatRange", null), true);
         SLinkOperations.setTarget(thisNode, "accuracy", SConceptOperations.createNewNode("org.campagnelab.bdval.structure.FloatRange", null), true);
         SLinkOperations.setTarget(thisNode, "sensitivity", SConceptOperations.createNewNode("org.campagnelab.bdval.structure.FloatRange", null), true);
@@ -50,6 +49,7 @@ public class Result_Behavior {
         SLinkOperations.setTarget(thisNode, "AUC", SConceptOperations.createNewNode("org.campagnelab.bdval.structure.FloatRange", null), true);
         SLinkOperations.setTarget(thisNode, "RMSE", SConceptOperations.createNewNode("org.campagnelab.bdval.structure.FloatRange", null), true);
         String line;
+        fileReader.readLine();
         Object[] lineArray;
         while ((line = fileReader.readLine()) != null) {
           lineArray = line.split("\t");
@@ -67,12 +67,9 @@ public class Result_Behavior {
         SLinkOperations.setTarget(thisNode, "AUC", Result_Behavior.call_checkNaN_6380268605264471520(thisNode, SLinkOperations.getTarget(thisNode, "AUC", true)), true);
         SLinkOperations.setTarget(thisNode, "RMSE", Result_Behavior.call_checkNaN_6380268605264471520(thisNode, SLinkOperations.getTarget(thisNode, "RMSE", true)), true);
         SPropertyOperations.set(thisNode, "maqciiFile", file);
-        SPropertyOperations.set(thisNode, "noMaqcii", "" + (false));
       } catch (Exception e) {
-        SPropertyOperations.set(thisNode, "noMaqcii", "" + (true));
+        throw new Error("Error reading Maqcii File");
       }
-    } else {
-      SPropertyOperations.set(thisNode, "noMaqcii", "" + (true));
     }
   }
 

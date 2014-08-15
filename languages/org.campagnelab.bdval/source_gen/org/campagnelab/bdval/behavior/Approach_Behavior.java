@@ -46,14 +46,15 @@ public class Approach_Behavior {
     final Wrappers._T<String> addoptions = new Wrappers._T<String>();
     final Wrappers._T<String> defs = new Wrappers._T<String>("");
 
+    final Wrappers._int fsFoldNum = new Wrappers._int(0);
 
     ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "featureSelectionInfo", true), "featureSelectionFold", true)).visitAll(new IVisitor<SNode>() {
       public void visit(final SNode featureSelectionFold) {
+        fsFoldNum.value++;
         ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "classificationInfo", true), "classification", true)).visitAll(new IVisitor<SNode>() {
           public void visit(final SNode classification) {
             ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "featureSelectionInfo", true), "featureSelectionCombo", true)).visitAll(new IVisitor<SNode>() {
               public void visit(SNode featureCombo) {
-
                 twoFS.value = (SLinkOperations.getTarget(featureCombo, "featureSelection2", true) != null);
 
                 // Updates based on first feature selection strategy 
@@ -93,71 +94,74 @@ public class Approach_Behavior {
 
                 approachMethod.value = approachMethod.value + "-" + SPropertyOperations.getString(classification, "name") + "-fs=" + String.valueOf(SPropertyOperations.getBoolean(featureSelectionFold, "value"));
 
-                // Creates modelToGenerate node(s) 
-                if (genelist.value) {
-                  ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.Project"), "dataset", true)).where(new IWhereFilter<SNode>() {
-                    public boolean accept(SNode it) {
-                      return (SLinkOperations.getTarget(it, "otherFiles", true) != null);
-                    }
-                  }).select(new ISelector<SNode, SNode>() {
-                    public SNode select(SNode it) {
-                      return SLinkOperations.getTarget(it, "otherFiles", true);
-                    }
-                  }).translate(new ITranslator2<SNode, SNode>() {
-                    public Iterable<SNode> translate(SNode it) {
-                      return SLinkOperations.getTargets(it, "genelistFiles", true);
-                    }
-                  }).visitAll(new IVisitor<SNode>() {
-                    public void visit(final SNode genelistNode) {
-                      genelistDef.value = "-%which-gene-list%";
-                      if (SPropertyOperations.getString(classification, "name").matches("SVMTuneC")) {
-                        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "classificationInfo", true), "classificationProperties", true), "svmTuneCProperties", true), "cValue", true)).visitAll(new IVisitor<SNode>() {
-                          public void visit(SNode cValue) {
-                            Approach_Behavior.call_generateModel_8241402136296602911(thisNode, approachMethod.value, SPropertyOperations.getString(cValue, "value"), SPropertyOperations.getBoolean(featureSelectionFold, "value"), SPropertyOperations.getString(classification, "classname"), SPropertyOperations.getString(classification, "parameters"), otherOptions.value + SPropertyOperations.getString(classification, "otherOption") + " --which-gene-list ${" + SPropertyOperations.getString(SLinkOperations.getTarget(genelistNode, "savedGenelist", false), "name") + "}");
-                          }
-                        });
-                      } else {
-                        Approach_Behavior.call_generateModel_8241402136296602911(thisNode, approachMethod.value, "", SPropertyOperations.getBoolean(featureSelectionFold, "value"), SPropertyOperations.getString(classification, "classname"), SPropertyOperations.getString(classification, "parameters"), otherOptions.value + SPropertyOperations.getString(classification, "otherOption") + " --which-gene-list ${" + SPropertyOperations.getString(SLinkOperations.getTarget(genelistNode, "savedGenelist", false), "name") + "}");
+                // Executes as long as not whole chip and on second feature selection fold 
+                if (!(wholeChip.value && fsFoldNum.value > 1)) {
+                  // Creates modelToGenerate node(s) 
+                  if (genelist.value) {
+                    ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "org.campagnelab.bdval.structure.Project"), "dataset", true)).where(new IWhereFilter<SNode>() {
+                      public boolean accept(SNode it) {
+                        return (SLinkOperations.getTarget(it, "otherFiles", true) != null);
                       }
-                    }
-                  });
-                } else {
-                  if (SPropertyOperations.getString(classification, "name").matches("SVMTuneC")) {
-                    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "classificationInfo", true), "classificationProperties", true), "svmTuneCProperties", true), "cValue", true)).visitAll(new IVisitor<SNode>() {
-                      public void visit(SNode cValue) {
-                        Approach_Behavior.call_generateModel_8241402136296602911(thisNode, approachMethod.value, SPropertyOperations.getString(cValue, "value"), SPropertyOperations.getBoolean(featureSelectionFold, "value"), SPropertyOperations.getString(classification, "classname"), SPropertyOperations.getString(classification, "parameters"), otherOptions.value + SPropertyOperations.getString(classification, "otherOption"));
+                    }).select(new ISelector<SNode, SNode>() {
+                      public SNode select(SNode it) {
+                        return SLinkOperations.getTarget(it, "otherFiles", true);
+                      }
+                    }).translate(new ITranslator2<SNode, SNode>() {
+                      public Iterable<SNode> translate(SNode it) {
+                        return SLinkOperations.getTargets(it, "genelistFiles", true);
+                      }
+                    }).visitAll(new IVisitor<SNode>() {
+                      public void visit(final SNode genelistNode) {
+                        genelistDef.value = "-%which-gene-list%";
+                        if (SPropertyOperations.getString(classification, "name").matches("SVMTuneC")) {
+                          ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "classificationInfo", true), "classificationProperties", true), "svmTuneCProperties", true), "cValue", true)).visitAll(new IVisitor<SNode>() {
+                            public void visit(SNode cValue) {
+                              Approach_Behavior.call_generateModel_8241402136296602911(thisNode, approachMethod.value, SPropertyOperations.getString(cValue, "value"), SPropertyOperations.getBoolean(featureSelectionFold, "value"), SPropertyOperations.getString(classification, "classname"), SPropertyOperations.getString(classification, "parameters"), otherOptions.value + SPropertyOperations.getString(classification, "otherOption") + " --which-gene-list ${" + SPropertyOperations.getString(SLinkOperations.getTarget(genelistNode, "savedGenelist", false), "name") + "}");
+                            }
+                          });
+                        } else {
+                          Approach_Behavior.call_generateModel_8241402136296602911(thisNode, approachMethod.value, "", SPropertyOperations.getBoolean(featureSelectionFold, "value"), SPropertyOperations.getString(classification, "classname"), SPropertyOperations.getString(classification, "parameters"), otherOptions.value + SPropertyOperations.getString(classification, "otherOption") + " --which-gene-list ${" + SPropertyOperations.getString(SLinkOperations.getTarget(genelistNode, "savedGenelist", false), "name") + "}");
+                        }
                       }
                     });
                   } else {
-                    Approach_Behavior.call_generateModel_8241402136296602911(thisNode, approachMethod.value, "", SPropertyOperations.getBoolean(featureSelectionFold, "value"), SPropertyOperations.getString(classification, "classname"), SPropertyOperations.getString(classification, "parameters"), otherOptions.value + SPropertyOperations.getString(classification, "otherOption"));
+                    if (SPropertyOperations.getString(classification, "name").matches("SVMTuneC")) {
+                      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "classificationInfo", true), "classificationProperties", true), "svmTuneCProperties", true), "cValue", true)).visitAll(new IVisitor<SNode>() {
+                        public void visit(SNode cValue) {
+                          Approach_Behavior.call_generateModel_8241402136296602911(thisNode, approachMethod.value, SPropertyOperations.getString(cValue, "value"), SPropertyOperations.getBoolean(featureSelectionFold, "value"), SPropertyOperations.getString(classification, "classname"), SPropertyOperations.getString(classification, "parameters"), otherOptions.value + SPropertyOperations.getString(classification, "otherOption"));
+                        }
+                      });
+                    } else {
+                      Approach_Behavior.call_generateModel_8241402136296602911(thisNode, approachMethod.value, "", SPropertyOperations.getBoolean(featureSelectionFold, "value"), SPropertyOperations.getString(classification, "classname"), SPropertyOperations.getString(classification, "parameters"), otherOptions.value + SPropertyOperations.getString(classification, "otherOption"));
+                    }
                   }
-                }
 
-                // Writes sequence file 
-                try {
-                  String sequenceFileName = sequenceFolder + "generated-" + approachMethod.value + ".sequence";
-                  FileWriter file = new FileWriter(sequenceFileName);
-                  PrintWriter writer = new PrintWriter(file);
-                  writer.print("def label=" + approachMethod.value + "-%model-id%\n");
-                  writer.print("def predictions-filename=%dataset-name%-%label%-prediction-table.txt\n");
-                  writer.print("def survivial=%survival%\n");
-                  writer.print(defs.value);
-                  writer.print("#\n");
-                  writer.print("addoption required:other-options:Other DAVMode options can be provided here\n");
-                  writer.print("addoption required:split-id:id of split being processed\n");
-                  writer.print("addoption required:num-features:Number of features in the generated model\n");
-                  writer.print(addoptions.value);
-                  writer.print(SPropertyOperations.getString(classification, "addoption"));
-                  writer.print("#\n");
-                  writer.print("#\n");
-                  writer.print(fsLine.value);
-                  writer.print(Approach_Behavior.call_getModelLine_1870354875254016704(thisNode, wholeChip.value, geneticAlgorithm.value, (genelist.value && !(twoFS.value)), SPropertyOperations.getString(classification, "name")));
-                  writer.print(Approach_Behavior.call_getPredictLine_1870354875254442471(thisNode, SPropertyOperations.getString(classification, "name")));
-                  writer.close();
-                  file.close();
-                } catch (Exception e) {
-                  if (LOG.isEnabledFor(Level.ERROR)) {
-                    LOG.error("Error printing sequence files", e);
+                  // Writes sequence file 
+                  try {
+                    String sequenceFileName = sequenceFolder + "generated-" + approachMethod.value + ".sequence";
+                    FileWriter file = new FileWriter(sequenceFileName);
+                    PrintWriter writer = new PrintWriter(file);
+                    writer.print("def label=" + approachMethod.value + genelistDef.value + "-%model-id%\n");
+                    writer.print("def predictions-filename=%dataset-name%-%label%-prediction-table.txt\n");
+                    writer.print("def survivial=%survival%\n");
+                    writer.print(defs.value);
+                    writer.print("#\n");
+                    writer.print("addoption required:other-options:Other DAVMode options can be provided here\n");
+                    writer.print("addoption required:split-id:id of split being processed\n");
+                    writer.print("addoption required:num-features:Number of features in the generated model\n");
+                    writer.print(addoptions.value);
+                    writer.print(SPropertyOperations.getString(classification, "addoption"));
+                    writer.print("#\n");
+                    writer.print("#\n");
+                    writer.print(fsLine.value);
+                    writer.print(Approach_Behavior.call_getModelLine_1870354875254016704(thisNode, wholeChip.value, geneticAlgorithm.value, (genelist.value && !(twoFS.value)), SPropertyOperations.getString(classification, "name")));
+                    writer.print(Approach_Behavior.call_getPredictLine_1870354875254442471(thisNode, SPropertyOperations.getString(classification, "name")));
+                    writer.close();
+                    file.close();
+                  } catch (Exception e) {
+                    if (LOG.isEnabledFor(Level.ERROR)) {
+                      LOG.error("Error printing sequence files", e);
+                    }
                   }
                 }
               }

@@ -713,42 +713,20 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="org.campagnelab.bdval.behavior.Project_Behavior" file="Project_Behavior.java">
-    <classNode dependClassName="java.awt.BorderLayout" />
-    <classNode dependClassName="java.io.BufferedReader" />
     <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="java.io.FileInputStream" />
     <classNode dependClassName="java.io.FileOutputStream" />
-    <classNode dependClassName="java.io.FileReader" />
-    <classNode dependClassName="java.io.InputStream" />
     <classNode dependClassName="java.io.OutputStream" />
-    <classNode dependClassName="java.io.PrintStream" />
     <classNode dependClassName="java.lang.Error" />
     <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Integer" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.System" />
-    <classNode dependClassName="java.lang.Thread" />
-    <classNode dependClassName="java.sql.Timestamp" />
-    <classNode dependClassName="java.util.Date" />
     <classNode dependClassName="java.util.Properties" />
-    <classNode dependClassName="javax.swing.BorderFactory" />
-    <classNode dependClassName="javax.swing.JFrame" />
-    <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="javax.swing.JOptionPane" />
-    <classNode dependClassName="javax.swing.JPanel" />
-    <classNode dependClassName="javax.swing.JProgressBar" />
-    <classNode dependClassName="javax.swing.JScrollPane" />
-    <classNode dependClassName="javax.swing.JTextArea" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="org.apache.commons.io.FileUtils" />
-    <classNode dependClassName="org.apache.tools.ant.DefaultLogger" />
-    <classNode dependClassName="org.apache.tools.ant.Project" />
-    <classNode dependClassName="org.apache.tools.ant.ProjectHelper" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.Approach_Behavior" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.DataSet_Behavior" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -970,6 +948,9 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="org.apache.commons.io.FileUtils" />
+    <classNode dependClassName="org.apache.commons.io.filefilter.IOFileFilter" />
+    <classNode dependClassName="org.apache.commons.io.filefilter.SuffixFileFilter" />
+    <classNode dependClassName="org.apache.commons.io.filefilter.TrueFileFilter" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.Result_Behavior" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>

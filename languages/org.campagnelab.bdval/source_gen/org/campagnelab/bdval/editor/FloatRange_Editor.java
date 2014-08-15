@@ -7,6 +7,10 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.editor.runtime.style.TableComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -19,9 +23,12 @@ public class FloatRange_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createCollection_fiulqt_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_fiulqt_a");
     editorCell.setBig(true);
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.TABLE_COMPONENT, TableComponent.HORIZONTAL_COLLECTION);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_fiulqt_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_fiulqt_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_fiulqt_c0(editorContext, node));
