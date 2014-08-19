@@ -307,6 +307,7 @@ public class FeatureSelectionInfo_Editor extends DefaultNodeEditor {
       editorCell.setRole("featureSelectionProperties");
     }
     Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

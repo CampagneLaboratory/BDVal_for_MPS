@@ -1,18 +1,18 @@
-<project name="8-15" default="evaluate" basedir=".">
+<project name="8-19" default="evaluate" basedir=".">
   <!--Set up-->
-  <dirname property="bdval-project.basedir" file="${ant.file.8-15}"></dirname>
-  <property name="bdval-dir" value="/Users/vmb34/Desktop/bdval"></property>
+  <dirname property="bdval-project.basedir" file="${ant.file.8-19}"></dirname>
+  <property name="bdval-dir" value="C:/Users/Victoria/Desktop/my_bdval"></property>
   <import file="${bdval-dir}/buildsupport/build.xml"></import>
   <property file="${bdval-project.basedir}/${ant.project.name}-local.properties"></property>
   <property name="project-property-file" value="${bdval-project.basedir}/${ant.project.name}.properties"></property>
   <property file="${project-property-file}"></property>
-  <property name="tag-description" value="testing minmax"></property>
+  <property name="tag-description" value="testing whether it works on my computer"></property>
   
   <!--Basic Properties-->
   <property name="enable-flooring" value="true"></property>
   <property name="evaluate-statistics-after-splits" value="false"></property>
   <property name="external-CV-repeats" value="1"></property>
-  <property name="external-CV-folds" value="5"></property>
+  <property name="external-CV-folds" value="3"></property>
   <property name="num-features" value="20"></property>
   <property name="max-intermediate-features" value="400"></property>
   
@@ -26,14 +26,11 @@
   <property name="internal-CV-folds" value="0"></property>
   <property name="ga-ratio" value=""></property>
   <property name="minMax-observations" value="3"></property>
-  <property name="perm-alpha" value="0.05"></property>
+  <property name="perm-alpha" value=""></property>
   <property name="fold-change-phi" value=""></property>
-  <property name="kendallTau-ratio" value="0.25"></property>
+  <property name="kendallTau-ratio" value=""></property>
   <property name="coxreg-alpha" value=""></property>
   
-  <property name="GDS1070-ensembl-genbank-refseq" value="GDS1070-ensembl-genbank-refseq --gene-list-file /Users/vmb34/Desktop/bdval/data/gene-lists/GDS1070-ensembl-genbank-refseq"></property>
-  <property name="GDS183-28-genes-ensembl-genbank-refseq" value="GDS183-28-genes-ensembl-genbank-refseq --gene-list-file /Users/vmb34/Desktop/bdval/data/gene-lists/GDS183-28-genes-ensembl-genbank-refseq"></property>
-  <property name="Merged-ensembl-genbank-refseq" value="Merged-ensembl-genbank-refseq --gene-list-file /Users/vmb34/Desktop/bdval/data/gene-lists/Merged-ensembl-genbank-refseq"></property>
   <property name="pathway-aggregation-method" value=""></property>
   
   <!--Classification Properties-->
@@ -41,8 +38,8 @@
   
   <!--Additional Properties-->
   <property name="run-java" value="true"></property>
-  <var name="do.8-15_DiseasedYesNo_Test" value="true"></var>
-  <property name="all-endpoints" value=" 8-15_DiseasedYesNo_Test"></property>
+  <var name="do.8-19_DiseasedNoYes_Test" value="true"></var>
+  <property name="all-endpoints" value=" 8-19_DiseasedNoYes_Test"></property>
   <import file="${bdval-dir}/data/bdval.xml"></import>
   
   
