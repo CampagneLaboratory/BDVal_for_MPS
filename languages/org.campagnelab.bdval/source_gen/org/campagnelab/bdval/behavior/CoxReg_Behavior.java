@@ -15,4 +15,8 @@ public class CoxReg_Behavior {
     SPropertyOperations.set(thisNode, "sequenceNumFeatures", " --report-max-probes");
     SPropertyOperations.set(thisNode, "otherOptions", " --alpha ${coxreg-alpha}");
   }
+
+  public static String virtual_getCommand_1277192072314969653(SNode thisNode, boolean first, boolean twoFS, boolean genelist, String splitType) {
+    return "TODO";
+  }
 }

@@ -28,7 +28,7 @@ public class runner {
   public static void main(String[] args) {
     String memoFile;
     if (args.length == 0) {
-      memoFile = "C:/Users/Victoria/Desktop/8-19/test4/memo/memo.properties";
+      memoFile = "C:/Users/Victoria/Desktop/8-19/test19/memo/memo.properties";
     } else {
       memoFile = args[0];
     }
@@ -135,7 +135,6 @@ public class runner {
                 } else if (line.contains("Item:-m predict")) {
                   counter++;
                   progressBar.setValue(((counter * 100) / (sections + 1)) - 1);
-                  statusLabel.setText("Counter: " + counter + ", Sections: " + sections);
                 } else if (line.contains("execute-splits ->")) {
                   modelCounter++;
                   statusLabel.setText("Processing " + modelCounter + " of " + numModels);

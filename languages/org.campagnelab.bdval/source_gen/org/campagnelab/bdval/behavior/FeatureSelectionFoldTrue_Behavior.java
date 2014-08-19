@@ -9,5 +9,8 @@ public class FeatureSelectionFoldTrue_Behavior {
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "name", "use-feature-selection-fold=true");
     SPropertyOperations.set(thisNode, "value", "" + (true));
+
+    SPropertyOperations.set(thisNode, "splitType1", " feature-selection");
+    SPropertyOperations.set(thisNode, "splitType2", " training");
   }
 }

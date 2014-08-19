@@ -15,4 +15,8 @@ public class Genelist_Behavior {
     SPropertyOperations.set(thisNode, "sequenceNumFeatures", "");
     SPropertyOperations.set(thisNode, "otherOptions", "");
   }
+
+  public static String virtual_getCommand_1277192072314969653(SNode thisNode, boolean first, boolean twoFS, boolean genelist, String splitType) {
+    return "";
+  }
 }

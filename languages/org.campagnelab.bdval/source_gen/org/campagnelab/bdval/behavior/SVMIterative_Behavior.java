@@ -15,4 +15,21 @@ public class SVMIterative_Behavior {
     SPropertyOperations.set(thisNode, "sequenceNumFeatures", " --num-features");
     SPropertyOperations.set(thisNode, "otherOptions", " --ratio ${svmIterative-r}");
   }
+
+  public static String virtual_getCommand_1277192072314969653(SNode thisNode, boolean first, boolean twoFS, boolean genelist, String splitType) {
+    String command = "-m svm-weights-iterative --overwrite-output true --output-gene-list --gene-features-dir %gene-features-dir%" + " -r %ratio% %other-options%";
+    if (first && twoFS) {
+      command = command + " -o %dataset-name%-%split-id%-%label%-intermediate-features.txt --num-features %max-intermediate-features%";
+    } else {
+      command = command + " -o %dataset-name%-%split-id%-%label%-features.txt --num-features %num-features%";
+    }
+    if (genelist) {
+      command = command + " --gene-list %gene-list-file%";
+    } else if (!(first) && twoFS) {
+      command = command + " --gene-list %label%|%dataset-name%-%split-id%-%label%-intermediate-features.txt";
+    } else {
+      command = command + " --gene-list full";
+    }
+    return command + " --split-type" + splitType + "\n";
+  }
 }

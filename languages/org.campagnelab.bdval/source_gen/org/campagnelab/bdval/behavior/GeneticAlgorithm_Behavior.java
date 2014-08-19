@@ -15,4 +15,21 @@ public class GeneticAlgorithm_Behavior {
     SPropertyOperations.set(thisNode, "sequenceNumFeatures", " --num-features");
     SPropertyOperations.set(thisNode, "otherOptions", " --ratio ${ga-ratio} --number-of-steps ${ga-wrapper-number-of-iterations} --cv-repeats ${internal-CV-repeats}" + " --population-size ${ga-wrapper-population-size} --folds ${internal-CV-folds}" + " --maximize ${performance-measure-maximized-by-GA}");
   }
+
+  public static String virtual_getCommand_1277192072314969653(SNode thisNode, boolean first, boolean twoFS, boolean genelist, String splitType) {
+    String command = "-m ga-wrapper --overwrite-output true --output-gene-list --gene-features-dir %gene-features-dir%" + " --optimal-parameters-out %dataset-name%-%split-id%-%label%-optimal-parameters.txt" + " --population-size %population-size%" + " --number-of-steps %number-of-steps%" + " --folds %folds%" + " --cv-repeats %cv-repeats%" + " --maximize %maximize%" + " --ratio %ratio%" + " %other-options%";
+    if (first && twoFS) {
+      command = command + " -o %dataset-name%-%split-id%-%label%-intermediate-features.txt --num-features %max-intermediate-features%";
+    } else {
+      command = command + " -o %dataset-name%-%split-id%-%label%-features.txt --num-features %num-features%";
+    }
+    if (genelist) {
+      command = command + " --gene-list %gene-list-file%";
+    } else if (!(first) && twoFS) {
+      command = command + " --gene-list %label%|%dataset-name%-%split-id%-%label%-intermediate-features.txt";
+    } else {
+      command = command + " --gene-list full";
+    }
+    return command + " --split-type" + splitType + "\n";
+  }
 }

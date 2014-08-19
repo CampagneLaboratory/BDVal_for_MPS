@@ -10,6 +10,10 @@ public class FoldChange_BehaviorDescriptor extends BaseConcept_BehaviorDescripto
   public FoldChange_BehaviorDescriptor() {
   }
 
+  public String virtual_getCommand_1277192072314969653(SNode thisNode, boolean first, boolean twoFS, boolean genelist, String splitType) {
+    return FoldChange_Behavior.virtual_getCommand_1277192072314969653(thisNode, first, twoFS, genelist, splitType);
+  }
+
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }

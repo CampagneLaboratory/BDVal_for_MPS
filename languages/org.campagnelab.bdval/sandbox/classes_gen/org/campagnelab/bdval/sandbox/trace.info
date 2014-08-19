@@ -2,7 +2,7 @@
 <debugInfo>
   <root nodeRef="r:b2ac1451-2431-4f4c-8992-b8345f1cb6dc(org.campagnelab.bdval.sandbox)/5230008558208117400">
     <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="28" startPosition="42" endLine="29" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="30" startPosition="27" endLine="31" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="30" startPosition="27" endLine="31" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="32" startPosition="12" endLine="33" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="35" startPosition="9" endLine="36" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="36" startPosition="41" endLine="37" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -91,72 +91,71 @@
     <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="133" startPosition="33" endLine="134" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="135" startPosition="62" endLine="136" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="136" startPosition="28" endLine="137" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="137" startPosition="79" endLine="138" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="139" startPosition="64" endLine="140" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="140" startPosition="33" endLine="141" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="142" startPosition="66" endLine="143" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="143" startPosition="30" endLine="144" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="145" startPosition="24" endLine="146" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="150" startPosition="26" endLine="151" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="152" startPosition="20" endLine="153" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="154" startPosition="13" endLine="155" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="156" startPosition="33" endLine="157" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="160" startPosition="8" endLine="161" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="162" startPosition="27" endLine="163" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="138" startPosition="64" endLine="139" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="139" startPosition="33" endLine="140" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="141" startPosition="66" endLine="142" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="142" startPosition="30" endLine="143" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="144" startPosition="24" endLine="145" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="149" startPosition="26" endLine="150" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="151" startPosition="20" endLine="152" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="153" startPosition="13" endLine="154" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="155" startPosition="33" endLine="156" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="159" startPosition="8" endLine="160" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="161" startPosition="27" endLine="162" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="32" startPosition="10" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="145" startPosition="22" endLine="147" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="152" startPosition="18" endLine="154" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="144" startPosition="22" endLine="146" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="151" startPosition="18" endLine="153" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="29" startPosition="20" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="149" startPosition="13" endLine="154" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="129" startPosition="22" endLine="147" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="129" startPosition="20" endLine="148" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="148" startPosition="13" endLine="153" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="129" startPosition="22" endLine="146" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="129" startPosition="20" endLine="147" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="126" startPosition="35" endLine="147" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="85" startPosition="36" endLine="107" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="126" startPosition="35" endLine="148" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="124" startPosition="48" endLine="148" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="84" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="124" startPosition="48" endLine="149" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="82" startPosition="41" endLine="109" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="121" startPosition="0" endLine="158" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="114" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="112" startPosition="49" endLine="160" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="34" startPosition="5" endLine="164" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="28" startPosition="0" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
-    <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="30" startPosition="27" endLine="31" endPosition="77" />
+    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="121" startPosition="0" endLine="157" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="114" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="112" startPosition="49" endLine="159" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="34" startPosition="5" endLine="163" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="28" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
+    <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="30" startPosition="27" endLine="31" endPosition="78" />
     <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="32" startPosition="12" endLine="33" endPosition="25" />
     <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="127" startPosition="33" endLine="128" endPosition="35" />
-    <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="145" startPosition="24" endLine="146" endPosition="54" />
-    <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="150" startPosition="26" endLine="151" endPosition="43" />
-    <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="152" startPosition="20" endLine="153" endPosition="50" />
-    <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="156" startPosition="0" endLine="157" endPosition="68">
+    <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="144" startPosition="24" endLine="145" endPosition="54" />
+    <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="149" startPosition="26" endLine="150" endPosition="43" />
+    <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="151" startPosition="20" endLine="152" endPosition="50" />
+    <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="155" startPosition="0" endLine="156" endPosition="68">
       <varInfo nodeId="5230008558208117400" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="156" startPosition="33" endLine="157" endPosition="68" />
-    <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="162" startPosition="0" endLine="163" endPosition="51">
+    <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="155" startPosition="33" endLine="156" endPosition="68" />
+    <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="161" startPosition="0" endLine="162" endPosition="51">
       <varInfo nodeId="5230008558208117400" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="162" startPosition="27" endLine="163" endPosition="51" />
-    <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="139" startPosition="64" endLine="141" endPosition="89" />
-    <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="142" startPosition="66" endLine="144" endPosition="34" />
+    <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="161" startPosition="27" endLine="162" endPosition="51" />
+    <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="135" startPosition="62" endLine="137" endPosition="79" />
+    <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="138" startPosition="64" endLine="140" endPosition="89" />
+    <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="141" startPosition="66" endLine="143" endPosition="34" />
     <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="103" startPosition="0" endLine="106" endPosition="69">
       <varInfo nodeId="5230008558208117400" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="103" startPosition="33" endLine="106" endPosition="69" />
-    <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="135" startPosition="62" endLine="138" endPosition="89" />
     <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="130" startPosition="73" endLine="134" endPosition="89" />
     <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="86" startPosition="15" endLine="102" endPosition="38">
       <varInfo nodeId="5230008558208117400" varName="buildFile" />
       <varInfo nodeId="5230008558208117400" varName="consoleLogger" />
       <varInfo nodeId="5230008558208117400" varName="helper" />
     </scopeInfo>
-    <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="129" startPosition="22" endLine="147" endPosition="17" />
+    <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="129" startPosition="22" endLine="146" endPosition="17" />
+    <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="125" startPosition="29" endLine="147" endPosition="15" />
     <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="84" startPosition="27" endLine="107" endPosition="11">
       <varInfo nodeId="5230008558208117400" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="125" startPosition="29" endLine="148" endPosition="15" />
     <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="84" startPosition="0" endLine="109" endPosition="0" />
-    <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="122" startPosition="15" endLine="155" endPosition="38">
+    <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="122" startPosition="15" endLine="154" endPosition="38">
       <varInfo nodeId="5230008558208117400" varName="br" />
     </scopeInfo>
-    <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="114" startPosition="27" endLine="158" endPosition="11">
+    <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="114" startPosition="27" endLine="157" endPosition="11">
       <varInfo nodeId="5230008558208117400" varName="counter" />
       <varInfo nodeId="5230008558208117400" varName="line" />
       <varInfo nodeId="5230008558208117400" varName="modelCounter" />
@@ -164,8 +163,8 @@
       <varInfo nodeId="5230008558208117400" varName="stop" />
       <varInfo nodeId="5230008558208117400" varName="success" />
     </scopeInfo>
-    <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="114" startPosition="0" endLine="160" endPosition="0" />
-    <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="35" startPosition="9" endLine="161" endPosition="30">
+    <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="114" startPosition="0" endLine="159" endPosition="0" />
+    <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="35" startPosition="9" endLine="160" endPosition="30">
       <varInfo nodeId="5230008558208117400" varName="antCall" />
       <varInfo nodeId="5230008558208117400" varName="descriptionLabel" />
       <varInfo nodeId="5230008558208117400" varName="folder" />
@@ -191,16 +190,16 @@
       <varInfo nodeId="5230008558208117400" varName="statusLabel" />
       <varInfo nodeId="5230008558208117400" varName="tag" />
     </scopeInfo>
-    <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="28" startPosition="42" endLine="164" endPosition="5">
+    <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="28" startPosition="42" endLine="163" endPosition="5">
       <varInfo nodeId="5230008558208117400" varName="memoFile" />
     </scopeInfo>
-    <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="28" startPosition="0" endLine="166" endPosition="0">
+    <scopeInfo nodeId="5230008558208117400" fileName="runner.java" startLine="28" startPosition="0" endLine="165" endPosition="0">
       <varInfo nodeId="5230008558208117400" varName="args" />
     </scopeInfo>
-    <unitInfo nodeId="5230008558208117400" fileName="8-19.xml" startLine="1" startPosition="0" endLine="65" endPosition="10" unitName="org.campagnelab.bdval.sandbox.8-19" />
+    <unitInfo nodeId="5230008558208117400" fileName="8-19.xml" startLine="1" startPosition="0" endLine="67" endPosition="10" unitName="org.campagnelab.bdval.sandbox.8-19" />
     <unitInfo nodeId="5230008558208117400" fileName="runner.java" startLine="83" startPosition="27" endLine="109" endPosition="7" unitName="org.campagnelab.bdval.sandbox.runner$1" />
-    <unitInfo nodeId="5230008558208117400" fileName="runner.java" startLine="113" startPosition="35" endLine="160" endPosition="7" unitName="org.campagnelab.bdval.sandbox.runner$2" />
-    <unitInfo nodeId="5230008558208117400" fileName="runner.java" startLine="27" startPosition="0" endLine="167" endPosition="0" unitName="org.campagnelab.bdval.sandbox.runner" />
+    <unitInfo nodeId="5230008558208117400" fileName="runner.java" startLine="113" startPosition="35" endLine="159" endPosition="7" unitName="org.campagnelab.bdval.sandbox.runner$2" />
+    <unitInfo nodeId="5230008558208117400" fileName="runner.java" startLine="27" startPosition="0" endLine="166" endPosition="0" unitName="org.campagnelab.bdval.sandbox.runner" />
   </root>
 </debugInfo>
 

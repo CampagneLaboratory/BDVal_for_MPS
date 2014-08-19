@@ -42,7 +42,7 @@ public class Project_Behavior {
     Project_Behavior.call_copyPlatform_8962624141197218263(thisNode, SPropertyOperations.getString(thisNode, "projectFolder"));
     Project_Behavior.call_generateLocalProperties_7083662764418572584(thisNode);
     Project_Behavior.call_generateProperties_290469645499580654(thisNode);
-    Approach_Behavior.call_generateSequenceFiles_1870354875253436007(SLinkOperations.getTarget(thisNode, "approach", true));
+    Approach_Behavior.call_newGenerateSequenceFiles_1277192072313887035(SLinkOperations.getTarget(thisNode, "approach", true));
     Project_Behavior.call_generateMemoProperties_1911754720586693397(thisNode);
     ListSequence.fromList(SLinkOperations.getTargets(thisNode, "dataset", true)).visitAll(new IVisitor<SNode>() {
       public void visit(SNode dataset) {

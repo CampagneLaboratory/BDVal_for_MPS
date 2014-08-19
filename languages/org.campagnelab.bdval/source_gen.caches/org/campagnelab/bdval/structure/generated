@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-20a09ufn844sqfljmrlmvnzj5swvrn4">
+<dependencies version="2" modelHash="3tmmr0sbc53rlb9evwxzbbag54ax87g">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="5sdbpqxziyuazpb9j1p4zdk6bnvbn49" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-5mgxduek28h3ywdzzsk4capaz4hgjm0" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="303xz1b2lyseld0axia86q3lpvucmq6" />
@@ -133,10 +133,10 @@
   <source id="4671749543976303774" name="FeatureSelectionProperties" hash="b58g43b93swk7igm9otcd3o9pl3zdgo" />
   <source id="7388448774866569121" name="FeatureSelectionFoldFalse" hash="4zw7uwm28min1po5nxcipbykoff611d" />
   <source id="7388448774866524764" name="FeatureSelectionFoldTrue" hash="-845latfus1znflhl1ghiepvyhyauq3y" />
-  <source id="8314272953670775634" name="FeatureSelectionFold" hash="-hr3wx5ungj8ovznw7y12jya1gflvex" />
+  <source id="8314272953670775634" name="FeatureSelectionFold" hash="7ia3dffohjqiud080u7eek41d7ulpwm" />
   <source id="6525722185902462822" name="PathwayProperties" hash="8qmmy6zubv84709wzko5tjtnafmbk5b" />
   <source id="1870354875249563496" name="Ttest" hash="-el36bb1ukstq19btd0y4f5s26cuc62g" />
-  <source id="1870354875249583257" name="FeatureSelection" hash="5rrk6djvwubuc9yhs33krfr5yi6lef6" />
+  <source id="1870354875249583257" name="FeatureSelection" hash="-b057zw7vnxfj6d4okzbaikz6dotjbwr" />
   <source id="1870354875249618576" name="FeatureSelectionInfo" hash="8oid2oiefb96epnyff7shanpo0wqfaa" />
   <source id="1870354875251769793" name="FeatureSelectionCombo" hash="5mpzpssxl699vuz55rpup9lalts8thc" />
   <source id="1870354875255731609" name="ModelToGenerate" hash="-2kve9q54u9thuy5bg1fu0ovdlsol8zh" />
