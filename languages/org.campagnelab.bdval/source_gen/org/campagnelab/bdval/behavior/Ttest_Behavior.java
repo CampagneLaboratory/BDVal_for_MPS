@@ -13,20 +13,29 @@ public class Ttest_Behavior {
     SPropertyOperations.set(thisNode, "otherOptions", " --alpha ${ttest-alpha}");
   }
 
-  public static String virtual_getCommand_1277192072314969653(SNode thisNode, boolean first, boolean twoFS, boolean genelist, String splitType) {
-    String command = "-m t-test --overwrite-output true --output-gene-list --gene-features-dir %gene-features-dir%" + " --alpha %alpha% %other-options%";
+  public static String virtual_getEvaluateCommand_1277192072314969653(SNode thisNode, boolean first, boolean twoFS, boolean genelist, String splitType) {
+    String command = "-m t-test --alpha %alpha% --report-max-probes %num-features%" + " --overwrite-output true --output-gene-list --gene-features-dir %gene-features-dir% --gene-list full" + " -o %dataset-name%-%split-id%-%label%-features.txt %other-options% --split-type" + splitType;
     if (first && twoFS) {
-      command = command + " -o %dataset-name%-%split-id%-%label%-intermediate-features.txt --report-max-probes %max-intermediate-features%";
-    } else {
-      command = command + " -o %dataset-name%-%split-id%-%label%-features.txt --report-max-probes %num-features%";
+      command = command.replaceAll(" -o %dataset-name%-%split-id%-%label%-features.txt", "-o %dataset-name%-%split-id%-%label%-intermediate-features.txt").replaceAll("%num-features%", "%max-intermediate-features%");
     }
     if (genelist) {
-      command = command + " --gene-list %gene-list-file%";
+      command.replaceAll("--gene-list full", "--gene-list %gene-list-file%");
     } else if (!(first) && twoFS) {
-      command = command + " --gene-list %label%|%dataset-name%-%split-id%-%label%-intermediate-features.txt";
-    } else {
-      command = command + " --gene-list full";
+      command.replaceAll("--gene-list full", "--gene-list %label%|%dataset-name%-%split-id%-%label%-intermediate-features.txt");
     }
-    return command + " --split-type" + splitType + "\n";
+    return command + "\n";
+  }
+
+  public static String virtual_getFinalModelCommand_7218745629926480436(SNode thisNode, boolean first, boolean twoFS, boolean genelist) {
+    String command = "-m t-test --alpha %alpha% --report-max-probes %num-features%" + " --overwrite-output true --output-gene-list --gene-features-dir %gene-features-dir% --gene-list full" + " -o %model-final-features-filename%";
+    if (first && twoFS) {
+      command = command.replaceAll(" -o %model-final-features-filename%", "-o %dataset-name%-%label%-intermediate-features.txt").replaceAll("%num-features%", "%max-intermediate-features%");
+    }
+    if (genelist) {
+      command.replaceAll("--gene-list full", "--gene-list %gene-list-file%");
+    } else if (!(first) && twoFS) {
+      command.replaceAll("--gene-list full", "--gene-list %label%|%dataset-name%-%label%-intermediate-features.txt");
+    }
+    return command + "\n";
   }
 }

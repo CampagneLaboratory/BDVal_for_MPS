@@ -52,7 +52,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 18:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.EndpointCategory").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").alias("endpointCategory", "The condition of the sample for a specific endpoint").create();
       case 19:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.FeatureSelection").interface_().parents("jetbrains.mps.lang.core.structure.INamedConcept").properties("defs", "addoptions", "sequenceCommand", "sequenceInfo", "sequenceNumFeatures", "otherOptions", "label", "commands1", "commands12", "commands2").create();
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.FeatureSelection").interface_().parents("jetbrains.mps.lang.core.structure.INamedConcept").properties("defs", "addoptions", "otherOptions").create();
       case 20:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.FeatureSelectionCombo").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"featureSelection1", "featureSelection2", "featureSelectionOption"}, new boolean[]{false, false, false}).create();
       case 21:

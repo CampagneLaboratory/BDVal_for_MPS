@@ -10,26 +10,32 @@ public class GeneticAlgorithm_Behavior {
     SPropertyOperations.set(thisNode, "name", "geneticAlgorithm");
     SPropertyOperations.set(thisNode, "defs", "");
     SPropertyOperations.set(thisNode, "addoptions", "addoption required:population-size:GA population size\n" + "addoption required:number-of-steps:GA max number of iterations\n" + "addoption required:maximize:the performance measure to maximize\n" + "addoption required:folds:Number of cross validation folds\n" + "addoption required:cv-repeats:Number of cross validation repeats\n" + "addoption required:ratio:The ratio of new number of feature to original number of features (GA)\n");
-    SPropertyOperations.set(thisNode, "sequenceCommand", " ga-wrapper");
-    SPropertyOperations.set(thisNode, "sequenceInfo", " --optimal-parameters-out %dataset-name%-%split-id%-%label%-optimal-parameters.txt" + " --population-size %population-size%" + " --number-of-steps %number-of-steps%" + " --folds %folds%" + " --cv-repeats %cv-repeats%" + " --maximize %maximize%" + " --ratio %ratio%");
-    SPropertyOperations.set(thisNode, "sequenceNumFeatures", " --num-features");
     SPropertyOperations.set(thisNode, "otherOptions", " --ratio ${ga-ratio} --number-of-steps ${ga-wrapper-number-of-iterations} --cv-repeats ${internal-CV-repeats}" + " --population-size ${ga-wrapper-population-size} --folds ${internal-CV-folds}" + " --maximize ${performance-measure-maximized-by-GA}");
   }
 
-  public static String virtual_getCommand_1277192072314969653(SNode thisNode, boolean first, boolean twoFS, boolean genelist, String splitType) {
-    String command = "-m ga-wrapper --overwrite-output true --output-gene-list --gene-features-dir %gene-features-dir%" + " --optimal-parameters-out %dataset-name%-%split-id%-%label%-optimal-parameters.txt" + " --population-size %population-size%" + " --number-of-steps %number-of-steps%" + " --folds %folds%" + " --cv-repeats %cv-repeats%" + " --maximize %maximize%" + " --ratio %ratio%" + " %other-options%";
+  public static String virtual_getEvaluateCommand_1277192072314969653(SNode thisNode, boolean first, boolean twoFS, boolean genelist, String splitType) {
+    String command = "-m ga-wrapper" + " --optimal-parameters-out %dataset-name%-%split-id%-%label%-optimal-parameters.txt" + " --population-size %population-size%" + " --number-of-steps %number-of-steps%" + " --folds %folds%" + " --cv-repeats %cv-repeats%" + " --maximize %maximize%" + " --ratio %ratio%" + "  --num-features %num-features%" + " --overwrite-output true --output-gene-list --gene-features-dir %gene-features-dir% --gene-list full" + " -o %dataset-name%-%split-id%-%label%-features.txt %other-options% --split-type" + splitType;
     if (first && twoFS) {
-      command = command + " -o %dataset-name%-%split-id%-%label%-intermediate-features.txt --num-features %max-intermediate-features%";
-    } else {
-      command = command + " -o %dataset-name%-%split-id%-%label%-features.txt --num-features %num-features%";
+      command = command.replaceAll(" -o %dataset-name%-%split-id%-%label%-features.txt", "-o %dataset-name%-%split-id%-%label%-intermediate-features.txt").replaceAll("%num-features%", "%max-intermediate-features%");
     }
     if (genelist) {
-      command = command + " --gene-list %gene-list-file%";
+      command.replaceAll("--gene-list full", "--gene-list %gene-list-file%");
     } else if (!(first) && twoFS) {
-      command = command + " --gene-list %label%|%dataset-name%-%split-id%-%label%-intermediate-features.txt";
-    } else {
-      command = command + " --gene-list full";
+      command.replaceAll("--gene-list full", "--gene-list %label%|%dataset-name%-%split-id%-%label%-intermediate-features.txt");
     }
-    return command + " --split-type" + splitType + "\n";
+    return command + "\n";
+  }
+
+  public static String virtual_getFinalModelCommand_7218745629926480436(SNode thisNode, boolean first, boolean twoFS, boolean genelist) {
+    String command = "-m ga-wrapper" + " --optimal-parameters-out %dataset-name%-%split-id%-%label%-optimal-parameters.txt" + " --population-size %population-size%" + " --number-of-steps %number-of-steps%" + " --folds %folds%" + " --cv-repeats %cv-repeats%" + " --maximize %maximize%" + " --ratio %ratio%" + "  --num-features %num-features%" + " --overwrite-output true --output-gene-list --gene-features-dir %gene-features-dir% --gene-list full" + " -o %model-final-features-filename%";
+    if (first && twoFS) {
+      command = command.replaceAll(" -o %model-final-features-filename%", "-o %dataset-name%-%label%-intermediate-features.txt").replaceAll("%num-features%", "%max-intermediate-features%");
+    }
+    if (genelist) {
+      command.replaceAll("--gene-list full", "--gene-list %gene-list-file%");
+    } else if (!(first) && twoFS) {
+      command.replaceAll("--gene-list full", "--gene-list %label%|%dataset-name%-%label%-intermediate-features.txt");
+    }
+    return command + "\n";
   }
 }

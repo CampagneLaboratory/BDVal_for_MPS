@@ -1,12 +1,12 @@
-<project name="8-19" default="evaluate" basedir=".">
+<project name="8-20" default="evaluate" basedir=".">
   <!--Set up-->
-  <dirname property="bdval-project.basedir" file="${ant.file.8-19}"></dirname>
+  <dirname property="bdval-project.basedir" file="${ant.file.8-20}"></dirname>
   <property name="bdval-dir" value="C:/Users/Victoria/Desktop/my_bdval"></property>
   <import file="${bdval-dir}/buildsupport/build.xml"></import>
   <property file="${bdval-project.basedir}/${ant.project.name}-local.properties"></property>
   <property name="project-property-file" value="${bdval-project.basedir}/${ant.project.name}.properties"></property>
   <property file="${project-property-file}"></property>
-  <property name="tag-description" value="testing whether new approach works"></property>
+  <property name="tag-description" value="testing new approach and final models"></property>
   
   <!--Basic Properties-->
   <property name="enable-flooring" value="true"></property>
@@ -40,8 +40,8 @@
   
   <!--Additional Properties-->
   <property name="run-java" value="true"></property>
-  <var name="do.8-19_DiseasedNoYes_Test" value="true"></var>
-  <property name="all-endpoints" value=" 8-19_DiseasedNoYes_Test"></property>
+  <var name="do.8-20_DiseasedNoYes_Test" value="true"></var>
+  <property name="all-endpoints" value=" 8-20_DiseasedNoYes_Test"></property>
   <import file="${bdval-dir}/data/bdval.xml"></import>
   
   
@@ -60,7 +60,8 @@
     <attribute name="floor-param"></attribute>
     <attribute name="array-params"></attribute>
     <sequential>
-      <execute-splits feature-selection-fold="true" sequence-file="generated-ttest+svmIterative-kStar-fs=true.sequence" endpoint-name="@{endpoint-name}" dataset-root="@{dataset-root}" floor-param="@{floor-param}" array-params="@{array-params}" all-classifier-parameters=" --classifier edu.cornell.med.icb.learning.weka.WekaClassifier --classifier-parameters wekaClass=weka.classifiers.lazy.KStar" other-options=" --alpha ${ttest-alpha} --ratio ${svmIterative-r} --max-intermediate-features ${max-intermediate-features} --weka-class weka.classifiers.lazy.KStar"></execute-splits>
+      <execute-splits feature-selection-fold="false" sequence-file="generated-svmGlobal-SVMTuneC-fs=false.sequence" endpoint-name="@{endpoint-name}" dataset-root="@{dataset-root}" floor-param="@{floor-param}" array-params="@{array-params}" all-classifier-parameters=" --classifier edu.cornell.med.icb.learning.libsvm.LibSvmClassifier  --classifier-parameters probability=${use-probability},C=0.5" other-options=""></execute-splits>
+      <execute-splits feature-selection-fold="false" sequence-file="generated-svmGlobal-SVMTuneC-fs=false.sequence" endpoint-name="@{endpoint-name}" dataset-root="@{dataset-root}" floor-param="@{floor-param}" array-params="@{array-params}" all-classifier-parameters=" --classifier edu.cornell.med.icb.learning.libsvm.LibSvmClassifier  --classifier-parameters probability=${use-probability},C=1" other-options=""></execute-splits>
     </sequential>
   </macrodef>
   

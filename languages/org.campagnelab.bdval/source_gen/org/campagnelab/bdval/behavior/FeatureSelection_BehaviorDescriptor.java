@@ -6,5 +6,6 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public interface FeatureSelection_BehaviorDescriptor extends INamedConcept_BehaviorDescriptor {
-  public String virtual_getCommand_1277192072314969653(SNode thisNode, boolean first, boolean twoFS, boolean genelist, String splitType);
+  public String virtual_getEvaluateCommand_1277192072314969653(SNode thisNode, boolean first, boolean twoFS, boolean genelist, String splitType);
+  public String virtual_getFinalModelCommand_7218745629926480436(SNode thisNode, boolean first, boolean twoFS, boolean genelist);
 }

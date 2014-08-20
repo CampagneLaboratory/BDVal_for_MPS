@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="3d4jw2jyqt87bm3etrd0pv895y5cyus">
+<dependencies version="2" modelHash="3u6o94amsk96hxi2ullsu8a229lr7zl">
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="303xz1b2lyseld0axia86q3lpvucmq6" />
   <dep model="r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)" hash="c7kxiumlmemkmywv7pxolwerkl05l10" />
   <dep model="r:80234718-e5a8-4a44-a5b1-9d71e3e29f88(org.campagnelab.bdval.editor)" hash="-41k4wiktcg5c79uwfnnsoo0fzgi3kp4" />

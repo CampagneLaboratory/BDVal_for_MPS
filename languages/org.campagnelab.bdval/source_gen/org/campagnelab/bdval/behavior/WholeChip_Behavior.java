@@ -10,13 +10,14 @@ public class WholeChip_Behavior {
     SPropertyOperations.set(thisNode, "name", "wholeChip");
     SPropertyOperations.set(thisNode, "defs", "");
     SPropertyOperations.set(thisNode, "addoptions", "");
-    SPropertyOperations.set(thisNode, "sequenceCommand", "");
-    SPropertyOperations.set(thisNode, "sequenceInfo", "");
-    SPropertyOperations.set(thisNode, "sequenceNumFeatures", "");
     SPropertyOperations.set(thisNode, "otherOptions", "");
   }
 
-  public static String virtual_getCommand_1277192072314969653(SNode thisNode, boolean first, boolean twoFS, boolean genelist, String splitType) {
+  public static String virtual_getEvaluateCommand_1277192072314969653(SNode thisNode, boolean first, boolean twoFS, boolean genelist, String splitType) {
+    return "";
+  }
+
+  public static String virtual_getFinalModelCommand_7218745629926480436(SNode thisNode, boolean first, boolean twoFS, boolean genelist) {
     return "";
   }
 }

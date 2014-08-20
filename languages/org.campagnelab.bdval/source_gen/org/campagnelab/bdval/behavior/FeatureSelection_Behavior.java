@@ -12,12 +12,22 @@ public class FeatureSelection_Behavior {
   }
 
   @Deprecated
-  public static String call_getCommand_1277192072314969653(SNode thisNode, boolean first, boolean twoFS, boolean genelist, String splitType) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getCommand_1277192072314969653", new Object[]{first, twoFS, genelist, splitType});
+  public static String call_getEvaluateCommand_1277192072314969653(SNode thisNode, boolean first, boolean twoFS, boolean genelist, String splitType) {
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getEvaluateCommand_1277192072314969653", new Object[]{first, twoFS, genelist, splitType});
   }
 
   @Deprecated
-  public static String callSuper_getCommand_1277192072314969653(SNode thisNode, String callerConceptFqName, boolean first, boolean twoFS, boolean genelist, String splitType) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "org.campagnelab.bdval.structure.FeatureSelection"), callerConceptFqName, "virtual_getCommand_1277192072314969653", new Class[]{SNode.class, Boolean.TYPE, Boolean.TYPE, Boolean.TYPE, String.class}, new Object[]{first, twoFS, genelist, splitType});
+  public static String callSuper_getEvaluateCommand_1277192072314969653(SNode thisNode, String callerConceptFqName, boolean first, boolean twoFS, boolean genelist, String splitType) {
+    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "org.campagnelab.bdval.structure.FeatureSelection"), callerConceptFqName, "virtual_getEvaluateCommand_1277192072314969653", new Class[]{SNode.class, Boolean.TYPE, Boolean.TYPE, Boolean.TYPE, String.class}, new Object[]{first, twoFS, genelist, splitType});
+  }
+
+  @Deprecated
+  public static String call_getFinalModelCommand_7218745629926480436(SNode thisNode, boolean first, boolean twoFS, boolean genelist) {
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getFinalModelCommand_7218745629926480436", new Object[]{first, twoFS, genelist});
+  }
+
+  @Deprecated
+  public static String callSuper_getFinalModelCommand_7218745629926480436(SNode thisNode, String callerConceptFqName, boolean first, boolean twoFS, boolean genelist) {
+    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "org.campagnelab.bdval.structure.FeatureSelection"), callerConceptFqName, "virtual_getFinalModelCommand_7218745629926480436", new Class[]{SNode.class, Boolean.TYPE, Boolean.TYPE, Boolean.TYPE}, new Object[]{first, twoFS, genelist});
   }
 }

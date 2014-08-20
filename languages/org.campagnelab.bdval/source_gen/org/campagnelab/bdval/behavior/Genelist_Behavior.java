@@ -10,13 +10,14 @@ public class Genelist_Behavior {
     SPropertyOperations.set(thisNode, "name", "genelist");
     SPropertyOperations.set(thisNode, "defs", "");
     SPropertyOperations.set(thisNode, "addoptions", "addoption required:gene-list-file:Location of genelist file\n" + "addoption required:which-gene-list:The gene list to process, such as NC01-2000\n");
-    SPropertyOperations.set(thisNode, "sequenceCommand", "");
-    SPropertyOperations.set(thisNode, "sequenceInfo", "");
-    SPropertyOperations.set(thisNode, "sequenceNumFeatures", "");
     SPropertyOperations.set(thisNode, "otherOptions", "");
   }
 
-  public static String virtual_getCommand_1277192072314969653(SNode thisNode, boolean first, boolean twoFS, boolean genelist, String splitType) {
+  public static String virtual_getEvaluateCommand_1277192072314969653(SNode thisNode, boolean first, boolean twoFS, boolean genelist, String splitType) {
+    return "";
+  }
+
+  public static String virtual_getFinalModelCommand_7218745629926480436(SNode thisNode, boolean first, boolean twoFS, boolean genelist) {
     return "";
   }
 }

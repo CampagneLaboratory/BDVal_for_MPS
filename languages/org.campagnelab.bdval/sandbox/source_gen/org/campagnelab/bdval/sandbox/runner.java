@@ -28,7 +28,7 @@ public class runner {
   public static void main(String[] args) {
     String memoFile;
     if (args.length == 0) {
-      memoFile = "C:/Users/Victoria/Desktop/8-19/test19/memo/memo.properties";
+      memoFile = "C:/Users/Victoria/Desktop/8-20/test10-svmIterative+kstar/memo/memo.properties";
     } else {
       memoFile = args[0];
     }
