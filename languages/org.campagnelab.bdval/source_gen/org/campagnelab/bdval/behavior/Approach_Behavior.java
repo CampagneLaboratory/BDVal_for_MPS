@@ -158,7 +158,7 @@ public class Approach_Behavior {
                     file.close();
                   } catch (Exception e) {
                     if (LOG.isEnabledFor(Level.ERROR)) {
-                      LOG.error("Error printing sequence files", e);
+                      LOG.error("Error printing sequence files: ", e);
                     }
                   }
                   // Writes final sequence file 
@@ -181,7 +181,7 @@ public class Approach_Behavior {
                     file.close();
                   } catch (Exception e) {
                     if (LOG.isEnabledFor(Level.ERROR)) {
-                      LOG.error("Error printing sequence files", e);
+                      LOG.error("Error printing sequence files: ", e);
                     }
                   }
 
@@ -196,7 +196,7 @@ public class Approach_Behavior {
 
   public static void call_generateModel_8241402136296602911(SNode thisNode, String approachMethod, String cValue, boolean fsFold, String className, String classParams, String otherOptions) {
     SNode genModel = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.ModelToGenerate", null);
-    SPropertyOperations.set(genModel, "name", WordUtils.capitalize(approachMethod.replace("/([a-z])([A-Z])/g", "$1 $2").replaceAll("-", ", ")));
+    SPropertyOperations.set(genModel, "name", WordUtils.capitalize(approachMethod.replaceAll("(\\p{L1})(\\p{Lu})", "$1 $2").replaceAll("[+]", " + ").replaceAll("-", ", ")));
     SPropertyOperations.set(genModel, "featureSelectionFold", "" + (fsFold));
     SPropertyOperations.set(genModel, "sequenceFile", "generated-" + approachMethod + ".sequence");
     SPropertyOperations.set(genModel, "allClassifierParameters", " --classifier " + className + " --classifier-parameters " + classParams);

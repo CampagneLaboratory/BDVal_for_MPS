@@ -1,19 +1,19 @@
-<project name="8-20" default="evaluate" basedir=".">
+<project name="8-21" default="evaluate" basedir=".">
   <!--Set up-->
-  <dirname property="bdval-project.basedir" file="${ant.file.8-20}"></dirname>
+  <dirname property="bdval-project.basedir" file="${ant.file.8-21}"></dirname>
   <property name="bdval-dir" value="C:/Users/Victoria/Desktop/my_bdval"></property>
   <import file="${bdval-dir}/buildsupport/build.xml"></import>
   <property file="${bdval-project.basedir}/${ant.project.name}-local.properties"></property>
   <property name="project-property-file" value="${bdval-project.basedir}/${ant.project.name}.properties"></property>
   <property file="${project-property-file}"></property>
-  <property name="tag-description" value="testing new approach and final models"></property>
+  <property name="tag-description" value="testing genelist counter"></property>
   
   <!--Basic Properties-->
   <property name="enable-flooring" value="true"></property>
   <property name="evaluate-statistics-after-splits" value="false"></property>
   <property name="external-CV-repeats" value="1"></property>
   <property name="external-CV-folds" value="3"></property>
-  <property name="num-features" value="20"></property>
+  <property name="num-features" value="20,30"></property>
   <property name="max-intermediate-features" value="400"></property>
   
   <!--Feature Selection Properties-->
@@ -33,6 +33,7 @@
   
   <property name="GDS1070-ensembl-genbank-refseq" value="GDS1070-ensembl-genbank-refseq --gene-list-file C:\Users\Victoria\Desktop\my_bdval\data\gene-lists\GDS1070-ensembl-genbank-refseq"></property>
   <property name="Merged-ensembl-genbank-refseq" value="Merged-ensembl-genbank-refseq --gene-list-file C:\Users\Victoria\Desktop\my_bdval\data\gene-lists\Merged-ensembl-genbank-refseq"></property>
+  <property name="GDS232-82-genes-ensembl-genbank-refseq" value="GDS232-82-genes-ensembl-genbank-refseq --gene-list-file C:\Users\Victoria\Desktop\my_bdval\data\gene-lists\GDS232-82-genes-ensembl-genbank-refseq"></property>
   <property name="pathway-aggregation-method" value="PCA"></property>
   
   <!--Classification Properties-->
@@ -40,8 +41,8 @@
   
   <!--Additional Properties-->
   <property name="run-java" value="true"></property>
-  <var name="do.8-20_DiseasedNoYes_Test" value="true"></var>
-  <property name="all-endpoints" value=" 8-20_DiseasedNoYes_Test"></property>
+  <var name="do.8-21_DiseasedNoYes_Test" value="true"></var>
+  <property name="all-endpoints" value=" 8-21_DiseasedNoYes_Test"></property>
   <import file="${bdval-dir}/data/bdval.xml"></import>
   
   
@@ -60,8 +61,9 @@
     <attribute name="floor-param"></attribute>
     <attribute name="array-params"></attribute>
     <sequential>
-      <execute-splits feature-selection-fold="false" sequence-file="generated-svmGlobal-SVMTuneC-fs=false.sequence" endpoint-name="@{endpoint-name}" dataset-root="@{dataset-root}" floor-param="@{floor-param}" array-params="@{array-params}" all-classifier-parameters=" --classifier edu.cornell.med.icb.learning.libsvm.LibSvmClassifier  --classifier-parameters probability=${use-probability},C=0.5" other-options=""></execute-splits>
-      <execute-splits feature-selection-fold="false" sequence-file="generated-svmGlobal-SVMTuneC-fs=false.sequence" endpoint-name="@{endpoint-name}" dataset-root="@{dataset-root}" floor-param="@{floor-param}" array-params="@{array-params}" all-classifier-parameters=" --classifier edu.cornell.med.icb.learning.libsvm.LibSvmClassifier  --classifier-parameters probability=${use-probability},C=1" other-options=""></execute-splits>
+      <execute-splits feature-selection-fold="false" sequence-file="generated-genelist+svmGlobal-kStar-fs=false.sequence" endpoint-name="@{endpoint-name}" dataset-root="@{dataset-root}" floor-param="@{floor-param}" array-params="@{array-params}" all-classifier-parameters=" --classifier edu.cornell.med.icb.learning.weka.WekaClassifier --classifier-parameters wekaClass=weka.classifiers.lazy.KStar" other-options=" --weka-class weka.classifiers.lazy.KStar --which-gene-list ${GDS1070-ensembl-genbank-refseq}"></execute-splits>
+      <execute-splits feature-selection-fold="false" sequence-file="generated-genelist+svmGlobal-kStar-fs=false.sequence" endpoint-name="@{endpoint-name}" dataset-root="@{dataset-root}" floor-param="@{floor-param}" array-params="@{array-params}" all-classifier-parameters=" --classifier edu.cornell.med.icb.learning.weka.WekaClassifier --classifier-parameters wekaClass=weka.classifiers.lazy.KStar" other-options=" --weka-class weka.classifiers.lazy.KStar --which-gene-list ${Merged-ensembl-genbank-refseq}"></execute-splits>
+      <execute-splits feature-selection-fold="false" sequence-file="generated-genelist+svmGlobal-kStar-fs=false.sequence" endpoint-name="@{endpoint-name}" dataset-root="@{dataset-root}" floor-param="@{floor-param}" array-params="@{array-params}" all-classifier-parameters=" --classifier edu.cornell.med.icb.learning.weka.WekaClassifier --classifier-parameters wekaClass=weka.classifiers.lazy.KStar" other-options=" --weka-class weka.classifiers.lazy.KStar --which-gene-list ${GDS232-82-genes-ensembl-genbank-refseq}"></execute-splits>
     </sequential>
   </macrodef>
   

@@ -63,7 +63,7 @@ public class Project_Behavior {
     try {
       FileUtils.copyFile(platformFile, new File(fileName));
     } catch (Exception e) {
-      throw new Error("Error Copying Platform File", e);
+      throw new Error("Error Copying Platform File: ", e);
     }
   }
 
@@ -84,7 +84,7 @@ public class Project_Behavior {
       }
       prop.store(output, SPropertyOperations.getString(thisNode, "name") + " Local Properties");
     } catch (Exception e) {
-      throw new Error("Error creating local properties file");
+      throw new Error("Error creating local properties file: " + e);
     }
   }
 
@@ -148,7 +148,7 @@ public class Project_Behavior {
       prop.setProperty("define.model-id.column-id", "id-parameter-scan-series");
       prop.store(output, SPropertyOperations.getString(thisNode, "name") + " Properties");
     } catch (Exception e) {
-      throw new Error("Error creating properties file");
+      throw new Error("Error creating properties file: " + e);
     }
   }
 
@@ -176,7 +176,7 @@ public class Project_Behavior {
       prop.setProperty("repeats", String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(thisNode, "approach", true), "externalRepeats")));
       prop.store(output, SPropertyOperations.getString(thisNode, "name") + " information for rerunning through MPS");
     } catch (Exception e) {
-      throw new Error("Error creating memo properties file");
+      throw new Error("Error creating memo properties file: " + e);
     }
   }
 

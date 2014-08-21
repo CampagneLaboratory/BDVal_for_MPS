@@ -109,7 +109,7 @@ public class copyXmlFile_Facet extends IFacet.Stub {
                   });
                 }
               } catch (Exception e) {
-                throw new Error("Error in plugin");
+                throw new Error("Error in plugin: " + e);
               }
             default:
               return new IResult.SUCCESS(_output_e9sj27_a0a);

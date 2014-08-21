@@ -54,7 +54,7 @@ public class DataSet_Behavior {
     try {
       FileUtils.copyFile(new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "input", true), "file", true), "fileLocation")), new File(fileName));
     } catch (Exception e) {
-      throw new Error("Error Copying Input File");
+      throw new Error("Error Copying Input File: " + e);
     }
   }
 
@@ -68,7 +68,7 @@ public class DataSet_Behavior {
         FileUtils.copyFile(new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "otherFiles", true), "pathwaysFile", true), "fileLocation")), new File(pathwaysFile));
         FileUtils.copyFile(new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "otherFiles", true), "geneToProbesFile", true), "fileLocation")), new File(geneToProbesFile));
       } catch (Exception e) {
-        throw new Error("Error Copying Pathway Files");
+        throw new Error("Error Copying Pathway Files: " + e);
       }
     }
     if (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "otherFiles", true), "survivalFile", true), "fileLocation"))) {
@@ -78,7 +78,7 @@ public class DataSet_Behavior {
       try {
         FileUtils.copyFile(new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "otherFiles", true), "survivalFile", true), "fileLocation")), new File(survivalFile));
       } catch (Exception e) {
-        throw new Error("Error Copying Survival File");
+        throw new Error("Error Copying Survival File: " + e);
       }
     }
   }
@@ -113,7 +113,7 @@ public class DataSet_Behavior {
       file.close();
       return categoryCountMap;
     } catch (Exception e) {
-      throw new Error("Error Printing CIDs File");
+      throw new Error("Error Printing CIDs File: " + e);
     }
   }
 
@@ -145,7 +145,7 @@ public class DataSet_Behavior {
       writer.close();
       file.close();
     } catch (Exception e) {
-      throw new Error("Error Printing Task File");
+      throw new Error("Error Printing Task File: " + e);
     }
   }
 
@@ -170,7 +170,7 @@ public class DataSet_Behavior {
         writer.close();
         file.close();
       } catch (Exception e) {
-        throw new Error("Error Printing Test-Set File");
+        throw new Error("Error Printing Test-Set File: " + e);
       }
     }
   }

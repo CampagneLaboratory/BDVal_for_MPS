@@ -6,12 +6,13 @@ import java.util.Properties;
 import java.io.InputStream;
 import java.io.FileInputStream;
 import javax.swing.JLabel;
+import javax.swing.JTextArea;
+import javax.swing.JScrollPane;
+import java.awt.Dimension;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import javax.swing.BorderFactory;
 import javax.swing.JProgressBar;
-import javax.swing.JTextArea;
-import javax.swing.JScrollPane;
 import javax.swing.JFrame;
 import java.sql.Timestamp;
 import java.util.Date;
@@ -28,7 +29,7 @@ public class runner {
   public static void main(String[] args) {
     String memoFile;
     if (args.length == 0) {
-      memoFile = "C:/Users/Victoria/Desktop/8-20/test10-svmIterative+kstar/memo/memo.properties";
+      memoFile = "C:/Users/Victoria/Desktop/8-21/test6/memo/memo.properties";
     } else {
       memoFile = args[0];
     }
@@ -50,11 +51,14 @@ public class runner {
       final int numRepeats = Integer.parseInt(repeats);
 
       final JLabel statusLabel = new JLabel();
-      JLabel descriptionLabel = new JLabel("Tag Description: " + tag);
+      JTextArea descriptionText = new JTextArea("Tag Description: " + tag);
+      descriptionText.setEditable(false);
+      JScrollPane descriptionScrollPane = new JScrollPane(descriptionText);
+      descriptionScrollPane.setPreferredSize(new Dimension(330, 40));
 
       JPanel panel = new JPanel(new BorderLayout());
       panel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
-      panel.add(descriptionLabel, BorderLayout.WEST);
+      panel.add(descriptionScrollPane, BorderLayout.WEST);
       panel.add(statusLabel, BorderLayout.EAST);
 
       final JProgressBar progressBar = new JProgressBar();
@@ -63,14 +67,14 @@ public class runner {
 
       JTextArea modelText = new JTextArea("Project Summary:\n" + modelInfo + "Folds: " + folds + "    Repeats: " + repeats);
       modelText.setEditable(false);
-      JScrollPane scrollPane = new JScrollPane(modelText);
+      JScrollPane modelScrollPane = new JScrollPane(modelText);
 
       JFrame frame = new JFrame(header);
       frame.setLayout(new BorderLayout());
       frame.add(panel, BorderLayout.NORTH);
-      frame.add(scrollPane, BorderLayout.CENTER);
+      frame.add(modelScrollPane, BorderLayout.CENTER);
       frame.add(progressBar, BorderLayout.SOUTH);
-      frame.setSize(500, 130);
+      frame.setSize(500, 200);
       frame.setLocationRelativeTo(null);
       frame.setVisible(true);
 
@@ -158,6 +162,7 @@ public class runner {
         }
       };
       monitorProgress.start();
+
     } catch (Exception e) {
       System.out.println("Unsuccessful BDVal run");
     }

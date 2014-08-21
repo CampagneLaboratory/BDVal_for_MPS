@@ -15,7 +15,10 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public void init() {
     IntentionsManager.getInstance().registerIntentionFactory(new ClearCategories_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new ExtractEndpoints_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new FC_P_LogitBoost_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new Genetic_KStar_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new LoadCIDs_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new LoadInput_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new Ttest_Svm_Intention());
   }
 }

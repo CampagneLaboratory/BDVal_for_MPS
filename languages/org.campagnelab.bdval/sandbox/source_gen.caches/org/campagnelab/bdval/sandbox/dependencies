@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="org.campagnelab.bdval.sandbox.8-20" file="8-20.xml" />
+  <dependency className="org.campagnelab.bdval.sandbox.8-21" file="8-21.xml" />
   <dependency className="org.campagnelab.bdval.sandbox.runner" file="runner.java">
     <classNode dependClassName="java.awt.BorderLayout" />
+    <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="java.io.BufferedReader" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.FileInputStream" />

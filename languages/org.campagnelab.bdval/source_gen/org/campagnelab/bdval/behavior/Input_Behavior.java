@@ -29,7 +29,7 @@ public class Input_Behavior {
       Input_Behavior.call_getInputIds_7052920786130389579(thisNode, inputTable, cols);
       Input_Behavior.call_getInputDisplay_7860773101003978021(thisNode, inputTable, cols);
     } catch (Exception e) {
-      throw new IllegalArgumentException("Illegal Input File");
+      throw new IllegalArgumentException("Illegal Input File: " + e);
     }
   }
 

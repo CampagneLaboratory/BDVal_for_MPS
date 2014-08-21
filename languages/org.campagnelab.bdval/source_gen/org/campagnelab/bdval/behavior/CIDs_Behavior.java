@@ -28,7 +28,7 @@ public class CIDs_Behavior {
       }
       CIDs_Behavior.call_getCidsEndpts_3367122381605517505(thisNode, datasetReader);
     } catch (Exception e) {
-      throw new Error("Invalid CIDs File");
+      throw new Error("Invalid CIDs File, must have exactly 2 columns: " + e);
     }
   }
 
@@ -61,7 +61,7 @@ public class CIDs_Behavior {
         }
       }
     } catch (Exception e) {
-      throw new Error();
+      throw new Error("Error Reading CIDs File: " + e);
     }
   }
 }

@@ -68,7 +68,7 @@ public class Result_Behavior {
         SLinkOperations.setTarget(thisNode, "RMSE", Result_Behavior.call_checkNaN_6380268605264471520(thisNode, SLinkOperations.getTarget(thisNode, "RMSE", true)), true);
         SPropertyOperations.set(thisNode, "maqciiFile", file);
       } catch (Exception e) {
-        throw new Error("Error reading Maqcii File");
+        throw new Error("Error reading Maqcii File: " + e);
       }
     }
   }
@@ -125,7 +125,7 @@ public class Result_Behavior {
       p.fireBuildFinished(null);
     } catch (Exception e) {
       p.fireBuildFinished(e);
-      throw new Error("Error calculating statistics" + e);
+      throw new Error("Error calculating statistics: " + e);
     }
   }
 
@@ -156,7 +156,7 @@ public class Result_Behavior {
       p.fireBuildFinished(null);
     } catch (Exception e) {
       p.fireBuildFinished(e);
-      throw new Error("Error calculating statistics" + e);
+      throw new Error("Error calculating statistics: " + e);
     }
   }
 }

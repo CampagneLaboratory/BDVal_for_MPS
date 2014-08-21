@@ -85,7 +85,7 @@
     <property name="name" nameId="tpck.1169194664001" value="Platform" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="platform" />
     <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="File containing platform" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="dataset" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="3918118240376477246" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="floor" />

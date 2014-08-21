@@ -8,11 +8,11 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -27,32 +27,54 @@ public class Properties_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_vvo4cc_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_vvo4cc_a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_vvo4cc_b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_vvo4cc_c0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_vvo4cc_d0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_vvo4cc_e0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_vvo4cc_f0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_vvo4cc_g0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_vvo4cc_h0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_vvo4cc_i0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_vvo4cc_j0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_vvo4cc_k0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_vvo4cc_l0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_vvo4cc_m0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_vvo4cc_n0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_vvo4cc_o0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_vvo4cc_p0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_vvo4cc_b0(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createConstant_vvo4cc_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Desired Output Location:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Properties:");
     editorCell.setCellId("Constant_vvo4cc_a0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_vvo4cc_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_vvo4cc_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_vvo4cc_b0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createConstant_vvo4cc_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_vvo4cc_b1a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_vvo4cc_c1a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_vvo4cc_d1a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_vvo4cc_e1a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_vvo4cc_f1a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_vvo4cc_g1a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_vvo4cc_h1a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_vvo4cc_i1a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_vvo4cc_j1a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_vvo4cc_k1a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_vvo4cc_l1a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_vvo4cc_m1a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_vvo4cc_n1a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_vvo4cc_o1a(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_vvo4cc_p1a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createConstant_vvo4cc_a1a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Desired Output Location:");
+    editorCell.setCellId("Constant_vvo4cc_a1a");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_vvo4cc_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("outputDirectory");
     provider.setNoTargetText("<no outputDirectory>");
@@ -75,14 +97,14 @@ public class Properties_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_vvo4cc_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_vvo4cc_c1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Location of BDVal Installation Directory:");
-    editorCell.setCellId("Constant_vvo4cc_c0");
+    editorCell.setCellId("Constant_vvo4cc_c1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_vvo4cc_d0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_vvo4cc_d1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("bdvalDirectory");
     provider.setNoTargetText("<no bdvalDirectory>");
@@ -105,14 +127,14 @@ public class Properties_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_vvo4cc_e0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_vvo4cc_e1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Location of ANT Installation Directory:");
-    editorCell.setCellId("Constant_vvo4cc_e0");
+    editorCell.setCellId("Constant_vvo4cc_e1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_vvo4cc_f0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_vvo4cc_f1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("antDirectory");
     provider.setNoTargetText("<no antDirectory>");
@@ -135,14 +157,14 @@ public class Properties_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_vvo4cc_g0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_vvo4cc_g1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Type of Computer BDVal is running on:");
-    editorCell.setCellId("Constant_vvo4cc_g0");
+    editorCell.setCellId("Constant_vvo4cc_g1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_vvo4cc_h0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_vvo4cc_h1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("computerType");
     provider.setNoTargetText("select type");
@@ -165,14 +187,14 @@ public class Properties_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_vvo4cc_i0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_vvo4cc_i1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Number of Parallel Threads to Use:");
-    editorCell.setCellId("Constant_vvo4cc_i0");
+    editorCell.setCellId("Constant_vvo4cc_i1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_vvo4cc_j0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_vvo4cc_j1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("threads");
     provider.setNoTargetText("enter value");
@@ -193,14 +215,14 @@ public class Properties_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_vvo4cc_k0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_vvo4cc_k1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Amount of Memory to Use (Mb):");
-    editorCell.setCellId("Constant_vvo4cc_k0");
+    editorCell.setCellId("Constant_vvo4cc_k1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_vvo4cc_l0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_vvo4cc_l1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("memory");
     provider.setNoTargetText("enter value");
@@ -221,14 +243,14 @@ public class Properties_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_vvo4cc_m0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_vvo4cc_m1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Directory Name:");
-    editorCell.setCellId("Constant_vvo4cc_m0");
+    editorCell.setCellId("Constant_vvo4cc_m1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_vvo4cc_n0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_vvo4cc_n1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("directoryName");
     provider.setNoTargetText("enter name");
@@ -249,24 +271,24 @@ public class Properties_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_vvo4cc_o0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_vvo4cc_o1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Tag Description:");
-    editorCell.setCellId("Constant_vvo4cc_o0");
+    editorCell.setCellId("Constant_vvo4cc_o1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createCollection_vvo4cc_p0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_vvo4cc_p1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createFlow(editorContext, node);
-    editorCell.setCellId("Collection_vvo4cc_p0");
+    editorCell.setCellId("Collection_vvo4cc_p1a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createProperty_vvo4cc_a51a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_vvo4cc_a51b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createProperty_vvo4cc_a51a(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_vvo4cc_a51b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("tagDescription");
     provider.setNoTargetText("enter description");
