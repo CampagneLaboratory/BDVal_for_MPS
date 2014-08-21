@@ -17,7 +17,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import javax.swing.JComponent;
 import org.campagnelab.ui.code.Swing.ButtonCallback;
+import javax.swing.JFrame;
 import org.campagnelab.bdval.behavior.Result_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.io.File;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.campagnelab.ui.code.Swing.Button;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -97,7 +101,14 @@ public class Result_Editor extends DefaultNodeEditor {
       public void process(final SNode n, final EditorContext editorContext) {
         {
           final SNode node = ((SNode) n);
+          final JFrame frame = new JFrame("Evaluating Statistics...");
+          frame.setSize(400, 40);
+          frame.setLocationRelativeTo(null);
+          frame.setVisible(true);
           Result_Behavior.call_evaluateStatistics_3634366430331113687(node);
+          SNode project = SNodeOperations.getAncestor(node, "org.campagnelab.bdval.structure.Project", false, false);
+          Result_Behavior.call_readMaqciiFile_6380268605206873743(node, Result_Behavior.call_getMaqciiFile_6380268605234804481(node, new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(project, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(project, "name") + "/" + SPropertyOperations.getString(SLinkOperations.getTarget(project, "properties", true), "directoryName") + "/" + SPropertyOperations.getString(node, "name"))));
+          frame.setVisible(false);
         }
       }
     };
@@ -116,11 +127,16 @@ public class Result_Editor extends DefaultNodeEditor {
       public void process(final SNode n, final EditorContext editorContext) {
         {
           final SNode node = ((SNode) n);
+          final JFrame frame = new JFrame("Generating Final Models...");
+          frame.setSize(400, 45);
+          frame.setLocationRelativeTo(null);
+          frame.setVisible(true);
           Result_Behavior.call_generateFinalModel_6380268605238741230(node);
+          frame.setVisible(false);
         }
       }
     };
-    return Button.createButton("Generate Final Model", editorContext, node, callback);
+    return Button.createButton("Generate Final Models", editorContext, node, callback);
 
   }
 

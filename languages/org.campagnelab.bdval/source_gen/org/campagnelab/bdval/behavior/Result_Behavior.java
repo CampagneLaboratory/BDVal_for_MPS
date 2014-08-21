@@ -102,6 +102,7 @@ public class Result_Behavior {
     String folder = SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(project, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(project, "name") + "/" + SPropertyOperations.getString(SLinkOperations.getTarget(project, "properties", true), "directoryName") + "/";
     Project p = new Project();
     try {
+
       File buildFile = new File(folder + SPropertyOperations.getString(project, "name") + ".xml");
       p.setUserProperty("ant.file", buildFile.getAbsolutePath());
 
@@ -126,7 +127,6 @@ public class Result_Behavior {
       p.fireBuildFinished(e);
       throw new Error("Error calculating statistics" + e);
     }
-    Result_Behavior.call_readMaqciiFile_6380268605206873743(thisNode, Result_Behavior.call_getMaqciiFile_6380268605234804481(thisNode, new File(folder + SPropertyOperations.getString(thisNode, "name"))));
   }
 
   public static void call_generateFinalModel_6380268605238741230(SNode thisNode) {

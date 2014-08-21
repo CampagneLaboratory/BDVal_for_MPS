@@ -11,7 +11,7 @@
     <node role="properties" roleId="w348.7083662764416913977" type="w348.Properties" typeId="w348.7083662764416913858" id="5230008558208117401" nodeInfo="ng">
       <property name="threads" nameId="w348.7083662764416913912" value="1" />
       <property name="memory" nameId="w348.7083662764416913915" value="1200" />
-      <property name="directoryName" nameId="w348.3015647834783938295" value="test9-svmGlobal+svmtuneC" />
+      <property name="directoryName" nameId="w348.3015647834783938295" value="test9-svmGlobal+svmTuneC" />
       <property name="tagDescription" nameId="w348.1847053361490302608" value="testing new approach and final models" />
       <node role="outputDirectory" roleId="w348.1911754720568108889" type="w348.Directory" typeId="w348.1911754720568105445" id="5230008558208117402" nodeInfo="ng">
         <property name="directoryLocation" nameId="w348.1911754720568105446" value="C:/Users/Victoria/Desktop" />
@@ -27,31 +27,31 @@
       </node>
     </node>
     <node role="status" roleId="w348.8962624141203321320" type="w348.Status" typeId="w348.8962624141203321241" id="5230008558208117406" nodeInfo="ng">
-      <node role="result" roleId="w348.8962624141203322103" type="w348.Result" typeId="w348.8962624141203321355" id="7218745629931072422" nodeInfo="ng">
+      <node role="result" roleId="w348.8962624141203322103" type="w348.Result" typeId="w348.8962624141203321355" id="2063368849521015885" nodeInfo="ng">
         <property name="name" nameId="tpck.1169194664001" value="20140820-1450-results" />
         <property name="numberModels" nameId="w348.8962624141208854028" value="2" />
-        <property name="maqciiFile" nameId="w348.6380268605268772617" value="C:\Users\Victoria\Desktop\8-20\test9-svmGlobal+svmtuneC\20140820-1450-results\20140820-1454-restat-maqcii-submission.txt" />
-        <node role="MCC" roleId="w348.6380268605259328268" type="w348.FloatRange" typeId="w348.6380268605258472024" id="7218745629931072424" nodeInfo="ng">
+        <property name="maqciiFile" nameId="w348.6380268605268772617" value="C:\Users\Victoria\Desktop\8-20\test9-svmGlobal+svmTuneC\20140820-1450-results\20140821-1107-restat-maqcii-submission.txt" />
+        <node role="MCC" roleId="w348.6380268605259328268" type="w348.FloatRange" typeId="w348.6380268605258472024" id="2063368849521015887" nodeInfo="ng">
           <property name="max" nameId="w348.6380268605258472062" value="0.08" />
           <property name="min" nameId="w348.6380268605258472046" value="0.07" />
         </node>
-        <node role="accuracy" roleId="w348.6380268605259328394" type="w348.FloatRange" typeId="w348.6380268605258472024" id="7218745629931072425" nodeInfo="ng">
+        <node role="accuracy" roleId="w348.6380268605259328394" type="w348.FloatRange" typeId="w348.6380268605258472024" id="2063368849521015888" nodeInfo="ng">
           <property name="max" nameId="w348.6380268605258472062" value="0.77" />
           <property name="min" nameId="w348.6380268605258472046" value="0.77" />
         </node>
-        <node role="sensitivity" roleId="w348.6380268605259328408" type="w348.FloatRange" typeId="w348.6380268605258472024" id="7218745629931072426" nodeInfo="ng">
+        <node role="sensitivity" roleId="w348.6380268605259328408" type="w348.FloatRange" typeId="w348.6380268605258472024" id="2063368849521015889" nodeInfo="ng">
           <property name="max" nameId="w348.6380268605258472062" value="0.19" />
           <property name="min" nameId="w348.6380268605258472046" value="0.19" />
         </node>
-        <node role="specificity" roleId="w348.6380268605259328518" type="w348.FloatRange" typeId="w348.6380268605258472024" id="7218745629931072427" nodeInfo="ng">
+        <node role="specificity" roleId="w348.6380268605259328518" type="w348.FloatRange" typeId="w348.6380268605258472024" id="2063368849521015890" nodeInfo="ng">
           <property name="max" nameId="w348.6380268605258472062" value="0.89" />
           <property name="min" nameId="w348.6380268605258472046" value="0.89" />
         </node>
-        <node role="AUC" roleId="w348.6380268605259328362" type="w348.FloatRange" typeId="w348.6380268605258472024" id="7218745629931072428" nodeInfo="ng">
+        <node role="AUC" roleId="w348.6380268605259328362" type="w348.FloatRange" typeId="w348.6380268605258472024" id="2063368849521015891" nodeInfo="ng">
           <property name="max" nameId="w348.6380268605258472062" value="0.68" />
           <property name="min" nameId="w348.6380268605258472046" value="0.66" />
         </node>
-        <node role="RMSE" roleId="w348.6380268605259328374" type="w348.FloatRange" typeId="w348.6380268605258472024" id="7218745629931072429" nodeInfo="ng">
+        <node role="RMSE" roleId="w348.6380268605259328374" type="w348.FloatRange" typeId="w348.6380268605258472024" id="2063368849521015892" nodeInfo="ng">
           <property name="max" nameId="w348.6380268605258472062" value="1.44" />
           <property name="min" nameId="w348.6380268605258472046" value="1.3" />
         </node>
