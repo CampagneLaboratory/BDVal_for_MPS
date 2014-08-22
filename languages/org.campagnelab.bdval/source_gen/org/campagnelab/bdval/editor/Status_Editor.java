@@ -7,20 +7,24 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.io.FileFilter;
+import java.io.File;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import javax.swing.JComponent;
 import org.campagnelab.ui.code.Swing.ButtonCallback;
 import org.campagnelab.bdval.behavior.Status_Behavior;
 import org.campagnelab.ui.code.Swing.Button;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import java.io.File;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -29,6 +33,7 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class Status_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -39,37 +44,73 @@ public class Status_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_gjf57x_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createConstant_gjf57x_a0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_gjf57x_b0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_gjf57x_c0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_gjf57x_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_gjf57x_b0(editorContext, node));
+    if (renderingCondition_gjf57x_a2a(node, editorContext)) {
+      editorCell.addEditorCell(this.createCollection_gjf57x_c0(editorContext, node));
+    }
+    editorCell.addEditorCell(this.createCollection_gjf57x_d0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_gjf57x_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_gjf57x_a0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("test");
+    provider.setNoTargetText("<no test>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_test");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createConstant_gjf57x_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Status:");
-    editorCell.setCellId("Constant_gjf57x_a0");
+    editorCell.setCellId("Constant_gjf57x_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createCollection_gjf57x_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_gjf57x_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_gjf57x_b0");
+    editorCell.setCellId("Collection_gjf57x_c0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createJComponent_gjf57x_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createJComponent_gjf57x_a2a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createJComponent_gjf57x_a1a(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = EditorCell_Component.createComponentCell(editorContext, node, Status_Editor._QueryFunction_JComponent_gjf57x_a0b0(node, editorContext), "_gjf57x_a1a");
-    editorCell.setCellId("JComponent_gjf57x_a1a");
+  private static boolean renderingCondition_gjf57x_a2a(SNode node, EditorContext editorContext) {
+    SNode project = SNodeOperations.getAncestor(node, "org.campagnelab.bdval.structure.Project", false, false);
+    String projectName = SPropertyOperations.getString(project, "name");
+    String outputDirectory = SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(project, "properties", true), "outputDirectory", true), "directoryLocation");
+    String directoryName = SPropertyOperations.getString(SLinkOperations.getTarget(project, "properties", true), "directoryName");
+    FileFilter resultsFilter = new FileFilter() {
+      public boolean accept(File file) {
+        return file.getAbsolutePath().endsWith("-results") && file.isDirectory();
+      }
+    };
+    return (projectName != null && projectName.length() > 0) && (outputDirectory != null && outputDirectory.length() > 0) && (directoryName != null && directoryName.length() > 0) && new File(outputDirectory + "/" + projectName + "/" + directoryName).isDirectory() && new File(outputDirectory + "/" + projectName + "/" + directoryName).listFiles(resultsFilter).length > 0;
+  }
+
+  private EditorCell createJComponent_gjf57x_a2a(EditorContext editorContext, SNode node) {
+    EditorCell editorCell = EditorCell_Component.createComponentCell(editorContext, node, Status_Editor._QueryFunction_JComponent_gjf57x_a0c0(node, editorContext), "_gjf57x_a2a");
+    editorCell.setCellId("JComponent_gjf57x_a2a");
     return editorCell;
   }
 
-  private static JComponent _QueryFunction_JComponent_gjf57x_a0b0(final SNode node, final EditorContext editorContext) {
+  private static JComponent _QueryFunction_JComponent_gjf57x_a0c0(final SNode node, final EditorContext editorContext) {
     ButtonCallback callback = new ButtonCallback(node, editorContext) {
       public void process(final SNode n, final EditorContext editorContext) {
         {
@@ -82,28 +123,29 @@ public class Status_Editor extends DefaultNodeEditor {
 
   }
 
-  private EditorCell createCollection_gjf57x_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_gjf57x_d0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_gjf57x_c0");
+    editorCell.setCellId("Collection_gjf57x_d0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_gjf57x_a0c0(node, editorContext)) {
-      editorCell.addEditorCell(this.createConstant_gjf57x_a2a(editorContext, node));
+    if (renderingCondition_gjf57x_a0d0(node, editorContext)) {
+      editorCell.addEditorCell(this.createConstant_gjf57x_a3a(editorContext, node));
     }
-    if (renderingCondition_gjf57x_a1c0(node, editorContext)) {
-      editorCell.addEditorCell(this.createConstant_gjf57x_b2a(editorContext, node));
+    if (renderingCondition_gjf57x_a1d0(node, editorContext)) {
+      editorCell.addEditorCell(this.createConstant_gjf57x_b3a(editorContext, node));
     }
-    if (renderingCondition_gjf57x_a2c0(node, editorContext)) {
-      editorCell.addEditorCell(this.createRefNodeList_gjf57x_c2a(editorContext, node));
+    if (renderingCondition_gjf57x_a2d0(node, editorContext)) {
+      editorCell.addEditorCell(this.createRefNodeList_gjf57x_c3a(editorContext, node));
     }
     return editorCell;
   }
 
-  private EditorCell createConstant_gjf57x_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "No Previously Run Projects");
-    editorCell.setCellId("Constant_gjf57x_a2a");
+  private EditorCell createConstant_gjf57x_a3a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "No Previously Run Projects in this location");
+    editorCell.setCellId("Constant_gjf57x_a3a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -111,15 +153,23 @@ public class Status_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_gjf57x_a0c0(SNode node, EditorContext editorContext) {
+  private static boolean renderingCondition_gjf57x_a0d0(SNode node, EditorContext editorContext) {
     SNode project = SNodeOperations.getAncestor(node, "org.campagnelab.bdval.structure.Project", false, false);
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "result", true)).isEmpty() && isNotEmptyString(SPropertyOperations.getString(project, "name")) && isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(project, "properties", true), "outputDirectory", true), "directoryLocation")) && new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(project, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(project, "name")).isDirectory();
+    String projectName = SPropertyOperations.getString(project, "name");
+    String outputDirectory = SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(project, "properties", true), "outputDirectory", true), "directoryLocation");
+    String directoryName = SPropertyOperations.getString(SLinkOperations.getTarget(project, "properties", true), "directoryName");
+    FileFilter resultsFilter = new FileFilter() {
+      public boolean accept(File file) {
+        return file.getAbsolutePath().endsWith("-results") && file.isDirectory();
+      }
+    };
+    return (projectName != null && projectName.length() > 0) && (outputDirectory != null && outputDirectory.length() > 0) && (directoryName != null && directoryName.length() > 0) && new File(outputDirectory + "/" + projectName + "/" + directoryName).isDirectory() && new File(outputDirectory + "/" + projectName + "/" + directoryName).listFiles(resultsFilter).length == 0;
 
   }
 
-  private EditorCell createConstant_gjf57x_b2a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_gjf57x_b3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "BDValConf has not been built in this location");
-    editorCell.setCellId("Constant_gjf57x_b2a");
+    editorCell.setCellId("Constant_gjf57x_b3a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -127,13 +177,13 @@ public class Status_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_gjf57x_a1c0(SNode node, EditorContext editorContext) {
+  private static boolean renderingCondition_gjf57x_a1d0(SNode node, EditorContext editorContext) {
     SNode project = SNodeOperations.getAncestor(node, "org.campagnelab.bdval.structure.Project", false, false);
-    return SLinkOperations.getTargets(node, "result", true).isEmpty() && (isEmptyString(SPropertyOperations.getString(project, "name")) || isEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(project, "properties", true), "outputDirectory", true), "directoryLocation")) || !(new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(project, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(project, "name")).isDirectory()));
+    return isEmptyString(SPropertyOperations.getString(project, "name")) || isEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(project, "properties", true), "outputDirectory", true), "directoryLocation")) || isEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(project, "properties", true), "directoryName")) || !(new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(project, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(project, "name") + "/" + SPropertyOperations.getString(SLinkOperations.getTarget(project, "properties", true), "directoryName")).isDirectory());
   }
 
-  private EditorCell createRefNodeList_gjf57x_c2a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new Status_Editor.resultListHandler_gjf57x_c2a(node, "result", editorContext);
+  private EditorCell createRefNodeList_gjf57x_c3a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new Status_Editor.resultListHandler_gjf57x_c3a(node, "result", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_result");
     Style style = new StyleImpl();
@@ -143,8 +193,8 @@ public class Status_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class resultListHandler_gjf57x_c2a extends RefNodeListHandler {
-    public resultListHandler_gjf57x_c2a(SNode ownerNode, String childRole, EditorContext context) {
+  private static class resultListHandler_gjf57x_c3a extends RefNodeListHandler {
+    public resultListHandler_gjf57x_c3a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -180,12 +230,8 @@ public class Status_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static boolean renderingCondition_gjf57x_a2c0(SNode node, EditorContext editorContext) {
+  private static boolean renderingCondition_gjf57x_a2d0(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "result", true)).isNotEmpty();
-  }
-
-  private static boolean isNotEmptyString(String str) {
-    return str != null && str.length() > 0;
   }
 
   private static boolean isEmptyString(String str) {

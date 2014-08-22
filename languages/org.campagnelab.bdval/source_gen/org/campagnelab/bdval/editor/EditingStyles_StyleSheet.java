@@ -18,5 +18,9 @@ public class EditingStyles_StyleSheet {
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
   }
 
+  public static void apply_RedText(Style style, EditorCell editorCell) {
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
+  }
+
 
 }

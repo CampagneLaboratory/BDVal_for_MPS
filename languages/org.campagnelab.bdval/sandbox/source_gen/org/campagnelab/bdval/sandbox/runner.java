@@ -21,7 +21,6 @@ import java.io.PrintStream;
 import org.apache.tools.ant.Project;
 import org.apache.tools.ant.DefaultLogger;
 import org.apache.tools.ant.ProjectHelper;
-import javax.swing.JOptionPane;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
@@ -29,7 +28,7 @@ public class runner {
   public static void main(String[] args) {
     String memoFile;
     if (args.length == 0) {
-      memoFile = "C:/Users/Victoria/Desktop/8-21/test6/memo/memo.properties";
+      memoFile = "C:/Users/Victoria/Desktop/Test Folder/8-21/test1/memo/memo.properties";
     } else {
       memoFile = args[0];
     }
@@ -51,7 +50,7 @@ public class runner {
       final int numRepeats = Integer.parseInt(repeats);
 
       final JLabel statusLabel = new JLabel();
-      JTextArea descriptionText = new JTextArea("Tag Description: " + tag);
+      JTextArea descriptionText = new JTextArea("Description: " + tag);
       descriptionText.setEditable(false);
       JScrollPane descriptionScrollPane = new JScrollPane(descriptionText);
       descriptionScrollPane.setPreferredSize(new Dimension(330, 40));
@@ -107,7 +106,7 @@ public class runner {
           } catch (Exception e) {
             p.fireBuildFinished(e);
             statusLabel.setText("Build Failed");
-            JOptionPane.showMessageDialog(null, "Error running ANT");
+            throw new Error("Error running ANT: " + e);
           }
         }
       };
@@ -157,14 +156,14 @@ public class runner {
             }
             progressBar.setValue(100);
           } catch (Exception e) {
-            System.out.println("Error monitoring project progress");
+            System.out.println("Error monitoring project progress: " + e);
           }
         }
       };
       monitorProgress.start();
 
     } catch (Exception e) {
-      System.out.println("Unsuccessful BDVal run");
+      System.out.println("Unsuccessful BDVal run: " + e);
     }
   }
 }

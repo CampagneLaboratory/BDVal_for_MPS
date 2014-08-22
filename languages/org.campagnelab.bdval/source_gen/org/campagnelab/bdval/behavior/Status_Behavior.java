@@ -4,45 +4,48 @@ package org.campagnelab.bdval.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.io.FileFilter;
 import java.io.File;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.apache.commons.io.filefilter.IOFileFilter;
 import org.apache.commons.io.filefilter.SuffixFileFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.filefilter.TrueFileFilter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.io.FileFilter;
 
 public class Status_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static void call_updateStatus_4578313781751627046(SNode thisNode) {
+  public static void call_updateStatus_4578313781751627046(final SNode thisNode) {
     SLinkOperations.getTargets(thisNode, "result", true).clear();
-    SNode result;
+    final Wrappers._T<SNode> result = new Wrappers._T<SNode>();
     SNode project = SNodeOperations.getAncestor(thisNode, "org.campagnelab.bdval.structure.Project", false, false);
-    File[] files = Status_Behavior.call_getResultFolders_6380268605234707429(thisNode, SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(project, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(project, "name") + "/" + SPropertyOperations.getString(SLinkOperations.getTarget(project, "properties", true), "directoryName"));
-    IOFileFilter predictionsFileFilter = new SuffixFileFilter("-prediction-table.txt");
-
-    if (files != null && files.length > 0) {
-      for (File file : files) {
-        result = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.Result", null);
-        SPropertyOperations.set(result, "name", file.getName());
-        SPropertyOperations.set(result, "numberModels", "" + (FileUtils.listFiles(new File(file.getAbsolutePath() + "/predictions/"), predictionsFileFilter, TrueFileFilter.INSTANCE).size()));
-        Result_Behavior.call_readMaqciiFile_6380268605206873743(result, Result_Behavior.call_getMaqciiFile_6380268605234804481(result, file));
-        ListSequence.fromList(SLinkOperations.getTargets(thisNode, "result", true)).addElement(result);
-      }
-    }
-  }
-
-  public static File[] call_getResultFolders_6380268605234707429(SNode thisNode, String directoryFolder) {
-    FileFilter resultsFilter = new FileFilter() {
+    final FileFilter resultsFilter = new FileFilter() {
       public boolean accept(File file) {
-        return file.isDirectory() && file.getName().contains("-results");
+        return file.isDirectory() && file.getName().endsWith("-results");
       }
     };
-    return new File(directoryFolder).listFiles(resultsFilter);
+    final IOFileFilter predictionsFileFilter = new SuffixFileFilter("-prediction-table.txt");
+
+    SPropertyOperations.set(thisNode, "test", null);
+    Sequence.fromIterable(Sequence.fromArray(new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(project, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(project, "name")).listFiles())).visitAll(new IVisitor<File>() {
+      public void visit(File directory) {
+        for (File resultFolder : directory.listFiles(resultsFilter)) {
+          SPropertyOperations.set(thisNode, "test", SPropertyOperations.getString(thisNode, "test") + resultFolder.getName());
+          result.value = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.Result", null);
+          SPropertyOperations.set(result.value, "name", resultFolder.getName());
+          SPropertyOperations.set(result.value, "directory", resultFolder.getParentFile().getName());
+          SPropertyOperations.set(result.value, "numberModels", "" + (FileUtils.listFiles(new File(resultFolder.getAbsolutePath() + "/predictions/"), predictionsFileFilter, TrueFileFilter.INSTANCE).size()));
+          Result_Behavior.call_readMaqciiFile_6380268605206873743(result.value, Result_Behavior.call_getMaqciiFile_6380268605234804481(result.value, resultFolder));
+          ListSequence.fromList(SLinkOperations.getTargets(thisNode, "result", true)).addElement(result.value);
+        }
+      }
+    });
   }
 }

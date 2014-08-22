@@ -10,6 +10,7 @@
     <classNode dependClassName="java.io.FileReader" />
     <classNode dependClassName="java.io.InputStream" />
     <classNode dependClassName="java.io.PrintStream" />
+    <classNode dependClassName="java.lang.Error" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.String" />
@@ -21,7 +22,6 @@
     <classNode dependClassName="javax.swing.BorderFactory" />
     <classNode dependClassName="javax.swing.JFrame" />
     <classNode dependClassName="javax.swing.JLabel" />
-    <classNode dependClassName="javax.swing.JOptionPane" />
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="javax.swing.JProgressBar" />
     <classNode dependClassName="javax.swing.JScrollPane" />

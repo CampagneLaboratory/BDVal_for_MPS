@@ -211,7 +211,7 @@ public class Approach_Behavior {
   public static String call_getEvaluateModelLine_1870354875254016704(SNode thisNode, boolean genelistModify, boolean wholeChip, boolean geneticAlgorithm, String classifier) {
     String modelLine = "-m write-model --overwrite-output true %other-options% --split-type training --model-prefix " + classifier + "_%dataset-name%-%split-id%-%label%" + " --gene-list %label%|%dataset-name%-%split-id%-%label%-features.txt";
     if (genelistModify) {
-      modelLine = modelLine.replaceAll("--gene-list %label%|%dataset-name%-%split-id%-%label%-features.txt", "--gene-list %gene-list-file%");
+      modelLine = modelLine.replaceAll("--gene-list %label%\\|%dataset-name%-%split-id%-%label%-features.txt", "--gene-list %gene-list-file%");
     }
     if (wholeChip) {
       modelLine = modelLine.replaceAll("--gene-list %label%|%dataset-name%-%split-id%-%label%-features.txt", "--gene-list full");

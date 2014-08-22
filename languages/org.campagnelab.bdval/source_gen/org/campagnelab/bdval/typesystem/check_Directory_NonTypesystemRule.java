@@ -13,6 +13,7 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_Directory_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -32,6 +33,10 @@ public class check_Directory_NonTypesystemRule extends AbstractNonTypesystemRule
         MessageTarget errorTarget = new NodeMessageTarget();
         errorTarget = new PropertyMessageTarget("directoryLocation");
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(directory, "Remove '/' from end of directory location", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "1911754720579127982", null, errorTarget);
+        {
+          BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("org.campagnelab.bdval.typesystem.TrimDirectory_QuickFix", false);
+          _reporter_2309309498.addIntentionProvider(intentionProvider);
+        }
       }
     }
 
