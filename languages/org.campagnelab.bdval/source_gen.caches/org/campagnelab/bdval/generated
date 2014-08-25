@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="ehmyphjx068ig7t3hdfsks0nx2bompj">
+<dependencies version="2" modelHash="-ywdfsbeh7s7zna88rd41rekrztui6x">
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="303xz1b2lyseld0axia86q3lpvucmq6" />
-  <dep model="r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)" hash="8tog5l48i8q8rggxsn6zhui3fytymwc" />
-  <dep model="r:80234718-e5a8-4a44-a5b1-9d71e3e29f88(org.campagnelab.bdval.editor)" hash="-abxxop71hpf6k2huerlc93l5gxm8lcl" />
+  <dep model="r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)" hash="8ega584p8ukzq23xkf5jp0c540m6iy1" />
+  <dep model="r:80234718-e5a8-4a44-a5b1-9d71e3e29f88(org.campagnelab.bdval.editor)" hash="-8s7bhu95bo0kqeabh0bo4xp8vlp6m1n" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="b4ewbuz42qcbg1awca5bacgi0vopxqt" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="a8elw7fctzg6sg8fe36u9gzu42axhdb" />
   <common dependsOnNodes="true">

@@ -39,7 +39,7 @@ public class Task_Behavior {
       sample.value = (SNode) sampleIterator.next();
       ListSequence.fromList(SLinkOperations.getTargets(thisNode, "categoryReference", true)).visitAll(new IVisitor<SNode>() {
         public void visit(SNode categoryRef) {
-          nameHasEndpoint.value = nameHasEndpoint.value || SPropertyOperations.getString(sample.value, "name").contains(SPropertyOperations.getString(SLinkOperations.getTarget(categoryRef, "endpointCategory", false), "name"));
+          nameHasEndpoint.value = nameHasEndpoint.value || (isNotEmptyString(SPropertyOperations.getString(sample.value, "name")) && SPropertyOperations.getString(sample.value, "name").contains(SPropertyOperations.getString(SLinkOperations.getTarget(categoryRef, "endpointCategory", false), "name")));
         }
       });
     }
@@ -52,5 +52,9 @@ public class Task_Behavior {
         SLinkOperations.setTarget(sample, "category", null, false);
       }
     });
+  }
+
+  private static boolean isNotEmptyString(String str) {
+    return str != null && str.length() > 0;
   }
 }

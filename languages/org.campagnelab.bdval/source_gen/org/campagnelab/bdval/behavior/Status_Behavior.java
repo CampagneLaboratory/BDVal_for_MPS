@@ -10,8 +10,8 @@ import java.io.FileFilter;
 import java.io.File;
 import org.apache.commons.io.filefilter.IOFileFilter;
 import org.apache.commons.io.filefilter.SuffixFileFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.apache.commons.io.FileUtils;
@@ -33,16 +33,15 @@ public class Status_Behavior {
     };
     final IOFileFilter predictionsFileFilter = new SuffixFileFilter("-prediction-table.txt");
 
-    SPropertyOperations.set(thisNode, "test", null);
     Sequence.fromIterable(Sequence.fromArray(new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(project, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(project, "name")).listFiles())).visitAll(new IVisitor<File>() {
       public void visit(File directory) {
         for (File resultFolder : directory.listFiles(resultsFilter)) {
-          SPropertyOperations.set(thisNode, "test", SPropertyOperations.getString(thisNode, "test") + resultFolder.getName());
           result.value = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.Result", null);
           SPropertyOperations.set(result.value, "name", resultFolder.getName());
           SPropertyOperations.set(result.value, "directory", resultFolder.getParentFile().getName());
           SPropertyOperations.set(result.value, "numberModels", "" + (FileUtils.listFiles(new File(resultFolder.getAbsolutePath() + "/predictions/"), predictionsFileFilter, TrueFileFilter.INSTANCE).size()));
           Result_Behavior.call_readMaqciiFile_6380268605206873743(result.value, Result_Behavior.call_getMaqciiFile_6380268605234804481(result.value, resultFolder));
+          Result_Behavior.call_findFinalModel_4971583211585883350(result.value, resultFolder.getAbsolutePath());
           ListSequence.fromList(SLinkOperations.getTargets(thisNode, "result", true)).addElement(result.value);
         }
       }

@@ -19,7 +19,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.campagnelab.bdval.behavior.Task_Behavior;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import javax.swing.JComponent;
@@ -41,7 +41,6 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
-import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
@@ -315,7 +314,11 @@ public class DataSet_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_5gxpkq_a31a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "input", true), "sample", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "input", true), "sample", true)).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode sample) {
+        return isNotEmptyString(SPropertyOperations.getString(sample, "name"));
+      }
+    });
   }
 
   private EditorCell createCollection_5gxpkq_a31a(EditorContext editorContext, SNode node) {
@@ -329,15 +332,11 @@ public class DataSet_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_5gxpkq_a0n0(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(SLinkOperations.getTarget(node, "task", true), "endpoint", false) != null) && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "task", true), "categoryReference", true)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return (SLinkOperations.getTarget(it, "endpointCategory", false) != null);
+    return (SLinkOperations.getTarget(SLinkOperations.getTarget(node, "task", true), "endpoint", false) != null) && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "task", true), "categoryReference", true)).isNotEmpty() && Task_Behavior.call_checkForEndpoints_8962624141198443578(SLinkOperations.getTarget(node, "task", true)) && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "input", true), "sample", true)).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode sample) {
+        return isNotEmptyString(SPropertyOperations.getString(sample, "name"));
       }
-    }).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return SLinkOperations.getTarget(it, "endpointCategory", false);
-      }
-    }).isNotEmpty() && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "input", true), "sample", true)).isNotEmpty() && Task_Behavior.call_checkForEndpoints_8962624141198443578(SLinkOperations.getTarget(node, "task", true));
+    });
   }
 
   private EditorCell createJComponent_5gxpkq_a0n0(EditorContext editorContext, SNode node) {
@@ -473,6 +472,8 @@ public class DataSet_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.READ_ONLY, true);
+    style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -509,6 +510,10 @@ public class DataSet_Editor extends DefaultNodeEditor {
       AbstractCellListHandler handler = new DataSet_Editor._Inline_5gxpkq_a5n0.sampleListHandler_5gxpkq_a0a5n0(node, "sample", editorContext);
       EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
       editorCell.setCellId("refNodeList_sample");
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.EDITABLE, false);
+      style.set(StyleAttributes.READ_ONLY, true);
+      editorCell.getStyle().putAll(style);
       editorCell.setGridLayout(true);
       editorCell.setRole(handler.getElementRole());
       return editorCell;
@@ -521,7 +526,11 @@ public class DataSet_Editor extends DefaultNodeEditor {
 
       public SNode createNodeToInsert(EditorContext editorContext) {
         SNode listOwner = super.getOwner();
-        return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
+        return this.nodeFactory(listOwner, editorContext);
+      }
+
+      public SNode nodeFactory(SNode node, EditorContext editorContext) {
+        return null;
       }
 
       public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
@@ -561,5 +570,9 @@ public class DataSet_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
+  }
+
+  private static boolean isNotEmptyString(String str) {
+    return str != null && str.length() > 0;
   }
 }

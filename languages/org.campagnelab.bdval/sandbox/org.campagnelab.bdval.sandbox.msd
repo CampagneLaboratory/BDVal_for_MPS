@@ -16,7 +16,6 @@
     <usedLanguage>4caf0310-491e-41f5-8a9b-2006b3a94898(jetbrains.mps.execution.util)</usedLanguage>
     <usedLanguage>b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)</usedLanguage>
     <usedLanguage>35dbc0f6-2677-4e81-9b75-548a3c2b6d9b(org.campagnelab.bdval)</usedLanguage>
-    <usedLanguage>5ec1cd3d-0a50-4049-a8fa-ae768d7baa25(org.campagnelab.mps.XChart)</usedLanguage>
   </usedLanguages>
 </solution>
 

@@ -18,6 +18,7 @@ import java.io.PrintStream;
 import java.sql.Timestamp;
 import java.util.Date;
 import org.apache.tools.ant.ProjectHelper;
+import org.apache.commons.io.FileUtils;
 
 public class Result_Behavior {
   public static void init(SNode thisNode) {
@@ -157,6 +158,17 @@ public class Result_Behavior {
     } catch (Exception e) {
       p.fireBuildFinished(e);
       throw new Error("Error calculating statistics: " + e);
+    }
+  }
+
+  public static void call_findFinalModel_4971583211585883350(SNode thisNode, String resultFolder) {
+    String[] zip = {"zip"};
+    File finalModelsFolder = new File(resultFolder + "/final-models/");
+    if (finalModelsFolder.exists()) {
+      SPropertyOperations.set(thisNode, "finalModels", "" + (true));
+      SPropertyOperations.set(thisNode, "numberFinalModels", "" + (FileUtils.listFiles(finalModelsFolder, zip, true).size()));
+    } else {
+      SPropertyOperations.set(thisNode, "finalModels", "" + (false));
     }
   }
 }

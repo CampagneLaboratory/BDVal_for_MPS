@@ -136,7 +136,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 60:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.RandomForest").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.Classification").alias("Random Forest", "").create();
       case 61:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Result").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("directory", "numberModels", "maqciiFile").children(new String[]{"MCC", "AUC", "RMSE", "accuracy", "sensitivity", "specificity"}, new boolean[]{false, false, false, false, false, false}).create();
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Result").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("directory", "numberModels", "maqciiFile", "numberFinalModels", "finalModels").children(new String[]{"MCC", "AUC", "RMSE", "accuracy", "sensitivity", "specificity"}, new boolean[]{false, false, false, false, false, false}).create();
       case 62:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.SVM").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.Classification").alias("SVM", "").create();
       case 63:
@@ -160,7 +160,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 72:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.SingleColorArray").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "org.campagnelab.bdval.structure.ArrayParameter").alias("Single Color Array", "").create();
       case 73:
-        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Status").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("test").children(new String[]{"result"}, new boolean[]{true}).create();
+        return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.Status").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"result"}, new boolean[]{true}).create();
       case 74:
         return new ConceptDescriptorBuilder("org.campagnelab.bdval.structure.TTestProperties").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("alpha").create();
       case 75:

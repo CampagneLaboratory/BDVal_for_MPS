@@ -18,8 +18,8 @@ import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class check_Project_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-  public check_Project_NonTypesystemRule() {
+public class check_NormalTarget_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
+  public check_NormalTarget_NonTypesystemRule() {
   }
 
   public void applyRule(final SNode project, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {

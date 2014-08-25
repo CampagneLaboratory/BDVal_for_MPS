@@ -1,12 +1,12 @@
-<project name="8-21" default="evaluate" basedir=".">
+<project name="Laurents_Project4" default="evaluate" basedir=".">
   <!--Set up-->
-  <dirname property="bdval-project.basedir" file="${ant.file.8-21}"></dirname>
+  <dirname property="bdval-project.basedir" file="${ant.file.Laurents_Project4}"></dirname>
   <property name="bdval-dir" value="C:/Users/Victoria/Desktop/my_bdval"></property>
   <import file="${bdval-dir}/buildsupport/build.xml"></import>
   <property file="${bdval-project.basedir}/${ant.project.name}-local.properties"></property>
   <property name="project-property-file" value="${bdval-project.basedir}/${ant.project.name}.properties"></property>
   <property file="${project-property-file}"></property>
-  <property name="tag-description" value="testing directory names"></property>
+  <property name="tag-description" value="testing rej vs all control"></property>
   
   <!--Basic Properties-->
   <property name="enable-flooring" value="true"></property>
@@ -41,8 +41,8 @@
   
   <!--Additional Properties-->
   <property name="run-java" value="true"></property>
-  <var name="do.8-21_DiseasedNoYes_Test" value="true"></var>
-  <property name="all-endpoints" value=" 8-21_DiseasedNoYes_Test"></property>
+  <var name="do.Laurents_Project4_TypeOsteoRejuvenate_Test" value="true"></var>
+  <property name="all-endpoints" value=" Laurents_Project4_TypeOsteoRejuvenate_Test"></property>
   <import file="${bdval-dir}/data/bdval.xml"></import>
   
   

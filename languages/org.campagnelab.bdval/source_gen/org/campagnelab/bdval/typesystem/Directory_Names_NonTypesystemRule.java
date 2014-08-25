@@ -14,18 +14,18 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class white_Spaces_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-  public white_Spaces_NonTypesystemRule() {
+public class Directory_Names_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
+  public Directory_Names_NonTypesystemRule() {
   }
 
   public void applyRule(final SNode project, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SPropertyOperations.getString(project, "name").matches(".*\\s+.*")) {
+    if (isNotEmptyString(SPropertyOperations.getString(project, "name")) && SPropertyOperations.getString(project, "name").matches(".*\\s+.*")) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(project, "Remove White Spaces From Project Name", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "2063368849536479968", null, errorTarget);
       }
     }
-    if (SPropertyOperations.getString(SLinkOperations.getTarget(project, "properties", true), "directoryName").matches(".*\\s+.*")) {
+    if (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(project, "properties", true), "directoryName")) && SPropertyOperations.getString(SLinkOperations.getTarget(project, "properties", true), "directoryName").matches(".*\\s+.*")) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(project, "properties", true), "Remove White Spaces From Directory Name", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "2063368849536490909", null, errorTarget);
@@ -46,5 +46,9 @@ public class white_Spaces_NonTypesystemRule extends AbstractNonTypesystemRule_Ru
 
   public boolean overrides() {
     return false;
+  }
+
+  private static boolean isNotEmptyString(String str) {
+    return str != null && str.length() > 0;
   }
 }

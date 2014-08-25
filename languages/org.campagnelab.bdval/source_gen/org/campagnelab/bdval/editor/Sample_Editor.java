@@ -132,9 +132,6 @@ public class Sample_Editor extends DefaultNodeEditor {
         editorCell.setReferenceCell(true);
         editorCell.setRole("endpointCategory");
       }
-      Style style = new StyleImpl();
-      style.set(StyleAttributes.READ_ONLY, true);
-      editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -169,8 +166,6 @@ public class Sample_Editor extends DefaultNodeEditor {
         editorCell = provider.createEditorCell(editorContext);
         editorCell.setCellId("property_name_1");
         Style style = new StyleImpl();
-        style.set(StyleAttributes.READ_ONLY, false);
-        style.set(StyleAttributes.EDITABLE, true);
         style.set(StyleAttributes.PADDING_LEFT, new Padding(3, Measure.SPACES));
         style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         style.set(StyleAttributes.AUTO_DELETABLE, true);

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-1ocpk4jitj2wpexkjoc6ktxsiycp61k">
+<dependencies version="2" modelHash="-200jhggbktap1uuhqwf657alagr8yib">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="5sdbpqxziyuazpb9j1p4zdk6bnvbn49" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-5mgxduek28h3ywdzzsk4capaz4hgjm0" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="303xz1b2lyseld0axia86q3lpvucmq6" />
@@ -175,8 +175,8 @@
   <source id="3918118240378107098" name="ArrayParameter" hash="-485ifutdpv0sb13n3cgq5o8jnbn7lzn" />
   <source id="3918118240378122948" name="LoggedArray" hash="-bpgymw2yj6cx4m6i9rl0f85n7gjkpo6" />
   <source id="3918118240378127057" name="SingleColorArray" hash="9w9wwayibus4axmlx6hf221hrgz2fs2" />
-  <source id="8962624141203321241" name="Status" hash="a8jydlti17zrdimwco68k093nelihlv" />
-  <source id="8962624141203321355" name="Result" hash="-7ze3orovfzocpkkqxniyc9dvmqklhx7" />
+  <source id="8962624141203321241" name="Status" hash="-ekl5e86ean3jkdn3nuopo8lu18q3go3" />
+  <source id="8962624141203321355" name="Result" hash="3dx9hmpkr2yyywmiouvx9oyu7tiej7g" />
   <source id="6380268605258472024" name="FloatRange" hash="-e1jqi0vmgqjg1u2vxmuz81ff26agckd" />
 </dependencies>
 

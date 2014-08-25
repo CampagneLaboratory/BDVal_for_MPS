@@ -33,7 +33,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_2125124408386290223(final PropertyMacroContext _context) {
-    return "${ant.file." + SPropertyOperations.getString(_context.getNode(), "name").replaceAll("\\s", "") + "}";
+    return "${ant.file." + SPropertyOperations.getString(_context.getNode(), "name") + "}";
   }
 
   public static Object propertyMacro_GetPropertyValue_8381115952226070471(final PropertyMacroContext _context) {
@@ -177,7 +177,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_8241402136315226201(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "projectFolder") + "memo/memo.properties";
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(_context.getNode(), "name") + "/" + SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "properties", true), "directoryName") + "/memo/memo.properties";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_531337572953212163(final PropertyMacroContext _context) {
+    return "runner_" + SPropertyOperations.getString(_context.getNode(), "name");
   }
 
   public static Iterable<SNode> sourceNodesQuery_6380268605260307875(final SourceSubstituteMacroNodesContext _context) {

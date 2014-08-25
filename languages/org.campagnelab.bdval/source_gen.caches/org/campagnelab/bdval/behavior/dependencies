@@ -180,6 +180,10 @@
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="org.campagnelab.bdval.behavior.ClassificationProperties_Behavior" file="ClassificationProperties_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
   <dependency className="org.campagnelab.bdval.behavior.ClassificationProperties_BehaviorDescriptor" file="ClassificationProperties_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -360,6 +364,10 @@
   <dependency className="org.campagnelab.bdval.behavior.FeatureSelectionOption_BehaviorDescriptor" file="FeatureSelectionOption_BehaviorDescriptor.java">
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
     <classNode extendsClassName="java.lang.Cloneable" />
+  </dependency>
+  <dependency className="org.campagnelab.bdval.behavior.FeatureSelectionProperties_Behavior" file="FeatureSelectionProperties_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="org.campagnelab.bdval.behavior.FeatureSelectionProperties_BehaviorDescriptor" file="FeatureSelectionProperties_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -817,6 +825,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="org.apache.commons.io.FileUtils" />
     <classNode dependClassName="org.apache.commons.io.filefilter.SuffixFileFilter" />
     <classNode dependClassName="org.apache.tools.ant.DefaultLogger" />
     <classNode dependClassName="org.apache.tools.ant.Project" />
@@ -1003,6 +1012,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="org.campagnelab.bdval.behavior.Task_Behavior" file="Task_Behavior.java">
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
