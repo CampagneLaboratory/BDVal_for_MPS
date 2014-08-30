@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -33,6 +34,13 @@ public class Project_Info_NonTypesystemRule extends AbstractNonTypesystemRule_Ru
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportInfo(SLinkOperations.getTarget(SLinkOperations.getTarget(project, "properties", true), "antDirectory", true), "Go to 'http://ant.apache.org/bindownload.cgi' to download ANT if not already downloaded", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "2063368849526969397", null, errorTarget);
       }
     }
+    if (isEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(project, "platform", true), "file", true), "fileLocation"))) {
+      {
+        MessageTarget errorTarget = new NodeMessageTarget();
+        errorTarget = new PropertyMessageTarget("fileLocation");
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportInfo(SLinkOperations.getTarget(SLinkOperations.getTarget(project, "platform", true), "file", true), "Go to http://campagnelab.org/software/bdval/configure-bdval/dataset-specific-configuration/ to view files supported by BDVal", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "4688835505462067424", null, errorTarget);
+      }
+    }
     if (isEmptyString(SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(project, "platform", true), "arrayParameter", true)).first(), "command"))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
@@ -41,6 +49,13 @@ public class Project_Info_NonTypesystemRule extends AbstractNonTypesystemRule_Ru
     }
     ListSequence.fromList(SLinkOperations.getTargets(project, "dataset", true)).visitAll(new IVisitor<SNode>() {
       public void visit(SNode dataset) {
+        if (isEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(dataset, "input", true), "file", true), "fileLocation"))) {
+          {
+            MessageTarget errorTarget = new NodeMessageTarget();
+            errorTarget = new PropertyMessageTarget("fileLocation");
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportInfo(SLinkOperations.getTarget(SLinkOperations.getTarget(dataset, "input", true), "file", true), "Go to http://campagnelab.org/software/bdval/configure-bdval/dataset-specific-configuration/ to view files supported by BDVal", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "4688835505462093922", null, errorTarget);
+          }
+        }
         if ((SLinkOperations.getTarget(SLinkOperations.getTarget(dataset, "task", true), "endpoint", false) == null)) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();

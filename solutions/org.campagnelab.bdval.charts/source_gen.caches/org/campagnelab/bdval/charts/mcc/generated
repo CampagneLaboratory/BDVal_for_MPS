@@ -1,3 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4d70obuag9hqvxjvm3l6lmmqtvrx12z" />
+<dependencies version="2" modelHash="-4d70obuag9hqvxjvm3l6lmmqtvrx12z">
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="303xz1b2lyseld0axia86q3lpvucmq6" />
+  <dep model="r:20fc4f12-541f-4713-8b43-61bd6fff90f9(org.campagnelab.mps.XChart.generator.template.main@generator)" hash="-8qknegg5c22wgtv2ryi93xflyha1qhm" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="b4ewbuz42qcbg1awca5bacgi0vopxqt" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="a8elw7fctzg6sg8fe36u9gzu42axhdb" />
+  <common hash="-60ejsg8ad5x7s89cji4caq0c0f0tckq" dependsOnNodes="true">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
+  <source id="4514194192619760302" name="20140814-1710-restat-maqcii-submission.txt" hash="9f81lb78eutd7ru0tg0gz0ti10s5rhx">
+    <file name="20140814-1710-restat-maqcii-submission.txt" />
+  </source>
+  <source id="4514194192619760471" name="Charts" hash="-755qi5vhuotiv7awzc4whkw7fzfy5wl">
+    <dep root="4514194192619760302" />
+    <dep model="r:20fc4f12-541f-4713-8b43-61bd6fff90f9(org.campagnelab.mps.XChart.generator.template.main@generator)" />
+    <file name="ChartViewer_Charts.java" />
+  </source>
+  <source id="4514194192619763738" name="ChartViewer_Charts" hash="2vgrvgchlldz9cxefvs7s3slkbe76ca">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="ChartViewer_Charts.java" />
+  </source>
+</dependencies>
 
