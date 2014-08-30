@@ -4,10 +4,10 @@
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="languageModels" />
     </modelRoot>
-    <modelRoot contentPath="C:/Users/Victoria/Documents/Summer_2014/BDValConf/languages/lib" type="java_classes">
-      <sourceRoot location="bdval.jar" />
-      <sourceRoot location="edu.mssm.crover.tables.jar" />
-      <sourceRoot location="fastutil-6.5.13.jar" />
+    <modelRoot contentPath="${org.campagnelab.bdval.home}" type="java_classes">
+      <sourceRoot location="languages/lib/bdval.jar" />
+      <sourceRoot location="languages/lib/edu.mssm.crover.tables.jar" />
+      <sourceRoot location="languages/lib/fastutil-6.5.13.jar" />
     </modelRoot>
   </models>
   <accessoryModels />
@@ -48,9 +48,9 @@
     </generator>
   </generators>
   <stubModelEntries>
-    <stubModelEntry path="C:/Users/Victoria/Documents/Summer_2014/BDValConf/languages/lib/bdval.jar" />
-    <stubModelEntry path="C:/Users/Victoria/Documents/Summer_2014/BDValConf/languages/lib/edu.mssm.crover.tables.jar" />
-    <stubModelEntry path="C:/Users/Victoria/Documents/Summer_2014/BDValConf/languages/lib/fastutil-6.5.13.jar" />
+    <stubModelEntry path="${org.campagnelab.bdval.home}/languages/lib/bdval.jar" />
+    <stubModelEntry path="${org.campagnelab.bdval.home}/languages/lib/edu.mssm.crover.tables.jar" />
+    <stubModelEntry path="${org.campagnelab.bdval.home}/languages/lib/fastutil-6.5.13.jar" />
   </stubModelEntries>
   <sourcePath />
   <dependencies>
