@@ -100,7 +100,7 @@ public class Result_Behavior {
 
   public static void call_evaluateStatistics_3634366430331113687(SNode thisNode) {
     SNode project = SNodeOperations.getAncestor(thisNode, "org.campagnelab.bdval.structure.Project", false, false);
-    String folder = SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(project, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(project, "name") + "/" + SPropertyOperations.getString(SLinkOperations.getTarget(project, "properties", true), "directoryName") + "/";
+    String folder = SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(project, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(project, "name") + "/" + SPropertyOperations.getString(thisNode, "directory") + "/";
     Project p = new Project();
     try {
 
@@ -161,7 +161,7 @@ public class Result_Behavior {
     }
   }
 
-  public static void call_findFinalModel_4971583211585883350(SNode thisNode, String resultFolder) {
+  public static void call_updateFinalModel_4971583211585883350(SNode thisNode, String resultFolder) {
     String[] zip = {"zip"};
     File finalModelsFolder = new File(resultFolder + "/final-models/");
     if (finalModelsFolder.exists()) {

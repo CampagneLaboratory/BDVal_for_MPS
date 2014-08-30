@@ -83,10 +83,9 @@ public class FeatureSelectionProperties_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_pbpsc1_a0a(SNode node, EditorContext editorContext) {
-    final String name = "svmIterative";
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionInfo"), "featureSelectionCombo", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode combo) {
-        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name").matches(name)) || (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name").matches(name));
+        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(combo, "featureSelection1", true), "org.campagnelab.bdval.structure.SVMIterative")) || (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(combo, "featureSelection2", true), "org.campagnelab.bdval.structure.SVMIterative"));
       }
     });
   }
@@ -115,10 +114,9 @@ public class FeatureSelectionProperties_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_pbpsc1_a1a(SNode node, EditorContext editorContext) {
-    final String name = "ttest";
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionInfo"), "featureSelectionCombo", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode combo) {
-        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name").matches(name)) || (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name").matches(name));
+        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(combo, "featureSelection1", true), "org.campagnelab.bdval.structure.Ttest")) || (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(combo, "featureSelection2", true), "org.campagnelab.bdval.structure.Ttest"));
       }
     });
   }
@@ -147,10 +145,9 @@ public class FeatureSelectionProperties_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_pbpsc1_a2a(SNode node, EditorContext editorContext) {
-    final String name = "geneticAlgorithm";
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionInfo"), "featureSelectionCombo", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode combo) {
-        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name").matches(name)) || (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name").matches(name));
+        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(combo, "featureSelection1", true), "org.campagnelab.bdval.structure.GeneticAlgorithm")) || (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(combo, "featureSelection2", true), "org.campagnelab.bdval.structure.GeneticAlgorithm"));
       }
     });
   }
@@ -179,10 +176,9 @@ public class FeatureSelectionProperties_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_pbpsc1_a3a(SNode node, EditorContext editorContext) {
-    final String name = "foldchange";
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionInfo"), "featureSelectionCombo", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode combo) {
-        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name").matches(name)) || (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name").matches(name));
+        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(combo, "featureSelection1", true), "org.campagnelab.bdval.structure.FoldChange")) || (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(combo, "featureSelection2", true), "org.campagnelab.bdval.structure.FoldChange"));
       }
     });
   }
@@ -211,10 +207,9 @@ public class FeatureSelectionProperties_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_pbpsc1_a4a(SNode node, EditorContext editorContext) {
-    final String name = "permutation";
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionInfo"), "featureSelectionCombo", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode combo) {
-        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name").matches(name)) || (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name").matches(name));
+        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(combo, "featureSelection1", true), "org.campagnelab.bdval.structure.Permutation")) || (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(combo, "featureSelection2", true), "org.campagnelab.bdval.structure.Permutation"));
       }
     });
   }
@@ -243,10 +238,9 @@ public class FeatureSelectionProperties_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_pbpsc1_a5a(SNode node, EditorContext editorContext) {
-    final String name = "minMax";
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionInfo"), "featureSelectionCombo", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode combo) {
-        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name").matches(name)) || (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name").matches(name));
+        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(combo, "featureSelection1", true), "org.campagnelab.bdval.structure.MinMax")) || (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(combo, "featureSelection2", true), "org.campagnelab.bdval.structure.MinMax"));
       }
     });
   }
@@ -275,10 +269,9 @@ public class FeatureSelectionProperties_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_pbpsc1_a6a(SNode node, EditorContext editorContext) {
-    final String name = "coxReg";
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionInfo"), "featureSelectionCombo", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode combo) {
-        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name").matches(name)) || (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name").matches(name));
+        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(combo, "featureSelection1", true), "org.campagnelab.bdval.structure.CoxReg")) || (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(combo, "featureSelection2", true), "org.campagnelab.bdval.structure.CoxReg"));
       }
     });
   }
@@ -307,10 +300,9 @@ public class FeatureSelectionProperties_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_pbpsc1_a7a(SNode node, EditorContext editorContext) {
-    final String name = "kendallTau";
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionInfo"), "featureSelectionCombo", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode combo) {
-        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name").matches(name)) || (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name").matches(name));
+        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(combo, "featureSelection1", true), "org.campagnelab.bdval.structure.KendallTau")) || (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(combo, "featureSelection2", true), "org.campagnelab.bdval.structure.KendallTau"));
       }
     });
   }
@@ -339,10 +331,9 @@ public class FeatureSelectionProperties_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_pbpsc1_a8a(SNode node, EditorContext editorContext) {
-    final String name = "pathway";
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionInfo"), "featureSelectionCombo", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode combo) {
-        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelectionOption", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelectionOption", true), "name").matches(name));
+        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(combo, "featureSelection1", true), "org.campagnelab.bdval.structure.Pathway")) || (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(combo, "featureSelection2", true), "org.campagnelab.bdval.structure.Pathway"));
       }
     });
   }

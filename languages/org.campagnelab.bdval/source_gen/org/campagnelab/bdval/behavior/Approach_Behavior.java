@@ -24,7 +24,7 @@ import org.apache.log4j.LogManager;
 
 public class Approach_Behavior {
   public static void init(SNode thisNode) {
-    SPropertyOperations.set(thisNode, "externalRepeats", "" + (1));
+    SPropertyOperations.set(thisNode, "externalRepeats", "" + (3));
     SPropertyOperations.set(thisNode, "externalFolds", "" + (5));
   }
 
@@ -40,7 +40,6 @@ public class Approach_Behavior {
     final Wrappers._boolean wholeChip = new Wrappers._boolean();
 
     final Wrappers._boolean geneticAlgorithm = new Wrappers._boolean();
-    final Wrappers._T<String> genelistDef = new Wrappers._T<String>();
 
     final Wrappers._T<String> label = new Wrappers._T<String>();
     final Wrappers._T<String> defs = new Wrappers._T<String>();
@@ -60,7 +59,6 @@ public class Approach_Behavior {
                 genelist.value = SNodeOperations.isInstanceOf(SLinkOperations.getTarget(featureCombo, "featureSelection1", true), "org.campagnelab.bdval.structure.Genelist") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(featureCombo, "featureSelection2", true), "org.campagnelab.bdval.structure.Genelist");
                 wholeChip.value = SNodeOperations.isInstanceOf(SLinkOperations.getTarget(featureCombo, "featureSelection1", true), "org.campagnelab.bdval.structure.WholeChip");
                 geneticAlgorithm.value = SNodeOperations.isInstanceOf(SLinkOperations.getTarget(featureCombo, "featureSelection1", true), "org.campagnelab.bdval.structure.GeneticAlgorithm") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(featureCombo, "featureSelection2", true), "org.campagnelab.bdval.structure.GeneticAlgorithm");
-                genelistDef.value = "";
 
                 SNode fs1 = SLinkOperations.getTarget(featureCombo, "featureSelection1", true);
                 label.value = SPropertyOperations.getString(fs1, "name");
@@ -110,16 +108,68 @@ public class Approach_Behavior {
                       }
                     }).visitAll(new IVisitor<SNode>() {
                       public void visit(final SNode genelistNode) {
-                        genelistDef.value = "-%which-gene-list%";
                         if (SPropertyOperations.getString(classification, "name").matches("SVMTuneC")) {
                           ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "classificationInfo", true), "classificationProperties", true), "svmTuneCProperties", true), "cValue", true)).visitAll(new IVisitor<SNode>() {
                             public void visit(SNode cValue) {
-                              Approach_Behavior.call_generateModel_8241402136296602911(thisNode, label.value, SPropertyOperations.getString(cValue, "value"), SPropertyOperations.getBoolean(fsFold, "value"), SPropertyOperations.getString(classification, "classname"), SPropertyOperations.getString(classification, "parameters"), otherOptions.value + SPropertyOperations.getString(classification, "otherOption") + " --which-gene-list ${" + SPropertyOperations.getString(SLinkOperations.getTarget(genelistNode, "savedGenelist", false), "name") + "}");
+                              Approach_Behavior.call_generateModel_8241402136296602911(thisNode, label.value + "_" + SPropertyOperations.getString(SLinkOperations.getTarget(genelistNode, "savedGenelist", false), "name").replaceAll("-", "_"), SPropertyOperations.getString(cValue, "value"), SPropertyOperations.getBoolean(fsFold, "value"), SPropertyOperations.getString(classification, "classname"), SPropertyOperations.getString(classification, "parameters"), otherOptions.value + SPropertyOperations.getString(classification, "otherOption") + " --which-gene-list " + SPropertyOperations.getString(SLinkOperations.getTarget(genelistNode, "savedGenelist", false), "name"));
                             }
                           });
                         } else {
-                          Approach_Behavior.call_generateModel_8241402136296602911(thisNode, label.value, "", SPropertyOperations.getBoolean(fsFold, "value"), SPropertyOperations.getString(classification, "classname"), SPropertyOperations.getString(classification, "parameters"), otherOptions.value + SPropertyOperations.getString(classification, "otherOption") + " --which-gene-list ${" + SPropertyOperations.getString(SLinkOperations.getTarget(genelistNode, "savedGenelist", false), "name") + "}");
+                          Approach_Behavior.call_generateModel_8241402136296602911(thisNode, label.value + "_" + SPropertyOperations.getString(SLinkOperations.getTarget(genelistNode, "savedGenelist", false), "name").replaceAll("-", "_"), "", SPropertyOperations.getBoolean(fsFold, "value"), SPropertyOperations.getString(classification, "classname"), SPropertyOperations.getString(classification, "parameters"), otherOptions.value + SPropertyOperations.getString(classification, "otherOption") + " --which-gene-list " + SPropertyOperations.getString(SLinkOperations.getTarget(genelistNode, "savedGenelist", false), "name"));
                         }
+                        // Writes predict sequence file 
+                        try {
+                          String sequenceFileName = sequenceFolder + "generated-" + label.value + "_" + SPropertyOperations.getString(SLinkOperations.getTarget(genelistNode, "savedGenelist", false), "name").replaceAll("-", "_") + ".sequence";
+                          FileWriter file = new FileWriter(sequenceFileName);
+                          PrintWriter writer = new PrintWriter(file);
+                          writer.print("def label=" + label.value + "-%which-gene-list%" + "-%model-id%\n");
+                          writer.print("def predictions-filename=%dataset-name%-%label%-prediction-table.txt\n");
+                          writer.print("def survivial=%survival%\n");
+                          writer.print("def gene-list-file=" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(genelistNode, "savedGenelist", false), "file", true), "fileLocation") + "\n");
+                          writer.print(defs.value);
+                          writer.print("#\n");
+                          writer.print("addoption required:other-options:Other DAVMode options can be provided here\n");
+                          writer.print("addoption required:split-id:id of split being processed\n");
+                          writer.print("addoption required:num-features:Number of features in the generated model\n");
+                          writer.print(addoptions.value);
+                          writer.print(SPropertyOperations.getString(classification, "addoption"));
+                          writer.print("#\n");
+                          writer.print("#\n");
+                          writer.print(evaluateCommands.value);
+                          writer.print(Approach_Behavior.call_getEvaluateModelLine_1870354875254016704(thisNode, (genelist.value && !(twoFS.value)), wholeChip.value, geneticAlgorithm.value, SPropertyOperations.getString(classification, "name")));
+                          writer.print("-m predict --overwrite-output false --model " + SPropertyOperations.getString(classification, "name") + "_%dataset-name%-%split-id%-%label%.model -o %predictions-filename% %other-options%" + " --split-type test --true-labels %conditions%");
+                          writer.close();
+                          file.close();
+                        } catch (Exception e) {
+                          if (LOG.isEnabledFor(Level.ERROR)) {
+                            LOG.error("Error printing sequence files: ", e);
+                          }
+                        }
+                        // Writes final sequence file 
+                        try {
+                          String sequenceFileName = sequenceFolder + "generated-" + label.value + "_" + SPropertyOperations.getString(SLinkOperations.getTarget(genelistNode, "savedGenelist", false), "name").replaceAll("-", "_") + "-final-model.sequence";
+                          FileWriter file = new FileWriter(sequenceFileName);
+                          PrintWriter writer = new PrintWriter(file);
+                          writer.print("def label=" + label.value + "-%which-gene-list%" + "-%model-id%\n");
+                          writer.print("def gene-list-file=" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(genelistNode, "savedGenelist", false), "file", true), "fileLocation") + "\n");
+                          writer.print(defs.value);
+                          writer.print("#\n");
+                          writer.print("addoption required:model-final-features-filename:Path and filename where to write the final model");
+                          writer.print("addoption required:model-prefix:Path and filename where to write the final model");
+                          writer.print("addoption required:num-features:Number of features in the generated model\n");
+                          writer.print(addoptions.value);
+                          writer.print("#\n");
+                          writer.print("#\n");
+                          writer.print(finalModelCommands.value);
+                          writer.print(Approach_Behavior.call_getFinalModelLine_7218745629927269133(thisNode, (genelist.value && !(twoFS.value)), wholeChip.value, geneticAlgorithm.value));
+                          writer.close();
+                          file.close();
+                        } catch (Exception e) {
+                          if (LOG.isEnabledFor(Level.ERROR)) {
+                            LOG.error("Error printing sequence files: ", e);
+                          }
+                        }
+
                       }
                     });
                   } else {
@@ -132,59 +182,57 @@ public class Approach_Behavior {
                     } else {
                       Approach_Behavior.call_generateModel_8241402136296602911(thisNode, label.value, "", SPropertyOperations.getBoolean(fsFold, "value"), SPropertyOperations.getString(classification, "classname"), SPropertyOperations.getString(classification, "parameters"), otherOptions.value + SPropertyOperations.getString(classification, "otherOption"));
                     }
-                  }
-
-                  // Writes predict sequence file 
-                  try {
-                    String sequenceFileName = sequenceFolder + "generated-" + label.value + ".sequence";
-                    FileWriter file = new FileWriter(sequenceFileName);
-                    PrintWriter writer = new PrintWriter(file);
-                    writer.print("def label=" + label.value + genelistDef.value + "-%model-id%\n");
-                    writer.print("def predictions-filename=%dataset-name%-%label%-prediction-table.txt\n");
-                    writer.print("def survivial=%survival%\n");
-                    writer.print(defs.value);
-                    writer.print("#\n");
-                    writer.print("addoption required:other-options:Other DAVMode options can be provided here\n");
-                    writer.print("addoption required:split-id:id of split being processed\n");
-                    writer.print("addoption required:num-features:Number of features in the generated model\n");
-                    writer.print(addoptions.value);
-                    writer.print(SPropertyOperations.getString(classification, "addoption"));
-                    writer.print("#\n");
-                    writer.print("#\n");
-                    writer.print(evaluateCommands.value);
-                    writer.print(Approach_Behavior.call_getEvaluateModelLine_1870354875254016704(thisNode, (genelist.value && !(twoFS.value)), wholeChip.value, geneticAlgorithm.value, SPropertyOperations.getString(classification, "name")));
-                    writer.print("-m predict --overwrite-output false --model " + SPropertyOperations.getString(classification, "name") + "_%dataset-name%-%split-id%-%label%.model -o %predictions-filename% %other-options%" + " --split-type test --true-labels %conditions%");
-                    writer.close();
-                    file.close();
-                  } catch (Exception e) {
-                    if (LOG.isEnabledFor(Level.ERROR)) {
-                      LOG.error("Error printing sequence files: ", e);
+                    // Writes predict sequence file 
+                    try {
+                      String sequenceFileName = sequenceFolder + "generated-" + label.value + ".sequence";
+                      FileWriter file = new FileWriter(sequenceFileName);
+                      PrintWriter writer = new PrintWriter(file);
+                      writer.print("def label=" + label.value + "-%model-id%\n");
+                      writer.print("def predictions-filename=%dataset-name%-%label%-prediction-table.txt\n");
+                      writer.print("def survivial=%survival%\n");
+                      writer.print(defs.value);
+                      writer.print("#\n");
+                      writer.print("addoption required:other-options:Other DAVMode options can be provided here\n");
+                      writer.print("addoption required:split-id:id of split being processed\n");
+                      writer.print("addoption required:num-features:Number of features in the generated model\n");
+                      writer.print(addoptions.value);
+                      writer.print(SPropertyOperations.getString(classification, "addoption"));
+                      writer.print("#\n");
+                      writer.print("#\n");
+                      writer.print(evaluateCommands.value);
+                      writer.print(Approach_Behavior.call_getEvaluateModelLine_1870354875254016704(thisNode, (genelist.value && !(twoFS.value)), wholeChip.value, geneticAlgorithm.value, SPropertyOperations.getString(classification, "name")));
+                      writer.print("-m predict --overwrite-output false --model " + SPropertyOperations.getString(classification, "name") + "_%dataset-name%-%split-id%-%label%.model -o %predictions-filename% %other-options%" + " --split-type test --true-labels %conditions%");
+                      writer.close();
+                      file.close();
+                    } catch (Exception e) {
+                      if (LOG.isEnabledFor(Level.ERROR)) {
+                        LOG.error("Error printing sequence files: ", e);
+                      }
+                    }
+                    // Writes final sequence file 
+                    try {
+                      String sequenceFileName = sequenceFolder + "generated-" + label.value + "-final-model.sequence";
+                      FileWriter file = new FileWriter(sequenceFileName);
+                      PrintWriter writer = new PrintWriter(file);
+                      writer.print("def label=" + label.value + "-%model-id%\n");
+                      writer.print(defs.value);
+                      writer.print("#\n");
+                      writer.print("addoption required:model-final-features-filename:Path and filename where to write the final model");
+                      writer.print("addoption required:model-prefix:Path and filename where to write the final model");
+                      writer.print("addoption required:num-features:Number of features in the generated model\n");
+                      writer.print(addoptions.value);
+                      writer.print("#\n");
+                      writer.print("#\n");
+                      writer.print(finalModelCommands.value);
+                      writer.print(Approach_Behavior.call_getFinalModelLine_7218745629927269133(thisNode, (genelist.value && !(twoFS.value)), wholeChip.value, geneticAlgorithm.value));
+                      writer.close();
+                      file.close();
+                    } catch (Exception e) {
+                      if (LOG.isEnabledFor(Level.ERROR)) {
+                        LOG.error("Error printing sequence files: ", e);
+                      }
                     }
                   }
-                  // Writes final sequence file 
-                  try {
-                    String sequenceFileName = sequenceFolder + "generated-" + label.value + "-final-model.sequence";
-                    FileWriter file = new FileWriter(sequenceFileName);
-                    PrintWriter writer = new PrintWriter(file);
-                    writer.print("def label=" + label.value + genelistDef.value + "-%model-id%\n");
-                    writer.print(defs.value);
-                    writer.print("#\n");
-                    writer.print("addoption required:model-final-features-filename:Path and filename where to write the final model");
-                    writer.print("addoption required:model-prefix:Path and filename where to write the final model");
-                    writer.print("addoption required:num-features:Number of features in the generated model\n");
-                    writer.print(addoptions.value);
-                    writer.print("#\n");
-                    writer.print("#\n");
-                    writer.print(finalModelCommands.value);
-                    writer.print(Approach_Behavior.call_getFinalModelLine_7218745629927269133(thisNode, (genelist.value && !(twoFS.value)), wholeChip.value, geneticAlgorithm.value));
-                    writer.close();
-                    file.close();
-                  } catch (Exception e) {
-                    if (LOG.isEnabledFor(Level.ERROR)) {
-                      LOG.error("Error printing sequence files: ", e);
-                    }
-                  }
-
                 }
               }
             });
@@ -196,7 +244,7 @@ public class Approach_Behavior {
 
   public static void call_generateModel_8241402136296602911(SNode thisNode, String approachMethod, String cValue, boolean fsFold, String className, String classParams, String otherOptions) {
     SNode genModel = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.ModelToGenerate", null);
-    SPropertyOperations.set(genModel, "name", WordUtils.capitalize(approachMethod.replaceAll("(\\p{L1})(\\p{Lu})", "$1 $2").replaceAll("[+]", " + ").replaceAll("-", ", ")));
+    SPropertyOperations.set(genModel, "name", WordUtils.capitalize(approachMethod.replaceAll("(\\p{L1})(\\p{Lu})", "$1 $2").replaceAll("[+]", " + ").replaceAll("-", ", ").replaceAll("_", " ")));
     SPropertyOperations.set(genModel, "featureSelectionFold", "" + (fsFold));
     SPropertyOperations.set(genModel, "sequenceFile", "generated-" + approachMethod + ".sequence");
     SPropertyOperations.set(genModel, "allClassifierParameters", " --classifier " + className + " --classifier-parameters " + classParams);
@@ -214,7 +262,7 @@ public class Approach_Behavior {
       modelLine = modelLine.replaceAll("--gene-list %label%\\|%dataset-name%-%split-id%-%label%-features.txt", "--gene-list %gene-list-file%");
     }
     if (wholeChip) {
-      modelLine = modelLine.replaceAll("--gene-list %label%|%dataset-name%-%split-id%-%label%-features.txt", "--gene-list full");
+      modelLine = modelLine.replaceAll("--gene-list %label%\\|%dataset-name%-%split-id%-%label%-features.txt", "--gene-list full");
     }
     if (geneticAlgorithm) {
       modelLine = modelLine + " --use-parameters %dataset-name%-%split-id%-%label%-optimal-parameters.txt";
@@ -225,10 +273,10 @@ public class Approach_Behavior {
   public static String call_getFinalModelLine_7218745629927269133(SNode thisNode, boolean genelistModify, boolean wholeChip, boolean geneticAlgorithm) {
     String modelLine = "-m write-model --overwrite-output true --gene-list %label%|%model-final-features-filename%  --model-prefix %model-prefix%";
     if (genelistModify) {
-      modelLine = modelLine.replaceAll("--gene-list %label%|%dataset-name%-%split-id%-%label%-features.txt", "--gene-list %gene-list-file%");
+      modelLine = modelLine.replaceAll("--gene-list %label%\\|%dataset-name%-%split-id%-%label%-features.txt", "--gene-list %gene-list-file%");
     }
     if (wholeChip) {
-      modelLine = modelLine.replaceAll("--gene-list %label%|%dataset-name%-%split-id%-%label%-features.txt", "--gene-list full");
+      modelLine = modelLine.replaceAll("--gene-list %label%\\|%dataset-name%-%split-id%-%label%-features.txt", "--gene-list full");
     }
     if (geneticAlgorithm) {
       modelLine = modelLine + " --use-parameters %dataset-name%-%split-id%-%label%-optimal-parameters.txt";

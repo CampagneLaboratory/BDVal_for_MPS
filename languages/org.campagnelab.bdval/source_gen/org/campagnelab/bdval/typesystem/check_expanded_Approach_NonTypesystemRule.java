@@ -15,6 +15,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
+import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -60,79 +61,88 @@ public class check_expanded_Approach_NonTypesystemRule extends AbstractNonTypesy
         if ((SLinkOperations.getTarget(fsProperties, "svmIterative", true) == null)) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(fsProperties, "Must expand, press enter", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "2063368849535952398", null, errorTarget);
+            errorTarget = new ReferenceMessageTarget("svmIterative");
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(fsProperties, "Must expand, press enter", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "915377476673596204", null, errorTarget);
           }
         }
-      }
-      if (SNodeOperations.isInstanceOf(method, "org.campagnelab.bdval.structure.Ttest")) {
+      } else if (SNodeOperations.isInstanceOf(method, "org.campagnelab.bdval.structure.Ttest")) {
         if ((SLinkOperations.getTarget(fsProperties, "ttest", true) == null)) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(fsProperties, "Must expand, press enter", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "2063368849535953360", null, errorTarget);
+            errorTarget = new ReferenceMessageTarget("ttest");
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(fsProperties, "Must expand, press enter", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "915377476673596630", null, errorTarget);
           }
         }
-      }
-      if (SNodeOperations.isInstanceOf(method, "org.campagnelab.bdval.structure.GeneticAlgorithm")) {
+      } else if (SNodeOperations.isInstanceOf(method, "org.campagnelab.bdval.structure.GeneticAlgorithm")) {
         if ((SLinkOperations.getTarget(fsProperties, "geneticAlgorithm", true) == null)) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(fsProperties, "Must expand, press enter", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "2063368849535953866", null, errorTarget);
+            errorTarget = new ReferenceMessageTarget("geneticAlgorithm");
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(fsProperties, "Must expand, press enter", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "915377476673597056", null, errorTarget);
           }
         }
-      }
-      if (SNodeOperations.isInstanceOf(method, "org.campagnelab.bdval.structure.FoldChange")) {
+      } else if (SNodeOperations.isInstanceOf(method, "org.campagnelab.bdval.structure.FoldChange")) {
         if ((SLinkOperations.getTarget(fsProperties, "foldchange", true) == null)) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(fsProperties, "Must expand, press enter", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "2063368849535957405", null, errorTarget);
+            errorTarget = new ReferenceMessageTarget("foldchange");
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(fsProperties, "Must expand, press enter", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "915377476673603926", null, errorTarget);
           }
         }
-      }
-      if (SNodeOperations.isInstanceOf(method, "org.campagnelab.bdval.structure.Permutation")) {
-        if ((SLinkOperations.getTarget(fsProperties, "permutation", true) == null)) {
-          {
-            MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(fsProperties, "Must expand, press enter", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "2063368849535959601", null, errorTarget);
-          }
-        }
-      }
-      if (SNodeOperations.isInstanceOf(method, "org.campagnelab.bdval.structure.MinMax")) {
-        if ((SLinkOperations.getTarget(fsProperties, "minMax", true) == null)) {
-          {
-            MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(fsProperties, "Must expand, press enter", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "2063368849535961948", null, errorTarget);
-          }
-        }
-      }
-      if (SNodeOperations.isInstanceOf(method, "org.campagnelab.bdval.structure.CoxReg")) {
+      } else if (SNodeOperations.isInstanceOf(method, "org.campagnelab.bdval.structure.KendallTau")) {
         if ((SLinkOperations.getTarget(fsProperties, "kendallTau", true) == null)) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(fsProperties, "Must expand, press enter", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "2063368849535964827", null, errorTarget);
+            errorTarget = new ReferenceMessageTarget("kendallTau");
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(fsProperties, "Must expand, press enter", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "915377476673631738", null, errorTarget);
           }
         }
-      }
-      if (SNodeOperations.isInstanceOf(method, "org.campagnelab.bdval.structure.Pathway")) {
+      } else if (SNodeOperations.isInstanceOf(method, "org.campagnelab.bdval.structure.Permutation")) {
+        if ((SLinkOperations.getTarget(fsProperties, "permutation", true) == null)) {
+          {
+            MessageTarget errorTarget = new NodeMessageTarget();
+            errorTarget = new ReferenceMessageTarget("permutation");
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(fsProperties, "Must expand, press enter", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "915377476673608493", null, errorTarget);
+          }
+        }
+      } else if (SNodeOperations.isInstanceOf(method, "org.campagnelab.bdval.structure.MinMax")) {
+        if ((SLinkOperations.getTarget(fsProperties, "minMax", true) == null)) {
+          {
+            MessageTarget errorTarget = new NodeMessageTarget();
+            errorTarget = new ReferenceMessageTarget("minMax");
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(fsProperties, "Must expand, press enter", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "915377476673611590", null, errorTarget);
+          }
+        }
+      } else if (SNodeOperations.isInstanceOf(method, "org.campagnelab.bdval.structure.CoxReg")) {
+        if ((SLinkOperations.getTarget(fsProperties, "coxReg", true) == null)) {
+          {
+            MessageTarget errorTarget = new NodeMessageTarget();
+            errorTarget = new ReferenceMessageTarget("coxReg");
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(fsProperties, "Must expand, press enter", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "915377476673615146", null, errorTarget);
+          }
+        }
+      } else if (SNodeOperations.isInstanceOf(method, "org.campagnelab.bdval.structure.Pathway")) {
         if ((SLinkOperations.getTarget(fsProperties, "pathways", true) == null)) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(fsProperties, "Must expand, press enter", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "2063368849535967829", null, errorTarget);
+            errorTarget = new ReferenceMessageTarget("pathways");
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(fsProperties, "Must expand, press enter", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "915377476673618243", null, errorTarget);
           }
         }
-      }
-      if (SNodeOperations.isInstanceOf(method, "org.campagnelab.bdval.structure.SVM")) {
+      } else if (SNodeOperations.isInstanceOf(method, "org.campagnelab.bdval.structure.SVM")) {
         if ((SLinkOperations.getTarget(csProperties, "svmProperties", true) == null)) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(csProperties, "Must expand, press enter", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "2063368849536173499", null, errorTarget);
+            errorTarget = new ReferenceMessageTarget("svmProperties");
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(csProperties, "Must expand, press enter", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "915377476673621340", null, errorTarget);
           }
         }
-      }
-      if (SNodeOperations.isInstanceOf(method, "org.campagnelab.bdval.structure.SVMTuneC")) {
+      } else if (SNodeOperations.isInstanceOf(method, "org.campagnelab.bdval.structure.SVMTuneC")) {
         if ((SLinkOperations.getTarget(csProperties, "svmTuneCProperties", true) == null)) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(csProperties, "Must expand, press enter", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "2063368849536211732", null, errorTarget);
+            errorTarget = new ReferenceMessageTarget("svmTuneCProperties");
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(csProperties, "Must expand, press enter", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "915377476673624437", null, errorTarget);
           }
         }
       }

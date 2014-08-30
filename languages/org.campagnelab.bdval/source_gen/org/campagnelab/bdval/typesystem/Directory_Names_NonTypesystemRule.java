@@ -8,6 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -19,6 +20,18 @@ public class Directory_Names_NonTypesystemRule extends AbstractNonTypesystemRule
   }
 
   public void applyRule(final SNode project, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    if (isNotEmptyString(SPropertyOperations.getString(project, "name"))) {
+      boolean invalidCharacter = false;
+      for (char letter : SPropertyOperations.getString(project, "name").toCharArray()) {
+        invalidCharacter = invalidCharacter || (!(StringUtils.isAlphanumeric(String.valueOf(letter))) && !(StringUtils.containsAny(String.valueOf(letter), "_")));
+      }
+      if (invalidCharacter) {
+        {
+          MessageTarget errorTarget = new NodeMessageTarget();
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(project, "Remove Special Characters from Project Name", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "531337572959809491", null, errorTarget);
+        }
+      }
+    }
     if (isNotEmptyString(SPropertyOperations.getString(project, "name")) && SPropertyOperations.getString(project, "name").matches(".*\\s+.*")) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();

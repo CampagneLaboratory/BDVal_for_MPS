@@ -17,7 +17,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import javax.swing.JComponent;
 import org.campagnelab.ui.code.Swing.ButtonCallback;
-import javax.swing.JFrame;
 import org.campagnelab.bdval.behavior.Result_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.io.File;
@@ -73,6 +72,7 @@ public class Result_Editor extends DefaultNodeEditor {
     if (renderingCondition_ouom3r_a31a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_ouom3r_n0(editorContext, node));
     }
+    editorCell.addEditorCell(this.createConstant_ouom3r_o0(editorContext, node));
     return editorCell;
   }
 
@@ -111,14 +111,10 @@ public class Result_Editor extends DefaultNodeEditor {
       public void process(final SNode n, final EditorContext editorContext) {
         {
           final SNode node = ((SNode) n);
-          final JFrame frame = new JFrame("Evaluating Statistics...");
-          frame.setSize(400, 40);
-          frame.setLocationRelativeTo(null);
-          frame.setVisible(true);
           Result_Behavior.call_evaluateStatistics_3634366430331113687(node);
           SNode project = SNodeOperations.getAncestor(node, "org.campagnelab.bdval.structure.Project", false, false);
           Result_Behavior.call_readMaqciiFile_6380268605206873743(node, Result_Behavior.call_getMaqciiFile_6380268605234804481(node, new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(project, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(project, "name") + "/" + SPropertyOperations.getString(node, "directory") + "/" + SPropertyOperations.getString(node, "name"))));
-          frame.setVisible(false);
+
         }
       }
     };
@@ -138,7 +134,7 @@ public class Result_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_ouom3r_a2a(SNode node, EditorContext editorContext) {
-    return !(SPropertyOperations.getBoolean(node, "finalModels"));
+    return !(SPropertyOperations.getBoolean(node, "finalModels")) && SPropertyOperations.getInteger(node, "numberModels") != 0;
   }
 
   private EditorCell createJComponent_ouom3r_a2a(EditorContext editorContext, SNode node) {
@@ -152,14 +148,9 @@ public class Result_Editor extends DefaultNodeEditor {
       public void process(final SNode n, final EditorContext editorContext) {
         {
           final SNode node = ((SNode) n);
-          final JFrame frame = new JFrame("Generating Final Models...");
-          frame.setSize(400, 45);
-          frame.setLocationRelativeTo(null);
-          frame.setVisible(true);
           Result_Behavior.call_generateFinalModel_6380268605238741230(node);
           SNode project = SNodeOperations.getAncestor(node, "org.campagnelab.bdval.structure.Project", false, false);
-          Result_Behavior.call_findFinalModel_4971583211585883350(node, SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(project, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(project, "name") + "/" + SPropertyOperations.getString(node, "directory") + "/" + SPropertyOperations.getString(node, "name"));
-          frame.setVisible(false);
+          Result_Behavior.call_updateFinalModel_4971583211585883350(node, SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(project, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(project, "name") + "/" + SPropertyOperations.getString(node, "directory") + "/" + SPropertyOperations.getString(node, "name"));
         }
       }
     };
@@ -1262,7 +1253,7 @@ public class Result_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_ouom3r_a21a(SNode node, EditorContext editorContext) {
-    return !(SPropertyOperations.getBoolean(node, "finalModels"));
+    return !(SPropertyOperations.getBoolean(node, "finalModels")) && SPropertyOperations.getInteger(node, "numberModels") != 0;
   }
 
   private EditorCell createCollection_ouom3r_n0(EditorContext editorContext, SNode node) {
@@ -1320,6 +1311,16 @@ public class Result_Editor extends DefaultNodeEditor {
 
   private static boolean _StyleParameter_QueryFunction_ouom3r_a1b31a(EditorContext editorContext, SNode node) {
     return SPropertyOperations.getInteger(node, "numberModels") != SPropertyOperations.getInteger(node, "numberFinalModels");
+  }
+
+  private EditorCell createConstant_ouom3r_o0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_ouom3r_o0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
   }
 
   private EditorCell createProperty_ouom3r_a0(EditorContext editorContext, SNode node) {

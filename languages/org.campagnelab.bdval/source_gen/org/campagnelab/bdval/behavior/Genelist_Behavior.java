@@ -9,7 +9,7 @@ public class Genelist_Behavior {
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "name", "genelist");
     SPropertyOperations.set(thisNode, "defs", "");
-    SPropertyOperations.set(thisNode, "addoptions", "addoption required:gene-list-file:Location of genelist file\n" + "addoption required:which-gene-list:The gene list to process, such as NC01-2000\n");
+    SPropertyOperations.set(thisNode, "addoptions", "addoption required:which-gene-list:The gene list to process, such as NC01-2000\n");
     SPropertyOperations.set(thisNode, "otherOptions", "");
   }
 

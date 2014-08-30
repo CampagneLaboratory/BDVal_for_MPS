@@ -62,10 +62,9 @@ public class ClassificationProperties_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_1faogp_a0a(SNode node, EditorContext editorContext) {
-    final String name = "SVM";
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.ClassificationInfo"), "classification", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode classification) {
-        return isNotEmptyString(SPropertyOperations.getString(classification, "name")) && SPropertyOperations.getString(classification, "name").contains(name);
+        return isNotEmptyString(SPropertyOperations.getString(classification, "name")) && SNodeOperations.isInstanceOf(classification, "org.campagnelab.bdval.structure.SVM");
       }
     });
   }
@@ -91,10 +90,9 @@ public class ClassificationProperties_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_1faogp_a1a(SNode node, EditorContext editorContext) {
-    final String name = "SVMTuneC";
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.ClassificationInfo"), "classification", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode classification) {
-        return isNotEmptyString(SPropertyOperations.getString(classification, "name")) && SPropertyOperations.getString(classification, "name").matches(name);
+        return isNotEmptyString(SPropertyOperations.getString(classification, "name")) && SNodeOperations.isInstanceOf(classification, "org.campagnelab.bdval.structure.SVMTuneC");
       }
     });
   }

@@ -7,7 +7,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class SVMTuneC_Behavior {
   public static void init(SNode thisNode) {
-    SPropertyOperations.set(thisNode, "name", "SVMTuneC");
+    SPropertyOperations.set(thisNode, "name", "svmTuneC");
     SPropertyOperations.set(thisNode, "classname", "edu.cornell.med.icb.learning.libsvm.LibSvmClassifier ");
     SPropertyOperations.set(thisNode, "wekaClass", "libSVM");
     SPropertyOperations.set(thisNode, "parameters", "probability=${use-probability}");

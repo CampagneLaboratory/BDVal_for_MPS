@@ -19,7 +19,7 @@
   <dep model="r:6ba2667b-185e-45cd-ac65-e4b9d66da28e(jetbrains.mps.smodel.resources)" hash="15x9peevf5jnzof6z7madbq2met8xjd" />
   <dep model="r:71895ceb-c89d-4545-aa38-89d1cd891f17(jetbrains.mps.make.facet)" hash="8nveca23gopuwdc72p9fk4ut4kc9i74" />
   <dep model="r:89c0fb70-0977-7777-a076-5906f9d8630f(jetbrains.mps.make.facets)" hash="-612s055kwubbprko99c4dnj0evnaw9n" />
-  <dep model="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" hash="-200jhggbktap1uuhqwf657alagr8yib" />
+  <dep model="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" hash="wn2omxbea0vddy6dvksyeozoyq67rq" />
   <dep model="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)" hash="5mucicnn2ipqby0ph269up285neeem5" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="b4ewbuz42qcbg1awca5bacgi0vopxqt" />
   <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="e5zswcvgdspmt039m3gg97emcadi0ez" />

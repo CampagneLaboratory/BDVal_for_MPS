@@ -8,12 +8,13 @@ import jetbrains.mps.intentions.IntentionExecutable;
 import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.io.File;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.util.MacrosFactory;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ProstateExample_Intention implements IntentionFactory {
@@ -47,7 +48,14 @@ public class ProstateExample_Intention implements IntentionFactory {
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
+    if (!(isApplicableToNode(node, editorContext))) {
+      return false;
+    }
     return true;
+  }
+
+  private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
+    return isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "properties", true), "bdvalDirectory", true), "directoryLocation")) && new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "properties", true), "bdvalDirectory", true), "directoryLocation")).isDirectory();
   }
 
   public SNodeReference getIntentionNodeReference() {
@@ -70,19 +78,23 @@ public class ProstateExample_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Show Prostate Example";
+      return "Update Prostate Example File Locations";
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      SPropertyOperations.set(node, "name", "Prostate Example");
-
-      SNode properties = SLinkOperations.getTarget(node, "properties", true);
-      SPropertyOperations.set(SLinkOperations.setNewChild(properties, "outputDirectory", "org.campagnelab.bdval.structure.Directory"), "directoryLocation", System.getProperty("user.home"));
-      SPropertyOperations.set(SLinkOperations.setNewChild(properties, "bdvalDirectory", "org.campagnelab.bdval.structure.Directory"), "directoryLocation", MacrosFactory.getGlobal().expandPath("org.campagnelab.bdval.home"));
+      String zipLocation = SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "properties", true), "bdvalDirectory", true), "directoryLocation");
+      String separator = File.separator;
+      SPropertyOperations.set(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "platform", true), "file", true), "fileLocation", zipLocation + "/data/bdval/GSE8402/platforms/GPL5474_family.soft.gz");
+      SPropertyOperations.set(SLinkOperations.getTarget(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(node, "dataset", true)).first(), "input", true), "file", true), "fileLocation", zipLocation + "/data/bdval/GSE8402/norm-data/GSE8402_family.soft.gz");
+      SPropertyOperations.set(SLinkOperations.getTarget(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(node, "dataset", true)).first(), "cids", true), "file", true), "fileLocation", zipLocation + "/data/bdval/GSE8402/cids/GSE8402-FusionYesNo-TrainingSplit.cids");
     }
 
     public IntentionDescriptor getDescriptor() {
       return ProstateExample_Intention.this;
     }
+  }
+
+  private static boolean isNotEmptyString(String str) {
+    return str != null && str.length() > 0;
   }
 }

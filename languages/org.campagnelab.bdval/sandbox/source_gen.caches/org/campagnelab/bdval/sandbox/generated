@@ -1,25 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="7h8b3dykci5p003j06tq7se016gvqxv">
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="303xz1b2lyseld0axia86q3lpvucmq6" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="b4ewbuz42qcbg1awca5bacgi0vopxqt" />
-  <dep model="r:bc6dc6e9-88f3-467f-93c0-f469615cbf0b(org.campagnelab.bdval.generator.template.main@generator)" hash="-17zts812qx2vsp21jbe6qmzxhyc2z79" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="a8elw7fctzg6sg8fe36u9gzu42axhdb" />
-  <common hash="5wyo6on4zs4vjy8tm3exczqhqxi5b2g" dependsOnNodes="true">
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-  </common>
-  <source id="4971583211592294628" name="1test" hash="6onsznetdo1a49roo8rk22wjaejhguo">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <dep model="r:bc6dc6e9-88f3-467f-93c0-f469615cbf0b(org.campagnelab.bdval.generator.template.main@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="1test" />
-    <file name="1test.xml" />
-    <file name="runner_1test.java" />
-  </source>
-  <source id="5230008558208117400" name="Laurents_Project4" hash="-296z31qboc678u3iaegjzsar69uyqg3">
-    <file name="Laurents_Project4" />
-    <file name="Laurents_Project4.xml" />
-    <file name="runner_Laurents_Project4.java" />
-  </source>
+<dependencies version="2" modelHash="-a8slheyr84wfb12sthhwnv5k5blw6r7">
+  <common hash="-a8slheyr84wfb12sthhwnv5k5blw6r7" />
 </dependencies>
 

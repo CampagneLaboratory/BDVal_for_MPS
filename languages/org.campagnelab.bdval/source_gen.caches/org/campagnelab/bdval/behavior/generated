@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="11zb5dx30l8v8bn17g9z6i3mrem0ir1">
+<dependencies version="2" modelHash="-1t1vmdoptgc9ltdkxtcm7ka30g2xtpf">
   <dep model="f:java_stub#35dbc0f6-2677-4e81-9b75-548a3c2b6d9b#edu.cornell.med.icb.cli(org.campagnelab.bdval/edu.cornell.med.icb.cli@java_stub)" />
   <dep model="f:java_stub#35dbc0f6-2677-4e81-9b75-548a3c2b6d9b#edu.mssm.crover.tables(org.campagnelab.bdval/edu.mssm.crover.tables@java_stub)" />
   <dep model="f:java_stub#35dbc0f6-2677-4e81-9b75-548a3c2b6d9b#org.apache.commons.io(org.campagnelab.bdval/org.apache.commons.io@java_stub)" />
@@ -24,7 +24,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="eurapqxyjrg3ghebg1pc3f4i9yuwudm" />
   <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="-1vtu6uptzx5l7n2n68xt5em9d6nhvec" />
   <dep model="r:7f489494-339f-481c-be61-2af4deb51551(jetbrains.mps.execution.util.behavior)" hash="e6vkk9xsk643zv63k7dfh9op5eultxb" />
-  <dep model="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" hash="-200jhggbktap1uuhqwf657alagr8yib" />
+  <dep model="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" hash="wn2omxbea0vddy6dvksyeozoyq67rq" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="b4ewbuz42qcbg1awca5bacgi0vopxqt" />
   <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="e5zswcvgdspmt039m3gg97emcadi0ez" />
   <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="npgvdfpnhgphsd6ic5xuzipg1hn1j4" />
@@ -247,7 +247,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="Project_Behavior.java" />
   </source>
-  <source id="2366055488403470941" name="Task_Behavior" hash="-1sx6bilbpz5gw22y6iyrmcs0wd5la46">
+  <source id="2366055488403470941" name="Task_Behavior" hash="cgmggqoeu8p9xina4n4v63tajhnvqa4">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -262,7 +262,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="Task_Behavior.java" />
   </source>
-  <source id="3976565827575914036" name="Properties_Behavior" hash="6smgblgrcc7czo4j4vtsrfman349r4x">
+  <source id="3976565827575914036" name="Properties_Behavior" hash="cqnfg3a2bhqfbfszcuyl9six17rqhbr">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
@@ -303,7 +303,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="Logistic_Behavior.java" />
   </source>
-  <source id="2125124408390039273" name="SVM_Behavior" hash="a5tubmx0e5mg33htwl6dm9ica9nhf18">
+  <source id="2125124408390039273" name="SVM_Behavior" hash="evk5e41zpoxwj6vpmbx0zde742wmdnr">
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -374,7 +374,7 @@
     <dep model="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" />
     <file name="FeatureSelectionFoldTrue_Behavior.java" />
   </source>
-  <source id="8314272953675900650" name="Approach_Behavior" hash="-4b5wpydm43rsq7fzt0jiuommi3z9uuq">
+  <source id="8314272953675900650" name="Approach_Behavior" hash="-bsqzfr7mbjyv4wgd3a72z6lwvwgfipl">
     <dep root="1870354875253560182" />
     <dep model="f:java_stub#35dbc0f6-2677-4e81-9b75-548a3c2b6d9b#org.apache.commons.lang(org.campagnelab.bdval/org.apache.commons.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -396,7 +396,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="Approach_Behavior.java" />
   </source>
-  <source id="1870354875253509327" name="Ttest_Behavior" hash="3be06jovd6q0l647554419yaach6yf9">
+  <source id="1870354875253509327" name="Ttest_Behavior" hash="-50cvyth99tr5qwsw6kvvxz8ud4qferk">
     <dep root="1870354875253560182" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -404,7 +404,7 @@
     <dep model="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" />
     <file name="Ttest_Behavior.java" />
   </source>
-  <source id="1870354875253560182" name="FeatureSelection_Behavior" hash="1n7c8qgt2fuliqhvm97le5vwjp3rg6m">
+  <source id="1870354875253560182" name="FeatureSelection_Behavior" hash="3jvysrua8q5nppsowpwsoablliblc84">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
@@ -415,7 +415,7 @@
     <dep model="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" />
     <file name="FeatureSelectionFold_Behavior.java" />
   </source>
-  <source id="3649519271350361367" name="SVMGlobal_Behavior" hash="6z69bbxdo8o55jabsb77dpfowbme8p2">
+  <source id="3649519271350361367" name="SVMGlobal_Behavior" hash="bzjiwxve21vbqsirtfty5v0cndl23xd">
     <dep root="1870354875253560182" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -423,7 +423,7 @@
     <dep model="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" />
     <file name="SVMGlobal_Behavior.java" />
   </source>
-  <source id="3649519271362673310" name="SVMIterative_Behavior" hash="-2o8j9w43bs6q6mroxllpxmz94t0e4z4">
+  <source id="3649519271362673310" name="SVMIterative_Behavior" hash="-dc46v6f65106uszkz8ibq0uvf0ikn06">
     <dep root="1870354875253560182" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -437,7 +437,7 @@
     <dep model="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" />
     <file name="SVMIterativeProperties_Behavior.java" />
   </source>
-  <source id="3649519271366497324" name="FoldChange_Behavior" hash="e7vrxcvco0x72pqx4x3owqldk4uhoc4">
+  <source id="3649519271366497324" name="FoldChange_Behavior" hash="8qrwo468xbllltuw5juic8046t2slxh">
     <dep root="1870354875253560182" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -457,12 +457,14 @@
     <dep model="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" />
     <file name="TTestProperties_Behavior.java" />
   </source>
-  <source id="4989762282926592701" name="MinMax_Behavior" hash="-nouw8y9oguvzk8vs534ay848pbyz88">
+  <source id="4989762282926592701" name="MinMax_Behavior" hash="9r8n8u49ygirqkzu7nnt807hai8kud4">
     <dep root="1870354875253560182" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" />
+    <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="MinMax_Behavior.java" />
   </source>
   <source id="4989762282926673524" name="MinMaxProperties_Behavior" hash="-71ju4ddowqwbsirzeiu1bocnmpbdd61">
@@ -471,7 +473,7 @@
     <dep model="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" />
     <file name="MinMaxProperties_Behavior.java" />
   </source>
-  <source id="4989762282927278539" name="GeneticAlgorithm_Behavior" hash="dtxdnw8pgdbhqslgj87w9vmqqujeloo">
+  <source id="4989762282927278539" name="GeneticAlgorithm_Behavior" hash="-9bna3829cw190x8r304zpz3gqzbju2n">
     <dep root="1870354875253560182" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -485,7 +487,7 @@
     <dep model="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" />
     <file name="GeneticAlgorithmProperties_Behavior.java" />
   </source>
-  <source id="4989762282949988540" name="Permutation_Behavior" hash="-bdgtbkq2jukryicodmlxif4kmy44gz5">
+  <source id="4989762282949988540" name="Permutation_Behavior" hash="94jbvq2rd7q1ijogf315stua866qwq">
     <dep root="1870354875253560182" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -499,7 +501,7 @@
     <dep model="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" />
     <file name="PermutationProperties_Behavior.java" />
   </source>
-  <source id="4989762282952313580" name="Genelist_Behavior" hash="7zx189vzrkmq4mz0ommx01d31kl2pt">
+  <source id="4989762282952313580" name="Genelist_Behavior" hash="cmlrz6yuaxh283fw7n1tkmkvs6ox4nq">
     <dep root="1870354875253560182" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -528,7 +530,7 @@
     <dep model="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" />
     <file name="AverageAggregation_Behavior.java" />
   </source>
-  <source id="4989762282958951363" name="FeatureSelectionInfo_Behavior" hash="-770im4oc1wztnwm99q4es9rdh40wsox">
+  <source id="4989762282958951363" name="FeatureSelectionInfo_Behavior" hash="bmwbei851g3sut6jju4l50y40g4u8sl">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -538,7 +540,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="FeatureSelectionInfo_Behavior.java" />
   </source>
-  <source id="4989762282960161194" name="CoxReg_Behavior" hash="-4087sfjlk4jklvq57nxipwmpoddr551">
+  <source id="4989762282960161194" name="CoxReg_Behavior" hash="-cmruorrj7zkkcbbibkewlfvbo07lvnm">
     <dep root="1870354875253560182" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -576,14 +578,14 @@
     <dep model="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" />
     <file name="PathwayProperties_Behavior.java" />
   </source>
-  <source id="4989762283050791352" name="SVMTuneC_Behavior" hash="-i9438cw94ibn12pqsiiag28sdp74uo">
+  <source id="4989762283050791352" name="SVMTuneC_Behavior" hash="-3iie0u1f6i6xw95a02g2xuuo7ghxvsq">
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" />
     <file name="SVMTuneC_Behavior.java" />
   </source>
-  <source id="8241402136310293317" name="KendallTau_Behavior" hash="5eo57hnrwk0n1zfzkplosuiasxw9we">
+  <source id="8241402136310293317" name="KendallTau_Behavior" hash="-ey1clbafj0epxpi469c42rcx7pkz68r">
     <dep root="1870354875253560182" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -615,7 +617,7 @@
     <dep model="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" />
     <file name="SingleColorArray_Behavior.java" />
   </source>
-  <source id="8962624141212303574" name="Status_Behavior" hash="2iniuuimznj2hoh79k9uwb7im24lz18">
+  <source id="8962624141212303574" name="Status_Behavior" hash="2iwhm1ww28aq8ki6qu8l71u9x04zvt1">
     <dep root="3634366430331107814" />
     <dep model="f:java_stub#35dbc0f6-2677-4e81-9b75-548a3c2b6d9b#org.apache.commons.io(org.campagnelab.bdval/org.apache.commons.io@java_stub)" />
     <dep model="f:java_stub#35dbc0f6-2677-4e81-9b75-548a3c2b6d9b#org.apache.commons.io.filefilter(org.campagnelab.bdval/org.apache.commons.io.filefilter@java_stub)" />
@@ -633,7 +635,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="Status_Behavior.java" />
   </source>
-  <source id="3634366430331107814" name="Result_Behavior" hash="-cy51ft0bg6ufsyl8hn8hcuwdju2qm7r">
+  <source id="3634366430331107814" name="Result_Behavior" hash="cgwhj3zbar48yc6in8yjvnmcw9squ9f">
     <dep model="f:java_stub#35dbc0f6-2677-4e81-9b75-548a3c2b6d9b#org.apache.commons.io(org.campagnelab.bdval/org.apache.commons.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -659,7 +661,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="ClassificationInfo_Behavior.java" />
   </source>
-  <source id="6380268605263234414" name="FloatRange_Behavior" hash="6zsc5eyv6xlvdgdb1dilkx5ihcghekq">
+  <source id="6380268605263234414" name="FloatRange_Behavior" hash="1b1a7dur8h701pmgrax6bug9ht0pi32">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />

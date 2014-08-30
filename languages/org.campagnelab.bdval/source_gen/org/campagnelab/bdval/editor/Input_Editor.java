@@ -117,7 +117,7 @@ public class Input_Editor extends DefaultNodeEditor {
         }
       }
     };
-    return Button.createButton("Preview", editorContext, node, callback);
+    return Button.createButton("Load & Preview", editorContext, node, callback);
 
   }
 

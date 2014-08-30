@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-200jhggbktap1uuhqwf657alagr8yib">
+<dependencies version="2" modelHash="wn2omxbea0vddy6dvksyeozoyq67rq">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="5sdbpqxziyuazpb9j1p4zdk6bnvbn49" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-5mgxduek28h3ywdzzsk4capaz4hgjm0" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="303xz1b2lyseld0axia86q3lpvucmq6" />
@@ -108,7 +108,7 @@
   <source id="7083662764384091354" name="Task" hash="3thkmkx2k5l22x4i5cgr2krq77d84sd" />
   <source id="7083662764384236370" name="CategoryReference" hash="e1zvev63pwqixy6icjobjtdqvw1cj29" />
   <source id="7083662764416913858" name="Properties" hash="9q2ooigfz219qol19w7hiqs9ld6uh4j" />
-  <source id="290469645457746370" name="Integer" hash="e39l6vz7w4wq4bg5a32638qjlb92mmg" />
+  <source id="290469645457746370" name="Integer" hash="-d5d5r2z2t5clk2lmyu7x7nerpdrywmt" />
   <source id="7388448774866532076" name="NaiveBayes" hash="ath7aivuyfdfggf8bnu1k5eck2wpvww" />
   <source id="7388448774866532194" name="LogitBoost" hash="16l02r4tc6nnqll6671goz51qtgwu81" />
   <source id="7388448774866532195" name="Logistic" hash="-84r61p4t46yll93nbrcsoh7ymyv7vea" />
@@ -139,14 +139,14 @@
   <source id="1870354875249583257" name="FeatureSelection" hash="-4ycc9zgl3qny14qpq1uy5y06p1iz1c7" />
   <source id="1870354875249618576" name="FeatureSelectionInfo" hash="8oid2oiefb96epnyff7shanpo0wqfaa" />
   <source id="1870354875251769793" name="FeatureSelectionCombo" hash="5mpzpssxl699vuz55rpup9lalts8thc" />
-  <source id="1870354875255731609" name="ModelToGenerate" hash="-2kve9q54u9thuy5bg1fu0ovdlsol8zh" />
+  <source id="1870354875255731609" name="ModelToGenerate" hash="-3pxx7a33dutlt40grnqehf97o9chrd8" />
   <source id="3649519271349200549" name="SVMGlobal" hash="2ue23flk83bngcjles9e055w5e29fr8" />
   <source id="3649519271360667458" name="SVMIterative" hash="3tp7mdlj79jyzgsofz5h7vx4d7bkbw8" />
   <source id="3649519271366496699" name="FoldChange" hash="5oti5eq2c9fkqs3obp1kkitzwhyfcsq" />
   <source id="4989762282926592335" name="MinMax" hash="-5l26rz8gn2lgv8gzqzjqdve1pv8wiy5" />
   <source id="4989762282926666582" name="MinMaxProperties" hash="-2twnijv6cssncu8tcezn43ujuadp8cd" />
   <source id="4989762282927277961" name="GeneticAlgorithm" hash="ad3kp5pp09dd5widan9bcluv58aeuro" />
-  <source id="4989762282928488779" name="float" hash="-8ga3j3qd6tbjyo11iaj7wvzc8q8yh3a">
+  <source id="4989762282928488779" name="float" hash="-cms3mufqjr19phb059tz2b3fbvlky01">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="float_PropertySupport.java" />
   </source>
@@ -164,9 +164,9 @@
   <source id="4989762282967630223" name="SVMTuneCProperties" hash="-66mm07lx3eamg3inkqi5wotydoj1hjt" />
   <source id="4989762282976782237" name="WholeChip" hash="d5ot3uc3pimjzafmege4pskepu84bdk" />
   <source id="4989762283050789095" name="SVMTuneC" hash="8z7tr0h1ioj5oc1vwzuqg2nnroia6f5" />
-  <source id="7860773100998725765" name="Float" hash="4wymedtuvk8r6eil25m1hevm6ir0qij" />
-  <source id="1911754720566014109" name="File" hash="-aq9zk74srab2wh3kc37dy69m93oz0h1" />
-  <source id="1911754720568105445" name="Directory" hash="3nqdimyky2b2xogcc6wbtfhllmwk40w" />
+  <source id="7860773100998725765" name="Float" hash="c338syxd0hyhl8r6buh6aycl4ewitdi" />
+  <source id="1911754720566014109" name="File" hash="10wx8cnhpd700tey9b7gxeep4whlsez" />
+  <source id="1911754720568105445" name="Directory" hash="-4niub27tnbgeghdic8yhrk9nul6tdvo" />
   <source id="8241402136291306827" name="SavedGenelist" hash="5iarnyn8xar69z8vgrtjkhz2njrgzal" />
   <source id="8241402136294612830" name="GenelistRef" hash="-bqdib3auq0u7e6b7nzq8u5mf8olvw5j" />
   <source id="8241402136310292899" name="KendallTau" hash="elo1ps265e3ykhwbo588pqm4499x0il" />
@@ -177,6 +177,6 @@
   <source id="3918118240378127057" name="SingleColorArray" hash="9w9wwayibus4axmlx6hf221hrgz2fs2" />
   <source id="8962624141203321241" name="Status" hash="-ekl5e86ean3jkdn3nuopo8lu18q3go3" />
   <source id="8962624141203321355" name="Result" hash="3dx9hmpkr2yyywmiouvx9oyu7tiej7g" />
-  <source id="6380268605258472024" name="FloatRange" hash="-e1jqi0vmgqjg1u2vxmuz81ff26agckd" />
+  <source id="6380268605258472024" name="FloatRange" hash="-ebih9e65crcimgfblge3v78tujoec5e" />
 </dependencies>
 

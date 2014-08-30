@@ -12,9 +12,9 @@ public class FeatureSelectionInfo_Behavior {
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "maxIntermediateFeatures", "" + (400));
 
-    SNode numFeature50 = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.Integer", null);
-    SPropertyOperations.set(numFeature50, "value", "" + (50));
-    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "numberOfFeatures", true)).addElement(numFeature50);
+    SNode numFeature = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.Integer", null);
+    SPropertyOperations.set(numFeature, "value", "" + (20));
+    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "numberOfFeatures", true)).addElement(numFeature);
 
     SNode fsFold = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.FeatureSelectionFoldTrue", null);
     ListSequence.fromList(SLinkOperations.getTargets(thisNode, "featureSelectionFold", true)).addElement(fsFold);

@@ -41,7 +41,7 @@ public class Status_Behavior {
           SPropertyOperations.set(result.value, "directory", resultFolder.getParentFile().getName());
           SPropertyOperations.set(result.value, "numberModels", "" + (FileUtils.listFiles(new File(resultFolder.getAbsolutePath() + "/predictions/"), predictionsFileFilter, TrueFileFilter.INSTANCE).size()));
           Result_Behavior.call_readMaqciiFile_6380268605206873743(result.value, Result_Behavior.call_getMaqciiFile_6380268605234804481(result.value, resultFolder));
-          Result_Behavior.call_findFinalModel_4971583211585883350(result.value, resultFolder.getAbsolutePath());
+          Result_Behavior.call_updateFinalModel_4971583211585883350(result.value, resultFolder.getAbsolutePath());
           ListSequence.fromList(SLinkOperations.getTargets(thisNode, "result", true)).addElement(result.value);
         }
       }

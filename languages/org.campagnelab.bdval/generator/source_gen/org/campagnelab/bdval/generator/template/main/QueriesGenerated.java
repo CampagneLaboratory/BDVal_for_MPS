@@ -13,9 +13,6 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.campagnelab.bdval.behavior.DataSet_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.campagnelab.bdval.behavior.Project_Behavior;
@@ -102,10 +99,6 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "geneticAlgorithm", true), "ratio");
   }
 
-  public static Object propertyMacro_GetPropertyValue_6380268605258498167(final PropertyMacroContext _context) {
-    return String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "minMax", true), "observations"));
-  }
-
   public static Object propertyMacro_GetPropertyValue_4989762282951694400(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "permutation", true), "alpha");
   }
@@ -120,14 +113,6 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_4989762282962689461(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "coxReg", true), "alpha");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_6380268605260340968(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "savedGenelist", false), "name");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_6380268605260365755(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "savedGenelist", false), "name") + " --gene-list-file " + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "savedGenelist", false), "file", true), "fileLocation");
   }
 
   public static Object propertyMacro_GetPropertyValue_4989762282957593995(final PropertyMacroContext _context) {
@@ -182,22 +167,6 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_531337572953212163(final PropertyMacroContext _context) {
     return "runner_" + SPropertyOperations.getString(_context.getNode(), "name");
-  }
-
-  public static Iterable<SNode> sourceNodesQuery_6380268605260307875(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "dataset", true)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return (SLinkOperations.getTarget(it, "otherFiles", true) != null);
-      }
-    }).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return SLinkOperations.getTarget(it, "otherFiles", true);
-      }
-    }).translate(new ITranslator2<SNode, SNode>() {
-      public Iterable<SNode> translate(SNode it) {
-        return SLinkOperations.getTargets(it, "genelistFiles", true);
-      }
-    });
   }
 
   public static Iterable<SNode> sourceNodesQuery_2125124408386653548(final SourceSubstituteMacroNodesContext _context) {

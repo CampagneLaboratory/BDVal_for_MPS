@@ -5,6 +5,7 @@ package org.campagnelab.bdval.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import java.io.File;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class Properties_Behavior {
@@ -13,7 +14,7 @@ public class Properties_Behavior {
     SPropertyOperations.set(thisNode, "memory", "" + (1200));
 
     SNode outputDirectory = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.Directory", null);
-    SPropertyOperations.set(outputDirectory, "directoryLocation", System.getProperty("user.home") + "/BDValProjects");
+    SPropertyOperations.set(outputDirectory, "directoryLocation", System.getProperty("user.home") + File.separator + "BDValProjects");
     SLinkOperations.setTarget(thisNode, "outputDirectory", outputDirectory, true);
 
     SNode computer = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.DesktopComputer", null);

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-8s7bhu95bo0kqeabh0bo4xp8vlp6m1n">
+<dependencies version="2" modelHash="9q0dmhf89vssmjt513muo8ll4pepygs">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cellLayout(MPS.Editor/jetbrains.mps.nodeEditor.cellLayout@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
@@ -19,9 +19,9 @@
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="2rw431aummgwrvc6vvrvyxnd6ddlzo0" />
   <dep model="r:2b3ce235-653e-4507-849e-e62b0f7e1023(org.campagnelab.ui.structure)" hash="952z4mwq6d7xn3k366222a6anbx8bl0" />
   <dep model="r:4cec5b5b-0fcc-4674-abb9-27263d97025d(org.campagnelab.ui.code.Swing)" hash="5fpkehmwkdjfqh7g0m594du4925mfy5" />
-  <dep model="r:825ae26d-5123-4d82-aa5e-7977a26d188c(org.campagnelab.bdval.behavior)" hash="11zb5dx30l8v8bn17g9z6i3mrem0ir1" />
+  <dep model="r:825ae26d-5123-4d82-aa5e-7977a26d188c(org.campagnelab.bdval.behavior)" hash="-1t1vmdoptgc9ltdkxtcm7ka30g2xtpf" />
   <dep model="r:86e8697b-4089-41c5-b4ed-6c0f68180c88(org.campagnelab.ui.generator.template.main@generator)" hash="i27pf52tr86vud62v949246yg7q05g" />
-  <dep model="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" hash="-200jhggbktap1uuhqwf657alagr8yib" />
+  <dep model="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" hash="wn2omxbea0vddy6dvksyeozoyq67rq" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="b4ewbuz42qcbg1awca5bacgi0vopxqt" />
   <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="e5zswcvgdspmt039m3gg97emcadi0ez" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="a8elw7fctzg6sg8fe36u9gzu42axhdb" />
@@ -105,7 +105,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="EditorAspectDescriptorImpl.java" />
   </common>
-  <source id="4345048909865695890" name="DataSet_Editor" hash="-cgm7t8l00ecgsh5dllr4mvaxzrgf8xb">
+  <source id="4345048909865695890" name="DataSet_Editor" hash="-5u42218ap424swqlsgw3juylite5inp">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cellLayout(MPS.Editor/jetbrains.mps.nodeEditor.cellLayout@java_stub)" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
@@ -132,7 +132,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="DataSet_Editor.java" />
   </source>
-  <source id="4345048909865696635" name="Input_Editor" hash="-23dha2zaf47a5w290e7hp1lipzihzz4">
+  <source id="4345048909865696635" name="Input_Editor" hash="aghf1y0ccn2hxieu4vacdevcr6ks4hl">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cellLayout(MPS.Editor/jetbrains.mps.nodeEditor.cellLayout@java_stub)" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -256,7 +256,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
     <file name="EditingStyles_StyleSheet.java" />
   </source>
-  <source id="290469645459498954" name="Integer_Editor" hash="-3kas762y4k2i2e3tff91gdss8rl4hn">
+  <source id="290469645459498954" name="Integer_Editor" hash="5ohs0btyv0hqwptv19331h6jfbxncek">
     <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
     <dep model="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" />
     <file name="Integer_Editor.java" />
@@ -367,7 +367,7 @@
     <dep model="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" />
     <file name="GeneticAlgorithmProperties_Editor.java" />
   </source>
-  <source id="4671749543976304504" name="FeatureSelectionProperties_Editor" hash="64nzb1ywo1rgqmp1tm8yptjojtyymq">
+  <source id="4671749543976304504" name="FeatureSelectionProperties_Editor" hash="-ceqkqvhqm9bm22i9vy95ri6jg3cc85h">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -527,7 +527,7 @@
     <dep model="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" />
     <file name="SVMProperties_Editor.java" />
   </source>
-  <source id="4989762282967440731" name="ClassificationProperties_Editor" hash="-dx8vg3phk0ebrkoa5dmquf1f83vz0ga">
+  <source id="4989762282967440731" name="ClassificationProperties_Editor" hash="evfq7zunosusdj8e352uxkixhm2cux7">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -570,12 +570,12 @@
     <dep model="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" />
     <file name="SVMTuneC_Editor.java" />
   </source>
-  <source id="7860773100998725773" name="Float_Editor" hash="c7mtoua26k456f9buj1nfdnexzal3ta">
+  <source id="7860773100998725773" name="Float_Editor" hash="eg0zt2dc2pa3q48zf3psreeyt489x3h">
     <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
     <dep model="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" />
     <file name="Float_Editor.java" />
   </source>
-  <source id="1911754720567380911" name="File_Editor" hash="-d2hs18fiauvmyhflsjuoa4fts429q38">
+  <source id="1911754720567380911" name="File_Editor" hash="-20i78qvi91zvg6ffmunqoe14ugjhxed">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -590,7 +590,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="File_Editor.java" />
   </source>
-  <source id="1911754720568105453" name="Directory_Editor" hash="-dm1me1cijf81txyg3xamkbti11hh1jf">
+  <source id="1911754720568105453" name="Directory_Editor" hash="-tu12e3pk9dms71wuh6ehnzi6vlkyox">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -661,7 +661,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="Status_Editor.java" />
   </source>
-  <source id="8962624141209100247" name="Result_Editor" hash="-2h748164xv1ivbvtvhecdsku0owolz">
+  <source id="8962624141209100247" name="Result_Editor" hash="-7i96uaqrm8ok9mh6t7lgr52fk7fw67r">
     <dep root="7083662764431393796" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -682,7 +682,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Result_Editor.java" />
   </source>
-  <source id="6380268605259317459" name="FloatRange_Editor" hash="de9b2ck0v4052h5dglw4bgxgjy8fjte">
+  <source id="6380268605259317459" name="FloatRange_Editor" hash="cyp8l958ru3w2tzsdi014uex2y76j7p">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
     <dep model="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" />
