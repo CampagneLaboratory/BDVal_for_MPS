@@ -130,12 +130,12 @@ public class Project_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefNode_o8np3d_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("status");
-    provider.setNoTargetText("<no status>");
+    provider.setRole("approach");
+    provider.setNoTargetText("press enter to expand");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
-      editorCell.setRole("status");
+      editorCell.setRole("approach");
     }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -163,12 +163,12 @@ public class Project_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefNode_o8np3d_h0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("approach");
-    provider.setNoTargetText("press enter to expand");
+    provider.setRole("status");
+    provider.setNoTargetText("<no status>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
-      editorCell.setRole("approach");
+      editorCell.setRole("status");
     }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
