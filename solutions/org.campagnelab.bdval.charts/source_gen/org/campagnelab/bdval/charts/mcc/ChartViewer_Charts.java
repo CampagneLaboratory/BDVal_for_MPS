@@ -21,8 +21,9 @@ public class ChartViewer_Charts {
       Chart chart = null;
       String filename = filenames[filenameIndex];
       {
-        // Histogram BarChart  
-        chart = new ChartBuilder().chartType(StyleManager.ChartType.Bar).width(350).height(250).theme(StyleManager.ChartTheme.GGPlot2).title("Cross Validation AUC").xAxisTitle("AUC").yAxisTitle("").build();
+        // Histogram BarChart 
+
+        chart = new ChartBuilder().chartType(StyleManager.ChartType.Bar).width(350).height(250).theme(StyleManager.ChartTheme.GGPlot2).title("Cross Validation AUC").xAxisTitle("AUC").yAxisTitle(" ").build();
         chart.getStyleManager().setLegendVisible(false);
         chart.getStyleManager().setLegendPosition(StyleManager.LegendPosition.InsideN);
         ArrayList<Double> x = new ArrayList<Double>();
@@ -30,6 +31,8 @@ public class ChartViewer_Charts {
         double[] doubles = ColumnLoader.load(filename, "AUC", "\t");
         BinHelper.bin(doubles, x, y);
         chart.addSeries("series", x, y);
+
+
       }
       if (chart != null) {
         charts.add(chart);
@@ -43,8 +46,9 @@ public class ChartViewer_Charts {
       Chart chart = null;
       String filename = filenames[filenameIndex];
       {
-        // Histogram BarChart  
-        chart = new ChartBuilder().chartType(StyleManager.ChartType.Bar).width(350).height(250).theme(StyleManager.ChartTheme.GGPlot2).title("Cross Validation MCC").xAxisTitle("MCC").yAxisTitle("").build();
+        // Histogram BarChart 
+
+        chart = new ChartBuilder().chartType(StyleManager.ChartType.Bar).width(350).height(250).theme(StyleManager.ChartTheme.GGPlot2).title("Cross Validation MCC").xAxisTitle("MCC").yAxisTitle(" ").build();
         chart.getStyleManager().setLegendVisible(false);
         chart.getStyleManager().setLegendPosition(StyleManager.LegendPosition.InsideN);
         ArrayList<Double> x = new ArrayList<Double>();
@@ -52,6 +56,8 @@ public class ChartViewer_Charts {
         double[] doubles = ColumnLoader.load(filename, "MCC", "\t");
         BinHelper.bin(doubles, x, y);
         chart.addSeries("series", x, y);
+
+
       }
       if (chart != null) {
         charts.add(chart);
@@ -64,6 +70,8 @@ public class ChartViewer_Charts {
     return charts;
   }
 
+
+
   /**
    * Returns a JFrame with the charts that display the content of the files.
    */
@@ -72,6 +80,7 @@ public class ChartViewer_Charts {
     CustomSwingWrapper wrapper = new CustomSwingWrapper(charts);
     wrapper.setOnClose(JFrame.DISPOSE_ON_CLOSE);
     wrapper.displayChartMatrix();
+
   }
 
   /**
@@ -86,4 +95,6 @@ public class ChartViewer_Charts {
   public static void main(String[] args) {
     view(args);
   }
+
+
 }
