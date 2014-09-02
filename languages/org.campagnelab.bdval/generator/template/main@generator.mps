@@ -1454,7 +1454,7 @@
           <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="2125124408386634106" nodeInfo="ng">
             <property name="attrName" nameId="iuxj.6666499814681447926" value="file" />
             <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="8381115952226123246" nodeInfo="ng">
-              <property name="text" nameId="iuxj.6666499814681541920" value="${bdval-dir}/data/bdval.xml" />
+              <property name="text" nameId="iuxj.6666499814681541920" value="${bdval-dir}/data/bdval-mps.xml" />
             </node>
           </node>
           <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="2125124408386634104" nodeInfo="nn" />
