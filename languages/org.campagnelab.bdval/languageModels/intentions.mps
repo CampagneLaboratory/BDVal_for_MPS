@@ -1248,7 +1248,7 @@
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4971583211590069776" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4971583211590072061" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4971583211590072060" nodeInfo="nn">
-            <property name="value" nameId="tpee.1070475926801" value="Update Prostate Example File Locations" />
+            <property name="value" nameId="tpee.1070475926801" value="Set Prostate Example File Locations" />
           </node>
         </node>
       </node>
@@ -1308,7 +1308,7 @@
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Property_SetOperation" typeId="tp25.1138661924179" id="531337572962216523" nodeInfo="nn">
               <node role="value" roleId="tp25.1138662048170" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="531337572962217196" nodeInfo="nn">
                 <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="531337572962217241" nodeInfo="nn">
-                  <property name="value" nameId="tpee.1070475926801" value="/data/bdval/GSE8402/platforms/GPL5474_family.soft.gz" />
+                  <property name="value" nameId="tpee.1070475926801" value="/data/Prostate/GSE8402/platforms/GPL5474_family.soft.gz" />
                 </node>
                 <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.VariableReference" typeId="tpee.1068498886296" id="531337572962216671" nodeInfo="nn">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="531337572961258061" resolveInfo="zipLocation" />
@@ -1346,7 +1346,7 @@
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Property_SetOperation" typeId="tp25.1138661924179" id="531337572962338833" nodeInfo="nn">
               <node role="value" roleId="tp25.1138662048170" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="531337572962340076" nodeInfo="nn">
                 <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="531337572962340081" nodeInfo="nn">
-                  <property name="value" nameId="tpee.1070475926801" value="/data/bdval/GSE8402/norm-data/GSE8402_family.soft.gz" />
+                  <property name="value" nameId="tpee.1070475926801" value="/data/Prostate/GSE8402/norm-data/GSE8402_family.soft.gz" />
                 </node>
                 <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.VariableReference" typeId="tpee.1068498886296" id="531337572962339173" nodeInfo="nn">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="531337572961258061" resolveInfo="zipLocation" />
@@ -1384,7 +1384,7 @@
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Property_SetOperation" typeId="tp25.1138661924179" id="531337572962375206" nodeInfo="nn">
               <node role="value" roleId="tp25.1138662048170" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="531337572962376230" nodeInfo="nn">
                 <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="531337572962376275" nodeInfo="nn">
-                  <property name="value" nameId="tpee.1070475926801" value="/data/bdval/GSE8402/cids/GSE8402-FusionYesNo-TrainingSplit.cids" />
+                  <property name="value" nameId="tpee.1070475926801" value="/data/Prostate/GSE8402/cids/GSE8402-FusionYesNo-TrainingSplit.cids" />
                 </node>
                 <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.VariableReference" typeId="tpee.1068498886296" id="531337572962375705" nodeInfo="nn">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="531337572961258061" resolveInfo="zipLocation" />
