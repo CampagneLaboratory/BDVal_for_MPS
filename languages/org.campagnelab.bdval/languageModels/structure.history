@@ -555,5 +555,41 @@
     </dependencies>
     <rename id="w348.4027829922695084067" type="CONCEPT" from="GeneticAlgorithmProperties" to="GeneticAlgorithmParameters" />
   </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="91" />
+    </dependencies>
+    <rename id="w348.1870354875249618576" type="CONCEPT" from="FeatureSelectionInfo" to="FeatureSelectionChoices" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="92" />
+    </dependencies>
+    <rename id="w348.4989762282967436234" type="CONCEPT" from="ClassificationInfo" to="ClassificationChoices" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="93" />
+    </dependencies>
+    <rename id="w348.7388448774869153180" type="CONCEPT" from="Classification" to="ClassificationApproach" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="94" />
+    </dependencies>
+    <rename id="w348.4989762282967436237" type="CONCEPT" from="ClassificationProperties" to="ClassificationParameters" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="95" />
+    </dependencies>
+    <rename id="w348.4989762282967436238" type="CONCEPT" from="SVMProperties" to="SVMParameters" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="96" />
+    </dependencies>
+    <rename id="w348.4989762282967630223" type="CONCEPT" from="SVMTuneCProperties" to="SVMTuneCParameters" />
+  </StructureModification>
 </history>
 

@@ -83,7 +83,7 @@ public class FeatureSelectionParameters_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_bmq4bq_a0a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionInfo"), "strategy", true)).any(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionChoices"), "strategy", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode combo) {
         return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "step1", true), "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(combo, "step1", true), "org.campagnelab.bdval.structure.SVMIterative")) || (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "step2", true), "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(combo, "step2", true), "org.campagnelab.bdval.structure.SVMIterative"));
       }
@@ -114,7 +114,7 @@ public class FeatureSelectionParameters_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_bmq4bq_a1a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionInfo"), "strategy", true)).any(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionChoices"), "strategy", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode combo) {
         return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "step1", true), "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(combo, "step1", true), "org.campagnelab.bdval.structure.Ttest")) || (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "step2", true), "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(combo, "step2", true), "org.campagnelab.bdval.structure.Ttest"));
       }
@@ -145,7 +145,7 @@ public class FeatureSelectionParameters_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_bmq4bq_a2a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionInfo"), "strategy", true)).any(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionChoices"), "strategy", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode combo) {
         return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "step1", true), "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(combo, "step1", true), "org.campagnelab.bdval.structure.GeneticAlgorithm")) || (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "step2", true), "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(combo, "step2", true), "org.campagnelab.bdval.structure.GeneticAlgorithm"));
       }
@@ -176,7 +176,7 @@ public class FeatureSelectionParameters_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_bmq4bq_a3a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionInfo"), "strategy", true)).any(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionChoices"), "strategy", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode combo) {
         return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "step1", true), "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(combo, "step1", true), "org.campagnelab.bdval.structure.FoldChange")) || (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "step2", true), "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(combo, "step2", true), "org.campagnelab.bdval.structure.FoldChange"));
       }
@@ -207,7 +207,7 @@ public class FeatureSelectionParameters_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_bmq4bq_a4a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionInfo"), "strategy", true)).any(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionChoices"), "strategy", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode combo) {
         return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "step1", true), "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(combo, "step1", true), "org.campagnelab.bdval.structure.Permutation")) || (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "step2", true), "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(combo, "step2", true), "org.campagnelab.bdval.structure.Permutation"));
       }
@@ -238,7 +238,7 @@ public class FeatureSelectionParameters_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_bmq4bq_a5a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionInfo"), "strategy", true)).any(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionChoices"), "strategy", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode combo) {
         return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "step1", true), "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(combo, "step1", true), "org.campagnelab.bdval.structure.MinMax")) || (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "step2", true), "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(combo, "step2", true), "org.campagnelab.bdval.structure.MinMax"));
       }
@@ -269,7 +269,7 @@ public class FeatureSelectionParameters_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_bmq4bq_a6a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionInfo"), "strategy", true)).any(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionChoices"), "strategy", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode combo) {
         return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "step1", true), "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(combo, "step1", true), "org.campagnelab.bdval.structure.CoxReg")) || (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "step2", true), "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(combo, "step2", true), "org.campagnelab.bdval.structure.CoxReg"));
       }
@@ -300,7 +300,7 @@ public class FeatureSelectionParameters_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_bmq4bq_a7a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionInfo"), "strategy", true)).any(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionChoices"), "strategy", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode combo) {
         return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "step1", true), "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(combo, "step1", true), "org.campagnelab.bdval.structure.KendallTau")) || (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "step2", true), "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(combo, "step2", true), "org.campagnelab.bdval.structure.KendallTau"));
       }
@@ -331,7 +331,7 @@ public class FeatureSelectionParameters_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_bmq4bq_a8a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionInfo"), "strategy", true)).any(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "org.campagnelab.bdval.structure.FeatureSelectionChoices"), "strategy", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode combo) {
         return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "step1", true), "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(combo, "step1", true), "org.campagnelab.bdval.structure.Pathway")) || (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "step2", true), "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(combo, "step2", true), "org.campagnelab.bdval.structure.Pathway"));
       }

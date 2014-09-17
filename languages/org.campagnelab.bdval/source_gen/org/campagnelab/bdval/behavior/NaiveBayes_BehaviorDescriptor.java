@@ -6,7 +6,7 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
-public class NaiveBayes_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements Classification_BehaviorDescriptor {
+public class NaiveBayes_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ClassificationApproach_BehaviorDescriptor {
   public NaiveBayes_BehaviorDescriptor() {
   }
 

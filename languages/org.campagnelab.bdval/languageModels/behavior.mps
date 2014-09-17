@@ -9,7 +9,7 @@
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="fxg7" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" version="-1" />
   <import index="4f62" modelUID="f:java_stub#35dbc0f6-2677-4e81-9b75-548a3c2b6d9b#edu.mssm.crover.tables(org.campagnelab.bdval/edu.mssm.crover.tables@java_stub)" version="-1" />
-  <import index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="91" />
+  <import index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="97" />
   <import index="v43p" modelUID="f:java_stub#35dbc0f6-2677-4e81-9b75-548a3c2b6d9b#org.bdval(org.campagnelab.bdval/org.bdval@java_stub)" version="-1" />
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
@@ -6564,7 +6564,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="2125124408380551424" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationInfo.classifications" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationApproaches.classifications" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.7388448774866532076" resolveInfo="NaiveBayes" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="2125124408380551727" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2125124408380551728" nodeInfo="sn">
@@ -6669,7 +6669,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="2125124408384857960" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationInfo.classifications" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationApproaches.classifications" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.7388448774866532196" resolveInfo="RandomForest" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="2125124408384857961" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2125124408384857962" nodeInfo="sn">
@@ -6774,7 +6774,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="2125124408388295870" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationInfo.classifications" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationApproaches.classifications" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.7388448774866532195" resolveInfo="Logistic" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="2125124408388295871" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2125124408388295872" nodeInfo="sn">
@@ -6877,7 +6877,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="2125124408390039273" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationInfo.classifications" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationApproaches.classifications" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.7388448774866532198" resolveInfo="SVM" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="2125124408390039274" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2125124408390039275" nodeInfo="sn">
@@ -6962,7 +6962,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="2125124408390487491" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationInfo.classifications" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationApproaches.classifications" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.7388448774866532197" resolveInfo="KStar" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="2125124408390487492" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2125124408390487493" nodeInfo="sn">
@@ -7064,7 +7064,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="2125124408390492485" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationInfo.classifications" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationApproaches.classifications" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.7388448774866532194" resolveInfo="LogitBoost" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="2125124408390492486" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2125124408390492487" nodeInfo="sn">
@@ -12333,7 +12333,7 @@
                       <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="9111896790237577160" nodeInfo="nn">
                         <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="9111896790237577162" nodeInfo="ng">
                           <node role="conceptArgument" roleId="tp25.1207343664468" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="9111896790237577269" nodeInfo="nn">
-                            <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="w348.1870354875249618576" resolveInfo="FeatureSelectionInfo" />
+                            <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="w348.1870354875249618576" resolveInfo="FeatureSelectionChoices" />
                           </node>
                         </node>
                       </node>
@@ -12533,7 +12533,7 @@
                       <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="9111896790237643691" nodeInfo="nn">
                         <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="9111896790237643692" nodeInfo="ng">
                           <node role="conceptArgument" roleId="tp25.1207343664468" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="9111896790237643693" nodeInfo="nn">
-                            <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="w348.1870354875249618576" resolveInfo="FeatureSelectionInfo" />
+                            <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="w348.1870354875249618576" resolveInfo="FeatureSelectionChoices" />
                           </node>
                         </node>
                       </node>
@@ -13966,7 +13966,7 @@
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="4989762282958951363" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies" />
-    <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.1870354875249618576" resolveInfo="FeatureSelectionInfo" />
+    <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.1870354875249618576" resolveInfo="FeatureSelectionChoices" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="4989762282958951364" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4989762282958951365" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4989762282958951367" nodeInfo="nn">
@@ -14513,8 +14513,8 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="4989762282967655881" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationInfo.classificationProperties" />
-    <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.4989762282967630223" resolveInfo="SVMTuneCProperties" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationApproaches.classificationProperties" />
+    <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.4989762282967630223" resolveInfo="SVMTuneCParameters" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="4989762282967655882" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4989762282967655883" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="4989762282967655885" nodeInfo="nn">
@@ -14806,7 +14806,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="4989762283050791352" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationInfo.classifications" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationApproaches.classifications" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.4989762283050789095" resolveInfo="SVMTuneC" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="4989762283050791353" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4989762283050791354" nodeInfo="sn">
@@ -18145,15 +18145,15 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="6380268605227314789" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationInfo" />
-    <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.4989762282967436234" resolveInfo="ClassificationInfo" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationApproaches" />
+    <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.4989762282967436234" resolveInfo="ClassificationChoices" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="6380268605227314790" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6380268605227314791" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="6380268605227314814" nodeInfo="nn">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="6380268605227314817" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="classification" />
             <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="6380268605227314813" nodeInfo="in">
-              <link role="concept" roleId="tp25.1138405853777" targetNodeId="w348.7388448774869153180" resolveInfo="Classification" />
+              <link role="concept" roleId="tp25.1138405853777" targetNodeId="w348.7388448774869153180" resolveInfo="ClassificationApproach" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="6380268605227314899" nodeInfo="nn">
               <node role="creator" roleId="tpee.1145553007750" type="tp25.SNodeCreator" typeId="tp25.1180636770613" id="6380268605227314897" nodeInfo="nn">
@@ -18249,8 +18249,8 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="4971583211590701110" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationInfo.classificationProperties" />
-    <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.4989762282967436237" resolveInfo="ClassificationProperties" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationApproaches.classificationProperties" />
+    <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.4989762282967436237" resolveInfo="ClassificationParameters" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="4971583211590701111" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4971583211590701112" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4971583211590701148" nodeInfo="nn">
@@ -18262,7 +18262,7 @@
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Link_SetNewChildOperation" typeId="tp25.1138757581985" id="4971583211590703676" nodeInfo="nn">
-              <link role="concept" roleId="tp25.1139880128956" targetNodeId="w348.4989762282967436238" resolveInfo="SVMProperties" />
+              <link role="concept" roleId="tp25.1139880128956" targetNodeId="w348.4989762282967436238" resolveInfo="SVMParameters" />
             </node>
           </node>
         </node>

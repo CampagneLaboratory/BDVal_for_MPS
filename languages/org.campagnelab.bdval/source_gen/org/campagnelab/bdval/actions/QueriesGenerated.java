@@ -18,7 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_Genelist_8241402136293805130(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SNode fsProperties = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getEnclosingNode(), "org.campagnelab.bdval.structure.FeatureSelectionInfo", false, false), "parameters", true);
+    SNode fsProperties = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getEnclosingNode(), "org.campagnelab.bdval.structure.FeatureSelectionChoices", false, false), "parameters", true);
     if (ListSequence.fromList(SLinkOperations.getTargets(fsProperties, "savedGenelist", true)).isEmpty()) {
       String geneListFolder = SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getEnclosingNode(), "org.campagnelab.bdval.structure.Project", false, false), "properties", true), "bdvalDirectory", true), "directoryLocation") + "/data/gene-lists/";
       Collection allFiles = FileUtils.listFiles(new File(geneListFolder), TrueFileFilter.INSTANCE, null);

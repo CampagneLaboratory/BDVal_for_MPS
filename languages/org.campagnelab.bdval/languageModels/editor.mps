@@ -4,7 +4,7 @@
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
   <language namespace="c1ba4037-e4db-47d8-8b61-b3c805b648f2(org.campagnelab.ui)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
-  <import index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="91" />
+  <import index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="97" />
   <import index="1fmc" modelUID="r:4cec5b5b-0fcc-4674-abb9-27263d97025d(org.campagnelab.ui.code.Swing)" version="-1" />
   <import index="c3kk" modelUID="r:825ae26d-5123-4d82-aa5e-7977a26d188c(org.campagnelab.bdval.behavior)" version="-1" />
   <import index="26ue" modelUID="r:fd287fb3-5cb6-4a4c-87db-faf1c4bce228(org.campagnelab.bdval.charts.mcc)" version="-1" />
@@ -2013,7 +2013,7 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="2125124408381015461" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationInfo.classifications" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationApproaches.classifications" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.7388448774866532076" resolveInfo="NaiveBayes" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="2125124408383942252" nodeInfo="nn">
       <property name="text" nameId="tpc2.1073389577007" value="Naive Bayes" />
@@ -2021,7 +2021,7 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="2125124408384857904" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationInfo.classifications" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationApproaches.classifications" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.7388448774866532196" resolveInfo="RandomForest" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="2125124408384857957" nodeInfo="nn">
       <property name="text" nameId="tpc2.1073389577007" value="Random Forest" />
@@ -2029,7 +2029,7 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="2125124408388295859" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationInfo.classifications" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationApproaches.classifications" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.7388448774866532195" resolveInfo="Logistic" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="2125124408388295861" nodeInfo="nn">
       <property name="text" nameId="tpc2.1073389577007" value="Logistic" />
@@ -2037,7 +2037,7 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="2125124408390039217" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationInfo.classifications" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationApproaches.classifications" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.7388448774866532198" resolveInfo="SVM" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="2125124408390039270" nodeInfo="nn">
       <property name="text" nameId="tpc2.1073389577007" value="SVM" />
@@ -2045,7 +2045,7 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="2125124408390487486" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationInfo.classifications" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationApproaches.classifications" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.7388448774866532197" resolveInfo="KStar" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="2125124408390487488" nodeInfo="nn">
       <property name="text" nameId="tpc2.1073389577007" value="K Star" />
@@ -2053,7 +2053,7 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="2125124408390492480" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationInfo.classifications" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationApproaches.classifications" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.7388448774866532194" resolveInfo="LogitBoost" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="2125124408390492482" nodeInfo="nn">
       <property name="text" nameId="tpc2.1073389577007" value="Logistic Boost" />
@@ -2299,7 +2299,7 @@
               <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4989762282962577501" nodeInfo="nn">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4989762282962577502" nodeInfo="nn">
                   <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="4989762282962577503" nodeInfo="nn">
-                    <link role="concept" roleId="tp25.1140138128738" targetNodeId="w348.1870354875249618576" resolveInfo="FeatureSelectionInfo" />
+                    <link role="concept" roleId="tp25.1140138128738" targetNodeId="w348.1870354875249618576" resolveInfo="FeatureSelectionChoices" />
                     <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4989762282962577504" nodeInfo="nn">
                       <node role="operand" roleId="tpee.1197027771414" type="tpc2.ConceptFunctionParameter_node" typeId="tpc2.1142886811589" id="4989762282962577505" nodeInfo="nn" />
                       <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetParentOperation" typeId="tp25.1139613262185" id="4989762282962577506" nodeInfo="nn" />
@@ -2410,7 +2410,7 @@
               <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="915377476674330098" nodeInfo="nn">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="915377476674330099" nodeInfo="nn">
                   <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="915377476674330100" nodeInfo="nn">
-                    <link role="concept" roleId="tp25.1140138128738" targetNodeId="w348.1870354875249618576" resolveInfo="FeatureSelectionInfo" />
+                    <link role="concept" roleId="tp25.1140138128738" targetNodeId="w348.1870354875249618576" resolveInfo="FeatureSelectionChoices" />
                     <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.DotExpression" typeId="tpee.1197027756228" id="915377476674330101" nodeInfo="nn">
                       <node role="operand" roleId="tpee.1197027771414" type="tpc2.ConceptFunctionParameter_node" typeId="tpc2.1142886811589" id="915377476674330102" nodeInfo="nn" />
                       <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetParentOperation" typeId="tp25.1139613262185" id="915377476674330103" nodeInfo="nn" />
@@ -2521,7 +2521,7 @@
               <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="915377476674335540" nodeInfo="nn">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="915377476674335541" nodeInfo="nn">
                   <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="915377476674335542" nodeInfo="nn">
-                    <link role="concept" roleId="tp25.1140138128738" targetNodeId="w348.1870354875249618576" resolveInfo="FeatureSelectionInfo" />
+                    <link role="concept" roleId="tp25.1140138128738" targetNodeId="w348.1870354875249618576" resolveInfo="FeatureSelectionChoices" />
                     <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.DotExpression" typeId="tpee.1197027756228" id="915377476674335543" nodeInfo="nn">
                       <node role="operand" roleId="tpee.1197027771414" type="tpc2.ConceptFunctionParameter_node" typeId="tpc2.1142886811589" id="915377476674335544" nodeInfo="nn" />
                       <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetParentOperation" typeId="tp25.1139613262185" id="915377476674335545" nodeInfo="nn" />
@@ -2632,7 +2632,7 @@
               <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="915377476674340328" nodeInfo="nn">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="915377476674340329" nodeInfo="nn">
                   <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="915377476674340330" nodeInfo="nn">
-                    <link role="concept" roleId="tp25.1140138128738" targetNodeId="w348.1870354875249618576" resolveInfo="FeatureSelectionInfo" />
+                    <link role="concept" roleId="tp25.1140138128738" targetNodeId="w348.1870354875249618576" resolveInfo="FeatureSelectionChoices" />
                     <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.DotExpression" typeId="tpee.1197027756228" id="915377476674340331" nodeInfo="nn">
                       <node role="operand" roleId="tpee.1197027771414" type="tpc2.ConceptFunctionParameter_node" typeId="tpc2.1142886811589" id="915377476674340332" nodeInfo="nn" />
                       <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetParentOperation" typeId="tp25.1139613262185" id="915377476674340333" nodeInfo="nn" />
@@ -2743,7 +2743,7 @@
               <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="915377476674347632" nodeInfo="nn">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="915377476674347633" nodeInfo="nn">
                   <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="915377476674347634" nodeInfo="nn">
-                    <link role="concept" roleId="tp25.1140138128738" targetNodeId="w348.1870354875249618576" resolveInfo="FeatureSelectionInfo" />
+                    <link role="concept" roleId="tp25.1140138128738" targetNodeId="w348.1870354875249618576" resolveInfo="FeatureSelectionChoices" />
                     <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.DotExpression" typeId="tpee.1197027756228" id="915377476674347635" nodeInfo="nn">
                       <node role="operand" roleId="tpee.1197027771414" type="tpc2.ConceptFunctionParameter_node" typeId="tpc2.1142886811589" id="915377476674347636" nodeInfo="nn" />
                       <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetParentOperation" typeId="tp25.1139613262185" id="915377476674347637" nodeInfo="nn" />
@@ -2854,7 +2854,7 @@
               <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="915377476674352074" nodeInfo="nn">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="915377476674352075" nodeInfo="nn">
                   <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="915377476674352076" nodeInfo="nn">
-                    <link role="concept" roleId="tp25.1140138128738" targetNodeId="w348.1870354875249618576" resolveInfo="FeatureSelectionInfo" />
+                    <link role="concept" roleId="tp25.1140138128738" targetNodeId="w348.1870354875249618576" resolveInfo="FeatureSelectionChoices" />
                     <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.DotExpression" typeId="tpee.1197027756228" id="915377476674352077" nodeInfo="nn">
                       <node role="operand" roleId="tpee.1197027771414" type="tpc2.ConceptFunctionParameter_node" typeId="tpc2.1142886811589" id="915377476674352078" nodeInfo="nn" />
                       <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetParentOperation" typeId="tp25.1139613262185" id="915377476674352079" nodeInfo="nn" />
@@ -2965,7 +2965,7 @@
               <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="915377476674356532" nodeInfo="nn">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="915377476674356533" nodeInfo="nn">
                   <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="915377476674356534" nodeInfo="nn">
-                    <link role="concept" roleId="tp25.1140138128738" targetNodeId="w348.1870354875249618576" resolveInfo="FeatureSelectionInfo" />
+                    <link role="concept" roleId="tp25.1140138128738" targetNodeId="w348.1870354875249618576" resolveInfo="FeatureSelectionChoices" />
                     <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.DotExpression" typeId="tpee.1197027756228" id="915377476674356535" nodeInfo="nn">
                       <node role="operand" roleId="tpee.1197027771414" type="tpc2.ConceptFunctionParameter_node" typeId="tpc2.1142886811589" id="915377476674356536" nodeInfo="nn" />
                       <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetParentOperation" typeId="tp25.1139613262185" id="915377476674356537" nodeInfo="nn" />
@@ -3076,7 +3076,7 @@
               <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="915377476674360990" nodeInfo="nn">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="915377476674360991" nodeInfo="nn">
                   <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="915377476674360992" nodeInfo="nn">
-                    <link role="concept" roleId="tp25.1140138128738" targetNodeId="w348.1870354875249618576" resolveInfo="FeatureSelectionInfo" />
+                    <link role="concept" roleId="tp25.1140138128738" targetNodeId="w348.1870354875249618576" resolveInfo="FeatureSelectionChoices" />
                     <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.DotExpression" typeId="tpee.1197027756228" id="915377476674360993" nodeInfo="nn">
                       <node role="operand" roleId="tpee.1197027771414" type="tpc2.ConceptFunctionParameter_node" typeId="tpc2.1142886811589" id="915377476674360994" nodeInfo="nn" />
                       <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetParentOperation" typeId="tp25.1139613262185" id="915377476674360995" nodeInfo="nn" />
@@ -3184,7 +3184,7 @@
               <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="915377476674367878" nodeInfo="nn">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="915377476674367879" nodeInfo="nn">
                   <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="915377476674367880" nodeInfo="nn">
-                    <link role="concept" roleId="tp25.1140138128738" targetNodeId="w348.1870354875249618576" resolveInfo="FeatureSelectionInfo" />
+                    <link role="concept" roleId="tp25.1140138128738" targetNodeId="w348.1870354875249618576" resolveInfo="FeatureSelectionChoices" />
                     <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.DotExpression" typeId="tpee.1197027756228" id="915377476674367881" nodeInfo="nn">
                       <node role="operand" roleId="tpee.1197027771414" type="tpc2.ConceptFunctionParameter_node" typeId="tpc2.1142886811589" id="915377476674367882" nodeInfo="nn" />
                       <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetParentOperation" typeId="tp25.1139613262185" id="915377476674367883" nodeInfo="nn" />
@@ -3334,7 +3334,7 @@
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1870354875249744739" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.1870354875249618576" resolveInfo="FeatureSelectionInfo" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.1870354875249618576" resolveInfo="FeatureSelectionChoices" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1870354875249762615" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1870354875249762673" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="Number of Features: " />
@@ -5064,8 +5064,8 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4989762282967439162" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationInfo.classificationProperties" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.4989762282967436238" resolveInfo="SVMProperties" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationApproaches.classificationProperties" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.4989762282967436238" resolveInfo="SVMParameters" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="4989762282967440679" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4989762282967440686" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="SVM:" />
@@ -5087,8 +5087,8 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4989762282967440731" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationInfo.classificationProperties" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.4989762282967436237" resolveInfo="ClassificationProperties" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationApproaches.classificationProperties" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.4989762282967436237" resolveInfo="ClassificationParameters" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="4989762282967440733" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="4989762282967442761" nodeInfo="ng">
         <property name="noTargetText" nameId="tpc2.1139852716018" value="press enter to expand" />
@@ -5099,7 +5099,7 @@
               <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4989762282967468056" nodeInfo="nn">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4989762282967461178" nodeInfo="nn">
                   <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="4989762282967459078" nodeInfo="nn">
-                    <link role="concept" roleId="tp25.1140138128738" targetNodeId="w348.4989762282967436234" resolveInfo="ClassificationInfo" />
+                    <link role="concept" roleId="tp25.1140138128738" targetNodeId="w348.4989762282967436234" resolveInfo="ClassificationChoices" />
                     <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4989762282967453225" nodeInfo="nn">
                       <node role="operand" roleId="tpee.1197027771414" type="tpc2.ConceptFunctionParameter_node" typeId="tpc2.1142886811589" id="4989762282967452823" nodeInfo="nn" />
                       <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetParentOperation" typeId="tp25.1139613262185" id="4989762282967455506" nodeInfo="nn" />
@@ -5161,7 +5161,7 @@
               <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4989762283050886352" nodeInfo="nn">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4989762283050886353" nodeInfo="nn">
                   <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="4989762283050886354" nodeInfo="nn">
-                    <link role="concept" roleId="tp25.1140138128738" targetNodeId="w348.4989762282967436234" resolveInfo="ClassificationInfo" />
+                    <link role="concept" roleId="tp25.1140138128738" targetNodeId="w348.4989762282967436234" resolveInfo="ClassificationChoices" />
                     <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4989762283050886355" nodeInfo="nn">
                       <node role="operand" roleId="tpee.1197027771414" type="tpc2.ConceptFunctionParameter_node" typeId="tpc2.1142886811589" id="4989762283050886356" nodeInfo="nn" />
                       <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetParentOperation" typeId="tp25.1139613262185" id="4989762283050886357" nodeInfo="nn" />
@@ -5215,8 +5215,8 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4989762282967519875" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationInfo" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.4989762282967436234" resolveInfo="ClassificationInfo" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationApproaches" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.4989762282967436234" resolveInfo="ClassificationChoices" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="4989762282967519877" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4989762282967521749" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="Classification:" />
@@ -5240,8 +5240,8 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4989762282967630231" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationInfo.classificationProperties" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.4989762282967630223" resolveInfo="SVMTuneCProperties" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationApproaches.classificationProperties" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.4989762282967630223" resolveInfo="SVMTuneCParameters" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="4989762282967630825" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4989762282967630832" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="Tune C:" />
@@ -5272,7 +5272,7 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4989762283050789318" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationInfo.classifications" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="classificationApproaches.classifications" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.4989762283050789095" resolveInfo="SVMTuneC" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4989762283050790996" nodeInfo="nn">
       <property name="text" nameId="tpc2.1073389577007" value="SVM Tune C" />

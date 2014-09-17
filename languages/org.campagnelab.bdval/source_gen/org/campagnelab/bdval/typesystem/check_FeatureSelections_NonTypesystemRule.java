@@ -32,7 +32,7 @@ public class check_FeatureSelections_NonTypesystemRule extends AbstractNonTypesy
       }
     }
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(fsCombo, "step1", true), "org.campagnelab.bdval.structure.GeneticAlgorithm") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(fsCombo, "step2", true), "org.campagnelab.bdval.structure.GeneticAlgorithm")) {
-      SNode gaProperties = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(fsCombo, "org.campagnelab.bdval.structure.FeatureSelectionInfo", false, false), "parameters", true), "geneticAlgorithm", true);
+      SNode gaProperties = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(fsCombo, "org.campagnelab.bdval.structure.FeatureSelectionChoices", false, false), "parameters", true), "geneticAlgorithm", true);
       if ((gaProperties != null) && (SLinkOperations.getTarget(gaProperties, "performance", true) == null)) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
