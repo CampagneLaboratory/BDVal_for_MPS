@@ -84,9 +84,9 @@ public class OtherFiles_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_fiu8c2_a0a(SNode node, EditorContext editorContext) {
     final String name = "coxReg";
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "org.campagnelab.bdval.structure.Project", false, false), "approach", true), "featureSelectionInfo", true), "featureSelectionCombo", true)).any(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "org.campagnelab.bdval.structure.Project", false, false), "approach", true), "featureSelectionInfo", true), "strategy", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode combo) {
-        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name").matches(name)) || ((SLinkOperations.getTarget(combo, "featureSelection2", true) != null) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name").matches(name));
+        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "step1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "step1", true), "name").matches(name)) || ((SLinkOperations.getTarget(combo, "step2", true) != null) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "step2", true), "name").matches(name));
       }
     });
   }
@@ -116,9 +116,9 @@ public class OtherFiles_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_fiu8c2_a1a(SNode node, EditorContext editorContext) {
     final String name = "coxReg";
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "org.campagnelab.bdval.structure.Project", false, false), "approach", true), "featureSelectionInfo", true), "featureSelectionCombo", true)).any(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "org.campagnelab.bdval.structure.Project", false, false), "approach", true), "featureSelectionInfo", true), "strategy", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode combo) {
-        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name").matches(name)) || ((SLinkOperations.getTarget(combo, "featureSelection2", true) != null) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name").matches(name));
+        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "step1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "step1", true), "name").matches(name)) || ((SLinkOperations.getTarget(combo, "step2", true) != null) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "step2", true), "name").matches(name));
       }
     });
   }
@@ -135,9 +135,9 @@ public class OtherFiles_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_fiu8c2_a2a(SNode node, EditorContext editorContext) {
     final String name = "genelist";
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "org.campagnelab.bdval.structure.Project", false, false), "approach", true), "featureSelectionInfo", true), "featureSelectionCombo", true)).any(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "org.campagnelab.bdval.structure.Project", false, false), "approach", true), "featureSelectionInfo", true), "strategy", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode combo) {
-        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name").matches(name)) || ((SLinkOperations.getTarget(combo, "featureSelection2", true) != null) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name").matches(name));
+        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "step1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "step1", true), "name").matches(name)) || ((SLinkOperations.getTarget(combo, "step2", true) != null) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "step2", true), "name").matches(name));
       }
     });
   }
@@ -203,9 +203,9 @@ public class OtherFiles_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_fiu8c2_a3a(SNode node, EditorContext editorContext) {
     final String name = "genelist";
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "org.campagnelab.bdval.structure.Project", false, false), "approach", true), "featureSelectionInfo", true), "featureSelectionCombo", true)).any(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "org.campagnelab.bdval.structure.Project", false, false), "approach", true), "featureSelectionInfo", true), "strategy", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode combo) {
-        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name").matches(name)) || ((SLinkOperations.getTarget(combo, "featureSelection2", true) != null) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name").matches(name));
+        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "step1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "step1", true), "name").matches(name)) || ((SLinkOperations.getTarget(combo, "step2", true) != null) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "step2", true), "name").matches(name));
       }
     });
   }
@@ -223,9 +223,9 @@ public class OtherFiles_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_fiu8c2_a4a(SNode node, EditorContext editorContext) {
     final String name = "genelist";
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "org.campagnelab.bdval.structure.Project", false, false), "approach", true), "featureSelectionInfo", true), "featureSelectionCombo", true)).any(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "org.campagnelab.bdval.structure.Project", false, false), "approach", true), "featureSelectionInfo", true), "strategy", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode combo) {
-        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name").matches(name)) || ((SLinkOperations.getTarget(combo, "featureSelection2", true) != null) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection2", true), "name").matches(name));
+        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "step1", true), "name")) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "step1", true), "name").matches(name)) || ((SLinkOperations.getTarget(combo, "step2", true) != null) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "step2", true), "name").matches(name));
       }
     });
   }
@@ -243,7 +243,7 @@ public class OtherFiles_Editor extends DefaultNodeEditor {
           String genelistFolder = SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(SNodeOperations.cast(node, "org.campagnelab.bdval.structure.OtherFiles"), "org.campagnelab.bdval.structure.Project", false, false), "properties", true), "bdvalDirectory", true), "directoryLocation") + "/data/gene-lists/";
           File newGenelist = new File(path);
           final Wrappers._T<String> fileName = new Wrappers._T<String>(newGenelist.getName());
-          if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(SNodeOperations.cast(node, "org.campagnelab.bdval.structure.OtherFiles"), "org.campagnelab.bdval.structure.Project", false, false), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "savedGenelist", true)).any(new IWhereFilter<SNode>() {
+          if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(SNodeOperations.cast(node, "org.campagnelab.bdval.structure.OtherFiles"), "org.campagnelab.bdval.structure.Project", false, false), "approach", true), "featureSelectionInfo", true), "parameters", true), "savedGenelist", true)).any(new IWhereFilter<SNode>() {
             public boolean accept(SNode savedGenelist) {
               return SPropertyOperations.getString(savedGenelist, "name").matches(fileName.value);
             }
@@ -257,7 +257,7 @@ public class OtherFiles_Editor extends DefaultNodeEditor {
             SPropertyOperations.set(fileNode, "fileLocation", genelistFolder + fileName.value);
             SLinkOperations.setTarget(savedGenelist, "file", fileNode, true);
             SPropertyOperations.set(savedGenelist, "name", fileName.value);
-            ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "org.campagnelab.bdval.structure.Project", false, false), "approach", true), "featureSelectionInfo", true), "featureSelectionProperties", true), "savedGenelist", true)).addElement(savedGenelist);
+            ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "org.campagnelab.bdval.structure.Project", false, false), "approach", true), "featureSelectionInfo", true), "parameters", true), "savedGenelist", true)).addElement(savedGenelist);
             SNode genelistRef = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.GenelistRef", null);
             SLinkOperations.setTarget(genelistRef, "savedGenelist", savedGenelist, false);
             ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "org.campagnelab.bdval.structure.OtherFiles"), "genelistFiles", true)).addElement(genelistRef);
@@ -287,9 +287,9 @@ public class OtherFiles_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_fiu8c2_a5a(SNode node, EditorContext editorContext) {
     final String name = "pathway";
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "org.campagnelab.bdval.structure.Project", false, false), "approach", true), "featureSelectionInfo", true), "featureSelectionCombo", true)).any(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "org.campagnelab.bdval.structure.Project", false, false), "approach", true), "featureSelectionInfo", true), "strategy", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode combo) {
-        return (SLinkOperations.getTarget(combo, "featureSelectionOption", true) != null) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelectionOption", true), "name").matches(name);
+        return (SLinkOperations.getTarget(combo, "option", true) != null) && SPropertyOperations.getString(SLinkOperations.getTarget(combo, "option", true), "name").matches(name);
       }
     });
   }

@@ -24,36 +24,36 @@ public class check_expanded_Approach_NonTypesystemRule extends AbstractNonTypesy
   }
 
   public void applyRule(final SNode approach, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    List<SNode> methodList = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(approach, "featureSelectionInfo", true), "featureSelectionCombo", true)).where(new IWhereFilter<SNode>() {
+    List<SNode> methodList = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(approach, "featureSelectionInfo", true), "strategy", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return (SLinkOperations.getTarget(it, "featureSelection1", true) != null);
+        return (SLinkOperations.getTarget(it, "step1", true) != null);
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SLinkOperations.getTarget(it, "featureSelection1", true);
+        return SLinkOperations.getTarget(it, "step1", true);
       }
     }).toListSequence();
-    ListSequence.fromList(methodList).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(approach, "featureSelectionInfo", true), "featureSelectionCombo", true)).where(new IWhereFilter<SNode>() {
+    ListSequence.fromList(methodList).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(approach, "featureSelectionInfo", true), "strategy", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return (SLinkOperations.getTarget(it, "featureSelection2", true) != null);
+        return (SLinkOperations.getTarget(it, "step2", true) != null);
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SLinkOperations.getTarget(it, "featureSelection2", true);
+        return SLinkOperations.getTarget(it, "step2", true);
       }
     }).toListSequence());
-    ListSequence.fromList(methodList).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(approach, "featureSelectionInfo", true), "featureSelectionCombo", true)).where(new IWhereFilter<SNode>() {
+    ListSequence.fromList(methodList).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(approach, "featureSelectionInfo", true), "strategy", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return (SLinkOperations.getTarget(it, "featureSelectionOption", true) != null);
+        return (SLinkOperations.getTarget(it, "option", true) != null);
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SLinkOperations.getTarget(it, "featureSelectionOption", true);
+        return SLinkOperations.getTarget(it, "option", true);
       }
     }).toListSequence());
     ListSequence.fromList(methodList).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(approach, "classificationInfo", true), "classification", true)));
 
-    SNode fsProperties = SLinkOperations.getTarget(SLinkOperations.getTarget(approach, "featureSelectionInfo", true), "featureSelectionProperties", true);
+    SNode fsProperties = SLinkOperations.getTarget(SLinkOperations.getTarget(approach, "featureSelectionInfo", true), "parameters", true);
     SNode csProperties = SLinkOperations.getTarget(SLinkOperations.getTarget(approach, "classificationInfo", true), "classificationProperties", true);
 
     for (SNode method : ListSequence.fromList(methodList)) {
@@ -150,7 +150,7 @@ public class check_expanded_Approach_NonTypesystemRule extends AbstractNonTypesy
   }
 
   public String getApplicableConceptFQName() {
-    return "org.campagnelab.bdval.structure.Approach";
+    return "org.campagnelab.bdval.structure.ModelingApproaches";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {

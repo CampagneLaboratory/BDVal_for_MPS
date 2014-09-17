@@ -3,7 +3,7 @@
   <persistence version="8" />
   <language namespace="d7a92d38-f7db-40d0-8431-763b0c3c9f20(jetbrains.mps.lang.intentions)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
-  <import index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="72" />
+  <import index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="91" />
   <import index="c3kk" modelUID="r:825ae26d-5123-4d82-aa5e-7977a26d188c(org.campagnelab.bdval.behavior)" version="-1" />
   <import index="fxg7" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" version="-1" />
   <import index="dbrf" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" version="-1" />
@@ -424,7 +424,7 @@
   <root type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="2063368849529562002" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="Ttest-Svm" />
     <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="true" />
-    <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="w348.7388448774866565678" resolveInfo="Approach" />
+    <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="w348.7388448774866565678" resolveInfo="ModelingApproaches" />
     <node role="descriptionFunction" roleId="tp3j.2522969319638093993" type="tp3j.DescriptionBlock" typeId="tp3j.1192794782375" id="2063368849529562003" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2063368849529562004" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2063368849529566172" nodeInfo="nn">
@@ -665,7 +665,7 @@
                   </node>
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.LinkList_AddNewChildOperation" typeId="tp25.1139184414036" id="2063368849530643152" nodeInfo="nn">
-                  <link role="concept" roleId="tp25.1139877738879" targetNodeId="w348.1870354875251769793" resolveInfo="FeatureSelectionCombo" />
+                  <link role="concept" roleId="tp25.1139877738879" targetNodeId="w348.1870354875251769793" resolveInfo="FeatureSelectionStrategy" />
                 </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2063368849530644741" nodeInfo="nn">
@@ -701,7 +701,7 @@
   <root type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="2063368849530713595" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="FC+P-LogitBoost" />
     <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="true" />
-    <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="w348.7388448774866565678" resolveInfo="Approach" />
+    <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="w348.7388448774866565678" resolveInfo="ModelingApproaches" />
     <node role="descriptionFunction" roleId="tp3j.2522969319638093993" type="tp3j.DescriptionBlock" typeId="tp3j.1192794782375" id="2063368849530713596" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2063368849530713597" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2063368849530739422" nodeInfo="nn">
@@ -883,12 +883,12 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2063368849530804254" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="fsCombo" />
             <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="2063368849530804249" nodeInfo="in">
-              <link role="concept" roleId="tp25.1138405853777" targetNodeId="w348.1870354875251769793" resolveInfo="FeatureSelectionCombo" />
+              <link role="concept" roleId="tp25.1138405853777" targetNodeId="w348.1870354875251769793" resolveInfo="FeatureSelectionStrategy" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2063368849530804732" nodeInfo="nn">
               <node role="creator" roleId="tpee.1145553007750" type="tp25.SNodeCreator" typeId="tp25.1180636770613" id="2063368849530804718" nodeInfo="nn">
                 <node role="createdType" roleId="tp25.1180636770616" type="tp25.SNodeType" typeId="tp25.1138055754698" id="2063368849530804719" nodeInfo="in">
-                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="w348.1870354875251769793" resolveInfo="FeatureSelectionCombo" />
+                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="w348.1870354875251769793" resolveInfo="FeatureSelectionStrategy" />
                 </node>
               </node>
             </node>
@@ -967,7 +967,7 @@
   </root>
   <root type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="2063368849530930805" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="Genetic-KStar" />
-    <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="w348.7388448774866565678" resolveInfo="Approach" />
+    <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="w348.7388448774866565678" resolveInfo="ModelingApproaches" />
     <node role="descriptionFunction" roleId="tp3j.2522969319638093993" type="tp3j.DescriptionBlock" typeId="tp3j.1192794782375" id="2063368849530930806" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2063368849530930807" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2063368849530978463" nodeInfo="nn">
@@ -1208,7 +1208,7 @@
                   </node>
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.LinkList_AddNewChildOperation" typeId="tp25.1139184414036" id="2063368849530956912" nodeInfo="nn">
-                  <link role="concept" roleId="tp25.1139877738879" targetNodeId="w348.1870354875251769793" resolveInfo="FeatureSelectionCombo" />
+                  <link role="concept" roleId="tp25.1139877738879" targetNodeId="w348.1870354875251769793" resolveInfo="FeatureSelectionStrategy" />
                 </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2063368849530956913" nodeInfo="nn">

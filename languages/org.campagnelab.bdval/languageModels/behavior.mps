@@ -9,7 +9,7 @@
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="fxg7" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" version="-1" />
   <import index="4f62" modelUID="f:java_stub#35dbc0f6-2677-4e81-9b75-548a3c2b6d9b#edu.mssm.crover.tables(org.campagnelab.bdval/edu.mssm.crover.tables@java_stub)" version="-1" />
-  <import index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="72" />
+  <import index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="91" />
   <import index="v43p" modelUID="f:java_stub#35dbc0f6-2677-4e81-9b75-548a3c2b6d9b#org.bdval(org.campagnelab.bdval/org.bdval@java_stub)" version="-1" />
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
@@ -7209,7 +7209,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="4027829922695086773" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelectionProperties.geneticAlgorithmProperties" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelectionParameters.geneticAlgorithmProperties" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.4027829922695086695" resolveInfo="MCCPerformance" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="4027829922695086774" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4027829922695086775" nodeInfo="sn">
@@ -7230,7 +7230,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="4027829922695089041" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelectionProperties.geneticAlgorithmProperties" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelectionParameters.geneticAlgorithmProperties" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.4027829922695086748" resolveInfo="AUCPerformance" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="4027829922695089042" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4027829922695089043" nodeInfo="sn">
@@ -7251,7 +7251,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="4671749543983669055" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelectionFold" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelectionFold" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.7388448774866569121" resolveInfo="FeatureSelectionFoldFalse" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="4671749543983669056" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4671749543983669057" nodeInfo="sn">
@@ -7312,7 +7312,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="4671749543983680074" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelectionFold" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelectionFold" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.7388448774866524764" resolveInfo="FeatureSelectionFoldTrue" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="4671749543983680075" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4671749543983680076" nodeInfo="sn">
@@ -7373,7 +7373,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="8314272953675900650" nodeInfo="ng">
-    <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.7388448774866565678" resolveInfo="Approach" />
+    <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.7388448774866565678" resolveInfo="ModelingApproaches" />
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="1277192072313887035" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="generateSequenceFiles" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1277192072313887338" nodeInfo="nn" />
@@ -10733,7 +10733,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1870354875253509327" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelections" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelections" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.1870354875249563496" resolveInfo="Ttest" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="1870354875253509328" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1870354875253509329" nodeInfo="sn">
@@ -11094,7 +11094,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1870354875253560182" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelections" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelections" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.1870354875249583257" resolveInfo="FeatureSelection" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="1870354875253560183" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1870354875253560184" nodeInfo="sn" />
@@ -11159,14 +11159,14 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1870354875253924599" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelectionFold" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelectionFold" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.8314272953670775634" resolveInfo="FeatureSelectionFold" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="1870354875253924600" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1870354875253924601" nodeInfo="sn" />
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="3649519271350361367" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelections" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelections" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.3649519271349200549" resolveInfo="SVMGlobal" />
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="7218745629929965215" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="getCommand" />
@@ -11527,7 +11527,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="3649519271362673310" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelections" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelections" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.3649519271360667458" resolveInfo="SVMIterative" />
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="7218745629929993235" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="getCommand" />
@@ -11888,8 +11888,8 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="3649519271364578747" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelectionProperties" />
-    <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.4671749543976303817" resolveInfo="SVMIterativeProperties" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelectionParameters" />
+    <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.4671749543976303817" resolveInfo="SVMIterativeParameter" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="3649519271364578748" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3649519271364578749" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3649519271364578754" nodeInfo="nn">
@@ -11909,7 +11909,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="3649519271366497324" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelections" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelections" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.3649519271366496699" resolveInfo="FoldChange" />
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="7218745629929837013" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="getCommand" />
@@ -12270,8 +12270,8 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="3649519271370254052" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelectionProperties" />
-    <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.4027829922695044022" resolveInfo="FoldchangeProperties" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelectionParameters" />
+    <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.4027829922695044022" resolveInfo="FoldchangeParameters" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="3649519271370254053" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3649519271370254054" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3649519271370254059" nodeInfo="nn">
@@ -12291,8 +12291,8 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="3649519271370849408" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelectionProperties" />
-    <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.4671749543995071282" resolveInfo="TTestProperties" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelectionParameters" />
+    <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.4671749543995071282" resolveInfo="TTestParameters" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="3649519271370849409" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3649519271370849410" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3649519271370849412" nodeInfo="nn">
@@ -12312,7 +12312,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="4989762282926592701" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelections" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelections" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.4989762282926592335" resolveInfo="MinMax" />
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="7218745629929944063" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="getCommand" />
@@ -12762,8 +12762,8 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="4989762282926673524" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelectionProperties" />
-    <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.4989762282926666582" resolveInfo="MinMaxProperties" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelectionParameters" />
+    <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.4989762282926666582" resolveInfo="MinMaxParameters" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="4989762282926673525" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4989762282926673526" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4989762282926673528" nodeInfo="nn">
@@ -12783,7 +12783,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="4989762282927278539" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelections" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelections" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.4989762282927277961" resolveInfo="GeneticAlgorithm" />
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="7218745629929854675" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="getCommand" />
@@ -13259,8 +13259,8 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="4989762282938827734" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelectionProperties.geneticAlgorithmProperties" />
-    <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.4027829922695084067" resolveInfo="GeneticAlgorithmProperties" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelectionParameters.geneticAlgorithmProperties" />
+    <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.4027829922695084067" resolveInfo="GeneticAlgorithmParameters" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="4989762282938827735" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4989762282938827736" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4989762282938830796" nodeInfo="nn">
@@ -13362,7 +13362,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="4989762282949988540" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelections" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelections" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.4989762282949988176" resolveInfo="Permutation" />
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="7218745629929954471" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="getCommand" />
@@ -13724,8 +13724,8 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="4989762282950567062" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelectionProperties" />
-    <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.4989762282950066887" resolveInfo="PermutationProperties" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelectionParameters" />
+    <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.4989762282950066887" resolveInfo="PermutationParameters" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="4989762282950567063" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4989762282950567064" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4989762282950567066" nodeInfo="nn">
@@ -13745,7 +13745,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="4989762282952313580" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelections" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelections" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.4989762282952312371" resolveInfo="Genelist" />
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="1277192072317017124" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="getCommand" />
@@ -13853,7 +13853,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="4989762282952360869" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelectionOptions" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelectionOptions" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.4989762282952360856" resolveInfo="Pathway" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="4989762282952360870" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4989762282952360871" nodeInfo="sn">
@@ -13923,7 +13923,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="4989762282957663456" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelectionProperties.pathwaysProperties" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelectionParameters.pathwaysProperties" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.4671749543961509611" resolveInfo="PCAAggregation" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="4989762282957663457" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4989762282957663458" nodeInfo="sn">
@@ -13944,7 +13944,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="4989762282957666769" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelectionProperties.pathwaysProperties" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelectionParameters.pathwaysProperties" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.4671749543961520203" resolveInfo="AverageAggregation" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="4989762282957666770" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4989762282957666771" nodeInfo="sn">
@@ -13965,7 +13965,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="4989762282958951363" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.1870354875249618576" resolveInfo="FeatureSelectionInfo" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="4989762282958951364" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4989762282958951365" nodeInfo="sn">
@@ -14064,12 +14064,12 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="6380268605227297842" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="fsCombo" />
             <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="6380268605227297837" nodeInfo="in">
-              <link role="concept" roleId="tp25.1138405853777" targetNodeId="w348.1870354875251769793" resolveInfo="FeatureSelectionCombo" />
+              <link role="concept" roleId="tp25.1138405853777" targetNodeId="w348.1870354875251769793" resolveInfo="FeatureSelectionStrategy" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="6380268605227298147" nodeInfo="nn">
               <node role="creator" roleId="tpee.1145553007750" type="tp25.SNodeCreator" typeId="tp25.1180636770613" id="6380268605227298138" nodeInfo="nn">
                 <node role="createdType" roleId="tp25.1180636770616" type="tp25.SNodeType" typeId="tp25.1138055754698" id="6380268605227298139" nodeInfo="in">
-                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="w348.1870354875251769793" resolveInfo="FeatureSelectionCombo" />
+                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="w348.1870354875251769793" resolveInfo="FeatureSelectionStrategy" />
                 </node>
               </node>
             </node>
@@ -14126,7 +14126,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="4989762282960161194" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelections" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelections" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.4989762282960160291" resolveInfo="CoxReg" />
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="7218745629929803671" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="getCommand" />
@@ -14492,8 +14492,8 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="4989762282962632975" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelectionProperties" />
-    <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.4989762282962457995" resolveInfo="CoxRegProperties" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelectionParameters" />
+    <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.4989762282962457995" resolveInfo="CoxRegParameters" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="4989762282962632976" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4989762282962632977" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4989762282962632982" nodeInfo="nn">
@@ -14656,7 +14656,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="4989762282976782603" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelections" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelections" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.4989762282976782237" resolveInfo="WholeChip" />
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="1277192072317023642" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="getCommand" />
@@ -14768,8 +14768,8 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="4989762283034216546" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelectionProperties.pathwaysProperties" />
-    <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.6525722185902462822" resolveInfo="PathwayProperties" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelectionParameters.pathwaysProperties" />
+    <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.6525722185902462822" resolveInfo="PathwayParameters" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="4989762283034216547" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4989762283034216548" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="4989762283034216601" nodeInfo="nn">
@@ -14890,7 +14890,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="8241402136310293317" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelections" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelections" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.8241402136310292899" resolveInfo="KendallTau" />
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="7218745629929902725" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="getCommand" />
@@ -15251,8 +15251,8 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="8241402136310399315" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelectionProperties" />
-    <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.8241402136310398150" resolveInfo="KendallTauProperties" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelectionParameters" />
+    <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.8241402136310398150" resolveInfo="KendallTauParameters" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="8241402136310399316" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8241402136310399317" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8241402136310399346" nodeInfo="nn">
@@ -18228,8 +18228,8 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="4971583211590697394" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelectionProperties" />
-    <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.4671749543976303774" resolveInfo="FeatureSelectionProperties" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelectionParameters" />
+    <link role="concept" roleId="1i04.1225194240799" targetNodeId="w348.4671749543976303774" resolveInfo="FeatureSelectionParameters" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="4971583211590697395" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4971583211590697396" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4971583211590697432" nodeInfo="nn">
@@ -18241,7 +18241,7 @@
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Link_SetNewChildOperation" typeId="tp25.1138757581985" id="4971583211590700029" nodeInfo="nn">
-              <link role="concept" roleId="tp25.1139880128956" targetNodeId="w348.4671749543995071282" resolveInfo="TTestProperties" />
+              <link role="concept" roleId="tp25.1139880128956" targetNodeId="w348.4671749543995071282" resolveInfo="TTestParameters" />
             </node>
           </node>
         </node>

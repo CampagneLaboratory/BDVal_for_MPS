@@ -4,7 +4,7 @@
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
   <language namespace="c1ba4037-e4db-47d8-8b61-b3c805b648f2(org.campagnelab.ui)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
-  <import index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="72" />
+  <import index="w348" modelUID="r:91a4ef63-e30e-4b86-bcdc-748a33d96fa7(org.campagnelab.bdval.structure)" version="91" />
   <import index="1fmc" modelUID="r:4cec5b5b-0fcc-4674-abb9-27263d97025d(org.campagnelab.ui.code.Swing)" version="-1" />
   <import index="c3kk" modelUID="r:825ae26d-5123-4d82-aa5e-7977a26d188c(org.campagnelab.bdval.behavior)" version="-1" />
   <import index="26ue" modelUID="r:fd287fb3-5cb6-4a4c-87db-faf1c4bce228(org.campagnelab.bdval.charts.mcc)" version="-1" />
@@ -1526,7 +1526,7 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="7388448774866586382" nodeInfo="ng">
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.7388448774866565678" resolveInfo="Approach" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.7388448774866565678" resolveInfo="ModelingApproaches" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="7388448774866586384" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="2063368849529699993" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="Approach:" />
@@ -2061,7 +2061,7 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4671749543961509619" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelectionProperties.pathwaysProperties" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelectionParameters.pathwaysProperties" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.4671749543961509611" resolveInfo="PCAAggregation" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4671749543961520200" nodeInfo="nn">
       <property name="text" nameId="tpc2.1073389577007" value="PCA" />
@@ -2069,7 +2069,7 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4671749543961521504" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelectionProperties.pathwaysProperties" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelectionParameters.pathwaysProperties" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.4671749543961520203" resolveInfo="AverageAggregation" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4671749543961521506" nodeInfo="nn">
       <property name="text" nameId="tpc2.1073389577007" value="average" />
@@ -2093,8 +2093,8 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4671749543976304481" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelectionProperties" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.4671749543976303817" resolveInfo="SVMIterativeProperties" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelectionParameters" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.4671749543976303817" resolveInfo="SVMIterativeParameter" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="4671749543976304483" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4027829922695404000" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="SVM Iterative:" />
@@ -2122,8 +2122,8 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4671749543995082588" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelectionProperties" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.4671749543995071282" resolveInfo="TTestProperties" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelectionParameters" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.4671749543995071282" resolveInfo="TTestParameters" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="4671749543995082590" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4027829922695404019" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="Ttest:" />
@@ -2154,8 +2154,8 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4027829922695044032" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelectionProperties" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.4027829922695044022" resolveInfo="FoldchangeProperties" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelectionParameters" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.4027829922695044022" resolveInfo="FoldchangeParameters" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="4027829922695048141" nodeInfo="nn">
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="4027829922695048142" nodeInfo="nn" />
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6525722185902452826" nodeInfo="nn">
@@ -2177,7 +2177,7 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4027829922695086758" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelectionProperties.geneticAlgorithmProperties" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelectionParameters.geneticAlgorithmProperties" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.4027829922695086748" resolveInfo="AUCPerformance" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4027829922695086760" nodeInfo="nn">
       <property name="text" nameId="tpc2.1073389577007" value="AUC" />
@@ -2185,7 +2185,7 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4027829922695086768" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelectionProperties.geneticAlgorithmProperties" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelectionParameters.geneticAlgorithmProperties" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.4027829922695086695" resolveInfo="MCCPerformance" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4027829922695086770" nodeInfo="nn">
       <property name="text" nameId="tpc2.1073389577007" value="MCC" />
@@ -2193,8 +2193,8 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4027829922695091296" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelectionProperties.geneticAlgorithmProperties" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.4027829922695084067" resolveInfo="GeneticAlgorithmProperties" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelectionParameters.geneticAlgorithmProperties" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.4027829922695084067" resolveInfo="GeneticAlgorithmParameters" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="4027829922695091298" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4027829922695404052" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="Genetic Algorithm:" />
@@ -2284,8 +2284,8 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4671749543976304504" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelectionProperties" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.4671749543976303774" resolveInfo="FeatureSelectionProperties" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelectionParameters" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.4671749543976303774" resolveInfo="FeatureSelectionParameters" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="4671749543976304506" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="4671749543976304518" nodeInfo="ng">
         <property name="noTargetText" nameId="tpc2.1139852716018" value="press enter to expand" />
@@ -3290,7 +3290,7 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4671749543983669050" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelectionFold" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelectionFold" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.7388448774866569121" resolveInfo="FeatureSelectionFoldFalse" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4671749543983669052" nodeInfo="nn">
       <property name="text" nameId="tpc2.1073389577007" value="false" />
@@ -3300,7 +3300,7 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4671749543983680069" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelectionFold" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelectionFold" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.7388448774866524764" resolveInfo="FeatureSelectionFoldTrue" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4671749543983680071" nodeInfo="nn">
       <property name="text" nameId="tpc2.1073389577007" value="true" />
@@ -3310,8 +3310,8 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="6525722185902462830" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelectionProperties.pathwaysProperties" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.6525722185902462822" resolveInfo="PathwayProperties" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelectionParameters.pathwaysProperties" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.6525722185902462822" resolveInfo="PathwayParameters" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="6525722185902462832" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6525722185902462839" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="Pathways:" />
@@ -3333,7 +3333,7 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1870354875249744739" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.1870354875249618576" resolveInfo="FeatureSelectionInfo" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1870354875249762615" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1870354875249762673" nodeInfo="nn">
@@ -3558,8 +3558,8 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1870354875251778495" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.1870354875251769793" resolveInfo="FeatureSelectionCombo" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.1870354875251769793" resolveInfo="FeatureSelectionStrategy" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="3649519271352989209" nodeInfo="nn">
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="4989762283019935047" nodeInfo="nn" />
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="3649519271352989213" nodeInfo="ng">
@@ -3626,7 +3626,7 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3649519271350360633" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelections" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelections" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.1870354875249563496" resolveInfo="Ttest" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="3649519271350360686" nodeInfo="nn">
       <property name="text" nameId="tpc2.1073389577007" value="T-Test" />
@@ -3634,7 +3634,7 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3649519271350360696" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelections" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelections" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.3649519271349200549" resolveInfo="SVMGlobal" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="3649519271350360698" nodeInfo="nn">
       <property name="text" nameId="tpc2.1073389577007" value="SVM Global" />
@@ -3642,7 +3642,7 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3649519271362673003" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelections" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelections" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.3649519271360667458" resolveInfo="SVMIterative" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="3649519271362673005" nodeInfo="nn">
       <property name="text" nameId="tpc2.1073389577007" value="SVM Iterative" />
@@ -3650,7 +3650,7 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3649519271366497021" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelections" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelections" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.3649519271366496699" resolveInfo="FoldChange" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="3649519271366497023" nodeInfo="nn">
       <property name="text" nameId="tpc2.1073389577007" value="Fold Change" />
@@ -3658,7 +3658,7 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4989762282926592394" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelections" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelections" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.4989762282926592335" resolveInfo="MinMax" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4989762282926592396" nodeInfo="nn">
       <property name="text" nameId="tpc2.1073389577007" value="Min/Max" />
@@ -3666,8 +3666,8 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4989762282926673257" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelectionProperties" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.4989762282926666582" resolveInfo="MinMaxProperties" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelectionParameters" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.4989762282926666582" resolveInfo="MinMaxParameters" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="4989762282926673259" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4989762282926673266" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="Min/Max:" />
@@ -3689,7 +3689,7 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4989762282927278239" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelections" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelections" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.4989762282927277961" resolveInfo="GeneticAlgorithm" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4989762282927278241" nodeInfo="nn">
       <property name="text" nameId="tpc2.1073389577007" value="Genetic Algorithm" />
@@ -3697,7 +3697,7 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4989762282949988233" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelections" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelections" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.4989762282949988176" resolveInfo="Permutation" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4989762282949988235" nodeInfo="nn">
       <property name="text" nameId="tpc2.1073389577007" value="Permutation" />
@@ -3705,8 +3705,8 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4989762282950533419" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelectionProperties" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.4989762282950066887" resolveInfo="PermutationProperties" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelectionParameters" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.4989762282950066887" resolveInfo="PermutationParameters" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="4989762282950533421" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4989762282950533428" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="Permutation:" />
@@ -3728,7 +3728,7 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4989762282952312379" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelections" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelections" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.4989762282952312371" resolveInfo="Genelist" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4989762282952313577" nodeInfo="nn">
       <property name="text" nameId="tpc2.1073389577007" value="Genelist" />
@@ -3741,7 +3741,7 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4989762282952360864" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelectionOptions" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelectionOptions" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.4989762282952360856" resolveInfo="Pathway" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4989762282952360866" nodeInfo="nn">
       <property name="text" nameId="tpc2.1073389577007" value="Pathway" />
@@ -3754,7 +3754,7 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4989762282960160542" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelections" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelections" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.4989762282960160291" resolveInfo="CoxReg" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4989762282960160595" nodeInfo="nn">
       <property name="text" nameId="tpc2.1073389577007" value="Cox Regression" />
@@ -3767,8 +3767,8 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4989762282962458400" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelectionProperties" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.4989762282962457995" resolveInfo="CoxRegProperties" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelectionParameters" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.4989762282962457995" resolveInfo="CoxRegParameters" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="4989762282962458402" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4989762282962458409" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="Cox Regression:" />
@@ -5264,7 +5264,7 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4989762282976782296" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelections" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelections" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.4989762282976782237" resolveInfo="WholeChip" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4989762282976782298" nodeInfo="nn">
       <property name="text" nameId="tpc2.1073389577007" value="Whole Chip" />
@@ -5362,7 +5362,7 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8241402136294634444" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.8241402136294612830" resolveInfo="GenelistRef" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="8241402136294634473" nodeInfo="ng">
       <property name="noTargetText" nameId="tpc2.1139852716018" value="select genelist" />
@@ -5376,15 +5376,15 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8241402136310292907" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelections" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelections" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.8241402136310292899" resolveInfo="KendallTau" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="8241402136310292960" nodeInfo="nn">
       <property name="text" nameId="tpc2.1073389577007" value="Kendall Tau" />
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8241402136310398535" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionInfo.featureSelectionProperties" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.8241402136310398150" resolveInfo="KendallTauProperties" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="featureSelectionStrategies.featureSelectionParameters" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="w348.8241402136310398150" resolveInfo="KendallTauParameters" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="8241402136310398564" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="8241402136310398883" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="Kendall Tau:" />

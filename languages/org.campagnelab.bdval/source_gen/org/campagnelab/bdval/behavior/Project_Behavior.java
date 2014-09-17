@@ -26,8 +26,18 @@ public class Project_Behavior {
 
   public static void call_checkProjectFolder_3976565827571671486(SNode thisNode) {
     boolean proceed = true;
-    File directoryFile = new File(SPropertyOperations.getString(thisNode, "projectFolder"));
-    if (directoryFile.exists()) {
+    /*
+      int i = 1;
+      int maxTrials = 100;
+      do {
+        SPropertyOperations.set(thisNode, "projectFolder", SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(thisNode, "name") + "/" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "directoryName") + "_" + Integer.toString(i) + "/");
+        if (i > maxTrials) {
+          throw new RuntimeException("Unable to create unique direcotry name. Giving up after " + maxTrials + " attempts.");
+        }
+        i++;
+      } while (new File(SPropertyOperations.getString(thisNode, "projectFolder")).exists());
+    */
+    if (new File(SPropertyOperations.getString(thisNode, "projectFolder")).exists()) {
       int reply = JOptionPane.showConfirmDialog(null, "Change project name/tag description to prevent deletion\n\n" + SPropertyOperations.getString(thisNode, "projectFolder") + " already exists\n" + "Overwrite any duplicate files and continue?", "Project with this name and tag description already exists", JOptionPane.OK_CANCEL_OPTION);
       if (reply != JOptionPane.OK_OPTION) {
         proceed = false;
@@ -36,13 +46,33 @@ public class Project_Behavior {
     SPropertyOperations.set(thisNode, "proceed", "" + (proceed));
   }
 
+  public static String call_increment_directory_7134445990667825972(SNode thisNode, String dirName) {
+    if (dirName.matches(".*_[0-9]+")) {
+      String[] tokens = dirName.split("_");
+      String count = tokens[tokens.length - 1];
+      int counter = Integer.parseInt(count);
+      counter++;
+      String result = "";
+
+      for (int i = 0; i < tokens.length - 1; i++) {
+        result += tokens[i];
+        if (i != tokens.length - 2) {
+          result += "_";
+        }
+      }
+      result += Integer.toString(counter);
+      return result;
+    }
+    return dirName + "_1";
+  }
+
   public static void call_generateAllFiles_290469645456423260(SNode thisNode) {
     File projectDirectory = new File(SPropertyOperations.getString(thisNode, "projectFolder"));
     projectDirectory.mkdirs();
     Project_Behavior.call_copyPlatform_8962624141197218263(thisNode, SPropertyOperations.getString(thisNode, "projectFolder"));
     Project_Behavior.call_generateLocalProperties_7083662764418572584(thisNode);
     Project_Behavior.call_generateProperties_290469645499580654(thisNode);
-    Approach_Behavior.call_generateSequenceFiles_1277192072313887035(SLinkOperations.getTarget(thisNode, "approach", true));
+    ModelingApproaches_Behavior.call_generateSequenceFiles_1277192072313887035(SLinkOperations.getTarget(thisNode, "approach", true));
     Project_Behavior.call_generateMemoProperties_1911754720586693397(thisNode);
     ListSequence.fromList(SLinkOperations.getTargets(thisNode, "dataset", true)).visitAll(new IVisitor<SNode>() {
       public void visit(SNode dataset) {
@@ -178,6 +208,18 @@ public class Project_Behavior {
     } catch (Exception e) {
       throw new Error("Error creating memo properties file: " + e);
     }
+  }
+
+  public static String call_getProjectFolder_7139671938569890343(SNode thisNode) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(thisNode, "name") + "/" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "directoryName") + "/";
+  }
+
+  public static String call_getProjectFolder_7139671938570003285(SNode thisNode, String resultDirectory) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(thisNode, "name") + "/" + resultDirectory + "/";
+  }
+
+  public static String call_getProjectFolder_7139671938569995334(SNode thisNode) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(thisNode, "name") + "/" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "properties", true), "directoryName") + "/";
   }
 
   private static boolean isNotEmptyString(String str) {

@@ -23,7 +23,7 @@ public class Genetic_KStar_Intention implements IntentionFactory {
   }
 
   public String getConcept() {
-    return "org.campagnelab.bdval.structure.Approach";
+    return "org.campagnelab.bdval.structure.ModelingApproaches";
   }
 
   public String getPresentation() {
@@ -78,7 +78,7 @@ public class Genetic_KStar_Intention implements IntentionFactory {
       SPropertyOperations.set(node, "externalFolds", null);
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "featureSelectionInfo", true), "numberOfFeatures", true)).clear();
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "featureSelectionInfo", true), "featureSelectionFold", true)).clear();
-      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "featureSelectionInfo", true), "featureSelectionCombo", true)).clear();
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "featureSelectionInfo", true), "strategy", true)).clear();
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "classificationInfo", true), "classification", true)).clear();
 
       SPropertyOperations.set(node, "externalRepeats", "" + (5));
@@ -87,7 +87,7 @@ public class Genetic_KStar_Intention implements IntentionFactory {
       SPropertyOperations.set(SLinkOperations.addNewChild(SLinkOperations.getTarget(node, "featureSelectionInfo", true), "numberOfFeatures", "org.campagnelab.bdval.structure.Integer"), "value", "" + (50));
       SLinkOperations.addNewChild(SLinkOperations.getTarget(node, "featureSelectionInfo", true), "featureSelectionFold", "org.campagnelab.bdval.structure.FeatureSelectionFoldTrue");
       SLinkOperations.addNewChild(SLinkOperations.getTarget(node, "featureSelectionInfo", true), "featureSelectionFold", "org.campagnelab.bdval.structure.FeatureSelectionFoldFalse");
-      SLinkOperations.setNewChild(SLinkOperations.addNewChild(SLinkOperations.getTarget(node, "featureSelectionInfo", true), "featureSelectionCombo", "org.campagnelab.bdval.structure.FeatureSelectionCombo"), "featureSelection1", "org.campagnelab.bdval.structure.GeneticAlgorithm");
+      SLinkOperations.setNewChild(SLinkOperations.addNewChild(SLinkOperations.getTarget(node, "featureSelectionInfo", true), "strategy", "org.campagnelab.bdval.structure.FeatureSelectionStrategy"), "step1", "org.campagnelab.bdval.structure.GeneticAlgorithm");
       SLinkOperations.addNewChild(SLinkOperations.getTarget(node, "classificationInfo", true), "classification", "org.campagnelab.bdval.structure.KStar");
     }
 

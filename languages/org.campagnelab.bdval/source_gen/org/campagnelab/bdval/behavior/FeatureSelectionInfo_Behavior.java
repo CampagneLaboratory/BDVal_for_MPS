@@ -19,9 +19,9 @@ public class FeatureSelectionInfo_Behavior {
     SNode fsFold = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.FeatureSelectionFoldTrue", null);
     ListSequence.fromList(SLinkOperations.getTargets(thisNode, "featureSelectionFold", true)).addElement(fsFold);
 
-    SNode fsCombo = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.FeatureSelectionCombo", null);
+    SNode fsCombo = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.FeatureSelectionStrategy", null);
     SNode fs = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.Ttest", null);
-    SLinkOperations.setTarget(fsCombo, "featureSelection1", fs, true);
-    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "featureSelectionCombo", true)).addElement(fsCombo);
+    SLinkOperations.setTarget(fsCombo, "step1", fs, true);
+    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "strategy", true)).addElement(fsCombo);
   }
 }

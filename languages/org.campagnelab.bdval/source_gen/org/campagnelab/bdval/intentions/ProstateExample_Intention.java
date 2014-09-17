@@ -78,15 +78,15 @@ public class ProstateExample_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Update Prostate Example File Locations";
+      return "Set Prostate Example File Locations";
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
       String zipLocation = SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "properties", true), "bdvalDirectory", true), "directoryLocation");
       String separator = File.separator;
-      SPropertyOperations.set(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "platform", true), "file", true), "fileLocation", zipLocation + "/data/bdval/GSE8402/platforms/GPL5474_family.soft.gz");
-      SPropertyOperations.set(SLinkOperations.getTarget(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(node, "dataset", true)).first(), "input", true), "file", true), "fileLocation", zipLocation + "/data/bdval/GSE8402/norm-data/GSE8402_family.soft.gz");
-      SPropertyOperations.set(SLinkOperations.getTarget(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(node, "dataset", true)).first(), "cids", true), "file", true), "fileLocation", zipLocation + "/data/bdval/GSE8402/cids/GSE8402-FusionYesNo-TrainingSplit.cids");
+      SPropertyOperations.set(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "platform", true), "file", true), "fileLocation", zipLocation + "/data/Prostate/GSE8402/platforms/GPL5474_family.soft.gz");
+      SPropertyOperations.set(SLinkOperations.getTarget(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(node, "dataset", true)).first(), "input", true), "file", true), "fileLocation", zipLocation + "/data/Prostate/GSE8402/norm-data/GSE8402_family.soft.gz");
+      SPropertyOperations.set(SLinkOperations.getTarget(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(node, "dataset", true)).first(), "cids", true), "file", true), "fileLocation", zipLocation + "/data/Prostate/GSE8402/cids/GSE8402-FusionYesNo-TrainingSplit.cids");
     }
 
     public IntentionDescriptor getDescriptor() {

@@ -202,9 +202,9 @@ public class FeatureSelectionInfo_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createRefNodeList_f0jmv8_f0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new FeatureSelectionInfo_Editor.featureSelectionComboListHandler_f0jmv8_f0(node, "featureSelectionCombo", editorContext);
+    AbstractCellListHandler handler = new FeatureSelectionInfo_Editor.strategyListHandler_f0jmv8_f0(node, "strategy", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
-    editorCell.setCellId("refNodeList_featureSelectionCombo");
+    editorCell.setCellId("refNodeList_strategy");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -213,8 +213,8 @@ public class FeatureSelectionInfo_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class featureSelectionComboListHandler_f0jmv8_f0 extends RefNodeListHandler {
-    public featureSelectionComboListHandler_f0jmv8_f0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class strategyListHandler_f0jmv8_f0 extends RefNodeListHandler {
+    public strategyListHandler_f0jmv8_f0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -261,9 +261,9 @@ public class FeatureSelectionInfo_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_f0jmv8_a6a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "featureSelectionCombo", true)).any(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "strategy", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode combo) {
-        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && !(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name").matches("genelist"))) && (SLinkOperations.getTarget(combo, "featureSelection2", true) != null);
+        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "step1", true), "name")) && !(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "step1", true), "name").matches("genelist"))) && (SLinkOperations.getTarget(combo, "step2", true) != null);
       }
     });
   }
@@ -290,21 +290,21 @@ public class FeatureSelectionInfo_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_f0jmv8_a7a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "featureSelectionCombo", true)).any(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "strategy", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode combo) {
-        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name")) && !(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "featureSelection1", true), "name").matches("genelist"))) && (SLinkOperations.getTarget(combo, "featureSelection2", true) != null);
+        return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "step1", true), "name")) && !(SPropertyOperations.getString(SLinkOperations.getTarget(combo, "step1", true), "name").matches("genelist"))) && (SLinkOperations.getTarget(combo, "step2", true) != null);
       }
     });
   }
 
   private EditorCell createRefNode_f0jmv8_i0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("featureSelectionProperties");
-    provider.setNoTargetText("<no featureSelectionProperties>");
+    provider.setRole("parameters");
+    provider.setNoTargetText("<no parameters>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
-      editorCell.setRole("featureSelectionProperties");
+      editorCell.setRole("parameters");
     }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);

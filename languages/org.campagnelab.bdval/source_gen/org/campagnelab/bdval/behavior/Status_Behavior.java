@@ -10,13 +10,15 @@ import java.io.FileFilter;
 import java.io.File;
 import org.apache.commons.io.filefilter.IOFileFilter;
 import org.apache.commons.io.filefilter.SuffixFileFilter;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.filefilter.TrueFileFilter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class Status_Behavior {
   public static void init(SNode thisNode) {
@@ -32,19 +34,32 @@ public class Status_Behavior {
       }
     };
     final IOFileFilter predictionsFileFilter = new SuffixFileFilter("-prediction-table.txt");
+    File dir = new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(project, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(project, "name"));
+    if (dir.exists() && dir.isDirectory()) {
+      Sequence.fromIterable(Sequence.fromArray(dir.listFiles())).visitAll(new IVisitor<File>() {
+        public void visit(File directory) {
+          if (directory.exists() && directory.isDirectory()) {
+            if (LOG.isInfoEnabled()) {
+              LOG.info("Scanning " + directory.getAbsolutePath());
+            }
 
-    Sequence.fromIterable(Sequence.fromArray(new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(project, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(project, "name")).listFiles())).visitAll(new IVisitor<File>() {
-      public void visit(File directory) {
-        for (File resultFolder : directory.listFiles(resultsFilter)) {
-          result.value = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.Result", null);
-          SPropertyOperations.set(result.value, "name", resultFolder.getName());
-          SPropertyOperations.set(result.value, "directory", resultFolder.getParentFile().getName());
-          SPropertyOperations.set(result.value, "numberModels", "" + (FileUtils.listFiles(new File(resultFolder.getAbsolutePath() + "/predictions/"), predictionsFileFilter, TrueFileFilter.INSTANCE).size()));
-          Result_Behavior.call_readMaqciiFile_6380268605206873743(result.value, Result_Behavior.call_getMaqciiFile_6380268605234804481(result.value, resultFolder));
-          Result_Behavior.call_updateFinalModel_4971583211585883350(result.value, resultFolder.getAbsolutePath());
-          ListSequence.fromList(SLinkOperations.getTargets(thisNode, "result", true)).addElement(result.value);
+            for (File resultFolder : directory.listFiles(resultsFilter)) {
+              result.value = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.Result", null);
+              SPropertyOperations.set(result.value, "name", resultFolder.getName());
+              SPropertyOperations.set(result.value, "directory", resultFolder.getParentFile().getName());
+              File predictionsFolder = new File(resultFolder.getAbsolutePath() + "/predictions/");
+              if (predictionsFolder.exists() && predictionsFolder.isDirectory()) {
+                SPropertyOperations.set(result.value, "numberModels", "" + (FileUtils.listFiles(predictionsFolder, predictionsFileFilter, TrueFileFilter.INSTANCE).size()));
+              }
+              Result_Behavior.call_readMaqciiFile_6380268605206873743(result.value, Result_Behavior.call_getMaqciiFile_6380268605234804481(result.value, resultFolder));
+              Result_Behavior.call_updateFinalModel_4971583211585883350(result.value, resultFolder.getAbsolutePath());
+              ListSequence.fromList(SLinkOperations.getTargets(thisNode, "result", true)).addElement(result.value);
+            }
+          }
         }
-      }
-    });
+      });
+    }
   }
+
+  protected static Logger LOG = LogManager.getLogger(Status_Behavior.class);
 }

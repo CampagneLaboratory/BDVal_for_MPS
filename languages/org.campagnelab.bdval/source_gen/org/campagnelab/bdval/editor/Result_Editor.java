@@ -18,9 +18,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import javax.swing.JComponent;
 import org.campagnelab.ui.code.Swing.ButtonCallback;
 import org.campagnelab.bdval.behavior.Result_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.io.File;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.campagnelab.ui.code.Swing.Button;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -112,8 +109,6 @@ public class Result_Editor extends DefaultNodeEditor {
         {
           final SNode node = ((SNode) n);
           Result_Behavior.call_evaluateStatistics_3634366430331113687(node);
-          SNode project = SNodeOperations.getAncestor(node, "org.campagnelab.bdval.structure.Project", false, false);
-          Result_Behavior.call_readMaqciiFile_6380268605206873743(node, Result_Behavior.call_getMaqciiFile_6380268605234804481(node, new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(project, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(project, "name") + "/" + SPropertyOperations.getString(node, "directory") + "/" + SPropertyOperations.getString(node, "name"))));
 
         }
       }
@@ -149,8 +144,6 @@ public class Result_Editor extends DefaultNodeEditor {
         {
           final SNode node = ((SNode) n);
           Result_Behavior.call_generateFinalModel_6380268605238741230(node);
-          SNode project = SNodeOperations.getAncestor(node, "org.campagnelab.bdval.structure.Project", false, false);
-          Result_Behavior.call_updateFinalModel_4971583211585883350(node, SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(project, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(project, "name") + "/" + SPropertyOperations.getString(node, "directory") + "/" + SPropertyOperations.getString(node, "name"));
         }
       }
     };
@@ -1274,7 +1267,7 @@ public class Result_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ouom3r_a31a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Numnber of Final Models:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Number of Final Models:");
     editorCell.setCellId("Constant_ouom3r_a31a");
     editorCell.setDefaultText("");
     return editorCell;

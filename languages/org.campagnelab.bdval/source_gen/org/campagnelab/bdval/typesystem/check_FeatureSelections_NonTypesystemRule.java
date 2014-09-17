@@ -19,20 +19,20 @@ public class check_FeatureSelections_NonTypesystemRule extends AbstractNonTypesy
   }
 
   public void applyRule(final SNode fsCombo, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(fsCombo, "featureSelection1", true), "org.campagnelab.bdval.structure.WholeChip") && (SLinkOperations.getTarget(fsCombo, "featureSelection2", true) != null)) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(fsCombo, "step1", true), "org.campagnelab.bdval.structure.WholeChip") && (SLinkOperations.getTarget(fsCombo, "step2", true) != null)) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(fsCombo, "Cannot select second feature selection strategy with Whole Chip", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "2063368849531719224", null, errorTarget);
       }
     }
-    if ((SLinkOperations.getTarget(fsCombo, "featureSelection2", true) != null) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(fsCombo, "featureSelection2", true), "org.campagnelab.bdval.structure.WholeChip")) {
+    if ((SLinkOperations.getTarget(fsCombo, "step2", true) != null) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(fsCombo, "step2", true), "org.campagnelab.bdval.structure.WholeChip")) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(fsCombo, "Cannot have Whole Chip as second feature selection strategy", "r:03143f03-46ae-4107-a067-34f5026aa223(org.campagnelab.bdval.typesystem)", "2063368849531730214", null, errorTarget);
       }
     }
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(fsCombo, "featureSelection1", true), "org.campagnelab.bdval.structure.GeneticAlgorithm") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(fsCombo, "featureSelection2", true), "org.campagnelab.bdval.structure.GeneticAlgorithm")) {
-      SNode gaProperties = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(fsCombo, "org.campagnelab.bdval.structure.FeatureSelectionInfo", false, false), "featureSelectionProperties", true), "geneticAlgorithm", true);
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(fsCombo, "step1", true), "org.campagnelab.bdval.structure.GeneticAlgorithm") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(fsCombo, "step2", true), "org.campagnelab.bdval.structure.GeneticAlgorithm")) {
+      SNode gaProperties = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(fsCombo, "org.campagnelab.bdval.structure.FeatureSelectionInfo", false, false), "parameters", true), "geneticAlgorithm", true);
       if ((gaProperties != null) && (SLinkOperations.getTarget(gaProperties, "performance", true) == null)) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
@@ -43,7 +43,7 @@ public class check_FeatureSelections_NonTypesystemRule extends AbstractNonTypesy
   }
 
   public String getApplicableConceptFQName() {
-    return "org.campagnelab.bdval.structure.FeatureSelectionCombo";
+    return "org.campagnelab.bdval.structure.FeatureSelectionStrategy";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {

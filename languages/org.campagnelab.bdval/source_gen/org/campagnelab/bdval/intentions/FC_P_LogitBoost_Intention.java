@@ -24,7 +24,7 @@ public class FC_P_LogitBoost_Intention implements IntentionFactory {
   }
 
   public String getConcept() {
-    return "org.campagnelab.bdval.structure.Approach";
+    return "org.campagnelab.bdval.structure.ModelingApproaches";
   }
 
   public String getPresentation() {
@@ -79,7 +79,7 @@ public class FC_P_LogitBoost_Intention implements IntentionFactory {
       SPropertyOperations.set(node, "externalFolds", null);
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "featureSelectionInfo", true), "numberOfFeatures", true)).clear();
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "featureSelectionInfo", true), "featureSelectionFold", true)).clear();
-      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "featureSelectionInfo", true), "featureSelectionCombo", true)).clear();
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "featureSelectionInfo", true), "strategy", true)).clear();
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "classificationInfo", true), "classification", true)).clear();
 
       SPropertyOperations.set(node, "externalRepeats", "" + (5));
@@ -87,10 +87,10 @@ public class FC_P_LogitBoost_Intention implements IntentionFactory {
       SPropertyOperations.set(SLinkOperations.addNewChild(SLinkOperations.getTarget(node, "featureSelectionInfo", true), "numberOfFeatures", "org.campagnelab.bdval.structure.Integer"), "value", "" + (50));
       SLinkOperations.addNewChild(SLinkOperations.getTarget(node, "featureSelectionInfo", true), "featureSelectionFold", "org.campagnelab.bdval.structure.FeatureSelectionFoldTrue");
 
-      SNode fsCombo = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.FeatureSelectionCombo", null);
-      SLinkOperations.setNewChild(fsCombo, "featureSelection1", "org.campagnelab.bdval.structure.Ttest");
-      SLinkOperations.setNewChild(fsCombo, "featureSelection2", "org.campagnelab.bdval.structure.FoldChange");
-      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "featureSelectionInfo", true), "featureSelectionCombo", true)).addElement(fsCombo);
+      SNode fsCombo = SConceptOperations.createNewNode("org.campagnelab.bdval.structure.FeatureSelectionStrategy", null);
+      SLinkOperations.setNewChild(fsCombo, "step1", "org.campagnelab.bdval.structure.Ttest");
+      SLinkOperations.setNewChild(fsCombo, "step2", "org.campagnelab.bdval.structure.FoldChange");
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "featureSelectionInfo", true), "strategy", true)).addElement(fsCombo);
       SLinkOperations.addNewChild(SLinkOperations.getTarget(node, "classificationInfo", true), "classification", "org.campagnelab.bdval.structure.LogitBoost");
     }
 

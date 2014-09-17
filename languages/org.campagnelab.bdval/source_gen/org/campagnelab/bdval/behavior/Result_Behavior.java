@@ -13,11 +13,16 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.apache.tools.ant.Project;
+import jetbrains.mps.ide.project.ProjectHelper;
+import com.intellij.openapi.progress.Task;
+import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.progress.ProgressManager;
 import org.apache.tools.ant.DefaultLogger;
 import java.io.PrintStream;
 import java.sql.Timestamp;
 import java.util.Date;
-import org.apache.tools.ant.ProjectHelper;
+import jetbrains.mps.smodel.DefaultModelAccess;
 import org.apache.commons.io.FileUtils;
 
 public class Result_Behavior {
@@ -99,65 +104,160 @@ public class Result_Behavior {
   }
 
   public static void call_evaluateStatistics_3634366430331113687(SNode thisNode) {
-    SNode project = SNodeOperations.getAncestor(thisNode, "org.campagnelab.bdval.structure.Project", false, false);
-    String folder = SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(project, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(project, "name") + "/" + SPropertyOperations.getString(thisNode, "directory") + "/";
-    Project p = new Project();
-    try {
+    final SNode bdValProject = SNodeOperations.getAncestor(thisNode, "org.campagnelab.bdval.structure.Project", false, false);
+    final String folder = Project_Behavior.call_getProjectFolder_7139671938570003285(bdValProject, SPropertyOperations.getString(thisNode, "directory"));
+    final Project p = new Project();
+    final String bdvalProjectName = SPropertyOperations.getString(bdValProject, "name");
+    final String resultName = SPropertyOperations.getString(thisNode, "name");
+    final SNode result = thisNode;
 
-      File buildFile = new File(folder + SPropertyOperations.getString(project, "name") + ".xml");
-      p.setUserProperty("ant.file", buildFile.getAbsolutePath());
+    {
+      final SNode thisNodeFinal = thisNode;
+      com.intellij.openapi.project.Project project = ProjectHelper.toIdeaProject(ProjectHelper.getProject(SNodeOperations.getModel(thisNode).getRepository()));
+      Task.Backgroundable back = new Task.Backgroundable(project, "Evaluate Statistics", false) {
+        public void run(@NotNull ProgressIndicator p0) {
+          final ProgressIndicator indicator = ProgressManager.getInstance().getProgressIndicator();
+          indicator.setText("Evaluate Statistics");
+          indicator.pushState();
+          try {
+            try {
 
-      DefaultLogger consoleLogger = new DefaultLogger();
-      consoleLogger.setErrorPrintStream(System.err);
-      consoleLogger.setOutputPrintStream(new PrintStream(new File(folder + "memo/" + SPropertyOperations.getString(project, "name") + "-restat-" + String.format("%1$TF=%1$TR", new Timestamp(new Date().getTime())).replaceAll("-", "").replaceAll("=", "-").replaceAll(":", ""))));
-      consoleLogger.setMessageOutputLevel(Project.MSG_INFO);
-      p.addBuildListener(consoleLogger);
+              File buildFile = new File(folder + bdvalProjectName + ".xml");
+              p.setUserProperty("ant.file", buildFile.getAbsolutePath());
 
-      p.setProperty("results-directory", folder + SPropertyOperations.getString(thisNode, "name"));
-      p.setProperty("model-conditions", folder + SPropertyOperations.getString(thisNode, "name") + "/" + "model-conditions.txt");
-      p.setProperty("other-measures", "bias");
+              DefaultLogger consoleLogger = new DefaultLogger();
+              consoleLogger.setErrorPrintStream(System.err);
+              consoleLogger.setOutputPrintStream(new PrintStream(new File(folder + "memo/" + bdvalProjectName + "-restat-" + String.format("%1$TF=%1$TR", new Timestamp(new Date().getTime())).replaceAll("-", "").replaceAll("=", "-").replaceAll(":", ""))));
+              consoleLogger.setMessageOutputLevel(Project.MSG_INFO);
+              p.addBuildListener(consoleLogger);
 
-      p.fireBuildStarted();
-      p.init();
-      ProjectHelper helper = ProjectHelper.getProjectHelper();
-      p.addReference("ant.projectHelper", helper);
-      helper.parse(p, buildFile);
-      p.executeTarget("restat");
-      p.fireBuildFinished(null);
-    } catch (Exception e) {
-      p.fireBuildFinished(e);
-      throw new Error("Error calculating statistics: " + e);
+              p.setProperty("results-directory", folder + resultName);
+              p.setProperty("model-conditions", folder + resultName + "/" + "model-conditions.txt");
+              p.setProperty("other-measures", "bias");
+
+              p.fireBuildStarted();
+              p.init();
+              org.apache.tools.ant.ProjectHelper helper = org.apache.tools.ant.ProjectHelper.getProjectHelper();
+              p.addReference("ant.projectHelper", helper);
+              helper.parse(p, buildFile);
+              p.executeTarget("restat");
+              p.fireBuildFinished(null);
+            } catch (Exception e) {
+              p.fireBuildFinished(e);
+              throw new Error("Error calculating statistics: " + e);
+            }
+          } finally {
+            indicator.setText("Evaluate Statistics" + " completed");
+            indicator.stop();
+          }
+        }
+
+        @Override
+        public void onSuccess() {
+          DefaultModelAccess.instance().runWriteActionInCommand(new Runnable() {
+            public void run() {
+
+              Result_Behavior.call_readMaqciiFile_6380268605206873743(result, Result_Behavior.call_getMaqciiFile_6380268605234804481(result, new File(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(bdValProject, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(bdValProject, "name") + "/" + SPropertyOperations.getString(result, "directory") + "/" + resultName)));
+
+            }
+          });
+
+        }
+
+
+
+        @Override
+        public void onCancel() {
+          DefaultModelAccess.instance().runWriteActionInCommand(new Runnable() {
+            public void run() {
+
+
+            }
+          });
+
+        }
+      };
+      ProgressManager.getInstance().run(back);
+
     }
   }
 
   public static void call_generateFinalModel_6380268605238741230(SNode thisNode) {
-    SNode project = SNodeOperations.getAncestor(thisNode, "org.campagnelab.bdval.structure.Project", false, false);
-    String folder = SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(project, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(project, "name") + "/" + SPropertyOperations.getString(SLinkOperations.getTarget(project, "properties", true), "directoryName") + "/";
-    Project p = new Project();
-    try {
-      File buildFile = new File(folder + SPropertyOperations.getString(project, "name") + ".xml");
-      p.setUserProperty("ant.file", buildFile.getAbsolutePath());
+    final SNode bdValProject = SNodeOperations.getAncestor(thisNode, "org.campagnelab.bdval.structure.Project", false, false);
+    final String bdvalProjectName = SPropertyOperations.getString(bdValProject, "name");
+    final String folder = Project_Behavior.call_getProjectFolder_7139671938570003285(bdValProject, SPropertyOperations.getString(thisNode, "directory"));
+    final String resultName = SPropertyOperations.getString(thisNode, "name");
+    final Project p = new Project();
+    final SNode result = thisNode;
+    {
+      final SNode thisNodeFinal = thisNode;
+      com.intellij.openapi.project.Project project = ProjectHelper.toIdeaProject(ProjectHelper.getProject(SNodeOperations.getModel(thisNode).getRepository()));
+      Task.Backgroundable back = new Task.Backgroundable(project, "Generate Final Models", true) {
+        public void run(@NotNull ProgressIndicator p0) {
+          final ProgressIndicator indicator = ProgressManager.getInstance().getProgressIndicator();
+          indicator.setText("Generate Final Models");
+          indicator.pushState();
+          try {
+            try {
+              File buildFile = new File(folder + bdvalProjectName + ".xml");
+              p.setUserProperty("ant.file", buildFile.getAbsolutePath());
 
-      DefaultLogger consoleLogger = new DefaultLogger();
-      consoleLogger.setErrorPrintStream(System.err);
-      consoleLogger.setOutputPrintStream(new PrintStream(new File(folder + "memo/" + SPropertyOperations.getString(project, "name") + "-generateModel-" + String.format("%1$TF=%1$TR", new Timestamp(new Date().getTime())).replaceAll("-", "").replaceAll("=", "-").replaceAll(":", ""))));
-      consoleLogger.setMessageOutputLevel(Project.MSG_INFO);
-      p.addBuildListener(consoleLogger);
+              DefaultLogger consoleLogger = new DefaultLogger();
+              consoleLogger.setErrorPrintStream(System.err);
+              consoleLogger.setOutputPrintStream(new PrintStream(new File(folder + "memo/" + bdvalProjectName + "-generateModel-" + String.format("%1$TF=%1$TR", new Timestamp(new Date().getTime())).replaceAll("-", "").replaceAll("=", "-").replaceAll(":", ""))));
+              consoleLogger.setMessageOutputLevel(Project.MSG_INFO);
+              p.addBuildListener(consoleLogger);
 
-      p.setProperty("results-directory", folder + SPropertyOperations.getString(thisNode, "name"));
-      p.setProperty("model-conditions", folder + SPropertyOperations.getString(thisNode, "name") + "/" + "model-conditions.txt");
-      p.setProperty("consensus-type", "pathways:models");
+              p.setProperty("results-directory", folder + resultName);
+              p.setProperty("model-conditions", folder + resultName + "/" + "model-conditions.txt");
+              p.setProperty("consensus-type", "pathways:models");
 
-      p.fireBuildStarted();
-      p.init();
-      ProjectHelper helper = ProjectHelper.getProjectHelper();
-      p.addReference("ant.projectHelper", helper);
-      helper.parse(p, buildFile);
-      p.executeTarget("mps-generate-final-models");
-      p.fireBuildFinished(null);
-    } catch (Exception e) {
-      p.fireBuildFinished(e);
-      throw new Error("Error calculating statistics: " + e);
+              p.fireBuildStarted();
+              p.init();
+              org.apache.tools.ant.ProjectHelper helper = org.apache.tools.ant.ProjectHelper.getProjectHelper();
+              p.addReference("ant.projectHelper", helper);
+              helper.parse(p, buildFile);
+              p.executeTarget("mps-generate-final-models");
+              p.fireBuildFinished(null);
+            } catch (Exception e) {
+              p.fireBuildFinished(e);
+              throw new Error("Error generating final models" + e);
+            }
+          } finally {
+            indicator.setText("Generate Final Models" + " completed");
+            indicator.stop();
+          }
+        }
+
+        @Override
+        public void onSuccess() {
+          DefaultModelAccess.instance().runWriteActionInCommand(new Runnable() {
+            public void run() {
+
+              Result_Behavior.call_updateFinalModel_4971583211585883350(result, SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(bdValProject, "properties", true), "outputDirectory", true), "directoryLocation") + "/" + SPropertyOperations.getString(bdValProject, "name") + "/" + SPropertyOperations.getString(result, "directory") + "/" + SPropertyOperations.getString(result, "name"));
+
+
+            }
+          });
+
+        }
+
+
+
+        @Override
+        public void onCancel() {
+          DefaultModelAccess.instance().runWriteActionInCommand(new Runnable() {
+            public void run() {
+
+              SPropertyOperations.set(result, "finalModels", "" + (false));
+
+            }
+          });
+
+        }
+      };
+      ProgressManager.getInstance().run(back);
+
     }
   }
 

@@ -14,37 +14,6 @@
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="org.campagnelab.bdval.behavior.Approach_Behavior" file="Approach_Behavior.java">
-    <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="java.io.FileWriter" />
-    <classNode dependClassName="java.io.PrintWriter" />
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
-    <classNode dependClassName="org.apache.commons.lang.WordUtils" />
-    <classNode dependClassName="org.apache.log4j.Level" />
-    <classNode dependClassName="org.apache.log4j.LogManager" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-  </dependency>
-  <dependency className="org.campagnelab.bdval.behavior.Approach_BehaviorDescriptor" file="Approach_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
   <dependency className="org.campagnelab.bdval.behavior.ArrayParameter_BehaviorDescriptor" file="ArrayParameter_BehaviorDescriptor.java" />
   <dependency className="org.campagnelab.bdval.behavior.AverageAggregation_Behavior" file="AverageAggregation_Behavior.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
@@ -66,13 +35,12 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.AUCPerformance_BehaviorDescriptor" />
-    <classNode dependClassName="org.campagnelab.bdval.behavior.Approach_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.AverageAggregation_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.CIDs_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.CategoryReference_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.ClassificationInfo_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.ClassificationProperties_BehaviorDescriptor" />
-    <classNode dependClassName="org.campagnelab.bdval.behavior.CoxRegProperties_BehaviorDescriptor" />
+    <classNode dependClassName="org.campagnelab.bdval.behavior.CoxRegParameters_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.CoxReg_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.DataSet_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.DesktopComputer_BehaviorDescriptor" />
@@ -81,38 +49,39 @@
     <classNode dependClassName="org.campagnelab.bdval.behavior.DisplayValue_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.EndpointCategory_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.Endpoint_BehaviorDescriptor" />
-    <classNode dependClassName="org.campagnelab.bdval.behavior.FeatureSelectionCombo_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.FeatureSelectionFoldFalse_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.FeatureSelectionFoldTrue_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.FeatureSelectionInfo_BehaviorDescriptor" />
-    <classNode dependClassName="org.campagnelab.bdval.behavior.FeatureSelectionProperties_BehaviorDescriptor" />
+    <classNode dependClassName="org.campagnelab.bdval.behavior.FeatureSelectionParameters_BehaviorDescriptor" />
+    <classNode dependClassName="org.campagnelab.bdval.behavior.FeatureSelectionStrategy_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.File_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.FloatRange_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.Float_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.FoldChange_BehaviorDescriptor" />
-    <classNode dependClassName="org.campagnelab.bdval.behavior.FoldchangeProperties_BehaviorDescriptor" />
+    <classNode dependClassName="org.campagnelab.bdval.behavior.FoldchangeParameters_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.GenelistRef_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.Genelist_BehaviorDescriptor" />
-    <classNode dependClassName="org.campagnelab.bdval.behavior.GeneticAlgorithmProperties_BehaviorDescriptor" />
+    <classNode dependClassName="org.campagnelab.bdval.behavior.GeneticAlgorithmParameters_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.GeneticAlgorithm_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.Input_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.Integer_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.KStar_BehaviorDescriptor" />
-    <classNode dependClassName="org.campagnelab.bdval.behavior.KendallTauProperties_BehaviorDescriptor" />
+    <classNode dependClassName="org.campagnelab.bdval.behavior.KendallTauParameters_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.KendallTau_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.LoggedArray_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.Logistic_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.LogitBoost_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.MCCPerformance_BehaviorDescriptor" />
-    <classNode dependClassName="org.campagnelab.bdval.behavior.MinMaxProperties_BehaviorDescriptor" />
+    <classNode dependClassName="org.campagnelab.bdval.behavior.MinMaxParameters_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.MinMax_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.ModelToGenerate_BehaviorDescriptor" />
+    <classNode dependClassName="org.campagnelab.bdval.behavior.ModelingApproaches_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.NaiveBayes_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.OtherFiles_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.PCAAggregation_BehaviorDescriptor" />
-    <classNode dependClassName="org.campagnelab.bdval.behavior.PathwayProperties_BehaviorDescriptor" />
+    <classNode dependClassName="org.campagnelab.bdval.behavior.PathwayParameters_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.Pathway_BehaviorDescriptor" />
-    <classNode dependClassName="org.campagnelab.bdval.behavior.PermutationProperties_BehaviorDescriptor" />
+    <classNode dependClassName="org.campagnelab.bdval.behavior.PermutationParameters_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.Permutation_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.Platform_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.Project_BehaviorDescriptor" />
@@ -120,7 +89,7 @@
     <classNode dependClassName="org.campagnelab.bdval.behavior.RandomForest_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.Result_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.SVMGlobal_BehaviorDescriptor" />
-    <classNode dependClassName="org.campagnelab.bdval.behavior.SVMIterativeProperties_BehaviorDescriptor" />
+    <classNode dependClassName="org.campagnelab.bdval.behavior.SVMIterativeParameter_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.SVMIterative_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.SVMProperties_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.SVMTuneCProperties_BehaviorDescriptor" />
@@ -131,7 +100,7 @@
     <classNode dependClassName="org.campagnelab.bdval.behavior.ServerComputer_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.SingleColorArray_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.Status_BehaviorDescriptor" />
-    <classNode dependClassName="org.campagnelab.bdval.behavior.TTestProperties_BehaviorDescriptor" />
+    <classNode dependClassName="org.campagnelab.bdval.behavior.TTestParameters_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.Task_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.Ttest_BehaviorDescriptor" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.TwoColorArray_BehaviorDescriptor" />
@@ -198,11 +167,11 @@
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
     <classNode extendsClassName="java.lang.Cloneable" />
   </dependency>
-  <dependency className="org.campagnelab.bdval.behavior.CoxRegProperties_Behavior" file="CoxRegProperties_Behavior.java">
+  <dependency className="org.campagnelab.bdval.behavior.CoxRegParameters_Behavior" file="CoxRegParameters_Behavior.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="org.campagnelab.bdval.behavior.CoxRegProperties_BehaviorDescriptor" file="CoxRegProperties_BehaviorDescriptor.java">
+  <dependency className="org.campagnelab.bdval.behavior.CoxRegParameters_BehaviorDescriptor" file="CoxRegParameters_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
@@ -307,12 +276,6 @@
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="org.campagnelab.bdval.behavior.FeatureSelectionCombo_BehaviorDescriptor" file="FeatureSelectionCombo_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
   <dependency className="org.campagnelab.bdval.behavior.FeatureSelectionFoldFalse_Behavior" file="FeatureSelectionFoldFalse_Behavior.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -365,11 +328,17 @@
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
     <classNode extendsClassName="java.lang.Cloneable" />
   </dependency>
-  <dependency className="org.campagnelab.bdval.behavior.FeatureSelectionProperties_Behavior" file="FeatureSelectionProperties_Behavior.java">
+  <dependency className="org.campagnelab.bdval.behavior.FeatureSelectionParameters_Behavior" file="FeatureSelectionParameters_Behavior.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="org.campagnelab.bdval.behavior.FeatureSelectionProperties_BehaviorDescriptor" file="FeatureSelectionProperties_BehaviorDescriptor.java">
+  <dependency className="org.campagnelab.bdval.behavior.FeatureSelectionParameters_BehaviorDescriptor" file="FeatureSelectionParameters_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="org.campagnelab.bdval.behavior.FeatureSelectionStrategy_BehaviorDescriptor" file="FeatureSelectionStrategy_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
@@ -432,11 +401,11 @@
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="org.campagnelab.bdval.behavior.FoldchangeProperties_Behavior" file="FoldchangeProperties_Behavior.java">
+  <dependency className="org.campagnelab.bdval.behavior.FoldchangeParameters_Behavior" file="FoldchangeParameters_Behavior.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="org.campagnelab.bdval.behavior.FoldchangeProperties_BehaviorDescriptor" file="FoldchangeProperties_BehaviorDescriptor.java">
+  <dependency className="org.campagnelab.bdval.behavior.FoldchangeParameters_BehaviorDescriptor" file="FoldchangeParameters_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
@@ -468,13 +437,13 @@
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="org.campagnelab.bdval.behavior.GeneticAlgorithmProperties_Behavior" file="GeneticAlgorithmProperties_Behavior.java">
+  <dependency className="org.campagnelab.bdval.behavior.GeneticAlgorithmParameters_Behavior" file="GeneticAlgorithmParameters_Behavior.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="org.campagnelab.bdval.behavior.GeneticAlgorithmProperties_BehaviorDescriptor" file="GeneticAlgorithmProperties_BehaviorDescriptor.java">
+  <dependency className="org.campagnelab.bdval.behavior.GeneticAlgorithmParameters_BehaviorDescriptor" file="GeneticAlgorithmParameters_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
@@ -535,11 +504,11 @@
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="org.campagnelab.bdval.behavior.KendallTauProperties_Behavior" file="KendallTauProperties_Behavior.java">
+  <dependency className="org.campagnelab.bdval.behavior.KendallTauParameters_Behavior" file="KendallTauParameters_Behavior.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="org.campagnelab.bdval.behavior.KendallTauProperties_BehaviorDescriptor" file="KendallTauProperties_BehaviorDescriptor.java">
+  <dependency className="org.campagnelab.bdval.behavior.KendallTauParameters_BehaviorDescriptor" file="KendallTauParameters_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
@@ -615,11 +584,11 @@
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="org.campagnelab.bdval.behavior.MinMaxProperties_Behavior" file="MinMaxProperties_Behavior.java">
+  <dependency className="org.campagnelab.bdval.behavior.MinMaxParameters_Behavior" file="MinMaxParameters_Behavior.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="org.campagnelab.bdval.behavior.MinMaxProperties_BehaviorDescriptor" file="MinMaxProperties_BehaviorDescriptor.java">
+  <dependency className="org.campagnelab.bdval.behavior.MinMaxParameters_BehaviorDescriptor" file="MinMaxParameters_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
@@ -651,6 +620,37 @@
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="org.campagnelab.bdval.behavior.ModelingApproaches_Behavior" file="ModelingApproaches_Behavior.java">
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.io.FileWriter" />
+    <classNode dependClassName="java.io.PrintWriter" />
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
+    <classNode dependClassName="org.apache.commons.lang.WordUtils" />
+    <classNode dependClassName="org.apache.log4j.Level" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
+  <dependency className="org.campagnelab.bdval.behavior.ModelingApproaches_BehaviorDescriptor" file="ModelingApproaches_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="org.campagnelab.bdval.behavior.NaiveBayes_Behavior" file="NaiveBayes_Behavior.java">
@@ -691,12 +691,12 @@
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
     <classNode extendsClassName="java.lang.Cloneable" />
   </dependency>
-  <dependency className="org.campagnelab.bdval.behavior.PathwayProperties_Behavior" file="PathwayProperties_Behavior.java">
+  <dependency className="org.campagnelab.bdval.behavior.PathwayParameters_Behavior" file="PathwayParameters_Behavior.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="org.campagnelab.bdval.behavior.PathwayProperties_BehaviorDescriptor" file="PathwayProperties_BehaviorDescriptor.java">
+  <dependency className="org.campagnelab.bdval.behavior.PathwayParameters_BehaviorDescriptor" file="PathwayParameters_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
@@ -716,11 +716,11 @@
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="org.campagnelab.bdval.behavior.PermutationProperties_Behavior" file="PermutationProperties_Behavior.java">
+  <dependency className="org.campagnelab.bdval.behavior.PermutationParameters_Behavior" file="PermutationParameters_Behavior.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="org.campagnelab.bdval.behavior.PermutationProperties_BehaviorDescriptor" file="PermutationProperties_BehaviorDescriptor.java">
+  <dependency className="org.campagnelab.bdval.behavior.PermutationParameters_BehaviorDescriptor" file="PermutationParameters_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
@@ -754,6 +754,8 @@
     <classNode dependClassName="java.io.OutputStream" />
     <classNode dependClassName="java.lang.Error" />
     <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Properties" />
     <classNode dependClassName="javax.swing.JOptionPane" />
@@ -763,8 +765,8 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="org.apache.commons.io.FileUtils" />
-    <classNode dependClassName="org.campagnelab.bdval.behavior.Approach_Behavior" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.DataSet_Behavior" />
+    <classNode dependClassName="org.campagnelab.bdval.behavior.ModelingApproaches_Behavior" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="org.campagnelab.bdval.behavior.Project_BehaviorDescriptor" file="Project_BehaviorDescriptor.java">
@@ -808,6 +810,10 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="org.campagnelab.bdval.behavior.Result_Behavior" file="Result_Behavior.java">
+    <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
+    <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
+    <classNode dependClassName="com.intellij.openapi.progress.Task" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.io.BufferedReader" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.FileFilter" />
@@ -820,19 +826,25 @@
     <classNode dependClassName="java.lang.Long" />
     <classNode dependClassName="java.lang.NumberFormatException" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.sql.Timestamp" />
     <classNode dependClassName="java.util.Date" />
+    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.DefaultModelAccess" />
     <classNode dependClassName="org.apache.commons.io.FileUtils" />
     <classNode dependClassName="org.apache.commons.io.filefilter.SuffixFileFilter" />
     <classNode dependClassName="org.apache.tools.ant.DefaultLogger" />
     <classNode dependClassName="org.apache.tools.ant.Project" />
     <classNode dependClassName="org.apache.tools.ant.ProjectHelper" />
+    <classNode dependClassName="org.campagnelab.bdval.behavior.Project_Behavior" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="org.campagnelab.bdval.behavior.Result_BehaviorDescriptor" file="Result_BehaviorDescriptor.java">
@@ -861,11 +873,11 @@
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="org.campagnelab.bdval.behavior.SVMIterativeProperties_Behavior" file="SVMIterativeProperties_Behavior.java">
+  <dependency className="org.campagnelab.bdval.behavior.SVMIterativeParameter_Behavior" file="SVMIterativeParameter_Behavior.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="org.campagnelab.bdval.behavior.SVMIterativeProperties_BehaviorDescriptor" file="SVMIterativeProperties_BehaviorDescriptor.java">
+  <dependency className="org.campagnelab.bdval.behavior.SVMIterativeParameter_BehaviorDescriptor" file="SVMIterativeParameter_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
@@ -995,6 +1007,8 @@
     <classNode dependClassName="org.apache.commons.io.filefilter.IOFileFilter" />
     <classNode dependClassName="org.apache.commons.io.filefilter.SuffixFileFilter" />
     <classNode dependClassName="org.apache.commons.io.filefilter.TrueFileFilter" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.campagnelab.bdval.behavior.Result_Behavior" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
@@ -1004,11 +1018,11 @@
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="org.campagnelab.bdval.behavior.TTestProperties_Behavior" file="TTestProperties_Behavior.java">
+  <dependency className="org.campagnelab.bdval.behavior.TTestParameters_Behavior" file="TTestParameters_Behavior.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="org.campagnelab.bdval.behavior.TTestProperties_BehaviorDescriptor" file="TTestProperties_BehaviorDescriptor.java">
+  <dependency className="org.campagnelab.bdval.behavior.TTestParameters_BehaviorDescriptor" file="TTestParameters_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />

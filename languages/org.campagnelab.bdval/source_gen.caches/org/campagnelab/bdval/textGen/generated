@@ -1,11 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="diydoil8pl3rhav7ykrehuq5vxvdtz4">
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="b4ewbuz42qcbg1awca5bacgi0vopxqt" />
-  <common hash="-9otkhw604l7gxltek6h02hxsdwk3jp1" dependsOnNodes="true">
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-  </common>
-  <source id="4092316444628621914" name="SomeTextGen" hash="451svth0799zwi4qn3qjfker24vvc8w">
-    <file name="SomeTextGen.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="diydoil8pl3rhav7ykrehuq5vxvdtz4" />
 
