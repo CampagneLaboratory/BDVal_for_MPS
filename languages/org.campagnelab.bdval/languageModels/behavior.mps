@@ -1896,12 +1896,18 @@
           <node concept="3cpWsn" id="69ees3tC2tj" role="3cpWs9">
             <property role="TrG5h" value="inputFolder" />
             <node concept="17QB3L" id="69ees3tC2tf" role="1tU5fm" />
-            <node concept="3cpWs3" id="69ees3tC32O" role="33vP2m">
-              <node concept="Xl_RD" id="69ees3tC3d0" role="3uHU7w">
-                <property role="Xl_RC" value="inputs/" />
+            <node concept="3cpWs3" id="3ocu89BBtxe" role="33vP2m">
+              <node concept="10M0yZ" id="3ocu89BBtLT" role="3uHU7w">
+                <ref role="1PxDUh" to="fxg7:~File" resolve="File" />
+                <ref role="3cqZAo" to="fxg7:~File.separator" resolve="separator" />
               </node>
-              <node concept="37vLTw" id="69ees3tC2u9" role="3uHU7B">
-                <ref role="3cqZAo" node="69ees3tC2h_" resolve="projectFolder" />
+              <node concept="3cpWs3" id="69ees3tC32O" role="3uHU7B">
+                <node concept="37vLTw" id="69ees3tC2u9" role="3uHU7B">
+                  <ref role="3cqZAo" node="69ees3tC2h_" resolve="projectFolder" />
+                </node>
+                <node concept="Xl_RD" id="69ees3tC3d0" role="3uHU7w">
+                  <property role="Xl_RC" value="inputs" />
+                </node>
               </node>
             </node>
           </node>
@@ -2058,12 +2064,18 @@
               <node concept="3cpWsn" id="4kZc_K54Bn7" role="3cpWs9">
                 <property role="TrG5h" value="pathwayFolder" />
                 <node concept="17QB3L" id="4kZc_K54Bn3" role="1tU5fm" />
-                <node concept="3cpWs3" id="4kZc_K54BtR" role="33vP2m">
-                  <node concept="Xl_RD" id="4kZc_K54Buk" role="3uHU7w">
-                    <property role="Xl_RC" value="pathways/" />
+                <node concept="3cpWs3" id="3ocu89BBveG" role="33vP2m">
+                  <node concept="10M0yZ" id="3ocu89BBvr7" role="3uHU7w">
+                    <ref role="1PxDUh" to="fxg7:~File" resolve="File" />
+                    <ref role="3cqZAo" to="fxg7:~File.separator" resolve="separator" />
                   </node>
-                  <node concept="37vLTw" id="4kZc_K54BnH" role="3uHU7B">
-                    <ref role="3cqZAo" node="4kZc_K54_YQ" resolve="projectFoler" />
+                  <node concept="3cpWs3" id="4kZc_K54BtR" role="3uHU7B">
+                    <node concept="37vLTw" id="4kZc_K54BnH" role="3uHU7B">
+                      <ref role="3cqZAo" node="4kZc_K54_YQ" resolve="projectFoler" />
+                    </node>
+                    <node concept="Xl_RD" id="4kZc_K54Buk" role="3uHU7w">
+                      <property role="Xl_RC" value="pathways" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -2283,12 +2295,18 @@
               <node concept="3cpWsn" id="4kZc_K5DuRo" role="3cpWs9">
                 <property role="TrG5h" value="survivalFolder" />
                 <node concept="17QB3L" id="4kZc_K5DuRk" role="1tU5fm" />
-                <node concept="3cpWs3" id="4kZc_K5Dw$d" role="33vP2m">
-                  <node concept="Xl_RD" id="4kZc_K5DwBu" role="3uHU7w">
-                    <property role="Xl_RC" value="survivals/" />
+                <node concept="3cpWs3" id="3ocu89BBwJI" role="33vP2m">
+                  <node concept="10M0yZ" id="3ocu89BBwZP" role="3uHU7w">
+                    <ref role="1PxDUh" to="fxg7:~File" resolve="File" />
+                    <ref role="3cqZAo" to="fxg7:~File.separator" resolve="separator" />
                   </node>
-                  <node concept="37vLTw" id="4kZc_K5Dwrf" role="3uHU7B">
-                    <ref role="3cqZAo" node="4kZc_K54_YQ" resolve="projectFoler" />
+                  <node concept="3cpWs3" id="4kZc_K5Dw$d" role="3uHU7B">
+                    <node concept="37vLTw" id="4kZc_K5Dwrf" role="3uHU7B">
+                      <ref role="3cqZAo" node="4kZc_K54_YQ" resolve="projectFoler" />
+                    </node>
+                    <node concept="Xl_RD" id="4kZc_K5DwBu" role="3uHU7w">
+                      <property role="Xl_RC" value="survivals" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -2452,12 +2470,18 @@
               <node concept="3cpWsn" id="69ees3tw5EG" role="3cpWs9">
                 <property role="TrG5h" value="cidsFolder" />
                 <node concept="17QB3L" id="69ees3tw5EB" role="1tU5fm" />
-                <node concept="3cpWs3" id="69ees3t$Dbh" role="33vP2m">
-                  <node concept="Xl_RD" id="69ees3tw8pQ" role="3uHU7w">
-                    <property role="Xl_RC" value="cids/" />
+                <node concept="3cpWs3" id="3ocu89BBmwx" role="33vP2m">
+                  <node concept="10M0yZ" id="3ocu89BBnvu" role="3uHU7w">
+                    <ref role="1PxDUh" to="fxg7:~File" resolve="File" />
+                    <ref role="3cqZAo" to="fxg7:~File.separator" resolve="separator" />
                   </node>
-                  <node concept="37vLTw" id="69ees3tw80s" role="3uHU7B">
-                    <ref role="3cqZAo" node="5eTltFGXxoc" resolve="projectFoler" />
+                  <node concept="3cpWs3" id="69ees3t$Dbh" role="3uHU7B">
+                    <node concept="37vLTw" id="69ees3tw80s" role="3uHU7B">
+                      <ref role="3cqZAo" node="5eTltFGXxoc" resolve="projectFoler" />
+                    </node>
+                    <node concept="Xl_RD" id="69ees3tw8pQ" role="3uHU7w">
+                      <property role="Xl_RC" value="cids" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -2879,12 +2903,18 @@
               <node concept="3cpWsn" id="69ees3twctG" role="3cpWs9">
                 <property role="TrG5h" value="taskFolder" />
                 <node concept="17QB3L" id="69ees3twctB" role="1tU5fm" />
-                <node concept="3cpWs3" id="69ees3t$Etz" role="33vP2m">
-                  <node concept="Xl_RD" id="69ees3twdMV" role="3uHU7w">
-                    <property role="Xl_RC" value="tasks/" />
+                <node concept="3cpWs3" id="3ocu89BBpWj" role="33vP2m">
+                  <node concept="10M0yZ" id="3ocu89BBqnE" role="3uHU7w">
+                    <ref role="1PxDUh" to="fxg7:~File" resolve="File" />
+                    <ref role="3cqZAo" to="fxg7:~File.separator" resolve="separator" />
                   </node>
-                  <node concept="37vLTw" id="69ees3twdj9" role="3uHU7B">
-                    <ref role="3cqZAo" node="5eTltFH2zqC" resolve="projectFolder" />
+                  <node concept="3cpWs3" id="69ees3t$Etz" role="3uHU7B">
+                    <node concept="37vLTw" id="69ees3twdj9" role="3uHU7B">
+                      <ref role="3cqZAo" node="5eTltFH2zqC" resolve="projectFolder" />
+                    </node>
+                    <node concept="Xl_RD" id="69ees3twdMV" role="3uHU7w">
+                      <property role="Xl_RC" value="tasks" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -3229,14 +3259,9 @@
               <node concept="YS8fn" id="5eTltFH2_Js" role="3cqZAp">
                 <node concept="2ShNRf" id="5eTltFH2_JG" role="YScLw">
                   <node concept="1pGfFk" id="5eTltFH2A2e" role="2ShVmc">
-                    <ref role="37wK5l" to="e2lb:~Error.&lt;init&gt;(java.lang.String)" resolve="Error" />
-                    <node concept="3cpWs3" id="1MyzK_kEa6k" role="37wK5m">
-                      <node concept="37vLTw" id="1MyzK_kEamD" role="3uHU7w">
-                        <ref role="3cqZAo" node="5eTltFH2zqZ" resolve="e" />
-                      </node>
-                      <node concept="Xl_RD" id="5eTltFH2Acf" role="3uHU7B">
-                        <property role="Xl_RC" value="Error Printing Task File: " />
-                      </node>
+                    <ref role="37wK5l" to="e2lb:~Error.&lt;init&gt;(java.lang.Throwable)" resolve="Error" />
+                    <node concept="37vLTw" id="3ocu89BzaYC" role="37wK5m">
+                      <ref role="3cqZAo" node="5eTltFH2zqZ" resolve="e" />
                     </node>
                   </node>
                 </node>
@@ -3300,12 +3325,18 @@
               <node concept="3cpWsn" id="3sJAoODRnKc" role="3cpWs9">
                 <property role="TrG5h" value="testSetFolder" />
                 <node concept="17QB3L" id="3sJAoODRnKd" role="1tU5fm" />
-                <node concept="3cpWs3" id="3sJAoODRnKe" role="33vP2m">
-                  <node concept="Xl_RD" id="3sJAoODRnKf" role="3uHU7w">
-                    <property role="Xl_RC" value="test-sets/" />
+                <node concept="3cpWs3" id="3ocu89BBrL0" role="33vP2m">
+                  <node concept="10M0yZ" id="3ocu89BBs99" role="3uHU7w">
+                    <ref role="1PxDUh" to="fxg7:~File" resolve="File" />
+                    <ref role="3cqZAo" to="fxg7:~File.separator" resolve="separator" />
                   </node>
-                  <node concept="37vLTw" id="3sJAoODRnKg" role="3uHU7B">
-                    <ref role="3cqZAo" node="3sJAoODRlt$" resolve="projectFolder" />
+                  <node concept="3cpWs3" id="3sJAoODRnKe" role="3uHU7B">
+                    <node concept="37vLTw" id="3sJAoODRnKg" role="3uHU7B">
+                      <ref role="3cqZAo" node="3sJAoODRlt$" resolve="projectFolder" />
+                    </node>
+                    <node concept="Xl_RD" id="3sJAoODRnKf" role="3uHU7w">
+                      <property role="Xl_RC" value="test-sets" />
+                    </node>
                   </node>
                 </node>
               </node>
