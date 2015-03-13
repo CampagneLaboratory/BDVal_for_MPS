@@ -8,9 +8,12 @@
       <sourceRoot location="languages/lib/bdval.jar" />
       <sourceRoot location="languages/lib/edu.mssm.crover.tables.jar" />
       <sourceRoot location="languages/lib/fastutil-6.5.13.jar" />
+      <sourceRoot location="languages/lib/ant-launcher.jar" />
     </modelRoot>
   </models>
-  <accessoryModels />
+  <accessoryModels>
+    <model modelUID="1362abc2-7b75-4245-99a2-64e44bc624d2/f:java_stub#1362abc2-7b75-4245-99a2-64e44bc624d2#org.apache.tools.ant.launch(org.campagnelab.bdval.lib/org.apache.tools.ant.launch@java_stub)" />
+  </accessoryModels>
   <generators>
     <generator name="" generatorUID="org.campagnelab.bdval#8663900622048200163" uuid="e5d28b19-97bd-4db7-ab8f-e8d2349a95c3">
       <models>
@@ -75,22 +78,23 @@
     <stubModelEntry path="${org.campagnelab.bdval.home}/languages/lib/bdval.jar" />
     <stubModelEntry path="${org.campagnelab.bdval.home}/languages/lib/edu.mssm.crover.tables.jar" />
     <stubModelEntry path="${org.campagnelab.bdval.home}/languages/lib/fastutil-6.5.13.jar" />
+    <stubModelEntry path="${org.campagnelab.bdval.home}/languages/lib/ant-launcher.jar" />
   </stubModelEntries>
   <sourcePath />
   <dependencies>
-    <dependency reexport="false">847a3235-09f9-403c-b6a9-1c294a212e92(Ant)</dependency>
-    <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
-    <dependency reexport="false">8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)</dependency>
-    <dependency reexport="false">798100da-4f0a-421a-b991-71f8c50ce5d2(jetbrains.mps.build)</dependency>
-    <dependency reexport="false">4caf0310-491e-41f5-8a9b-2006b3a94898(jetbrains.mps.execution.util)</dependency>
-    <dependency reexport="false">28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)</dependency>
-    <dependency reexport="false">f8e20673-3f65-44e9-84c0-c4a4b6ede37e(jetbrains.mps.make.facets)</dependency>
-    <dependency reexport="false">a1250a4d-c090-42c3-ad7c-d298a3357dd4(jetbrains.mps.make.runtime)</dependency>
     <dependency reexport="false">df9d410f-2ebb-43f7-893a-483a4f085250(jetbrains.mps.smodel.resources)</dependency>
+    <dependency reexport="false">28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)</dependency>
     <dependency reexport="false">20d83b64-d10f-48d1-990d-513b574c4956(org.campagnelab.background)</dependency>
-    <dependency reexport="false">656823ce-3459-4971-ad0b-b6ab119258e1(org.campagnelab.bdval.charts)</dependency>
-    <dependency reexport="false">5ec1cd3d-0a50-4049-a8fa-ae768d7baa25(org.campagnelab.mps.XChart)</dependency>
     <dependency reexport="false">2b3d76b7-a9ea-44f6-8a30-283c3ffb5f0a(org.campagnelab.ui.code)</dependency>
+    <dependency reexport="false">f8e20673-3f65-44e9-84c0-c4a4b6ede37e(jetbrains.mps.make.facets)</dependency>
+    <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
+    <dependency reexport="false">656823ce-3459-4971-ad0b-b6ab119258e1(org.campagnelab.bdval.charts)</dependency>
+    <dependency reexport="false">847a3235-09f9-403c-b6a9-1c294a212e92(Ant)</dependency>
+    <dependency reexport="false">a1250a4d-c090-42c3-ad7c-d298a3357dd4(jetbrains.mps.make.runtime)</dependency>
+    <dependency reexport="false">798100da-4f0a-421a-b991-71f8c50ce5d2(jetbrains.mps.build)</dependency>
+    <dependency reexport="false">5ec1cd3d-0a50-4049-a8fa-ae768d7baa25(org.campagnelab.mps.XChart)</dependency>
+    <dependency reexport="false">4caf0310-491e-41f5-8a9b-2006b3a94898(jetbrains.mps.execution.util)</dependency>
+    <dependency reexport="false">8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)</usedLanguage>
@@ -141,9 +145,6 @@
     <language id="20d83b64-d10f-48d1-990d-513b574c4956" fqName="org.campagnelab.background" version="0" />
     <language id="c1ba4037-e4db-47d8-8b61-b3c805b648f2" fqName="org.campagnelab.ui" version="0" />
   </languageVersions>
-  <runtime>
-    <dependency reexport="false">df7d66fe-92a9-4056-a609-10204cc9ef0c(org.apache.ant.launcher)</dependency>
-  </runtime>
   <extendedLanguages>
     <extendedLanguage>4caf0310-491e-41f5-8a9b-2006b3a94898(jetbrains.mps.execution.util)</extendedLanguage>
     <extendedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</extendedLanguage>
