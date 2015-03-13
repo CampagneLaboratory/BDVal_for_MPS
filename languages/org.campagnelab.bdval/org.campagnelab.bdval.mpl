@@ -11,9 +11,7 @@
       <sourceRoot location="languages/lib/ant-launcher.jar" />
     </modelRoot>
   </models>
-  <accessoryModels>
-    <model modelUID="1362abc2-7b75-4245-99a2-64e44bc624d2/f:java_stub#1362abc2-7b75-4245-99a2-64e44bc624d2#org.apache.tools.ant.launch(org.campagnelab.bdval.lib/org.apache.tools.ant.launch@java_stub)" />
-  </accessoryModels>
+  <accessoryModels />
   <generators>
     <generator name="" generatorUID="org.campagnelab.bdval#8663900622048200163" uuid="e5d28b19-97bd-4db7-ab8f-e8d2349a95c3">
       <models>
@@ -87,6 +85,7 @@
     <dependency reexport="false">20d83b64-d10f-48d1-990d-513b574c4956(org.campagnelab.background)</dependency>
     <dependency reexport="false">2b3d76b7-a9ea-44f6-8a30-283c3ffb5f0a(org.campagnelab.ui.code)</dependency>
     <dependency reexport="false">f8e20673-3f65-44e9-84c0-c4a4b6ede37e(jetbrains.mps.make.facets)</dependency>
+    <dependency reexport="true">2f2bc319-bf05-438e-93e1-ff8b5e6fc5f7(org.campagnelab.bdval.runtime)</dependency>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
     <dependency reexport="false">656823ce-3459-4971-ad0b-b6ab119258e1(org.campagnelab.bdval.charts)</dependency>
     <dependency reexport="false">847a3235-09f9-403c-b6a9-1c294a212e92(Ant)</dependency>
