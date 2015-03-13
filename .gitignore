@@ -1,0 +1,5 @@
+**/*.class
+**/*.java
+**/trace.info
+**/classes_gen
+**/source_gen
